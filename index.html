@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MLBB Counter Pick & Meta Combo Pro [V2 Edition]</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Top Header -->
+  <header class="top-header">
+    <div class="brand-wrap">
+      <div class="brand-emblem" style="background:linear-gradient(135deg,#06b6d4,#f59e0b);">V2</div>
+      <div>
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+          <span class="brand-title">MLBB COUNTER &amp; META COMBO PRO</span>
+          <span class="v2-badge-pill">V2 COMBO EDITION</span>
+        </div>
+        <div class="brand-sub">
+          <span class="live-dot"></span>
+          <span>133 ฮีโร่ • อัปเดต New Meta Items (42 ชิ้น) + 23 คอมโบ &amp; แผนจัดทีม 5 คน</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs" role="tablist">
+      <button class="nav-tab active" data-tab="draft" onclick="switchTab('draft')">
+        ⚔️ ดราฟต์แก้ทาง + คอมโบสด
+      </button>
+      <button class="nav-tab" data-tab="combos" onclick="switchTab('combos')">
+        ⚡ คลัง Meta Combo (Duo / Trio / 5-Man)
+      </button>
+      <button class="nav-tab" data-tab="meta" onclick="switchTab('meta')">
+        🔥 ตาราง Meta ปัจจุบัน
+      </button>
+      <button class="nav-tab" data-tab="lookup" onclick="switchTab('lookup')">
+        🔍 เช็คตัวแก้ทางรายตัว
+      </button>
+    </nav>
+
+    <!-- Quick Actions -->
+    <div class="header-actions">
+      <button class="btn btn-ban-auto" onclick="autoBanTopMeta()" title="แบนฮีโร่ที่อัตราแบนสูงสุดใน Mythical Glory อัตโนมัติ">
+        🚫 แบนท็อป Meta
+      </button>
+      <button class="btn btn-demo" onclick="loadDemoDraft()" title="โหลดสถานการณ์ดราฟต์ตัวอย่าง">
+        🎲 ตัวอย่างดราฟต์
+      </button>
+      <button class="btn btn-reset" onclick="resetDraft()" title="ล้างข้อมูลแบนและฮีโร่ที่เลือกทั้งหมด">
+        🔄 รีเซ็ต
+      </button>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <!-- ==================== TAB 1: LIVE COUNTER & COMBO DRAFT ==================== -->
+    <section id="tab-draft" class="tab-panel active">
+      <!-- Banned Heroes Bar -->
+      <div class="ban-board">
+        <div class="ban-header">
+          <div class="ban-title-group">
+            <span style="font-weight:700; font-size:0.95rem; color:#e9d5ff;">🚫 ฮีโร่ที่ถูกแบน (Banned Heroes)</span>
+            <span id="banCountBadge" class="ban-count-badge">แบนไปแล้ว 0 / 10 ตัว</span>
+            <span style="font-size:0.76rem; color:var(--text-muted);">*คลิกที่ช่องแบนเพื่อเปิด Popup เลือกฮีโร่ที่จะแบน</span>
+          </div>
+          <div id="banSuggestionsBar" class="ban-suggestions"></div>
+        </div>
+
+        <div class="ban-slots-row">
+          <div id="allyBanSlots" class="ban-team-slots"></div>
+          <div class="ban-divider">10 BAN PHASE<br/><span style="font-size:0.65rem; color:var(--text-muted);">MYTHIC DRAFT</span></div>
+          <div id="enemyBanSlots" class="ban-team-slots enemy-bans"></div>
+        </div>
+      </div>
+
+      <!-- 3-Column Draft Arena -->
+      <div class="draft-arena">
+        <!-- Left Column: Ally Team (Blue Side) -->
+        <div class="team-column ally-col">
+          <div class="team-col-header">
+            <div class="team-col-title">🔵 ฝั่งฟ้า — ทีมของเรา</div>
+            <span id="allyCountText" style="font-size:0.78rem; color:var(--text-muted);">0 / 5</span>
+          </div>
+          <div style="font-size:0.72rem; color:var(--text-muted); margin-bottom:0.3rem;">ตำแหน่งเลนของทีมเรา (สีเหลือง = ยังขาด):</div>
+          <div id="allyLaneChecklist" class="lane-checklist"></div>
+          <div id="allyPickSlots" class="pick-slots-list"></div>
+        </div>
+
+        <!-- Center Column: Real-Time Counter + Meta Combo Engine -->
+        <div class="counter-center-panel">
+          <!-- Center Quick Actions: Swap Teams + View Counter Items & Spells Modal -->
+          <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:0.6rem; margin-bottom:0.75rem;">
+            <button class="btn btn-swap-teams" style="padding:0.48rem 1.2rem; font-size:0.86rem; border-radius:24px;" onclick="swapAllTeams()" title="สลับตัวละครที่เลือกทั้งหมดระหว่างฝั่งฟ้าและฝั่งแดง">
+              🔵 ⇄ สลับตัวละครฝั่งฟ้า ↔ ฝั่งแดง 🔴
+            </button>
+            <button id="topViewCounterGearBtn" class="btn btn-counter-gear-cta" onclick="openCounterGearModal('ALL')" title="กดดูรายการไอเทมแก้ทางและสเปลแก้ทางสำหรับรับมือทีมศัตรูชุดนี้แบบละเอียด">
+              🛡️ กดดูไอเทม &amp; สเปลแก้ทางฝั่งตรงข้าม
+            </button>
+          </div>
+
+          <!-- Strategy Priority Switcher -->
+          <div class="strategy-mode-bar">
+            <button class="strat-btn active" data-strat="counter" onclick="setStrategyMode('counter')">
+              🎯 โหมดเน้นแก้ทางศัตรู (Counter Pick Priority)
+            </button>
+            <button class="strat-btn strat-combo" data-strat="combo" onclick="setStrategyMode('combo')">
+              ⚡ โหมดเน้นคอมโบทีมเรา + แก้ทาง (Meta Combo Priority)
+            </button>
+          </div>
+
+          <!-- Counter Items & Battle Spells Advisor (Moved to top so it is immediately visible & clickable!) -->
+          <div id="gearAdvisorBox" class="gear-advisor-bar">
+            <div class="gear-advisor-header-row">
+              <div class="gear-advisor-title">
+                <span>🛡️ สเปลและไอเทมแก้ทางทีมศัตรูชุดนี้ (Counter Spells &amp; Items)</span>
+              </div>
+              <button class="btn-open-gear-modal" onclick="openCounterGearModal('ALL')">
+                🔍 กดดูไอเทม &amp; สเปลแก้ทางทั้งหมด →
+              </button>
+            </div>
+            <div id="gearAdvisorContent" class="gear-chips-wrap"></div>
+          </div>
+
+          <!-- Active Playable Meta Combos Strip (Dynamic based on current draft!) -->
+          <div id="liveComboStrip" class="live-combo-strip"></div>
+
+          <div class="counter-panel-header">
+            <div>
+              <div id="recHeaderTitle" class="counter-panel-title">
+                🎯 ฮีโร่ที่ควรเลือกแก้ทางตอนนี้ (Recommended Picks)
+              </div>
+              <div id="recHeaderSub" style="font-size:0.78rem; color:var(--text-muted);">
+                วิเคราะห์จากฮีโร่ฝั่งศัตรูที่เลือก + คอมโบทีมเรา + หักตัวที่โดนแบนไปแล้ว
+              </div>
+            </div>
+            <div id="recLanePills" class="lane-filter-pills">
+              <button class="lane-pill active" data-lane="ALL" onclick="setRecLaneFilter('ALL')">ทุกเลน</button>
+              <button class="lane-pill" data-lane="MISSING" onclick="setRecLaneFilter('MISSING')">✨ เฉพาะเลนที่ขาด</button>
+              <button class="lane-pill" data-lane="EXP Lane" onclick="setRecLaneFilter('EXP Lane')">EXP</button>
+              <button class="lane-pill" data-lane="Jungle" onclick="setRecLaneFilter('Jungle')">Jungle</button>
+              <button class="lane-pill" data-lane="Mid Lane" onclick="setRecLaneFilter('Mid Lane')">Mid</button>
+              <button class="lane-pill" data-lane="Gold Lane" onclick="setRecLaneFilter('Gold Lane')">Gold</button>
+              <button class="lane-pill" data-lane="Roam" onclick="setRecLaneFilter('Roam')">Roam</button>
+            </div>
+          </div>
+
+          <!-- Recommended Heroes Cards -->
+          <div id="recCardsContainer" class="rec-cards-grid"></div>
+        </div>
+
+        <!-- Right Column: Enemy Team (Red Side) -->
+        <div class="team-column enemy-col">
+          <div class="team-col-header">
+            <div class="team-col-title">🔴 ฝั่งแดง — ทีมศัตรู</div>
+            <div style="display:flex; align-items:center; gap:0.4rem;">
+              <button class="btn-enemy-gear-top" onclick="openCounterGearModal('ALL')" title="กดดูไอเทมและสเปลแก้ทางทีมศัตรูทั้งหมด">
+                🗡️ ดูไอเทมแก้ทาง
+              </button>
+              <span id="enemyCountText" style="font-size:0.78rem; color:var(--text-muted);">0 / 5</span>
+            </div>
+          </div>
+          <div style="font-size:0.72rem; color:var(--text-muted); margin-bottom:0.3rem;">ตำแหน่งเลนศัตรู (กดที่สเปลหรือปุ่มไอเทมในช่องเพื่อดูของแก้ทาง):</div>
+          <div id="enemyLaneChecklist" class="lane-checklist"></div>
+          <div id="enemyPickSlots" class="pick-slots-list"></div>
+        </div>
+      </div>
+
+      <!-- All Heroes Picker Section -->
+      <div class="picker-section">
+        <div class="mode-selector-bar">
+          <div>
+            <div style="font-weight:700; font-size:0.95rem;">คลังฮีโร่ MLBB ทั้งหมด (<span id="gridCountLabel">133</span> ตัว)</div>
+            <div style="font-size:0.76rem; color:var(--text-muted);">คลิกที่ช่อง S1–S5 หรือช่องแบนด้านบนเพื่อเปิด Popup เลือกตัวละคร หรือกดเลือกจากตารางนี้ได้เลย</div>
+          </div>
+          <div class="mode-buttons">
+            <button class="mode-btn mode-enemy active" data-mode="enemy" onclick="setPickMode('enemy')">
+              ⚔️ โหมดเลือกฮีโร่ศัตรู (Enemy Pick)
+            </button>
+            <button class="mode-btn mode-ban" data-mode="ban" onclick="setPickMode('ban')">
+              🚫 โหมดแบนฮีโร่ (Ban Hero)
+            </button>
+            <button class="mode-btn mode-ally" data-mode="ally" onclick="setPickMode('ally')">
+              🛡️ โหมดเลือกเข้าทีมเรา (Ally Pick)
+            </button>
+            <button class="mode-btn mode-inspect" data-mode="inspect" onclick="setPickMode('inspect')">
+              🔍 โหมดดูข้อมูลแก้ทาง (Inspect)
+            </button>
+          </div>
+        </div>
+
+        <!-- Filter & Search Controls -->
+        <div class="filter-controls-row">
+          <input
+            type="text"
+            id="heroSearchInput"
+            class="search-input"
+            placeholder="🔎 ค้นหาชื่อฮีโร่ เช่น Masha, Hirara, Carmilla, Cecilion, Lukas, Fanny..."
+            oninput="renderHeroGrid()"
+          />
+          <select id="laneFilterSelect" class="select-ctrl" onchange="renderHeroGrid()">
+            <option value="ALL">🗺️ ทุกเลน (All Lanes)</option>
+            <option value="EXP Lane">⚔️ EXP Lane</option>
+            <option value="Jungle">🌲 Jungle (ป่า)</option>
+            <option value="Mid Lane">🔮 Mid Lane (กลาง)</option>
+            <option value="Gold Lane">🪙 Gold Lane (แครี่)</option>
+            <option value="Roam">🛡️ Roam (โรมมิ่ง)</option>
+          </select>
+          <select id="roleFilterSelect" class="select-ctrl" onchange="renderHeroGrid()">
+            <option value="ALL">🎭 ทุกสายอาชีพ (All Roles)</option>
+            <option value="Tank">Tank (แทงค์)</option>
+            <option value="Fighter">Fighter (ไฟต์เตอร์)</option>
+            <option value="Assassin">Assassin (แอสซาซิน)</option>
+            <option value="Mage">Mage (เมจ)</option>
+            <option value="Marksman">Marksman (แครี่)</option>
+            <option value="Support">Support (ซัพพอร์ต)</option>
+          </select>
+          <select id="tierFilterSelect" class="select-ctrl" onchange="renderHeroGrid()">
+            <option value="ALL">🏆 ทุกระดับ Meta (All Tiers)</option>
+            <option value="SS">Tier SS (God Meta)</option>
+            <option value="S">Tier S (Strong Meta)</option>
+            <option value="A">Tier A (Balanced / Counter)</option>
+            <option value="B">Tier B (Situational)</option>
+            <option value="C">Tier C (Pocket Pick)</option>
+          </select>
+          <select id="sortSelect" class="select-ctrl" onchange="renderHeroGrid()">
+            <option value="counter">⚡ เรียงตามคะแนนแนะนำปัจจุบัน</option>
+            <option value="meta">🔥 เรียงตามความแรง Meta</option>
+            <option value="ban">🚫 เรียงตามอัตราโดนแบน (Ban Rate)</option>
+            <option value="win">📈 เรียงตามอัตราชนะ (Win Rate)</option>
+            <option value="name">🔤 เรียงตามชื่อ (A - Z)</option>
+          </select>
+        </div>
+
+        <!-- Hero Cards Grid -->
+        <div id="heroesGrid" class="heroes-grid"></div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 2: META COMBOS HUB (NEW IN V2!) ==================== -->
+    <section id="tab-combos" class="tab-panel">
+      <div class="ban-board" style="margin-bottom:1rem;">
+        <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:0.75rem;">
+          <div>
+            <h2 style="font-size:1.18rem; color:#7dd3fc;">
+              ⚡ คลังคอมโบ Meta &amp; แผนจัดทีม 5 คน (Duo / Trio / 5-Man Synergy Lineups)
+            </h2>
+            <p style="font-size:0.8rem; color:var(--text-muted);">
+              รวมคอมโบยอดฮิตระดับ Mythical Glory และ MPL ที่ใช้ไต่แรงก์และแก้ทางศัตรู • กดปุ่ม <strong>"⚡ นำคอมโบนี้ลงดราฟต์ทีมเรา"</strong> เพื่อนำไปใช้ในกระดานดราฟต์ได้ทันที!
+            </p>
+          </div>
+          <div class="lane-filter-pills" id="comboFilterPills">
+            <button class="lane-pill active" data-ctype="ALL" onclick="setComboHubFilter('ALL')">🔥 ทั้งหมด (23 คอมโบ)</button>
+            <button class="lane-pill" data-ctype="duo" onclick="setComboHubFilter('duo')">👥 คู่หูดูโอ้ 2 คน (Duo Combos)</button>
+            <button class="lane-pill" data-ctype="trio" onclick="setComboHubFilter('trio')">🔱 3 ประสานคุมเกม (Trio Cores)</button>
+            <button class="lane-pill" data-ctype="squad" onclick="setComboHubFilter('squad')">🏆 แผนจัดทีม 5 คน (5-Man Squads)</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="combosHubContainer" class="combos-hub-grid"></div>
+    </section>
+
+    <!-- ==================== TAB 3: CURRENT META TIER LIST ==================== -->
+    <section id="tab-meta" class="tab-panel">
+      <div class="ban-board" style="margin-bottom:1rem;">
+        <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:0.75rem;">
+          <div>
+            <h2 style="font-size:1.15rem; color:var(--accent-gold-light);">🔥 ตารางจัดอันดับ Meta ปัจจุบัน (Mythical Glory+ Live Tier List)</h2>
+            <p style="font-size:0.8rem; color:var(--text-muted);">
+              คำนวณจากสถิติจริงของเซิร์ฟเวอร์หลัก (Win Rate + Ban Rate + Pick Rate ในแรงก์ Mythical Glory) • คลิกที่ฮีโร่ตัวใดก็ได้เพื่อดูตัวแก้ทางและคู่หูคอมโบ
+            </p>
+          </div>
+          <div class="lane-filter-pills" id="metaTabLanePills">
+            <button class="lane-pill active" data-mlane="ALL" onclick="setMetaTabLane('ALL')">ทุกเลน (All Lanes)</button>
+            <button class="lane-pill" data-mlane="EXP Lane" onclick="setMetaTabLane('EXP Lane')">EXP Lane</button>
+            <button class="lane-pill" data-mlane="Jungle" onclick="setMetaTabLane('Jungle')">Jungle</button>
+            <button class="lane-pill" data-mlane="Mid Lane" onclick="setMetaTabLane('Mid Lane')">Mid Lane</button>
+            <button class="lane-pill" data-mlane="Gold Lane" onclick="setMetaTabLane('Gold Lane')">Gold Lane</button>
+            <button class="lane-pill" data-mlane="Roam" onclick="setMetaTabLane('Roam')">Roam</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="tierListContainer" class="tier-list-section"></div>
+    </section>
+
+    <!-- ==================== TAB 4: 1v1 COUNTER & SYNERGY ENCYCLOPEDIA ==================== -->
+    <section id="tab-lookup" class="tab-panel">
+      <div class="ban-board">
+        <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:0.75rem; margin-bottom:0.85rem;">
+          <div>
+            <h2 style="font-size:1.15rem; color:var(--accent-gold-light);">🔍 ค้นหาตัวแก้ทาง &amp; คู่หูคอมโบรายตัว (1v1 Counter &amp; Synergy)</h2>
+            <p style="font-size:0.8rem; color:var(--text-muted);">
+              เลือกฮีโร่เพื่อดูว่าแพ้ทางใคร ชนะทางใคร อยู่ใรชุด Meta Combo ไหนบ้าง และต้องออกไอเทมอะไรสู้
+            </p>
+          </div>
+          <input
+            type="text"
+            id="lookupSearchInput"
+            class="search-input"
+            style="max-width:340px;"
+            placeholder="🔎 พิมพ์ชื่อฮีโร่เพื่อดูข้อมูล..."
+            oninput="renderLookupQuickBar()"
+          />
+        </div>
+        <div id="lookupQuickBar" style="display:flex; gap:0.45rem; overflow-x:auto; padding-bottom:0.5rem;"></div>
+      </div>
+
+      <div id="lookupDetailContainer"></div>
+    </section>
+  </main>
+
+  <!-- Slot Hero Picker Popup Modal (for Ban / Ally Pick / Enemy Pick slots) -->
+  <div id="slotPickerModal" class="modal-backdrop" onclick="if(event.target===this) closeSlotPickerModal()">
+    <div class="modal-card slot-picker-modal-card">
+      <div class="slot-picker-header">
+        <div class="slot-picker-title-wrap">
+          <div id="slotPickerBadge" class="slot-picker-badge">🚫 BAN SLOT</div>
+          <div>
+            <h2 id="slotPickerTitle" style="font-size:1.2rem;">เลือกฮีโร่ลงในช่อง</h2>
+            <p id="slotPickerSubtitle" style="font-size:0.78rem; color:var(--text-muted);">คลิกที่ฮีโร่ด้านล่างเพื่อเลือกใส่ในตำแหน่งนี้ทันที</p>
+          </div>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+          <button id="slotPickerClearBtn" class="btn btn-reset" style="display:none;" onclick="clearCurrentPickerSlot()">
+            🗑️ ล้างช่องนี้
+          </button>
+          <button id="slotPickerInfoBtn" class="btn" style="display:none;" onclick="inspectCurrentPickerSlotHero()">
+            ℹ️ ดูข้อมูลตัวนี้
+          </button>
+          <button class="modal-close" onclick="closeSlotPickerModal()" title="ปิดหน้าต่าง (Esc)">✕</button>
+        </div>
+      </div>
+
+      <!-- Quick Top Suggestions inside Popup (Top Bans, Top Counters, & Meta Combo Partners!) -->
+      <div id="slotPickerQuickRecommend" class="slot-picker-quick-rec"></div>
+
+      <!-- Search & Lane/Role Filter Bar inside Popup -->
+      <div class="slot-picker-controls">
+        <input
+          type="text"
+          id="slotPickerSearch"
+          class="search-input"
+          placeholder="🔎 พิมพ์ค้นหาชื่อฮีโร่ เช่น Masha, Hirara, Carmilla, Cecilion, Fanny..."
+          oninput="renderSlotPickerGrid()"
+        />
+        <select id="slotPickerRole" class="select-ctrl" onchange="renderSlotPickerGrid()">
+          <option value="ALL">🎭 ทุกสายอาชีพ</option>
+          <option value="Tank">Tank (แทงค์)</option>
+          <option value="Fighter">Fighter (ไฟต์เตอร์)</option>
+          <option value="Assassin">Assassin (แอสซาซิน)</option>
+          <option value="Mage">Mage (เมจ)</option>
+          <option value="Marksman">Marksman (แครี่)</option>
+          <option value="Support">Support (ซัพพอร์ต)</option>
+        </select>
+        <select id="slotPickerSort" class="select-ctrl" onchange="renderSlotPickerGrid()">
+          <option value="smart">✨ แนะนำตามตำแหน่งนี้ (Counter + Combo)</option>
+          <option value="counter">⚡ คะแนนแก้ทางศัตรู</option>
+          <option value="combo">🔗 คะแนนเข้าขาคอมโบทีมเรา</option>
+          <option value="ban">🚫 อัตราโดนแบนสูงสุด (Ban Rate)</option>
+          <option value="meta">🔥 ความแรง Meta (Mythical Glory)</option>
+          <option value="win">📈 อัตราชนะสูงสุด (Win Rate)</option>
+          <option value="name">🔤 ชื่อฮีโร่ (A - Z)</option>
+        </select>
+      </div>
+
+      <!-- Lane Filter Pills inside Popup -->
+      <div id="slotPickerLanePills" class="lane-filter-pills" style="margin-bottom:0.75rem;">
+        <button class="lane-pill active" data-slane="ALL" onclick="setSlotPickerLane('ALL')">🗺️ ทุกเลน (All)</button>
+        <button class="lane-pill" data-slane="EXP Lane" onclick="setSlotPickerLane('EXP Lane')">⚔️ EXP Lane</button>
+        <button class="lane-pill" data-slane="Jungle" onclick="setSlotPickerLane('Jungle')">🌲 Jungle (ป่า)</button>
+        <button class="lane-pill" data-slane="Mid Lane" onclick="setSlotPickerLane('Mid Lane')">🔮 Mid Lane (กลาง)</button>
+        <button class="lane-pill" data-slane="Gold Lane" onclick="setSlotPickerLane('Gold Lane')">🪙 Gold Lane (แครี่)</button>
+        <button class="lane-pill" data-slane="Roam" onclick="setSlotPickerLane('Roam')">🛡️ Roam (โรมมิ่ง)</button>
+      </div>
+
+      <!-- Popup Hero Grid -->
+      <div id="slotPickerGrid" class="slot-picker-grid"></div>
+    </div>
+  </div>
+
+  <!-- Hero Dossier Modal -->
+  <div id="heroModal" class="modal-backdrop" onclick="if(event.target===this) closeHeroModal()">
+    <div id="heroModalContent" class="modal-card"></div>
+  </div>
+
+  <!-- Counter Items & Battle Spells Advisor Modal -->
+  <div id="counterGearModal" class="modal-backdrop" onclick="if(event.target===this) closeCounterGearModal()">
+    <div id="counterGearModalContent" class="modal-card counter-gear-modal-card"></div>
+  </div>
+
+  <!-- Battle Spell Selector / Counter Spell Picker Modal -->
+  <div id="spellPickerModal" class="modal-backdrop" onclick="if(event.target===this) closeSpellPickerModal()">
+    <div id="spellPickerModalContent" class="modal-card spell-picker-modal-card"></div>
+  </div>
+
+  <!-- Hero Lane / Role Switcher Modal -->
+  <div id="lanePickerModal" class="modal-backdrop" onclick="if(event.target===this) closeLanePickerModal()">
+    <div id="lanePickerModalContent" class="modal-card spell-picker-modal-card"></div>
+  </div>
+
+  <script src="data/heroes-data.js"></script>
+  <script src="data/combos-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
