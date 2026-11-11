@@ -1407,6 +1407,25 @@ function analyzeTeamLanes(heroIds, side = null) {
   return { filledLanes, missingLanes };
 }
 
+// Helper: Check if a hero is eligible for ban recommendation based on enemy picks.
+// If the enemy has already picked a role/position (e.g. Jungle), we do NOT recommend banning that position.
+function isHeroBanEligibleAgainstEnemy(hero, enemyFilledLanes) {
+  if (!enemyFilledLanes || enemyFilledLanes.size === 0) return true;
+
+  // 1. If hero's primary lane is already taken by the enemy team, do not recommend banning
+  const primaryLane = hero.lanes[0];
+  if (primaryLane && enemyFilledLanes.has(primaryLane)) {
+    return false;
+  }
+
+  // 2. If ALL of hero's playable lanes are already filled in enemy team, do not recommend
+  if (hero.lanes && hero.lanes.length > 0 && hero.lanes.every(l => enemyFilledLanes.has(l))) {
+    return false;
+  }
+
+  return true;
+}
+
 // Helper: Find Pro Meta Combos involving a candidate hero & current allies
 function findMatchingMetaCombosForCandidate(candidateId, pickedAllyIds) {
   const matches = [];
@@ -1736,17 +1755,36 @@ function renderBanBoard() {
   const bannedCount = state.bans.filter(Boolean).length;
   document.getElementById('banCountBadge').textContent = `แบนไปแล้ว ${bannedCount} / 10 ตัว`;
 
-  const topBanCandidates = [...HEROES]
-    .filter(h => getHeroStatus(h.id) === 'AVAILABLE')
+  const enemyLaneAnalysis = analyzeTeamLanes(state.enemyPicks, 'enemy');
+  const enemyFilledLanes = enemyLaneAnalysis.filledLanes;
+
+  let banCandidates = [...HEROES].filter(h => getHeroStatus(h.id) === 'AVAILABLE');
+  const hasEnemyFilter = enemyFilledLanes.size > 0 && enemyFilledLanes.size < 5;
+
+  if (hasEnemyFilter) {
+    banCandidates = banCandidates.filter(h => isHeroBanEligibleAgainstEnemy(h, enemyFilledLanes));
+  }
+
+  const topBanCandidates = banCandidates
     .sort((a, b) => b.stats.banRate - a.stats.banRate)
     .slice(0, 7);
 
+  let labelHtml = `<span class="ban-suggest-label">🔥 ตัวน่าแบนที่สุดตอนนี้ (คลิกเพื่อแบน):</span>`;
+  if (hasEnemyFilter) {
+    const filledText = [...enemyFilledLanes].map(l => LANE_SHORT_LABEL[l] || l).join(', ');
+    const missingText = enemyLaneAnalysis.missingLanes.map(l => LANE_SHORT_LABEL[l] || l).join(', ');
+    labelHtml = `<span class="ban-suggest-label" title="ศัตรูเลือกตำแหน่ง ${filledText} แล้ว จึงแนะนำเฉพาะตำแหน่งที่ศัตรูยังขาด">🎯 แนะนำแบนตำแหน่งที่ศัตรูยังขาด (${missingText}) • ข้าม ${filledText} ที่ศัตรูเลือกแล้ว:</span>`;
+  } else if (enemyFilledLanes.size >= 5) {
+    labelHtml = `<span class="ban-suggest-label">✓ ศัตรูเลือกครบ 5 ตำแหน่งแล้ว:</span>`;
+  }
+
   const suggestHtml = [
-    `<span class="ban-suggest-label">🔥 ตัวน่าแบนที่สุดตอนนี้ (คลิกเพื่อแบน):</span>`,
+    labelHtml,
     ...topBanCandidates.map(h => `
-      <span class="ban-chip" onclick="quickAssignHero(${h.id}, 'ban')" title="คลิกเพื่อแบน ${h.name} (อัตราแบน ${h.stats.banRate}%)">
+      <span class="ban-chip" onclick="quickAssignHero(${h.id}, 'ban')" title="คลิกเพื่อแบน ${h.name} (${h.lanes[0] || ''} • อัตราแบน ${h.stats.banRate}%)">
         <img src="${h.head}" alt="${h.name}" loading="lazy" />
         <span>${h.name}</span>
+        <span style="font-size:0.65rem; color:#7dd3fc; margin-left:2px; font-weight:600;">[${LANE_SHORT_LABEL[h.lanes[0]] || h.lanes[0]}]</span>
         <span class="br-val">${h.stats.banRate}%</span>
       </span>
     `)
@@ -2448,8 +2486,18 @@ function setRecLaneFilter(lane) {
 }
 
 function autoBanTopMeta() {
-  const topBanned = [...HEROES]
-    .filter(h => !state.allyPicks.includes(h.id) && !state.enemyPicks.includes(h.id))
+  const enemyLaneAnalysis = analyzeTeamLanes(state.enemyPicks, 'enemy');
+  const enemyFilledLanes = enemyLaneAnalysis.filledLanes;
+
+  let candidates = [...HEROES]
+    .filter(h => !state.allyPicks.includes(h.id) && !state.enemyPicks.includes(h.id));
+
+  // If enemy has chosen positions, avoid banning those positions and focus on missing positions
+  if (enemyFilledLanes.size > 0 && enemyFilledLanes.size < 5) {
+    candidates = candidates.filter(h => isHeroBanEligibleAgainstEnemy(h, enemyFilledLanes));
+  }
+
+  const topBanned = candidates
     .sort((a, b) => b.stats.banRate - a.stats.banRate)
     .slice(0, 10);
 
@@ -2934,21 +2982,41 @@ function renderSlotPickerQuickRecommend() {
   const quickBox = document.getElementById('slotPickerQuickRecommend');
 
   if (type === 'ban') {
-    const topBans = [...HEROES]
-      .filter(h => getHeroStatus(h.id) === 'AVAILABLE')
+    const enemyLaneAnalysis = analyzeTeamLanes(state.enemyPicks, 'enemy');
+    const enemyFilledLanes = enemyLaneAnalysis.filledLanes;
+
+    let eligibleBans = [...HEROES].filter(h => getHeroStatus(h.id) === 'AVAILABLE');
+    const hasEnemyFilter = enemyFilledLanes.size > 0 && enemyFilledLanes.size < 5;
+
+    if (hasEnemyFilter) {
+      eligibleBans = eligibleBans.filter(h => isHeroBanEligibleAgainstEnemy(h, enemyFilledLanes));
+    }
+
+    const topBans = eligibleBans
       .sort((a, b) => b.stats.banRate - a.stats.banRate)
       .slice(0, 8);
 
+    const filledText = [...enemyFilledLanes].map(l => LANE_SHORT_LABEL[l] || l).join(', ');
+    const missingText = enemyLaneAnalysis.missingLanes.map(l => LANE_SHORT_LABEL[l] || l).join(', ');
+
+    const titleText = hasEnemyFilter
+      ? `🎯 แนะนำแบนตำแหน่งที่ศัตรูยังขาด (${missingText}) — ข้าม ${filledText} ที่ศัตรูเลือกแล้ว:`
+      : `🔥 แนะนำตัวน่าแบนที่สุดใน Meta ตอนนี้ (คลิกเพื่อแบนลงช่องนี้ทันที):`;
+
     quickBox.innerHTML = `
       <div style="font-size:0.8rem; font-weight:600; color:#e9d5ff;">
-        🔥 แนะนำตัวน่าแบนที่สุดใน Meta ตอนนี้ (คลิกเพื่อแบนลงช่องนี้ทันที):
+        ${titleText}
       </div>
       <div class="slot-picker-quick-list">
         ${topBans.map(h => `
           <div class="slot-quick-card" style="border-color:rgba(168,85,247,0.45);" onclick="pickHeroForModalSlot(${h.id})">
             <img src="${h.head}" alt="${h.name}" />
             <div>
-              <div style="font-size:0.82rem; font-weight:700;">${h.name} <span class="tier-badge tier-${h.tier}">${h.tier}</span></div>
+              <div style="font-size:0.82rem; font-weight:700;">
+                ${h.name}
+                <span style="font-size:0.7rem; color:#7dd3fc; margin-left:3px; font-weight:600;">[${LANE_SHORT_LABEL[h.lanes[0]] || h.lanes[0]}]</span>
+                <span class="tier-badge tier-${h.tier}">${h.tier}</span>
+              </div>
               <div style="font-size:0.7rem; color:#fda4af;">Ban Rate ${h.stats.banRate}% • WR ${h.stats.winRate}%</div>
             </div>
           </div>
@@ -3023,6 +3091,10 @@ function renderSlotPickerGrid() {
       : []
   );
 
+  const enemyLaneAnalysis = analyzeTeamLanes(state.enemyPicks, 'enemy');
+  const enemyFilledLanes = enemyLaneAnalysis.filledLanes;
+  const hasEnemyFilter = enemyFilledLanes.size > 0 && enemyFilledLanes.size < 5;
+
   let list = HEROES.filter(h => {
     if (search && !h.name.toLowerCase().includes(search)) return false;
     if (lane !== 'ALL' && !h.lanes.includes(lane)) return false;
@@ -3036,7 +3108,14 @@ function renderSlotPickerGrid() {
     if (availA !== availB) return availB - availA;
 
     if (sortMode === 'smart') {
-      if (type === 'ban') return b.stats.banRate - a.stats.banRate;
+      if (type === 'ban') {
+        if (hasEnemyFilter) {
+          const eligibleA = isHeroBanEligibleAgainstEnemy(a, enemyFilledLanes) ? 1 : 0;
+          const eligibleB = isHeroBanEligibleAgainstEnemy(b, enemyFilledLanes) ? 1 : 0;
+          if (eligibleA !== eligibleB) return eligibleB - eligibleA;
+        }
+        return b.stats.banRate - a.stats.banRate;
+      }
       if (type === 'ally') {
         const sA = recMap.get(a.id)?.totalScore ?? 0;
         const sB = recMap.get(b.id)?.totalScore ?? 0;
@@ -3069,7 +3148,16 @@ function renderSlotPickerGrid() {
     else if (status === 'ENEMY') statusBadge = `<div class="status-overlay-badge" style="color:#fb7185;">⚔️ ศัตรู</div>`;
 
     let subMetric = `WR ${h.stats.winRate}%`;
-    if (type === 'ban') subMetric = `BR ${h.stats.banRate}%`;
+    let banSkipBadge = '';
+    if (type === 'ban') {
+      const isEligible = isHeroBanEligibleAgainstEnemy(h, enemyFilledLanes);
+      if (hasEnemyFilter && !isEligible) {
+        subMetric = `ศัตรูมี ${LANE_SHORT_LABEL[h.lanes[0]] || h.lanes[0]} แล้ว`;
+        banSkipBadge = `<span class="counter-tag-corner" style="background:#475569; color:#cbd5e1; font-size:0.58rem;">ข้ามแบน</span>`;
+      } else {
+        subMetric = `BR ${h.stats.banRate}%`;
+      }
+    }
     else if (type === 'ally' && hasCombo) subMetric = `⚡ คู่หูคอมโบ`;
     else if (type === 'ally' && recInfo?.counteredTargets?.length > 0) subMetric = `ชนะ ${recInfo.counteredTargets[0].enemyName}`;
 
@@ -3079,6 +3167,7 @@ function renderSlotPickerGrid() {
         onclick="${isUnavailable ? '' : `pickHeroForModalSlot(${h.id})`}"
       >
         <span class="tier-corner tier-${h.tier}">${h.tier}</span>
+        ${banSkipBadge}
         ${hasCombo
           ? `<span class="counter-tag-corner" style="background:#38bdf8;">⚡ คอมโบ</span>`
           : (isCounter ? `<span class="counter-tag-corner">⚡ แก้ทาง</span>` : '')}
