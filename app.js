@@ -1756,14 +1756,13 @@ function calculateRecommendations() {
     const laneBonus = fillsNeededLane ? 12 : 0;
     const multiCounterBonus = counteredTargets.length >= 2 ? (counteredTargets.length - 1) * 16 : 0;
 
-    // Direct Tier Meta Bonus: Balanced (SS +20, S +12, A +5) so direct counter-picks still win
-    const tierBonus = candidate.tier === 'SS' ? 20 : (candidate.tier === 'S' ? 12 : (candidate.tier === 'A' ? 5 : 0));
+    // Direct Tier Meta Bonus: Exact +26 for SS as shown in screenshot
+    const tierBonus = candidate.tier === 'SS' ? 26 : (candidate.tier === 'S' ? 14 : (candidate.tier === 'A' ? 5 : 0));
 
-    // Balanced SS Meta Bonus (respects counters without overwhelming them)
+    // Balanced SS Meta Bonus
     let ssExtraBonus = 0;
     if (candidate.tier === 'SS') {
-      if (counteredTargets.length > 0) ssExtraBonus += 8; // Small bonus if SS hero counters an enemy
-      if (pickedAllies.length === 0) ssExtraBonus += 6; // Moderate first pick priority
+      if (counteredTargets.length > 0) ssExtraBonus += 8; // Bonus if SS hero directly counters an enemy
     }
 
     // Competitive Tournament Pro Meta Check (MPL / M-Series / MSC)
@@ -2288,7 +2287,7 @@ function renderRecommendations() {
         reasonLines.push(`• <strong style="color:#38bdf8;">🏆 ตัวแข่ง Pro Meta:</strong> ได้รับความนิยมและผ่านการใช้งานจริงในทัวร์นาเมนต์ระดับอาชีพ (MPL / M-Series / MSC)`);
       }
       if (h.tier === 'SS') {
-        const totalSsScore = (item.tierBonus || 80) + (item.ssExtraBonus || 0);
+        const totalSsScore = (item.tierBonus || 26) + (item.ssExtraBonus || 0);
         reasonLines.push(`• <strong style="color:#fde047; font-size:0.84rem;">👑 SS GOD TIER META (+${totalSsScore} คะแนน):</strong> ฮีโร่อันดับ 1 เมต้าที่เก่งและโกงที่สุดในแพตช์ปัจจุบัน (WR ${h.stats.winRate}% / BR ${h.stats.banRate}% ใน Mythical Glory+) ชิงหยิบทันทีเพื่อความได้เปรียบสูงสุด!`);
         if (item.counteredTargets.length > 0) {
           reasonLines.push(`• <strong style="color:#f87171;">⚔️ SS Meta Counter (+8 คะแนน):</strong> ตัว SS ตัวนี้ยังชนะทาง ${item.counteredTargets.map(t => t.enemyName).join(', ')} โดยตรง!`);

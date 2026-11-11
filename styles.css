@@ -43,7 +43,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Header (Compact for Chrome Zoom 100) */
+/* Header */
 .top-header {
   position: sticky;
   top: 0;
@@ -51,13 +51,12 @@ body {
   background: rgba(7, 11, 20, 0.92);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border-gold);
-  padding: 0.35rem 0.85rem;
-  min-height: 44px;
+  padding: 0.75rem 1.25rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 .brand-wrap {
@@ -67,36 +66,36 @@ body {
 }
 
 .brand-emblem {
-  width: 32px;
-  height: 32px;
-  border-radius: 7px;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
   background: linear-gradient(135deg, #f59e0b, #b45309);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Orbitron', sans-serif;
   font-weight: 800;
-  font-size: 0.92rem;
+  font-size: 1.1rem;
   color: #070b14;
-  box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.45);
 }
 
 .brand-title {
   font-family: 'Orbitron', 'Kanit', sans-serif;
-  font-size: 1.02rem;
+  font-size: 1.2rem;
   font-weight: 700;
   background: linear-gradient(90deg, #fff, #fcd34d);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.5px;
 }
 
 .brand-sub {
-  font-size: 0.7rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
 }
 
 .live-dot {
@@ -122,15 +121,15 @@ body {
   border: none;
   color: var(--text-muted);
   font-family: inherit;
-  font-size: 0.8rem;
+  font-size: 0.88rem;
   font-weight: 500;
-  padding: 0.25rem 0.65rem;
-  border-radius: 6px;
+  padding: 0.45rem 0.9rem;
+  border-radius: 7px;
   cursor: pointer;
   transition: all 0.2s;
   display: flex;
   align-items: center;
-  gap: 0.3rem;
+  gap: 0.4rem;
 }
 
 .nav-tab:hover {
@@ -205,7 +204,7 @@ body {
 .main-container {
   max-width: 1640px;
   margin: 0 auto;
-  padding: 0.4rem 0.85rem 1.5rem;
+  padding: 1rem 1.25rem 3rem;
 }
 
 .tab-panel {
@@ -219,10 +218,10 @@ body {
 .ban-board {
   background: linear-gradient(180deg, rgba(20, 30, 51, 0.9), rgba(14, 21, 38, 0.95));
   border: 1px solid rgba(168, 85, 247, 0.35);
-  border-radius: 10px;
-  padding: 0.42rem 0.75rem;
-  margin-bottom: 0.55rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  border-radius: 14px;
+  padding: 0.85rem 1.1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 .ban-header {
@@ -230,8 +229,8 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 0.45rem;
-  margin-bottom: 0.35rem;
+  gap: 0.75rem;
+  margin-bottom: 0.65rem;
 }
 
 .ban-title-group {
@@ -244,10 +243,10 @@ body {
   background: linear-gradient(135deg, #9333ea, #ef4444);
   color: #fff;
   font-weight: 700;
-  font-size: 0.72rem;
-  padding: 0.12rem 0.5rem;
-  border-radius: 16px;
-  box-shadow: 0 0 8px rgba(168, 85, 247, 0.35);
+  font-size: 0.85rem;
+  padding: 0.22rem 0.7rem;
+  border-radius: 20px;
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.4);
 }
 
 .ban-suggestions {
@@ -295,12 +294,12 @@ body {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  gap: 0.45rem;
+  gap: 1rem;
 }
 
 .ban-team-slots {
   display: flex;
-  gap: 0.3rem;
+  gap: 0.5rem;
   flex-wrap: wrap;
 }
 .ban-team-slots.enemy-bans {
@@ -317,9 +316,9 @@ body {
 }
 
 .ban-slot {
-  width: 40px;
-  height: 40px;
-  border-radius: 7px;
+  width: 54px;
+  height: 54px;
+  border-radius: 10px;
   background: rgba(7, 11, 20, 0.75);
   border: 1.5px dashed rgba(168, 85, 247, 0.4);
   position: relative;
@@ -384,9 +383,9 @@ body {
 /* Main 3-Column Draft Layout */
 .draft-arena {
   display: grid;
-  grid-template-columns: 315px 1fr 315px;
-  gap: 0.65rem;
-  margin-bottom: 0.75rem;
+  grid-template-columns: 310px 1fr 310px;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
   align-items: start;
 }
 
@@ -420,19 +419,13 @@ body {
   }
 }
 
-/* Team Column (Compact for Chrome Zoom 100) */
+/* Team Column */
 .team-column {
   background: var(--bg-panel);
-  border-radius: 11px;
-  padding: 0.55rem 0.6rem;
+  border-radius: 14px;
+  padding: 0.9rem;
   border: 1px solid var(--border-subtle);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  position: sticky;
-  top: 8px;
-  max-height: calc(100vh - 16px);
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 .team-column::-webkit-scrollbar {
@@ -458,7 +451,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.28rem;
+  margin-bottom: 0.7rem;
 }
 
 .team-col-title {
@@ -510,18 +503,18 @@ body {
 .pick-slots-list {
   display: flex;
   flex-direction: column;
-  gap: 0.32rem;
+  gap: 0.55rem;
 }
 
 .pick-slot {
   display: flex;
   align-items: flex-start;
-  gap: 0.45rem;
+  gap: 0.65rem;
   background: var(--bg-card);
   border: 1.5px solid var(--border-subtle);
-  border-radius: 8px;
-  padding: 0.3rem 0.45rem;
-  min-height: 50px;
+  border-radius: 10px;
+  padding: 0.5rem 0.65rem;
+  min-height: 66px;
   cursor: pointer;
   transition: all 0.18s;
   position: relative;
@@ -542,9 +535,9 @@ body {
 }
 
 .pick-slot-avatar {
-  width: 38px;
-  height: 38px;
-  border-radius: 7px;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
   background: rgba(7, 11, 20, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.15);
   display: flex;
@@ -552,7 +545,7 @@ body {
   justify-content: center;
   font-weight: 700;
   color: var(--text-muted);
-  font-size: 0.74rem;
+  font-size: 0.82rem;
   flex-shrink: 0;
   overflow: hidden;
   position: relative;
@@ -571,59 +564,51 @@ body {
 
 .pick-slot-name {
   font-weight: 600;
-  font-size: 0.82rem;
+  font-size: 0.92rem;
   display: flex;
   align-items: center;
-  gap: 0.3rem;
+  gap: 0.4rem;
 }
 
 .pick-slot-meta {
-  font-size: 0.65rem;
+  font-size: 0.73rem;
   color: var(--text-muted);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-top: 1px;
 }
 
 .pick-slot-counters-mini {
-  font-size: 0.64rem;
+  font-size: 0.68rem;
   color: #6ee7b7;
-  margin-top: 1px;
+  margin-top: 2px;
 }
 
 .slot-remove-btn {
   background: rgba(244, 63, 94, 0.18);
   border: 1px solid rgba(244, 63, 94, 0.4);
   color: #fda4af;
-  width: 18px;
-  height: 18px;
-  border-radius: 4px;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 0.65rem;
+  font-size: 0.75rem;
 }
 .slot-remove-btn:hover {
   background: #f43f5e;
   color: #fff;
 }
 
-/* Center Counter Engine Panel (Compact for Chrome Zoom 100) */
+/* Center Counter Engine Panel */
 .counter-center-panel {
   background: linear-gradient(180deg, rgba(20, 30, 51, 0.95), rgba(14, 21, 38, 0.98));
   border: 1px solid var(--border-gold);
-  border-radius: 11px;
-  padding: 0.6rem 0.75rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-  position: sticky;
-  top: 8px;
-  max-height: calc(100vh - 16px);
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  scrollbar-width: thin;
-  scrollbar-color: var(--accent-gold) rgba(15, 23, 42, 0.6);
+  border-radius: 14px;
+  padding: 1rem 1.15rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
 }
 
 .counter-center-panel::-webkit-scrollbar {
@@ -646,19 +631,19 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 0.4rem;
-  margin-bottom: 0.45rem;
-  padding-bottom: 0.4rem;
+  gap: 0.65rem;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.7rem;
   border-bottom: 1px solid var(--border-subtle);
 }
 
 .counter-panel-title {
-  font-size: 0.94rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--accent-gold-light);
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
 }
 
 .lane-filter-pills {
@@ -694,8 +679,8 @@ body {
 /* Recommended Counter Cards Grid (Flows within scrollable center panel) */
 .rec-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
-  gap: 0.55rem;
+  grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+  gap: 0.75rem;
   max-height: none;
   overflow-y: visible;
   padding-right: 0;
@@ -704,11 +689,11 @@ body {
 .rec-card {
   background: var(--bg-card);
   border: 1px solid rgba(16, 185, 129, 0.32);
-  border-radius: 9px;
-  padding: 0.55rem 0.65rem;
+  border-radius: 12px;
+  padding: 0.75rem;
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.5rem;
   transition: all 0.18s;
   position: relative;
 }
@@ -732,11 +717,11 @@ body {
 
 .rec-avatar-wrap {
   position: relative;
-  width: 42px;
-  height: 42px;
-  border-radius: 8px;
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
   overflow: hidden;
-  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
   flex-shrink: 0;
 }
 .rec-avatar-wrap img {
@@ -771,7 +756,7 @@ body {
 
 .rec-hero-name {
   font-weight: 700;
-  font-size: 0.88rem;
+  font-size: 1rem;
   color: #fff;
 }
 
@@ -1789,12 +1774,12 @@ body {
 
 .strategy-mode-bar {
   display: flex;
-  gap: 0.3rem;
+  gap: 0.45rem;
   flex-wrap: wrap;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.8rem;
   background: rgba(7, 11, 20, 0.65);
-  padding: 0.2rem;
-  border-radius: 8px;
+  padding: 0.35rem;
+  border-radius: 10px;
   border: 1px solid var(--border-subtle);
 }
 
@@ -2107,12 +2092,12 @@ body {
 }
 
 .spell-real-img {
-  width: 23px;
-  height: 23px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   object-fit: cover;
-  border: 1.2px solid #fcd34d;
-  box-shadow: 0 0 6px rgba(245, 158, 11, 0.35);
+  border: 1.5px solid #fcd34d;
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.45);
   flex-shrink: 0;
 }
 
@@ -2174,8 +2159,8 @@ body {
 .slot-action-pills-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.2rem;
-  margin-top: 2px;
+  gap: 0.3rem;
+  margin-top: 3px;
 }
 
 .slot-mini-action-btn {
@@ -2183,11 +2168,11 @@ body {
   border: 1px solid rgba(245, 158, 11, 0.48);
   color: #fde68a;
   font-family: inherit;
-  font-size: 0.7rem;
-  width: 21px;
-  height: 19px;
+  font-size: 0.82rem;
+  width: 26px;
+  height: 24px;
   padding: 0;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -2467,12 +2452,12 @@ body {
 
 /* Pick Slot Meta Build (Emblem + Items) */
 .slot-meta-build-box {
-  margin-top: 2.5px;
-  padding-top: 2.5px;
+  margin-top: 4px;
+  padding-top: 4px;
   border-top: 1px dashed rgba(255, 255, 255, 0.08);
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
 }
 
 .slot-emblem-row,
@@ -2483,17 +2468,17 @@ body {
 }
 
 .slot-build-tag {
-  font-size: 0.56rem;
+  font-size: 0.62rem;
   font-weight: 700;
   color: #94a3b8;
   letter-spacing: 0.2px;
-  min-width: 36px;
+  min-width: 44px;
   flex-shrink: 0;
 }
 
 .slot-emblem-main {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   object-fit: contain;
   filter: drop-shadow(0 0 3px rgba(245, 158, 11, 0.45));
   transition: transform 0.15s;
@@ -2514,8 +2499,8 @@ body {
 }
 
 .slot-talent-icon {
-  width: 13px;
-  height: 13px;
+  width: 17px;
+  height: 17px;
   object-fit: contain;
   border-radius: 50%;
   transition: transform 0.15s;
@@ -2526,9 +2511,9 @@ body {
 }
 
 .slot-talent-icon.slot-talent-core {
-  width: 14px;
-  height: 14px;
-  border: 1px solid #f59e0b;
+  width: 18px;
+  height: 18px;
+  border: 1.2px solid #f59e0b;
   box-shadow: 0 0 4px rgba(245, 158, 11, 0.4);
 }
 
@@ -2540,9 +2525,9 @@ body {
 }
 
 .slot-item-mini-img {
-  width: 17px;
-  height: 17px;
-  border-radius: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
   object-fit: cover;
   border: 1px solid rgba(255, 255, 255, 0.15);
   background: rgba(7, 11, 20, 0.9);
