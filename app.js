@@ -2839,20 +2839,22 @@ function autoBanTopMeta() {
 
 function loadDemoDraft() {
   const getId = (name) => HERO_BY_NAME.get(name.toLowerCase())?.id || null;
+  // Authentic MPL Philippines 2026 Tournament Bans (Freya, Atlas, Fanny, Paquito, Hirara, Marcel, Ling, Zhuxin, Masha, Lukas)
   state.bans = [
-    getId('Hirara'), getId('Aulus'), getId('Belerick'), getId('Gloo'), getId('Diggie'),
-    getId('Minsitthar'), null, null, null, null
+    getId('Freya'), getId('Atlas'), getId('Fanny'), getId('Paquito'), getId('Hirara'),
+    getId('Marcel'), getId('Ling'), getId('Zhuxin'), getId('Masha'), getId('Lukas')
   ];
+  // Enemy drafted authentic MPL-PH power picks: Julian (Jungle) + Terizla (EXP) + Pharsa (Mid)
   state.enemyPicks = [
-    getId('Masha'),
-    getId('Fanny'),
-    getId('Tigreal'),
+    getId('Julian'),
+    getId('Terizla'),
+    getId('Pharsa'),
     null,
     null
   ];
-  // Put Carmilla in Ally S1 so user immediately sees both Counter Recommendations AND Carmilla's Meta Combos (Cecilion / Eudora / Suyou)!
+  // Ally drafted Fredrinn (Anchor Frontliner for UBE Strategy)
   state.allyPicks = [
-    getId('Carmilla'),
+    getId('Fredrinn'),
     null,
     null,
     null,
@@ -2860,8 +2862,8 @@ function loadDemoDraft() {
   ];
   state.spellOverrides = {};
   state.laneOverrides = {};
-  state.pickMode = 'enemy';
-  state.activeSlot = { type: 'enemy', index: 3 };
+  state.pickMode = 'ally';
+  state.activeSlot = { type: 'ally', index: 1 };
   refreshAllViews();
 }
 
