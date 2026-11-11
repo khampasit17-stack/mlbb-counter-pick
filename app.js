@@ -26,20 +26,20 @@ const PRO_COMPETITIVE_HEROES = new Set([
   // EXP Lane (Pro Tournament Meta)
   'lukas', 'masha', 'paquito', 'yu zhong', 'terizla', 'ruby', 'cici', 'arlott', 
   'benedetta', 'edith', 'lapu-lapu', 'chou', 'gloo', 'uranus', 'khaleed', 'guinevere', 
-  'fredrinn', 'baxia', 'esmeralda', 'dyrroth', 'phoveus', 'thamuz', 'joy',
+  'fredrinn', 'baxia', 'esmeralda', 'dyrroth', 'phoveus', 'thamuz', 'joy', 'freya',
 
   // Jungle (Pro Tournament Meta)
   'fanny', 'ling', 'hayabusa', 'suyou', 'nolan', 'julian', 'roger', 'baxia', 
   'fredrinn', 'alpha', 'guinevere', 'lancelot', 'akai', 'barats', 'helcurt', 
-  'martis', 'joy', 'yi sun-shin', 'gusion', 'hirara',
+  'martis', 'joy', 'yi sun-shin', 'gusion', 'hirara', 'aulus',
 
   // Mid Lane (Pro Tournament Meta)
   'zhuxin', 'harith', 'valentina', 'pharsa', 'xavier', 'vexana', 'cecilion', 
-  'lylia', 'novaria', 'faramis', 'kadita', 'luo yi', 'yve', 'nana', 'lunox', 'zetian',
+  'lylia', 'novaria', 'faramis', 'kadita', 'luo yi', 'yve', 'nana', 'lunox', 'zetian', 'eudora',
 
   // Gold Lane (Pro Tournament Meta)
   'harith', 'claude', 'moskov', 'roger', 'karrie', 'brody', 'bruno', 'beatrix', 
-  'natan', 'wanwan', 'granger', 'lesley', 'irithel', 'clint', 'popol and kupa', 'obsidia',
+  'natan', 'wanwan', 'granger', 'lesley', 'irithel', 'clint', 'popol and kupa', 'obsidia', 'freya',
 
   // Roam (Pro Tournament Meta)
   'mathilda', 'tigreal', 'minotaur', 'chip', 'hylos', 'belerick', 'khufra', 
