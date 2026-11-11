@@ -612,6 +612,18 @@ const COUNTER_ITEMS_DB = [
 ];
 const COUNTER_ITEM_BY_ID = new Map(COUNTER_ITEMS_DB.map(item => [item.id, item]));
 
+
+// MLBB Movement Boots (Official Item PNGs with Full Stats)
+const BOOT_ITEMS_DB = [
+  { id: 'tough_boots', name: 'Tough Boots', thName: 'รองเท้าต้านเวท + ลดเวลา CC 30%', shortTag: '👟 ต้านเวท 22 + ลดระยะเวลาติดสตั๊น/CC 30% (เมต้าอันดับ 1)', img: 'assets/items/tough_boots.png', stats: '+40 ความเร็วเคลื่อนที่ • +22 เกราะเวท • ลดเวลาสถานะควบคุม 30%' },
+  { id: 'warrior_boots', name: 'Warrior Boots', thName: 'รองเท้าเกราะกายภาพ + ทนการโจมตีกายภาพ', shortTag: '👟 เกราะ 22 + เพิ่มเกราะกายภาพซ้อนทับเมื่อโดนโจมตี', img: 'assets/items/warrior_boots.png', stats: '+40 ความเร็วเคลื่อนที่ • +22 เกราะกายภาพ • สแต็กเกราะกายภาพ' },
+  { id: 'magic_shoes', name: 'Magic Shoes', thName: 'รองเท้าลดคูลดาวน์ 10%', shortTag: '👟 ลดคูลดาวน์ 10% ช่วยให้สแปมสกิลได้ถี่ขึ้น', img: 'assets/items/magic_shoes.png', stats: '+40 ความเร็วเคลื่อนที่ • +10% ลดคูลดาวน์' },
+  { id: 'swift_boots', name: 'Swift Boots', thName: 'รองเท้าตีเร็ว +15%', shortTag: '👟 เพิ่มความเร็วโจมตี 15% เหมาะกับแครี่ตีเร็ว', img: 'assets/items/swift_boots.png', stats: '+40 ความเร็วเคลื่อนที่ • +15% ความเร็วโจมตี' },
+  { id: 'arcane_boots', name: 'Arcane Boots', thName: 'รองเท้าเจาะเกราะเวท 10', shortTag: '👟 เจาะเกราะเวท 10 เพิ่มดาเมจสกิลเวทต้นเกมรุนแรง', img: 'assets/items/arcane_boots.png', stats: '+40 ความเร็วเคลื่อนที่ • +10 เจาะเกราะเวท' },
+  { id: 'rapid_boots', name: 'Rapid Boots', thName: 'รองเท้าวิ่งไวพิเศษ +80', shortTag: '👟 วิ่งเร็วที่สุดในเกม +80 เหมาะแก่การเดินเกม/โรมมิ่ง', img: 'assets/items/rapid_boots.png', stats: '+80 ความเร็วเคลื่อนที่' },
+  { id: 'demon_shoes', name: 'Demon Shoes', thName: 'รองเท้าฟื้นฟูมานา', shortTag: '👟 ฟื้นฟูมานาเมื่อสังหารหรือช่วยสังหาร สกิลไม่หมดหลอด', img: 'assets/items/demon_shoes.png', stats: '+40 ความเร็วเคลื่อนที่ • +10 ฟื้นฟูมานา' }
+];
+
 // Core Meta Offensive & Archetype Items (for 6-Item Hero Pro Meta Builds)
 const CORE_META_ITEMS_DB = [
   { id: 'war_axe', name: 'War Axe', thName: 'ขวานรบไฟต์เตอร์ (Spell Vamp + True Damage)', shortTag: '🪓 สแต็กเต็มทำ True Damage 10% + Spell Vamp 12%', img: 'assets/items/war_axe.png', stats: '+35 พลังโจมตี • +400 HP • +10% ลดคูลดาวน์ • +12% Spell Vamp' },
@@ -633,7 +645,8 @@ const CORE_META_ITEMS_DB = [
 ];
 const ALL_ITEMS_BY_ID = new Map([
   ...COUNTER_ITEMS_DB.map(i => [i.id, i]),
-  ...CORE_META_ITEMS_DB.map(i => [i.id, i])
+  ...CORE_META_ITEMS_DB.map(i => [i.id, i]),
+  ...BOOT_ITEMS_DB.map(i => [i.id, i])
 ]);
 
 // Return the 6-Item Pro Meta Core Build for any of the 133 Heroes (with real item images & Thai meta notes)
@@ -645,9 +658,9 @@ function getRecommendedCoreBuildForHero(hero) {
   // 1. Healer & Shield Roam Supports (Flask of the Oasis + Fleeting Time Meta)
   if (['Estes', 'Floryn', 'Rafaela', 'Angela', 'Mathilda', 'Marcel', 'Diggie'].includes(name)) {
     return {
-      title: 'เซ็ตเมต้าซัพพอร์ต (Flask of the Oasis + Fleeting Time)',
-      note: 'ออกขวดน้ำ Flask of the Oasis เด้งเกราะฉุกเฉินกันเพื่อนโดนล้วง คู่กับ Fleeting Time ลดคูลดาวน์อัลติ 30% และของตัดเลือด',
-      items: pickItems(['flask_of_the_oasis', 'fleeting_time', 'dominance_ice', 'glowing_wand', 'oracle', 'immortality'])
+      title: 'เซ็ตเมต้าซัพพอร์ต (รองเท้า + Flask of the Oasis + Fleeting Time)',
+      note: 'ออกรองเท้า Tough Boots/Magic Shoes นำ แล้วตามด้วย Flask of the Oasis เด้งเกราะฉุกเฉินกันเพื่อนโดนล้วง คู่กับ Fleeting Time ลดคูลดาวน์อัลติ 30%',
+      items: pickItems(['tough_boots', 'flask_of_the_oasis', 'fleeting_time', 'dominance_ice', 'oracle', 'immortality'])
     };
   }
 
@@ -656,13 +669,13 @@ function getRecommendedCoreBuildForHero(hero) {
     const usesFleeting = ['Tigreal', 'Atlas', 'Carmilla', 'Badang', 'Johnson', 'Minotaur', 'Kaja', 'Franco', 'Kalea'].includes(name);
     const usesGlowing = ['Hylos', 'Belerick', 'Gatotkaca', 'Baxia', 'Gloo', 'Alice'].includes(name);
     return {
-      title: 'เซ็ตเมต้าเข็มขัดสายฟ้า (Thunder Belt Stacking Raid Boss)',
-      note: 'ออก Thunder Belt ชิ้นแรกเพื่อเก็บสแต็กเกราะกายภาพและเวทถาวรตลอดเกม พร้อมทำ True Damage และสโลว์ 99% ทุก 4 วินาที',
+      title: 'เซ็ตเมต้าเข็มขัดสายฟ้า (รองเท้า + Thunder Belt Stacking Raid Boss)',
+      note: 'ออกรองเท้าต้านเวท Tough Boots ตามด้วย Thunder Belt เก็บสแต็กเกราะกายภาพและเวทถาวรตลอดเกม พร้อมทำ True Damage และสโลว์ 99%',
       items: pickItems([
+        'tough_boots',
         'thunder_belt',
         'dominance_ice',
-        usesFleeting ? 'fleeting_time' : (usesGlowing ? 'glowing_wand' : 'cursed_helmet'),
-        'athenas_shield',
+        usesFleeting ? 'fleeting_time' : (usesGlowing ? 'glowing_wand' : 'athenas_shield'),
         'blade_armor',
         'immortality'
       ])
@@ -672,52 +685,59 @@ function getRecommendedCoreBuildForHero(hero) {
   // 3. Trinity Attack-Speed Tank-Shredder Marksmen & Fighters
   if (['Karrie', 'Claude', 'Wanwan', 'Melissa', 'Obsidia', 'Sun', 'Masha', 'Argus', 'Zilong'].includes(name)) {
     return {
-      title: 'เซ็ตเมต้า 3 ดาบตีเร็วละลายแทงค์ (Trinity DHS + Malefic Gun)',
-      note: 'คอมโบ Corrosion Scythe + Demon Hunter Sword + Golden Staff ซอย % เลือดแทงค์ พร้อมปืนใหม่ Malefic Gun เพิ่มระยะยิง 15%',
-      items: pickItems(['corrosion_scythe', 'demon_hunter_sword', 'golden_staff', 'malefic_gun', 'wind_of_nature', 'rose_gold_meteor'])
+      title: 'เซ็ตเมต้า 3 ดาบตีเร็วละลายแทงค์ (รองเท้า + Trinity DHS + Malefic Gun)',
+      note: 'ออกรองเท้า Swift Boots (หรือ Tough Boots สำหรับ Claude) แล้วต่อคอมโบ Corrosion Scythe + DHS + Golden Staff ซอย % เลือดแทงค์',
+      items: pickItems([
+        name === 'Claude' ? 'tough_boots' : 'swift_boots',
+        'corrosion_scythe',
+        'demon_hunter_sword',
+        'golden_staff',
+        'wind_of_nature',
+        'malefic_gun'
+      ])
     };
   }
 
   // 4. Crit + Malefic Gun Hypercarry Marksmen
   if (['Layla', 'Miya', 'Bruno', 'Ixia', 'Moskov', 'Irithel', 'Hanabi', 'Freya', 'Aulus'].includes(name)) {
     return {
-      title: 'เซ็ตเมต้าคริติคอลระยะไกล (Malefic Gun + Rose Gold Revamp)',
-      note: 'ใช้ Malefic Gun เพิ่มระยะยิงปกติ 15% + เจาะเกราะ 30% ยืนยิงฟรีจากแนวหลัง คู่กับ Haas\'s Claws และ Rose Gold Meteor โฉมใหม่',
-      items: pickItems(['haas_claws', 'berserkers_fury', 'malefic_gun', 'sea_halberd', 'wind_of_nature', 'rose_gold_meteor'])
+      title: 'เซ็ตเมต้าคริติคอลระยะไกล (รองเท้า Swift Boots + Malefic Gun)',
+      note: 'ออกรองเท้าตีเร็ว Swift Boots แล้วตามด้วย Haas\'s Claws ดูดเลือดคริ + Berserker\'s Fury และปืน Malefic Gun ยืนยิงฟรีระยะไกล',
+      items: pickItems(['swift_boots', 'haas_claws', 'berserkers_fury', 'malefic_gun', 'wind_of_nature', 'blade_of_despair'])
     };
   }
 
-  // 4b. Popol and Kupa (Revamped Icefield Companions — Synchronized Attack Speed + Mounting Kupa)
+  // 4b. Popol and Kupa (Revamped Icefield Companions)
   if (name === 'Popol and Kupa') {
     return {
-      title: 'เซ็ตเมต้า Popol & Kupa Revamped (ตีเร็วคริติคอล + ขี่หลังหมาไล่ล่า)',
-      note: 'สกิลปรับใหม่ (Revamped): พาสซีฟเมื่อรุมตีเป้าเดียวกันกับ Kupa จะได้โบนัสตีเร็ว+วิ่งเร็ว และสกิล 2 กระโดดขี่หลัง Kupa วิ่งไล่ล่าได้ จึงออก Corrosion Scythe + คริติคอล + Malefic Gun ให้ Kupa รับผลไอเทมกัดรัวละลายทั้งคนและป้อม!',
-      items: pickItems(['corrosion_scythe', 'haas_claws', 'berserkers_fury', 'malefic_gun', 'sea_halberd', 'wind_of_nature'])
+      title: 'เซ็ตเมต้า Popol & Kupa Revamped (รองเท้า Swift Boots + ตีเร็วคริติคอล)',
+      note: 'ออกรองเท้าตีเร็ว Swift Boots คู่กับ Corrosion Scythe + คริติคอล + Malefic Gun ให้ Kupa รับผลไอเทมกัดรัวละลายทั้งคนและป้อม!',
+      items: pickItems(['swift_boots', 'corrosion_scythe', 'haas_claws', 'berserkers_fury', 'malefic_gun', 'wind_of_nature'])
     };
   }
 
   // 5. Skill-Caster / Burst Marksmen (Granger Revamp, Brody, Clint, Beatrix, Lesley, Roger, YSS)
   if (['Granger', 'Brody', 'Clint', 'Beatrix', 'Lesley', 'Roger', 'Yi Sun-shin'].includes(name)) {
     return {
-      title: 'เซ็ตเมต้าปืนใหญ่ประหาร (Sky Piercer + Hunter Strike + Malefic Gun)',
-      note: 'ใช้ Sky Piercer สั่งประหารศัตรูที่เลือดต่ำกว่า 12% ทันที คู่กับ Hunter Strike และ Malefic Gun/Endless Battle ยิงทะลุเกราะ',
-      items: pickItems(['sky_piercer', 'hunter_strike', 'endless_battle', 'malefic_gun', 'blade_of_despair', 'rose_gold_meteor'])
+      title: 'เซ็ตเมต้าปืนใหญ่ประหาร (รองเท้า + Sky Piercer + Hunter Strike)',
+      note: 'ออกรองเท้า Tough Boots/Warrior Boots ตามด้วย Sky Piercer สั่งประหารเลือดต่ำกว่า 12% คู่กับ Hunter Strike และ Endless Battle',
+      items: pickItems(['tough_boots', 'sky_piercer', 'hunter_strike', 'endless_battle', 'malefic_gun', 'blade_of_despair'])
     };
   }
 
-  // 6. Starlight / Attack-Speed / Sustain Hybrid Mages (Harith, Kimmy, Natan, Alice, Esmeralda, Guinevere, Silvanna, Zhask, Chang'e)
+  // 6. Starlight / Attack-Speed / Sustain Hybrid Mages (Harith, Kimmy, Natan, Alice, Esmeralda, Guinevere, Silvanna, Zhask, Chang\'e)
   if (['Harith', 'Kimmy', 'Natan', 'Alice', 'Esmeralda', 'Guinevere', 'Silvanna', 'Zhask', 'Chang\'e'].includes(name)) {
     const isBasicAtkMage = ['Harith', 'Kimmy', 'Natan', 'Zhask', 'Chang\'e'].includes(name);
     return {
-      title: 'เซ็ตเมต้าเวทไฮบริดดูดเลือด & ตีต่อเนื่อง (Concentrated Energy + Glowing Wand)',
-      note: 'เน้นสแปมสกิลและดูดเลือดเวทด้วย Concentrated Energy คู่กับ Glowing Wand ตัดเลือด 50% และ Holy Crystal',
+      title: 'เซ็ตเมต้าเวทไฮบริดดูดเลือด & ตีต่อเนื่อง (รองเท้า + Concentrated Energy)',
+      note: 'ออกรองเท้า Magic Shoes/Swift Boots คู่กับ Concentrated Energy ดูดเลือดเวท และ Holy Crystal ขยายพลังเวทสูงสุด',
       items: pickItems([
+        isBasicAtkMage ? 'swift_boots' : 'magic_shoes',
         isBasicAtkMage ? 'feather_of_heaven' : 'enchanted_talisman',
         'concentrated_energy',
-        'glowing_wand',
         'holy_crystal',
         'divine_glaive',
-        'blood_wings'
+        'winter_crown'
       ])
     };
   }
@@ -725,20 +745,20 @@ function getRecommendedCoreBuildForHero(hero) {
   // 7. Magic Assassins & Dive Burst Mages (Gusion, Aamon, Karina, Harley, Joy, Julian, Selena, Kadita)
   if (['Gusion', 'Aamon', 'Karina', 'Harley', 'Joy', 'Julian', 'Selena', 'Kadita'].includes(name)) {
     return {
-      title: 'เซ็ตเมต้านักฆ่าเวทประหาร (Sky Piercer + Genius Wand + Holy Crystal)',
-      note: 'ออก Sky Piercer เก็บสแต็กประหารศัตรูทันทีที่เลือดต่ำกว่า 12% คู่กับ Genius Wand เจาะเกราะเวท และ Winter Crown กดแช่แข็งหลบสวน',
-      items: pickItems(['sky_piercer', 'genius_wand', 'glowing_wand', 'holy_crystal', 'divine_glaive', 'winter_crown'])
+      title: 'เซ็ตเมต้านักฆ่าเวทประหาร (รองเท้า Arcane Boots + Sky Piercer + Genius Wand)',
+      note: 'ออกรองเท้าเจาะเกราะ Arcane Boots ตามด้วย Sky Piercer เก็บสแต็กประหารศัตรูทันที และ Winter Crown แช่แข็งหลบสวน',
+      items: pickItems(['arcane_boots', 'sky_piercer', 'genius_wand', 'holy_crystal', 'divine_glaive', 'winter_crown'])
     };
   }
 
   // 8. Control & Artillery Mid Lane Mages (Zhuxin, Zetian, Aurora, Eudora, Cecilion, Vexana, Xavier, Yve, Valir, Luo Yi, Valentina, Novaria, Pharsa, Odette, Nana, Lylia, Gord, Vale, Kagura, Lunox, Cyclops, Faramis)
   if (hero.roles.includes('Mage')) {
-    const isControlBurn = ['Zhuxin', 'Yve', 'Valir', 'Lylia', 'Gord', 'Odette', 'Vexana', 'Aurora', 'Zetian'].includes(name);
+    const isManaHeavy = ['Zhuxin', 'Cecilion', 'Novaria'].includes(name);
     return {
-      title: 'เซ็ตเมต้าเมจเผา %HP & โคมผีเสื้อ (Glowing Wand + Wishing Lantern)',
-      note: 'คอมโบเมต้าเมจยุคใหม่: Glowing Wand เผาตัดเลือด 50% + Wishing Lantern ปล่อยผีเสื้อระเบิด 8% Max HP ละลายได้ทั้งตัวบางและแทงค์',
+      title: 'เซ็ตเมต้าเมจเผา %HP & โคมผีเสื้อ (รองเท้า + Glowing Wand + Wishing Lantern)',
+      note: 'ออกรองเท้า Demon Shoes (หรือ Arcane Boots) แล้วตามด้วย Glowing Wand เผาตัดเลือด + Wishing Lantern ผีเสื้อระเบิด % HP',
       items: pickItems([
-        isControlBurn ? 'enchanted_talisman' : 'lightning_truncheon',
+        isManaHeavy ? 'demon_shoes' : 'arcane_boots',
         'glowing_wand',
         'wishing_lantern',
         'holy_crystal',
@@ -751,21 +771,19 @@ function getRecommendedCoreBuildForHero(hero) {
   // 9. Physical Burst Assassins (Fanny, Hayabusa, Ling, Nolan, Suyou, Hirara, Saber, Lancelot, Helcurt, Natalia, Benedetta, Paquito, Yin, Dyrroth, Chou)
   if (hero.roles.includes('Assassin') || ['Suyou', 'Hirara', 'Paquito', 'Yin', 'Dyrroth', 'Chou'].includes(name)) {
     return {
-      title: 'เซ็ตเมต้าแอสซาซินล้วงประหาร (Sky Piercer + Heptaseas + Hunter Strike)',
-      note: 'คอมโบเจาะเกราะล้วงแนวหลังชุดเดียวหาย พร้อม Sky Piercer ประหารทันทีไม่ให้แครี่กดดูดเลือดหรือกดแช่แข็งทัน',
-      items: pickItems(['sky_piercer', 'blade_of_the_heptaseas', 'hunter_strike', 'malefic_roar', 'blade_of_despair', 'rose_gold_meteor'])
+      title: 'เซ็ตเมต้าแอสซาซินล้วงประหาร (รองเท้า Tough Boots + Sky Piercer + Heptaseas)',
+      note: 'ออกรองเท้า Tough Boots กัน CC แล้วตามด้วย Sky Piercer + Heptaseas + Hunter Strike เจาะเกราะล้วงแนวหลังชุดเดียวหาย',
+      items: pickItems(['tough_boots', 'sky_piercer', 'blade_of_the_heptaseas', 'hunter_strike', 'malefic_roar', 'blade_of_despair'])
     };
   }
 
   // 10. Sustain & Teamfight EXP Bruisers (Lukas, Ruby, Yu Zhong, Alpha, Terizla, Lapu-Lapu, Cici, Arlott, X.Borg, Thamuz, Phoveus, Sora, Fredrinn, Balmond, Alucard, Leomord, Khaleed, Hilda, Minsitthar, Martis, Aldous, Bane, Uranus)
   return {
-    title: 'เซ็ตเมต้าไฟต์เตอร์ยืนชนอมตะ (War Axe + Queen\'s Wings + Thunder Belt)',
-    note: 'คอมโบไฟต์เตอร์เมต้าใหม่: War Axe ทำ True Damage + Queen\'s Wings ลดดาเมจ 30% ตอนเลือดน้อย + Oracle เพิ่มฮีล 30% สู้ของตัดเลือด',
-    items: pickItems(['war_axe', 'thunder_belt', 'queens_wings', 'oracle', 'sea_halberd', 'immortality'])
+    title: 'เซ็ตเมต้าไฟต์เตอร์ยืนชนอมตะ (รองเท้า Warrior/Tough Boots + War Axe + Queen\'s Wings)',
+    note: 'ออกรองเท้า Warrior Boots ตามด้วย War Axe ทำ True Damage + Queen\'s Wings ลดดาเมจ 30% ตอนเลือดน้อย และ Oracle',
+    items: pickItems(['warrior_boots', 'war_axe', 'thunder_belt', 'queens_wings', 'oracle', 'immortality'])
   };
 }
-
-// Complete 133-Hero Battle Spell Profiles (Non-Jungle Lane Spells; any hero in Jungle automatically gets Retribution)
 
 // ==================== MLBB OFFICIAL EMBLEM & TALENT SYSTEM ====================
 const EMBLEM_ASSETS = {
@@ -1738,15 +1756,14 @@ function calculateRecommendations() {
     const laneBonus = fillsNeededLane ? 12 : 0;
     const multiCounterBonus = counteredTargets.length >= 2 ? (counteredTargets.length - 1) * 16 : 0;
 
-    // Direct Tier Meta Bonus: Much higher weight for SS (God Tier Meta)
-    const tierBonus = candidate.tier === 'SS' ? 80 : (candidate.tier === 'S' ? 24 : (candidate.tier === 'A' ? 6 : 0));
+    // Direct Tier Meta Bonus: Balanced (SS +20, S +12, A +5) so direct counter-picks still win
+    const tierBonus = candidate.tier === 'SS' ? 20 : (candidate.tier === 'S' ? 12 : (candidate.tier === 'A' ? 5 : 0));
 
-    // Special SS God Meta Amplifiers (Dominates draft priority)
+    // Balanced SS Meta Bonus (respects counters without overwhelming them)
     let ssExtraBonus = 0;
     if (candidate.tier === 'SS') {
-      if (counteredTargets.length > 0) ssExtraBonus += 32; // SS God Counter directly countering enemy
-      if (pickedAllies.length === 0) ssExtraBonus += 35; // Unconditional first pick priority
-      if (fillsNeededLane) ssExtraBonus += 18; // SS filling needed lane
+      if (counteredTargets.length > 0) ssExtraBonus += 8; // Small bonus if SS hero counters an enemy
+      if (pickedAllies.length === 0) ssExtraBonus += 6; // Moderate first pick priority
     }
 
     // Competitive Tournament Pro Meta Check (MPL / M-Series / MSC)
@@ -2234,43 +2251,11 @@ function renderRecommendations() {
   const topRecs = recommendations.slice(0, 12);
   const container = document.getElementById('recCardsContainer');
 
-  // Render SS God Tier Alert Banner (Shows when unbanned SS tier heroes are available)
+  // Removed golden SS God Tier alert banner as requested
   const ssSpotlightEl = document.getElementById('ssGodSpotlightStrip');
-  const unbannedSs = HEROES.filter(h => h.tier === 'SS' && getHeroStatus(h.id) === 'AVAILABLE');
   if (ssSpotlightEl) {
-    if (unbannedSs.length > 0) {
-      ssSpotlightEl.style.display = 'flex';
-      ssSpotlightEl.innerHTML = `
-        <div class="ss-spotlight-header">
-          <span class="ss-crown-anim">👑</span>
-          <div>
-            <div style="font-size:0.92rem; font-weight:800; color:#fef08a; display:flex; align-items:center; gap:6px;">
-              <span>ฮีโร่ระดับ SS GOD META ที่หลุดแบน (${unbannedSs.length} ตัว)</span>
-              <span class="ss-god-badge">MUST PICK</span>
-            </div>
-            <span class="ss-spotlight-sub">อันดับ 1 ในเมต้าการแข่งขันปัจจุบัน แนะนำให้ชิงเลือกทันทีก่อนศัตรูแย่ง หรือใช้ปิดเกม</span>
-          </div>
-        </div>
-        <div class="ss-spotlight-chips">
-          ${unbannedSs.map(h => {
-            const laneImg = LANE_IMAGE[h.lanes[0]] || 'assets/lanes/mid.png';
-            return `
-              <div class="ss-spotlight-chip" onclick="quickAssignHero(${h.id}, 'ally')" title="คลิกเพื่อเลือก ${h.name} (SS God Tier) เข้าทีมเรา">
-                <img src="${h.head}" alt="${h.name}" />
-                <div class="ss-chip-info">
-                  <div class="ss-chip-name">${h.name} <span class="ss-mini-badge">👑 SS</span></div>
-                  <div class="ss-chip-lane"><img src="${laneImg}" class="lane-pill-img" alt="${h.lanes[0]}" /> ${LANE_SHORT_LABEL[h.lanes[0]] || h.lanes[0]} • WR ${h.stats.winRate}%</div>
-                </div>
-                <button class="ss-chip-pick-btn" onclick="event.stopPropagation(); quickAssignHero(${h.id}, 'ally')">🛡️ เลือก</button>
-              </div>
-            `;
-          }).join('')}
-        </div>
-      `;
-    } else {
-      ssSpotlightEl.style.display = 'none';
-      ssSpotlightEl.innerHTML = '';
-    }
+    ssSpotlightEl.style.display = 'none';
+    ssSpotlightEl.innerHTML = '';
   }
 
   if (topRecs.length === 0) {
@@ -2306,7 +2291,7 @@ function renderRecommendations() {
         const totalSsScore = (item.tierBonus || 80) + (item.ssExtraBonus || 0);
         reasonLines.push(`• <strong style="color:#fde047; font-size:0.84rem;">👑 SS GOD TIER META (+${totalSsScore} คะแนน):</strong> ฮีโร่อันดับ 1 เมต้าที่เก่งและโกงที่สุดในแพตช์ปัจจุบัน (WR ${h.stats.winRate}% / BR ${h.stats.banRate}% ใน Mythical Glory+) ชิงหยิบทันทีเพื่อความได้เปรียบสูงสุด!`);
         if (item.counteredTargets.length > 0) {
-          reasonLines.push(`• <strong style="color:#f87171;">⚔️ SS God Counter (+32 คะแนน):</strong> ตัว SS ตัวนี้ยังชนะทาง ${item.counteredTargets.map(t => t.enemyName).join(', ')} โดยตรง!`);
+          reasonLines.push(`• <strong style="color:#f87171;">⚔️ SS Meta Counter (+8 คะแนน):</strong> ตัว SS ตัวนี้ยังชนะทาง ${item.counteredTargets.map(t => t.enemyName).join(', ')} โดยตรง!`);
         }
       } else if (h.tier === 'S') {
         reasonLines.push(`• <strong style="color:#6ee7b7;">⭐ S-Tier Top Meta (+${item.tierBonus} คะแนน):</strong> ฮีโร่กลุ่ม Top Meta เก่งรอบด้าน (WR ${h.stats.winRate}%)`);

@@ -896,6 +896,7 @@ body {
   100% { box-shadow: 0 0 14px rgba(239, 68, 68, 0.7); }
 }
 .ss-god-spotlight-strip {
+  display: none !important;
   background: linear-gradient(135deg, rgba(239, 68, 68, 0.18), rgba(245, 158, 11, 0.12), rgba(15, 23, 42, 0.9));
   border: 1.5px solid rgba(245, 158, 11, 0.6);
   border-radius: 12px;
