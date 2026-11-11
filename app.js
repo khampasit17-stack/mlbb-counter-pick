@@ -766,6 +766,146 @@ function getRecommendedCoreBuildForHero(hero) {
 }
 
 // Complete 133-Hero Battle Spell Profiles (Non-Jungle Lane Spells; any hero in Jungle automatically gets Retribution)
+
+// ==================== MLBB OFFICIAL EMBLEM & TALENT SYSTEM ====================
+const EMBLEM_ASSETS = {
+  emblems: {
+    assassin: { name: 'Assassin Emblem', thName: 'Assassin Emblem (+Adaptive Pen & Atk)', img: 'assets/emblems/assassin_emblem.png' },
+    mage: { name: 'Mage Emblem', thName: 'Mage Emblem (+Magic Power & Pen)', img: 'assets/emblems/mage_emblem.png' },
+    fighter: { name: 'Fighter Emblem', thName: 'Fighter Emblem (+Spell Vamp & Hybrid Def)', img: 'assets/emblems/fighter_emblem.png' },
+    tank: { name: 'Tank Emblem', thName: 'Tank Emblem (+HP & Hybrid Def)', img: 'assets/emblems/tank_emblem.png' },
+    marksman: { name: 'Marksman Emblem', thName: 'Marksman Emblem (+Atk Speed & Adaptive Atk)', img: 'assets/emblems/marksman_emblem.png' },
+    support: { name: 'Support Emblem', thName: 'Support Emblem (+Healing Effect & CDR)', img: 'assets/emblems/support_emblem.png' },
+    common: { name: 'Common Emblem', thName: 'Common Emblem (+Hybrid Regen & HP)', img: 'assets/emblems/common_emblem.png' }
+  },
+  talents: {
+    // Tier 1 Talents
+    thrill: { name: 'Thrill', desc: '+16 พลังโจมตี/เวท Adaptive', img: 'assets/emblems/thrill.png' },
+    swift: { name: 'Swift', desc: '+10% ความเร็วโจมตี', img: 'assets/emblems/swift.png' },
+    vitality: { name: 'Vitality', desc: '+225 HP สูงสุด', img: 'assets/emblems/vitality.png' },
+    firmness: { name: 'Firmness', desc: '+6 เกราะกายภาพ & เวท', img: 'assets/emblems/firmness.png' },
+    agility: { name: 'Agility', desc: '+4% ความเร็วเคลื่อนที่', img: 'assets/emblems/agility.png' },
+    inspire: { name: 'Inspire', desc: '+5% ลดคูลดาวน์', img: 'assets/emblems/inspire.png' },
+    rupture: { name: 'Rupture', desc: '+5 เจาะเกราะ Adaptive', img: 'assets/emblems/rupture.png' },
+    // Tier 2 Talents
+    seasoned_hunter: { name: 'Seasoned Hunter', desc: '+15% ดาเมจใส่ครีปป่า/เต่า/ลอร์ด (ฟาร์มไวมาก)', img: 'assets/emblems/seasoned_hunter.png' },
+    festival_of_blood: { name: 'Festival of Blood', desc: '+6%–10% Spell Vamp ดูดเลือดจากสกิล', img: 'assets/emblems/festival_of_blood.png' },
+    pull_yourself_together: { name: 'Pull Yourself Together', desc: '-15% คูลดาวน์สเปลและไอเทมกดใช้', img: 'assets/emblems/pull_yourself_together.png' },
+    bargain_hunter: { name: 'Bargain Hunter', desc: 'ลดราคาซื้อไอเทมในร้าน 5%', img: 'assets/emblems/bargain_hunter.png' },
+    weapons_master: { name: 'Weapons Master', desc: '+5% พลังโจมตี/เวทจากไอเทม', img: 'assets/emblems/weapons_master.png' },
+    wilderness_blessing: { name: 'Wilderness Blessing', desc: '+10% วิ่งไวขึ้นในแม่น้ำและป่า', img: 'assets/emblems/wilderness_blessing.png' },
+    tenacity: { name: 'Tenacity', desc: 'เลือดต่ำกว่า 50% เพิ่มเกราะ +15', img: 'assets/emblems/tenacity.png' },
+    master_assassin: { name: 'Master Assassin', desc: 'ศัตรูอยู่เดี่ยว ทำดาเมจแรงขึ้น 7%', img: 'assets/emblems/master_assassin.png' },
+    // Tier 3 Core Talents
+    killing_spree: { name: 'Killing Spree', desc: 'ฆ่าศัตรูฟื้นฟูเลือด 8% + วิ่งเร็ว 15%', img: 'assets/emblems/killing_spree.png' },
+    war_cry: { name: 'War Cry', desc: 'โจมตี 3 ฮิต เพิ่มดาเมจทุกชนิด 8% นาน 6 วิ (Meta Core)', img: 'assets/emblems/war_cry.png' },
+    lethal_ignition: { name: 'Lethal Ignition', desc: 'ดาเมจ 3 ครั้งเกิน 7% เผาทำลายซ้ำ (เบิร์สต์เมจ/แอสซาซิน)', img: 'assets/emblems/lethal_ignition.png' },
+    impure_rage: { name: 'Impure Rage', desc: 'สกิลโดนทำดาเมจเสริมตามเลือด + รีมานา (เมจโป๊ก)', img: 'assets/emblems/impure_rage.png' },
+    brave_smite: { name: 'Brave Smite', desc: 'ใช้สกิลโดนศัตรูฟื้นฟู HP 4% (คูลดาวน์ 6 วิ)', img: 'assets/emblems/brave_smite.png' },
+    quantum_charge: { name: 'Quantum Charge', desc: 'โจมตีปกติเร่งวิ่ง 30% + ฟื้นฟู HP (ไคท์ศัตรู)', img: 'assets/emblems/quantum_charge.png' },
+    weakness_finder: { name: 'Weakness Finder', desc: 'โจมตีปกติสโลว์ศัตรู 50% + ลดสปีดตี 30%', img: 'assets/emblems/weakness_finder.png' },
+    concussive_blast: { name: 'Concussive Blast', desc: 'ตีหลังสกิลระเบิดเวทตาม Max HP (แทงค์เคลียร์เวฟ/เบิร์สต์)', img: 'assets/emblems/concussive_blast.png' },
+    temporal_reign: { name: 'Temporal Reign', desc: 'กดอัลติรีคูลดาวน์สกิลอื่นทันที 1.5 วิ + ต่อเนื่อง 4 วิ (เมต้าใหม่)', img: 'assets/emblems/temporal_reign.png' },
+    focusing_mark: { name: 'Focusing Mark', desc: 'โจมตีศัตรู เพื่อนร่วมทีมทำดาเมจใส่ตัวนั้นแรงขึ้น 6%', img: 'assets/emblems/focusing_mark.png' }
+  }
+};
+
+function getRecommendedEmblemForHero(hero, assignedLane) {
+  if (!hero) return null;
+  const name = hero.name;
+  const roles = hero.roles || [];
+  const lane = assignedLane || (hero.lanes && hero.lanes[0]) || 'Mid Lane';
+  const isJungle = lane === 'Jungle';
+  const isRoam = lane === 'Roam';
+  const E = EMBLEM_ASSETS.emblems;
+  const T = EMBLEM_ASSETS.talents;
+
+  const buildRes = (title, emblemKey, t1Key, t2Key, t3Key) => ({
+    title,
+    mainImg: E[emblemKey].img,
+    mainName: E[emblemKey].name,
+    mainTh: E[emblemKey].thName,
+    talent1: T[t1Key],
+    talent2: T[t2Key],
+    talent3: T[t3Key]
+  });
+
+  // Specific Meta Champions
+  if (['Estes', 'Floryn', 'Rafaela', 'Angela'].includes(name)) {
+    return buildRes('เมต้าฮีล & บัฟทีม (Support + Focusing Mark)', 'support', 'agility', 'pull_yourself_together', 'focusing_mark');
+  }
+  if (['Mathilda', 'Diggie', 'Marcel', 'Faramis', 'Chip'].includes(name)) {
+    return buildRes('เมต้าซัพพอร์ตเปิดไฟต์ (Support + Temporal Reign)', 'support', 'agility', 'pull_yourself_together', 'temporal_reign');
+  }
+  if (['Tigreal', 'Atlas', 'Minotaur', 'Khufra', 'Lolita', 'Carmilla', 'Akai', 'Grock'].includes(name)) {
+    const t3 = ['Tigreal', 'Atlas'].includes(name) ? 'temporal_reign' : 'concussive_blast';
+    return buildRes('เมต้าแทงค์เปิดจังหวะ (Tank + CC Burst)', 'tank', 'firmness', 'tenacity', t3);
+  }
+  if (['Hylos', 'Belerick', 'Gatotkaca', 'Edith', 'Baxia', 'Gloo', 'Barats'].includes(name)) {
+    if (isJungle) return buildRes('เมต้าแทงค์ป่า (Tank Jungle + Seasoned Hunter)', 'tank', 'vitality', 'seasoned_hunter', 'concussive_blast');
+    return buildRes('เมต้าแทงค์เรดบอส (Tank Raid Boss + Brave Smite)', 'tank', 'vitality', 'tenacity', 'brave_smite');
+  }
+  if (name === 'Zhuxin') {
+    return buildRes('เมต้า Zhuxin พายุยกต่อเนื่อง (Support + Impure Rage)', 'support', 'agility', 'bargain_hunter', 'impure_rage');
+  }
+  if (name === 'Suyou') {
+    if (isJungle) return buildRes('เมต้า Suyou ป่า 3 สเต็ป (Assassin + Seasoned Hunter)', 'assassin', 'rupture', 'seasoned_hunter', 'war_cry');
+    return buildRes('เมต้า Suyou ออฟเลน (Assassin + War Cry)', 'assassin', 'rupture', 'master_assassin', 'war_cry');
+  }
+  if (['Ling', 'Fanny', 'Hayabusa', 'Nolan', 'Lancelot', 'Helcurt', 'Saber', 'Gusion', 'Aamon', 'Joy', 'Hirara'].includes(name)) {
+    if (isJungle) return buildRes('เมต้าแอสซาซินป่าล้วงไว (Assassin + Seasoned Hunter)', 'assassin', 'rupture', 'seasoned_hunter', 'killing_spree');
+    return buildRes('เมต้าแอสซาซินเบิร์สต์เดี่ยว (Assassin + Master Assassin)', 'assassin', 'rupture', 'master_assassin', 'killing_spree');
+  }
+  if (name === 'Claude') {
+    return buildRes('เมต้า Claude โดดสกิลไคท์ (Assassin + Quantum Charge)', 'assassin', 'agility', 'bargain_hunter', 'quantum_charge');
+  }
+  if (['Karrie', 'Wanwan', 'Melissa', 'Moskov', 'Miya'].includes(name)) {
+    return buildRes('เมต้าแครี่ตีเร็วแทงค์ละลาย (Marksman + Weakness Finder)', 'marksman', 'swift', 'weapons_master', 'weakness_finder');
+  }
+  if (['Brody', 'Clint', 'Beatrix', 'Lesley', 'Bruno', 'Ixia', 'Granger', 'Popol and Kupa'].includes(name)) {
+    if (isJungle) return buildRes('เมต้าแครี่ป่าเบิร์สต์ (Assassin + Seasoned Hunter)', 'assassin', 'rupture', 'seasoned_hunter', 'war_cry');
+    return buildRes('เมต้าแครี่เบิร์สต์กายภาพ (Assassin + Quantum Charge)', 'assassin', 'rupture', 'weapons_master', 'quantum_charge');
+  }
+  if (['Terizla', 'Yu Zhong', 'Ruby', 'Thamuz', 'Alpha', 'Lapu-Lapu', 'Paquito', 'Dyrroth', 'Arlott', 'Benedetta', 'Cici', 'Khaleed', 'Silvanna', 'Guinevere', 'Freya'].includes(name)) {
+    if (isJungle) return buildRes('เมต้าไฟต์เตอร์ป่าดูดเลือด (Fighter + Seasoned Hunter)', 'fighter', 'rupture', 'seasoned_hunter', 'war_cry');
+    return buildRes('เมต้าไฟต์เตอร์ชนเลนดูดเลือด (Fighter + Festival of Blood)', 'fighter', 'firmness', 'festival_of_blood', 'war_cry');
+  }
+  if (['Kagura', 'Kadita', 'Eudora', 'Aurora', 'Vexana', 'Pharsa', 'Xavier', 'Vale', 'Lunox', 'Nana', 'Odette', 'Cecilion', 'Valentina'].includes(name)) {
+    return buildRes('เมต้าเมจเบิร์สต์นัดเดียวหาย (Mage + Lethal Ignition)', 'mage', 'rupture', 'bargain_hunter', 'lethal_ignition');
+  }
+  if (['Lylia', 'Chang\'e', 'Valir', 'Novaria', 'Yve', 'Gord', 'Cyclops'].includes(name)) {
+    return buildRes('เมต้าเมจโป๊กตอดเลือดต่อเนื่อง (Mage + Impure Rage)', 'mage', 'inspire', 'bargain_hunter', 'impure_rage');
+  }
+  if (name === 'Harith') {
+    return buildRes('เมต้า Harith พุ่งสแปมสกิล (Mage + War Cry)', 'mage', 'inspire', 'bargain_hunter', 'war_cry');
+  }
+
+  // Fallbacks by Role / Lane
+  if (isRoam) {
+    if (roles.includes('Tank')) return buildRes('เมต้าแทงค์โรมมิ่ง (Tank + Concussive Blast)', 'tank', 'firmness', 'tenacity', 'concussive_blast');
+    return buildRes('เมต้าซัพพอร์ตโรมมิ่ง (Support + Focusing Mark)', 'support', 'agility', 'pull_yourself_together', 'focusing_mark');
+  }
+  if (isJungle) {
+    if (roles.includes('Mage')) return buildRes('เมต้าเมจป่าฟาร์มไว (Mage + Seasoned Hunter)', 'mage', 'thrill', 'seasoned_hunter', 'lethal_ignition');
+    if (roles.includes('Tank')) return buildRes('เมต้าแทงค์ป่า (Tank + Seasoned Hunter)', 'tank', 'vitality', 'seasoned_hunter', 'concussive_blast');
+    return buildRes('เมต้าป่าฟาร์มไวเคลียร์ออบเจ็กต์ (Assassin + Seasoned Hunter)', 'assassin', 'rupture', 'seasoned_hunter', 'killing_spree');
+  }
+  if (roles.includes('Marksman')) {
+    return buildRes('เมต้าแครี่ดาเมจสูง (Marksman + War Cry)', 'marksman', 'swift', 'weapons_master', 'war_cry');
+  }
+  if (roles.includes('Mage')) {
+    return buildRes('เมต้าพลังเวทเบิร์สต์ (Mage + Lethal Ignition)', 'mage', 'rupture', 'bargain_hunter', 'lethal_ignition');
+  }
+  if (roles.includes('Tank')) {
+    return buildRes('เมต้าแทงค์เกราะหนา (Tank + Brave Smite)', 'tank', 'firmness', 'tenacity', 'brave_smite');
+  }
+  if (roles.includes('Support')) {
+    return buildRes('เมต้าซัพพอร์ต (Support + Focusing Mark)', 'support', 'agility', 'pull_yourself_together', 'focusing_mark');
+  }
+  // Default Fighter / Assassin
+  return buildRes('เมต้าไฟต์เตอร์ออลราวด์ (Fighter + War Cry)', 'fighter', 'rupture', 'festival_of_blood', 'war_cry');
+}
+
 const HERO_SPELL_PROFILES = {
   // === Petrify / Flicker Combo Specialists ===
   'kadita':     { primary: 'Petrify', valid: ['Petrify', 'Flicker'], note: 'สเปลบังคับของ Kadita: ใช้ S1 พุ่ง + Petrify สตั๊นหิน (หรือ Flicker) ต่อด้วยอัลติคลื่นยักษ์' },
@@ -1917,6 +2057,8 @@ function renderTeamColumns() {
     const assignedLane = getSlotAssignedLane('ally', idx);
     const laneShort = LANE_SHORT_LABEL[assignedLane] || assignedLane;
     const laneImgSrc = LANE_IMAGE[assignedLane] || 'assets/lanes/mid.png';
+    const emblem = getRecommendedEmblemForHero(hero, assignedLane);
+    const coreBuild = getRecommendedCoreBuildForHero(hero);
 
     return `
       <div class="pick-slot ${isTarget ? 'active-target' : ''}" onclick="openSlotPickerModal('ally', ${idx})" title="คลิกเพื่อเปลี่ยนตัวละครในช่อง S${idx + 1}">
@@ -1941,6 +2083,26 @@ function renderTeamColumns() {
             <button class="slot-mini-action-btn lane-btn" onclick="openLanePickerModal('ally', ${idx}, ${hero.id})" title="คลิกเพื่อเปลี่ยนตำแหน่ง/เลนของ ${hero.name} (ปัจจุบัน: ${assignedLane})">
               <img src="${laneImgSrc}" class="lane-real-icon" alt="${assignedLane}" />
             </button>
+          </div>
+          <!-- Meta Emblem & 6 Items Recommendation Container -->
+          <div class="slot-meta-build-box" onclick="event.stopPropagation()">
+            <div class="slot-emblem-row" title="เซ็ต Emblem แนะนำตาม Meta: ${emblem ? emblem.title : ''}">
+              <span class="slot-build-tag">Emblem:</span>
+              <img src="${emblem ? emblem.mainImg : 'assets/emblems/fighter_emblem.png'}" class="slot-emblem-main" alt="${emblem ? emblem.mainName : ''}" title="Main: ${emblem ? emblem.mainName + ' (' + emblem.mainTh + ')' : ''}" />
+              <div class="slot-talents-group">
+                <img src="${emblem ? emblem.talent1.img : 'assets/emblems/rupture.png'}" class="slot-talent-icon" alt="${emblem ? emblem.talent1.name : ''}" title="Tier 1: ${emblem ? emblem.talent1.name + ' (' + emblem.talent1.desc + ')' : ''}" />
+                <img src="${emblem ? emblem.talent2.img : 'assets/emblems/war_cry.png'}" class="slot-talent-icon" alt="${emblem ? emblem.talent2.name : ''}" title="Tier 2: ${emblem ? emblem.talent2.name + ' (' + emblem.talent2.desc + ')' : ''}" />
+                <img src="${emblem ? emblem.talent3.img : 'assets/emblems/war_cry.png'}" class="slot-talent-icon slot-talent-core" alt="${emblem ? emblem.talent3.name : ''}" title="Core: ${emblem ? emblem.talent3.name + ' (' + emblem.talent3.desc + ')' : ''}" />
+              </div>
+            </div>
+            <div class="slot-items-row" title="เซ็ตไอเทมเมต้าแนะนำ 6 ชิ้น: ${coreBuild ? coreBuild.title : ''}">
+              <span class="slot-build-tag">Items:</span>
+              <div class="slot-items-chips">
+                ${(coreBuild && coreBuild.items ? coreBuild.items : []).map(it => `
+                  <img src="${it.img}" class="slot-item-mini-img" alt="${it.name}" title="${it.name} (${it.thName}) — ${it.shortTag || ''}" onclick="openCounterGearModal('ALL', 'ALL', ${hero.id})" />
+                `).join('')}
+              </div>
+            </div>
           </div>
         </div>
         <!-- Battle Spell (Dynamically counters Enemy Team or opens Spell Picker on click) -->
@@ -1988,6 +2150,8 @@ function renderTeamColumns() {
     const assignedLane = getSlotAssignedLane('enemy', idx);
     const laneShort = LANE_SHORT_LABEL[assignedLane] || assignedLane;
     const laneImgSrc = LANE_IMAGE[assignedLane] || 'assets/lanes/mid.png';
+    const emblem = getRecommendedEmblemForHero(hero, assignedLane);
+    const coreBuild = getRecommendedCoreBuildForHero(hero);
 
     return `
       <div class="pick-slot ${isTarget ? 'active-target' : ''}" onclick="openSlotPickerModal('enemy', ${idx})" title="คลิกเพื่อเปลี่ยนฮีโร่ศัตรูในช่อง S${idx + 1}">
@@ -2012,6 +2176,26 @@ function renderTeamColumns() {
             <button class="slot-mini-action-btn lane-btn" onclick="openLanePickerModal('enemy', ${idx}, ${hero.id})" title="คลิกเพื่อเปลี่ยนตำแหน่ง/เลนของ ${hero.name} (ปัจจุบัน: ${assignedLane})">
               <img src="${laneImgSrc}" class="lane-real-icon" alt="${assignedLane}" />
             </button>
+          </div>
+          <!-- Meta Emblem & 6 Items Recommendation Container -->
+          <div class="slot-meta-build-box" onclick="event.stopPropagation()">
+            <div class="slot-emblem-row" title="เซ็ต Emblem ที่ ${hero.name} มักใส่ตาม Meta: ${emblem ? emblem.title : ''}">
+              <span class="slot-build-tag">Emblem:</span>
+              <img src="${emblem ? emblem.mainImg : 'assets/emblems/fighter_emblem.png'}" class="slot-emblem-main" alt="${emblem ? emblem.mainName : ''}" title="Main: ${emblem ? emblem.mainName + ' (' + emblem.mainTh + ')' : ''}" />
+              <div class="slot-talents-group">
+                <img src="${emblem ? emblem.talent1.img : 'assets/emblems/rupture.png'}" class="slot-talent-icon" alt="${emblem ? emblem.talent1.name : ''}" title="Tier 1: ${emblem ? emblem.talent1.name + ' (' + emblem.talent1.desc + ')' : ''}" />
+                <img src="${emblem ? emblem.talent2.img : 'assets/emblems/war_cry.png'}" class="slot-talent-icon" alt="${emblem ? emblem.talent2.name : ''}" title="Tier 2: ${emblem ? emblem.talent2.name + ' (' + emblem.talent2.desc + ')' : ''}" />
+                <img src="${emblem ? emblem.talent3.img : 'assets/emblems/war_cry.png'}" class="slot-talent-icon slot-talent-core" alt="${emblem ? emblem.talent3.name : ''}" title="Core: ${emblem ? emblem.talent3.name + ' (' + emblem.talent3.desc + ')' : ''}" />
+              </div>
+            </div>
+            <div class="slot-items-row" title="เซ็ตไอเทมเมต้า 6 ชิ้นที่ ${hero.name} ศัตรูมักออก: ${coreBuild ? coreBuild.title : ''}">
+              <span class="slot-build-tag">Items:</span>
+              <div class="slot-items-chips">
+                ${(coreBuild && coreBuild.items ? coreBuild.items : []).map(it => `
+                  <img src="${it.img}" class="slot-item-mini-img" alt="${it.name}" title="${it.name} (${it.thName}) — คลิกเพื่อดูของแก้ทาง" onclick="openCounterGearModal(${hero.id})" />
+                `).join('')}
+              </div>
+            </div>
           </div>
         </div>
         <!-- Counter Battle Spell Recommended AGAINST this Enemy Hero -->

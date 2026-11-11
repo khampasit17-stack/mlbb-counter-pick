@@ -383,7 +383,7 @@ body {
 /* Main 3-Column Draft Layout */
 .draft-arena {
   display: grid;
-  grid-template-columns: 310px 1fr 310px;
+  grid-template-columns: 335px 1fr 335px;
   gap: 1rem;
   margin-bottom: 1.25rem;
   align-items: start;
@@ -396,6 +396,14 @@ body {
   .counter-center-panel {
     grid-column: 1 / -1;
     order: -1;
+    position: static;
+    max-height: none;
+    overflow-y: visible;
+  }
+  .team-column {
+    position: static;
+    max-height: none;
+    overflow-y: visible;
   }
 }
 
@@ -411,13 +419,30 @@ body {
   }
 }
 
-/* Team Column */
+/* Team Column (Sticky in view so left and right columns stay pinned) */
 .team-column {
   background: var(--bg-panel);
   border-radius: 14px;
-  padding: 0.9rem;
+  padding: 0.85rem 0.85rem;
   border: 1px solid var(--border-subtle);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 12px;
+  max-height: calc(100vh - 24px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+}
+
+.team-column::-webkit-scrollbar {
+  width: 5px;
+}
+.team-column::-webkit-scrollbar-track {
+  background: transparent;
+}
+.team-column::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
 }
 
 .team-column.ally-col {
@@ -489,7 +514,7 @@ body {
 
 .pick-slot {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.65rem;
   background: var(--bg-card);
   border: 1.5px solid var(--border-subtle);
@@ -583,13 +608,35 @@ body {
   color: #fff;
 }
 
-/* Center Counter Engine Panel */
+/* Center Counter Engine Panel (Independent scrolling section as requested) */
 .counter-center-panel {
   background: linear-gradient(180deg, rgba(20, 30, 51, 0.95), rgba(14, 21, 38, 0.98));
   border: 1px solid var(--border-gold);
   border-radius: 14px;
   padding: 1rem 1.15rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  position: sticky;
+  top: 12px;
+  max-height: calc(100vh - 24px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-gold) rgba(15, 23, 42, 0.6);
+}
+
+.counter-center-panel::-webkit-scrollbar {
+  width: 7px;
+}
+.counter-center-panel::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 4px;
+}
+.counter-center-panel::-webkit-scrollbar-thumb {
+  background: var(--accent-gold);
+  border-radius: 4px;
+}
+.counter-center-panel::-webkit-scrollbar-thumb:hover {
+  background: #f59e0b;
 }
 
 .counter-panel-header {
@@ -642,14 +689,14 @@ body {
   font-weight: 600;
 }
 
-/* Recommended Counter Cards Grid */
+/* Recommended Counter Cards Grid (Flows within scrollable center panel) */
 .rec-cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
   gap: 0.75rem;
-  max-height: 540px;
-  overflow-y: auto;
-  padding-right: 4px;
+  max-height: none;
+  overflow-y: visible;
+  padding-right: 0;
 }
 
 .rec-card {
@@ -2417,4 +2464,96 @@ body {
   border: 1.5px solid #fcd34d;
   object-fit: cover;
   flex-shrink: 0;
+}
+
+
+/* Pick Slot Meta Build (Emblem + Items) */
+.slot-meta-build-box {
+  margin-top: 5px;
+  padding-top: 5px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.slot-emblem-row,
+.slot-items-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.slot-build-tag {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 0.2px;
+  min-width: 44px;
+  flex-shrink: 0;
+}
+
+.slot-emblem-main {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 3px rgba(245, 158, 11, 0.45));
+  transition: transform 0.15s;
+  cursor: pointer;
+}
+.slot-emblem-main:hover {
+  transform: scale(1.15);
+}
+
+.slot-talents-group {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  background: rgba(7, 11, 20, 0.6);
+  padding: 1px 4px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.slot-talent-icon {
+  width: 17px;
+  height: 17px;
+  object-fit: contain;
+  border-radius: 50%;
+  transition: transform 0.15s;
+  cursor: pointer;
+}
+.slot-talent-icon:hover {
+  transform: scale(1.2);
+}
+
+.slot-talent-icon.slot-talent-core {
+  width: 18px;
+  height: 18px;
+  border: 1.2px solid #f59e0b;
+  box-shadow: 0 0 4px rgba(245, 158, 11, 0.4);
+}
+
+.slot-items-chips {
+  display: flex;
+  align-items: center;
+  gap: 2.5px;
+  flex-wrap: wrap;
+}
+
+.slot-item-mini-img {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(7, 11, 20, 0.9);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.slot-item-mini-img:hover {
+  transform: scale(1.18);
+  border-color: #f59e0b;
+  box-shadow: 0 0 6px rgba(245, 158, 11, 0.5);
+  z-index: 2;
 }
