@@ -47,6 +47,26 @@ const PRO_COMPETITIVE_HEROES = new Set([
   'rafaela', 'jawhead', 'atlas', 'gatotkaca', 'kalea', 'marcel', 'floryn'
 ]);
 
+
+// Signature Priorities of MPL Philippines 2026 (MPL-PH Season Meta)
+const MPL_PH_SIGNATURE_HEROES = new Map([
+  ['freya', { role: '👑 Tier-0 Priority (140+ Bans)', note: 'แบนอันดับ 1 ใน MPL-PH เลทเกม 1v1 ดันป้อมสุดเถื่อน ยืนได้ทั้ง EXP / Jungle / Gold' }],
+  ['atlas', { role: '👑 Top Set-Up Roamer', note: 'ตัวเปิดไฟต์อันดับ 1 ในโซนหลุม Lord สกิล Fatal Links พลิกไฟต์ได้ในเสี้ยววินาที' }],
+  ['paquito', { role: '⭐ Core Flex Priority', note: 'ตัว Flex อันดับ 1 ของโปรฟิลิปปินส์ สลับ EXP / Jungle ชนะเลนและเชื่อมไฟต์กลางเกมเฉียบคม' }],
+  ['zhuxin', { role: '👑 Lord Zone Control', note: 'เมจคุมโซนและบีบ Chokepoint อันดับ 1 สกิลลากศัตรูไม่ให้เข้าใกล้ Objective' }],
+  ['belerick', { role: '🛡️ Anti-Marksman Roamer', note: 'ตัวชนเคาน์เตอร์แครี่ตีเร็ว ยืนรับดาเมจและสะท้อนหนามใส่ศัตรูได้อย่างชะงัก' }],
+  ['julian', { role: '⚔️ Fast-Tempo Hybrid Jungle', note: 'เคลียร์ไว ชิง Turtle/Lord ได้เปรียบ ปรับบิลด์ได้ทั้งเวทและกึ่งแทงค์' }],
+  ['karrie', { role: '🪙 Tank Shredder Marksman', note: 'แครี่ดวลแทงค์อันดับ 1 ดาเมจจริง True Damage ละลายแนวหน้าหนาๆ ได้เร็วที่สุด' }],
+  ['pharsa', { role: '🔮 Global High-Ground Burst', note: 'เมจคุมระยะไกลและป้องกันป้อมสูง ให้วิชั่นแมพและยิงทิ้งระเบิดขู่ศัตรู' }],
+  ['eudora', { role: '⚡ Target Eliminator (Revamped)', note: 'เมจล็อกเป้าเด็ดหัวตัวล้วงแบบ One-shot สร้างความได้เปรียบจำนวนคนก่อนเริ่มไฟต์' }],
+  ['fanny', { role: '🦅 Elite Mechanical Assassin', note: 'ตัวสร้าง Map Pressure สูงสุดของโปรฟิลิปปินส์ บีบให้เลนหลังศัตรูต้องเล่นติดป้อม' }],
+  ['fredrinn', { role: '🛡️ UBE Anchor Frontliner', note: 'หัวใจของแผนเดิน 5 คนสไตล์ฟิลิปปินส์ ดูดซับดาเมจแล้วสวนด้วย Crystal Slash' }],
+  ['mathilda', { role: '💨 UBE Tactical Initiator', note: 'ซัพพอร์ตแท็กติกพาทีมบินเข้า-ออกไฟต์ตามจังหวะ UBE Strategy' }],
+  ['masha', { role: '👑 Split-Push & Objective Breaker', note: 'ตัวดันป้อมและละลายบอส สถิติ Ban/Win Rate ทะลุเกณฑ์มาตรฐานในสายแข่ง' }],
+  ['marcel', { role: '👑 Crowd Control Lockdown', note: 'ตัว CC คุมเชิงและเซฟเพื่อน ยืนโซนหน้าแน่นหนา' }],
+  ['hirara', { role: '👑 High-Mobility Executioner', note: 'แอสซาซินความเร็วสูง ดำดิ่งล้วงแนวหลังและเอาตัวรอดไร้เป้าหมาย' }]
+]);
+
 const LANE_ICONS = {
   'EXP Lane': '⚔️ EXP',
   'Jungle': '🌲 Jungle',
@@ -2282,7 +2302,10 @@ function renderRecommendations() {
       `).join('');
 
       const reasonLines = [];
-      if (item.isProMeta) {
+      const mplInfo = MPL_PH_SIGNATURE_HEROES.get(h.name.toLowerCase());
+      if (mplInfo) {
+        reasonLines.push(`• <strong style="color:#38bdf8;">🇵🇭 MPL-PH Meta (${mplInfo.role}):</strong> ${mplInfo.note}`);
+      } else if (item.isProMeta) {
         reasonLines.push(`• <strong style="color:#38bdf8;">🏆 ตัวแข่ง Pro Meta:</strong> ได้รับความนิยมและผ่านการใช้งานจริงในทัวร์นาเมนต์ระดับอาชีพ (MPL / M-Series / MSC)`);
       }
       if (h.tier === 'SS') {
@@ -2331,7 +2354,7 @@ function renderRecommendations() {
                 <span class="rec-hero-name">${h.name}</span>
                 <span class="tier-badge tier-${h.tier}">${h.tier}</span>
                 ${h.tier === 'SS' ? `<span class="ss-god-badge" title="SS God Tier: ฮีโร่ที่เก่งที่สุดในแพตช์ปัจจุบัน (ชิงเลือกทันที)">👑 SS GOD TIER</span>` : (h.tier === 'S' ? `<span class="s-meta-badge" title="S Tier: ติด Top Meta">⭐ S TOP META</span>` : '')}
-                ${item.isProMeta ? `<span class="pro-meta-badge" title="ฮีโร่เมต้าที่นิยมใช้ในการแข่งขันจริง (MPL / M-Series / MSC)">🏆 PRO META</span>` : ''}
+                ${item.isProMeta ? `<span class="pro-meta-badge" title="ฮีโร่เมต้าการแข่งขัน MPL Philippines 2026 / Pro Tournament">${MPL_PH_SIGNATURE_HEROES.has(h.name.toLowerCase()) ? '🇵🇭 MPL-PH PRO' : '🏆 PRO META'}</span>` : ''}
                 <span class="rec-spell-inline ${recSpell.isCounterSpell ? 'is-counter-spell' : ''}" onclick="openSpellPickerModal('rec', ${idx}, ${h.id})" title="${recSpell.en} (${recSpell.th}) — ${recSpell.reason} (คลิกเพื่อเปลี่ยนสเปล)">
                   <img src="${recSpell.img}" style="width:20px;height:20px;border-radius:50%;vertical-align:middle;" alt="${recSpell.en}" />
                 </span>
@@ -2796,9 +2819,13 @@ function autoBanTopMeta() {
     candidates = candidates.filter(h => isHeroBanEligibleAgainstEnemy(h, enemyFilledLanes));
   }
 
+  // Top priority bans in MPL Philippines 2026 & High Rank
+  const mplPhTopBanNames = ['freya', 'atlas', 'fanny', 'paquito', 'hirara', 'marcel', 'masha', 'ling', 'zhuxin', 'lukas', 'suyou'];
   const topBanned = candidates
     .sort((a, b) => {
-      // Prioritize banning SS God Tier heroes first
+      const aMpl = mplPhTopBanNames.includes(a.name.toLowerCase()) ? 1 : 0;
+      const bMpl = mplPhTopBanNames.includes(b.name.toLowerCase()) ? 1 : 0;
+      if (bMpl !== aMpl) return bMpl - aMpl;
       const aSS = a.tier === 'SS' ? 1 : 0;
       const bSS = b.tier === 'SS' ? 1 : 0;
       if (bSS !== aSS) return bSS - aSS;

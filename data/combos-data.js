@@ -445,4 +445,59 @@ window.MLBB_COMBOS = [
     strongAgainst: 'ทีมสายพุ่งล้วงทั้งหมด (Fanny, Ling, Joy, Harith, Nolan, Arlott, Freya)',
     mustBan: ['Novaria', 'Pharsa', 'Cecilion']
   }
+,
+  {
+    id: 'duo-freya-paquito',
+    title: 'Freya + Paquito (คู่หูบดขยี้เลน สถิติแบน/พิกอันดับ 1 ใน MPL-PH)',
+    type: 'duo',
+    tier: 'SS',
+    badge: '🇵🇭 MPL-PH Priority Duo',
+    winRateBonus: '+6.8% WR',
+    difficulty: 'ปานกลาง',
+    heroes: ['Freya', 'Paquito'],
+    summary: 'คู่หูไฟต์เตอร์สถิติแบนและพิกอันดับ 1 ใน MPL Philippines 2026! Freya มีพลังดวลเดี่ยวดันป้อม 1v1 ที่ไม่มีใครเอาลง ผสานกับ Paquito ที่มีความยืดหยุ่นสูง เข้าถึงตัวแครี่ศัตรูและเชื่อมจังหวะไฟต์กลางเกมได้สมบูรณ์แบบ',
+    steps: [
+      '1. Paquito สลับเล่นได้ทั้ง EXP Lane หรือ Jungle เพื่อหลอกตำแหน่งดราฟต์ของศัตรู',
+      '2. เมื่อเข้าสู่จังหวะไฟต์ Paquito พุ่งเข้าล้วงเปิดจังหวะด้วย Knockout Strike สตั๊นแนวหลังศัตรู',
+      '3. Freya เปิด Valkyrie State ฟาดกวาดล้างต่อเนื่อง ดันเลนคู่ขนานบีบให้ศัตรูต้องส่งคนมารับมือ 2-3 คน'
+    ],
+    strongAgainst: 'ทีมแนวหลังบาง หรือทีมที่ขาดสกิลหยุด CC แบบฮาร์ดสตั๊นต่อเนื่อง',
+    mustBan: ['Karrie', 'Diggie', 'Franco']
+  },
+  {
+    id: 'trio-mpl-ph-ube',
+    title: 'แผน UBE Strategy 2.0: Mathilda + Fredrinn + Karrie (สูตรแชมป์ Team Liquid PH)',
+    type: 'trio',
+    tier: 'SS',
+    badge: '🇵🇭 MPL-PH Championship Meta',
+    winRateBonus: '+7.5% WR',
+    difficulty: 'ยาก',
+    heroes: ['Mathilda', 'Fredrinn', 'Karrie'],
+    summary: 'กลยุทธ์ UBE (Ultimate Bonding Experience) สูตรสำเร็จของทีมแชมป์ฟิลิปปินส์ เดินรวม 5 คนเป็นก้อนเกาะติดกัน Fredrinn ยืนดูดดาเมจแถวหน้า Mathilda ให้เกราะและพาเพื่อนโฉบบินเข้า-ออกไฟต์ตามสั่ง และ Karrie สาด True Damage ละลายแทงค์ศัตรูใน 2 วินาที',
+    steps: [
+      '1. รวมกลุ่ม 4-5 คนเข้าเช็คพุ่มและดักไฟต์ในบริเวณเลนกลางและหน้าหลุม Turtle/Lord',
+      '2. Mathilda กาง Guiding Wind มอบเกราะหนาและเพิ่มความเร็วให้ Fredrinn เดินเข้าไปชงไฟต์',
+      '3. เมื่อ Fredrinn โดนดาเมจจนสะสมเกรจเต็ม กด Appraising Strike สวนกลับ แล้ว Karrie บินตามลม Mathilda มาเก็บกวาดแนวหน้าศัตรู'
+    ],
+    strongAgainst: 'ทีมที่เน้นตัวล้วงตัวเดียว หรือทีมที่มีแนวหน้าเดินเดี่ยวไม่เกาะกลุ่ม',
+    mustBan: ['Baxia', 'Atlas', 'Belerick']
+  },
+  {
+    id: 'trio-mpl-ph-lord-zone',
+    title: 'แผน Lord Dancing Chokepoint: Atlas + Zhuxin + Pharsa (สูตรคุมโซนบอส Falcons AP.Bren)',
+    type: 'trio',
+    tier: 'SS',
+    badge: '🇵🇭 MPL-PH Lord Dance Meta',
+    winRateBonus: '+7.2% WR',
+    difficulty: 'ยาก',
+    heroes: ['Atlas', 'Zhuxin', 'Pharsa'],
+    summary: 'สูตรคุมโซนแคบรอบหลุม Lord ที่โหดที่สุดในลีคฟิลิปปินส์ Zhuxin ลอยคุมและลากศัตรูไม่ให้เข้าใกล้ทางเดิน Pharsa ทิ้งระเบิดขู่แนวหลังจากระยะไกล และเมื่อศัตรูพยายามจะเดินสวนเข้ามา Atlas จะใช้ Fatal Links รวบปิดฉากทั้งทีมทันที',
+    steps: [
+      '1. วางตำแหน่งไฟต์รอบทางแคบ Chokepoint ก่อนที่ Lord จะเกิด 30 วินาที',
+      '2. Zhuxin ใช้ Lantern Flare บีบไล่ศัตรูไม่ให้สามารถเดินผ่านช่องแคบเข้ามาปักวอร์ดได้',
+      '3. Pharsa กาง Feathered Air Strike โซนทิ้งบอมบ์ระยะปลอดภัย หากศัตรูพยายามแย่ง Atlas ใช้ Perfect Match พุ่งเข้าไปแล้ว Fatal Links รวบปิดฉาก'
+    ],
+    strongAgainst: 'ทีมที่ต้องเดินรวมกลุ่มเข้ามาชิง Lord และทีมที่ไม่มีสกิลวิ่งข้ามกำแพง',
+    mustBan: ['Diggie', 'Wanwan', 'Mathilda']
+  }
 ];
