@@ -2447,6 +2447,7 @@ function aggregateEnemyCounterGear(pickedEnemies) {
 
 function renderGearAdvisor(pickedEnemies) {
   const contentEl = document.getElementById('gearAdvisorContent');
+  if (!contentEl) return;
   const topCtaBtn = document.getElementById('topViewCounterGearBtn');
 
   if (!pickedEnemies || pickedEnemies.length === 0) {

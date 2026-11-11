@@ -90,8 +90,8 @@
         <!-- Center Column: Real-Time Counter + Meta Combo Engine -->
         <div class="counter-center-panel">
           <!-- Center Quick Actions: Swap Teams + View Counter Items & Spells Modal -->
-          <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:0.6rem; margin-bottom:0.75rem;">
-            <button class="btn btn-swap-teams" style="padding:0.48rem 1.2rem; font-size:0.86rem; border-radius:24px;" onclick="swapAllTeams()" title="สลับตัวละครที่เลือกทั้งหมดระหว่างฝั่งฟ้าและฝั่งแดง">
+          <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:0.45rem; margin-bottom:0.45rem;">
+            <button class="btn btn-swap-teams" style="padding:0.28rem 0.8rem; font-size:0.78rem; border-radius:18px;" onclick="swapAllTeams()" title="สลับตัวละครที่เลือกทั้งหมดระหว่างฝั่งฟ้าและฝั่งแดง">
               🔵 ⇄ สลับตัวละครฝั่งฟ้า ↔ ฝั่งแดง 🔴
             </button>
             <button id="topViewCounterGearBtn" class="btn btn-counter-gear-cta" onclick="openCounterGearModal('ALL')" title="กดดูรายการไอเทมแก้ทางและสเปลแก้ทางสำหรับรับมือทีมศัตรูชุดนี้แบบละเอียด">
@@ -112,18 +112,7 @@
             </button>
           </div>
 
-          <!-- Counter Items & Battle Spells Advisor (Moved to top so it is immediately visible & clickable!) -->
-          <div id="gearAdvisorBox" class="gear-advisor-bar">
-            <div class="gear-advisor-header-row">
-              <div class="gear-advisor-title">
-                <span>🛡️ สเปลและไอเทมแก้ทางทีมศัตรูชุดนี้ (Counter Spells &amp; Items)</span>
-              </div>
-              <button class="btn-open-gear-modal" onclick="openCounterGearModal('ALL')">
-                🔍 กดดูไอเทม &amp; สเปลแก้ทางทั้งหมด →
-              </button>
-            </div>
-            <div id="gearAdvisorContent" class="gear-chips-wrap"></div>
-          </div>
+          <!-- Counter Items & Battle Spells Advisor removed as requested -->
 
           <!-- Active Playable Meta Combos Strip (Dynamic based on current draft!) -->
           <div id="liveComboStrip" class="live-combo-strip"></div>
