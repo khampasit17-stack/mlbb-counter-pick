@@ -11,6 +11,42 @@ const COMBOS = (window.MLBB_COMBOS || []).map(c => ({
 }));
 
 const ALL_LANES = ['EXP Lane', 'Jungle', 'Mid Lane', 'Gold Lane', 'Roam'];
+
+// Official MLBB in-game Lane Images
+const LANE_IMAGE = {
+  'EXP Lane': 'assets/lanes/exp.png',
+  'Jungle': 'assets/lanes/jungle.png',
+  'Mid Lane': 'assets/lanes/mid.png',
+  'Gold Lane': 'assets/lanes/gold.png',
+  'Roam': 'assets/lanes/roam.png'
+};
+
+// Verified Pro Competitive Tournament Meta Heroes (MPL / M-Series / MSC / Mythical Glory+ pro play)
+const PRO_COMPETITIVE_HEROES = new Set([
+  // EXP Lane (Pro Tournament Meta)
+  'lukas', 'masha', 'paquito', 'yu zhong', 'terizla', 'ruby', 'cici', 'arlott', 
+  'benedetta', 'edith', 'lapu-lapu', 'chou', 'gloo', 'uranus', 'khaleed', 'guinevere', 
+  'fredrinn', 'baxia', 'esmeralda', 'dyrroth', 'phoveus', 'thamuz', 'joy',
+
+  // Jungle (Pro Tournament Meta)
+  'fanny', 'ling', 'hayabusa', 'suyou', 'nolan', 'julian', 'roger', 'baxia', 
+  'fredrinn', 'alpha', 'guinevere', 'lancelot', 'akai', 'barats', 'helcurt', 
+  'martis', 'joy', 'yi sun-shin', 'gusion', 'hirara',
+
+  // Mid Lane (Pro Tournament Meta)
+  'zhuxin', 'harith', 'valentina', 'pharsa', 'xavier', 'vexana', 'cecilion', 
+  'lylia', 'novaria', 'faramis', 'kadita', 'luo yi', 'yve', 'nana', 'lunox', 'zetian',
+
+  // Gold Lane (Pro Tournament Meta)
+  'harith', 'claude', 'moskov', 'roger', 'karrie', 'brody', 'bruno', 'beatrix', 
+  'natan', 'wanwan', 'granger', 'lesley', 'irithel', 'clint', 'popol and kupa', 'obsidia',
+
+  // Roam (Pro Tournament Meta)
+  'mathilda', 'tigreal', 'minotaur', 'chip', 'hylos', 'belerick', 'khufra', 
+  'kaja', 'grock', 'franco', 'angela', 'estes', 'lolita', 'carmilla', 'diggie', 
+  'rafaela', 'jawhead', 'atlas', 'gatotkaca', 'kalea', 'marcel', 'floryn'
+]);
+
 const LANE_ICONS = {
   'EXP Lane': '⚔️ EXP',
   'Jungle': '🌲 Jungle',
@@ -1559,17 +1595,22 @@ function calculateRecommendations() {
     // Direct Tier Meta Bonus: Prioritize SS (God Tier) and S (Top Meta) heroes
     const tierBonus = candidate.tier === 'SS' ? 32 : (candidate.tier === 'S' ? 16 : (candidate.tier === 'A' ? 4 : 0));
 
+    // Competitive Tournament Pro Meta Check (MPL / M-Series / MSC)
+    const isPro = PRO_COMPETITIVE_HEROES.has(candidate.name.toLowerCase());
+    const proBonus = isPro ? 28 : (state.strategyMode === 'all' ? 0 : -65);
+
     const fillsNeededLane = pickedAllies.length > 0 && candidate.lanes.some(l => missingLanes.includes(l));
     const laneBonus = fillsNeededLane ? 12 : 0;
     const multiCounterBonus = counteredTargets.length >= 2 ? (counteredTargets.length - 1) * 16 : 0;
 
     const effectiveCounterScore = (counterScore + multiCounterBonus) * (isComboPriority ? 0.78 : 1.0);
-    const totalScore = Number((effectiveCounterScore + synergyScore + metaWeight + tierBonus + laneBonus).toFixed(1));
+    const totalScore = Number((effectiveCounterScore + synergyScore + metaWeight + tierBonus + proBonus + laneBonus).toFixed(1));
 
     results.push({
       hero: candidate,
       totalScore,
       tierBonus,
+      isProMeta: isPro,
       counterScore: Number((counterScore + multiCounterBonus).toFixed(1)),
       synergyScore: Number(synergyScore.toFixed(1)),
       counteredTargets,
@@ -1770,7 +1811,12 @@ function renderBanBoard() {
   }
 
   const topBanCandidates = banCandidates
-    .sort((a, b) => b.stats.banRate - a.stats.banRate)
+    .sort((a, b) => {
+      const aPro = PRO_COMPETITIVE_HEROES.has(a.name.toLowerCase()) ? 1 : 0;
+      const bPro = PRO_COMPETITIVE_HEROES.has(b.name.toLowerCase()) ? 1 : 0;
+      if (bPro !== aPro) return bPro - aPro;
+      return b.stats.banRate - a.stats.banRate;
+    })
     .slice(0, 7);
 
   let labelHtml = `<span class="ban-suggest-label">🔥 ตัวน่าแบนที่สุดตอนนี้ (คลิกเพื่อแบน):</span>`;
@@ -1788,7 +1834,9 @@ function renderBanBoard() {
       <span class="ban-chip" onclick="quickAssignHero(${h.id}, 'ban')" title="คลิกเพื่อแบน ${h.name} (${h.lanes[0] || ''} • อัตราแบน ${h.stats.banRate}%)">
         <img src="${h.head}" alt="${h.name}" loading="lazy" />
         <span>${h.name}</span>
-        <span style="font-size:0.65rem; color:#7dd3fc; margin-left:2px; font-weight:600;">[${LANE_SHORT_LABEL[h.lanes[0]] || h.lanes[0]}]</span>
+        <span style="font-size:0.65rem; color:#7dd3fc; margin-left:2px; font-weight:600; display:inline-flex; align-items:center; gap:2px;">
+          <img src="${LANE_IMAGE[h.lanes[0]] || 'assets/lanes/mid.png'}" class="lane-pill-img" alt="${h.lanes[0]}" />[${LANE_SHORT_LABEL[h.lanes[0]] || h.lanes[0]}]
+        </span>
         <span class="br-val">${h.stats.banRate}%</span>
       </span>
     `)
@@ -1829,7 +1877,7 @@ function renderTeamColumns() {
   const allyLanes = analyzeTeamLanes(state.allyPicks);
   document.getElementById('allyLaneChecklist').innerHTML = ALL_LANES.map(lane => {
     const filled = allyLanes.filledLanes.has(lane);
-    return `<span class="lane-status-pill ${filled ? 'filled' : 'missing'}">${filled ? '✓' : '⚠️'} ${LANE_ICONS[lane]}</span>`;
+    return `<span class="lane-status-pill ${filled ? 'filled' : 'missing'}">${filled ? '✓' : '⚠️'} <img src="${LANE_IMAGE[lane]}" class="lane-pill-img" alt="${lane}" /> ${LANE_SHORT_LABEL[lane]}</span>`;
   }).join('');
 
   document.getElementById('allyPickSlots').innerHTML = state.allyPicks.map((heroId, idx) => {
@@ -1849,8 +1897,8 @@ function renderTeamColumns() {
 
     const spell = getRecommendedSpell(hero, state.allyPicks, state.enemyPicks, 'ally', idx);
     const assignedLane = getSlotAssignedLane('ally', idx);
-    const laneIcon = LANE_ONLY_ICON[assignedLane] || '🗺️';
     const laneShort = LANE_SHORT_LABEL[assignedLane] || assignedLane;
+    const laneImgSrc = LANE_IMAGE[assignedLane] || 'assets/lanes/mid.png';
 
     return `
       <div class="pick-slot ${isTarget ? 'active-target' : ''}" onclick="openSlotPickerModal('ally', ${idx})" title="คลิกเพื่อเปลี่ยนตัวละครในช่อง S${idx + 1}">
@@ -1863,7 +1911,7 @@ function renderTeamColumns() {
             <span class="tier-badge tier-${hero.tier}">${hero.tier}</span>
           </div>
           <div class="pick-slot-meta">
-            <span class="slot-active-lane-text" onclick="event.stopPropagation(); openLanePickerModal('ally', ${idx}, ${hero.id})" title="คลิกเพื่อเปลี่ยนตำแหน่ง/เลนที่เล่น (ปัจจุบัน: ${assignedLane})">${laneIcon} ${laneShort}</span> • <span style="color:#38bdf8;">WR ${hero.stats.winRate}%</span>
+            <span class="slot-active-lane-text" onclick="event.stopPropagation(); openLanePickerModal('ally', ${idx}, ${hero.id})" title="คลิกเพื่อเปลี่ยนตำแหน่ง/เลนที่เล่น (ปัจจุบัน: ${assignedLane})"><img src="${laneImgSrc}" class="lane-real-icon" alt="${assignedLane}" /> ${laneShort} ⇄</span> • <span style="color:#38bdf8;">WR ${hero.stats.winRate}%</span>
           </div>
           <div class="slot-action-pills-row" onclick="event.stopPropagation()">
             <button class="slot-mini-action-btn" onclick="openCounterGearModal('ALL', 'ALL', ${hero.id})" title="ดูไอเทมแก้ทางที่ ${hero.name} ควรออกสู้ศัตรูชุดนี้">
@@ -1873,7 +1921,7 @@ function renderTeamColumns() {
               ✨
             </button>
             <button class="slot-mini-action-btn lane-btn" onclick="openLanePickerModal('ally', ${idx}, ${hero.id})" title="คลิกเพื่อเปลี่ยนตำแหน่ง/เลนของ ${hero.name} (ปัจจุบัน: ${assignedLane})">
-              ${laneIcon}
+              <img src="${laneImgSrc}" class="lane-real-icon" alt="${assignedLane}" />
             </button>
           </div>
         </div>
@@ -1893,7 +1941,7 @@ function renderTeamColumns() {
   const enemyLanes = analyzeTeamLanes(state.enemyPicks);
   document.getElementById('enemyLaneChecklist').innerHTML = ALL_LANES.map(lane => {
     const filled = enemyLanes.filledLanes.has(lane);
-    return `<span class="lane-status-pill ${filled ? 'filled' : ''}">${filled ? '⚔️' : '•'} ${LANE_ICONS[lane]}</span>`;
+    return `<span class="lane-status-pill ${filled ? 'filled' : ''}">${filled ? '⚔️' : '•'} <img src="${LANE_IMAGE[lane]}" class="lane-pill-img" alt="${lane}" /> ${LANE_SHORT_LABEL[lane]}</span>`;
   }).join('');
 
   document.getElementById('enemyPickSlots').innerHTML = state.enemyPicks.map((heroId, idx) => {
@@ -1920,8 +1968,8 @@ function renderTeamColumns() {
     // Counter Spell to use AGAINST this enemy hero!
     const counterSpell = getEnemySlotCounterSpell(hero, idx);
     const assignedLane = getSlotAssignedLane('enemy', idx);
-    const laneIcon = LANE_ONLY_ICON[assignedLane] || '🗺️';
     const laneShort = LANE_SHORT_LABEL[assignedLane] || assignedLane;
+    const laneImgSrc = LANE_IMAGE[assignedLane] || 'assets/lanes/mid.png';
 
     return `
       <div class="pick-slot ${isTarget ? 'active-target' : ''}" onclick="openSlotPickerModal('enemy', ${idx})" title="คลิกเพื่อเปลี่ยนฮีโร่ศัตรูในช่อง S${idx + 1}">
@@ -1934,7 +1982,7 @@ function renderTeamColumns() {
             <span class="tier-badge tier-${hero.tier}">${hero.tier}</span>
           </div>
           <div class="pick-slot-counters-mini">
-            <span class="slot-active-lane-text" onclick="event.stopPropagation(); openLanePickerModal('enemy', ${idx}, ${hero.id})" title="คลิกเพื่อเปลี่ยนเลนของ ${hero.name} (ปัจจุบัน: ${assignedLane})">${laneIcon} ${laneShort}</span> • แพ้: <strong>${topCountersForThisEnemy.join(', ') || '-'}</strong>
+            <span class="slot-active-lane-text" onclick="event.stopPropagation(); openLanePickerModal('enemy', ${idx}, ${hero.id})" title="คลิกเพื่อเปลี่ยนเลนของ ${hero.name} (ปัจจุบัน: ${assignedLane})"><img src="${laneImgSrc}" class="lane-real-icon" alt="${assignedLane}" /> ${laneShort} ⇄</span> • แพ้: <strong>${topCountersForThisEnemy.join(', ') || '-'}</strong>
           </div>
           <div class="slot-action-pills-row" onclick="event.stopPropagation()">
             <button class="slot-mini-action-btn" onclick="openCounterGearModal(${hero.id})" title="กดดูว่าต้องออก Item อะไรแก้ทาง ${hero.name}">
@@ -1944,7 +1992,7 @@ function renderTeamColumns() {
               ✨
             </button>
             <button class="slot-mini-action-btn lane-btn" onclick="openLanePickerModal('enemy', ${idx}, ${hero.id})" title="คลิกเพื่อเปลี่ยนตำแหน่ง/เลนของ ${hero.name} (ปัจจุบัน: ${assignedLane})">
-              ${laneIcon}
+              <img src="${laneImgSrc}" class="lane-real-icon" alt="${assignedLane}" />
             </button>
           </div>
         </div>
@@ -2010,6 +2058,9 @@ function renderRecommendations() {
       `).join('');
 
       const reasonLines = [];
+      if (item.isProMeta) {
+        reasonLines.push(`• <strong style="color:#38bdf8;">🏆 ตัวแข่ง Pro Meta:</strong> ได้รับความนิยมและผ่านการใช้งานจริงในทัวร์นาเมนต์ระดับอาชีพ (MPL / M-Series / MSC)`);
+      }
       if (h.tier === 'SS') {
         reasonLines.push(`• <strong style="color:#fde047;">👑 SS God Tier Meta (+32 คะแนน):</strong> ฮีโร่ที่เก่งที่สุดในแพตช์ปัจจุบัน อัตราชนะ ${h.stats.winRate}% และอัตราแบน ${h.stats.banRate}% ใน Mythical Glory+`);
       } else if (h.tier === 'S') {
@@ -2051,6 +2102,7 @@ function renderRecommendations() {
               <div class="rec-name-row">
                 <span class="rec-hero-name">${h.name}</span>
                 <span class="tier-badge tier-${h.tier}">${h.tier}</span>
+                ${item.isProMeta ? `<span class="pro-meta-badge" title="ฮีโร่เมต้าที่นิยมใช้ในการแข่งขันจริง (MPL / M-Series / MSC)">🏆 PRO META</span>` : ''}
                 ${h.tier === 'SS' ? `<span class="god-meta-badge" title="SS Tier: ฮีโร่ที่เก่งที่สุดในแพตช์ปัจจุบัน (God Tier Meta)">👑 SS GOD META</span>` : (h.tier === 'S' ? `<span class="s-meta-badge" title="S Tier: ติด Top Meta">⭐ S TOP META</span>` : '')}
                 <span class="rec-spell-inline ${recSpell.isCounterSpell ? 'is-counter-spell' : ''}" onclick="openSpellPickerModal('rec', ${idx}, ${h.id})" title="${recSpell.en} (${recSpell.th}) — ${recSpell.reason} (คลิกเพื่อเปลี่ยนสเปล)">
                   <img src="${recSpell.img}" style="width:20px;height:20px;border-radius:50%;vertical-align:middle;" alt="${recSpell.en}" />
@@ -2062,14 +2114,16 @@ function renderRecommendations() {
                 ${item.fillsNeededLane ? `<span style="font-size:0.65rem; background:rgba(14,165,233,0.2); color:#7dd3fc; padding:1px 6px; border-radius:4px;">เติมเลนที่ขาด</span>` : ''}
               </div>
               <div class="rec-sub-meta">
-                <span>${h.lanes.join(' / ')}</span>
+                <span style="display:inline-flex;align-items:center;gap:4px;">
+                  ${h.lanes.map(l => `<img src="${LANE_IMAGE[l] || 'assets/lanes/mid.png'}" class="lane-pill-img" alt="${l}" /> ${LANE_SHORT_LABEL[l] || l}`).join(' / ')}
+                </span>
                 <span>•</span>
                 <span style="color:#6ee7b7;">WR ${h.stats.winRate}%</span>
                 <span>•</span>
                 <span style="color:#fca5a5;">BR ${h.stats.banRate}%</span>
               </div>
             </div>
-            <div class="score-pill" title="คะแนนรวม: ${item.totalScore} (แก้ทาง ${item.counterScore} + คอมโบ ${item.synergyScore} + โบนัสเมต้า ${item.tierBonus} จากเทียร์ ${h.tier})">
+            <div class="score-pill" title="คะแนนรวม: ${item.totalScore} (แก้ทาง ${item.counterScore} + คอมโบ ${item.synergyScore} + โบนัสเมต้า ${item.tierBonus} + โบนัสตัวแข่ง ${item.isProMeta ? 28 : (state.strategyMode === 'all' ? 0 : -65)})">
               <div style="font-size:0.62rem; opacity:0.85;">คะแนนรวม</div>
               <div>${item.totalScore}</div>
             </div>
@@ -2269,7 +2323,7 @@ function renderHeroGrid() {
           <img src="${h.head}" alt="${h.name}" loading="lazy" />
         </div>
         <div class="hero-card-name">${h.name}</div>
-        <div class="hero-card-lane">${h.lanes[0] || ''}</div>
+        <div class="hero-card-lane"><img src="${LANE_IMAGE[h.lanes[0]] || 'assets/lanes/mid.png'}" class="lane-pill-img" alt="${h.lanes[0]}" /> ${LANE_SHORT_LABEL[h.lanes[0]] || h.lanes[0]}</div>
         <div class="hero-card-stats">
           <span style="color:#6ee7b7;">WR ${h.stats.winRate}%</span>
           <span>•</span>
@@ -2594,7 +2648,7 @@ function renderMetaTierList() {
               <div style="min-width:0; flex:1;">
                 <div style="font-weight:700; font-size:0.88rem; display:flex; justify-content:space-between;">
                   <span>${h.name}</span>
-                  <span style="font-size:0.7rem; color:#fcd34d;">${h.lanes[0]}</span>
+                  <span style="font-size:0.7rem; color:#fcd34d; display:inline-flex; align-items:center; gap:2px;"><img src="${LANE_IMAGE[h.lanes[0]] || 'assets/lanes/mid.png'}" class="lane-pill-img" alt="${h.lanes[0]}" /> ${LANE_SHORT_LABEL[h.lanes[0]] || h.lanes[0]}</span>
                 </div>
                 <div style="font-size:0.72rem; color:var(--text-muted); display:flex; gap:0.45rem;">
                   <span style="color:#6ee7b7;">WR ${h.stats.winRate}%</span>
@@ -2776,7 +2830,10 @@ function buildHeroDossierHtml(h, isModal = true) {
           <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
             <h2 style="font-size:1.35rem;">${h.name}</h2>
             <span class="tier-badge tier-${h.tier}" style="font-size:0.8rem; padding:2px 8px;">TIER ${h.tier}</span>
-            <span style="font-size:0.82rem; color:var(--accent-gold-light);">${h.lanes.join(' / ')} • ${h.roles.join(', ')}</span>
+            <span style="font-size:0.82rem; color:var(--accent-gold-light); display:inline-flex; align-items:center; gap:4px; flex-wrap:wrap;">
+              ${h.lanes.map(l => `<span style="display:inline-flex; align-items:center; gap:2px;"><img src="${LANE_IMAGE[l] || 'assets/lanes/mid.png'}" class="lane-pill-img" alt="${l}" /> ${LANE_SHORT_LABEL[l] || l}</span>`).join(' / ')} • ${h.roles.join(', ')}
+            </span>
+            ${PRO_COMPETITIVE_HEROES.has(h.name.toLowerCase()) ? `<span class="pro-meta-badge" style="font-size:0.68rem;">🏆 PRO META</span>` : ''}
           </div>
           <div style="font-size:0.82rem; color:var(--text-muted); margin-top:4px; display:flex; gap:1rem; flex-wrap:wrap;">
             <span>📈 Win Rate (MG): <strong style="color:#6ee7b7;">${h.stats.winRate}%</strong></span>
@@ -3056,7 +3113,7 @@ function renderSlotPickerQuickRecommend() {
                   ? `⚡ คอมโบคู่ ${r.matchingCombos[0].alliesInCombo.map(x=>x.name).join('+')}`
                   : (r.counteredTargets.length > 0
                       ? `⚔️ ชนะ ${r.counteredTargets.map(t => t.enemyName).join(', ')}`
-                      : `${r.hero.lanes[0]} • WR ${r.hero.stats.winRate}%`)}
+                      : `<span style="display:inline-flex; align-items:center; gap:2px;"><img src="${LANE_IMAGE[r.hero.lanes[0]] || 'assets/lanes/mid.png'}" class="lane-pill-img" alt="${r.hero.lanes[0]}" /> ${LANE_SHORT_LABEL[r.hero.lanes[0]] || r.hero.lanes[0]}</span> • WR ${r.hero.stats.winRate}%`)}
               </div>
             </div>
           </div>
@@ -3066,7 +3123,12 @@ function renderSlotPickerQuickRecommend() {
   } else {
     const topMeta = [...HEROES]
       .filter(h => getHeroStatus(h.id) === 'AVAILABLE')
-      .sort((a, b) => b.stats.metaScore - a.stats.metaScore)
+      .sort((a, b) => {
+        const aPro = PRO_COMPETITIVE_HEROES.has(a.name.toLowerCase()) ? 1 : 0;
+        const bPro = PRO_COMPETITIVE_HEROES.has(b.name.toLowerCase()) ? 1 : 0;
+        if (bPro !== aPro) return bPro - aPro;
+        return b.stats.metaScore - a.stats.metaScore;
+      })
       .slice(0, 8);
 
     quickBox.innerHTML = `
@@ -3187,7 +3249,7 @@ function renderSlotPickerGrid() {
           <img src="${h.head}" alt="${h.name}" loading="lazy" />
         </div>
         <div class="hero-card-name">${h.name}</div>
-        <div class="hero-card-lane">${h.lanes[0] || ''}</div>
+        <div class="hero-card-lane"><img src="${LANE_IMAGE[h.lanes[0]] || 'assets/lanes/mid.png'}" class="lane-pill-img" alt="${h.lanes[0]}" /> ${LANE_SHORT_LABEL[h.lanes[0]] || h.lanes[0]}</div>
         <div style="font-size:0.66rem; color:${type === 'ban' ? '#fda4af' : (hasCombo ? '#7dd3fc' : '#6ee7b7')}; font-weight:600; margin-top:2px;">
           ${subMetric}
         </div>
@@ -3622,8 +3684,11 @@ function renderSpellPickerModal() {
       <div class="slot-picker-title-wrap">
         <img src="${hero.head}" style="width:52px; height:52px; border-radius:12px; border:2px solid #fcd34d;" alt="${hero.name}" />
         <div>
-          <h2 style="font-size:1.15rem; color:#fff;">
-            ✨ เลือก Battle Spell สำหรับ: ${hero.name} (${LANE_ICONS[assignedLane] || assignedLane})
+          <h2 style="font-size:1.15rem; color:#fff; display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
+            <span>✨ เลือก Battle Spell สำหรับ: ${hero.name}</span>
+            <span style="display:inline-flex; align-items:center; gap:3px; font-size:0.88rem; color:#fcd34d;">
+              (<img src="${LANE_IMAGE[assignedLane] || 'assets/lanes/mid.png'}" class="lane-real-icon" alt="${assignedLane}" /> ${LANE_SHORT_LABEL[assignedLane] || assignedLane})
+            </span>
           </h2>
           <p style="font-size:0.78rem; color:var(--text-muted);">
             สเปลปัจจุบัน: <strong style="color:#fef08a;">${currentSpell.en} (${currentSpell.th})</strong> — ${currentSpell.reason}
@@ -3785,8 +3850,15 @@ function renderLanePickerModal() {
           <h2 style="font-size:1.12rem; color:#fef08a;">
             🗺️ เปลี่ยนตำแหน่ง/เลนของ ${hero.name} (${isEnemy ? `ฝั่งศัตรู S${slotIdx + 1}` : `ทีมเรา S${slotIdx + 1}`})
           </h2>
-          <p style="font-size:0.78rem; color:var(--text-muted); margin-top:2px;">
-            เลนปัจจุบัน: <strong style="color:#38bdf8;">${LANE_ICONS[currentLane]}</strong> • เลนถนัดตามข้อมูลฮีโร่: <strong style="color:#6ee7b7;">${hero.lanes.map(l => LANE_ICONS[l]).join(' / ')}</strong>
+          <p style="font-size:0.78rem; color:var(--text-muted); margin-top:2px; display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
+            <span>เลนปัจจุบัน:</span>
+            <span style="display:inline-flex; align-items:center; gap:3px; color:#38bdf8; font-weight:600;">
+              <img src="${LANE_IMAGE[currentLane] || 'assets/lanes/mid.png'}" class="lane-real-icon" alt="${currentLane}" /> ${LANE_SHORT_LABEL[currentLane] || currentLane}
+            </span>
+            <span>• เลนถนัด:</span>
+            <span style="display:inline-flex; align-items:center; gap:6px; color:#6ee7b7; font-weight:600;">
+              ${hero.lanes.map(l => `<span style="display:inline-flex; align-items:center; gap:2px;"><img src="${LANE_IMAGE[l] || 'assets/lanes/mid.png'}" class="lane-pill-img" alt="${l}" /> ${LANE_SHORT_LABEL[l] || l}</span>`).join(' / ')}
+            </span>
           </p>
         </div>
       </div>
@@ -3818,7 +3890,7 @@ function renderLanePickerModal() {
             onclick="selectLaneForSlot('${lane}')"
             style="padding:0.65rem 0.75rem; align-items:flex-start;"
           >
-            <div style="font-size:1.45rem; line-height:1; margin-top:2px;">${LANE_ONLY_ICON[lane]}</div>
+            <img src="${LANE_IMAGE[lane] || 'assets/lanes/mid.png'}" class="lane-modal-icon" alt="${lane}" />
             <div style="min-width:0; flex:1;">
               <div style="display:flex; align-items:center; gap:0.35rem; flex-wrap:wrap;">
                 <strong style="font-size:0.88rem; color:#fff;">${lane}</strong>

@@ -102,10 +102,13 @@
           <!-- Strategy Priority Switcher -->
           <div class="strategy-mode-bar">
             <button class="strat-btn active" data-strat="counter" onclick="setStrategyMode('counter')">
-              👑 โหมดเน้น SS Meta + แก้ทางศัตรู (SS Meta &amp; Counter Priority)
+              🏆 โหมดตัวแข่งทัวร์นาเมนต์ + แก้ทาง (Pro Tournament Meta &amp; Counter)
             </button>
             <button class="strat-btn strat-combo" data-strat="combo" onclick="setStrategyMode('combo')">
-              ⚡ โหมดเน้นคอมโบทีมเรา + SS Meta (Meta Combo Priority)
+              ⚡ โหมดเน้นคอมโบทีมเรา + ตัวแข่ง (Pro Meta Combo)
+            </button>
+            <button class="strat-btn" data-strat="all" onclick="setStrategyMode('all')">
+              🌐 แสดงฮีโร่ทั้งหมด (All 133 Heroes)
             </button>
           </div>
 
@@ -137,11 +140,21 @@
             <div id="recLanePills" class="lane-filter-pills">
               <button class="lane-pill active" data-lane="ALL" onclick="setRecLaneFilter('ALL')">ทุกเลน</button>
               <button class="lane-pill" data-lane="MISSING" onclick="setRecLaneFilter('MISSING')">✨ เฉพาะเลนที่ขาด</button>
-              <button class="lane-pill" data-lane="EXP Lane" onclick="setRecLaneFilter('EXP Lane')">EXP</button>
-              <button class="lane-pill" data-lane="Jungle" onclick="setRecLaneFilter('Jungle')">Jungle</button>
-              <button class="lane-pill" data-lane="Mid Lane" onclick="setRecLaneFilter('Mid Lane')">Mid</button>
-              <button class="lane-pill" data-lane="Gold Lane" onclick="setRecLaneFilter('Gold Lane')">Gold</button>
-              <button class="lane-pill" data-lane="Roam" onclick="setRecLaneFilter('Roam')">Roam</button>
+              <button class="lane-pill" data-lane="EXP Lane" onclick="setRecLaneFilter('EXP Lane')">
+                <img src="assets/lanes/exp.png" class="lane-btn-img" alt="EXP" /> EXP
+              </button>
+              <button class="lane-pill" data-lane="Jungle" onclick="setRecLaneFilter('Jungle')">
+                <img src="assets/lanes/jungle.png" class="lane-btn-img" alt="Jungle" /> Jungle
+              </button>
+              <button class="lane-pill" data-lane="Mid Lane" onclick="setRecLaneFilter('Mid Lane')">
+                <img src="assets/lanes/mid.png" class="lane-btn-img" alt="Mid" /> Mid
+              </button>
+              <button class="lane-pill" data-lane="Gold Lane" onclick="setRecLaneFilter('Gold Lane')">
+                <img src="assets/lanes/gold.png" class="lane-btn-img" alt="Gold" /> Gold
+              </button>
+              <button class="lane-pill" data-lane="Roam" onclick="setRecLaneFilter('Roam')">
+                <img src="assets/lanes/roam.png" class="lane-btn-img" alt="Roam" /> Roam
+              </button>
             </div>
           </div>
 
@@ -273,11 +286,21 @@
           </div>
           <div class="lane-filter-pills" id="metaTabLanePills">
             <button class="lane-pill active" data-mlane="ALL" onclick="setMetaTabLane('ALL')">ทุกเลน (All Lanes)</button>
-            <button class="lane-pill" data-mlane="EXP Lane" onclick="setMetaTabLane('EXP Lane')">EXP Lane</button>
-            <button class="lane-pill" data-mlane="Jungle" onclick="setMetaTabLane('Jungle')">Jungle</button>
-            <button class="lane-pill" data-mlane="Mid Lane" onclick="setMetaTabLane('Mid Lane')">Mid Lane</button>
-            <button class="lane-pill" data-mlane="Gold Lane" onclick="setMetaTabLane('Gold Lane')">Gold Lane</button>
-            <button class="lane-pill" data-mlane="Roam" onclick="setMetaTabLane('Roam')">Roam</button>
+            <button class="lane-pill" data-mlane="EXP Lane" onclick="setMetaTabLane('EXP Lane')">
+              <img src="assets/lanes/exp.png" class="lane-btn-img" alt="EXP" /> EXP
+            </button>
+            <button class="lane-pill" data-mlane="Jungle" onclick="setMetaTabLane('Jungle')">
+              <img src="assets/lanes/jungle.png" class="lane-btn-img" alt="Jungle" /> Jungle
+            </button>
+            <button class="lane-pill" data-mlane="Mid Lane" onclick="setMetaTabLane('Mid Lane')">
+              <img src="assets/lanes/mid.png" class="lane-btn-img" alt="Mid" /> Mid
+            </button>
+            <button class="lane-pill" data-mlane="Gold Lane" onclick="setMetaTabLane('Gold Lane')">
+              <img src="assets/lanes/gold.png" class="lane-btn-img" alt="Gold" /> Gold
+            </button>
+            <button class="lane-pill" data-mlane="Roam" onclick="setMetaTabLane('Roam')">
+              <img src="assets/lanes/roam.png" class="lane-btn-img" alt="Roam" /> Roam
+            </button>
           </div>
         </div>
       </div>
@@ -367,12 +390,22 @@
 
       <!-- Lane Filter Pills inside Popup -->
       <div id="slotPickerLanePills" class="lane-filter-pills" style="margin-bottom:0.75rem;">
-        <button class="lane-pill active" data-slane="ALL" onclick="setSlotPickerLane('ALL')">🗺️ ทุกเลน (All)</button>
-        <button class="lane-pill" data-slane="EXP Lane" onclick="setSlotPickerLane('EXP Lane')">⚔️ EXP Lane</button>
-        <button class="lane-pill" data-slane="Jungle" onclick="setSlotPickerLane('Jungle')">🌲 Jungle (ป่า)</button>
-        <button class="lane-pill" data-slane="Mid Lane" onclick="setSlotPickerLane('Mid Lane')">🔮 Mid Lane (กลาง)</button>
-        <button class="lane-pill" data-slane="Gold Lane" onclick="setSlotPickerLane('Gold Lane')">🪙 Gold Lane (แครี่)</button>
-        <button class="lane-pill" data-slane="Roam" onclick="setSlotPickerLane('Roam')">🛡️ Roam (โรมมิ่ง)</button>
+        <button class="lane-pill active" data-slane="ALL" onclick="setSlotPickerLane('ALL')">ทุกเลน (All)</button>
+        <button class="lane-pill" data-slane="EXP Lane" onclick="setSlotPickerLane('EXP Lane')">
+          <img src="assets/lanes/exp.png" class="lane-btn-img" alt="EXP" /> EXP
+        </button>
+        <button class="lane-pill" data-slane="Jungle" onclick="setSlotPickerLane('Jungle')">
+          <img src="assets/lanes/jungle.png" class="lane-btn-img" alt="Jungle" /> Jungle
+        </button>
+        <button class="lane-pill" data-slane="Mid Lane" onclick="setSlotPickerLane('Mid Lane')">
+          <img src="assets/lanes/mid.png" class="lane-btn-img" alt="Mid" /> Mid
+        </button>
+        <button class="lane-pill" data-slane="Gold Lane" onclick="setSlotPickerLane('Gold Lane')">
+          <img src="assets/lanes/gold.png" class="lane-btn-img" alt="Gold" /> Gold
+        </button>
+        <button class="lane-pill" data-slane="Roam" onclick="setSlotPickerLane('Roam')">
+          <img src="assets/lanes/roam.png" class="lane-btn-img" alt="Roam" /> Roam
+        </button>
       </div>
 
       <!-- Popup Hero Grid -->
