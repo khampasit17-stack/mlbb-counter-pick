@@ -139,6 +139,9 @@
             </div>
             <div id="recLanePills" class="lane-filter-pills">
               <button class="lane-pill active" data-lane="ALL" onclick="setRecLaneFilter('ALL')">ทุกเลน</button>
+              <button class="lane-pill ss-filter-pill" data-lane="SS_ONLY" onclick="setRecLaneFilter('SS_ONLY')" title="แสดงเฉพาะฮีโร่ระดับ SS (God Tier Meta) ที่หลุดแบน">
+                👑 ตัว SS God Meta
+              </button>
               <button class="lane-pill" data-lane="MISSING" onclick="setRecLaneFilter('MISSING')">✨ เฉพาะเลนที่ขาด</button>
               <button class="lane-pill" data-lane="EXP Lane" onclick="setRecLaneFilter('EXP Lane')">
                 <img src="assets/lanes/exp.png" class="lane-btn-img" alt="EXP" /> EXP
@@ -157,6 +160,9 @@
               </button>
             </div>
           </div>
+
+          <!-- SS God Tier Alert Banner (Shows when unbanned SS tier heroes are available) -->
+          <div id="ssGodSpotlightStrip" class="ss-god-spotlight-strip" style="display:none;"></div>
 
           <!-- Recommended Heroes Cards -->
           <div id="recCardsContainer" class="rec-cards-grid"></div>

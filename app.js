@@ -1496,7 +1496,9 @@ function calculateRecommendations() {
   for (const candidate of HEROES) {
     if (getHeroStatus(candidate.id) !== 'AVAILABLE') continue;
 
-    if (state.recLaneFilter === 'MISSING') {
+    if (state.recLaneFilter === 'SS_ONLY') {
+      if (candidate.tier !== 'SS') continue;
+    } else if (state.recLaneFilter === 'MISSING') {
       if (missingLanes.length > 0 && !candidate.lanes.some(l => missingLanes.includes(l))) continue;
     } else if (state.recLaneFilter !== 'ALL') {
       if (!candidate.lanes.includes(state.recLaneFilter)) continue;
@@ -1592,24 +1594,34 @@ function calculateRecommendations() {
       ? candidate.stats.metaScore * 0.28
       : candidate.stats.metaScore * 0.85;
 
-    // Direct Tier Meta Bonus: Prioritize SS (God Tier) and S (Top Meta) heroes
-    const tierBonus = candidate.tier === 'SS' ? 32 : (candidate.tier === 'S' ? 16 : (candidate.tier === 'A' ? 4 : 0));
+    const fillsNeededLane = pickedAllies.length > 0 && candidate.lanes.some(l => missingLanes.includes(l));
+    const laneBonus = fillsNeededLane ? 12 : 0;
+    const multiCounterBonus = counteredTargets.length >= 2 ? (counteredTargets.length - 1) * 16 : 0;
+
+    // Direct Tier Meta Bonus: Much higher weight for SS (God Tier Meta)
+    const tierBonus = candidate.tier === 'SS' ? 80 : (candidate.tier === 'S' ? 24 : (candidate.tier === 'A' ? 6 : 0));
+
+    // Special SS God Meta Amplifiers (Dominates draft priority)
+    let ssExtraBonus = 0;
+    if (candidate.tier === 'SS') {
+      if (counteredTargets.length > 0) ssExtraBonus += 32; // SS God Counter directly countering enemy
+      if (pickedAllies.length === 0) ssExtraBonus += 35; // Unconditional first pick priority
+      if (fillsNeededLane) ssExtraBonus += 18; // SS filling needed lane
+    }
 
     // Competitive Tournament Pro Meta Check (MPL / M-Series / MSC)
     const isPro = PRO_COMPETITIVE_HEROES.has(candidate.name.toLowerCase());
     const proBonus = isPro ? 28 : (state.strategyMode === 'all' ? 0 : -65);
 
-    const fillsNeededLane = pickedAllies.length > 0 && candidate.lanes.some(l => missingLanes.includes(l));
-    const laneBonus = fillsNeededLane ? 12 : 0;
-    const multiCounterBonus = counteredTargets.length >= 2 ? (counteredTargets.length - 1) * 16 : 0;
-
     const effectiveCounterScore = (counterScore + multiCounterBonus) * (isComboPriority ? 0.78 : 1.0);
-    const totalScore = Number((effectiveCounterScore + synergyScore + metaWeight + tierBonus + proBonus + laneBonus).toFixed(1));
+    const totalScore = Number((effectiveCounterScore + synergyScore + metaWeight + tierBonus + ssExtraBonus + proBonus + laneBonus).toFixed(1));
 
     results.push({
       hero: candidate,
       totalScore,
       tierBonus,
+      ssExtraBonus,
+      isSsTier: candidate.tier === 'SS',
       isProMeta: isPro,
       counterScore: Number((counterScore + multiCounterBonus).toFixed(1)),
       synergyScore: Number(synergyScore.toFixed(1)),
@@ -1812,6 +1824,11 @@ function renderBanBoard() {
 
   const topBanCandidates = banCandidates
     .sort((a, b) => {
+      // 1. SS God Tier Priority in Bans (Must Ban)
+      const aSS = a.tier === 'SS' ? 1 : 0;
+      const bSS = b.tier === 'SS' ? 1 : 0;
+      if (bSS !== aSS) return bSS - aSS;
+
       const aPro = PRO_COMPETITIVE_HEROES.has(a.name.toLowerCase()) ? 1 : 0;
       const bPro = PRO_COMPETITIVE_HEROES.has(b.name.toLowerCase()) ? 1 : 0;
       if (bPro !== aPro) return bPro - aPro;
@@ -1831,9 +1848,10 @@ function renderBanBoard() {
   const suggestHtml = [
     labelHtml,
     ...topBanCandidates.map(h => `
-      <span class="ban-chip" onclick="quickAssignHero(${h.id}, 'ban')" title="คลิกเพื่อแบน ${h.name} (${h.lanes[0] || ''} • อัตราแบน ${h.stats.banRate}%)">
+      <span class="ban-chip ${h.tier === 'SS' ? 'is-ss-ban' : ''}" onclick="quickAssignHero(${h.id}, 'ban')" title="คลิกเพื่อแบน ${h.name} (${h.tier} Tier • อัตราแบน ${h.stats.banRate}%)">
         <img src="${h.head}" alt="${h.name}" loading="lazy" />
         <span>${h.name}</span>
+        ${h.tier === 'SS' ? `<span class="ss-mini-badge" title="SS God Tier Priority Ban">👑 SS</span>` : ''}
         <span style="font-size:0.65rem; color:#7dd3fc; margin-left:2px; font-weight:600; display:inline-flex; align-items:center; gap:2px;">
           <img src="${LANE_IMAGE[h.lanes[0]] || 'assets/lanes/mid.png'}" class="lane-pill-img" alt="${h.lanes[0]}" />[${LANE_SHORT_LABEL[h.lanes[0]] || h.lanes[0]}]
         </span>
@@ -2032,6 +2050,45 @@ function renderRecommendations() {
   const topRecs = recommendations.slice(0, 12);
   const container = document.getElementById('recCardsContainer');
 
+  // Render SS God Tier Alert Banner (Shows when unbanned SS tier heroes are available)
+  const ssSpotlightEl = document.getElementById('ssGodSpotlightStrip');
+  const unbannedSs = HEROES.filter(h => h.tier === 'SS' && getHeroStatus(h.id) === 'AVAILABLE');
+  if (ssSpotlightEl) {
+    if (unbannedSs.length > 0) {
+      ssSpotlightEl.style.display = 'flex';
+      ssSpotlightEl.innerHTML = `
+        <div class="ss-spotlight-header">
+          <span class="ss-crown-anim">👑</span>
+          <div>
+            <div style="font-size:0.92rem; font-weight:800; color:#fef08a; display:flex; align-items:center; gap:6px;">
+              <span>ฮีโร่ระดับ SS GOD META ที่หลุดแบน (${unbannedSs.length} ตัว)</span>
+              <span class="ss-god-badge">MUST PICK</span>
+            </div>
+            <span class="ss-spotlight-sub">อันดับ 1 ในเมต้าการแข่งขันปัจจุบัน แนะนำให้ชิงเลือกทันทีก่อนศัตรูแย่ง หรือใช้ปิดเกม</span>
+          </div>
+        </div>
+        <div class="ss-spotlight-chips">
+          ${unbannedSs.map(h => {
+            const laneImg = LANE_IMAGE[h.lanes[0]] || 'assets/lanes/mid.png';
+            return `
+              <div class="ss-spotlight-chip" onclick="quickAssignHero(${h.id}, 'ally')" title="คลิกเพื่อเลือก ${h.name} (SS God Tier) เข้าทีมเรา">
+                <img src="${h.head}" alt="${h.name}" />
+                <div class="ss-chip-info">
+                  <div class="ss-chip-name">${h.name} <span class="ss-mini-badge">👑 SS</span></div>
+                  <div class="ss-chip-lane"><img src="${laneImg}" class="lane-pill-img" alt="${h.lanes[0]}" /> ${LANE_SHORT_LABEL[h.lanes[0]] || h.lanes[0]} • WR ${h.stats.winRate}%</div>
+                </div>
+                <button class="ss-chip-pick-btn" onclick="event.stopPropagation(); quickAssignHero(${h.id}, 'ally')">🛡️ เลือก</button>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      `;
+    } else {
+      ssSpotlightEl.style.display = 'none';
+      ssSpotlightEl.innerHTML = '';
+    }
+  }
+
   if (topRecs.length === 0) {
     container.innerHTML = `<div style="padding:2rem; color:var(--text-muted); text-align:center;">ไม่พบฮีโร่ในเงื่อนไขที่เลือก</div>`;
   } else {
@@ -2062,9 +2119,13 @@ function renderRecommendations() {
         reasonLines.push(`• <strong style="color:#38bdf8;">🏆 ตัวแข่ง Pro Meta:</strong> ได้รับความนิยมและผ่านการใช้งานจริงในทัวร์นาเมนต์ระดับอาชีพ (MPL / M-Series / MSC)`);
       }
       if (h.tier === 'SS') {
-        reasonLines.push(`• <strong style="color:#fde047;">👑 SS God Tier Meta (+32 คะแนน):</strong> ฮีโร่ที่เก่งที่สุดในแพตช์ปัจจุบัน อัตราชนะ ${h.stats.winRate}% และอัตราแบน ${h.stats.banRate}% ใน Mythical Glory+`);
+        const totalSsScore = (item.tierBonus || 80) + (item.ssExtraBonus || 0);
+        reasonLines.push(`• <strong style="color:#fde047; font-size:0.84rem;">👑 SS GOD TIER META (+${totalSsScore} คะแนน):</strong> ฮีโร่อันดับ 1 เมต้าที่เก่งและโกงที่สุดในแพตช์ปัจจุบัน (WR ${h.stats.winRate}% / BR ${h.stats.banRate}% ใน Mythical Glory+) ชิงหยิบทันทีเพื่อความได้เปรียบสูงสุด!`);
+        if (item.counteredTargets.length > 0) {
+          reasonLines.push(`• <strong style="color:#f87171;">⚔️ SS God Counter (+32 คะแนน):</strong> ตัว SS ตัวนี้ยังชนะทาง ${item.counteredTargets.map(t => t.enemyName).join(', ')} โดยตรง!`);
+        }
       } else if (h.tier === 'S') {
-        reasonLines.push(`• <strong style="color:#6ee7b7;">⭐ S-Tier Top Meta (+16 คะแนน):</strong> ฮีโร่กลุ่ม Top Meta เก่งรอบด้าน (WR ${h.stats.winRate}%)`);
+        reasonLines.push(`• <strong style="color:#6ee7b7;">⭐ S-Tier Top Meta (+${item.tierBonus} คะแนน):</strong> ฮีโร่กลุ่ม Top Meta เก่งรอบด้าน (WR ${h.stats.winRate}%)`);
       }
 
       if (item.matchingCombos?.length > 0) {
@@ -2092,7 +2153,7 @@ function renderRecommendations() {
       `).join('');
 
       return `
-        <div class="rec-card ${isTop1 ? 'rank-1' : ''}">
+        <div class="rec-card ${h.tier === 'SS' ? 'tier-ss-card' : ''} ${isTop1 ? 'rank-1' : ''}">
           <div class="rec-card-top">
             <div class="rec-avatar-wrap">
               <img src="${h.head}" alt="${h.name}" loading="lazy" />
@@ -2102,8 +2163,8 @@ function renderRecommendations() {
               <div class="rec-name-row">
                 <span class="rec-hero-name">${h.name}</span>
                 <span class="tier-badge tier-${h.tier}">${h.tier}</span>
+                ${h.tier === 'SS' ? `<span class="ss-god-badge" title="SS God Tier: ฮีโร่ที่เก่งที่สุดในแพตช์ปัจจุบัน (ชิงเลือกทันที)">👑 SS GOD TIER</span>` : (h.tier === 'S' ? `<span class="s-meta-badge" title="S Tier: ติด Top Meta">⭐ S TOP META</span>` : '')}
                 ${item.isProMeta ? `<span class="pro-meta-badge" title="ฮีโร่เมต้าที่นิยมใช้ในการแข่งขันจริง (MPL / M-Series / MSC)">🏆 PRO META</span>` : ''}
-                ${h.tier === 'SS' ? `<span class="god-meta-badge" title="SS Tier: ฮีโร่ที่เก่งที่สุดในแพตช์ปัจจุบัน (God Tier Meta)">👑 SS GOD META</span>` : (h.tier === 'S' ? `<span class="s-meta-badge" title="S Tier: ติด Top Meta">⭐ S TOP META</span>` : '')}
                 <span class="rec-spell-inline ${recSpell.isCounterSpell ? 'is-counter-spell' : ''}" onclick="openSpellPickerModal('rec', ${idx}, ${h.id})" title="${recSpell.en} (${recSpell.th}) — ${recSpell.reason} (คลิกเพื่อเปลี่ยนสเปล)">
                   <img src="${recSpell.img}" style="width:20px;height:20px;border-radius:50%;vertical-align:middle;" alt="${recSpell.en}" />
                 </span>
@@ -2123,7 +2184,7 @@ function renderRecommendations() {
                 <span style="color:#fca5a5;">BR ${h.stats.banRate}%</span>
               </div>
             </div>
-            <div class="score-pill" title="คะแนนรวม: ${item.totalScore} (แก้ทาง ${item.counterScore} + คอมโบ ${item.synergyScore} + โบนัสเมต้า ${item.tierBonus} + โบนัสตัวแข่ง ${item.isProMeta ? 28 : (state.strategyMode === 'all' ? 0 : -65)})">
+            <div class="score-pill" title="คะแนนรวม: ${item.totalScore} (แก้ทาง ${item.counterScore} + คอมโบ ${item.synergyScore} + โบนัสเมต้า SS ${item.tierBonus + (item.ssExtraBonus || 0)} + โบนัสตัวแข่ง ${item.isProMeta ? 28 : (state.strategyMode === 'all' ? 0 : -65)})">
               <div style="font-size:0.62rem; opacity:0.85;">คะแนนรวม</div>
               <div>${item.totalScore}</div>
             </div>
@@ -2291,7 +2352,12 @@ function renderHeroGrid() {
       if (sB !== sA) return sB - sA;
       return b.stats.metaScore - a.stats.metaScore;
     }
-    if (sortMode === 'meta') return b.stats.metaScore - a.stats.metaScore;
+    if (sortMode === 'meta') {
+      const aSS = a.tier === 'SS' ? 1 : 0;
+      const bSS = b.tier === 'SS' ? 1 : 0;
+      if (bSS !== aSS) return bSS - aSS;
+      return b.stats.metaScore - a.stats.metaScore;
+    }
     if (sortMode === 'ban') return b.stats.banRate - a.stats.banRate;
     if (sortMode === 'win') return b.stats.winRate - a.stats.winRate;
     if (sortMode === 'name') return a.name.localeCompare(b.name);
@@ -2314,8 +2380,8 @@ function renderHeroGrid() {
     else if (status === 'ENEMY') overlayHtml = `<div class="status-overlay-badge" style="color:#fb7185;">⚔️ ศัตรู</div>`;
 
     return `
-      <div class="hero-card ${isUnavailable ? 'unavailable' : ''} ${isHighlighted ? 'is-counter-highlight' : ''}" onclick="handleHeroCardClick(${h.id})">
-        <span class="tier-corner tier-${h.tier}">${h.tier}</span>
+      <div class="hero-card ${h.tier === 'SS' ? 'tier-ss-card' : ''} ${isUnavailable ? 'unavailable' : ''} ${isHighlighted ? 'is-counter-highlight' : ''}" onclick="handleHeroCardClick(${h.id})">
+        <span class="tier-corner tier-${h.tier}">${h.tier === 'SS' ? '👑 SS' : h.tier}</span>
         ${hasCombo
           ? `<span class="counter-tag-corner" style="background:#38bdf8;">⚡ คอมโบ</span>`
           : (isHighlighted ? `<span class="counter-tag-corner">⚡ แก้ทาง</span>` : '')}
@@ -2563,7 +2629,13 @@ function autoBanTopMeta() {
   }
 
   const topBanned = candidates
-    .sort((a, b) => b.stats.banRate - a.stats.banRate)
+    .sort((a, b) => {
+      // Prioritize banning SS God Tier heroes first
+      const aSS = a.tier === 'SS' ? 1 : 0;
+      const bSS = b.tier === 'SS' ? 1 : 0;
+      if (bSS !== aSS) return bSS - aSS;
+      return b.stats.banRate - a.stats.banRate;
+    })
     .slice(0, 10);
 
   state.bans = topBanned.map(h => h.id);
@@ -3106,7 +3178,7 @@ function renderSlotPickerQuickRecommend() {
               <div style="font-size:0.82rem; font-weight:700;">
                 #${i + 1} ${r.hero.name}
                 <span class="tier-badge tier-${r.hero.tier}">${r.hero.tier}</span>
-                ${r.hero.tier === 'SS' ? `<span class="god-meta-badge" style="font-size:0.56rem; padding:0 5px;">👑 SS</span>` : (r.hero.tier === 'S' ? `<span class="s-meta-badge" style="font-size:0.56rem; padding:0 5px;">⭐ S</span>` : '')}
+                ${r.hero.tier === 'SS' ? `<span class="ss-mini-badge" style="font-size:0.56rem; padding:1px 5px;">👑 SS GOD</span>` : (r.hero.tier === 'S' ? `<span class="s-meta-badge" style="font-size:0.56rem; padding:0 5px;">⭐ S</span>` : '')}
               </div>
               <div style="font-size:0.7rem; color:#6ee7b7;">
                 ${r.matchingCombos?.length > 0
@@ -3200,7 +3272,12 @@ function renderSlotPickerGrid() {
     if (sortMode === 'counter') return (recMap.get(b.id)?.counterScore ?? 0) - (recMap.get(a.id)?.counterScore ?? 0);
     if (sortMode === 'combo') return (recMap.get(b.id)?.synergyScore ?? 0) - (recMap.get(a.id)?.synergyScore ?? 0);
     if (sortMode === 'ban') return b.stats.banRate - a.stats.banRate;
-    if (sortMode === 'meta') return b.stats.metaScore - a.stats.metaScore;
+    if (sortMode === 'meta') {
+      const aSS = a.tier === 'SS' ? 1 : 0;
+      const bSS = b.tier === 'SS' ? 1 : 0;
+      if (bSS !== aSS) return bSS - aSS;
+      return b.stats.metaScore - a.stats.metaScore;
+    }
     if (sortMode === 'win') return b.stats.winRate - a.stats.winRate;
     if (sortMode === 'name') return a.name.localeCompare(b.name);
     return 0;
@@ -3237,10 +3314,10 @@ function renderSlotPickerGrid() {
 
     return `
       <div
-        class="popup-hero-card ${isUnavailable ? 'unavailable' : ''} ${isCurrent ? 'is-current-slot' : ''} ${(isCounter || hasCombo) ? 'is-counter-pick' : ''}"
+        class="popup-hero-card ${h.tier === 'SS' ? 'is-ss-card' : ''} ${isUnavailable ? 'unavailable' : ''} ${isCurrent ? 'is-current-slot' : ''} ${(isCounter || hasCombo) ? 'is-counter-pick' : ''}"
         onclick="${isUnavailable ? '' : `pickHeroForModalSlot(${h.id})`}"
       >
-        <span class="tier-corner tier-${h.tier}">${h.tier}</span>
+        <span class="tier-corner tier-${h.tier}">${h.tier === 'SS' ? '👑 SS' : h.tier}</span>
         ${banSkipBadge}
         ${hasCombo
           ? `<span class="counter-tag-corner" style="background:#38bdf8;">⚡ คอมโบ</span>`

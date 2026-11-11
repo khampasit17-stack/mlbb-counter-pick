@@ -814,6 +814,162 @@ body {
   filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.4));
 }
 
+/* SS God Tier Meta Priority Styling */
+.rec-card.tier-ss-card {
+  border: 1.8px solid rgba(245, 158, 11, 0.9);
+  background: linear-gradient(145deg, rgba(239, 68, 68, 0.16), rgba(245, 158, 11, 0.10), rgba(20, 30, 51, 0.96));
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.25);
+}
+.rec-card.tier-ss-card:hover {
+  border-color: #fcd34d;
+  box-shadow: 0 0 24px rgba(245, 158, 11, 0.45);
+  transform: translateY(-2px);
+}
+.rec-card.tier-ss-card .rec-avatar-wrap {
+  border: 2px solid #f59e0b;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+}
+.ss-god-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, #ef4444 0%, #f59e0b 100%);
+  border: 1px solid rgba(254, 240, 138, 0.85);
+  padding: 2px 8px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+  letter-spacing: 0.03em;
+  animation: pulse-glow-ss 2.2s infinite alternate;
+}
+@keyframes pulse-glow-ss {
+  0% { box-shadow: 0 0 6px rgba(245, 158, 11, 0.4); }
+  100% { box-shadow: 0 0 14px rgba(239, 68, 68, 0.7); }
+}
+.ss-god-spotlight-strip {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.18), rgba(245, 158, 11, 0.12), rgba(15, 23, 42, 0.9));
+  border: 1.5px solid rgba(245, 158, 11, 0.6);
+  border-radius: 12px;
+  padding: 0.75rem 0.9rem;
+  margin-bottom: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.2);
+}
+.ss-spotlight-header {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.ss-crown-anim {
+  font-size: 1.4rem;
+  line-height: 1;
+  filter: drop-shadow(0 0 6px #f59e0b);
+  animation: crown-bounce 1.8s infinite;
+}
+@keyframes crown-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px) scale(1.08); }
+}
+.ss-spotlight-sub {
+  display: block;
+  font-size: 0.72rem;
+  color: #fde68a;
+  margin-top: 1px;
+}
+.ss-spotlight-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.ss-spotlight-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1.2px solid rgba(245, 158, 11, 0.65);
+  border-radius: 8px;
+  padding: 0.35rem 0.55rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.ss-spotlight-chip:hover {
+  border-color: #fcd34d;
+  background: rgba(245, 158, 11, 0.18);
+  transform: translateY(-1px);
+}
+.ss-spotlight-chip img {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1.2px solid #f59e0b;
+  object-fit: cover;
+}
+.ss-chip-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.ss-chip-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.ss-chip-lane {
+  font-size: 0.68rem;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.ss-mini-badge {
+  font-size: 0.58rem;
+  font-weight: 900;
+  color: #fff;
+  background: linear-gradient(135deg, #ef4444, #f59e0b);
+  border-radius: 4px;
+  padding: 1px 4px;
+}
+.ss-chip-pick-btn {
+  background: linear-gradient(135deg, #0ea5e9, #0284c7);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 2px 7px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 2px;
+}
+.ss-filter-pill {
+  border-color: rgba(245, 158, 11, 0.6) !important;
+  color: #fef08a !important;
+  background: rgba(245, 158, 11, 0.15) !important;
+  font-weight: 700;
+}
+.ss-filter-pill.active {
+  background: linear-gradient(135deg, #ef4444, #f59e0b) !important;
+  color: #fff !important;
+  border-color: #fef08a !important;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.5) !important;
+}
+.ban-chip.is-ss-ban {
+  border-color: #f59e0b !important;
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.25), rgba(245, 158, 11, 0.2)) !important;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.35);
+}
+.popup-hero-card.is-ss-card {
+  border-color: #f59e0b !important;
+  background: linear-gradient(145deg, rgba(239, 68, 68, 0.14), rgba(20, 30, 51, 0.95)) !important;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.25);
+}
+
 .rec-sub-meta {
   font-size: 0.74rem;
   color: var(--text-muted);
