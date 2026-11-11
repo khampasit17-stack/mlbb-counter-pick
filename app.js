@@ -1556,16 +1556,20 @@ function calculateRecommendations() {
       ? candidate.stats.metaScore * 0.28
       : candidate.stats.metaScore * 0.85;
 
+    // Direct Tier Meta Bonus: Prioritize SS (God Tier) and S (Top Meta) heroes
+    const tierBonus = candidate.tier === 'SS' ? 32 : (candidate.tier === 'S' ? 16 : (candidate.tier === 'A' ? 4 : 0));
+
     const fillsNeededLane = pickedAllies.length > 0 && candidate.lanes.some(l => missingLanes.includes(l));
     const laneBonus = fillsNeededLane ? 12 : 0;
     const multiCounterBonus = counteredTargets.length >= 2 ? (counteredTargets.length - 1) * 16 : 0;
 
     const effectiveCounterScore = (counterScore + multiCounterBonus) * (isComboPriority ? 0.78 : 1.0);
-    const totalScore = Number((effectiveCounterScore + synergyScore + metaWeight + laneBonus).toFixed(1));
+    const totalScore = Number((effectiveCounterScore + synergyScore + metaWeight + tierBonus + laneBonus).toFixed(1));
 
     results.push({
       hero: candidate,
       totalScore,
+      tierBonus,
       counterScore: Number((counterScore + multiCounterBonus).toFixed(1)),
       synergyScore: Number(synergyScore.toFixed(1)),
       counteredTargets,
@@ -2006,6 +2010,12 @@ function renderRecommendations() {
       `).join('');
 
       const reasonLines = [];
+      if (h.tier === 'SS') {
+        reasonLines.push(`• <strong style="color:#fde047;">👑 SS God Tier Meta (+32 คะแนน):</strong> ฮีโร่ที่เก่งที่สุดในแพตช์ปัจจุบัน อัตราชนะ ${h.stats.winRate}% และอัตราแบน ${h.stats.banRate}% ใน Mythical Glory+`);
+      } else if (h.tier === 'S') {
+        reasonLines.push(`• <strong style="color:#6ee7b7;">⭐ S-Tier Top Meta (+16 คะแนน):</strong> ฮีโร่กลุ่ม Top Meta เก่งรอบด้าน (WR ${h.stats.winRate}%)`);
+      }
+
       if (item.matchingCombos?.length > 0) {
         for (const mc of item.matchingCombos) {
           reasonLines.push(`• <strong style="color:#7dd3fc;">⚡ คอมโบ ${mc.combo.title}:</strong> ${mc.combo.summary}`);
@@ -2041,6 +2051,7 @@ function renderRecommendations() {
               <div class="rec-name-row">
                 <span class="rec-hero-name">${h.name}</span>
                 <span class="tier-badge tier-${h.tier}">${h.tier}</span>
+                ${h.tier === 'SS' ? `<span class="god-meta-badge" title="SS Tier: ฮีโร่ที่เก่งที่สุดในแพตช์ปัจจุบัน (God Tier Meta)">👑 SS GOD META</span>` : (h.tier === 'S' ? `<span class="s-meta-badge" title="S Tier: ติด Top Meta">⭐ S TOP META</span>` : '')}
                 <span class="rec-spell-inline ${recSpell.isCounterSpell ? 'is-counter-spell' : ''}" onclick="openSpellPickerModal('rec', ${idx}, ${h.id})" title="${recSpell.en} (${recSpell.th}) — ${recSpell.reason} (คลิกเพื่อเปลี่ยนสเปล)">
                   <img src="${recSpell.img}" style="width:20px;height:20px;border-radius:50%;vertical-align:middle;" alt="${recSpell.en}" />
                 </span>
@@ -2058,7 +2069,7 @@ function renderRecommendations() {
                 <span style="color:#fca5a5;">BR ${h.stats.banRate}%</span>
               </div>
             </div>
-            <div class="score-pill">
+            <div class="score-pill" title="คะแนนรวม: ${item.totalScore} (แก้ทาง ${item.counterScore} + คอมโบ ${item.synergyScore} + โบนัสเมต้า ${item.tierBonus} จากเทียร์ ${h.tier})">
               <div style="font-size:0.62rem; opacity:0.85;">คะแนนรวม</div>
               <div>${item.totalScore}</div>
             </div>
@@ -3038,6 +3049,7 @@ function renderSlotPickerQuickRecommend() {
               <div style="font-size:0.82rem; font-weight:700;">
                 #${i + 1} ${r.hero.name}
                 <span class="tier-badge tier-${r.hero.tier}">${r.hero.tier}</span>
+                ${r.hero.tier === 'SS' ? `<span class="god-meta-badge" style="font-size:0.56rem; padding:0 5px;">👑 SS</span>` : (r.hero.tier === 'S' ? `<span class="s-meta-badge" style="font-size:0.56rem; padding:0 5px;">⭐ S</span>` : '')}
               </div>
               <div style="font-size:0.7rem; color:#6ee7b7;">
                 ${r.matchingCombos?.length > 0

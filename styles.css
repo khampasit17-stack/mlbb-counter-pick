@@ -740,6 +740,34 @@ body {
 .tier-B { background: var(--tier-b); }
 .tier-C { background: var(--tier-c); }
 
+.god-meta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.64rem;
+  font-weight: 800;
+  color: #fef08a;
+  background: linear-gradient(135deg, rgba(234, 179, 8, 0.38), rgba(245, 158, 11, 0.22));
+  border: 1px solid rgba(250, 204, 21, 0.75);
+  padding: 1px 7px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(234, 179, 8, 0.38);
+  letter-spacing: 0.02em;
+}
+
+.s-meta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.64rem;
+  font-weight: 700;
+  color: #6ee7b7;
+  background: rgba(16, 185, 129, 0.18);
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  padding: 1px 6px;
+  border-radius: 12px;
+}
+
 .rec-sub-meta {
   font-size: 0.74rem;
   color: var(--text-muted);
