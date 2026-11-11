@@ -2004,10 +2004,9 @@ function renderBanBoard() {
   const suggestHtml = [
     labelHtml,
     ...topBanCandidates.map(h => `
-      <span class="ban-chip ${h.tier === 'SS' ? 'is-ss-ban' : ''}" onclick="quickAssignHero(${h.id}, 'ban')" title="คลิกเพื่อแบน ${h.name} (${h.tier} Tier • อัตราแบน ${h.stats.banRate}%)">
+      <span class="ban-chip" onclick="quickAssignHero(${h.id}, 'ban')" title="คลิกเพื่อแบน ${h.name} (อัตราแบน ${h.stats.banRate}%)">
         <img src="${h.head}" alt="${h.name}" loading="lazy" />
         <span>${h.name}</span>
-        ${h.tier === 'SS' ? `<span class="ss-mini-badge" title="SS God Tier Priority Ban">👑 SS</span>` : ''}
         <span style="font-size:0.65rem; color:#7dd3fc; margin-left:2px; font-weight:600; display:inline-flex; align-items:center; gap:2px;">
           <img src="${LANE_IMAGE[h.lanes[0]] || 'assets/lanes/mid.png'}" class="lane-pill-img" alt="${h.lanes[0]}" />[${LANE_SHORT_LABEL[h.lanes[0]] || h.lanes[0]}]
         </span>
@@ -3324,7 +3323,6 @@ function renderSlotPickerQuickRecommend() {
               <div style="font-size:0.82rem; font-weight:700;">
                 ${h.name}
                 <span style="font-size:0.7rem; color:#7dd3fc; margin-left:3px; font-weight:600;">[${LANE_SHORT_LABEL[h.lanes[0]] || h.lanes[0]}]</span>
-                <span class="tier-badge tier-${h.tier}">${h.tier}</span>
               </div>
               <div style="font-size:0.7rem; color:#fda4af;">Ban Rate ${h.stats.banRate}% • WR ${h.stats.winRate}%</div>
             </div>
