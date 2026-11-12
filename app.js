@@ -1888,7 +1888,7 @@ function renderLiveComboStrip() {
         <span>⚡ ทางเลือก Meta Combo ที่พร้อมเล่นในดราฟต์นี้ (ไม่ติดแบน):</span>
       </div>
       <button class="btn" style="font-size:0.72rem; padding:0.2rem 0.6rem; border-color:#38bdf8; color:#bae6fd;" onclick="switchTab('combos')">
-        ดูคลังคอมโบทั้งหมด 16 แผน →
+        ดูคลังคอมโบทั้งหมด ${COMBOS.length} แผน →
       </button>
     </div>
     <div class="live-combo-cards-row">
@@ -1897,38 +1897,36 @@ function renderLiveComboStrip() {
         const isPartialMatch = item.alreadyInTeam.length > 0 && item.missingFromTeam.length > 0;
         const isComplete = item.missingFromTeam.length === 0;
 
+        let cleanTitle = (c.title || '').replace(/\s*\(.*?\)/g, '').trim();
+        if (cleanTitle.startsWith('แผน 5 คน')) {
+          cleanTitle = cleanTitle.replace(/^แผน 5 คน\s*:\s*"?/, 'แผน 5 คน: ').replace(/"$/, '').trim();
+        } else if (cleanTitle.includes(':')) {
+          cleanTitle = cleanTitle.split(':')[0].trim();
+        }
+
         return `
           <div class="mini-combo-card">
-            <div style="display:flex; justify-content:space-between; align-items:center; gap:0.35rem;">
-              <strong style="font-size:0.8rem; color:#fff;">${c.title}</strong>
-              <span style="font-size:0.68rem; color:#6ee7b7; font-weight:700; white-space:nowrap;">${c.winRateBonus}</span>
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:0.4rem;">
+              <strong style="font-size:0.78rem; color:#f1f5f9; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" title="${c.title}">${cleanTitle}</strong>
+              <span style="font-size:0.68rem; color:#34d399; font-weight:700; white-space:nowrap; background:rgba(16,185,129,0.15); padding:1px 6px; border-radius:10px; border:1px solid rgba(52,211,153,0.3);">${c.winRateBonus}</span>
             </div>
             <div class="mini-combo-avatars">
               ${c.heroObjs.map(h => {
                 const inAlly = pickedAllyIds.includes(h.id);
                 return `
-                  <span class="mini-combo-hero ${inAlly ? 'in-team' : ''}" title="${h.lanes.join('/')}">
+                  <div class="mini-combo-avatar-wrap ${inAlly ? 'in-team' : ''}" title="${h.name} (${h.lanes.join('/')})${inAlly ? ' • อยู่ในทีมแล้ว' : ''}">
                     <img src="${h.head}" alt="${h.name}" />
-                    <span>${h.name}${inAlly ? ' ✓' : ''}</span>
-                  </span>
+                    ${inAlly ? '<span class="combo-check-badge">✓</span>' : ''}
+                  </div>
                 `;
-              }).join('<span style="color:#38bdf8; font-weight:700; font-size:0.75rem;">+</span>')}
+              }).join('<span class="mini-combo-plus">+</span>')}
             </div>
-            <div style="font-size:0.71rem; color:#cbd5e1;">
-              ${item.counteredEnemyNames.length > 0
-                ? `<span style="color:#fda4af;">⚔️ ชนะทาง: ${item.counteredEnemyNames.join(', ')}</span> • `
-                : ''}
-              <span>${c.summary.slice(0, 72)}...</span>
-            </div>
-            ${item.hardCounteredByEnemy.length > 0 ? `
-              <div style="font-size:0.68rem; color:#fde68a;">⚠️ ศัตรูมีตัวแก้คอมโบนี้: ${item.hardCounteredByEnemy.map(x=>x.name).join(', ')}</div>
-            ` : ''}
             <div style="display:flex; gap:0.35rem; margin-top:auto;">
               ${isComplete ? `
-                <span style="font-size:0.72rem; color:#6ee7b7; font-weight:700;">✓ อยู่ในทีมครบชุดแล้ว!</span>
+                <span style="font-size:0.74rem; color:#6ee7b7; font-weight:700; padding:0.25rem 0;">✓ อยู่ในทีมครบชุดแล้ว</span>
               ` : `
-                <button class="btn-pick-ally" style="font-size:0.72rem; padding:0.28rem 0.5rem; background:linear-gradient(135deg,#0284c7,#7c3aed);" onclick="applyComboToDraft('${c.id}', false)">
-                  ⚡ ${isPartialMatch ? `กดเติม ${item.missingFromTeam.map(x=>x.name).join(' + ')} เข้าทีม` : 'เลือกคอมโบนี้เข้าทีมเรา'}
+                <button class="btn-pick-ally mini-combo-btn" onclick="applyComboToDraft('${c.id}', false)">
+                  ⚡ ${isPartialMatch ? `เติม ${item.missingFromTeam.map(x=>x.name).join(' + ')}` : 'เลือกคอมโบนี้'}
                 </button>
               `}
             </div>
