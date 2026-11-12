@@ -685,7 +685,7 @@ function getRecommendedCoreBuildForHero(hero) {
   }
 
   // 2. Thunder Belt Raid-Boss Tanks & Setters (Thunder Belt Stacking Meta)
-  if (['Hylos', 'Belerick', 'Gatotkaca', 'Edith', 'Badang', 'Carmilla', 'Khufra', 'Tigreal', 'Atlas', 'Minotaur', 'Lolita', 'Akai', 'Barats', 'Gloo', 'Baxia', 'Johnson', 'Chip', 'Kalea', 'Franco', 'Kaja', 'Grock'].includes(name)) {
+  if (['Hylos', 'Belerick', 'Gatotkaca', 'Edith', 'Badang', 'Carmilla', 'Khufra', 'Tigreal', 'Atlas', 'Minotaur', 'Lolita', 'Akai', 'Barats', 'Gloo', 'Baxia', 'Johnson', 'Chip', 'Kalea', 'Franco', 'Kaja', 'Grock', 'Fredrinn'].includes(name)) {
     const usesFleeting = ['Tigreal', 'Atlas', 'Carmilla', 'Badang', 'Johnson', 'Minotaur', 'Kaja', 'Franco', 'Kalea'].includes(name);
     const usesGlowing = ['Hylos', 'Belerick', 'Gatotkaca', 'Baxia', 'Gloo', 'Alice'].includes(name);
     return {
@@ -805,6 +805,60 @@ function getRecommendedCoreBuildForHero(hero) {
   };
 }
 
+// ==================== DISCIPLINE-BASED COUNTER ITEM ENGINE ====================
+// Strict discipline mapping to ensure Magic builds Magic counters, Tank builds Tank counters, etc.
+const MAGIC_BUILD_HEROES = new Set([
+  'Julian', 'Gusion', 'Aamon', 'Karina', 'Harley', 'Joy',
+  'Silvanna', 'Guinevere', 'Natan', 'Kimmy', 'Esmeralda', 'Alice', 'Zhask', 'Zetian', 'Kadita', 'Selena'
+]);
+
+const TANK_BUILD_HEROES = new Set([
+  'Tigreal', 'Atlas', 'Hylos', 'Khufra', 'Franco', 'Minotaur', 'Grock', 'Akai',
+  'Belerick', 'Baxia', 'Gatotkaca', 'Johnson', 'Lolita', 'Carmilla', 'Uranus',
+  'Edith', 'Gloo', 'Chip', 'Barats', 'Fredrinn', 'Terizla', 'Angela', 'Estes',
+  'Floryn', 'Rafaela', 'Mathilda', 'Marcel', 'Diggie', 'Kalea'
+]);
+
+const DISCIPLINE_ALLOWED_ITEMS = {
+  MAGIC: new Set([
+    'glowing_wand', 'divine_glaive', 'wishing_lantern', 'winter_crown',
+    'athenas_shield', 'radiant_armor', 'tough_boots', 'arcane_boots', 'magic_shoes', 'demon_shoes'
+  ]),
+  TANK: new Set([
+    'dominance_ice', 'athenas_shield', 'radiant_armor', 'blade_armor',
+    'antique_cuirass', 'twilight_armor', 'immortality', 'oracle',
+    'guardian_helmet', 'cursed_helmet', 'thunder_belt', 'fleeting_time',
+    'tough_boots', 'warrior_boots'
+  ]),
+  MARKSMAN: new Set([
+    'sea_halberd', 'demon_hunter_sword', 'malefic_gun', 'malefic_roar',
+    'wind_of_nature', 'rose_gold_meteor', 'winter_crown', 'immortality',
+    'swift_boots', 'tough_boots', 'warrior_boots'
+  ]),
+  PHYSICAL: new Set([
+    'sea_halberd', 'malefic_roar', 'antique_cuirass', 'blade_armor',
+    'athenas_shield', 'radiant_armor', 'rose_gold_meteor', 'winter_crown',
+    'immortality', 'tough_boots', 'warrior_boots'
+  ])
+};
+
+function getHeroDiscipline(hero, assignedLane) {
+  const name = hero.name;
+  if (['Julian', 'Gusion', 'Aamon', 'Harley', 'Joy', 'Natan', 'Kimmy'].includes(name)) {
+    return 'MAGIC';
+  }
+  if (TANK_BUILD_HEROES.has(name) || hero.roles.includes('Tank') || hero.roles.includes('Support') || assignedLane === 'Roam') {
+    return 'TANK';
+  }
+  if (MAGIC_BUILD_HEROES.has(name) || hero.roles.includes('Mage')) {
+    return 'MAGIC';
+  }
+  if (hero.roles.includes('Marksman')) {
+    return 'MARKSMAN';
+  }
+  return 'PHYSICAL';
+}
+
 // ==================== ADAPTIVE COUNTER BUILD ENGINE ====================
 // Dynamically adjusts the 6-item build based on lane opponent and enemy team threats
 function getAdaptiveCoreBuildForHero(hero, side = 'ally', slotIdx = null, customOpponent = null) {
@@ -860,14 +914,10 @@ function getAdaptiveCoreBuildForHero(hero, side = 'ally', slotIdx = null, custom
   const primaryThreat = laneOpponent || activeOpponents[0];
   const isDirectLaneMatchup = Boolean(laneOpponent);
 
-  // Determine hero roles & damage type
+  // Determine hero damage discipline
   const heroName = hero.name;
-  const isPhys = !hero.roles.includes('Mage') || ['Bane', 'Kimmy'].includes(heroName);
-  const isMage = hero.roles.includes('Mage') || ['Gusion', 'Aamon', 'Karina', 'Harley', 'Joy', 'Julian', 'Silvanna', 'Guinevere', 'Esmeralda', 'Alice', 'Zhask'].includes(heroName);
-  const isTankOrRoam = hero.roles.includes('Tank') || hero.roles.includes('Support') || assignedLane === 'Roam';
-  const isMarksman = hero.roles.includes('Marksman');
-  const isFighter = hero.roles.includes('Fighter');
-  const isAssassin = hero.roles.includes('Assassin');
+  const heroDiscipline = getHeroDiscipline(hero, assignedLane);
+  const allowedItems = DISCIPLINE_ALLOWED_ITEMS[heroDiscipline] || new Set();
 
   // Opponent attributes
   const opName = primaryThreat.name;
@@ -895,77 +945,84 @@ function getAdaptiveCoreBuildForHero(hero, side = 'ally', slotIdx = null, custom
   const isOpHeavyCC = HEAVY_CC_ENEMIES.has(opName) || opControl >= 60 || 
     ['Franco', 'Kaja', 'Tigreal', 'Atlas', 'Chou', 'Akai', 'Guinevere', 'Minotaur', 'Nana', 'Ruby'].includes(opName);
 
-  // Candidate Counter Items
+  // Candidate Counter Items strictly partitioned by hero damage discipline
   const counterCandidates = [];
   let candidateBoot = null;
 
-  // 1. Anti-Heal / Anti-Shield
+  // 1. Discipline-Specific Anti-Heal / Anti-Shield
   if (isOpRegen) {
-    if (isTankOrRoam) {
+    if (heroDiscipline === 'TANK') {
       counterCandidates.push({ id: 'dominance_ice', reason: `ลดการฟื้นฟูเลือดและเกราะขาวของ ${opName} ลง 50% และลดความเร็วโจมตี`, priority: 98 });
-    } else if (isPhys) {
-      counterCandidates.push({ id: 'sea_halberd', reason: `โจมตีกายภาพตัดการฟื้นฟูเลือดและเกราะขาวของ ${opName} ลง 50% + โบนัสดาเมจ 8%`, priority: 96 });
-    } else if (isMage) {
+    } else if (heroDiscipline === 'MAGIC') {
       counterCandidates.push({ id: 'glowing_wand', reason: `สกิลเวทเผา %Max HP และตัดฮีล/เกราะขาวของ ${opName} ลง 50% ทันที`, priority: 96 });
+    } else {
+      counterCandidates.push({ id: 'sea_halberd', reason: `โจมตีกายภาพตัดการฟื้นฟูเลือดและเกราะขาวของ ${opName} ลง 50% + โบนัสดาเมจ 8%`, priority: 96 });
     }
   }
 
-  // 2. Physical Crit / Attack Speed Defense
-  if (isOpPhysCritAtkSpeed) {
-    if (isFighter || isTankOrRoam) {
-      counterCandidates.push({ id: 'blade_armor', reason: `สะท้อนดาเมจโจมตีปกติของ ${opName} กลับไป + ลดคริติคอลลง 20%`, priority: 94 });
+  // 2. Discipline-Specific Anti-Tank / High Durability Shred
+  if (isOpHeavyTank) {
+    if (heroDiscipline === 'MAGIC') {
+      counterCandidates.push({ id: 'divine_glaive', reason: `เจาะเกราะเวททะลุเกราะเวทของ ${opName} สูงสุด 60%`, priority: 92 });
+      counterCandidates.push({ id: 'wishing_lantern', reason: `โคมผีเสื้อระเบิดดาเมจเวท 8% ของ Max HP ของ ${opName}`, priority: 89 });
+    } else if (heroDiscipline === 'MARKSMAN') {
+      const isAtkSpeedMm = ['Karrie', 'Claude', 'Wanwan', 'Melissa', 'Obsidia', 'Miya', 'Moskov'].includes(heroName);
+      if (isAtkSpeedMm) {
+        counterCandidates.push({ id: 'demon_hunter_sword', reason: `โจมตีทำดาเมจเป็น % HP ปัจจุบัน ละลายเลือดหนาของ ${opName}`, priority: 94 });
+      }
+      counterCandidates.push({ id: 'malefic_gun', reason: `เพิ่มระยะยิง 15% + เจาะเกราะกายภาพ 30% ยิง ${opName} จากระยะปลอดภัย`, priority: 92 });
+    } else if (heroDiscipline === 'PHYSICAL') {
+      counterCandidates.push({ id: 'malefic_roar', reason: `เจาะเกราะกายภาพทะลุเกราะของ ${opName} สูงสุด 50-60%`, priority: 92 });
     }
-    if (isMarksman) {
+  }
+
+  // 3. Discipline-Specific Physical Crit / Attack Speed Defense
+  if (isOpPhysCritAtkSpeed) {
+    if (heroDiscipline === 'TANK' || heroDiscipline === 'PHYSICAL') {
+      counterCandidates.push({ id: 'blade_armor', reason: `สะท้อนดาเมจโจมตีปกติของ ${opName} กลับไป + ลดคริติคอลลง 20%`, priority: 94 });
+    } else if (heroDiscipline === 'MARKSMAN') {
       counterCandidates.push({ id: 'wind_of_nature', reason: `กดเป็นอมตะต่อดาเมจกายภาพของ ${opName} 100% นาน 2 วินาที`, priority: 95 });
     }
   }
 
-  // 3. Physical Skill Burst Defense
+  // 4. Discipline-Specific Physical Skill Burst Defense
   if (isOpPhysBurst) {
-    if (isFighter || isTankOrRoam) {
-      counterCandidates.push({ id: 'antique_cuirass', reason: `ลดพลังโจมตีกายภาพสกิลของ ${opName} ลงสูงสุด 24%`, priority: 91 });
-    }
-    if (isMarksman) {
-      counterCandidates.push({ id: 'wind_of_nature', reason: `กดเป็นอมตะกายภาพ 2 วินาที ป้องกันจังหวะล้วงของ ${opName}`, priority: 92 });
-    }
-    if (isMage) {
-      counterCandidates.push({ id: 'winter_crown', reason: `กดแช่แข็งตัวเองเป็นอมตะ 2 วินาที หลบคอมโบล้วงของ ${opName}`, priority: 91 });
+    if (heroDiscipline === 'TANK' || heroDiscipline === 'PHYSICAL') {
+      counterCandidates.push({ id: 'antique_cuirass', reason: `ลดพลังโจมตีกายภาพสกิลของ ${opName} ลงสูงสุด 24%`, priority: 93 });
+    } else if (heroDiscipline === 'MARKSMAN') {
+      counterCandidates.push({ id: 'wind_of_nature', reason: `กดเป็นอมตะกายภาพ 2 วินาที ป้องกันจังหวะล้วงของ ${opName}`, priority: 94 });
+    } else if (heroDiscipline === 'MAGIC') {
+      counterCandidates.push({ id: 'winter_crown', reason: `กดแช่แข็งตัวเองเป็นอมตะ 2 วินาที หลบคอมโบล้วงของ ${opName}`, priority: 93 });
     }
   }
 
-  // 4. Magic Burst / Continuous Magic Defense
+  // 5. Discipline-Specific Magic Defense
   if (isOpMagic) {
-    if (isTankOrRoam || isFighter) {
-      counterCandidates.push({ id: 'athenas_shield', reason: `ลดดาเมจเวทชุดเดียวจาก ${opName} ลง 25% ทันทีที่โดนสกิล`, priority: 92 });
-      counterCandidates.push({ id: 'radiant_armor', reason: `เพิ่มเกราะเวทสะสม 6 สแต็ก ลดดาเมจเวทต่อเนื่องจาก ${opName}`, priority: 90 });
-    }
-    if (isMarksman || isAssassin) {
+    if (heroDiscipline === 'TANK') {
+      counterCandidates.push({ id: 'athenas_shield', reason: `ลดดาเมจเวทชุดเดียวจาก ${opName} ลง 25% ทันทีที่โดนสกิล`, priority: 95 });
+      counterCandidates.push({ id: 'radiant_armor', reason: `เพิ่มเกราะเวทสะสม 6 สแต็ก ลดดาเมจเวทต่อเนื่องจาก ${opName}`, priority: 91 });
+    } else if (heroDiscipline === 'PHYSICAL') {
+      if (hero.roles.includes('Assassin')) {
+        counterCandidates.push({ id: 'rose_gold_meteor', reason: `เด้งบาเรียกันเวทฉุกเฉินและวิ่งเร็ว 50% เมื่อโดนคอมโบของ ${opName}`, priority: 92 });
+      } else {
+        counterCandidates.push({ id: 'athenas_shield', reason: `เกราะต้านเวทลดดาเมจชุดเดียวจาก ${opName} ลง 25%`, priority: 92 });
+      }
+    } else if (heroDiscipline === 'MARKSMAN') {
       counterCandidates.push({ id: 'rose_gold_meteor', reason: `เด้งบาเรียกันเวทฉุกเฉินและวิ่งเร็ว 50% เมื่อโดนคอมโบของ ${opName}`, priority: 92 });
-    }
-    if (isMage) {
-      counterCandidates.push({ id: 'winter_crown', reason: `กดแช่แข็งอมตะ 2 วินาที หลบจังหวะอัลติเวทของ ${opName}`, priority: 90 });
-    }
-  }
-
-  // 5. Anti-Tank / High Durability Shred
-  if (isOpHeavyTank) {
-    if (isMarksman) {
-      counterCandidates.push({ id: 'demon_hunter_sword', reason: `โจมตีทำดาเมจเป็น % HP ปัจจุบัน ละลายเลือดหนาของ ${opName}`, priority: 90 });
-      counterCandidates.push({ id: 'malefic_gun', reason: `เพิ่มระยะยิง 15% + เจาะเกราะกายภาพ 30% ยิง ${opName} จากระยะปลอดภัย`, priority: 89 });
-    } else if (isPhys) {
-      counterCandidates.push({ id: 'malefic_roar', reason: `เจาะเกราะกายภาพทะลุเกราะของ ${opName} สูงสุด 50-60%`, priority: 89 });
-    } else if (isMage) {
-      counterCandidates.push({ id: 'divine_glaive', reason: `เจาะเกราะเวททะลุเกราะเวทของ ${opName} สูงสุด 60%`, priority: 89 });
-      counterCandidates.push({ id: 'wishing_lantern', reason: `โคมผีเสื้อระเบิดดาเมจเวท 8% ของ Max HP ของ ${opName}`, priority: 88 });
+    } else if (heroDiscipline === 'MAGIC') {
+      counterCandidates.push({ id: 'winter_crown', reason: `กดแช่แข็งอมตะ 2 วินาที หลบจังหวะอัลติเวทของ ${opName}`, priority: 91 });
     }
   }
 
-  // 6. Boot Swap Selection
-  if (isOpHeavyCC || (isOpMagic && !isMarksman)) {
+  // 6. Discipline-Specific Boot Swap Selection
+  if (isOpHeavyCC || (isOpMagic && heroDiscipline !== 'MARKSMAN')) {
     candidateBoot = { id: 'tough_boots', reason: `ต้านเวท 22 + ลดระยะเวลาติด CC/สตั๊นจาก ${opName} ลง 30%` };
-  } else if ((isOpPhysBurst || isOpPhysCritAtkSpeed) && (isFighter || isTankOrRoam)) {
+  } else if ((isOpPhysBurst || isOpPhysCritAtkSpeed) && (heroDiscipline === 'TANK' || heroDiscipline === 'PHYSICAL')) {
     candidateBoot = { id: 'warrior_boots', reason: `เกราะกายภาพ 22 + เพิ่มเกราะซ้อนทับ ทนดาเมจกายภาพของ ${opName} ต้นเกม` };
   }
+
+  // Strict Discipline Whitelist Filter: enforce that candidate items strictly match hero discipline
+  const validCandidates = counterCandidates.filter(cc => allowedItems.has(cc.id));
 
   // Substitution into 6-item build
   const protectedItemIds = new Set([
@@ -975,8 +1032,8 @@ function getAdaptiveCoreBuildForHero(hero, side = 'ally', slotIdx = null, custom
 
   let currentItems = baseBuild.items.map(it => ({ ...it, isCounter: false }));
 
-  // Boot swap if beneficial and different from current boot
-  if (candidateBoot && currentItems[0] && currentItems[0].id !== candidateBoot.id) {
+  // Boot swap if beneficial and allowed for this discipline
+  if (candidateBoot && currentItems[0] && currentItems[0].id !== candidateBoot.id && allowedItems.has(candidateBoot.id)) {
     const newBootObj = ALL_ITEMS_BY_ID.get(candidateBoot.id);
     if (newBootObj) {
       currentItems[0] = {
@@ -989,10 +1046,10 @@ function getAdaptiveCoreBuildForHero(hero, side = 'ally', slotIdx = null, custom
   }
 
   // Sort candidate counter items by priority
-  counterCandidates.sort((a, b) => b.priority - a.priority);
+  validCandidates.sort((a, b) => b.priority - a.priority);
 
   // Take top 1-2 counter items
-  const selectedCounters = counterCandidates.slice(0, 2);
+  const selectedCounters = validCandidates.slice(0, 2);
 
   for (const cc of selectedCounters) {
     const existingIdx = currentItems.findIndex(it => it.id === cc.id);
