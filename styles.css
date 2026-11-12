@@ -41,7 +41,6 @@ body {
   min-height: 100vh;
   line-height: 1.45;
   overflow-x: hidden;
-  zoom: 0.72;
 }
 
 /* Header */
@@ -203,9 +202,9 @@ body {
 
 /* Container */
 .main-container {
-  max-width: 100%;
+  max-width: 1640px;
   margin: 0 auto;
-  padding: 0.65rem 1.25rem 2rem;
+  padding: 1rem 1.25rem 3rem;
 }
 
 .tab-panel {
@@ -693,17 +692,11 @@ body {
 /* Recommended Counter Cards Grid (Flows within scrollable center panel) */
 .rec-cards-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
   gap: 0.75rem;
   max-height: none;
   overflow-y: visible;
   padding-right: 0;
-}
-
-@media (max-width: 1200px) {
-  .rec-cards-grid {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  }
 }
 
 .rec-card {
