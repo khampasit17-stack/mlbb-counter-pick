@@ -805,6 +805,251 @@ function getRecommendedCoreBuildForHero(hero) {
   };
 }
 
+// ==================== ADAPTIVE COUNTER BUILD ENGINE ====================
+// Dynamically adjusts the 6-item build based on lane opponent and enemy team threats
+function getAdaptiveCoreBuildForHero(hero, side = 'ally', slotIdx = null, customOpponent = null) {
+  const baseBuild = getRecommendedCoreBuildForHero(hero);
+  if (!hero || !baseBuild || !baseBuild.items || baseBuild.items.length === 0) return baseBuild;
+
+  // 1. Resolve active lane
+  if (slotIdx === null && (side === 'ally' || side === 'enemy')) {
+    const pickList = side === 'ally' ? state.allyPicks : state.enemyPicks;
+    const foundIdx = pickList.indexOf(hero.id);
+    if (foundIdx !== -1) slotIdx = foundIdx;
+  }
+
+  let assignedLane = null;
+  if (slotIdx !== null && (side === 'ally' || side === 'enemy')) {
+    assignedLane = getSlotAssignedLane(side, slotIdx);
+  } else {
+    assignedLane = hero.lanes ? hero.lanes[0] : 'EXP Lane';
+  }
+
+  // 2. Identify lane opponent and team threats
+  const otherSide = side === 'ally' ? 'enemy' : 'ally';
+  const otherPicks = otherSide === 'enemy' ? state.enemyPicks : state.allyPicks;
+
+  let laneOpponent = customOpponent || null;
+  if (!laneOpponent && slotIdx !== null) {
+    for (let i = 0; i < 5; i++) {
+      if (otherPicks[i]) {
+        const opLane = getSlotAssignedLane(otherSide, i);
+        if (opLane === assignedLane) {
+          laneOpponent = HERO_BY_ID.get(otherPicks[i]);
+          break;
+        }
+      }
+    }
+  }
+
+  // All active opponents on the other side
+  const activeOpponents = otherPicks.filter(Boolean).map(id => HERO_BY_ID.get(id)).filter(Boolean);
+
+  // If no lane opponent and no opponents on other side, return base build
+  if (!laneOpponent && activeOpponents.length === 0) {
+    return {
+      ...baseBuild,
+      isAdaptive: false,
+      laneOpponent: null,
+      isDirectLaneMatchup: false,
+      items: baseBuild.items.map(it => ({ ...it, isCounter: false }))
+    };
+  }
+
+  // The primary threat is the direct lane opponent (if picked) or the top threat on the other team
+  const primaryThreat = laneOpponent || activeOpponents[0];
+  const isDirectLaneMatchup = Boolean(laneOpponent);
+
+  // Determine hero roles & damage type
+  const heroName = hero.name;
+  const isPhys = !hero.roles.includes('Mage') || ['Bane', 'Kimmy'].includes(heroName);
+  const isMage = hero.roles.includes('Mage') || ['Gusion', 'Aamon', 'Karina', 'Harley', 'Joy', 'Julian', 'Silvanna', 'Guinevere', 'Esmeralda', 'Alice', 'Zhask'].includes(heroName);
+  const isTankOrRoam = hero.roles.includes('Tank') || hero.roles.includes('Support') || assignedLane === 'Roam';
+  const isMarksman = hero.roles.includes('Marksman');
+  const isFighter = hero.roles.includes('Fighter');
+  const isAssassin = hero.roles.includes('Assassin');
+
+  // Opponent attributes
+  const opName = primaryThreat.name;
+  const opRoles = primaryThreat.roles || [];
+  const opSpecialties = primaryThreat.specialties || [];
+  const opDurability = primaryThreat.ability?.durability || 0;
+  const opControl = primaryThreat.ability?.control || 0;
+
+  // Threat conditions
+  const isOpRegen = REGEN_SHIELD_ENEMIES.has(opName) || opSpecialties.includes('Regen') || 
+    ['Uranus', 'Esmeralda', 'Ruby', 'Yu Zhong', 'Thamuz', 'Cici', 'Dyrroth', 'Paquito', 'Alpha', 'Alice', 'Estes', 'Floryn', 'Rafaela', 'Angela', 'Harith', 'Barats', 'Terizla', 'Khaleed', 'Alucard', 'Roger', 'Fredrinn', 'Gatotkaca', 'Minotaur', 'Hilda', 'Masha', 'Popol and Kupa'].includes(opName);
+
+  const isOpPhysBurst = AGILE_DIVE_ENEMIES.has(opName) || 
+    ['Fanny', 'Hayabusa', 'Saber', 'Lancelot', 'Ling', 'Nolan', 'Suyou', 'Chou', 'Paquito', 'Brody', 'Clint', 'Beatrix', 'Granger', 'Helcurt', 'Natalia', 'Benedetta', 'Terizla', 'Dyrroth', 'Yin', 'Hirara'].includes(opName);
+
+  const isOpPhysCritAtkSpeed = MULTI_HIT_DPS_ENEMIES.has(opName) || 
+    ['Bruno', 'Moskov', 'Miya', 'Layla', 'Irithel', 'Claude', 'Wanwan', 'Melissa', 'Freya', 'Argus', 'Zilong', 'Aulus', 'Sun', 'Badang', 'Hanabi', 'Karrie', 'Obsidia'].includes(opName);
+
+  const isOpMagic = primaryThreat.roles.includes('Mage') || 
+    ['Guinevere', 'Silvanna', 'Joy', 'Julian', 'Edith', 'Harith', 'Natan', 'Kimmy', 'Esmeralda', 'Alice', 'Gusion', 'Aamon', 'Karina', 'Harley'].includes(opName);
+
+  const isOpHeavyTank = opRoles.includes('Tank') || opDurability >= 70 || 
+    ['Hylos', 'Belerick', 'Tigreal', 'Gatotkaca', 'Atlas', 'Grock', 'Minotaur', 'Baxia', 'Akai', 'Fredrinn', 'Barats', 'Johnson', 'Edith', 'Terizla', 'Uranus'].includes(opName);
+
+  const isOpHeavyCC = HEAVY_CC_ENEMIES.has(opName) || opControl >= 60 || 
+    ['Franco', 'Kaja', 'Tigreal', 'Atlas', 'Chou', 'Akai', 'Guinevere', 'Minotaur', 'Nana', 'Ruby'].includes(opName);
+
+  // Candidate Counter Items
+  const counterCandidates = [];
+  let candidateBoot = null;
+
+  // 1. Anti-Heal / Anti-Shield
+  if (isOpRegen) {
+    if (isTankOrRoam) {
+      counterCandidates.push({ id: 'dominance_ice', reason: `ลดการฟื้นฟูเลือดและเกราะขาวของ ${opName} ลง 50% และลดความเร็วโจมตี`, priority: 98 });
+    } else if (isPhys) {
+      counterCandidates.push({ id: 'sea_halberd', reason: `โจมตีกายภาพตัดการฟื้นฟูเลือดและเกราะขาวของ ${opName} ลง 50% + โบนัสดาเมจ 8%`, priority: 96 });
+    } else if (isMage) {
+      counterCandidates.push({ id: 'glowing_wand', reason: `สกิลเวทเผา %Max HP และตัดฮีล/เกราะขาวของ ${opName} ลง 50% ทันที`, priority: 96 });
+    }
+  }
+
+  // 2. Physical Crit / Attack Speed Defense
+  if (isOpPhysCritAtkSpeed) {
+    if (isFighter || isTankOrRoam) {
+      counterCandidates.push({ id: 'blade_armor', reason: `สะท้อนดาเมจโจมตีปกติของ ${opName} กลับไป + ลดคริติคอลลง 20%`, priority: 94 });
+    }
+    if (isMarksman) {
+      counterCandidates.push({ id: 'wind_of_nature', reason: `กดเป็นอมตะต่อดาเมจกายภาพของ ${opName} 100% นาน 2 วินาที`, priority: 95 });
+    }
+  }
+
+  // 3. Physical Skill Burst Defense
+  if (isOpPhysBurst) {
+    if (isFighter || isTankOrRoam) {
+      counterCandidates.push({ id: 'antique_cuirass', reason: `ลดพลังโจมตีกายภาพสกิลของ ${opName} ลงสูงสุด 24%`, priority: 91 });
+    }
+    if (isMarksman) {
+      counterCandidates.push({ id: 'wind_of_nature', reason: `กดเป็นอมตะกายภาพ 2 วินาที ป้องกันจังหวะล้วงของ ${opName}`, priority: 92 });
+    }
+    if (isMage) {
+      counterCandidates.push({ id: 'winter_crown', reason: `กดแช่แข็งตัวเองเป็นอมตะ 2 วินาที หลบคอมโบล้วงของ ${opName}`, priority: 91 });
+    }
+  }
+
+  // 4. Magic Burst / Continuous Magic Defense
+  if (isOpMagic) {
+    if (isTankOrRoam || isFighter) {
+      counterCandidates.push({ id: 'athenas_shield', reason: `ลดดาเมจเวทชุดเดียวจาก ${opName} ลง 25% ทันทีที่โดนสกิล`, priority: 92 });
+      counterCandidates.push({ id: 'radiant_armor', reason: `เพิ่มเกราะเวทสะสม 6 สแต็ก ลดดาเมจเวทต่อเนื่องจาก ${opName}`, priority: 90 });
+    }
+    if (isMarksman || isAssassin) {
+      counterCandidates.push({ id: 'rose_gold_meteor', reason: `เด้งบาเรียกันเวทฉุกเฉินและวิ่งเร็ว 50% เมื่อโดนคอมโบของ ${opName}`, priority: 92 });
+    }
+    if (isMage) {
+      counterCandidates.push({ id: 'winter_crown', reason: `กดแช่แข็งอมตะ 2 วินาที หลบจังหวะอัลติเวทของ ${opName}`, priority: 90 });
+    }
+  }
+
+  // 5. Anti-Tank / High Durability Shred
+  if (isOpHeavyTank) {
+    if (isMarksman) {
+      counterCandidates.push({ id: 'demon_hunter_sword', reason: `โจมตีทำดาเมจเป็น % HP ปัจจุบัน ละลายเลือดหนาของ ${opName}`, priority: 90 });
+      counterCandidates.push({ id: 'malefic_gun', reason: `เพิ่มระยะยิง 15% + เจาะเกราะกายภาพ 30% ยิง ${opName} จากระยะปลอดภัย`, priority: 89 });
+    } else if (isPhys) {
+      counterCandidates.push({ id: 'malefic_roar', reason: `เจาะเกราะกายภาพทะลุเกราะของ ${opName} สูงสุด 50-60%`, priority: 89 });
+    } else if (isMage) {
+      counterCandidates.push({ id: 'divine_glaive', reason: `เจาะเกราะเวททะลุเกราะเวทของ ${opName} สูงสุด 60%`, priority: 89 });
+      counterCandidates.push({ id: 'wishing_lantern', reason: `โคมผีเสื้อระเบิดดาเมจเวท 8% ของ Max HP ของ ${opName}`, priority: 88 });
+    }
+  }
+
+  // 6. Boot Swap Selection
+  if (isOpHeavyCC || (isOpMagic && !isMarksman)) {
+    candidateBoot = { id: 'tough_boots', reason: `ต้านเวท 22 + ลดระยะเวลาติด CC/สตั๊นจาก ${opName} ลง 30%` };
+  } else if ((isOpPhysBurst || isOpPhysCritAtkSpeed) && (isFighter || isTankOrRoam)) {
+    candidateBoot = { id: 'warrior_boots', reason: `เกราะกายภาพ 22 + เพิ่มเกราะซ้อนทับ ทนดาเมจกายภาพของ ${opName} ต้นเกม` };
+  }
+
+  // Substitution into 6-item build
+  const protectedItemIds = new Set([
+    'haas_claws', 'berserkers_fury', 'corrosion_scythe', 'golden_staff', 
+    'holy_crystal', 'enchanted_talisman', 'war_axe', 'thunder_belt', 'flask_of_the_oasis'
+  ]);
+
+  let currentItems = baseBuild.items.map(it => ({ ...it, isCounter: false }));
+
+  // Boot swap if beneficial and different from current boot
+  if (candidateBoot && currentItems[0] && currentItems[0].id !== candidateBoot.id) {
+    const newBootObj = ALL_ITEMS_BY_ID.get(candidateBoot.id);
+    if (newBootObj) {
+      currentItems[0] = {
+        ...newBootObj,
+        isCounter: true,
+        counterReason: candidateBoot.reason,
+        counterTarget: opName
+      };
+    }
+  }
+
+  // Sort candidate counter items by priority
+  counterCandidates.sort((a, b) => b.priority - a.priority);
+
+  // Take top 1-2 counter items
+  const selectedCounters = counterCandidates.slice(0, 2);
+
+  for (const cc of selectedCounters) {
+    const existingIdx = currentItems.findIndex(it => it.id === cc.id);
+    if (existingIdx !== -1) {
+      currentItems[existingIdx] = {
+        ...currentItems[existingIdx],
+        isCounter: true,
+        counterReason: cc.reason,
+        counterTarget: opName
+      };
+      continue;
+    }
+
+    const counterItemObj = ALL_ITEMS_BY_ID.get(cc.id);
+    if (!counterItemObj) continue;
+
+    // Replace flexible slot from index 3 or 4 or 5
+    let replaceIdx = -1;
+    for (let i = currentItems.length - 1; i >= 1; i--) {
+      if (!protectedItemIds.has(currentItems[i].id) && !currentItems[i].isCounter) {
+        replaceIdx = i;
+        break;
+      }
+    }
+
+    if (replaceIdx !== -1) {
+      currentItems[replaceIdx] = {
+        ...counterItemObj,
+        isCounter: true,
+        counterReason: cc.reason,
+        counterTarget: opName
+      };
+    }
+  }
+
+  const counterCount = currentItems.filter(it => it.isCounter).length;
+  const isAdaptive = counterCount > 0;
+
+  const titlePrefix = isDirectLaneMatchup 
+    ? `เซ็ตแก้ทาง ${opName} ในเลน ${LANE_SHORT_LABEL[assignedLane] || assignedLane}`
+    : `เซ็ตแก้ทางทีมศัตรู (${opName})`;
+
+  const counterItemNames = currentItems.filter(it => it.isCounter).map(it => it.name).join(' + ');
+
+  return {
+    ...baseBuild,
+    title: isAdaptive ? `${titlePrefix} (${counterItemNames})` : baseBuild.title,
+    note: isAdaptive 
+      ? `ปรับไอเทมแก้ทาง ${opName}: ออก ${counterItemNames} เพื่อรับมือจุดเด่นและตัดความได้เปรียบของศัตรู` 
+      : baseBuild.note,
+    isAdaptive,
+    laneOpponent: primaryThreat,
+    isDirectLaneMatchup,
+    items: currentItems
+  };
+}
+
 // ==================== MLBB OFFICIAL EMBLEM & TALENT SYSTEM ====================
 const EMBLEM_ASSETS = {
   emblems: {
@@ -2091,7 +2336,7 @@ function renderTeamColumns() {
     const laneShort = LANE_SHORT_LABEL[assignedLane] || assignedLane;
     const laneImgSrc = LANE_IMAGE[assignedLane] || 'assets/lanes/mid.png';
     const emblem = getRecommendedEmblemForHero(hero, assignedLane);
-    const coreBuild = getRecommendedCoreBuildForHero(hero);
+    const coreBuild = getAdaptiveCoreBuildForHero(hero, 'ally', idx);
 
     return `
       <div class="pick-slot ${isTarget ? 'active-target' : ''}" onclick="openSlotPickerModal('ally', ${idx})" title="คลิกเพื่อเปลี่ยนตัวละครในช่อง S${idx + 1}">
@@ -2128,11 +2373,14 @@ function renderTeamColumns() {
                 <img src="${emblem ? emblem.talent3.img : 'assets/emblems/war_cry.png'}" class="slot-talent-icon slot-talent-core" alt="${emblem ? emblem.talent3.name : ''}" title="Core: ${emblem ? emblem.talent3.name + ' (' + emblem.talent3.desc + ')' : ''}" />
               </div>
             </div>
-            <div class="slot-items-row" title="เซ็ตไอเทมเมต้าแนะนำ 6 ชิ้น: ${coreBuild ? coreBuild.title : ''}">
-              <span class="slot-build-tag">Items:</span>
+            <div class="slot-items-row" title="${coreBuild.isAdaptive && coreBuild.laneOpponent ? `เซ็ตไอเทมแก้ทาง ${coreBuild.laneOpponent.name} (${coreBuild.laneOpponent.thName || ''}): ${coreBuild.title}` : `เซ็ตไอเทมเมต้าแนะนำ 6 ชิ้น: ${coreBuild ? coreBuild.title : ''}`}">
+              <span class="slot-build-tag">${coreBuild.isAdaptive && coreBuild.laneOpponent ? `<span style="color:#fcd34d; font-weight:800;" title="ไอเทมปรับอัตโนมัติแก้ทาง ${coreBuild.laneOpponent.name} ในเลน ${laneShort}">Items ⚔️ vs ${coreBuild.laneOpponent.name}:</span>` : 'Items:'}</span>
               <div class="slot-items-chips">
                 ${(coreBuild && coreBuild.items ? coreBuild.items : []).map(it => `
-                  <img src="${it.img}" class="slot-item-mini-img" alt="${it.name}" title="${it.name} (${it.thName}) — ${it.shortTag || ''}" onclick="openCounterGearModal('ALL', 'ALL', ${hero.id})" />
+                  <div class="slot-item-mini-wrap" title="${it.isCounter ? `[🗡️ ไอเทมแก้ทาง ${it.counterTarget ? it.counterTarget.name : ''}]: ` : ''}${it.name} (${it.thName}) — ${it.counterReason || it.shortTag || ''}">
+                    <img src="${it.img}" class="slot-item-mini-img ${it.isCounter ? 'is-counter-item' : ''}" alt="${it.name}" onclick="openCounterGearModal('ALL', 'ALL', ${hero.id})" />
+                    ${it.isCounter ? '<span class="slot-item-counter-badge">🗡️</span>' : ''}
+                  </div>
                 `).join('')}
               </div>
             </div>
@@ -2184,7 +2432,7 @@ function renderTeamColumns() {
     const laneShort = LANE_SHORT_LABEL[assignedLane] || assignedLane;
     const laneImgSrc = LANE_IMAGE[assignedLane] || 'assets/lanes/mid.png';
     const emblem = getRecommendedEmblemForHero(hero, assignedLane);
-    const coreBuild = getRecommendedCoreBuildForHero(hero);
+    const coreBuild = getAdaptiveCoreBuildForHero(hero, 'enemy', idx);
 
     return `
       <div class="pick-slot ${isTarget ? 'active-target' : ''}" onclick="openSlotPickerModal('enemy', ${idx})" title="คลิกเพื่อเปลี่ยนฮีโร่ศัตรูในช่อง S${idx + 1}">
@@ -2221,11 +2469,14 @@ function renderTeamColumns() {
                 <img src="${emblem ? emblem.talent3.img : 'assets/emblems/war_cry.png'}" class="slot-talent-icon slot-talent-core" alt="${emblem ? emblem.talent3.name : ''}" title="Core: ${emblem ? emblem.talent3.name + ' (' + emblem.talent3.desc + ')' : ''}" />
               </div>
             </div>
-            <div class="slot-items-row" title="เซ็ตไอเทมเมต้า 6 ชิ้นที่ ${hero.name} ศัตรูมักออก: ${coreBuild ? coreBuild.title : ''}">
-              <span class="slot-build-tag">Items:</span>
+            <div class="slot-items-row" title="${coreBuild.isAdaptive && coreBuild.laneOpponent ? `เซ็ตไอเทมที่ ${hero.name} ใช้แก้ทาง ${coreBuild.laneOpponent.name} ทีมเรา: ${coreBuild.title}` : `เซ็ตไอเทมเมต้า 6 ชิ้นที่ ${hero.name} ศัตรูมักออก: ${coreBuild ? coreBuild.title : ''}`}">
+              <span class="slot-build-tag">${coreBuild.isAdaptive && coreBuild.laneOpponent ? `<span style="color:#fb7185; font-weight:800;" title="ไอเทมที่ศัตรูออกแก้ทาง ${coreBuild.laneOpponent.name} ทีมเราในเลน ${laneShort}">Items ⚔️ vs ${coreBuild.laneOpponent.name}:</span>` : 'Items:'}</span>
               <div class="slot-items-chips">
                 ${(coreBuild && coreBuild.items ? coreBuild.items : []).map(it => `
-                  <img src="${it.img}" class="slot-item-mini-img" alt="${it.name}" title="${it.name} (${it.thName}) — คลิกเพื่อดูของแก้ทาง" onclick="openCounterGearModal(${hero.id})" />
+                  <div class="slot-item-mini-wrap" title="${it.isCounter ? `[🗡️ ออกแก้ทาง ${it.counterTarget ? it.counterTarget.name : ''}]: ` : ''}${it.name} (${it.thName}) — ${it.counterReason || it.shortTag || ''}">
+                    <img src="${it.img}" class="slot-item-mini-img ${it.isCounter ? 'is-counter-item' : ''}" alt="${it.name}" onclick="openCounterGearModal(${hero.id})" />
+                    ${it.isCounter ? '<span class="slot-item-counter-badge">🗡️</span>' : ''}
+                  </div>
                 `).join('')}
               </div>
             </div>
@@ -2330,14 +2581,35 @@ function renderRecommendations() {
         reasonLines.push(`• <strong>ท็อป Meta (${h.tier} Tier):</strong> อัตราชนะ ${h.stats.winRate}% และอัตราแบน ${h.stats.banRate}% ในแรงก์ Mythical Glory`);
       }
 
+      // Find direct lane opponent for this recommended candidate if an enemy is in that lane
+      let laneOpponentForRec = null;
+      for (let eIdx = 0; eIdx < 5; eIdx++) {
+        if (state.enemyPicks[eIdx]) {
+          const eLane = getSlotAssignedLane('enemy', eIdx);
+          if (h.lanes.includes(eLane)) {
+            laneOpponentForRec = HERO_BY_ID.get(state.enemyPicks[eIdx]);
+            break;
+          }
+        }
+      }
+
       const recSpell = getRecommendedSpell(h, [...state.allyPicks.filter(Boolean), h.id], state.enemyPicks, 'rec', idx);
-      const coreBuild = getRecommendedCoreBuildForHero(h);
+      const coreBuild = getAdaptiveCoreBuildForHero(h, 'ally', null, laneOpponentForRec);
       if (recSpell.isCounterSpell && recSpell.counterTargets?.length > 0) {
         reasonLines.push(`• <strong style="color:#6ee7b7;">✨ สเปลแก้ทางแนะนำ (${recSpell.en} - ${recSpell.th}):</strong> รับมือ ${recSpell.counterTargets.join(', ')}`);
       }
+      if (coreBuild.isAdaptive && coreBuild.laneOpponent) {
+        const counterItemNames = coreBuild.items.filter(it => it.isCounter).map(it => it.name).join(', ');
+        if (counterItemNames) {
+          reasonLines.push(`• <strong style="color:#f59e0b;">🗡️ ออกของแก้ทาง ${coreBuild.laneOpponent.name}:</strong> ปรับเซ็ตไอเทมเป็น ${counterItemNames} สู้ในเลน`);
+        }
+      }
 
       const miniCoreItemsHtml = coreBuild.items.slice(0, 3).map(it => `
-        <img src="${it.img}" style="width:20px;height:20px;border-radius:4px;border:1px solid rgba(251,191,36,0.65);vertical-align:middle;" alt="${it.name}" title="ไอเทมเมต้าของ ${h.name}: ${it.name} (${it.thName})" />
+        <span style="position:relative;display:inline-block;">
+          <img src="${it.img}" style="width:20px;height:20px;border-radius:4px;border:1px solid ${it.isCounter ? '#f59e0b' : 'rgba(251,191,36,0.65)'};vertical-align:middle;${it.isCounter ? 'box-shadow:0 0 5px rgba(245,158,11,0.6);' : ''}" alt="${it.name}" title="${it.isCounter ? `[🗡️ แก้ทาง ${coreBuild.laneOpponent ? coreBuild.laneOpponent.name : ''}]: ` : ''}${it.name} (${it.thName})" />
+          ${it.isCounter ? '<span style="position:absolute;bottom:-2px;right:-3px;font-size:8px;line-height:1;">🗡️</span>' : ''}
+        </span>
       `).join('');
 
       return `
@@ -3057,7 +3329,7 @@ function buildHeroDossierHtml(h, isModal = true) {
 
   const detailedCounterSpells = getCounterSpellsForEnemy(h).slice(0, 4);
   const detailedCounterItems = getCounterItemsForEnemy(h);
-  const coreBuild = getRecommendedCoreBuildForHero(h);
+  const coreBuild = getAdaptiveCoreBuildForHero(h, state.allyPicks.includes(h.id) ? 'ally' : (state.enemyPicks.includes(h.id) ? 'enemy' : 'ally'));
   const sigSpellProfile = getHeroSpellProfile(h);
   const sigSpellObj = SPELL_BY_KEY.get(h.lanes[0] === 'Jungle' ? 'Retribution' : sigSpellProfile.primary) || SPELL_BY_KEY.get('Flicker');
 
@@ -3065,7 +3337,7 @@ function buildHeroDossierHtml(h, isModal = true) {
     <div style="margin-bottom:1rem; padding:0.78rem; background:linear-gradient(135deg, rgba(245,158,11,0.12), rgba(14,165,233,0.1)); border-radius:10px; border:1px solid rgba(251,191,36,0.45);">
       <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.4rem; margin-bottom:0.45rem;">
         <div style="font-size:0.86rem; font-weight:700; color:#fef08a;">
-          🔥 ${coreBuild.title} — เซ็ตไอเทมเมต้าประจำตัวของ ${h.name} (6 ชิ้น):
+          🔥 ${coreBuild.isAdaptive && coreBuild.laneOpponent ? `เซ็ตไอเทมปรับแก้ทาง ${coreBuild.laneOpponent.name} ในเลนของ ${h.name} (6 ชิ้น):` : `${coreBuild.title} — เซ็ตไอเทมเมต้าประจำตัวของ ${h.name} (6 ชิ้น):`}
         </div>
         <span style="display:inline-flex; align-items:center; gap:0.35rem; font-size:0.75rem; background:rgba(16,185,129,0.18); color:#6ee7b7; padding:2px 8px; border-radius:12px; border:1px solid rgba(16,185,129,0.4);">
           <img src="${sigSpellObj.img}" style="width:18px;height:18px;border-radius:50%;" alt="${sigSpellObj.en}" />
@@ -3075,11 +3347,11 @@ function buildHeroDossierHtml(h, isModal = true) {
       <div style="font-size:0.75rem; color:#cbd5e1; margin-bottom:0.55rem;">${coreBuild.note}</div>
       <div class="gear-chips-wrap">
         ${coreBuild.items.map((it, idx) => `
-          <div class="gear-chip" style="border-color:rgba(251,191,36,0.45); background:rgba(15,23,42,0.85);" title="${it.shortTag || ''} • ${it.stats || ''}">
+          <div class="gear-chip" style="border-color:${it.isCounter ? '#f59e0b' : 'rgba(251,191,36,0.45)'}; background:${it.isCounter ? 'rgba(245,158,11,0.16)' : 'rgba(15,23,42,0.85)'};" title="${it.isCounter ? `[🗡️ แก้ทาง]: ` : ''}${it.shortTag || ''} • ${it.stats || ''}">
             <img src="${it.img}" class="item-chip-img" alt="${it.name}" />
             <div>
-              <div style="font-size:0.78rem; font-weight:700; color:#fff;">#${idx + 1} ${it.name}</div>
-              <div style="font-size:0.68rem; color:#fde68a;">${it.thName}</div>
+              <div style="font-size:0.78rem; font-weight:700; color:#fff;">#${idx + 1} ${it.name} ${it.isCounter ? '<span style="color:#f59e0b;font-size:0.72rem;">🗡️ [แก้ทาง]</span>' : ''}</div>
+              <div style="font-size:0.68rem; color:#fde68a;">${it.counterReason ? `<span style="color:#fcd34d;">${it.counterReason}</span>` : it.thName}</div>
             </div>
           </div>
         `).join('')}
@@ -3636,9 +3908,9 @@ function renderCounterGearModal() {
       }).map(item => ({ item, targets: [], reasonsByEnemy: [], totalWeight: 80 }))
     : filteredItems;
 
-  // Build Core Meta Build Box if focusAlly or single enemy is selected
+  // Build Core Meta / Adaptive Build Box if focusAlly or single enemy is selected
   const buildHeroTarget = focusAlly || (activeEnemies.length === 1 ? activeEnemies[0] : null);
-  const coreBuildObj = buildHeroTarget ? getRecommendedCoreBuildForHero(buildHeroTarget) : null;
+  const coreBuildObj = buildHeroTarget ? (focusAlly ? getAdaptiveCoreBuildForHero(focusAlly, 'ally') : getRecommendedCoreBuildForHero(buildHeroTarget)) : null;
   const coreBuildSectionHtml = (buildHeroTarget && coreBuildObj && coreBuildObj.items.length > 0) ? `
     <div style="margin-bottom:1.1rem; padding:0.8rem 0.9rem; background:linear-gradient(135deg, rgba(245,158,11,0.14), rgba(14,165,233,0.12)); border:1px solid rgba(251,191,36,0.5); border-radius:12px;">
       <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.45rem;">
@@ -3646,7 +3918,7 @@ function renderCounterGearModal() {
           <img src="${buildHeroTarget.head}" style="width:32px; height:32px; border-radius:50%; border:2px solid #fcd34d;" alt="${buildHeroTarget.name}" />
           <div>
             <div style="font-size:0.9rem; font-weight:700; color:#fef08a;">
-              🔥 เซ็ตไอเทมเมต้าประจำตัวของ ${buildHeroTarget.name} (6 ชิ้น — ${coreBuildObj.title})
+              🔥 ${coreBuildObj.isAdaptive && coreBuildObj.laneOpponent ? `เซ็ตไอเทมปรับแก้ทาง ${coreBuildObj.laneOpponent.name} ของ ${buildHeroTarget.name} (6 ชิ้น)` : `เซ็ตไอเทมเมต้าประจำตัวของ ${buildHeroTarget.name} (6 ชิ้น — ${coreBuildObj.title})`}
             </div>
             <div style="font-size:0.74rem; color:#cbd5e1;">${coreBuildObj.note}</div>
           </div>
@@ -3654,11 +3926,11 @@ function renderCounterGearModal() {
       </div>
       <div class="gear-chips-wrap">
         ${coreBuildObj.items.map((it, idx) => `
-          <div class="gear-chip" style="border-color:rgba(251,191,36,0.5); background:rgba(7,11,20,0.85);" title="${it.shortTag || ''} • ${it.stats || ''}">
+          <div class="gear-chip" style="border-color:${it.isCounter ? '#f59e0b' : 'rgba(251,191,36,0.5)'}; background:${it.isCounter ? 'rgba(245,158,11,0.16)' : 'rgba(7,11,20,0.85)'};" title="${it.isCounter ? `[🗡️ แก้ทาง]: ` : ''}${it.shortTag || ''} • ${it.stats || ''}">
             <img src="${it.img}" class="item-chip-img" alt="${it.name}" />
             <div>
-              <div style="font-size:0.8rem; font-weight:700; color:#fff;">#${idx + 1} ${it.name}</div>
-              <div style="font-size:0.68rem; color:#fde68a;">${it.thName}</div>
+              <div style="font-size:0.8rem; font-weight:700; color:#fff;">#${idx + 1} ${it.name} ${it.isCounter ? '<span style="color:#f59e0b;font-size:0.72rem;margin-left:4px;">🗡️ [แก้ทาง]</span>' : ''}</div>
+              <div style="font-size:0.68rem; color:#fde68a;">${it.counterReason ? `<span style="color:#fcd34d;">${it.counterReason}</span>` : it.thName}</div>
             </div>
           </div>
         `).join('')}
