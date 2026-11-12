@@ -173,8 +173,15 @@
         </div>
       </div>
 
+      <!-- Toggle Button for All Heroes Picker Section -->
+      <div style="text-align:center; margin: 0.4rem 0 0.8rem;">
+        <button id="togglePickerBtn" class="btn" style="font-size:0.75rem; padding:0.25rem 0.85rem; border-color:var(--border-subtle); color:var(--text-muted); border-radius:20px;" onclick="togglePickerSection()">
+          📋 แสดง/ซ่อน คลังฮีโร่ทั้งหมด 133 ตัวด้านล่าง ▼
+        </button>
+      </div>
+
       <!-- All Heroes Picker Section -->
-      <div class="picker-section">
+      <div id="draftPickerSection" class="picker-section" style="display:none;">
         <div class="mode-selector-bar">
           <div>
             <div style="font-weight:700; font-size:0.95rem;">คลังฮีโร่ MLBB ทั้งหมด (<span id="gridCountLabel">133</span> ตัว)</div>

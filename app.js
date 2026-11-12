@@ -2510,6 +2510,19 @@ function renderGearAdvisor(pickedEnemies) {
   ].join('');
 }
 
+function togglePickerSection() {
+  const el = document.getElementById('draftPickerSection');
+  if (!el) return;
+  const isHidden = el.style.display === 'none';
+  el.style.display = isHidden ? 'block' : 'none';
+  const btn = document.getElementById('togglePickerBtn');
+  if (btn) {
+    btn.innerHTML = isHidden 
+      ? '📋 ซ่อนคลังฮีโร่ทั้งหมด 133 ตัวด้านล่าง ▲' 
+      : '📋 แสดง/ซ่อน คลังฮีโร่ทั้งหมด 133 ตัวด้านล่าง ▼';
+  }
+}
+
 // Render All 133 Heroes Picker Grid
 function renderHeroGrid() {
   const search = (document.getElementById('heroSearchInput')?.value || '').trim().toLowerCase();
