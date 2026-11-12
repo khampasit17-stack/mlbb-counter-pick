@@ -2374,7 +2374,7 @@ function renderTeamColumns() {
               </div>
             </div>
             <div class="slot-items-row" title="${coreBuild.isAdaptive && coreBuild.laneOpponent ? `เซ็ตไอเทมแก้ทาง ${coreBuild.laneOpponent.name} (${coreBuild.laneOpponent.thName || ''}): ${coreBuild.title}` : `เซ็ตไอเทมเมต้าแนะนำ 6 ชิ้น: ${coreBuild ? coreBuild.title : ''}`}">
-              <span class="slot-build-tag">${coreBuild.isAdaptive && coreBuild.laneOpponent ? `<span style="color:#fcd34d; font-weight:800;" title="ไอเทมปรับอัตโนมัติแก้ทาง ${coreBuild.laneOpponent.name} ในเลน ${laneShort}">Items ⚔️ vs ${coreBuild.laneOpponent.name}:</span>` : 'Items:'}</span>
+              <span class="slot-build-tag">Items:</span>
               <div class="slot-items-chips">
                 ${(coreBuild && coreBuild.items ? coreBuild.items : []).map(it => `
                   <div class="slot-item-mini-wrap" title="${it.isCounter ? `[🗡️ ไอเทมแก้ทาง ${it.counterTarget ? it.counterTarget.name : ''}]: ` : ''}${it.name} (${it.thName}) — ${it.counterReason || it.shortTag || ''}">
@@ -2470,7 +2470,7 @@ function renderTeamColumns() {
               </div>
             </div>
             <div class="slot-items-row" title="${coreBuild.isAdaptive && coreBuild.laneOpponent ? `เซ็ตไอเทมที่ ${hero.name} ใช้แก้ทาง ${coreBuild.laneOpponent.name} ทีมเรา: ${coreBuild.title}` : `เซ็ตไอเทมเมต้า 6 ชิ้นที่ ${hero.name} ศัตรูมักออก: ${coreBuild ? coreBuild.title : ''}`}">
-              <span class="slot-build-tag">${coreBuild.isAdaptive && coreBuild.laneOpponent ? `<span style="color:#fb7185; font-weight:800;" title="ไอเทมที่ศัตรูออกแก้ทาง ${coreBuild.laneOpponent.name} ทีมเราในเลน ${laneShort}">Items ⚔️ vs ${coreBuild.laneOpponent.name}:</span>` : 'Items:'}</span>
+              <span class="slot-build-tag">Items:</span>
               <div class="slot-items-chips">
                 ${(coreBuild && coreBuild.items ? coreBuild.items : []).map(it => `
                   <div class="slot-item-mini-wrap" title="${it.isCounter ? `[🗡️ ออกแก้ทาง ${it.counterTarget ? it.counterTarget.name : ''}]: ` : ''}${it.name} (${it.thName}) — ${it.counterReason || it.shortTag || ''}">

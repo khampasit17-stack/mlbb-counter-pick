@@ -2583,7 +2583,7 @@ body {
   display: flex;
   align-items: center;
   gap: 3px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .slot-item-mini-wrap {
