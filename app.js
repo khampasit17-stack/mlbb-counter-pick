@@ -21,50 +21,55 @@ const LANE_IMAGE = {
   'Roam': 'assets/lanes/roam.png'
 };
 
-// Verified Pro Competitive Tournament Meta Heroes (MPL / M-Series / MSC / Mythical Glory+ pro play)
+// Verified Pro Competitive Tournament Meta Heroes (MPL Philippines Season 18 - Liquipedia Official Statistics)
 const PRO_COMPETITIVE_HEROES = new Set([
-  // EXP Lane (Pro Tournament Meta)
-  'lukas', 'masha', 'paquito', 'yu zhong', 'terizla', 'ruby', 'cici', 'arlott', 
-  'benedetta', 'edith', 'lapu-lapu', 'chou', 'gloo', 'uranus', 'khaleed', 'guinevere', 
-  'fredrinn', 'baxia', 'esmeralda', 'dyrroth', 'phoveus', 'thamuz', 'joy', 'freya',
+  // EXP Lane (Contested in MPL-PH S18)
+  'paquito', 'uranus', 'masha', 'esmeralda', 'aulus', 'gloo', 'cici', 'badang', 'chou', 
+  'ruby', 'lukas', 'dyrroth', 'phoveus', 'arlott', 'hilda', 'yu zhong', 'khaleed', 'lapu-lapu', 
+  'edith', 'guinevere', 'leomord', 'thamuz', 'terizla', 'x.borg',
 
-  // Jungle (Pro Tournament Meta)
-  'fanny', 'ling', 'hayabusa', 'suyou', 'nolan', 'julian', 'roger', 'baxia', 
-  'fredrinn', 'alpha', 'guinevere', 'lancelot', 'akai', 'barats', 'helcurt', 
-  'martis', 'joy', 'yi sun-shin', 'gusion', 'hirara', 'aulus',
+  // Jungle (Contested in MPL-PH S18)
+  'freya', 'hirara', 'fanny', 'nolan', 'barats', 'suyou', 'harley', 'yi sun-shin', 
+  'hayabusa', 'saber', 'fredrinn', 'hanzo', 'baxia', 'ling',
 
-  // Mid Lane (Pro Tournament Meta)
-  'zhuxin', 'harith', 'valentina', 'pharsa', 'xavier', 'vexana', 'cecilion', 
-  'lylia', 'novaria', 'faramis', 'kadita', 'luo yi', 'yve', 'nana', 'lunox', 'zetian', 'eudora',
+  // Mid Lane (Contested in MPL-PH S18)
+  'eudora', 'valentina', 'zhuxin', 'selena', 'lylia', 'novaria', 'vexana', 'zetian', 
+  'yve', 'harith', 'cecilion', 'pharsa', 'aurora', 'luo yi', 'lunox', 'kagura', 'xavier',
 
-  // Gold Lane (Pro Tournament Meta)
-  'harith', 'claude', 'moskov', 'roger', 'karrie', 'brody', 'bruno', 'beatrix', 
-  'natan', 'wanwan', 'granger', 'lesley', 'irithel', 'clint', 'popol and kupa', 'obsidia', 'freya',
+  // Gold Lane (Contested in MPL-PH S18)
+  'melissa', 'obsidia', 'claude', 'kalea', 'brody', 'alice', 'kimmy', 'clint', 
+  'miya', 'moskov', 'bruno', 'hanabi', 'sora', 'karrie', 'beatrix', 'granger',
 
-  // Roam (Pro Tournament Meta)
-  'mathilda', 'tigreal', 'minotaur', 'chip', 'hylos', 'belerick', 'khufra', 
-  'kaja', 'grock', 'franco', 'angela', 'estes', 'lolita', 'carmilla', 'diggie', 
-  'rafaela', 'jawhead', 'atlas', 'gatotkaca', 'kalea', 'marcel', 'floryn'
+  // Roam (Contested in MPL-PH S18)
+  'atlas', 'marcel', 'carmilla', 'belerick', 'minotaur', 'rafaela', 'gatotkaca', 
+  'mathilda', 'hylos', 'angela', 'kaja', 'khufra', 'estes', 'lolita'
 ]);
 
 
-// Signature Priorities of MPL Philippines 2026 (MPL-PH Season Meta)
+// Signature Priorities of MPL Philippines Season 18 (Liquipedia Official Statistics)
 const MPL_PH_SIGNATURE_HEROES = new Map([
-  ['freya', { role: '👑 Tier-0 Priority (140+ Bans)', note: 'แบนอันดับ 1 ใน MPL-PH เลทเกม 1v1 ดันป้อมสุดเถื่อน ยืนได้ทั้ง EXP / Jungle / Gold' }],
-  ['atlas', { role: '👑 Top Set-Up Roamer', note: 'ตัวเปิดไฟต์อันดับ 1 ในโซนหลุม Lord สกิล Fatal Links พลิกไฟต์ได้ในเสี้ยววินาที' }],
-  ['paquito', { role: '⭐ Core Flex Priority', note: 'ตัว Flex อันดับ 1 ของโปรฟิลิปปินส์ สลับ EXP / Jungle ชนะเลนและเชื่อมไฟต์กลางเกมเฉียบคม' }],
-  ['zhuxin', { role: '👑 Lord Zone Control', note: 'เมจคุมโซนและบีบ Chokepoint อันดับ 1 สกิลลากศัตรูไม่ให้เข้าใกล้ Objective' }],
-  ['belerick', { role: '🛡️ Anti-Marksman Roamer', note: 'ตัวชนเคาน์เตอร์แครี่ตีเร็ว ยืนรับดาเมจและสะท้อนหนามใส่ศัตรูได้อย่างชะงัก' }],
-  ['julian', { role: '⚔️ Fast-Tempo Hybrid Jungle', note: 'เคลียร์ไว ชิง Turtle/Lord ได้เปรียบ ปรับบิลด์ได้ทั้งเวทและกึ่งแทงค์' }],
-  ['karrie', { role: '🪙 Tank Shredder Marksman', note: 'แครี่ดวลแทงค์อันดับ 1 ดาเมจจริง True Damage ละลายแนวหน้าหนาๆ ได้เร็วที่สุด' }],
-  ['pharsa', { role: '🔮 Global High-Ground Burst', note: 'เมจคุมระยะไกลและป้องกันป้อมสูง ให้วิชั่นแมพและยิงทิ้งระเบิดขู่ศัตรู' }],
-  ['eudora', { role: '⚡ Target Eliminator (Revamped)', note: 'เมจล็อกเป้าเด็ดหัวตัวล้วงแบบ One-shot สร้างความได้เปรียบจำนวนคนก่อนเริ่มไฟต์' }],
-  ['fanny', { role: '🦅 Elite Mechanical Assassin', note: 'ตัวสร้าง Map Pressure สูงสุดของโปรฟิลิปปินส์ บีบให้เลนหลังศัตรูต้องเล่นติดป้อม' }],
-  ['fredrinn', { role: '🛡️ UBE Anchor Frontliner', note: 'หัวใจของแผนเดิน 5 คนสไตล์ฟิลิปปินส์ ดูดซับดาเมจแล้วสวนด้วย Crystal Slash' }],
-  ['mathilda', { role: '💨 UBE Tactical Initiator', note: 'ซัพพอร์ตแท็กติกพาทีมบินเข้า-ออกไฟต์ตามจังหวะ UBE Strategy' }],
-  ['masha', { role: '👑 Split-Push & Objective Breaker', note: 'ตัวดันป้อมและละลายบอส สถิติ Ban/Win Rate ทะลุเกณฑ์มาตรฐานในสายแข่ง' }],
-  ['marcel', { role: '👑 Crowd Control Lockdown', note: 'ตัว CC คุมเชิงและเซฟเพื่อน ยืนโซนหน้าแน่นหนา' }],
-  ['hirara', { role: '👑 High-Mobility Executioner', note: 'แอสซาซินความเร็วสูง ดำดิ่งล้วงแนวหลังและเอาตัวรอดไร้เป้าหมาย' }]
+  ['freya', { role: '👑 Tier-0 Priority (#1 Ban / 100% Presence)', note: 'แบนอันดับ 1 ใน MPL-PH Season 18 รวม 148 แบน (86.05% BR) ชนะสูงถึง 75.00%' }],
+  ['atlas', { role: '👑 Top Set-Up Roamer (77.33% BR)', note: 'แบนอันดับ 2 ของทัวร์นาเมนต์ (133 แบน) เปิดไฟต์โซนหลุม Lord อันดับ 1 ชนะ 62.86%' }],
+  ['hirara', { role: '👑 #1 Most Picked Hero (127 Picks)', note: 'ฮีโร่ที่ถูกหยิบมากที่สุดใน MPL-PH S18 รวม 127 เกม (96.51% Presence) แอสซาซินความเร็วสูง' }],
+  ['paquito', { role: '⭐ #1 Core Flex Priority (88.37% Presence)', note: 'พิก 71 เกม แบน 81 เกม Win Rate 59.15% ตัว Flex สลับเลน EXP/Jungle ยอดนิยม' }],
+  ['marcel', { role: '👑 High-Priority Frontline (70.93% Presence)', note: 'พิก 47 เกม แบน 75 เกม Win Rate 55.32% ตัว CC และบล็อกโซนหน้า' }],
+  ['fanny', { role: '🦅 Elite Pressure Assassin (55.81% BR)', note: 'แบนอันดับ 3 ของทัวร์นาเมนต์ (96 แบน) ตัวกดดันแมพอันตรายที่สุด' }],
+  ['masha', { role: '👑 Split-Push Specialist (69.23% WR)', note: 'แบน 74 เกม อัตราชนะสูงถึง 69.23% ดันป้อมและตัดเลือดตัวหนา' }],
+  ['uranus', { role: '🛡️ Top Sustained EXP (72 Bans)', note: 'แบน 72 เกม พิก 42 เกม (66.28% Presence) ยืนรับดาเมจเลนยาวอันดับหนึ่ง' }],
+  ['barats', { role: '🛡️ S-Tier Frontline Core (57.41% WR)', note: 'พิก 54 เกม แบน 61 เกม Win Rate 57.41% เดินบดเลนและดักจับ Lord' }],
+  ['nolan', { role: '⚡ Fast-Tempo Jungle (57.14% WR)', note: 'พิกป่า 63 เกม แบน 36 เกม Win Rate 57.14% เคลียร์ไวสปีดไฟต์สูง' }],
+  ['selena', { role: '🔮 Early Trap & Vision Roam (63 Bans)', note: 'แบน 63 เกม พิก 36 เกม ตัวเช็ควิชั่นและสตั๊นเปิดไฟต์ระยะไกล' }],
+  ['eudora', { role: '⚡ #1 Most Picked Mage (64 Picks)', note: 'พิกเมจอันดับ 1 ของทัวร์นาเมนต์ (64 เกม) One-shot ล็อกเป้าเด็ดหัวตัวล้วง' }],
+  ['carmilla', { role: '🛡️ Top Group Fight Roam (49 Picks)', note: 'พิก 49 เกม แบน 45 เกม ตัวเชื่อมดาเมจ Curse of Blood ละลายทั้งทีม' }],
+  ['belerick', { role: '🛡️ Anti-Marksman Roamer (68 Picks)', note: 'พิกอันดับ 3 ของทัวร์นาเมนต์ (68 เกม) สะท้อนหนามเคาน์เตอร์แครี่ตีเร็ว' }],
+  ['esmeralda', { role: '🛡️ High-Priority Flex (57 Bans)', note: 'แบน 57 เกม พิก 28 เกม ตัวดูดเกราะดวลเลน EXP' }],
+  ['valentina', { role: '🔮 Copy Ult Specialist (46 Picks)', note: 'พิก 46 เกม แบน 34 เกม ก๊อปปี้อัลติศัตรูพลิกสถานการณ์ไฟต์' }],
+  ['aulus', { role: '⚔️ Late-Game Carry Fighter (54.17% WR)', note: 'พิก 48 เกม แบน 30 เกม Win Rate 54.17% ตัวกวาดไฟต์ท้ายเกม' }],
+  ['zhuxin', { role: '👑 Lord Zone Control (56.82% WR)', note: 'พิก 44 เกม Win Rate 56.82% คุม Chokepoint หลุม Lord อันดับ 1' }],
+  ['claude', { role: '🪙 Highest WR Marksman (60.47% WR)', note: 'แครี่พิก 43 เกม อัตราชนะสูงสุด 60.47% ชนะเลนทองขาดลอย' }],
+  ['clint', { role: '🪙 Top Burst Marksman (71.88% WR)', note: 'แครี่ที่ชนะมากที่สุดในทัวร์นาเมนต์ Win Rate สูงถึง 71.88% (32 พิก)' }],
+  ['rafaela', { role: '✨ Tactical Support Roam (65.52% WR)', note: 'พิก 29 เกม แบน 44 เกม Win Rate 65.52% วิ่งเติมไฟต์ UBE และล้างสโลว์' }],
+  ['gloo', { role: '🛡️ High-Impact Flex Tank (59.09% WR)', note: 'พิก 22 เกม แบน 36 เกม Win Rate 59.09% เกาะหัวตัวดาเมจศัตรู' }]
 ]);
 
 const LANE_ICONS = {
@@ -2625,9 +2630,9 @@ function renderRecommendations() {
       const reasonLines = [];
       const mplInfo = MPL_PH_SIGNATURE_HEROES.get(h.name.toLowerCase());
       if (mplInfo) {
-        reasonLines.push(`• <strong style="color:#38bdf8;">🇵🇭 MPL-PH Meta (${mplInfo.role}):</strong> ${mplInfo.note}`);
+        reasonLines.push(`• <strong style="color:#38bdf8;">🇵🇭 MPL-PH S18 (${mplInfo.role}):</strong> ${mplInfo.note}`);
       } else if (item.isProMeta) {
-        reasonLines.push(`• <strong style="color:#38bdf8;">🏆 ตัวแข่ง Pro Meta:</strong> ได้รับความนิยมและผ่านการใช้งานจริงในทัวร์นาเมนต์ระดับอาชีพ (MPL / M-Series / MSC)`);
+        reasonLines.push(`• <strong style="color:#38bdf8;">🏆 ตัวแข่ง MPL-PH S18:</strong> มีสถิติการแข่งขันจริงในทัวร์นาเมนต์ MPL Philippines Season 18 (Liquipedia)`);
       }
       if (h.tier === 'SS') {
         const totalSsScore = (item.tierBonus || 26) + (item.ssExtraBonus || 0);
@@ -2740,7 +2745,7 @@ function renderRecommendations() {
                 <span class="rec-hero-name">${h.name}</span>
                 <span class="tier-badge tier-${h.tier}">${h.tier}</span>
                 ${h.tier === 'SS' ? `<span class="ss-god-badge" title="SS God Tier: ฮีโร่ที่เก่งที่สุดในแพตช์ปัจจุบัน (ชิงเลือกทันที)">👑 SS GOD TIER</span>` : (h.tier === 'S' ? `<span class="s-meta-badge" title="S Tier: ติด Top Meta">⭐ S TOP META</span>` : '')}
-                ${item.isProMeta ? `<span class="pro-meta-badge" title="ฮีโร่เมต้าการแข่งขัน MPL Philippines 2026 / Pro Tournament">${MPL_PH_SIGNATURE_HEROES.has(h.name.toLowerCase()) ? '🇵🇭 MPL-PH PRO' : '🏆 PRO META'}</span>` : ''}
+                ${item.isProMeta ? `<span class="pro-meta-badge" title="ฮีโร่เมต้าการแข่งขัน MPL Philippines Season 18 (Liquipedia Official)">${MPL_PH_SIGNATURE_HEROES.has(h.name.toLowerCase()) ? '🇵🇭 MPL-PH S18' : '🏆 S18 PRO'}</span>` : ''}
                 <span class="rec-spell-inline ${recSpell.isCounterSpell ? 'is-counter-spell' : ''}" onclick="openSpellPickerModal('rec', ${idx}, ${h.id})" title="${recSpell.en} (${recSpell.th}) — ${recSpell.reason} (คลิกเพื่อเปลี่ยนสเปล)">
                   <img src="${recSpell.img}" style="width:20px;height:20px;border-radius:50%;vertical-align:middle;" alt="${recSpell.en}" />
                 </span>
@@ -3236,8 +3241,11 @@ function autoBanTopMeta() {
     candidates = candidates.filter(h => isHeroBanEligibleAgainstEnemy(h, enemyFilledLanes));
   }
 
-  // Top priority bans in MPL Philippines 2026 & High Rank
-  const mplPhTopBanNames = ['freya', 'atlas', 'fanny', 'paquito', 'hirara', 'marcel', 'masha', 'ling', 'zhuxin', 'lukas', 'suyou'];
+  // Top priority bans strictly from MPL Philippines Season 18 (Liquipedia Official)
+  const mplPhTopBanNames = [
+    'freya', 'atlas', 'fanny', 'paquito', 'marcel', 'masha', 'uranus', 'selena', 
+    'barats', 'esmeralda', 'melissa', 'carmilla', 'rafaela', 'hirara', 'mathilda', 'nolan', 'gloo'
+  ];
   const topBanned = candidates
     .sort((a, b) => {
       const aMpl = mplPhTopBanNames.includes(a.name.toLowerCase()) ? 1 : 0;
@@ -3256,22 +3264,22 @@ function autoBanTopMeta() {
 
 function loadDemoDraft() {
   const getId = (name) => HERO_BY_NAME.get(name.toLowerCase())?.id || null;
-  // Authentic MPL Philippines 2026 Tournament Bans (Freya, Atlas, Fanny, Paquito, Hirara, Marcel, Ling, Zhuxin, Masha, Lukas)
+  // Authentic MPL Philippines Season 18 Tournament Bans (Top 10 Bans from Liquipedia)
   state.bans = [
-    getId('Freya'), getId('Atlas'), getId('Fanny'), getId('Paquito'), getId('Hirara'),
-    getId('Marcel'), getId('Ling'), getId('Zhuxin'), getId('Masha'), getId('Lukas')
+    getId('Freya'), getId('Atlas'), getId('Fanny'), getId('Paquito'), getId('Marcel'),
+    getId('Masha'), getId('Uranus'), getId('Selena'), getId('Barats'), getId('Esmeralda')
   ];
-  // Enemy drafted authentic MPL-PH power picks: Julian (Jungle) + Terizla (EXP) + Pharsa (Mid)
+  // Enemy drafted authentic MPL-PH S18 power picks: Nolan (Jungle) + Eudora (Mid) + Belerick (Roam)
   state.enemyPicks = [
-    getId('Julian'),
-    getId('Terizla'),
-    getId('Pharsa'),
+    getId('Nolan'),
+    getId('Eudora'),
+    getId('Belerick'),
     null,
     null
   ];
-  // Ally drafted Fredrinn (Anchor Frontliner for UBE Strategy)
+  // Ally drafted Hirara (Highest Picked Hero in S18 - 127 Picks)
   state.allyPicks = [
-    getId('Fredrinn'),
+    getId('Hirara'),
     null,
     null,
     null,
@@ -3307,11 +3315,11 @@ function setMetaTabLane(lane) {
 
 function renderMetaTierList() {
   const tiers = [
-    { key: 'SS', desc: 'God Meta / แบนหรือหยิบก่อน', bg: 'linear-gradient(135deg, #ef4444, #f59e0b)' },
-    { key: 'S', desc: 'Strong Meta / ตัวแบกแรงก์', bg: 'linear-gradient(135deg, #f59e0b, #eab308)' },
-    { key: 'A', desc: 'Balanced / ตัวแก้ทางชั้นดี', bg: 'linear-gradient(135deg, #8b5cf6, #6366f1)' },
-    { key: 'B', desc: 'Situational / เลือกเฉพาะทาง', bg: 'linear-gradient(135deg, #0ea5e9, #2563eb)' },
-    { key: 'C', desc: 'Pocket Pick / เฉพาะเมนหลัก', bg: 'linear-gradient(135deg, #64748b, #475569)' }
+    { key: 'SS', desc: '👑 God Meta S18 / แบนหรือหยิบทันที (70%+ Presence)', bg: 'linear-gradient(135deg, #ef4444, #f59e0b)' },
+    { key: 'S', desc: '⭐ Top Meta S18 / ตัวแกนหลักทัวร์ (45-70% Presence)', bg: 'linear-gradient(135deg, #f59e0b, #eab308)' },
+    { key: 'A', desc: '🛡️ Strong Picks S18 / ตัวแก้ทางยอดนิยม (15-45% Presence)', bg: 'linear-gradient(135deg, #8b5cf6, #6366f1)' },
+    { key: 'B', desc: '⚔️ Pocket Picks S18 / ตัวเลือกเฉพาะทาง (2-15% Presence)', bg: 'linear-gradient(135deg, #0ea5e9, #2563eb)' },
+    { key: 'C', desc: '🚫 Uncontested S18 / ไม่ถูกพิกหรือแบนในการแข่ง', bg: 'linear-gradient(135deg, #64748b, #475569)' }
   ];
 
   const container = document.getElementById('tierListContainer');
@@ -3330,7 +3338,7 @@ function renderMetaTierList() {
         </div>
         <div class="tier-heroes-wrap">
           ${heroesInTier.map(h => `
-            <div class="meta-hero-tile" onclick="openHeroModal(${h.id})">
+            <div class="meta-hero-tile" onclick="openHeroModal(${h.id})" title="${h.name}: Presence ${h.stats.presenceRate || 0}%, Picks ${h.stats.picks || 0}, Bans ${h.stats.bans || 0}, WR ${h.stats.winRate}%">
               <img src="${h.head}" alt="${h.name}" loading="lazy" />
               <div style="min-width:0; flex:1;">
                 <div style="font-weight:700; font-size:0.88rem; display:flex; justify-content:space-between;">
@@ -3338,9 +3346,9 @@ function renderMetaTierList() {
                   <span style="font-size:0.7rem; color:#fcd34d; display:inline-flex; align-items:center; gap:2px;"><img src="${LANE_IMAGE[h.lanes[0]] || 'assets/lanes/mid.png'}" class="lane-pill-img" alt="${h.lanes[0]}" /> ${LANE_SHORT_LABEL[h.lanes[0]] || h.lanes[0]}</span>
                 </div>
                 <div style="font-size:0.72rem; color:var(--text-muted); display:flex; gap:0.45rem;">
+                  <span style="color:#38bdf8; font-weight:600;">#S18 ${h.stats.presenceRate ? h.stats.presenceRate + '%' : '0%'}</span>
                   <span style="color:#6ee7b7;">WR ${h.stats.winRate}%</span>
                   <span style="color:#fca5a5;">BR ${h.stats.banRate}%</span>
-                  <span>PR ${h.stats.pickRate}%</span>
                 </div>
               </div>
             </div>
@@ -3520,12 +3528,12 @@ function buildHeroDossierHtml(h, isModal = true) {
             <span style="font-size:0.82rem; color:var(--accent-gold-light); display:inline-flex; align-items:center; gap:4px; flex-wrap:wrap;">
               ${h.lanes.map(l => `<span style="display:inline-flex; align-items:center; gap:2px;"><img src="${LANE_IMAGE[l] || 'assets/lanes/mid.png'}" class="lane-pill-img" alt="${l}" /> ${LANE_SHORT_LABEL[l] || l}</span>`).join(' / ')} • ${h.roles.join(', ')}
             </span>
-            ${PRO_COMPETITIVE_HEROES.has(h.name.toLowerCase()) ? `<span class="pro-meta-badge" style="font-size:0.68rem;">🏆 PRO META</span>` : ''}
+            ${PRO_COMPETITIVE_HEROES.has(h.name.toLowerCase()) ? `<span class="pro-meta-badge" style="font-size:0.68rem;">🏆 MPL-PH S18 META</span>` : ''}
           </div>
           <div style="font-size:0.82rem; color:var(--text-muted); margin-top:4px; display:flex; gap:1rem; flex-wrap:wrap;">
-            <span>📈 Win Rate (MG): <strong style="color:#6ee7b7;">${h.stats.winRate}%</strong></span>
-            <span>🚫 Ban Rate (MG): <strong style="color:#fda4af;">${h.stats.banRate}%</strong></span>
-            <span>🎯 Pick Rate: <strong style="color:#38bdf8;">${h.stats.pickRate}%</strong></span>
+            <span>📈 Win Rate (S18): <strong style="color:#6ee7b7;">${h.stats.winRate}%</strong></span>
+            <span>🚫 Ban Rate (S18): <strong style="color:#fda4af;">${h.stats.banRate}%</strong></span>
+            <span>🎯 Presence (S18): <strong style="color:#38bdf8;">${h.stats.presenceRate ? h.stats.presenceRate + '%' : '0%'}</strong></span>
             <span>⚡ ความถนัด: <strong>${h.specialties.join(', ')}</strong></span>
           </div>
           <div style="margin-top:0.55rem; display:flex; gap:0.45rem; flex-wrap:wrap;">
