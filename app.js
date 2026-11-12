@@ -1506,6 +1506,8 @@ const state = {
   spellModal: { open: false, side: 'ally', slotIdx: 0, heroId: null },
   laneModal: { open: false, side: 'ally', slotIdx: 0, heroId: null },
   recLaneFilter: 'ALL',            // 'ALL' | 'MISSING' | lane name
+  descMode: 'compact',             // 'compact' (คำอธิบายน้อยลง / กดดูเพิ่ม) | 'full' (แสดงคำอธิบายทั้งหมด)
+  expandedHeroCards: new Set(),    // Hero IDs expanded in compact mode
   comboHubFilter: 'ALL',           // 'ALL' | 'duo' | 'trio' | 'squad'
   metaTabLane: 'ALL',
   lookupHeroId: HERO_BY_NAME.get('carmilla')?.id || HEROES[0]?.id || 1
@@ -2575,6 +2577,19 @@ function renderRecommendations() {
   const topRecs = recommendations.slice(0, 12);
   const container = document.getElementById('recCardsContainer');
 
+  // Sync mode button state
+  const descBtn = document.getElementById('descModeToggleBtn');
+  if (descBtn) {
+    const isCompact = state.descMode === 'compact';
+    descBtn.className = `lane-pill desc-mode-btn ${isCompact ? '' : 'is-full'}`;
+    descBtn.innerHTML = isCompact
+      ? `⚡ ข้อมูลเพิ่มเติม (กดดู) • คำอธิบายน้อยลง`
+      : `📖 แสดงคำอธิบายเต็มทั้งหมด (คลิกเพื่อย่อ)`;
+    descBtn.title = isCompact
+      ? `คลิกเพื่อเปลี่ยนเป็นโหมดแสดงคำอธิบายเต็มทั้งหมด`
+      : `คลิกเพื่อเปลี่ยนเป็นโหมดคำอธิบายน้อยลง (กดเพื่อดูข้อมูลเพิ่มเติม)`;
+  }
+
   // Removed golden SS God Tier alert banner as requested
   const ssSpotlightEl = document.getElementById('ssGodSpotlightStrip');
   if (ssSpotlightEl) {
@@ -2669,6 +2684,50 @@ function renderRecommendations() {
         </span>
       `).join('');
 
+      // Check if this card should show expanded details
+      const isCardExpanded = state.descMode === 'full' || state.expandedHeroCards.has(h.id);
+
+      // Concise 1-line summary for compact mode ("คำอธิบาย น้อยลง")
+      let shortSummary = '';
+      if (item.counteredTargets && item.counteredTargets.length > 0) {
+        const cNames = item.counteredTargets.slice(0, 2).map(t => t.enemyName).join(', ');
+        shortSummary = `⚔️ ชนะทาง ${cNames}${item.counteredTargets.length > 2 ? ` (+${item.counteredTargets.length - 2})` : ''}`;
+        if (h.tier === 'SS') shortSummary += ' • 👑 SS God Meta';
+        else if (mplInfo) shortSummary += ' • 🇵🇭 MPL-PH';
+      } else if (item.matchingCombos && item.matchingCombos.length > 0) {
+        shortSummary = `⚡ คอมโบ ${item.matchingCombos[0].combo.title}`;
+        if (h.tier === 'SS') shortSummary += ' • 👑 SS Meta';
+      } else if (mplInfo) {
+        shortSummary = `🇵🇭 เมต้าแข่ง MPL-PH (${mplInfo.role}) • ดันป้อม/เปิดไฟต์`;
+      } else if (h.tier === 'SS') {
+        shortSummary = `👑 ฮีโร่ SS God Tier อันดับ 1 เมต้า (WR ${h.stats.winRate}%)`;
+      } else {
+        shortSummary = `⭐ Top Meta (${h.tier} Tier) WR ${h.stats.winRate}% • BR ${h.stats.banRate}%`;
+      }
+
+      const reasonBoxHtml = isCardExpanded ? `
+        <div class="rec-reason-box rec-reason-expanded">
+          <div class="rec-reason-full-content">${reasonLines.join('<br/>')}</div>
+          ${state.descMode === 'compact' ? `
+            <div class="rec-reason-collapse-bar">
+              <button class="btn-toggle-reason-collapse" onclick="toggleCardDetail(${h.id}, event)" title="ย่อคำอธิบายลงเพื่อประหยัดพื้นที่">
+                ▲ ย่อคำอธิบาย
+              </button>
+            </div>
+          ` : ''}
+        </div>
+      ` : `
+        <div class="rec-reason-box rec-reason-compact" onclick="toggleCardDetail(${h.id}, event)" title="คลิกเพื่อดูคำอธิบายและเหตุผลวิเคราะห์เพิ่มเติม">
+          <div class="rec-reason-summary-line">
+            <span class="rec-summary-label">💡 วิเคราะห์:</span>
+            <span class="rec-summary-text">${shortSummary}</span>
+          </div>
+          <button class="btn-toggle-reason-expand" onclick="toggleCardDetail(${h.id}, event)" title="กดดูคำอธิบายและเหตุผลวิเคราะห์เพิ่มเติม">
+            ℹ️ ข้อมูลเพิ่มเติม (กดดู) ▼
+          </button>
+        </div>
+      `;
+
       return `
         <div class="rec-card ${h.tier === 'SS' ? 'tier-ss-card' : ''} ${isTop1 ? 'rank-1' : ''}">
           <div class="rec-card-top">
@@ -2715,7 +2774,7 @@ function renderRecommendations() {
             </div>
           ` : ''}
 
-          <div class="rec-reason-box">${reasonLines.join('<br/>')}</div>
+          ${reasonBoxHtml}
 
           <div class="rec-actions">
             <button class="btn-pick-ally" onclick="quickAssignHero(${h.id}, 'ally')">
@@ -2727,8 +2786,8 @@ function renderRecommendations() {
             <button class="btn-gear-sm spell-sm" onclick="openSpellPickerModal('rec', ${idx}, ${h.id})" title="คลิกเพื่อเลือกสเปลแก้ทางให้ ${h.name}">
               ✨
             </button>
-            <button class="btn-inspect-sm" onclick="openHeroModal(${h.id})">
-              ℹ️ ข้อมูล
+            <button class="btn-inspect-sm" onclick="openHeroModal(${h.id})" title="เปิดดูข้อมูลและสกิลของ ${h.name}">
+              📋 สกิล/ข้อมูล
             </button>
           </div>
         </div>
@@ -3147,6 +3206,24 @@ function setRecLaneFilter(lane) {
   renderRecommendations();
 }
 
+function toggleDescMode() {
+  state.descMode = state.descMode === 'compact' ? 'full' : 'compact';
+  state.expandedHeroCards.clear();
+  renderRecommendations();
+}
+
+function toggleCardDetail(heroId, event) {
+  if (event) {
+    event.stopPropagation();
+  }
+  if (state.expandedHeroCards.has(heroId)) {
+    state.expandedHeroCards.delete(heroId);
+  } else {
+    state.expandedHeroCards.add(heroId);
+  }
+  renderRecommendations();
+}
+
 function autoBanTopMeta() {
   const enemyLaneAnalysis = analyzeTeamLanes(state.enemyPicks, 'enemy');
   const enemyFilledLanes = enemyLaneAnalysis.filledLanes;
@@ -3213,6 +3290,7 @@ function resetDraft() {
   state.enemyPicks = Array(5).fill(null);
   state.spellOverrides = {};
   state.laneOverrides = {};
+  state.expandedHeroCards.clear();
   state.pickMode = 'enemy';
   state.activeSlot = { type: 'enemy', index: 0 };
   refreshAllViews();
