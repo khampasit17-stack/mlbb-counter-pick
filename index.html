@@ -18,7 +18,7 @@
         </div>
         <div class="brand-sub">
           <span class="live-dot"></span>
-          <span>133 ฮีโร่ • สถิติเมต้าแข่ง MPL Philippines Season 18 (Liquipedia Official) เท่านั้น</span>
+          <span id="brandSubText">133 ฮีโร่ • สถิติเมต้าแข่ง MPL Indonesia Season 18 (Liquipedia Official) 215 นัด</span>
         </div>
       </div>
     </div>
@@ -39,13 +39,25 @@
       </button>
     </nav>
 
-    <!-- Quick Actions -->
+    <!-- Quick Actions & Tournament Selector -->
     <div class="header-actions">
-      <button class="btn btn-ban-auto" onclick="autoBanTopMeta()" title="แบนฮีโร่ตามสถิติตัวต้องห้ามอันดับ 1-10 ของ MPL Philippines Season 18 จาก Liquipedia อัตโนมัติ">
+      <div class="header-tourn-selector" title="เลือกฐานข้อมูลสถิติเมต้าการแข่งขันจาก Liquipedia">
+        <span class="header-tourn-label">🏆 เมต้า:</span>
+        <button class="tourn-nav-btn active" data-htourn="mpl-id" onclick="setTournamentMeta('mpl-id')" title="สลับเป็นเมต้าแข่ง MPL Indonesia Season 18 (215 นัด)">
+          🇮🇩 MPL-ID S18
+        </button>
+        <button class="tourn-nav-btn" data-htourn="mpl-ph" onclick="setTournamentMeta('mpl-ph')" title="สลับเป็นเมต้าแข่ง MPL Philippines Season 18 (172 นัด)">
+          🇵🇭 MPL-PH S18
+        </button>
+        <button class="tourn-nav-btn" data-htourn="combined" onclick="setTournamentMeta('combined')" title="สลับเป็นเมต้ารวมโปรทัวร์นาเมนต์ MPL-ID + PH (387 นัด)">
+          🌐 รวมทัวร์
+        </button>
+      </div>
+      <button id="autoBanBtn" class="btn btn-ban-auto" onclick="autoBanTopMeta()" title="แบนฮีโร่ตามสถิติตัวต้องห้ามอันดับ 1-10 ของทัวร์นาเมนต์ที่เลือกจาก Liquipedia อัตโนมัติ">
         🚫 ออโต้แบนเมต้า (10 ตัว)
       </button>
-      <button class="btn btn-demo" onclick="loadDemoDraft()" title="โหลดสถานการณ์ดราฟต์จำลองเสมือนจริงจากการแข่ง MPL Philippines Season 18 (Liquipedia)">
-        🇵🇭 ดราฟต์แข่ง MPL-PH S18
+      <button id="demoDraftBtn" class="btn btn-demo" onclick="loadDemoDraft()" title="โหลดสถานการณ์ดราฟต์จำลองเสมือนจริงของทัวร์นาเมนต์ที่เลือก (Liquipedia)">
+        🇮🇩 ดราฟต์แข่ง MPL-ID S18
       </button>
       <button class="btn btn-reset" onclick="resetDraft()" title="ล้างข้อมูลแบนและฮีโร่ที่เลือกทั้งหมด">
         🔄 รีเซ็ต
@@ -99,10 +111,24 @@
             </button>
           </div>
 
+          <!-- Tournament Meta Switcher Bar -->
+          <div class="tournament-switch-bar">
+            <span class="tourn-bar-label">🏆 เลือกเมต้าทัวร์นาเมนต์:</span>
+            <button class="tourn-btn active" data-tourn="mpl-id" onclick="setTournamentMeta('mpl-id')" title="สถิติทางการจาก Liquipedia: แข่งทั้งหมด 215 นัด">
+              🇮🇩 MPL Indonesia Season 18
+            </button>
+            <button class="tourn-btn" data-tourn="mpl-ph" onclick="setTournamentMeta('mpl-ph')" title="สถิติทางการจาก Liquipedia: แข่งทั้งหมด 172 นัด">
+              🇵🇭 MPL Philippines Season 18
+            </button>
+            <button class="tourn-btn" data-tourn="combined" onclick="setTournamentMeta('combined')" title="สถิติรวมทางการจาก Liquipedia: สองลีกใหญ่รวม 387 นัด">
+              🌐 รวมโปรทัวร์ (ID + PH 387 นัด)
+            </button>
+          </div>
+
           <!-- Strategy Priority Switcher -->
           <div class="strategy-mode-bar">
-            <button class="strat-btn active" data-strat="counter" onclick="setStrategyMode('counter')">
-              🏆 เมต้าแข่ง MPL Philippines Season 18 + แก้ทาง (Liquipedia Official)
+            <button id="stratBtnCounter" class="strat-btn active" data-strat="counter" onclick="setStrategyMode('counter')">
+              🏆 เมต้าแข่ง MPL Indonesia Season 18 + แก้ทาง (Liquipedia Official)
             </button>
             <button class="strat-btn strat-combo" data-strat="combo" onclick="setStrategyMode('combo')">
               ⚡ โหมดเน้นคอมโบทีมเรา + ตัวแข่ง (Pro Meta Combo)
@@ -283,10 +309,16 @@
       <div class="ban-board" style="margin-bottom:1rem;">
         <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:0.75rem;">
           <div>
-            <h2 style="font-size:1.15rem; color:var(--accent-gold-light);">🔥 ตารางจัดอันดับ Meta ปัจจุบัน (Mythical Glory+ Live Tier List)</h2>
-            <p style="font-size:0.8rem; color:var(--text-muted);">
-              คำนวณจากสถิติจริงของเซิร์ฟเวอร์หลัก (Win Rate + Ban Rate + Pick Rate ในแรงก์ Mythical Glory) • คลิกที่ฮีโร่ตัวใดก็ได้เพื่อดูตัวแก้ทางและคู่หูคอมโบ
+            <h2 id="metaTabTitle" style="font-size:1.15rem; color:var(--accent-gold-light);">🔥 ตารางจัดอันดับ Meta: MPL Indonesia Season 18 (Liquipedia Official)</h2>
+            <p id="metaTabSub" style="font-size:0.8rem; color:var(--text-muted);">
+              คำนวณจากสถิติ Pick, Ban, Win Rate และ Presence จริงของทัวร์นาเมนต์ MPL Indonesia Season 18 (215 นัด) • คลิกที่ฮีโร่เพื่อดูตัวแก้ทางและบิลด์ไอเทม
             </p>
+          </div>
+          <!-- Tournament Switcher inside Meta Tab -->
+          <div class="meta-tourn-pills" title="สลับทัวร์นาเมนต์สำหรับแสดงตาราง Tier List">
+            <button class="tourn-tab-pill active" data-mtourn="mpl-id" onclick="setTournamentMeta('mpl-id')">🇮🇩 MPL-ID S18</button>
+            <button class="tourn-tab-pill" data-mtourn="mpl-ph" onclick="setTournamentMeta('mpl-ph')">🇵🇭 MPL-PH S18</button>
+            <button class="tourn-tab-pill" data-mtourn="combined" onclick="setTournamentMeta('combined')">🌐 รวมทัวร์นาเมนต์ (387 นัด)</button>
           </div>
           <div class="lane-filter-pills" id="metaTabLanePills">
             <button class="lane-pill active" data-mlane="ALL" onclick="setMetaTabLane('ALL')">ทุกเลน (All Lanes)</button>
@@ -439,6 +471,7 @@
 
   <script src="data/heroes-data.js"></script>
   <script src="data/combos-data.js"></script>
+  <script src="data/tournaments-data.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

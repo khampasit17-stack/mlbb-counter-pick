@@ -21,56 +21,38 @@ const LANE_IMAGE = {
   'Roam': 'assets/lanes/roam.png'
 };
 
-// Verified Pro Competitive Tournament Meta Heroes (MPL Philippines Season 18 - Liquipedia Official Statistics)
-const PRO_COMPETITIVE_HEROES = new Set([
-  // EXP Lane (Contested in MPL-PH S18)
-  'paquito', 'uranus', 'masha', 'esmeralda', 'aulus', 'gloo', 'cici', 'badang', 'chou', 
-  'ruby', 'lukas', 'dyrroth', 'phoveus', 'arlott', 'hilda', 'yu zhong', 'khaleed', 'lapu-lapu', 
-  'edith', 'guinevere', 'leomord', 'thamuz', 'terizla', 'x.borg',
+// ==================== TOURNAMENT META ENGINE (LIQUEPEDIA OFFICIAL) ====================
+function getActiveTournamentData() {
+  const meta = window.TOURNAMENTS_METADATA;
+  if (!meta) return null;
+  const tournId = (typeof state !== 'undefined' && state.activeTournament) ? state.activeTournament : 'mpl-id';
+  return meta[tournId] || meta['mpl-id'];
+}
 
-  // Jungle (Contested in MPL-PH S18)
-  'freya', 'hirara', 'fanny', 'nolan', 'barats', 'suyou', 'harley', 'yi sun-shin', 
-  'hayabusa', 'saber', 'fredrinn', 'hanzo', 'baxia', 'ling',
+function isHeroContestedInActiveTournament(heroName) {
+  if (!heroName) return false;
+  const tData = getActiveTournamentData();
+  if (!tData || !tData.stats) return true;
+  const s = tData.stats[heroName.toLowerCase()];
+  return Boolean(s && (s.presenceRate > 0 || s.totalPickBans > 0));
+}
 
-  // Mid Lane (Contested in MPL-PH S18)
-  'eudora', 'valentina', 'zhuxin', 'selena', 'lylia', 'novaria', 'vexana', 'zetian', 
-  'yve', 'harith', 'cecilion', 'pharsa', 'aurora', 'luo yi', 'lunox', 'kagura', 'xavier',
+function getActiveTournamentSignature(heroName) {
+  if (!heroName) return null;
+  const tData = getActiveTournamentData();
+  if (!tData || !tData.signatures) return null;
+  return tData.signatures[heroName.toLowerCase()] || null;
+}
 
-  // Gold Lane (Contested in MPL-PH S18)
-  'melissa', 'obsidia', 'claude', 'kalea', 'brody', 'alice', 'kimmy', 'clint', 
-  'miya', 'moskov', 'bruno', 'hanabi', 'sora', 'karrie', 'beatrix', 'granger',
+// Backward-compatibility shims
+const PRO_COMPETITIVE_HEROES = {
+  has: (name) => isHeroContestedInActiveTournament(name)
+};
 
-  // Roam (Contested in MPL-PH S18)
-  'atlas', 'marcel', 'carmilla', 'belerick', 'minotaur', 'rafaela', 'gatotkaca', 
-  'mathilda', 'hylos', 'angela', 'kaja', 'khufra', 'estes', 'lolita'
-]);
-
-
-// Signature Priorities of MPL Philippines Season 18 (Liquipedia Official Statistics)
-const MPL_PH_SIGNATURE_HEROES = new Map([
-  ['freya', { role: '👑 Tier-0 Priority (#1 Ban / 100% Presence)', note: 'แบนอันดับ 1 ใน MPL-PH Season 18 รวม 148 แบน (86.05% BR) ชนะสูงถึง 75.00%' }],
-  ['atlas', { role: '👑 Top Set-Up Roamer (77.33% BR)', note: 'แบนอันดับ 2 ของทัวร์นาเมนต์ (133 แบน) เปิดไฟต์โซนหลุม Lord อันดับ 1 ชนะ 62.86%' }],
-  ['hirara', { role: '👑 #1 Most Picked Hero (127 Picks)', note: 'ฮีโร่ที่ถูกหยิบมากที่สุดใน MPL-PH S18 รวม 127 เกม (96.51% Presence) แอสซาซินความเร็วสูง' }],
-  ['paquito', { role: '⭐ #1 Core Flex Priority (88.37% Presence)', note: 'พิก 71 เกม แบน 81 เกม Win Rate 59.15% ตัว Flex สลับเลน EXP/Jungle ยอดนิยม' }],
-  ['marcel', { role: '👑 High-Priority Frontline (70.93% Presence)', note: 'พิก 47 เกม แบน 75 เกม Win Rate 55.32% ตัว CC และบล็อกโซนหน้า' }],
-  ['fanny', { role: '🦅 Elite Pressure Assassin (55.81% BR)', note: 'แบนอันดับ 3 ของทัวร์นาเมนต์ (96 แบน) ตัวกดดันแมพอันตรายที่สุด' }],
-  ['masha', { role: '👑 Split-Push Specialist (69.23% WR)', note: 'แบน 74 เกม อัตราชนะสูงถึง 69.23% ดันป้อมและตัดเลือดตัวหนา' }],
-  ['uranus', { role: '🛡️ Top Sustained EXP (72 Bans)', note: 'แบน 72 เกม พิก 42 เกม (66.28% Presence) ยืนรับดาเมจเลนยาวอันดับหนึ่ง' }],
-  ['barats', { role: '🛡️ S-Tier Frontline Core (57.41% WR)', note: 'พิก 54 เกม แบน 61 เกม Win Rate 57.41% เดินบดเลนและดักจับ Lord' }],
-  ['nolan', { role: '⚡ Fast-Tempo Jungle (57.14% WR)', note: 'พิกป่า 63 เกม แบน 36 เกม Win Rate 57.14% เคลียร์ไวสปีดไฟต์สูง' }],
-  ['selena', { role: '🔮 Early Trap & Vision Roam (63 Bans)', note: 'แบน 63 เกม พิก 36 เกม ตัวเช็ควิชั่นและสตั๊นเปิดไฟต์ระยะไกล' }],
-  ['eudora', { role: '⚡ #1 Most Picked Mage (64 Picks)', note: 'พิกเมจอันดับ 1 ของทัวร์นาเมนต์ (64 เกม) One-shot ล็อกเป้าเด็ดหัวตัวล้วง' }],
-  ['carmilla', { role: '🛡️ Top Group Fight Roam (49 Picks)', note: 'พิก 49 เกม แบน 45 เกม ตัวเชื่อมดาเมจ Curse of Blood ละลายทั้งทีม' }],
-  ['belerick', { role: '🛡️ Anti-Marksman Roamer (68 Picks)', note: 'พิกอันดับ 3 ของทัวร์นาเมนต์ (68 เกม) สะท้อนหนามเคาน์เตอร์แครี่ตีเร็ว' }],
-  ['esmeralda', { role: '🛡️ High-Priority Flex (57 Bans)', note: 'แบน 57 เกม พิก 28 เกม ตัวดูดเกราะดวลเลน EXP' }],
-  ['valentina', { role: '🔮 Copy Ult Specialist (46 Picks)', note: 'พิก 46 เกม แบน 34 เกม ก๊อปปี้อัลติศัตรูพลิกสถานการณ์ไฟต์' }],
-  ['aulus', { role: '⚔️ Late-Game Carry Fighter (54.17% WR)', note: 'พิก 48 เกม แบน 30 เกม Win Rate 54.17% ตัวกวาดไฟต์ท้ายเกม' }],
-  ['zhuxin', { role: '👑 Lord Zone Control (56.82% WR)', note: 'พิก 44 เกม Win Rate 56.82% คุม Chokepoint หลุม Lord อันดับ 1' }],
-  ['claude', { role: '🪙 Highest WR Marksman (60.47% WR)', note: 'แครี่พิก 43 เกม อัตราชนะสูงสุด 60.47% ชนะเลนทองขาดลอย' }],
-  ['clint', { role: '🪙 Top Burst Marksman (71.88% WR)', note: 'แครี่ที่ชนะมากที่สุดในทัวร์นาเมนต์ Win Rate สูงถึง 71.88% (32 พิก)' }],
-  ['rafaela', { role: '✨ Tactical Support Roam (65.52% WR)', note: 'พิก 29 เกม แบน 44 เกม Win Rate 65.52% วิ่งเติมไฟต์ UBE และล้างสโลว์' }],
-  ['gloo', { role: '🛡️ High-Impact Flex Tank (59.09% WR)', note: 'พิก 22 เกม แบน 36 เกม Win Rate 59.09% เกาะหัวตัวดาเมจศัตรู' }]
-]);
+const MPL_PH_SIGNATURE_HEROES = {
+  get: (name) => getActiveTournamentSignature(name),
+  has: (name) => Boolean(getActiveTournamentSignature(name))
+};
 
 const LANE_ICONS = {
   'EXP Lane': '⚔️ EXP',
@@ -1498,6 +1480,7 @@ const REVAMPED_HERO_KITS = {
 
 // Application State
 const state = {
+  activeTournament: (typeof localStorage !== 'undefined' && localStorage.getItem('mlbb_active_tournament')) || 'mpl-id',
   bans: Array(10).fill(null),      // 10 Ban slots (0..4 Ally Bans, 5..9 Enemy Bans)
   allyPicks: Array(5).fill(null),  // 5 Ally Pick slots (Blue Side)
   enemyPicks: Array(5).fill(null), // 5 Enemy Pick slots (Red Side)
@@ -1517,6 +1500,100 @@ const state = {
   metaTabLane: 'ALL',
   lookupHeroId: HERO_BY_NAME.get('carmilla')?.id || HEROES[0]?.id || 1
 };
+
+// Switch Active Tournament Meta (MPL Indonesia S18 vs MPL Philippines S18 vs Combined)
+function setTournamentMeta(tournId, suppressRefresh = false) {
+  if (!window.TOURNAMENTS_METADATA || !window.TOURNAMENTS_METADATA[tournId]) {
+    tournId = 'mpl-id';
+  }
+  state.activeTournament = tournId;
+  try {
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem('mlbb_active_tournament', tournId);
+    }
+  } catch (e) {}
+
+  const tournData = window.TOURNAMENTS_METADATA[tournId];
+
+  // Update all heroes' stats & tier from this tournament
+  for (const h of HEROES) {
+    const s = tournData.stats ? tournData.stats[h.name.toLowerCase()] : null;
+    if (s) {
+      h.stats.picks = s.picks;
+      h.stats.wins = s.wins;
+      h.stats.losses = s.losses;
+      h.stats.bans = s.bans;
+      h.stats.totalPickBans = s.totalPickBans;
+      h.stats.winRate = s.winRate;
+      h.stats.banRate = s.banRate;
+      h.stats.pickRate = s.pickRate;
+      h.stats.presenceRate = s.presenceRate;
+      h.tier = s.tier;
+      h.stats.metaScore = Number(((s.presenceRate * 0.8) + (s.winRate * 0.4)).toFixed(1));
+    } else {
+      h.stats.picks = 0;
+      h.stats.wins = 0;
+      h.stats.losses = 0;
+      h.stats.bans = 0;
+      h.stats.totalPickBans = 0;
+      h.stats.winRate = 0;
+      h.stats.banRate = 0;
+      h.stats.pickRate = 0;
+      h.stats.presenceRate = 0;
+      h.tier = 'C';
+      h.stats.metaScore = 0;
+    }
+  }
+
+  // Update UI Elements
+  // 1. Header subtitle
+  const subEl = document.getElementById('brandSubText');
+  if (subEl) subEl.textContent = tournData.subTitle;
+
+  // 2. Demo draft button
+  const demoBtn = document.getElementById('demoDraftBtn');
+  if (demoBtn) {
+    demoBtn.innerHTML = `${tournData.flag} ดราฟต์แข่ง ${tournData.shortLabel}`;
+    demoBtn.title = `โหลดสถานการณ์ดราฟต์จำลองเสมือนจริงของ ${tournData.name} (${tournData.source})`;
+  }
+
+  // 3. Auto ban button
+  const autoBanBtn = document.getElementById('autoBanBtn');
+  if (autoBanBtn) {
+    autoBanBtn.title = `แบนฮีโร่ตามสถิติตัวต้องห้ามอันดับ 1-10 ของ ${tournData.name} (${tournData.source}) อัตโนมัติ`;
+  }
+
+  // 4. Strategy Mode Button
+  const stratBtnCounter = document.getElementById('stratBtnCounter');
+  if (stratBtnCounter) {
+    stratBtnCounter.innerHTML = `🏆 เมต้าแข่ง ${tournData.name} + แก้ทาง (${tournData.source})`;
+  }
+
+  // 5. Meta Tab Title and Sub
+  const metaTabTitle = document.getElementById('metaTabTitle');
+  if (metaTabTitle) {
+    metaTabTitle.innerHTML = `🔥 ตารางจัดอันดับ Meta: ${tournData.name} (${tournData.source})`;
+  }
+  const metaTabSub = document.getElementById('metaTabSub');
+  if (metaTabSub) {
+    metaTabSub.textContent = `คำนวณจากสถิติ Pick, Ban, Win Rate และ Presence จริงของทัวร์นาเมนต์ ${tournData.name} (${tournData.totalGames} นัด) • คลิกที่ฮีโร่เพื่อดูตัวแก้ทางและบิลด์ไอเทม`;
+  }
+
+  // 6. Update active classes on all tournament buttons
+  document.querySelectorAll('.tourn-nav-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-htourn') === tournId);
+  });
+  document.querySelectorAll('.tourn-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-tourn') === tournId);
+  });
+  document.querySelectorAll('.tourn-tab-pill').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-mtourn') === tournId);
+  });
+
+  if (!suppressRefresh) {
+    refreshAllViews();
+  }
+}
 
 // Get ordered list of Counter Spells to counter a specific Enemy Hero
 function getCounterSpellsForEnemy(enemyHero) {
@@ -2628,11 +2705,12 @@ function renderRecommendations() {
       `).join('');
 
       const reasonLines = [];
-      const mplInfo = MPL_PH_SIGNATURE_HEROES.get(h.name.toLowerCase());
-      if (mplInfo) {
-        reasonLines.push(`• <strong style="color:#38bdf8;">🇵🇭 MPL-PH S18 (${mplInfo.role}):</strong> ${mplInfo.note}`);
+      const tournData = getActiveTournamentData();
+      const sigInfo = getActiveTournamentSignature(h.name);
+      if (sigInfo) {
+        reasonLines.push(`• <strong style="color:#38bdf8;">${tournData.flag} ${tournData.shortLabel} (${sigInfo.role}):</strong> ${sigInfo.note}`);
       } else if (item.isProMeta) {
-        reasonLines.push(`• <strong style="color:#38bdf8;">🏆 ตัวแข่ง MPL-PH S18:</strong> มีสถิติการแข่งขันจริงในทัวร์นาเมนต์ MPL Philippines Season 18 (Liquipedia)`);
+        reasonLines.push(`• <strong style="color:#38bdf8;">🏆 ตัวแข่ง ${tournData.shortLabel}:</strong> มีสถิติการแข่งขันจริงในทัวร์นาเมนต์ ${tournData.name} (Presence ${h.stats.presenceRate || 0}%)`);
       }
       if (h.tier === 'SS') {
         const totalSsScore = (item.tierBonus || 26) + (item.ssExtraBonus || 0);
@@ -2698,12 +2776,12 @@ function renderRecommendations() {
         const cNames = item.counteredTargets.slice(0, 2).map(t => t.enemyName).join(', ');
         shortSummary = `⚔️ ชนะทาง ${cNames}${item.counteredTargets.length > 2 ? ` (+${item.counteredTargets.length - 2})` : ''}`;
         if (h.tier === 'SS') shortSummary += ' • 👑 SS God Meta';
-        else if (mplInfo) shortSummary += ' • 🇵🇭 MPL-PH';
+        else if (sigInfo) shortSummary += ` • ${tournData.flag} ${tournData.shortLabel}`;
       } else if (item.matchingCombos && item.matchingCombos.length > 0) {
         shortSummary = `⚡ คอมโบ ${item.matchingCombos[0].combo.title}`;
         if (h.tier === 'SS') shortSummary += ' • 👑 SS Meta';
-      } else if (mplInfo) {
-        shortSummary = `🇵🇭 เมต้าแข่ง MPL-PH (${mplInfo.role}) • ดันป้อม/เปิดไฟต์`;
+      } else if (sigInfo) {
+        shortSummary = `${tournData.flag} เมต้าแข่ง ${tournData.shortLabel} (${sigInfo.role}) • ดันป้อม/เปิดไฟต์`;
       } else if (h.tier === 'SS') {
         shortSummary = `👑 ฮีโร่ SS God Tier อันดับ 1 เมต้า (WR ${h.stats.winRate}%)`;
       } else {
@@ -2745,7 +2823,7 @@ function renderRecommendations() {
                 <span class="rec-hero-name">${h.name}</span>
                 <span class="tier-badge tier-${h.tier}">${h.tier}</span>
                 ${h.tier === 'SS' ? `<span class="ss-god-badge" title="SS God Tier: ฮีโร่ที่เก่งที่สุดในแพตช์ปัจจุบัน (ชิงเลือกทันที)">👑 SS GOD TIER</span>` : (h.tier === 'S' ? `<span class="s-meta-badge" title="S Tier: ติด Top Meta">⭐ S TOP META</span>` : '')}
-                ${item.isProMeta ? `<span class="pro-meta-badge" title="ฮีโร่เมต้าการแข่งขัน MPL Philippines Season 18 (Liquipedia Official)">${MPL_PH_SIGNATURE_HEROES.has(h.name.toLowerCase()) ? '🇵🇭 MPL-PH S18' : '🏆 S18 PRO'}</span>` : ''}
+                ${item.isProMeta ? `<span class="pro-meta-badge" title="ฮีโร่เมต้าการแข่งขัน ${tournData.name} (${tournData.source})">${tournData.flag} ${tournData.shortLabel}</span>` : ''}
                 <span class="rec-spell-inline ${recSpell.isCounterSpell ? 'is-counter-spell' : ''}" onclick="openSpellPickerModal('rec', ${idx}, ${h.id})" title="${recSpell.en} (${recSpell.th}) — ${recSpell.reason} (คลิกเพื่อเปลี่ยนสเปล)">
                   <img src="${recSpell.img}" style="width:20px;height:20px;border-radius:50%;vertical-align:middle;" alt="${recSpell.en}" />
                 </span>
@@ -3241,15 +3319,13 @@ function autoBanTopMeta() {
     candidates = candidates.filter(h => isHeroBanEligibleAgainstEnemy(h, enemyFilledLanes));
   }
 
-  // Top priority bans strictly from MPL Philippines Season 18 (Liquipedia Official)
-  const mplPhTopBanNames = [
-    'freya', 'atlas', 'fanny', 'paquito', 'marcel', 'masha', 'uranus', 'selena', 
-    'barats', 'esmeralda', 'melissa', 'carmilla', 'rafaela', 'hirara', 'mathilda', 'nolan', 'gloo'
-  ];
+  // Top priority bans strictly from Active Tournament (Liquipedia Official)
+  const tournData = getActiveTournamentData();
+  const topBanNames = tournData ? tournData.topBans : [];
   const topBanned = candidates
     .sort((a, b) => {
-      const aMpl = mplPhTopBanNames.includes(a.name.toLowerCase()) ? 1 : 0;
-      const bMpl = mplPhTopBanNames.includes(b.name.toLowerCase()) ? 1 : 0;
+      const aMpl = topBanNames.includes(a.name.toLowerCase()) ? 1 : 0;
+      const bMpl = topBanNames.includes(b.name.toLowerCase()) ? 1 : 0;
       if (bMpl !== aMpl) return bMpl - aMpl;
       const aSS = a.tier === 'SS' ? 1 : 0;
       const bSS = b.tier === 'SS' ? 1 : 0;
@@ -3264,27 +3340,37 @@ function autoBanTopMeta() {
 
 function loadDemoDraft() {
   const getId = (name) => HERO_BY_NAME.get(name.toLowerCase())?.id || null;
-  // Authentic MPL Philippines Season 18 Tournament Bans (Top 10 Bans from Liquipedia)
-  state.bans = [
-    getId('Freya'), getId('Atlas'), getId('Fanny'), getId('Paquito'), getId('Marcel'),
-    getId('Masha'), getId('Uranus'), getId('Selena'), getId('Barats'), getId('Esmeralda')
-  ];
-  // Enemy drafted authentic MPL-PH S18 power picks: Nolan (Jungle) + Eudora (Mid) + Belerick (Roam)
-  state.enemyPicks = [
-    getId('Nolan'),
-    getId('Eudora'),
-    getId('Belerick'),
-    null,
-    null
-  ];
-  // Ally drafted Hirara (Highest Picked Hero in S18 - 127 Picks)
-  state.allyPicks = [
-    getId('Hirara'),
-    null,
-    null,
-    null,
-    null
-  ];
+  const tournData = getActiveTournamentData();
+  const demo = tournData ? tournData.demoDraft : null;
+
+  if (demo) {
+    state.bans = demo.bans.map(getId).filter(Boolean);
+    // Pad to 10 ban slots
+    while (state.bans.length < 10) state.bans.push(null);
+
+    state.enemyPicks = [
+      demo.enemyPicks[0] ? getId(demo.enemyPicks[0]) : null,
+      demo.enemyPicks[1] ? getId(demo.enemyPicks[1]) : null,
+      demo.enemyPicks[2] ? getId(demo.enemyPicks[2]) : null,
+      demo.enemyPicks[3] ? getId(demo.enemyPicks[3]) : null,
+      demo.enemyPicks[4] ? getId(demo.enemyPicks[4]) : null
+    ];
+    state.allyPicks = [
+      demo.allyPicks[0] ? getId(demo.allyPicks[0]) : null,
+      demo.allyPicks[1] ? getId(demo.allyPicks[1]) : null,
+      demo.allyPicks[2] ? getId(demo.allyPicks[2]) : null,
+      demo.allyPicks[3] ? getId(demo.allyPicks[3]) : null,
+      demo.allyPicks[4] ? getId(demo.allyPicks[4]) : null
+    ];
+  } else {
+    state.bans = [
+      getId('Freya'), getId('Atlas'), getId('Fanny'), getId('Hirara'), getId('Masha'),
+      getId('Esmeralda'), getId('Paquito'), getId('Carmilla'), getId('Nolan'), getId('Uranus')
+    ];
+    state.enemyPicks = [getId('Nolan'), getId('Eudora'), getId('Belerick'), null, null];
+    state.allyPicks = [getId('Hirara'), null, null, null, null];
+  }
+
   state.spellOverrides = {};
   state.laneOverrides = {};
   state.pickMode = 'ally';
@@ -3314,12 +3400,13 @@ function setMetaTabLane(lane) {
 }
 
 function renderMetaTierList() {
+  const tournData = getActiveTournamentData();
   const tiers = [
-    { key: 'SS', desc: '👑 God Meta S18 / แบนหรือหยิบทันที (70%+ Presence)', bg: 'linear-gradient(135deg, #ef4444, #f59e0b)' },
-    { key: 'S', desc: '⭐ Top Meta S18 / ตัวแกนหลักทัวร์ (45-70% Presence)', bg: 'linear-gradient(135deg, #f59e0b, #eab308)' },
-    { key: 'A', desc: '🛡️ Strong Picks S18 / ตัวแก้ทางยอดนิยม (15-45% Presence)', bg: 'linear-gradient(135deg, #8b5cf6, #6366f1)' },
-    { key: 'B', desc: '⚔️ Pocket Picks S18 / ตัวเลือกเฉพาะทาง (2-15% Presence)', bg: 'linear-gradient(135deg, #0ea5e9, #2563eb)' },
-    { key: 'C', desc: '🚫 Uncontested S18 / ไม่ถูกพิกหรือแบนในการแข่ง', bg: 'linear-gradient(135deg, #64748b, #475569)' }
+    { key: 'SS', desc: `👑 God Meta (${tournData.shortLabel}) / แบนหรือหยิบทันที (70%+ Presence)`, bg: 'linear-gradient(135deg, #ef4444, #f59e0b)' },
+    { key: 'S', desc: `⭐ Top Meta (${tournData.shortLabel}) / ตัวแกนหลักทัวร์ (45-70% Presence)`, bg: 'linear-gradient(135deg, #f59e0b, #eab308)' },
+    { key: 'A', desc: `🛡️ Strong Picks (${tournData.shortLabel}) / ตัวแก้ทางยอดนิยม (15-45% Presence)`, bg: 'linear-gradient(135deg, #8b5cf6, #6366f1)' },
+    { key: 'B', desc: `⚔️ Pocket Picks (${tournData.shortLabel}) / ตัวเลือกเฉพาะทาง (2-15% Presence)`, bg: 'linear-gradient(135deg, #0ea5e9, #2563eb)' },
+    { key: 'C', desc: `🚫 Uncontested (${tournData.shortLabel}) / ไม่ถูกพิกหรือแบนในการแข่ง`, bg: 'linear-gradient(135deg, #64748b, #475569)' }
   ];
 
   const container = document.getElementById('tierListContainer');
@@ -3338,7 +3425,7 @@ function renderMetaTierList() {
         </div>
         <div class="tier-heroes-wrap">
           ${heroesInTier.map(h => `
-            <div class="meta-hero-tile" onclick="openHeroModal(${h.id})" title="${h.name}: Presence ${h.stats.presenceRate || 0}%, Picks ${h.stats.picks || 0}, Bans ${h.stats.bans || 0}, WR ${h.stats.winRate}%">
+            <div class="meta-hero-tile" onclick="openHeroModal(${h.id})" title="${h.name}: Presence ${h.stats.presenceRate || 0}% (${h.stats.picks || 0} Picks / ${h.stats.bans || 0} Bans), WR ${h.stats.winRate}%">
               <img src="${h.head}" alt="${h.name}" loading="lazy" />
               <div style="min-width:0; flex:1;">
                 <div style="font-weight:700; font-size:0.88rem; display:flex; justify-content:space-between;">
@@ -3346,7 +3433,7 @@ function renderMetaTierList() {
                   <span style="font-size:0.7rem; color:#fcd34d; display:inline-flex; align-items:center; gap:2px;"><img src="${LANE_IMAGE[h.lanes[0]] || 'assets/lanes/mid.png'}" class="lane-pill-img" alt="${h.lanes[0]}" /> ${LANE_SHORT_LABEL[h.lanes[0]] || h.lanes[0]}</span>
                 </div>
                 <div style="font-size:0.72rem; color:var(--text-muted); display:flex; gap:0.45rem;">
-                  <span style="color:#38bdf8; font-weight:600;">#S18 ${h.stats.presenceRate ? h.stats.presenceRate + '%' : '0%'}</span>
+                  <span style="color:#38bdf8; font-weight:600;">#${tournData.shortLabel} ${h.stats.presenceRate ? h.stats.presenceRate + '%' : '0%'}</span>
                   <span style="color:#6ee7b7;">WR ${h.stats.winRate}%</span>
                   <span style="color:#fca5a5;">BR ${h.stats.banRate}%</span>
                 </div>
@@ -3392,6 +3479,7 @@ function renderLookupDetail() {
 }
 
 function buildHeroDossierHtml(h, isModal = true) {
+  const tournData = getActiveTournamentData();
   const heroCombos = COMBOS.filter(c => c.heroObjs.some(x => x.id === h.id));
   const revampInfo = REVAMPED_HERO_KITS[h.name];
 
@@ -3528,12 +3616,12 @@ function buildHeroDossierHtml(h, isModal = true) {
             <span style="font-size:0.82rem; color:var(--accent-gold-light); display:inline-flex; align-items:center; gap:4px; flex-wrap:wrap;">
               ${h.lanes.map(l => `<span style="display:inline-flex; align-items:center; gap:2px;"><img src="${LANE_IMAGE[l] || 'assets/lanes/mid.png'}" class="lane-pill-img" alt="${l}" /> ${LANE_SHORT_LABEL[l] || l}</span>`).join(' / ')} • ${h.roles.join(', ')}
             </span>
-            ${PRO_COMPETITIVE_HEROES.has(h.name.toLowerCase()) ? `<span class="pro-meta-badge" style="font-size:0.68rem;">🏆 MPL-PH S18 META</span>` : ''}
+            ${isHeroContestedInActiveTournament(h.name) ? `<span class="pro-meta-badge" style="font-size:0.68rem;">🏆 ${tournData.flag} ${tournData.shortLabel} META</span>` : ''}
           </div>
           <div style="font-size:0.82rem; color:var(--text-muted); margin-top:4px; display:flex; gap:1rem; flex-wrap:wrap;">
-            <span>📈 Win Rate (S18): <strong style="color:#6ee7b7;">${h.stats.winRate}%</strong></span>
-            <span>🚫 Ban Rate (S18): <strong style="color:#fda4af;">${h.stats.banRate}%</strong></span>
-            <span>🎯 Presence (S18): <strong style="color:#38bdf8;">${h.stats.presenceRate ? h.stats.presenceRate + '%' : '0%'}</strong></span>
+            <span>📈 Win Rate (${tournData.shortLabel}): <strong style="color:#6ee7b7;">${h.stats.winRate}%</strong></span>
+            <span>🚫 Ban Rate (${tournData.shortLabel}): <strong style="color:#fda4af;">${h.stats.banRate}%</strong></span>
+            <span>🎯 Presence (${tournData.shortLabel}): <strong style="color:#38bdf8;">${h.stats.presenceRate ? h.stats.presenceRate + '%' : '0%'}</strong> (${h.stats.picks || 0}P / ${h.stats.bans || 0}B)</span>
             <span>⚡ ความถนัด: <strong>${h.specialties.join(', ')}</strong></span>
           </div>
           <div style="margin-top:0.55rem; display:flex; gap:0.45rem; flex-wrap:wrap;">
@@ -4646,6 +4734,7 @@ function refreshAllViews() {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
+  setTournamentMeta(state.activeTournament || 'mpl-id', true);
   loadDemoDraft();
   renderCombosHub();
   renderMetaTierList();
