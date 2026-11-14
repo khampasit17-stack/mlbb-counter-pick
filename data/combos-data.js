@@ -451,6 +451,7 @@ window.MLBB_COMBOS = [
     title: 'Freya + Paquito (คู่หูบดขยี้เลน สถิติแบน/พิกอันดับ 1 ใน MPL-PH)',
     type: 'duo',
     tier: 'SS',
+    tournament: 'mpl-ph',
     badge: '🇵🇭 MPL-PH Priority Duo',
     winRateBonus: '+6.8% WR',
     difficulty: 'ปานกลาง',
@@ -469,6 +470,7 @@ window.MLBB_COMBOS = [
     title: 'แผน UBE Strategy 2.0: Mathilda + Fredrinn + Karrie (สูตรแชมป์ Team Liquid PH)',
     type: 'trio',
     tier: 'SS',
+    tournament: 'mpl-ph',
     badge: '🇵🇭 MPL-PH Championship Meta',
     winRateBonus: '+7.5% WR',
     difficulty: 'ยาก',
@@ -487,6 +489,7 @@ window.MLBB_COMBOS = [
     title: 'แผน Lord Dancing Chokepoint: Atlas + Zhuxin + Pharsa (สูตรคุมโซนบอส Falcons AP.Bren)',
     type: 'trio',
     tier: 'SS',
+    tournament: 'mpl-ph',
     badge: '🇵🇭 MPL-PH Lord Dance Meta',
     winRateBonus: '+7.2% WR',
     difficulty: 'ยาก',
@@ -499,5 +502,62 @@ window.MLBB_COMBOS = [
     ],
     strongAgainst: 'ทีมที่ต้องเดินรวมกลุ่มเข้ามาชิง Lord และทีมที่ไม่มีสกิลวิ่งข้ามกำแพง',
     mustBan: ['Diggie', 'Wanwan', 'Mathilda']
+  },
+  {
+    id: 'trio-mpl-id-speed-tempo',
+    title: 'แผน ID High-Tempo Dive: Hirara + Zhuxin + Belerick (สูตรสปีดไฟต์ MPL-ID S18)',
+    type: 'trio',
+    tier: 'SS',
+    tournament: 'mpl-id',
+    badge: '🇮🇩 MPL-ID #1 Tempo Trio',
+    winRateBonus: '+7.6% WR',
+    difficulty: 'ปานกลาง',
+    heroes: ['Hirara', 'Zhuxin', 'Belerick'],
+    summary: '3 ประสานแกนหลักของลีกอินโดนีเซีย Season 18! Belerick (57.58% WR) ยืนค้ำหน้าสะท้อนดาเมจและล็อกขาศัตรูทั้งวง Zhuxin (68 Picks) ลอยคุมโซนจับทุ่มซ้ำ และ Hirara (#1 Most Picked 103 เกม) พุ่งเข้าปิดบัญชีแนวหลังแบบไร้พ่าย',
+    steps: [
+      '1. Belerick เดินเปิดพุ่มหน้าหลุมบอสและกดอัลติ Wrath of Dryad ล็อกขา+ยั่วยุศัตรูที่เข้ามาโซน',
+      '2. Zhuxin กาง Lantern Flare เผาและยกศัตรูที่ติดยั่วยุของ Belerick ทุ่มลงพื้นซ้ำ',
+      '3. Hirara อาศัยจังหวะที่ศัตรูติด CC ซ้อนพุ่งเข้าล้วงแครี่และเมจศัตรูแล้วถอนตัวด้วยความเร็วสูง'
+    ],
+    strongAgainst: 'ทีมแครี่ตีเร็วและทีมที่ต้องเดินเข้าโซนแคบหน้าหลุม Lord',
+    mustBan: ['Diggie', 'Valir', 'Minsitthar']
+  },
+  {
+    id: 'trio-mpl-id-raid-boss',
+    title: 'แผน ID Immortal Raid Boss: Alice + Marcel + Nolan (สูตร 65.7% WR MPL-ID S18)',
+    type: 'trio',
+    tier: 'SS',
+    tournament: 'mpl-id',
+    badge: '🇮🇩 MPL-ID Championship Core',
+    winRateBonus: '+7.4% WR',
+    difficulty: 'ปานกลาง',
+    heroes: ['Alice', 'Marcel', 'Nolan'],
+    summary: 'คอมโบตัวเก่งประจำลีกอินโดนีเซีย! Marcel (65.71% WR / 114 Bans) ล็อกพื้นที่ขังศัตรูให้ Alice (49 Picks / 55.10% WR) วาร์ปเข้ากลางวงดูดเลือดอมตะ ขณะที่ Nolan (74 Picks / 58.11% WR) ฉีกไฟต์สังหารตัวบางในพริบตา',
+    steps: [
+      '1. Marcel เปิดจังหวะล็อกพื้นที่และรวบศัตรูให้อยู่ในวงแคบ',
+      '2. Alice ปาลูกแก้วสกิล 1 วาร์ปเข้ากลางวง กดสกิล 2 Immobilize และเปิดอัลติยืนดูดเลือดค้ำไฟต์',
+      '3. Nolan พุ่งเข้าคอมโบสกิล 1-2-Ult ปาดระเบิดแนวหลังศัตรูพร้อมล้างสถานะถอยออกทันที'
+    ],
+    strongAgainst: 'ทีมไฟต์ 5v5 ยืดเยื้อ และทีมที่ไม่มีดาเมจ True Damage ละลายเลือด',
+    mustBan: ['Karrie', 'Baxia', 'Fanny']
+  },
+  {
+    id: 'duo-mpl-id-gloo-obsidia',
+    title: 'Gloo + Obsidia (คู่หู EXP + Gold อัตราชนะสูงสุดใน MPL-ID S18)',
+    type: 'duo',
+    tier: 'SS',
+    tournament: 'mpl-id',
+    badge: '🇮🇩 MPL-ID 62% WR Duo',
+    winRateBonus: '+6.9% WR',
+    difficulty: 'ปานกลาง',
+    heroes: ['Gloo', 'Obsidia'],
+    summary: 'คู่หูยอดฮิตของลีกอินโดนีเซีย! Gloo (62.00% WR ใน MPL-ID) แยกส่วนเกาะร่างและลากตัวหลักศัตรูออกมาหน้าวงให้ Obsidia (56.86% WR / 51 Picks) ยิงสาดกระดูกใส่เป้าเดียวจนละลายหายไปก่อนเริ่มไฟต์',
+    steps: [
+      '1. Gloo ใช้สกิล 1-2 สตั๊นและเปิดอัลติ Split, Split แยกส่วนแล้วเกาะร่างศัตรูตัวสำคัญ',
+      '2. Gloo ลากศัตรูที่ถูกสิงร่างเดินกลับมาหาแนวหลังทีมเรา',
+      '3. Obsidia รัวกระดูกใส่เป้าหมายที่ถูก Gloo ลากมาจนตายทันที ทำให้ทีมได้เปรียบ 5v4 ก่อนชิง Lord'
+    ],
+    strongAgainst: 'ทีมที่มีตัวทำดาเมจหลักยืนค้ำแนวหน้า หรือเมจ/แครี่ที่ไม่มีสกิลหนีไกล',
+    mustBan: ['Faramis', 'Vexana', 'Claude']
   }
 ];

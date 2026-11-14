@@ -34,7 +34,7 @@ function isHeroContestedInActiveTournament(heroName) {
   const tData = getActiveTournamentData();
   if (!tData || !tData.stats) return true;
   const s = tData.stats[heroName.toLowerCase()];
-  return Boolean(s && (s.presenceRate > 0 || s.totalPickBans > 0));
+  return Boolean(s && (s.presenceRate >= 4.5 || s.totalPickBans >= 8));
 }
 
 function getActiveTournamentSignature(heroName) {
@@ -1529,7 +1529,9 @@ function setTournamentMeta(tournId, suppressRefresh = false) {
       h.stats.pickRate = s.pickRate;
       h.stats.presenceRate = s.presenceRate;
       h.tier = s.tier;
-      h.stats.metaScore = Number(((s.presenceRate * 0.8) + (s.winRate * 0.4)).toFixed(1));
+      h.stats.metaScore = s.metaScore !== undefined
+        ? s.metaScore
+        : Number(((s.presenceRate * 0.8) + (s.winRate * 0.4)).toFixed(1));
     } else {
       h.stats.picks = 0;
       h.stats.wins = 0;
@@ -1591,7 +1593,7 @@ function setTournamentMeta(tournId, suppressRefresh = false) {
   });
 
   if (!suppressRefresh) {
-    refreshAllViews();
+    loadDemoDraft();
   }
 }
 
@@ -2124,7 +2126,8 @@ function calculateRecommendations() {
     // 3. Evaluate Pro Meta Combos completion!
     const matchingCombos = findMatchingMetaCombosForCandidate(candidate.id, pickedAllyIds);
     for (const mc of matchingCombos) {
-      const bonus = isComboPriority ? 46 : 26;
+      const tournMatchBonus = mc.combo.tournament === state.activeTournament ? 16 : (mc.combo.tournament && state.activeTournament !== 'combined' ? -10 : 0);
+      const bonus = (isComboPriority ? 46 : 26) + tournMatchBonus;
       synergyScore += bonus * mc.alliesInCombo.length;
       for (const allyObj of mc.alliesInCombo) {
         const existingSyn = synergyAllies.find(s => s.allyId === allyObj.id);
@@ -2148,34 +2151,42 @@ function calculateRecommendations() {
     if (isComboPriority && pickedAllies.length === 0) {
       const inTopCombo = COMBOS.some(c =>
         c.tier === 'SS' &&
+        (!c.tournament || c.tournament === state.activeTournament || state.activeTournament === 'combined') &&
         c.heroObjs.some(h => h.id === candidate.id) &&
         !c.heroObjs.some(h => state.bans.includes(h.id) || state.enemyPicks.includes(h.id))
       );
-      if (inTopCombo) synergyScore += 22;
+      if (inTopCombo) synergyScore += 24;
     }
 
     const metaWeight = pickedEnemies.length > 0
-      ? candidate.stats.metaScore * 0.28
-      : candidate.stats.metaScore * 0.85;
+      ? candidate.stats.metaScore * (state.strategyMode === 'all' ? 0.35 : 0.72)
+      : candidate.stats.metaScore * 0.95;
 
     const fillsNeededLane = pickedAllies.length > 0 && candidate.lanes.some(l => missingLanes.includes(l));
     const laneBonus = fillsNeededLane ? 12 : 0;
     const multiCounterBonus = counteredTargets.length >= 2 ? (counteredTargets.length - 1) * 16 : 0;
 
-    // Direct Tier Meta Bonus: Exact +26 for SS as shown in screenshot
-    const tierBonus = candidate.tier === 'SS' ? 26 : (candidate.tier === 'S' ? 14 : (candidate.tier === 'A' ? 5 : 0));
+    // Direct Tier Meta Bonus per Active Tournament
+    const tierBonus = candidate.tier === 'SS' ? 32 : (candidate.tier === 'S' ? 18 : (candidate.tier === 'A' ? 8 : (candidate.tier === 'B' ? 0 : -12)));
 
-    // Balanced SS Meta Bonus
-    let ssExtraBonus = 0;
-    if (candidate.tier === 'SS') {
-      if (counteredTargets.length > 0) ssExtraBonus += 8; // Bonus if SS hero directly counters an enemy
+    // Regional Signature & High-Winrate Bonus in Active Tournament
+    const hasSig = Boolean(getActiveTournamentSignature(candidate.name));
+    const highWrRegional = (candidate.stats.picks || 0) >= 15 && (candidate.stats.winRate || 0) >= 56 ? 8 : 0;
+    let ssExtraBonus = (hasSig ? 12 : 0) + highWrRegional;
+    if (candidate.tier === 'SS' && counteredTargets.length > 0) {
+      ssExtraBonus += 8; // Bonus if SS hero directly counters an enemy
     }
 
-    // Competitive Tournament Pro Meta Check (MPL / M-Series / MSC)
+    // Competitive Tournament Pro Meta Check (MPL-ID S18 vs MPL-PH S18)
     const isPro = PRO_COMPETITIVE_HEROES.has(candidate.name.toLowerCase());
-    const proBonus = isPro ? 28 : (state.strategyMode === 'all' ? 0 : -65);
+    const hasAnyPickBan = (candidate.stats.totalPickBans || 0) > 0;
+    const proBonus = state.strategyMode === 'all'
+      ? 0
+      : (isPro
+          ? 28 + Math.min(18, Math.round((candidate.stats.presenceRate || 0) * 0.25))
+          : (hasAnyPickBan ? -18 : -75));
 
-    const effectiveCounterScore = (counterScore + multiCounterBonus) * (isComboPriority ? 0.78 : 1.0);
+    const effectiveCounterScore = (counterScore + multiCounterBonus) * (isComboPriority ? 0.75 : 0.88);
     const totalScore = Number((effectiveCounterScore + synergyScore + metaWeight + tierBonus + ssExtraBonus + proBonus + laneBonus).toFixed(1));
 
     results.push({
@@ -2243,9 +2254,18 @@ function renderLiveComboStrip() {
       }
     }
 
+    const avgHeroMeta = combo.heroObjs.length > 0
+      ? combo.heroObjs.reduce((sum, ch) => sum + (ch.stats.metaScore || 0), 0) / combo.heroObjs.length
+      : 0;
+    const regionalComboBonus = combo.tournament === state.activeTournament
+      ? 45
+      : (combo.tournament && state.activeTournament !== 'combined' ? -30 : 0);
+
     const score =
       (alreadyInTeam.length * 55) +
       comboCounterPts * 0.6 +
+      (avgHeroMeta * 0.55) +
+      regionalComboBonus +
       (combo.tier === 'SS' ? 25 : 15) -
       (hardCounteredByEnemy.length * 35);
 
@@ -3093,7 +3113,17 @@ function renderCombosHub() {
   const container = document.getElementById('combosHubContainer');
   if (!container) return;
 
-  const list = COMBOS.filter(c => state.comboHubFilter === 'ALL' || c.type === state.comboHubFilter);
+  const list = COMBOS
+    .filter(c => state.comboHubFilter === 'ALL' || c.type === state.comboHubFilter)
+    .slice()
+    .sort((a, b) => {
+      const aMatch = a.tournament === state.activeTournament ? 1 : (a.tournament && state.activeTournament !== 'combined' ? -1 : 0);
+      const bMatch = b.tournament === state.activeTournament ? 1 : (b.tournament && state.activeTournament !== 'combined' ? -1 : 0);
+      if (bMatch !== aMatch) return bMatch - aMatch;
+      const aAvg = a.heroObjs.length > 0 ? a.heroObjs.reduce((s, h) => s + (h.stats.metaScore || 0), 0) / a.heroObjs.length : 0;
+      const bAvg = b.heroObjs.length > 0 ? b.heroObjs.reduce((s, h) => s + (h.stats.metaScore || 0), 0) / b.heroObjs.length : 0;
+      return bAvg - aAvg;
+    });
   const typeLabelMap = {
     duo: '👥 คู่หูดูโอ้ 2 คน (Duo Synergy)',
     trio: '🔱 3 ประสานคุมเกม (Trio Core)',
@@ -4731,6 +4761,9 @@ function refreshAllViews() {
   renderRecommendations();
   renderHeroGrid();
   renderCombosHub();
+  renderMetaTierList();
+  renderLookupQuickBar();
+  renderLookupDetail();
 }
 
 window.addEventListener('DOMContentLoaded', () => {
