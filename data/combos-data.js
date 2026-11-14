@@ -559,5 +559,62 @@ window.MLBB_COMBOS = [
     ],
     strongAgainst: 'ทีมที่มีตัวทำดาเมจหลักยืนค้ำแนวหน้า หรือเมจ/แครี่ที่ไม่มีสกิลหนีไกล',
     mustBan: ['Faramis', 'Vexana', 'Claude']
+  },
+  {
+    id: 'duo-msl-th-carmilla-cecilion',
+    title: 'Carmilla + Cecilion (คู่รักทำลายล้างอันดับ 1 ลีกไทย MSL-TH S2: 98.5% Presence + 75% WR)',
+    type: 'duo',
+    tier: 'SS',
+    tournament: 'msl-th',
+    badge: '🇹🇭 MSL-TH #1 Priority Duo',
+    winRateBonus: '+7.8% WR',
+    difficulty: 'ปานกลาง',
+    heroes: ['Carmilla', 'Cecilion'],
+    summary: 'ซิกเนเจอร์อันดับ 1 ของลีกไทย MSL Thailand Season 2! Carmilla คือฮีโร่ที่ถูกหยิบเยอะที่สุดในไทย (74 เกม ชนะ 63.51% / Presence 98.52%) เมื่อจับคู่กับ Cecilion ที่ชนะถึง 75.00% (12W-4L) จะเชื่อมเลือดระเบิดทีมศัตรูหายทั้งวงในพริบตา',
+    steps: [
+      '1. Carmilla เปิดสกิล 2 พุ่งสตั๊นและปาอัลติ Curse of Blood เชื่อมดาเมจและสโลว์ศัตรูทั้งกลุ่ม',
+      '2. Cecilion เปิดอัลติ Bats Feast และฟาดสกิล 1 Bat Impact ใส่ตัวหน้าที่ติดโซ่เชื่อมเลือด',
+      '3. ดาเมจเวทแรงสูงของ Cecilion จะชิ่งระเบิดแนวหลังศัตรูตายพร้อมกันทันที และดึง Carmilla ขึ้นร่างด้วย Moonlit Waltz ได้เมื่อฉุกเฉิน'
+    ],
+    strongAgainst: 'ทีมที่เดินรวมกลุ่มไฟต์ 5v5 หน้าหลุมบอส และทีมที่มีแนวหน้ายืนชิดกัน',
+    mustBan: ['Diggie', 'Baxia', 'Fanny']
+  },
+  {
+    id: 'trio-msl-th-aulus-selena-minotaur',
+    title: 'แผน TH Aggressive Tempo: Selena + Aulus + Minotaur (สูตร 73.5% WR ลีกไทย MSL-TH S2)',
+    type: 'trio',
+    tier: 'SS',
+    tournament: 'msl-th',
+    badge: '🇹🇭 MSL-TH 73.5% WR Trio',
+    winRateBonus: '+7.6% WR',
+    difficulty: 'ปานกลาง',
+    heroes: ['Selena', 'Aulus', 'Minotaur'],
+    summary: 'ชุด 3 ประสานฟอร์มแรงที่สุดใน MSL Thailand Season 2! Selena (WR 73.53% ชนะ 25 จาก 34 เกม) เปิดวิชั่นและดักสตั๊นตั้งแต่ต้นเกม ถ่วงเวลาให้ Aulus (49 Picks / 59.18% WR) ฟาร์มจนเกิดเต็มตัว โดยมี Minotaur (51 Picks) คอยฮีลและทุบยกทั้งวง',
+    steps: [
+      '1. Selena วางแทร็ปเปิดวิชั่นป่าศัตรูและยิงธนู Abyssal Arrow ดักสตั๊นเก็บคิลสร้างพื้นที่ต้น-กลางเกม',
+      '2. Minotaur เดินคุมโซนและกดอัลติ Minoan Fury ทุบพื้นลอยหมู่เปิดไฟต์ใหญ่พร้อมฮีลฟื้นฟูทีม',
+      '3. Aulus ที่ฟาร์มครบเลเวล 12 วิ่งเปิดอัลติ Undying Fury ฟาดขวานกวาดล้างแนวหลังศัตรูจนหมดหลอด'
+    ],
+    strongAgainst: 'ทีมที่ขาดตัวล้างสถานะ CC และทีมที่ยื้อเกมไปถึงช่วงเลทเกม',
+    mustBan: ['Diggie', 'Valir', 'Belerick']
+  },
+  {
+    id: 'duo-msl-th-belerick-obsidia',
+    title: 'Belerick + Obsidia (ป้อมปราการหนามสะท้อน + แครี่อันดับ 1 ลีกไทย MSL-TH S2)',
+    type: 'duo',
+    tier: 'SS',
+    tournament: 'msl-th',
+    badge: '🇹🇭 MSL-TH Top Pick Duo',
+    winRateBonus: '+6.9% WR',
+    difficulty: 'ง่าย',
+    heroes: ['Belerick', 'Obsidia'],
+    summary: 'คู่หูแกนหลักที่ถูกหยิบมากที่สุดในลีกไทย (รวมกัน 114 เกม)! Belerick (57 Picks / 70.37% Presence) ยืนค้ำหน้ายั่วยุและสะท้อนหนามใส่ทุกคนที่พุ่งเข้ามา เปิดพื้นที่ให้ Obsidia (#1 Marksman ไทย 57 Picks) ยิงฟรีจากแนวหลังอย่างปลอดภัย',
+    steps: [
+      '1. Belerick ยืนโซนหน้าแครี่และกดอัลติ Wrath of Dryad ล็อกขา+ยั่วยุตัวล้วงศัตรูทุกคนที่พุ่งเข้ามา',
+      '2. หนาม Deadly Thorns ของ Belerick จะเด้งสะท้อนดาเมจใส่ศัตรูรอบตัวต่อเนื่อง',
+      '3. Obsidia ยืนสาดกระดูกละลายศัตรูที่ติดยั่วยุของ Belerick จนตายยกแผงโดยไม่มีใครเข้าถึงตัวได้'
+    ],
+    strongAgainst: 'ทีมแอสซาซิน/ไฟต์เตอร์สายพุ่งล้วง และทีมแครี่ตีเร็ว',
+    mustBan: ['Karrie', 'X.Borg', 'Valentina']
   }
 ];
