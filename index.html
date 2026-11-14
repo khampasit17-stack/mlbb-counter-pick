@@ -89,10 +89,18 @@
         </div>
       </div>
 
+      <!-- Mobile Quick-Jump Bar (Visible on phones <= 680px) -->
+      <div class="mobile-draft-quick-nav">
+        <button type="button" class="m-jump-btn m-jump-ban" onclick="document.querySelector('.ban-board')?.scrollIntoView({behavior:'smooth', block:'start'})">🚫 แบน (10)</button>
+        <button type="button" class="m-jump-btn m-jump-ally" onclick="document.getElementById('allyTeamCol')?.scrollIntoView({behavior:'smooth', block:'start'})">🔵 ทีมเรา</button>
+        <button type="button" class="m-jump-btn m-jump-enemy" onclick="document.getElementById('enemyTeamCol')?.scrollIntoView({behavior:'smooth', block:'start'})">🔴 ทีมศัตรู</button>
+        <button type="button" class="m-jump-btn m-jump-rec" onclick="document.getElementById('centerRecCol')?.scrollIntoView({behavior:'smooth', block:'start'})">🎯 ตัวแก้ทาง</button>
+      </div>
+
       <!-- 3-Column Draft Arena -->
       <div class="draft-arena">
         <!-- Left Column: Ally Team (Blue Side) -->
-        <div class="team-column ally-col">
+        <div id="allyTeamCol" class="team-column ally-col">
           <div class="team-col-header">
             <div class="team-col-title">🔵 ฝั่งฟ้า — ทีมของเรา</div>
             <span id="allyCountText" style="font-size:0.78rem; color:var(--text-muted);">0 / 5</span>
@@ -103,7 +111,7 @@
         </div>
 
         <!-- Center Column: Real-Time Counter + Meta Combo Engine -->
-        <div class="counter-center-panel">
+        <div id="centerRecCol" class="counter-center-panel">
           <!-- Center Quick Actions: Swap Teams + View Counter Items & Spells Modal -->
           <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:0.6rem; margin-bottom:0.75rem;">
             <button class="btn btn-swap-teams" style="padding:0.48rem 1.2rem; font-size:0.86rem; border-radius:24px;" onclick="swapAllTeams()" title="สลับตัวละครที่เลือกทั้งหมดระหว่างฝั่งฟ้าและฝั่งแดง">
@@ -175,7 +183,7 @@
         </div>
 
         <!-- Right Column: Enemy Team (Red Side) -->
-        <div class="team-column enemy-col">
+        <div id="enemyTeamCol" class="team-column enemy-col">
           <div class="team-col-header">
             <div class="team-col-title">🔴 ฝั่งแดง — ทีมศัตรู</div>
             <div style="display:flex; align-items:center; gap:0.4rem;">
