@@ -34,6 +34,9 @@
       <button class="nav-tab" data-tab="meta" onclick="switchTab('meta')">
         🔥 ตาราง Meta ปัจจุบัน
       </button>
+      <button class="nav-tab nav-tab-m8" data-tab="m8" onclick="switchTab('m8')">
+        🔮 คาดการณ์ M8
+      </button>
       <button class="nav-tab" data-tab="lookup" onclick="switchTab('lookup')">
         🔍 เช็คตัวแก้ทางรายตัว
       </button>
@@ -54,6 +57,9 @@
         </button>
         <button class="tourn-nav-btn" data-htourn="combined" onclick="setTournamentMeta('combined')" title="สลับเป็นเมต้ารวมโปรทัวร์นาเมนต์ MPL-ID + PH + TH (522 นัด)">
           🌐 รวม 3 ลีก
+        </button>
+        <button class="tourn-nav-btn" data-htourn="m8-pred" onclick="setTournamentMeta('m8-pred')" title="สลับเป็นเมต้าคาดการณ์ M8 World Championship (วิเคราะห์จาก 6 ทัวร์นาเมนต์ 942 นัด)">
+          🔮 คาดการณ์ M8
         </button>
       </div>
       <button id="autoBanBtn" class="btn btn-ban-auto" onclick="autoBanTopMeta()" title="แบนฮีโร่ตามสถิติตัวต้องห้ามอันดับ 1-10 ของทัวร์นาเมนต์ที่เลือกจาก Liquipedia อัตโนมัติ">
@@ -317,6 +323,7 @@
             <button class="tourn-tab-pill" data-mtourn="mpl-ph" onclick="setTournamentMeta('mpl-ph')">🇵🇭 MPL-PH S18</button>
             <button class="tourn-tab-pill" data-mtourn="msl-th" onclick="setTournamentMeta('msl-th')">🇹🇭 MSL-TH S2</button>
             <button class="tourn-tab-pill" data-mtourn="combined" onclick="setTournamentMeta('combined')">🌐 รวม 3 ลีก (522 นัด)</button>
+            <button class="tourn-tab-pill" data-mtourn="m8-pred" onclick="setTournamentMeta('m8-pred')">🔮 คาดการณ์ M8 (942 นัด)</button>
           </div>
           <div class="lane-filter-pills" id="metaTabLanePills">
             <button class="lane-pill active" data-mlane="ALL" onclick="setMetaTabLane('ALL')">ทุกเลน (All Lanes)</button>
@@ -340,6 +347,36 @@
       </div>
 
       <div id="tierListContainer" class="tier-list-section"></div>
+    </section>
+
+    <!-- ==================== TAB: M8 WORLD CHAMPIONSHIP PICK/BAN PREDICTION ==================== -->
+    <section id="tab-m8" class="tab-panel">
+      <div class="ban-board m8-hero-board" style="margin-bottom:1rem;">
+        <div style="display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:space-between; gap:0.75rem;">
+          <div style="flex:1; min-width:260px;">
+            <h2 style="font-size:1.18rem; color:#c4b5fd;">🔮 คาดการณ์ Pick / Ban — M8 World Championship</h2>
+            <p id="m8SubText" style="font-size:0.8rem; color:var(--text-muted);"></p>
+          </div>
+          <div class="lane-filter-pills" id="m8ActionPills">
+            <button class="lane-pill active" data-m8act="ALL" onclick="setM8Filter('action','ALL')">ทั้งหมด</button>
+            <button class="lane-pill" data-m8act="BAN" onclick="setM8Filter('action','BAN')">🚫 คาดโดนแบน</button>
+            <button class="lane-pill" data-m8act="PICK" onclick="setM8Filter('action','PICK')">✅ คาดถูกเลือก</button>
+            <button class="lane-pill" data-m8act="FLEX" onclick="setM8Filter('action','FLEX')">⚖️ ก้ำกึ่ง</button>
+          </div>
+        </div>
+        <div class="lane-filter-pills" id="m8LanePills" style="margin-top:0.55rem;">
+          <button class="lane-pill active" data-m8lane="ALL" onclick="setM8Filter('lane','ALL')">ทุกเลน</button>
+          <button class="lane-pill" data-m8lane="EXP Lane" onclick="setM8Filter('lane','EXP Lane')"><img src="assets/lanes/exp.png" class="lane-btn-img" alt="EXP" /> EXP</button>
+          <button class="lane-pill" data-m8lane="Jungle" onclick="setM8Filter('lane','Jungle')"><img src="assets/lanes/jungle.png" class="lane-btn-img" alt="Jungle" /> Jungle</button>
+          <button class="lane-pill" data-m8lane="Mid Lane" onclick="setM8Filter('lane','Mid Lane')"><img src="assets/lanes/mid.png" class="lane-btn-img" alt="Mid" /> Mid</button>
+          <button class="lane-pill" data-m8lane="Gold Lane" onclick="setM8Filter('lane','Gold Lane')"><img src="assets/lanes/gold.png" class="lane-btn-img" alt="Gold" /> Gold</button>
+          <button class="lane-pill" data-m8lane="Roam" onclick="setM8Filter('lane','Roam')"><img src="assets/lanes/roam.png" class="lane-btn-img" alt="Roam" /> Roam</button>
+        </div>
+      </div>
+
+      <div id="m8SummaryContainer" class="m8-summary-grid"></div>
+      <div id="m8TierListContainer" class="tier-list-section"></div>
+      <div id="m8MethodContainer" class="m8-method-box"></div>
     </section>
 
     <!-- ==================== TAB 4: 1v1 COUNTER & SYNERGY ENCYCLOPEDIA ==================== -->
@@ -470,6 +507,7 @@
   <script src="data/heroes-data.js"></script>
   <script src="data/combos-data.js"></script>
   <script src="data/tournaments-data.js"></script>
+  <script src="data/m8-prediction-data.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

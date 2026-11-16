@@ -1498,6 +1498,8 @@ const state = {
   expandedHeroCards: new Set(),    // Hero IDs expanded in compact mode
   comboHubFilter: 'ALL',           // 'ALL' | 'duo' | 'trio' | 'squad'
   metaTabLane: 'ALL',
+  m8LaneFilter: 'ALL',
+  m8ActionFilter: 'ALL',
   lookupHeroId: HERO_BY_NAME.get('carmilla')?.id || HEROES[0]?.id || 1
 };
 
@@ -3476,6 +3478,228 @@ function renderMetaTierList() {
   }).join('');
 }
 
+// ==================== TAB: M8 WORLD CHAMPIONSHIP PICK/BAN PREDICTION ====================
+function setM8Filter(filterType, val) {
+  if (filterType === 'lane') {
+    state.m8LaneFilter = val;
+    document.querySelectorAll('#m8LanePills .lane-pill').forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-m8lane') === val);
+    });
+  } else if (filterType === 'action') {
+    state.m8ActionFilter = val;
+    document.querySelectorAll('#m8ActionPills .lane-pill').forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-m8act') === val);
+    });
+  }
+  renderM8PredictionTab();
+}
+
+function applyM8PredictedDraftToBoard() {
+  setTournamentMeta('m8-pred', false);
+  switchTab('draft');
+}
+
+function renderM8PredictionTab() {
+  const pred = window.M8_PREDICTION;
+  const subEl = document.getElementById('m8SubText');
+  const summaryEl = document.getElementById('m8SummaryContainer');
+  const tierEl = document.getElementById('m8TierListContainer');
+  const methodEl = document.getElementById('m8MethodContainer');
+  if (!pred || !tierEl) return;
+
+  if (subEl) {
+    const srcText = pred.meta.sources.map(s => `${s.flag} ${s.label} (${s.games} นัด)`).join(' • ');
+    subEl.innerHTML = `วิเคราะห์ความน่าจะเป็นที่นักแข่งจะ <strong>แบน (Ban)</strong> และ <strong>เลือก (Pick)</strong> ในเวที <strong>M8 World Championship</strong> โดยเปรียบเทียบสถิติจริงรวม <strong>${pred.meta.totalGames} นัด</strong> จาก 6 ทัวร์นาเมนต์: ${srcText}`;
+  }
+
+  const topExpectedBans = pred.heroes
+    .slice()
+    .sort((a, b) => b.ban - a.ban || b.presence - a.presence)
+    .slice(0, 10);
+
+  const topExpectedPicks = pred.heroes
+    .slice()
+    .sort((a, b) => b.pick - a.pick || b.presence - a.presence)
+    .slice(0, 10);
+
+  if (summaryEl) {
+    const renderMiniChip = (item, idx, isBanCard) => {
+      const h = HERO_BY_NAME.get(item.key);
+      if (!h) return '';
+      return `
+        <div class="m8-top-chip ${isBanCard ? 'is-ban-chip' : 'is-pick-chip'}" onclick="openHeroModal(${h.id})" title="คลิกดูข้อมูล ${h.name} (คาดการณ์ Presence ${item.presence}% | แบน ${item.ban}% | พิก ${item.pick}%)">
+          <span class="m8-chip-rank">#${idx + 1}</span>
+          <img src="${h.head}" alt="${h.name}" loading="lazy" />
+          <div class="m8-chip-info">
+            <div class="m8-chip-name">${h.name} <span class="tier-badge tier-${item.tier}">${item.tier}</span></div>
+            <div class="m8-chip-stat">${isBanCard ? `🚫 โอกาสแบน <strong>${item.ban}%</strong>` : `✅ โอกาสถูกเลือก <strong>${item.pick}%</strong>`} • รวม ${item.presence}%</div>
+          </div>
+        </div>
+      `;
+    };
+
+    summaryEl.innerHTML = `
+      <div class="m8-summary-card m8-ban-box">
+        <div class="m8-summary-header">
+          <div>
+            <div class="m8-summary-title" style="color:#fda4af;">🚫 Top 10 ตัวเต็งที่นักแข่งจะ "แบน" สูงสุดใน M8 (Expected Must-Bans)</div>
+            <div class="m8-summary-sub">ฮีโร่ที่มีอัตราโดนแบนเฉลี่ยสูงสุดและชนะทางดราฟต์ในทุกภูมิภาค ทีมแข่งมักตัดทิ้งในเฟสแบนแรกทันที</div>
+          </div>
+          <button class="btn btn-ban-auto" onclick="applyM8PredictedDraftToBoard()" title="จำลองดราฟต์คาดการณ์ M8 บนกระดานดราฟต์หลัก">
+            🔮 จำลองดราฟต์ M8 บนกระดาน →
+          </button>
+        </div>
+        <div class="m8-top-chips-grid">
+          ${topExpectedBans.map((it, i) => renderMiniChip(it, i, true)).join('')}
+        </div>
+      </div>
+
+      <div class="m8-summary-card m8-pick-box">
+        <div class="m8-summary-header">
+          <div>
+            <div class="m8-summary-title" style="color:#6ee7b7;">✅ Top 10 ตัวเต็งที่นักแข่งจะ "ชิงเลือก (First / Priority Pick)" สูงสุดใน M8</div>
+            <div class="m8-summary-sub">ฮีโร่แกนหลักเมต้าที่หลุดแบนเมื่อไหร่จะถูกโปรเพลเยอร์แย่งหยิบเข้าทีมทันทีในทุกภูมิภาค</div>
+          </div>
+        </div>
+        <div class="m8-top-chips-grid">
+          ${topExpectedPicks.map((it, i) => renderMiniChip(it, i, false)).join('')}
+        </div>
+      </div>
+    `;
+  }
+
+  const m8Tiers = [
+    {
+      key: 'SS',
+      desc: '👑 M8 God Priority (80–99% Presence) • แบน 100% หรือชิง First Pick ทันที',
+      bg: 'linear-gradient(135deg, #ef4444, #f59e0b)'
+    },
+    {
+      key: 'S',
+      desc: '🔥 M8 Core Meta (56–79% Presence) • ตัวหลักเปิดดราฟต์และแบนเฟสแรกของทุกภูมิภาค',
+      bg: 'linear-gradient(135deg, #f59e0b, #eab308)'
+    },
+    {
+      key: 'A',
+      desc: '⭐ M8 High Contested (35–55% Presence) • ตัวทำเกมและแก้ทางหลักที่เจอบ่อยในรอบ Swiss & Knockout',
+      bg: 'linear-gradient(135deg, #8b5cf6, #6366f1)'
+    },
+    {
+      key: 'B',
+      desc: '🛡️ M8 Situational & Comfort Picks (16–34% Presence) • ตัวเลือกตามแผนเฉพาะทีมหรือแบนเฟสสอง',
+      bg: 'linear-gradient(135deg, #0ea5e9, #2563eb)'
+    },
+    {
+      key: 'C',
+      desc: '⚔️ M8 Pocket / Surprise Picks (4–15% Presence) • ตัวลับเฉพาะทางสำหรับแก้ดราฟต์',
+      bg: 'linear-gradient(135deg, #475569, #334155)'
+    },
+    {
+      key: 'D',
+      desc: '🚫 Low Probability (<4% Presence) • โอกาสถูกหยิบหรือแบนใน M8 ต่ำมากในแพตช์ปัจจุบัน',
+      bg: 'linear-gradient(135deg, #1e293b, #0f172a)'
+    }
+  ];
+
+  const actionMeta = {
+    BAN: { label: '🚫 เน้นแบน (MUST BAN)', cls: 'm8-act-ban' },
+    PICK: { label: '✅ เน้นชิงหยิบ (PRIORITY PICK)', cls: 'm8-act-pick' },
+    FLEX: { label: '⚖️ แบนหรือหยิบ (FLEX)', cls: 'm8-act-flex' }
+  };
+
+  tierEl.innerHTML = m8Tiers.map(t => {
+    const rows = pred.heroes.filter(item => {
+      if (item.tier !== t.key) return false;
+      if (state.m8ActionFilter !== 'ALL' && item.action !== state.m8ActionFilter) return false;
+      const hObj = HERO_BY_NAME.get(item.key);
+      if (!hObj) return false;
+      if (state.m8LaneFilter !== 'ALL' && !hObj.lanes.includes(state.m8LaneFilter)) return false;
+      return true;
+    });
+
+    if (rows.length === 0 && (state.m8ActionFilter !== 'ALL' || state.m8LaneFilter !== 'ALL')) {
+      return '';
+    }
+
+    return `
+      <div class="tier-row m8-tier-row">
+        <div class="tier-label-box" style="background:${t.bg};">
+          <div>${t.key}</div>
+          <span>${t.desc}</span>
+          <span style="margin-top:4px; font-size:0.68rem; background:rgba(0,0,0,0.35); padding:2px 8px; border-radius:10px;">${rows.length} ฮีโร่</span>
+        </div>
+        <div class="tier-heroes-wrap m8-heroes-wrap">
+          ${rows.map(item => {
+            const h = HERO_BY_NAME.get(item.key);
+            if (!h) return '';
+            const act = actionMeta[item.action] || actionMeta.FLEX;
+            const srcBadges = item.sources
+              .filter(s => s.presence > 0)
+              .map(s => `<span class="m8-src-mini" title="${s.label}: Presence ${s.presence}% (Pick ${s.picks} / Ban ${s.bans})">${s.flag} ${s.presence}%</span>`)
+              .join('');
+
+            return `
+              <div class="m8-hero-card ${item.tier === 'SS' ? 'is-m8-ss' : ''}" onclick="openHeroModal(${h.id})">
+                <div class="m8-card-top">
+                  <div class="m8-avatar-box">
+                    <img src="${h.head}" alt="${h.name}" loading="lazy" />
+                    <span class="m8-rank-badge">#${item.rank}</span>
+                  </div>
+                  <div class="m8-card-head-info">
+                    <div class="m8-card-name-row">
+                      <strong>${h.name}</strong>
+                      <span class="m8-lane-tag"><img src="${LANE_IMAGE[h.lanes[0]] || 'assets/lanes/mid.png'}" class="lane-pill-img" alt="${h.lanes[0]}" />${LANE_SHORT_LABEL[h.lanes[0]] || h.lanes[0]}</span>
+                    </div>
+                    <div class="m8-action-row">
+                      <span class="m8-action-pill ${act.cls}">${act.label}</span>
+                      <span class="m8-conf-pill" title="ความสอดคล้องของข้อมูลข้ามลีก">ความแม่นยำ: ${item.confidence}</span>
+                    </div>
+                  </div>
+                  <div class="m8-pres-circle" title="โอกาสปรากฏตัวในดราฟต์ M8 (Pick + Ban Probability)">
+                    <div class="m8-pres-val">${item.presence}%</div>
+                    <div class="m8-pres-lbl">Presence</div>
+                  </div>
+                </div>
+
+                <!-- Probability Progress Split Bar (Ban % vs Pick %) -->
+                <div class="m8-prob-bars">
+                  <div class="m8-prob-labels">
+                    <span style="color:#fda4af;">🚫 คาดโดนแบน: <strong>${item.ban}%</strong></span>
+                    <span style="color:#6ee7b7;">✅ คาดถูกหยิบ: <strong>${item.pick}%</strong></span>
+                    <span style="color:#fde047;">WR: <strong>${item.winRate || item.winRateAdj}%</strong></span>
+                  </div>
+                  <div class="m8-bar-track">
+                    <div class="m8-bar-ban" style="width:${Math.min(100, item.ban)}%;" title="คาดโดนแบน ${item.ban}%"></div>
+                    <div class="m8-bar-pick" style="width:${Math.min(100 - Math.min(100, item.ban), item.pick)}%;" title="คาดถูกเลือก ${item.pick}%"></div>
+                  </div>
+                </div>
+
+                <!-- Cross-Tournament Comparison Pills -->
+                ${srcBadges ? `<div class="m8-src-row">${srcBadges}</div>` : `<div class="m8-src-row"><span class="m8-src-mini" style="opacity:0.55;">ยังไม่ถูกหยิบ/แบนในทัวร์หลัก</span></div>`}
+              </div>
+            `;
+          }).join('')}
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  if (methodEl) {
+    methodEl.innerHTML = `
+      <div style="font-weight:700; color:#c4b5fd; margin-bottom:0.35rem;">📊 ระเบียบวิธีคำนวณโมเดลคาดการณ์ M8 (Multi-Tournament Statistical Forecast — ${pred.meta.totalGames} Games)</div>
+      <div style="font-size:0.78rem; color:#cbd5e1; line-height:1.55;">
+        • <strong>ฐานข้อมูลเปรียบเทียบ 6 ทัวร์นาเมนต์ทางการ (Liquipedia):</strong> ถ่วงน้ำหนักตามความใกล้เคียงของแพตช์ปัจจุบันและความแข็งแกร่งของลีก ได้แก่
+        <strong>🇵🇭 MPL-PH S18</strong> (172 นัด, น้ำหนัก 1.25×),
+        <strong>🇮🇩 MPL-ID S18</strong> (215 นัด, น้ำหนัก 1.20×),
+        <strong>🇲🇾 MPL-MY S18</strong> (170 นัด, น้ำหนัก 0.95×),
+        <strong>🇹🇭 MSL-TH S2</strong> (135 นัด, น้ำหนัก 0.85×)
+        ร่วมกับทัวร์นาเมนต์ระดับนานาชาติก่อนหน้า <strong>🌍 MSC 2026</strong> (113 นัด, น้ำหนัก 0.55×) และ <strong>🏆 M7 World Championship</strong> (137 นัด, น้ำหนัก 0.25×)<br/>
+        • <strong>สูตรคำนวณโอกาสปรากฏตัว (M8 Predicted Presence):</strong> <code>0.52 × ค่าเฉลี่ยถ่วงน้ำหนักทุกทัวร์ + 0.28 × ค่าต่ำสุดของลีกแพตช์ปัจจุบัน + 0.20 × ค่าสูงสุดของลีกแพตช์ปัจจุบัน + โบนัส Bayesian Win Rate + โบนัสฉันทามติข้ามภูมิภาค (Cross-Region Consensus)</code>
+      </div>
+    `;
+  }
+}
+
 // ==================== TAB 4: 1v1 COUNTER & COMBO LOOKUP ====================
 function renderLookupQuickBar() {
   const q = (document.getElementById('lookupSearchInput')?.value || '').trim().toLowerCase();
@@ -4749,6 +4973,7 @@ function switchTab(tabKey) {
   });
   if (tabKey === 'combos') renderCombosHub();
   if (tabKey === 'meta') renderMetaTierList();
+  if (tabKey === 'm8') renderM8PredictionTab();
   if (tabKey === 'lookup') {
     renderLookupQuickBar();
     renderLookupDetail();
@@ -4762,6 +4987,7 @@ function refreshAllViews() {
   renderHeroGrid();
   renderCombosHub();
   renderMetaTierList();
+  renderM8PredictionTab();
   renderLookupQuickBar();
   renderLookupDetail();
 }
@@ -4771,6 +4997,7 @@ window.addEventListener('DOMContentLoaded', () => {
   loadDemoDraft();
   renderCombosHub();
   renderMetaTierList();
+  renderM8PredictionTab();
   renderLookupQuickBar();
   renderLookupDetail();
 });
