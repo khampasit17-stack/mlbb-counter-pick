@@ -64,96 +64,100 @@ window.TOURNAMENTS_METADATA = {
     },
     "signatures": {
       "freya": {
-        "role": "👑 Tier-0 Priority (#1 Ban / 98.14% Presence)",
-        "note": "แบนอันดับ 1 ใน MPL-ID Season 18 รวม 149 แบน (69.30% BR) พิก 62 เกม Win Rate 53.23% ดันป้อมดวล 1v1 สุดเถื่อน"
+        "role": "👑 #1 Priority (98.14% Presence / 53.23% WR)",
+        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 211/215 เกม (98.14% Presence) • พิก 62 เกม (ชนะ 33 แพ้ 29, WR 53.23%) • แบน 149 เกม (BR 69.3%)"
       },
       "atlas": {
-        "role": "👑 Top Set-Up Roamer (92.56% Presence)",
-        "note": "แบนอันดับ 2 ของอินโดนีเซีย (133 แบน) พิก 66 เกม ตัวเปิดไฟต์โซนหลุม Lord อันดับ 1 ใน MPL-ID"
+        "role": "🚫 Top Ban Priority (133 Bans / 92.56% Presence)",
+        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 199/215 เกม (92.56% Presence) • พิก 66 เกม (ชนะ 33 แพ้ 33, WR 50%) • แบน 133 เกม (BR 61.86%)"
       },
       "hirara": {
-        "role": "👑 #1 Most Picked Hero (103 Picks / 88.84% Presence)",
-        "note": "ฮีโร่ที่ถูกหยิบมากที่สุดใน MPL-ID S18 (103 เกม) ชนะ 55 เกม (53.40% WR) แบน 88 เกม แอสซาซินความเร็วสูง"
+        "role": "🚫 Top Ban Priority (88 Bans / 88.84% Presence)",
+        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 191/215 เกม (88.84% Presence) • พิก 103 เกม (ชนะ 55 แพ้ 48, WR 53.4%) • แบน 88 เกม (BR 40.93%)"
       },
       "paquito": {
-        "role": "⭐ #2 Most Picked Flex (102 Picks / 84.19% Presence)",
-        "note": "ฮีโร่แกนหลักโปรอินโดนีเซีย พิกถึง 102 เกม แบน 79 เกม สลับเลน EXP/Jungle บดขยี้ไฟต์ต่อเนื่อง"
+        "role": "🚫 Top Ban Priority (79 Bans / 84.19% Presence)",
+        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 181/215 เกม (84.19% Presence) • พิก 102 เกม (ชนะ 45 แพ้ 57, WR 44.12%) • แบน 79 เกม (BR 36.74%)"
       },
       "fanny": {
-        "role": "🦅 Elite Pressure Assassin (131 Bans / 71.63% Presence)",
-        "note": "แบนอันดับ 3 ของทัวร์นาเมนต์ (131 แบน) Win Rate สูงถึง 56.52% ตัวกดดันแมพและโฉบตัดแครี่"
+        "role": "🚫 Top Ban Priority (131 Bans / 71.63% Presence)",
+        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 154/215 เกม (71.63% Presence) • พิก 23 เกม (ชนะ 13 แพ้ 10, WR 56.52%) • แบน 131 เกม (BR 60.93%)"
       },
       "marcel": {
-        "role": "👑 Highest Win Rate Roam/Support (65.71% WR / 114 Bans)",
-        "note": "แบนสูงถึง 114 เกม (อันดับ 4 ใน ID) และเมื่อหลุดแบนมีอัตราชนะสูงถึง 65.71% (ชนะ 23 จาก 35 เกม) ใน MPL-ID S18"
+        "role": "🚫 Top Ban Priority (114 Bans / 69.3% Presence)",
+        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 149/215 เกม (69.3% Presence) • พิก 35 เกม (ชนะ 23 แพ้ 12, WR 65.71%) • แบน 114 เกม (BR 53.02%)"
       },
       "nolan": {
-        "role": "⚡ Fast-Tempo Jungle (58.11% WR / 62.79% Presence)",
-        "note": "พิกป่า 74 เกม (ชนะ 43 เกม WR 58.11%) แบน 61 เกม ป่าสปีดฟาร์มอันดับ 1 ของอินโดนีเซีย"
+        "role": "🔥 High-Winrate Meta (58.11% WR / 74 Picks)",
+        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 135/215 เกม (62.79% Presence) • พิก 74 เกม (ชนะ 43 แพ้ 31, WR 58.11%) • แบน 61 เกม (BR 28.37%)"
       },
       "zhuxin": {
-        "role": "👑 ID Mid Chokepoint Queen (68 Picks / 57.67% Presence)",
-        "note": "เมจยอดนิยมอันดับ 1 ของอินโดนีเซีย พิก 68 เกม แบน 56 เกม คุมโซนหน้าหลุม Lord และจับทุ่มต่อเนื่อง"
+        "role": "⭐ Core Meta #8 (68 Picks / 57.67% Presence)",
+        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 124/215 เกม (57.67% Presence) • พิก 68 เกม (ชนะ 34 แพ้ 34, WR 50%) • แบน 56 เกม (BR 26.05%)"
       },
       "esmeralda": {
-        "role": "🛡️ Anti-Shield EXP Priority (83 Bans / 55.81% Presence)",
-        "note": "ถูกแบนถึง 83 เกมในอินโดนีเซีย ตัวดูดเกราะขาวแก้ทางเมต้าแทงค์และไฟต์เตอร์เกราะหนา"
-      },
-      "masha": {
-        "role": "🔥 Priority Ban Raid Boss (85 Bans / 54.42% Presence)",
-        "note": "ถูกแบนถึง 85 เกมใน MPL-ID S18 ตัวล้วงแครี่และไถป้อม 3 หลอดเลือดที่ทีมโปรไม่ยอมปล่อยหลุด"
+        "role": "🚫 Top Ban Priority (83 Bans / 55.81% Presence)",
+        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 120/215 เกม (55.81% Presence) • พิก 37 เกม (ชนะ 15 แพ้ 22, WR 40.54%) • แบน 83 เกม (BR 38.6%)"
       },
       "carmilla": {
-        "role": "🩸 Teamfight Link Roamer (51.16% Presence)",
-        "note": "พิก 53 เกม แบน 57 เกม โรมมิ่งเชื่อมดาเมจและ CC หมู่ยอดฮิตใน MPL-ID"
-      },
-      "gloo": {
-        "role": "🟣 ID High-Winrate EXP Tank (62.00% WR / 45.12% Presence)",
-        "note": "ตัวเก่งประจำลีกอินโดนีเซีย พิก 50 เกม ชนะถึง 31 เกม (WR 62.00%) แบน 47 เกม ยืนค้ำและแยกส่วนดึงตัวทำดาเมจ"
-      },
-      "belerick": {
-        "role": "🌲 Anti-DPS Frontline (57.58% WR / 66 Picks)",
-        "note": "พิกถึง 66 เกมในอินโดนีเซีย ชนะ 38 เกม (WR 57.58%) แทงค์สะท้อนดาเมจแก้ทางแครี่ตีเร็วและตัวล้วง"
+        "role": "⭐ Core Meta #10 (48 Picks / 54.42% Presence)",
+        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 117/215 เกม (54.42% Presence) • พิก 48 เกม (ชนะ 26 แพ้ 22, WR 54.17%) • แบน 69 เกม (BR 32.09%)"
       },
       "uranus": {
-        "role": "🛡️ High-Sustain EXP (53 Bans / 42.33% Presence)",
-        "note": "แบน 53 เกม พิก 38 เกม ตัวป่วนเลนและยืนโซนตัดเลนความอึดสูง"
+        "role": "⭐ Core Meta #11 (56 Picks / 53.95% Presence)",
+        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 116/215 เกม (53.95% Presence) • พิก 56 เกม (ชนะ 25 แพ้ 31, WR 44.64%) • แบน 60 เกม (BR 27.91%)"
+      },
+      "masha": {
+        "role": "🚫 Top Ban Priority (88 Bans / 53.49% Presence)",
+        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 115/215 เกม (53.49% Presence) • พิก 27 เกม (ชนะ 14 แพ้ 13, WR 51.85%) • แบน 88 เกม (BR 40.93%)"
+      },
+      "selena": {
+        "role": "⭐ Core Meta #13 (52 Picks / 48.84% Presence)",
+        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 105/215 เกม (48.84% Presence) • พิก 52 เกม (ชนะ 21 แพ้ 31, WR 40.38%) • แบน 53 เกม (BR 24.65%)"
+      },
+      "belerick": {
+        "role": "⭐ Core Meta #14 (75 Picks / 46.98% Presence)",
+        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 101/215 เกม (46.98% Presence) • พิก 75 เกม (ชนะ 39 แพ้ 36, WR 52%) • แบน 26 เกม (BR 12.09%)"
+      },
+      "aulus": {
+        "role": "⭐ Core Meta #15 (69 Picks / 45.58% Presence)",
+        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 98/215 เกม (45.58% Presence) • พิก 69 เกม (ชนะ 36 แพ้ 33, WR 52.17%) • แบน 29 เกม (BR 13.49%)"
+      },
+      "gloo": {
+        "role": "🔥 High-Winrate Meta (62% WR / 50 Picks)",
+        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 97/215 เกม (45.12% Presence) • พิก 50 เกม (ชนะ 31 แพ้ 19, WR 62%) • แบน 47 เกม (BR 21.86%)"
+      },
+      "melissa": {
+        "role": "⭐ Core Meta #17 (34 Picks / 40.47% Presence)",
+        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 87/215 เกม (40.47% Presence) • พิก 34 เกม (ชนะ 18 แพ้ 16, WR 52.94%) • แบน 53 เกม (BR 24.65%)"
+      },
+      "barats": {
+        "role": "⭐ Core Meta #18 (42 Picks / 40% Presence)",
+        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 86/215 เกม (40% Presence) • พิก 42 เกม (ชนะ 19 แพ้ 23, WR 45.24%) • แบน 44 เกม (BR 20.47%)"
       },
       "alice": {
-        "role": "🩸 ID Flex Raid Boss (55.10% WR / 49 Picks)",
-        "note": "ซิกเนเจอร์ลีกอินโดนีเซีย! พิกถึง 49 เกม แบน 36 เกม (Presence 39.53% / WR 55.10%) เร่งสปีดทีมไฟต์และยืนดูดเลือดกลางวง"
+        "role": "⭐ Core Meta #19 (49 Picks / 39.53% Presence)",
+        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 85/215 เกม (39.53% Presence) • พิก 49 เกม (ชนะ 27 แพ้ 22, WR 55.1%) • แบน 36 เกม (BR 16.74%)"
       },
       "obsidia": {
-        "role": "🏹 ID Priority Gold Lane (56.86% WR / 51 Picks)",
-        "note": "แครี่เมต้าหลักของอินโดนีเซีย พิก 51 เกม แบน 33 เกม ชนะ 29 เกม (WR 56.86%) ยิงกระดูกสลายแนวหน้า"
-      },
-      "claude": {
-        "role": "🔫 #1 Most Picked Marksman ID (65 Picks / 35.81% Presence)",
-        "note": "แครี่ที่ถูกหยิบมากที่สุดใน MPL-ID S18 (65 เกม) พริ้วไหวด้วย Battle Mirror Image และ Blazing Duet"
+        "role": "⭐ Core Meta #20 (51 Picks / 39.07% Presence)",
+        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 84/215 เกม (39.07% Presence) • พิก 51 เกม (ชนะ 29 แพ้ 22, WR 56.86%) • แบน 33 เกม (BR 15.35%)"
       },
       "eudora": {
-        "role": "⚡ Revamped Burst Mage (57 Picks / 37.67% Presence)",
-        "note": "พิก 57 เกม แบน 24 เกม เมจเบิร์สต์สายฟ้าชิ่งโซนพุ่มไม้และเก็บตัวล้วง"
+        "role": "⭐ Core Meta #21 (51 Picks / 39.07% Presence)",
+        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 84/215 เกม (39.07% Presence) • พิก 51 เกม (ชนะ 29 แพ้ 22, WR 56.86%) • แบน 33 เกม (BR 15.35%)"
+      },
+      "rafaela": {
+        "role": "⭐ Core Meta #22 (39 Picks / 38.6% Presence)",
+        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 83/215 เกม (38.6% Presence) • พิก 39 เกม (ชนะ 20 แพ้ 19, WR 51.28%) • แบน 44 เกม (BR 20.47%)"
       },
       "cici": {
-        "role": "🪀 ID Kite Fighter Staple (57 Picks / 33.49% Presence)",
-        "note": "ไฟต์เตอร์ยอดฮิตใน MPL-ID พิกถึง 57 เกม ตีเป็น %HP และล็อกเป้าคู่ต่อสู้ในเลน EXP"
+        "role": "⭐ Core Meta #23 (57 Picks / 38.14% Presence)",
+        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 82/215 เกม (38.14% Presence) • พิก 57 เกม (ชนะ 29 แพ้ 28, WR 50.88%) • แบน 25 เกม (BR 11.63%)"
       },
-      "kimmy": {
-        "role": "✨ Flex Gold/Mid DPS (53 Picks / 31.63% Presence)",
-        "note": "พิก 53 เกมใน MPL-ID ยิงเวทต่อเนื่องและละลายแนวหน้าจากระยะไกล"
-      },
-      "phoveus": {
-        "role": "⛓️ ID Anti-Dash Juggernaut (48 Pick+Bans / 22.33% Presence)",
-        "note": "ตัวแก้ทางสายแดชยอดนิยมในอินโดนีเซีย พิก 31 เกม แบน 17 เกม ทุบซ้ำทุกจังหวะที่ศัตรูพุ่ง"
-      },
-      "lukas": {
-        "role": "🦁 ID Sacred Beast Bruiser (28 Bans / 21.86% Presence)",
-        "note": "ไฟต์เตอร์ร่างสัตว์เทพที่ลีกอินโดนีเซียให้ความสำคัญสูง (แบน 28 เกม พิก 19 เกม)"
-      },
-      "zetian": {
-        "role": "👑 ID 72.73% WR Global Mage (16Wins / 22 Picks)",
-        "note": "เมจอัลติผ่าทั้งแมพที่มีอัตราชนะสูงถึง 72.73% ใน MPL-ID S18 (พิก 22 เกม ชนะ 16 เกม)"
+      "lylia": {
+        "role": "⭐ Core Meta #24 (38 Picks / 36.28% Presence)",
+        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 78/215 เกม (36.28% Presence) • พิก 38 เกม (ชนะ 18 แพ้ 20, WR 47.37%) • แบน 40 เกม (BR 18.6%)"
       }
     },
     "stats": {
@@ -1943,96 +1947,100 @@ window.TOURNAMENTS_METADATA = {
     },
     "signatures": {
       "freya": {
-        "role": "👑 100% Presence God Tier (#1 Ban / 75.00% WR)",
-        "note": "ปรากฏตัวครบ 100% เต็มใน MPL-PH S18 (172/172 เกม: แบน 160 เกม พิก 12 เกม ชนะถึง 75.00%) ตัวบัคอันดับ 1 ของฟิลิปปินส์"
+        "role": "👑 #1 Priority (100% Presence / 75% WR)",
+        "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 172/172 เกม (100% Presence) • พิก 24 เกม (ชนะ 18 แพ้ 6, WR 75%) • แบน 148 เกม (BR 86.05%)"
       },
       "atlas": {
-        "role": "👑 97.67% Presence Roam King (133 Bans / 62.86% WR)",
-        "note": "แบนอันดับ 2 ใน MPL-PH (133 แบน) และเมื่อหลุดแบนมีอัตราชนะสูงถึง 62.86% (ชนะ 22 จาก 35 เกม)"
+        "role": "🚫 Top Ban Priority (133 Bans / 97.67% Presence)",
+        "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 168/172 เกม (97.67% Presence) • พิก 35 เกม (ชนะ 22 แพ้ 13, WR 62.86%) • แบน 133 เกม (BR 77.33%)"
       },
       "hirara": {
-        "role": "👑 #1 Most Picked Hero PH (127 Picks / 96.51% Presence)",
-        "note": "ถูกหยิบมากที่สุดใน MPL-PH S18 ถึง 127 เกม (73.84% Pick Rate) แบน 39 เกม แกนหลักระบบ Tempo ของฟิลิปปินส์"
+        "role": "⭐ Core Meta #3 (127 Picks / 96.51% Presence)",
+        "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 166/172 เกม (96.51% Presence) • พิก 127 เกม (ชนะ 57 แพ้ 70, WR 44.88%) • แบน 39 เกม (BR 22.67%)"
       },
       "paquito": {
-        "role": "⭐ PH Flex King (88.37% Presence / 59.15% WR)",
-        "note": "พิก 71 เกม ชนะ 42 เกม (59.15% WR) แบน 81 เกม ไฟต์เตอร์สลับเลน EXP/Jungle ที่ทีมแชมป์ฟิลิปปินส์เชี่ยวชาญที่สุด"
+        "role": "🚫 Top Ban Priority (81 Bans / 88.37% Presence)",
+        "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 152/172 เกม (88.37% Presence) • พิก 71 เกม (ชนะ 42 แพ้ 29, WR 59.15%) • แบน 81 เกม (BR 47.09%)"
       },
       "marcel": {
-        "role": "🛡️ Top Priority Support/Roam (87 Bans / 70.93% Presence)",
-        "note": "แบนสูงถึง 87 เกม พิก 35 เกม โรมมิ่งล็อกโซนพื้นที่หน้าบอสตัวท็อปของ MPL-PH"
+        "role": "🚫 Top Ban Priority (75 Bans / 70.93% Presence)",
+        "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 122/172 เกม (70.93% Presence) • พิก 47 เกม (ชนะ 26 แพ้ 21, WR 55.32%) • แบน 75 เกม (BR 43.6%)"
       },
       "barats": {
-        "role": "🦖 PH Jungle/EXP Raid Boss (66.86% Presence / 57.41% WR)",
-        "note": "ตัวเมต้าหลักของฟิลิปปินส์! พิก 54 เกม แบน 61 เกม ชนะ 31 เกม (WR 57.41%) ยืนค้ำโซน Objective และกลืนตัวล้วง"
+        "role": "🚫 Top Ban Priority (61 Bans / 66.86% Presence)",
+        "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 115/172 เกม (66.86% Presence) • พิก 54 เกม (ชนะ 31 แพ้ 23, WR 57.41%) • แบน 61 เกม (BR 35.47%)"
       },
       "uranus": {
-        "role": "🛡️ PH #6 Most Banned Offlaner (72 Bans / 66.28% Presence)",
-        "note": "ลีกฟิลิปปินส์ให้ความสำคัญสูงมาก แบนถึง 72 เกม พิก 42 เกม ยืนตัดเลนและดึงจังหวะ Macro รอบแผนที่"
+        "role": "🚫 Top Ban Priority (72 Bans / 66.28% Presence)",
+        "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 114/172 เกม (66.28% Presence) • พิก 42 เกม (ชนะ 21 แพ้ 21, WR 50%) • แบน 72 เกม (BR 41.86%)"
       },
       "fanny": {
-        "role": "🦅 #3 Most Banned Assassin (96 Bans / 64.53% Presence)",
-        "note": "ถูกแบนถึง 96 เกมใน MPL-PH S18 แอสซาซินโหนสลิงเปิดแมพที่โปรฟิลิปปินส์ต้องตัดออกจากดราฟต์"
-      },
-      "selena": {
-        "role": "🔮 PH Vision & Pick-Off Queen (63 Bans / 57.56% Presence)",
-        "note": "ซิกเนเจอร์ลีกฟิลิปปินส์! พิก 36 เกม แบนถึง 63 เกม ใช้ปักแทร็ปเปิดวิชั่นคุมป่าและปาธนูสตั๊นจับตายก่อนเกิดไฟต์"
-      },
-      "eudora": {
-        "role": "⚡ #1 Most Picked Mid PH (64 Picks / 54.65% Presence)",
-        "note": "เมจที่ถูกหยิบมากที่สุดใน MPL-PH S18 (64 เกม) แบน 30 เกม ช็อตสายฟ้าชิ่งระเบิดแนวหลังและคุมพุ่มไม้"
-      },
-      "carmilla": {
-        "role": "🩸 Teamfight Wombo Roamer (54.65% Presence)",
-        "note": "พิก 47 เกม แบน 47 เกม ตัวเปิดไฟต์เชื่อมเลือด Curse of Blood คู่บุญเมจระเบิดหมู่ใน MPL-PH"
-      },
-      "belerick": {
-        "role": "🌲 #2 Most Picked Frontline PH (68 Picks / 54.07% Presence)",
-        "note": "ถูกหยิบสูงถึง 68 เกมใน MPL-PH S18 ยืนรับดาเมจและสะท้อนหนามใส่แครี่และไฟต์เตอร์ศัตรู"
+        "role": "🚫 Top Ban Priority (96 Bans / 64.53% Presence)",
+        "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 111/172 เกม (64.53% Presence) • พิก 15 เกม (ชนะ 7 แพ้ 8, WR 46.67%) • แบน 96 เกม (BR 55.81%)"
       },
       "nolan": {
-        "role": "⚡ PH Objective Assassin (66 Picks / 52.91% Presence)",
-        "note": "พิก 66 เกม แบน 25 เกม ป่าสปีดฟาร์มและฉีกไฟต์ไร้คูลดาวน์ของลีกฟิลิปปินส์"
+        "role": "🔥 High-Winrate Meta (57.14% WR / 63 Picks)",
+        "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 99/172 เกม (57.56% Presence) • พิก 63 เกม (ชนะ 36 แพ้ 27, WR 57.14%) • แบน 36 เกม (BR 20.93%)"
+      },
+      "selena": {
+        "role": "🚫 Top Ban Priority (63 Bans / 57.56% Presence)",
+        "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 99/172 เกม (57.56% Presence) • พิก 36 เกม (ชนะ 17 แพ้ 19, WR 47.22%) • แบน 63 เกม (BR 36.63%)"
+      },
+      "eudora": {
+        "role": "⭐ Core Meta #11 (64 Picks / 54.65% Presence)",
+        "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 94/172 เกม (54.65% Presence) • พิก 64 เกม (ชนะ 32 แพ้ 32, WR 50%) • แบน 30 เกม (BR 17.44%)"
+      },
+      "carmilla": {
+        "role": "⭐ Core Meta #12 (49 Picks / 54.65% Presence)",
+        "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 94/172 เกม (54.65% Presence) • พิก 49 เกม (ชนะ 22 แพ้ 27, WR 44.9%) • แบน 45 เกม (BR 26.16%)"
+      },
+      "belerick": {
+        "role": "⭐ Core Meta #13 (68 Picks / 54.07% Presence)",
+        "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 93/172 เกม (54.07% Presence) • พิก 68 เกม (ชนะ 36 แพ้ 32, WR 52.94%) • แบน 25 เกม (BR 14.53%)"
       },
       "masha": {
-        "role": "🔥 PH 69.23% WR Raid Boss (61 Bans / 50.58% Presence)",
-        "note": "แบน 61 เกม และเมื่อหลุดแบนใน MPL-PH ชนะถึง 69.23% (ชนะ 18 จาก 26 เกม) ตัวพุ่งขย้ำแนวหลังที่หยุดไม่อยู่"
+        "role": "🚫 Top Ban Priority (74 Bans / 50.58% Presence)",
+        "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 87/172 เกม (50.58% Presence) • พิก 13 เกม (ชนะ 9 แพ้ 4, WR 69.23%) • แบน 74 เกม (BR 43.02%)"
       },
       "esmeralda": {
-        "role": "🛡️ PH Shield-Steal Offlaner (47.09% Presence)",
-        "note": "พิก 44 เกม แบน 37 เกม ตัวแก้ทางเกราะขาวและยืนชนแนวหน้าใน MPL-PH"
+        "role": "⭐ Core Meta #15 (28 Picks / 49.42% Presence)",
+        "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 85/172 เกม (49.42% Presence) • พิก 28 เกม (ชนะ 11 แพ้ 17, WR 39.29%) • แบน 57 เกม (BR 33.14%)"
       },
       "valentina": {
-        "role": "🎭 PH Ultimate Counter Mage (62 Picks / 46.51% Presence)",
-        "note": "เมจก๊อปอัลติยอดฮิตของโปรฟิลิปปินส์ พิกสูงถึง 62 เกม ใช้สวนกลับดราฟต์ที่มีอัลติเปิดไฟต์ใหญ่"
-      },
-      "minotaur": {
-        "role": "🐂 PH Sustain Setter Tank (56 Picks / 44.19% Presence)",
-        "note": "แทงค์ฮีลและทุบสตั๊นหมู่ยอดนิยมในฟิลิปปินส์ พิกถึง 56 เกม แบน 20 เกม ยืนค้ำระบบ UBE ได้อย่างแข็งแกร่ง"
-      },
-      "rafaela": {
-        "role": "🪽 PH UBE Tempo Support (65.52% WR / 42.44% Presence)",
-        "note": "หัวใจแผน UBE ฟิลิปปินส์! พิก 29 เกม แบน 44 เกม อัตราชนะสูงถึง 65.52% เร่งความเร็ววิ่งและล้างสโลว์ยกทีม"
+        "role": "⭐ Core Meta #16 (46 Picks / 46.51% Presence)",
+        "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 80/172 เกม (46.51% Presence) • พิก 46 เกม (ชนะ 21 แพ้ 25, WR 45.65%) • แบน 34 เกม (BR 19.77%)"
       },
       "zhuxin": {
-        "role": "🏮 Chokepoint Control Mage (45 Picks / 41.28% Presence)",
-        "note": "พิก 45 เกม แบน 26 เกม เมจลอยตัวคุมทางแคบหน้าหลุม Lord"
+        "role": "⭐ Core Meta #17 (44 Picks / 45.35% Presence)",
+        "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 78/172 เกม (45.35% Presence) • พิก 44 เกม (ชนะ 25 แพ้ 19, WR 56.82%) • แบน 34 เกม (BR 19.77%)"
+      },
+      "aulus": {
+        "role": "⭐ Core Meta #18 (48 Picks / 45.35% Presence)",
+        "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 78/172 เกม (45.35% Presence) • พิก 48 เกม (ชนะ 26 แพ้ 22, WR 54.17%) • แบน 30 เกม (BR 17.44%)"
+      },
+      "minotaur": {
+        "role": "⭐ Core Meta #19 (56 Picks / 44.19% Presence)",
+        "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 76/172 เกม (44.19% Presence) • พิก 56 เกม (ชนะ 26 แพ้ 30, WR 46.43%) • แบน 20 เกม (BR 11.63%)"
+      },
+      "melissa": {
+        "role": "⭐ Core Meta #20 (23 Picks / 43.6% Presence)",
+        "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 75/172 เกม (43.6% Presence) • พิก 23 เกม (ชนะ 10 แพ้ 13, WR 43.48%) • แบน 52 เกม (BR 30.23%)"
+      },
+      "rafaela": {
+        "role": "🔥 High-Winrate Meta (65.52% WR / 29 Picks)",
+        "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 73/172 เกม (42.44% Presence) • พิก 29 เกม (ชนะ 19 แพ้ 10, WR 65.52%) • แบน 44 เกม (BR 25.58%)"
       },
       "gatotkaca": {
-        "role": "👊 PH Counter-Physical Frontline (54 Picks / 38.37% Presence)",
-        "note": "พิกสูงถึง 54 เกมใน MPL-PH S18 ตัวกระโดดเปิดไฟต์และยืนรับดาเมจกายภาพสุดถึก"
+        "role": "⭐ Core Meta #22 (54 Picks / 38.37% Presence)",
+        "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 66/172 เกม (38.37% Presence) • พิก 54 เกม (ชนะ 22 แพ้ 32, WR 40.74%) • แบน 12 เกม (BR 6.98%)"
       },
       "mathilda": {
-        "role": "🦅 PH Mobility Roamer (60.00% WR / 37.21% Presence)",
-        "note": "พิก 35 เกม ชนะ 21 เกม (WR 60.00%) แบน 29 เกม ซัพพอร์ตพาเพื่อนบินเข้า-ออกไฟต์ตามสไตล์ MPL-PH"
+        "role": "⭐ Core Meta #23 (26 Picks / 37.21% Presence)",
+        "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 64/172 เกม (37.21% Presence) • พิก 26 เกม (ชนะ 12 แพ้ 14, WR 46.15%) • แบน 38 เกม (BR 22.09%)"
       },
-      "clint": {
-        "role": "🤠 PH 71.88% WR Gold Lane King (32 Picks / 25.00% Presence)",
-        "note": "แครี่อัตราชนะสูงสุดใน MPL-PH S18! พิก 32 เกม ชนะถึง 23 เกม (WR 71.88%) กดดันเลนทองและยิงเบิร์สต์ระยะไกล"
-      },
-      "suyou": {
-        "role": "⚔️ PH Flex Immortal Assassin (56.67% WR / 30 Picks)",
-        "note": "แอสซาซินกึ่งไฟต์เตอร์ยอดฮิตใน MPL-PH พิก 30 เกม ชนะ 17 เกม (WR 56.67%) สลับโหมดล้วงและโหมดลดดาเมจ"
+      "obsidia": {
+        "role": "⭐ Core Meta #24 (37 Picks / 36.05% Presence)",
+        "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 62/172 เกม (36.05% Presence) • พิก 37 เกม (ชนะ 19 แพ้ 18, WR 51.35%) • แบน 25 เกม (BR 14.53%)"
       }
     },
     "stats": {
@@ -3822,92 +3830,100 @@ window.TOURNAMENTS_METADATA = {
     },
     "signatures": {
       "carmilla": {
-        "role": "👑 #1 Presence & #1 Picked TH (98.52% Presence / 63.51% WR)",
-        "note": "ราชินีอันดับ 1 ของลีกไทย MSL-TH S2! ปรากฏตัว 133 จาก 135 เกม (98.52% Presence) พิกสูงสุด 74 เกม ชนะถึง 47 เกม (63.51% WR) แบน 59 เกม"
+        "role": "👑 #1 Priority (98.52% Presence / 63.51% WR)",
+        "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 133/135 เกม (98.52% Presence) • พิก 74 เกม (ชนะ 47 แพ้ 27, WR 63.51%) • แบน 59 เกม (BR 43.7%)"
       },
       "hirara": {
-        "role": "👑 #2 Presence Assassin TH (96.30% Presence / 69 Picks)",
-        "note": "ปรากฏตัวถึง 130 จาก 135 เกมใน MSL-TH S2 (พิก 69 เกม ชนะ 38 เกม WR 55.07% แบน 61 เกม) แอสซาซินความเร็วสูงตัวหลักของทีมไทย"
+        "role": "🚫 Top Ban Priority (61 Bans / 96.3% Presence)",
+        "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 130/135 เกม (96.3% Presence) • พิก 69 เกม (ชนะ 38 แพ้ 31, WR 55.07%) • แบน 61 เกม (BR 45.19%)"
       },
       "freya": {
-        "role": "👑 #2 Most Banned TH (95 Bans / 94.07% Presence)",
-        "note": "แบนอันดับ 2 ในลีกไทย (95 แบน / 70.37% BR) พิก 32 เกม ชนะ 17 เกม (53.13% WR) ดวลเดี่ยวและดันป้อมสุดโหด"
+        "role": "🚫 Top Ban Priority (95 Bans / 94.07% Presence)",
+        "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 127/135 เกม (94.07% Presence) • พิก 32 เกม (ชนะ 17 แพ้ 15, WR 53.13%) • แบน 95 เกม (BR 70.37%)"
       },
       "atlas": {
-        "role": "👑 #1 Most Banned Hero TH (109 Bans / 91.11% Presence)",
-        "note": "ตัวแบนอันดับ 1 ของลีกไทย MSL-TH S2! ถูกแบนถึง 109 จาก 135 เกม (80.74% Ban Rate) และเมื่อหลุดแบนชนะ 57.14%"
-      },
-      "gloo": {
-        "role": "🟣 Top EXP Tank TH (71.11% Presence / 49 Bans)",
-        "note": "ปรากฏตัวสูงถึง 96 เกมในลีกไทย (พิก 47 เกม แบน 49 เกม) ตัวเปิดไฟต์และสิงร่างลากศัตรูยอดนิยม"
+        "role": "🚫 Top Ban Priority (109 Bans / 91.11% Presence)",
+        "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 123/135 เกม (91.11% Presence) • พิก 14 เกม (ชนะ 8 แพ้ 6, WR 57.14%) • แบน 109 เกม (BR 80.74%)"
       },
       "marcel": {
-        "role": "🛡️ #4 Most Banned Roamer TH (75 Bans / 71.11% Presence)",
-        "note": "ถูกแบนถึง 75 เกมใน MSL-TH S2 และเมื่อหลุดแบนมีอัตราชนะ 57.14% (ชนะ 12 จาก 21 เกม)"
+        "role": "🚫 Top Ban Priority (75 Bans / 71.11% Presence)",
+        "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 96/135 เกม (71.11% Presence) • พิก 21 เกม (ชนะ 12 แพ้ 9, WR 57.14%) • แบน 75 เกม (BR 55.56%)"
+      },
+      "gloo": {
+        "role": "🚫 Top Ban Priority (49 Bans / 71.11% Presence)",
+        "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 96/135 เกม (71.11% Presence) • พิก 47 เกม (ชนะ 22 แพ้ 25, WR 46.81%) • แบน 49 เกม (BR 36.3%)"
       },
       "belerick": {
-        "role": "🌲 #4 Most Picked Frontline TH (57 Picks / 70.37% Presence)",
-        "note": "แทงค์ยอดฮิตของโปรไทย พิกถึง 57 เกม แบน 38 เกม (ชนะ 30 เกม WR 52.63%) ยืนค้ำและสะท้อนดาเมจแครี่"
+        "role": "⭐ Core Meta #7 (57 Picks / 70.37% Presence)",
+        "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 95/135 เกม (70.37% Presence) • พิก 57 เกม (ชนะ 30 แพ้ 27, WR 52.63%) • แบน 38 เกม (BR 28.15%)"
       },
       "masha": {
-        "role": "🔥 #3 Most Banned Raid Boss TH (77 Bans / 69.23% WR)",
-        "note": "แบนอันดับ 3 ในลีกไทย (77 แบน) และเมื่อหลุดแบนชนะถึง 69.23% (ชนะ 9 จาก 13 เกม) ขย้ำแนวหลังศัตรูไม่ยั้ง"
+        "role": "🚫 Top Ban Priority (77 Bans / 66.67% Presence)",
+        "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 90/135 เกม (66.67% Presence) • พิก 13 เกม (ชนะ 9 แพ้ 4, WR 69.23%) • แบน 77 เกม (BR 57.04%)"
       },
       "paquito": {
-        "role": "🥊 #3 Most Picked Flex Fighter TH (62 Picks / 65.19% Presence)",
-        "note": "ไฟต์เตอร์สลับเลน EXP/Jungle ที่ทีมไทยหยิบสูงถึง 62 เกม แบน 26 เกม"
+        "role": "⭐ Core Meta #9 (62 Picks / 65.19% Presence)",
+        "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 88/135 เกม (65.19% Presence) • พิก 62 เกม (ชนะ 30 แพ้ 32, WR 48.39%) • แบน 26 เกม (BR 19.26%)"
       },
       "minotaur": {
-        "role": "🐂 Top Sustain Setter TH (51 Picks / 62.22% Presence)",
-        "note": "โรมมิ่งสายฮีลและทุบสตั๊นหมู่ยอดนิยมใน MSL-TH S2 (พิก 51 เกม แบน 33 เกม)"
+        "role": "⭐ Core Meta #10 (51 Picks / 62.22% Presence)",
+        "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 84/135 เกม (62.22% Presence) • พิก 51 เกม (ชนะ 24 แพ้ 27, WR 47.06%) • แบน 33 เกม (BR 24.44%)"
       },
       "selena": {
-        "role": "🔮 TH 73.53% WR Pick-Off Queen (25W-9L / 61.48% Presence)",
-        "note": "ฮีโร่อัตราชนะสูงสุดอันดับต้นๆ ของลีกไทย! พิก 34 เกม ชนะถึง 25 เกม (WR 73.53%) แบน 49 เกม ดักสตั๊นเปิดแมพสุดคม"
+        "role": "🚫 Top Ban Priority (49 Bans / 61.48% Presence)",
+        "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 83/135 เกม (61.48% Presence) • พิก 34 เกม (ชนะ 25 แพ้ 9, WR 73.53%) • แบน 49 เกม (BR 36.3%)"
       },
       "aulus": {
-        "role": "🪓 TH Signature Hyper Jungle (59.18% WR / 49 Picks)",
-        "note": "ซิกเนเจอร์ป่าลีกไทย MSL-TH S2! พิกสูงถึง 49 เกม ชนะ 29 เกม (WR 59.18%) แบน 33 เกม ฟาร์มไวและวิ่งทุบกวาดไฟต์เลทเกม"
+        "role": "🔥 High-Winrate Meta (59.18% WR / 49 Picks)",
+        "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 82/135 เกม (60.74% Presence) • พิก 49 เกม (ชนะ 29 แพ้ 20, WR 59.18%) • แบน 33 เกม (BR 24.44%)"
       },
       "uranus": {
-        "role": "🛡️ Priority Sustain EXP TH (49 Bans / 60.74% Presence)",
-        "note": "แบน 49 เกม พิก 33 เกม (WR 51.52%) ยืนโซนรับดาเมจและตัดเลนในลีกไทย"
+        "role": "🚫 Top Ban Priority (49 Bans / 60.74% Presence)",
+        "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 82/135 เกม (60.74% Presence) • พิก 33 เกม (ชนะ 17 แพ้ 16, WR 51.52%) • แบน 49 เกม (BR 36.3%)"
       },
       "eudora": {
-        "role": "⚡ #1 Most Picked Mage TH (47 Picks / 57.45% WR)",
-        "note": "เมจที่ถูกหยิบมากที่สุดใน MSL-TH S2 (47 เกม) ชนะ 27 เกม (WR 57.45%) แบน 34 เกม ช็อตสายฟ้าชิ่งระเบิดหมู่"
+        "role": "🔥 High-Winrate Meta (57.45% WR / 47 Picks)",
+        "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 81/135 เกม (60% Presence) • พิก 47 เกม (ชนะ 27 แพ้ 20, WR 57.45%) • แบน 34 เกม (BR 25.19%)"
       },
       "nolan": {
-        "role": "⚡ Fast-Tempo Assassin TH (59.26% Presence)",
-        "note": "พิก 39 เกม แบน 41 เกม ป่าสปีดเกมเร็วและคุม Objective"
+        "role": "⭐ Core Meta #15 (39 Picks / 59.26% Presence)",
+        "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 80/135 เกม (59.26% Presence) • พิก 39 เกม (ชนะ 18 แพ้ 21, WR 46.15%) • แบน 41 เกม (BR 30.37%)"
       },
       "obsidia": {
-        "role": "🏹 #1 Most Picked Marksman TH (57 Picks / 54.39% WR)",
-        "note": "แครี่อันดับ 1 ของลีกไทย MSL-TH S2! ถูกหยิบถึง 57 เกม ชนะ 31 เกม (WR 54.39%) แบน 17 เกม"
+        "role": "⭐ Core Meta #16 (57 Picks / 54.81% Presence)",
+        "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 74/135 เกม (54.81% Presence) • พิก 57 เกม (ชนะ 31 แพ้ 26, WR 54.39%) • แบน 17 เกม (BR 12.59%)"
+      },
+      "zhuxin": {
+        "role": "⭐ Core Meta #17 (43 Picks / 51.11% Presence)",
+        "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 69/135 เกม (51.11% Presence) • พิก 43 เกม (ชนะ 19 แพ้ 24, WR 44.19%) • แบน 26 เกม (BR 19.26%)"
+      },
+      "esmeralda": {
+        "role": "⭐ Core Meta #18 (31 Picks / 50.37% Presence)",
+        "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 68/135 เกม (50.37% Presence) • พิก 31 เกม (ชนะ 14 แพ้ 17, WR 45.16%) • แบน 37 เกม (BR 27.41%)"
+      },
+      "fanny": {
+        "role": "🚫 Top Ban Priority (54 Bans / 46.67% Presence)",
+        "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 63/135 เกม (46.67% Presence) • พิก 9 เกม (ชนะ 2 แพ้ 7, WR 22.22%) • แบน 54 เกม (BR 40%)"
       },
       "brody": {
-        "role": "🔫 TH High-WR Lane Bully Gold (59.09% WR / 34.81% Presence)",
-        "note": "แครี่กดเลนยอดฮิตในไทย พิก 22 เกม ชนะ 13 เกม (WR 59.09%) แบน 25 เกม"
+        "role": "🔥 High-Winrate Meta (59.09% WR / 22 Picks)",
+        "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 47/135 เกม (34.81% Presence) • พิก 22 เกม (ชนะ 13 แพ้ 9, WR 59.09%) • แบน 25 เกม (BR 18.52%)"
       },
       "harley": {
-        "role": "🎩 TH 75.00% WR Secret Weapon (18W-6L / 34.07% Presence)",
-        "note": "ทีเด็ดลีกไทย MSL-TH S2! พิก 24 เกม ชนะถึง 18 เกม (WR 75.00%) แบน 22 เกม ล้วงสังหารตัวบางแล้ววาร์ปกลับหมวก"
+        "role": "🔥 High-Winrate Meta (75% WR / 24 Picks)",
+        "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 46/135 เกม (34.07% Presence) • พิก 24 เกม (ชนะ 18 แพ้ 6, WR 75%) • แบน 22 เกม (BR 16.3%)"
       },
-      "miya": {
-        "role": "🌙 TH 66.67% WR Late-Game Hyper (16W-8L / 28.89% Presence)",
-        "note": "แครี่เลทเกมฟอร์มโหดในลีกไทย พิก 24 เกม ชนะ 16 เกม (WR 66.67%) แบน 15 เกม หายตัวลอบยิงกวาดทั้งทีม"
+      "valentina": {
+        "role": "⭐ Core Meta #22 (17 Picks / 34.07% Presence)",
+        "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 46/135 เกม (34.07% Presence) • พิก 17 เกม (ชนะ 4 แพ้ 13, WR 23.53%) • แบน 29 เกม (BR 21.48%)"
       },
-      "cecilion": {
-        "role": "🦇 TH 75.00% WR Late-Game Mage (12W-4L / 16 Picks)",
-        "note": "คู่หู Carmilla ที่ชนะถึง 75.00% ใน MSL-TH S2 (พิก 16 เกม ชนะ 12 เกม แบน 11 เกม)"
+      "alice": {
+        "role": "⭐ Core Meta #23 (28 Picks / 31.11% Presence)",
+        "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 42/135 เกม (31.11% Presence) • พิก 28 เกม (ชนะ 9 แพ้ 19, WR 32.14%) • แบน 14 เกม (BR 10.37%)"
       },
-      "lukas": {
-        "role": "🦁 TH 68.75% WR Sacred Beast (11W-5L / 16 Picks)",
-        "note": "ไฟต์เตอร์สัตว์เทพฟอร์มแรงในลีกไทย ชนะ 11 จาก 16 เกม (WR 68.75%)"
-      },
-      "zetian": {
-        "role": "👑 TH 61.54% WR Global Mage (8W-5L / 13 Picks)",
-        "note": "เมจอัลติผ่าทั้งแผนที่ อัตราชนะ 61.54% ในลีกไทย MSL-TH S2"
+      "barats": {
+        "role": "⭐ Core Meta #24 (16 Picks / 29.63% Presence)",
+        "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 40/135 เกม (29.63% Presence) • พิก 16 เกม (ชนะ 6 แพ้ 10, WR 37.5%) • แบน 24 เกม (BR 17.78%)"
       }
     },
     "stats": {
@@ -5697,44 +5713,100 @@ window.TOURNAMENTS_METADATA = {
     },
     "signatures": {
       "freya": {
-        "role": "👑 #1 Global Pro Priority (98.97% Presence / 309 Bans)",
-        "note": "ตัวแบนอันดับ 1 ของโลก (รวม 309 แบน พิก 74 เกม ชนะ 56.76% WR จาก 387 นัดใน MPL ID+PH S18)"
+        "role": "👑 #1 Priority (97.7% Presence / 57.63% WR)",
+        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 510/522 เกม (97.7% Presence) • พิก 118 เกม (ชนะ 68 แพ้ 50, WR 57.63%) • แบน 392 เกม (BR 75.1%)"
       },
       "atlas": {
-        "role": "👑 #1 Global Roamer (94.83% Presence / 266 Bans)",
-        "note": "โรมมิ่งอันดับ 1 ของทั้งสองลีก รวม 266 แบน 101 พิก (WR 55.45%)"
+        "role": "🚫 Top Ban Priority (375 Bans / 93.87% Presence)",
+        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 490/522 เกม (93.87% Presence) • พิก 115 เกม (ชนะ 63 แพ้ 52, WR 54.78%) • แบน 375 เกม (BR 71.84%)"
       },
       "hirara": {
-        "role": "👑 #1 Most Picked Global (230 Picks / 92.25% Presence)",
-        "note": "ฮีโร่ที่ถูกหยิบมากที่สุดรวม 2 ลีก (230 เกม) แบน 127 เกม"
+        "role": "🚫 Top Ban Priority (188 Bans / 93.3% Presence)",
+        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 487/522 เกม (93.3% Presence) • พิก 299 เกม (ชนะ 150 แพ้ 149, WR 50.17%) • แบน 188 เกม (BR 36.02%)"
       },
       "paquito": {
-        "role": "⭐ Top Global Flex Fighter (173 Picks / 86.05% Presence)",
-        "note": "พิกรวม 173 เกม แบน 160 เกม (53.76% WR) ยืดหยุ่นสูงสุดทั้ง EXP และ Jungle"
+        "role": "🚫 Top Ban Priority (186 Bans / 80.65% Presence)",
+        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 421/522 เกม (80.65% Presence) • พิก 235 เกม (ชนะ 117 แพ้ 118, WR 49.79%) • แบน 186 เกม (BR 35.63%)"
       },
       "marcel": {
-        "role": "👑 Global High-WR Roam (201 Bans / 57.14% WR)",
-        "note": "แบนรวม 201 เกม พิก 70 เกม อัตราชนะรวม 57.14% ซัพพอร์ต/โรมมิ่งตัวท็อป"
-      },
-      "fanny": {
-        "role": "🦅 Global Ban Magnet Assassin (227 Bans / 68.48% Presence)",
-        "note": "แบนรวมสูงถึง 227 เกมจาก 387 นัด (WR 52.63%)"
-      },
-      "nolan": {
-        "role": "⚡ #2 Most Picked Jungler (140 Picks / 58.40% Presence)",
-        "note": "พิกรวม 140 เกม แบน 86 เกม (WR 53.57%) ป่าคุมจังหวะเกมเร็ว"
-      },
-      "masha": {
-        "role": "🔥 Global Raid Boss (146 Bans / 57.63% WR)",
-        "note": "แบนรวม 146 เกม พิก 58 เกม อัตราชนะสูงถึง 58.62%"
-      },
-      "uranus": {
-        "role": "🛡️ Top Sustain Offlaner (125 Bans / 52.97% Presence)",
-        "note": "แบนรวม 125 เกม พิก 80 เกม ยืนโซนและตัดเลนแข็งแกร่ง"
+        "role": "🚫 Top Ban Priority (264 Bans / 70.31% Presence)",
+        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 367/522 เกม (70.31% Presence) • พิก 103 เกม (ชนะ 61 แพ้ 42, WR 59.22%) • แบน 264 เกม (BR 50.57%)"
       },
       "carmilla": {
-        "role": "🩸 Top Teamfight Setter (100 Picks / 52.71% Presence)",
-        "note": "พิกรวม 100 เกม แบน 104 เกม เชื่อมดาเมจและสตั๊นหมู่"
+        "role": "⭐ Core Meta #6 (171 Picks / 65.9% Presence)",
+        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 344/522 เกม (65.9% Presence) • พิก 171 เกม (ชนะ 95 แพ้ 76, WR 55.56%) • แบน 173 เกม (BR 33.14%)"
+      },
+      "fanny": {
+        "role": "🚫 Top Ban Priority (281 Bans / 62.84% Presence)",
+        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 328/522 เกม (62.84% Presence) • พิก 47 เกม (ชนะ 22 แพ้ 25, WR 46.81%) • แบน 281 เกม (BR 53.83%)"
+      },
+      "nolan": {
+        "role": "⭐ Core Meta #8 (176 Picks / 60.15% Presence)",
+        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 314/522 เกม (60.15% Presence) • พิก 176 เกม (ชนะ 97 แพ้ 79, WR 55.11%) • แบน 138 เกม (BR 26.44%)"
+      },
+      "uranus": {
+        "role": "⭐ Core Meta #9 (131 Picks / 59.77% Presence)",
+        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 312/522 เกม (59.77% Presence) • พิก 131 เกม (ชนะ 63 แพ้ 68, WR 48.09%) • แบน 181 เกม (BR 34.67%)"
+      },
+      "masha": {
+        "role": "🚫 Top Ban Priority (239 Bans / 55.94% Presence)",
+        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 292/522 เกม (55.94% Presence) • พิก 53 เกม (ชนะ 32 แพ้ 21, WR 60.38%) • แบน 239 เกม (BR 45.79%)"
+      },
+      "belerick": {
+        "role": "⭐ Core Meta #11 (200 Picks / 55.36% Presence)",
+        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 289/522 เกม (55.36% Presence) • พิก 200 เกม (ชนะ 105 แพ้ 95, WR 52.5%) • แบน 89 เกม (BR 17.05%)"
+      },
+      "selena": {
+        "role": "⭐ Core Meta #12 (122 Picks / 54.98% Presence)",
+        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 287/522 เกม (54.98% Presence) • พิก 122 เกม (ชนะ 63 แพ้ 59, WR 51.64%) • แบน 165 เกม (BR 31.61%)"
+      },
+      "esmeralda": {
+        "role": "⭐ Core Meta #13 (96 Picks / 52.3% Presence)",
+        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 273/522 เกม (52.3% Presence) • พิก 96 เกม (ชนะ 40 แพ้ 56, WR 41.67%) • แบน 177 เกม (BR 33.91%)"
+      },
+      "zhuxin": {
+        "role": "⭐ Core Meta #14 (155 Picks / 51.92% Presence)",
+        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 271/522 เกม (51.92% Presence) • พิก 155 เกม (ชนะ 78 แพ้ 77, WR 50.32%) • แบน 116 เกม (BR 22.22%)"
+      },
+      "eudora": {
+        "role": "⭐ Core Meta #15 (162 Picks / 49.62% Presence)",
+        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 259/522 เกม (49.62% Presence) • พิก 162 เกม (ชนะ 88 แพ้ 74, WR 54.32%) • แบน 97 เกม (BR 18.58%)"
+      },
+      "aulus": {
+        "role": "⭐ Core Meta #16 (166 Picks / 49.43% Presence)",
+        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 258/522 เกม (49.43% Presence) • พิก 166 เกม (ชนะ 91 แพ้ 75, WR 54.82%) • แบน 92 เกม (BR 17.62%)"
+      },
+      "gloo": {
+        "role": "⭐ Core Meta #17 (119 Picks / 48.08% Presence)",
+        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 251/522 เกม (48.08% Presence) • พิก 119 เกม (ชนะ 66 แพ้ 53, WR 55.46%) • แบน 132 เกม (BR 25.29%)"
+      },
+      "barats": {
+        "role": "⭐ Core Meta #18 (112 Picks / 46.17% Presence)",
+        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 241/522 เกม (46.17% Presence) • พิก 112 เกม (ชนะ 56 แพ้ 56, WR 50%) • แบน 129 เกม (BR 24.71%)"
+      },
+      "minotaur": {
+        "role": "⭐ Core Meta #19 (151 Picks / 44.44% Presence)",
+        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 232/522 เกม (44.44% Presence) • พิก 151 เกม (ชนะ 68 แพ้ 83, WR 45.03%) • แบน 81 เกม (BR 15.52%)"
+      },
+      "obsidia": {
+        "role": "⭐ Core Meta #20 (145 Picks / 42.15% Presence)",
+        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 220/522 เกม (42.15% Presence) • พิก 145 เกม (ชนะ 79 แพ้ 66, WR 54.48%) • แบน 75 เกม (BR 14.37%)"
+      },
+      "valentina": {
+        "role": "⭐ Core Meta #21 (106 Picks / 38.7% Presence)",
+        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 202/522 เกม (38.7% Presence) • พิก 106 เกม (ชนะ 40 แพ้ 66, WR 37.74%) • แบน 96 เกม (BR 18.39%)"
+      },
+      "rafaela": {
+        "role": "⭐ Core Meta #22 (79 Picks / 37.36% Presence)",
+        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 195/522 เกม (37.36% Presence) • พิก 79 เกม (ชนะ 43 แพ้ 36, WR 54.43%) • แบน 116 เกม (BR 22.22%)"
+      },
+      "melissa": {
+        "role": "⭐ Core Meta #23 (64 Picks / 36.21% Presence)",
+        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 189/522 เกม (36.21% Presence) • พิก 64 เกม (ชนะ 31 แพ้ 33, WR 48.44%) • แบน 125 เกม (BR 23.95%)"
+      },
+      "alice": {
+        "role": "⭐ Core Meta #24 (102 Picks / 33.72% Presence)",
+        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 176/522 เกม (33.72% Presence) • พิก 102 เกม (ชนะ 46 แพ้ 56, WR 45.1%) • แบน 74 เกม (BR 14.18%)"
       }
     },
     "stats": {
@@ -7485,24 +7557,24 @@ window.TOURNAMENTS_METADATA = {
       "marcel",
       "fanny",
       "masha",
-      "carmilla",
+      "esmeralda",
       "uranus",
       "paquito",
       "hirara",
+      "carmilla",
       "selena",
-      "esmeralda",
+      "zhuxin",
+      "barats",
+      "melissa",
       "gloo",
       "rafaela",
       "nolan",
-      "zhuxin",
-      "melissa",
-      "barats",
-      "aulus"
+      "mathilda"
     ],
     "demoDraft": {
       "bans": [
-        "Atlas",
         "Freya",
+        "Atlas",
         "Marcel",
         "Fanny",
         "Masha",
@@ -7523,996 +7595,1523 @@ window.TOURNAMENTS_METADATA = {
       "note": "ดราฟต์จำลองคาดการณ์ M8 World Championship (วิเคราะห์จาก 6 ทัวร์นาเมนต์ 942 นัด)"
     },
     "signatures": {
-      "atlas": {
-        "role": "🔮 M8 Rank #1 (99% Presence | แบน 74.3% / พิก 24.7%)",
-        "note": "🚫 คาดโดนแบนอันดับต้นใน M8 • ความแม่นยำระดับสูง (สถิติเปรียบเทียบ 6 ทัวร์ 942 นัด: 🇮🇩MPL-ID 92.6% • 🇵🇭MPL-PH 97.7% • 🇲🇾MPL-MY 88.2% • 🇹🇭MSL-TH 91.1% • 🌍MSC 96.5%)"
-      },
       "freya": {
-        "role": "🔮 M8 Rank #2 (99% Presence | แบน 80.8% / พิก 18.2%)",
-        "note": "🚫 คาดโดนแบนอันดับต้นใน M8 • ความแม่นยำระดับสูง (สถิติเปรียบเทียบ 6 ทัวร์ 942 นัด: 🇮🇩MPL-ID 98.1% • 🇵🇭MPL-PH 100% • 🇲🇾MPL-MY 100% • 🇹🇭MSL-TH 94.1% • 🌍MSC 96.5% • 🏆M7 40.1%)"
+        "role": "🔮 M8 Rank #1 (99.2% Presence | แบน 80.9% / พิก 18.3%)",
+        "note": "🚫 คาดโดนแบนอันดับต้นใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 158 เกม แบน 631 เกม (WR 58.86%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 100% • 🇮🇩MPL-ID 98.1% • 🇲🇾MPL-MY 100% • 🇹🇭MSL-TH 94.1% • 🌍MSC 96.5% • 🏆M7 40.1%"
+      },
+      "atlas": {
+        "role": "🔮 M8 Rank #2 (99.2% Presence | แบน 74% / พิก 25.2%)",
+        "note": "🚫 คาดโดนแบนอันดับต้นใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 201 เกม แบน 548 เกม (WR 56.22%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 97.7% • 🇮🇩MPL-ID 92.6% • 🇲🇾MPL-MY 88.2% • 🇹🇭MSL-TH 91.1% • 🌍MSC 96.5%"
       },
       "hirara": {
-        "role": "🔮 M8 Rank #3 (93.8% Presence | แบน 36% / พิก 57.8%)",
-        "note": "✅ คาดถูกแย่ง First/Priority Pick ใน M8 • ความแม่นยำระดับสูง (สถิติเปรียบเทียบ 6 ทัวร์ 942 นัด: 🇮🇩MPL-ID 88.8% • 🇵🇭MPL-PH 96.5% • 🇲🇾MPL-MY 78.8% • 🇹🇭MSL-TH 96.3% • 🌍MSC 82.3%)"
+        "role": "🔮 M8 Rank #3 (93.5% Presence | แบน 35.9% / พิก 57.6%)",
+        "note": "✅ คาดถูกแย่งชิงหยิบ (Priority Pick) ใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 434 เกม แบน 280 เกม (WR 50.92%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 96.5% • 🇮🇩MPL-ID 88.8% • 🇲🇾MPL-MY 78.8% • 🇹🇭MSL-TH 96.3% • 🌍MSC 82.3%"
       },
       "marcel": {
-        "role": "🔮 M8 Rank #4 (86.8% Presence | แบน 65.5% / พิก 21.3%)",
-        "note": "🚫 คาดโดนแบนอันดับต้นใน M8 • ความแม่นยำระดับสูง (สถิติเปรียบเทียบ 6 ทัวร์ 942 นัด: 🇮🇩MPL-ID 69.3% • 🇵🇭MPL-PH 70.9% • 🇲🇾MPL-MY 82.4% • 🇹🇭MSL-TH 71.1% • 🌍MSC 89.4%)"
+        "role": "🔮 M8 Rank #4 (85.5% Presence | แบน 63.9% / พิก 21.6%)",
+        "note": "🚫 คาดโดนแบนอันดับต้นใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 156 เกม แบน 452 เกม (WR 57.69%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 70.9% • 🇮🇩MPL-ID 69.3% • 🇲🇾MPL-MY 82.4% • 🇹🇭MSL-TH 71.1% • 🌍MSC 89.4%"
       },
       "paquito": {
-        "role": "🔮 M8 Rank #5 (84% Presence | แบน 37.2% / พิก 46.8%)",
-        "note": "⚖️ ตัว Flex แบนหรือชิงหยิบใน M8 • ความแม่นยำระดับสูง (สถิติเปรียบเทียบ 6 ทัวร์ 942 นัด: 🇮🇩MPL-ID 84.2% • 🇵🇭MPL-PH 88.4% • 🇲🇾MPL-MY 81.8% • 🇹🇭MSL-TH 65.2% • 🌍MSC 69%)"
-      },
-      "carmilla": {
-        "role": "🔮 M8 Rank #6 (70.8% Presence | แบน 39% / พิก 31.8%)",
-        "note": "⚖️ ตัว Flex แบนหรือชิงหยิบใน M8 • ความแม่นยำระดับกลาง (สถิติเปรียบเทียบ 6 ทัวร์ 942 นัด: 🇮🇩MPL-ID 54.4% • 🇵🇭MPL-PH 54.7% • 🇲🇾MPL-MY 54.1% • 🇹🇭MSL-TH 98.5% • 🌍MSC 3.5%)"
+        "role": "🔮 M8 Rank #5 (84.1% Presence | แบน 37.1% / พิก 47%)",
+        "note": "⚖️ ตัว Flex แบนหรือชิงหยิบใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 361 เกม แบน 277 เกม (WR 49.86%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 88.4% • 🇮🇩MPL-ID 84.2% • 🇲🇾MPL-MY 81.8% • 🇹🇭MSL-TH 65.2% • 🌍MSC 69%"
       },
       "uranus": {
-        "role": "🔮 M8 Rank #7 (70.8% Presence | แบน 38.9% / พิก 32%)",
-        "note": "⚖️ ตัว Flex แบนหรือชิงหยิบใน M8 • ความแม่นยำระดับสูง (สถิติเปรียบเทียบ 6 ทัวร์ 942 นัด: 🇮🇩MPL-ID 54% • 🇵🇭MPL-PH 66.3% • 🇲🇾MPL-MY 74.1% • 🇹🇭MSL-TH 60.7% • 🌍MSC 55.8% • 🏆M7 62%)"
-      },
-      "nolan": {
-        "role": "🔮 M8 Rank #8 (62.6% Presence | แบน 26.5% / พิก 36.1%)",
-        "note": "⚖️ ตัว Flex แบนหรือชิงหยิบใน M8 • ความแม่นยำระดับสูง (สถิติเปรียบเทียบ 6 ทัวร์ 942 นัด: 🇮🇩MPL-ID 62.8% • 🇵🇭MPL-PH 57.6% • 🇲🇾MPL-MY 60% • 🇹🇭MSL-TH 59.3% • 🌍MSC 12.4% • 🏆M7 7.3%)"
+        "role": "🔮 M8 Rank #6 (69.8% Presence | แบน 38% / พิก 31.8%)",
+        "note": "⚖️ ตัว Flex แบนหรือชิงหยิบใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 232 เกม แบน 269 เกม (WR 50.86%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 66.3% • 🇮🇩MPL-ID 54% • 🇲🇾MPL-MY 74.1% • 🇹🇭MSL-TH 60.7% • 🌍MSC 55.8% • 🏆M7 62%"
       },
       "fanny": {
-        "role": "🔮 M8 Rank #9 (61.1% Presence | แบน 50.5% / พิก 10.7%)",
-        "note": "🚫 คาดโดนแบนอันดับต้นใน M8 • ความแม่นยำระดับสูง (สถิติเปรียบเทียบ 6 ทัวร์ 942 นัด: 🇮🇩MPL-ID 71.6% • 🇵🇭MPL-PH 64.5% • 🇲🇾MPL-MY 56.5% • 🇹🇭MSL-TH 46.7% • 🌍MSC 62.8% • 🏆M7 67.9%)"
-      },
-      "belerick": {
-        "role": "🔮 M8 Rank #10 (60% Presence | แบน 19.5% / พิก 40.5%)",
-        "note": "✅ คาดถูกแย่ง First/Priority Pick ใน M8 • ความแม่นยำระดับสูง (สถิติเปรียบเทียบ 6 ทัวร์ 942 นัด: 🇮🇩MPL-ID 47% • 🇵🇭MPL-PH 54.1% • 🇲🇾MPL-MY 57.6% • 🇹🇭MSL-TH 70.4% • 🌍MSC 71.7%)"
-      },
-      "masha": {
-        "role": "🔮 M8 Rank #11 (58.5% Presence | แบน 49.4% / พิก 9.1%)",
-        "note": "🚫 คาดโดนแบนอันดับต้นใน M8 • ความแม่นยำระดับสูง (สถิติเปรียบเทียบ 6 ทัวร์ 942 นัด: 🇮🇩MPL-ID 53.5% • 🇵🇭MPL-PH 50.6% • 🇲🇾MPL-MY 40.6% • 🇹🇭MSL-TH 66.7%)"
-      },
-      "selena": {
-        "role": "🔮 M8 Rank #12 (58% Presence | แบน 33.9% / พิก 24.1%)",
-        "note": "🚫 คาดโดนแบนอันดับต้นใน M8 • ความแม่นยำระดับสูง (สถิติเปรียบเทียบ 6 ทัวร์ 942 นัด: 🇮🇩MPL-ID 48.8% • 🇵🇭MPL-PH 57.6% • 🇲🇾MPL-MY 55.3% • 🇹🇭MSL-TH 61.5% • 🌍MSC 33.6% • 🏆M7 8%)"
+        "role": "🔮 M8 Rank #7 (68.5% Presence | แบน 58.2% / พิก 10.3%)",
+        "note": "🚫 คาดโดนแบนอันดับต้นใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 75 เกม แบน 420 เกม (WR 44%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 64.5% • 🇮🇩MPL-ID 71.6% • 🇲🇾MPL-MY 56.5% • 🇹🇭MSL-TH 46.7% • 🌍MSC 62.8% • 🏆M7 67.9%"
       },
       "zhuxin": {
-        "role": "🔮 M8 Rank #13 (55.4% Presence | แบน 25.6% / พิก 29.8%)",
-        "note": "⚖️ ตัว Flex แบนหรือชิงหยิบใน M8 • ความแม่นยำระดับสูง (สถิติเปรียบเทียบ 6 ทัวร์ 942 นัด: 🇮🇩MPL-ID 57.7% • 🇵🇭MPL-PH 45.3% • 🇲🇾MPL-MY 47.6% • 🇹🇭MSL-TH 51.1% • 🌍MSC 83.2% • 🏆M7 98.5%)"
+        "role": "🔮 M8 Rank #8 (66.4% Presence | แบน 30.1% / พิก 36.3%)",
+        "note": "⚖️ ตัว Flex แบนหรือชิงหยิบใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 242 เกม แบน 204 เกม (WR 51.24%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 45.3% • 🇮🇩MPL-ID 57.7% • 🇲🇾MPL-MY 47.6% • 🇹🇭MSL-TH 51.1% • 🌍MSC 83.2% • 🏆M7 98.5%"
+      },
+      "carmilla": {
+        "role": "🔮 M8 Rank #9 (65.6% Presence | แบน 35.4% / พิก 30.1%)",
+        "note": "⚖️ ตัว Flex แบนหรือชิงหยิบใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 205 เกม แบน 235 เกม (WR 55.61%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 54.7% • 🇮🇩MPL-ID 54.4% • 🇲🇾MPL-MY 54.1% • 🇹🇭MSL-TH 98.5% • 🌍MSC 3.5%"
+      },
+      "belerick": {
+        "role": "🔮 M8 Rank #10 (62.9% Presence | แบน 20.3% / พิก 42.6%)",
+        "note": "✅ คาดถูกแย่งชิงหยิบ (Priority Pick) ใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 314 เกม แบน 154 เกม (WR 50.64%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 54.1% • 🇮🇩MPL-ID 47% • 🇲🇾MPL-MY 57.6% • 🇹🇭MSL-TH 70.4% • 🌍MSC 71.7%"
       },
       "esmeralda": {
-        "role": "🔮 M8 Rank #14 (52.7% Presence | แบน 30.7% / พิก 22%)",
-        "note": "🚫 คาดโดนแบนอันดับต้นใน M8 • ความแม่นยำระดับสูง (สถิติเปรียบเทียบ 6 ทัวร์ 942 นัด: 🇮🇩MPL-ID 55.8% • 🇵🇭MPL-PH 49.4% • 🇲🇾MPL-MY 68.8% • 🇹🇭MSL-TH 50.4% • 🌍MSC 47.8% • 🏆M7 56.2%)"
+        "role": "🔮 M8 Rank #11 (62.7% Presence | แบน 38.4% / พิก 24.3%)",
+        "note": "🚫 คาดโดนแบนอันดับต้นใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 175 เกม แบน 269 เกม (WR 42.29%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 49.4% • 🇮🇩MPL-ID 55.8% • 🇲🇾MPL-MY 68.8% • 🇹🇭MSL-TH 50.4% • 🌍MSC 47.8% • 🏆M7 56.2%"
       },
-      "gloo": {
-        "role": "🔮 M8 Rank #15 (51.4% Presence | แบน 27.7% / พิก 23.8%)",
-        "note": "⚖️ ตัว Flex แบนหรือชิงหยิบใน M8 • ความแม่นยำระดับกลาง (สถิติเปรียบเทียบ 6 ทัวร์ 942 นัด: 🇮🇩MPL-ID 45.1% • 🇵🇭MPL-PH 33.7% • 🇲🇾MPL-MY 31.8% • 🇹🇭MSL-TH 71.1% • 🌍MSC 25.7% • 🏆M7 9.5%)"
+      "selena": {
+        "role": "🔮 M8 Rank #12 (58.3% Presence | แบน 33.4% / พิก 24.9%)",
+        "note": "🚫 คาดโดนแบนอันดับต้นใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 180 เกม แบน 239 เกม (WR 53.33%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 57.6% • 🇮🇩MPL-ID 48.8% • 🇲🇾MPL-MY 55.3% • 🇹🇭MSL-TH 61.5% • 🌍MSC 33.6% • 🏆M7 8%"
       },
-      "eudora": {
-        "role": "🔮 M8 Rank #16 (51.1% Presence | แบน 19.2% / พิก 31.8%)",
-        "note": "✅ คาดถูกแย่ง First/Priority Pick ใน M8 • ความแม่นยำระดับสูง (สถิติเปรียบเทียบ 6 ทัวร์ 942 นัด: 🇮🇩MPL-ID 39.1% • 🇵🇭MPL-PH 54.7% • 🇲🇾MPL-MY 36.5% • 🇹🇭MSL-TH 60% • 🌍MSC 58.4%)"
-      },
-      "aulus": {
-        "role": "🔮 M8 Rank #17 (50.3% Presence | แบน 20.5% / พิก 29.8%)",
-        "note": "✅ คาดถูกแย่ง First/Priority Pick ใน M8 • ความแม่นยำระดับสูง (สถิติเปรียบเทียบ 6 ทัวร์ 942 นัด: 🇮🇩MPL-ID 45.6% • 🇵🇭MPL-PH 45.3% • 🇲🇾MPL-MY 35.3% • 🇹🇭MSL-TH 60.7%)"
+      "nolan": {
+        "role": "🔮 M8 Rank #13 (57.9% Presence | แบน 23.9% / พิก 34%)",
+        "note": "✅ คาดถูกแย่งชิงหยิบ (Priority Pick) ใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 252 เกม แบน 178 เกม (WR 53.17%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 57.6% • 🇮🇩MPL-ID 62.8% • 🇲🇾MPL-MY 60% • 🇹🇭MSL-TH 59.3% • 🌍MSC 12.4% • 🏆M7 7.3%"
       },
       "barats": {
-        "role": "🔮 M8 Rank #18 (48.1% Presence | แบน 24.3% / พิก 23.8%)",
-        "note": "⚖️ ตัว Flex แบนหรือชิงหยิบใน M8 • ความแม่นยำระดับกลาง (สถิติเปรียบเทียบ 6 ทัวร์ 942 นัด: 🇮🇩MPL-ID 40% • 🇵🇭MPL-PH 66.9% • 🇲🇾MPL-MY 52.4% • 🇹🇭MSL-TH 29.6% • 🌍MSC 48.7%)"
+        "role": "🔮 M8 Rank #14 (55.6% Presence | แบน 27.8% / พิก 27.8%)",
+        "note": "⚖️ ตัว Flex แบนหรือชิงหยิบใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 194 เกม แบน 191 เกม (WR 52.58%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 66.9% • 🇮🇩MPL-ID 40% • 🇲🇾MPL-MY 52.4% • 🇹🇭MSL-TH 29.6% • 🌍MSC 48.7%"
       },
-      "rafaela": {
-        "role": "🔮 M8 Rank #19 (46.2% Presence | แบน 26.9% / พิก 19.4%)",
-        "note": "🚫 คาดโดนแบนอันดับต้นใน M8 • ความแม่นยำระดับสูง (สถิติเปรียบเทียบ 6 ทัวร์ 942 นัด: 🇮🇩MPL-ID 38.6% • 🇵🇭MPL-PH 42.4% • 🇲🇾MPL-MY 54.7% • 🇹🇭MSL-TH 28.9% • 🌍MSC 6.2%)"
+      "masha": {
+        "role": "🔮 M8 Rank #15 (54.5% Presence | แบน 45.3% / พิก 9.3%)",
+        "note": "🚫 คาดโดนแบนอันดับต้นใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 67 เกม แบน 294 เกม (WR 59.7%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 50.6% • 🇮🇩MPL-ID 53.5% • 🇲🇾MPL-MY 40.6% • 🇹🇭MSL-TH 66.7%"
       },
-      "obsidia": {
-        "role": "🔮 M8 Rank #20 (45.5% Presence | แบน 16.3% / พิก 29.2%)",
-        "note": "✅ คาดถูกแย่ง First/Priority Pick ใน M8 • ความแม่นยำระดับสูง (สถิติเปรียบเทียบ 6 ทัวร์ 942 นัด: 🇮🇩MPL-ID 39.1% • 🇵🇭MPL-PH 36% • 🇲🇾MPL-MY 47.6% • 🇹🇭MSL-TH 54.8% • 🌍MSC 2.7% • 🏆M7 3.6%)"
+      "eudora": {
+        "role": "🔮 M8 Rank #16 (54.4% Presence | แบน 20.1% / พิก 34.3%)",
+        "note": "✅ คาดถูกแย่งชิงหยิบ (Priority Pick) ใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 243 เกม แบน 144 เกม (WR 52.26%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 54.7% • 🇮🇩MPL-ID 39.1% • 🇲🇾MPL-MY 36.5% • 🇹🇭MSL-TH 60% • 🌍MSC 58.4%"
       },
-      "melissa": {
-        "role": "🔮 M8 Rank #21 (38.8% Presence | แบน 25.6% / พิก 13.2%)",
-        "note": "🚫 คาดโดนแบนอันดับต้นใน M8 • ความแม่นยำระดับสูง (สถิติเปรียบเทียบ 6 ทัวร์ 942 นัด: 🇮🇩MPL-ID 40.5% • 🇵🇭MPL-PH 43.6% • 🇲🇾MPL-MY 51.2% • 🇹🇭MSL-TH 20% • 🌍MSC 27.4%)"
+      "gloo": {
+        "role": "🔮 M8 Rank #17 (48.2% Presence | แบน 25.1% / พิก 23.1%)",
+        "note": "⚖️ ตัว Flex แบนหรือชิงหยิบใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 162 เกม แบน 172 เกม (WR 54.94%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 33.7% • 🇮🇩MPL-ID 45.1% • 🇲🇾MPL-MY 31.8% • 🇹🇭MSL-TH 71.1% • 🌍MSC 25.7% • 🏆M7 9.5%"
       },
       "valentina": {
-        "role": "🔮 M8 Rank #22 (36.8% Presence | แบน 15.3% / พิก 21.5%)",
-        "note": "✅ คาดถูกแย่ง First/Priority Pick ใน M8 • ความแม่นยำระดับสูง (สถิติเปรียบเทียบ 6 ทัวร์ 942 นัด: 🇮🇩MPL-ID 35.3% • 🇵🇭MPL-PH 46.5% • 🇲🇾MPL-MY 45.3% • 🇹🇭MSL-TH 34.1% • 🌍MSC 68.1% • 🏆M7 34.3%)"
+        "role": "🔮 M8 Rank #18 (47.1% Presence | แบน 21% / พิก 26.1%)",
+        "note": "⚖️ ตัว Flex แบนหรือชิงหยิบใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 197 เกม แบน 159 เกม (WR 39.59%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 46.5% • 🇮🇩MPL-ID 35.3% • 🇲🇾MPL-MY 45.3% • 🇹🇭MSL-TH 34.1% • 🌍MSC 68.1% • 🏆M7 34.3%"
+      },
+      "aulus": {
+        "role": "🔮 M8 Rank #19 (43.6% Presence | แบน 17.3% / พิก 26.3%)",
+        "note": "✅ คาดถูกแย่งชิงหยิบ (Priority Pick) ใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 193 เกม แบน 125 เกม (WR 55.44%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 45.3% • 🇮🇩MPL-ID 45.6% • 🇲🇾MPL-MY 35.3% • 🇹🇭MSL-TH 60.7%"
+      },
+      "claude": {
+        "role": "🔮 M8 Rank #20 (42.6% Presence | แบน 7.8% / พิก 34.8%)",
+        "note": "✅ คาดถูกแย่งชิงหยิบ (Priority Pick) ใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 240 เกม แบน 55 เกม (WR 48.75%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 29.7% • 🇮🇩MPL-ID 35.3% • 🇲🇾MPL-MY 35.3% • 🇹🇭MSL-TH 27.4% • 🌍MSC 62.8% • 🏆M7 81%"
+      },
+      "rafaela": {
+        "role": "🔮 M8 Rank #21 (42.4% Presence | แบน 24.1% / พิก 18.3%)",
+        "note": "🚫 คาดโดนแบนอันดับต้นใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 132 เกม แบน 163 เกม (WR 58.33%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 42.4% • 🇮🇩MPL-ID 38.6% • 🇲🇾MPL-MY 54.7% • 🇹🇭MSL-TH 28.9% • 🌍MSC 6.2%"
+      },
+      "melissa": {
+        "role": "🔮 M8 Rank #22 (41.2% Presence | แบน 26.8% / พิก 14.4%)",
+        "note": "🚫 คาดโดนแบนอันดับต้นใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 108 เกม แบน 199 เกม (WR 53.7%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 43.6% • 🇮🇩MPL-ID 40.5% • 🇲🇾MPL-MY 51.2% • 🇹🇭MSL-TH 20% • 🌍MSC 27.4%"
       },
       "minotaur": {
-        "role": "🔮 M8 Rank #23 (36.6% Presence | แบน 11.6% / พิก 25%)",
-        "note": "✅ คาดถูกแย่ง First/Priority Pick ใน M8 • ความแม่นยำระดับสูง (สถิติเปรียบเทียบ 6 ทัวร์ 942 นัด: 🇮🇩MPL-ID 33.5% • 🇵🇭MPL-PH 44.2% • 🇲🇾MPL-MY 28.2% • 🇹🇭MSL-TH 62.2% • 🌍MSC 15.9% • 🏆M7 2.9%)"
+        "role": "🔮 M8 Rank #23 (40% Presence | แบน 13.4% / พิก 26.6%)",
+        "note": "✅ คาดถูกแย่งชิงหยิบ (Priority Pick) ใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 197 เกม แบน 101 เกม (WR 44.67%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 44.2% • 🇮🇩MPL-ID 33.5% • 🇲🇾MPL-MY 28.2% • 🇹🇭MSL-TH 62.2% • 🌍MSC 15.9% • 🏆M7 2.9%"
+      },
+      "obsidia": {
+        "role": "🔮 M8 Rank #24 (39.1% Presence | แบน 13.7% / พิก 25.5%)",
+        "note": "✅ คาดถูกแย่งชิงหยิบ (Priority Pick) ใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 199 เกม แบน 105 เกม (WR 52.26%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 36% • 🇮🇩MPL-ID 39.1% • 🇲🇾MPL-MY 47.6% • 🇹🇭MSL-TH 54.8% • 🌍MSC 2.7% • 🏆M7 3.6%"
+      },
+      "alice": {
+        "role": "🔮 M8 Rank #25 (35.7% Presence | แบน 15.6% / พิก 20.1%)",
+        "note": "⚖️ ตัว Flex แบนหรือชิงหยิบใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 159 เกม แบน 122 เกม (WR 46.54%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 28.5% • 🇮🇩MPL-ID 39.5% • 🇲🇾MPL-MY 44.7% • 🇹🇭MSL-TH 31.1% • 🌍MSC 25.7% • 🏆M7 19%"
+      },
+      "mathilda": {
+        "role": "🔮 M8 Rank #26 (32.4% Presence | แบน 21.2% / พิก 11.2%)",
+        "note": "🚫 คาดโดนแบนอันดับต้นใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 84 เกม แบน 162 เกม (WR 53.57%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 37.2% • 🇮🇩MPL-ID 34.4% • 🇲🇾MPL-MY 29.4% • 🇹🇭MSL-TH 14.1% • 🌍MSC 34.5% • 🏆M7 6.6%"
+      },
+      "lylia": {
+        "role": "🔮 M8 Rank #27 (29.4% Presence | แบน 16.2% / พิก 13.2%)",
+        "note": "⚖️ ตัว Flex แบนหรือชิงหยิบใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 106 เกม แบน 126 เกม (WR 44.34%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 31.4% • 🇮🇩MPL-ID 36.3% • 🇲🇾MPL-MY 26.5% • 🇹🇭MSL-TH 26.7% • 🌍MSC 16.8% • 🏆M7 5.8%"
+      },
+      "gatotkaca": {
+        "role": "🔮 M8 Rank #28 (28.4% Presence | แบน 6.3% / พิก 22.1%)",
+        "note": "✅ คาดถูกแย่งชิงหยิบ (Priority Pick) ใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 157 เกม แบน 45 เกม (WR 39.49%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 38.4% • 🇮🇩MPL-ID 20.5% • 🇲🇾MPL-MY 31.2% • 🇹🇭MSL-TH 19.3% • 🌍MSC 11.5% • 🏆M7 46%"
       }
     },
     "stats": {
-      "atlas": {
-        "picks": 233,
-        "wins": 124,
-        "losses": 109,
-        "bans": 700,
-        "totalPickBans": 933,
-        "winRate": 53.5,
-        "pickRate": 24.7,
-        "banRate": 74.3,
-        "presenceRate": 99,
-        "tier": "SS",
-        "metaScore": 113.4
-      },
       "freya": {
-        "picks": 171,
-        "wins": 96,
-        "losses": 75,
-        "bans": 761,
-        "totalPickBans": 932,
-        "winRate": 56.8,
-        "pickRate": 18.2,
-        "banRate": 80.8,
-        "presenceRate": 99,
+        "picks": 158,
+        "wins": 93,
+        "losses": 65,
+        "bans": 631,
+        "totalPickBans": 789,
+        "winRate": 58.86,
+        "pickRate": 18.3,
+        "banRate": 80.9,
+        "presenceRate": 99.2,
         "tier": "SS",
-        "metaScore": 114.5
+        "metaScore": 117.3
+      },
+      "atlas": {
+        "picks": 201,
+        "wins": 113,
+        "losses": 88,
+        "bans": 548,
+        "totalPickBans": 749,
+        "winRate": 56.22,
+        "pickRate": 25.2,
+        "banRate": 74,
+        "presenceRate": 99.2,
+        "tier": "SS",
+        "metaScore": 114.9
       },
       "hirara": {
-        "picks": 544,
-        "wins": 272,
-        "losses": 272,
-        "bans": 339,
-        "totalPickBans": 883,
-        "winRate": 50,
-        "pickRate": 57.8,
-        "banRate": 36,
-        "presenceRate": 93.8,
+        "picks": 434,
+        "wins": 221,
+        "losses": 213,
+        "bans": 280,
+        "totalPickBans": 714,
+        "winRate": 50.92,
+        "pickRate": 57.6,
+        "banRate": 35.9,
+        "presenceRate": 93.5,
         "tier": "SS",
-        "metaScore": 104.5
+        "metaScore": 104.8
       },
       "marcel": {
-        "picks": 201,
-        "wins": 114,
-        "losses": 87,
-        "bans": 617,
-        "totalPickBans": 818,
-        "winRate": 57.1,
-        "pickRate": 21.3,
-        "banRate": 65.5,
-        "presenceRate": 86.8,
+        "picks": 156,
+        "wins": 90,
+        "losses": 66,
+        "bans": 452,
+        "totalPickBans": 608,
+        "winRate": 57.69,
+        "pickRate": 21.6,
+        "banRate": 63.9,
+        "presenceRate": 85.5,
         "tier": "SS",
-        "metaScore": 103.9
+        "metaScore": 104.6
       },
       "paquito": {
-        "picks": 441,
-        "wins": 221,
-        "losses": 220,
-        "bans": 350,
-        "totalPickBans": 791,
-        "winRate": 50.2,
-        "pickRate": 46.8,
-        "banRate": 37.2,
-        "presenceRate": 84,
+        "picks": 361,
+        "wins": 180,
+        "losses": 181,
+        "bans": 277,
+        "totalPickBans": 638,
+        "winRate": 49.86,
+        "pickRate": 47,
+        "banRate": 37.1,
+        "presenceRate": 84.1,
         "tier": "SS",
-        "metaScore": 96
-      },
-      "carmilla": {
-        "picks": 300,
-        "wins": 166,
-        "losses": 134,
-        "bans": 367,
-        "totalPickBans": 667,
-        "winRate": 55.7,
-        "pickRate": 31.8,
-        "banRate": 39,
-        "presenceRate": 70.8,
-        "tier": "S",
-        "metaScore": 86.3
+        "metaScore": 96.4
       },
       "uranus": {
-        "picks": 301,
-        "wins": 152,
-        "losses": 149,
-        "bans": 366,
-        "totalPickBans": 667,
-        "winRate": 50.5,
-        "pickRate": 32,
-        "banRate": 38.9,
-        "presenceRate": 70.8,
-        "tier": "S",
-        "metaScore": 84.5
-      },
-      "nolan": {
-        "picks": 340,
-        "wins": 182,
-        "losses": 158,
-        "bans": 250,
-        "totalPickBans": 590,
-        "winRate": 53.7,
-        "pickRate": 36.1,
-        "banRate": 26.5,
-        "presenceRate": 62.6,
-        "tier": "S",
-        "metaScore": 78.4
+        "picks": 232,
+        "wins": 118,
+        "losses": 114,
+        "bans": 269,
+        "totalPickBans": 501,
+        "winRate": 50.86,
+        "pickRate": 31.8,
+        "banRate": 38,
+        "presenceRate": 69.8,
+        "tier": "SS",
+        "metaScore": 84.6
       },
       "fanny": {
-        "picks": 101,
-        "wins": 43,
-        "losses": 58,
-        "bans": 476,
-        "totalPickBans": 577,
-        "winRate": 41.3,
-        "pickRate": 10.7,
-        "banRate": 50.5,
-        "presenceRate": 61.1,
-        "tier": "S",
-        "metaScore": 76
-      },
-      "belerick": {
-        "picks": 382,
-        "wins": 197,
-        "losses": 185,
-        "bans": 184,
-        "totalPickBans": 566,
-        "winRate": 51.7,
-        "pickRate": 40.5,
-        "banRate": 19.5,
-        "presenceRate": 60,
-        "tier": "S",
-        "metaScore": 75.4
-      },
-      "masha": {
-        "picks": 86,
-        "wins": 50,
-        "losses": 36,
-        "bans": 465,
-        "totalPickBans": 551,
-        "winRate": 59.7,
-        "pickRate": 9.1,
-        "banRate": 49.4,
-        "presenceRate": 58.5,
-        "tier": "S",
-        "metaScore": 79.6
-      },
-      "selena": {
-        "picks": 227,
-        "wins": 120,
-        "losses": 107,
-        "bans": 319,
-        "totalPickBans": 546,
-        "winRate": 53,
-        "pickRate": 24.1,
-        "banRate": 33.9,
-        "presenceRate": 58,
-        "tier": "S",
-        "metaScore": 77.1
+        "picks": 75,
+        "wins": 33,
+        "losses": 42,
+        "bans": 420,
+        "totalPickBans": 495,
+        "winRate": 44,
+        "pickRate": 10.3,
+        "banRate": 58.2,
+        "presenceRate": 68.5,
+        "tier": "SS",
+        "metaScore": 81.3
       },
       "zhuxin": {
-        "picks": 281,
-        "wins": 138,
-        "losses": 143,
-        "bans": 241,
-        "totalPickBans": 522,
-        "winRate": 49,
-        "pickRate": 29.8,
-        "banRate": 25.6,
-        "presenceRate": 55.4,
-        "tier": "A",
-        "metaScore": 70.4
+        "picks": 242,
+        "wins": 124,
+        "losses": 118,
+        "bans": 204,
+        "totalPickBans": 446,
+        "winRate": 51.24,
+        "pickRate": 36.3,
+        "banRate": 30.1,
+        "presenceRate": 66.4,
+        "tier": "SS",
+        "metaScore": 78.9
+      },
+      "carmilla": {
+        "picks": 205,
+        "wins": 114,
+        "losses": 91,
+        "bans": 235,
+        "totalPickBans": 440,
+        "winRate": 55.61,
+        "pickRate": 30.1,
+        "banRate": 35.4,
+        "presenceRate": 65.6,
+        "tier": "SS",
+        "metaScore": 85.9
+      },
+      "belerick": {
+        "picks": 314,
+        "wins": 159,
+        "losses": 155,
+        "bans": 154,
+        "totalPickBans": 468,
+        "winRate": 50.64,
+        "pickRate": 42.6,
+        "banRate": 20.3,
+        "presenceRate": 62.9,
+        "tier": "SS",
+        "metaScore": 75.7
       },
       "esmeralda": {
-        "picks": 207,
-        "wins": 88,
-        "losses": 119,
-        "bans": 289,
-        "totalPickBans": 496,
-        "winRate": 42.1,
-        "pickRate": 22,
-        "banRate": 30.7,
-        "presenceRate": 52.7,
-        "tier": "A",
-        "metaScore": 68.6
-      },
-      "gloo": {
-        "picks": 224,
-        "wins": 123,
+        "picks": 175,
+        "wins": 74,
         "losses": 101,
-        "bans": 261,
-        "totalPickBans": 485,
-        "winRate": 55.2,
-        "pickRate": 23.8,
-        "banRate": 27.7,
-        "presenceRate": 51.4,
-        "tier": "A",
-        "metaScore": 69.1
+        "bans": 269,
+        "totalPickBans": 444,
+        "winRate": 42.29,
+        "pickRate": 24.3,
+        "banRate": 38.4,
+        "presenceRate": 62.7,
+        "tier": "SS",
+        "metaScore": 75.6
       },
-      "eudora": {
-        "picks": 300,
-        "wins": 157,
-        "losses": 143,
-        "bans": 181,
-        "totalPickBans": 481,
-        "winRate": 52.5,
-        "pickRate": 31.8,
-        "banRate": 19.2,
-        "presenceRate": 51.1,
-        "tier": "A",
-        "metaScore": 67.8
+      "selena": {
+        "picks": 180,
+        "wins": 96,
+        "losses": 84,
+        "bans": 239,
+        "totalPickBans": 419,
+        "winRate": 53.33,
+        "pickRate": 24.9,
+        "banRate": 33.4,
+        "presenceRate": 58.3,
+        "tier": "S",
+        "metaScore": 74.6
       },
-      "aulus": {
-        "picks": 281,
-        "wins": 155,
-        "losses": 126,
-        "bans": 193,
-        "totalPickBans": 474,
-        "winRate": 55.4,
-        "pickRate": 29.8,
-        "banRate": 20.5,
-        "presenceRate": 50.3,
-        "tier": "A",
-        "metaScore": 68.2
+      "nolan": {
+        "picks": 252,
+        "wins": 134,
+        "losses": 118,
+        "bans": 178,
+        "totalPickBans": 430,
+        "winRate": 53.17,
+        "pickRate": 34,
+        "banRate": 23.9,
+        "presenceRate": 57.9,
+        "tier": "S",
+        "metaScore": 74.1
       },
       "barats": {
-        "picks": 224,
-        "wins": 114,
-        "losses": 110,
-        "bans": 229,
-        "totalPickBans": 453,
-        "winRate": 50.9,
-        "pickRate": 23.8,
-        "banRate": 24.3,
-        "presenceRate": 48.1,
-        "tier": "A",
-        "metaScore": 64.7
+        "picks": 194,
+        "wins": 102,
+        "losses": 92,
+        "bans": 191,
+        "totalPickBans": 385,
+        "winRate": 52.58,
+        "pickRate": 27.8,
+        "banRate": 27.8,
+        "presenceRate": 55.6,
+        "tier": "S",
+        "metaScore": 70.2
       },
-      "rafaela": {
-        "picks": 183,
-        "wins": 105,
-        "losses": 78,
-        "bans": 253,
-        "totalPickBans": 436,
-        "winRate": 58.1,
-        "pickRate": 19.4,
-        "banRate": 26.9,
-        "presenceRate": 46.2,
-        "tier": "A",
-        "metaScore": 68.5
+      "masha": {
+        "picks": 67,
+        "wins": 40,
+        "losses": 27,
+        "bans": 294,
+        "totalPickBans": 361,
+        "winRate": 59.7,
+        "pickRate": 9.3,
+        "banRate": 45.3,
+        "presenceRate": 54.5,
+        "tier": "S",
+        "metaScore": 79.7
       },
-      "obsidia": {
-        "picks": 275,
-        "wins": 144,
-        "losses": 131,
-        "bans": 154,
-        "totalPickBans": 429,
-        "winRate": 52.3,
-        "pickRate": 29.2,
-        "banRate": 16.3,
-        "presenceRate": 45.5,
-        "tier": "A",
-        "metaScore": 62.9
+      "eudora": {
+        "picks": 243,
+        "wins": 127,
+        "losses": 116,
+        "bans": 144,
+        "totalPickBans": 387,
+        "winRate": 52.26,
+        "pickRate": 34.3,
+        "banRate": 20.1,
+        "presenceRate": 54.4,
+        "tier": "S",
+        "metaScore": 69
       },
-      "melissa": {
-        "picks": 124,
-        "wins": 65,
-        "losses": 59,
-        "bans": 241,
-        "totalPickBans": 365,
-        "winRate": 52.6,
-        "pickRate": 13.2,
-        "banRate": 25.6,
-        "presenceRate": 38.8,
-        "tier": "A",
-        "metaScore": 60
+      "gloo": {
+        "picks": 162,
+        "wins": 89,
+        "losses": 73,
+        "bans": 172,
+        "totalPickBans": 334,
+        "winRate": 54.94,
+        "pickRate": 23.1,
+        "banRate": 25.1,
+        "presenceRate": 48.2,
+        "tier": "S",
+        "metaScore": 67.4
       },
       "valentina": {
-        "picks": 203,
-        "wins": 85,
-        "losses": 118,
-        "bans": 144,
-        "totalPickBans": 347,
-        "winRate": 41.3,
-        "pickRate": 21.5,
-        "banRate": 15.3,
-        "presenceRate": 36.8,
-        "tier": "A",
-        "metaScore": 51.3
+        "picks": 197,
+        "wins": 78,
+        "losses": 119,
+        "bans": 159,
+        "totalPickBans": 356,
+        "winRate": 39.59,
+        "pickRate": 26.1,
+        "banRate": 21,
+        "presenceRate": 47.1,
+        "tier": "S",
+        "metaScore": 58.3
       },
-      "minotaur": {
-        "picks": 236,
+      "aulus": {
+        "picks": 193,
         "wins": 107,
-        "losses": 129,
-        "bans": 109,
-        "totalPickBans": 345,
-        "winRate": 44.9,
-        "pickRate": 25,
-        "banRate": 11.6,
-        "presenceRate": 36.6,
-        "tier": "A",
-        "metaScore": 52.4
+        "losses": 86,
+        "bans": 125,
+        "totalPickBans": 318,
+        "winRate": 55.44,
+        "pickRate": 26.3,
+        "banRate": 17.3,
+        "presenceRate": 43.6,
+        "tier": "S",
+        "metaScore": 61
       },
       "claude": {
-        "picks": 260,
-        "wins": 131,
-        "losses": 129,
-        "bans": 65,
-        "totalPickBans": 325,
-        "winRate": 50.5,
-        "pickRate": 27.6,
-        "banRate": 6.9,
-        "presenceRate": 34.6,
-        "tier": "B",
-        "metaScore": 52.6
+        "picks": 240,
+        "wins": 117,
+        "losses": 123,
+        "bans": 55,
+        "totalPickBans": 295,
+        "winRate": 48.75,
+        "pickRate": 34.8,
+        "banRate": 7.8,
+        "presenceRate": 42.6,
+        "tier": "S",
+        "metaScore": 54.8
+      },
+      "rafaela": {
+        "picks": 132,
+        "wins": 77,
+        "losses": 55,
+        "bans": 163,
+        "totalPickBans": 295,
+        "winRate": 58.33,
+        "pickRate": 18.3,
+        "banRate": 24.1,
+        "presenceRate": 42.4,
+        "tier": "S",
+        "metaScore": 65.5
+      },
+      "melissa": {
+        "picks": 108,
+        "wins": 58,
+        "losses": 50,
+        "bans": 199,
+        "totalPickBans": 307,
+        "winRate": 53.7,
+        "pickRate": 14.4,
+        "banRate": 26.8,
+        "presenceRate": 41.2,
+        "tier": "S",
+        "metaScore": 60.3
+      },
+      "minotaur": {
+        "picks": 197,
+        "wins": 88,
+        "losses": 109,
+        "bans": 101,
+        "totalPickBans": 298,
+        "winRate": 44.67,
+        "pickRate": 26.6,
+        "banRate": 13.4,
+        "presenceRate": 40,
+        "tier": "S",
+        "metaScore": 51.1
+      },
+      "obsidia": {
+        "picks": 199,
+        "wins": 104,
+        "losses": 95,
+        "bans": 105,
+        "totalPickBans": 304,
+        "winRate": 52.26,
+        "pickRate": 25.5,
+        "banRate": 13.7,
+        "presenceRate": 39.1,
+        "tier": "A",
+        "metaScore": 53
       },
       "alice": {
-        "picks": 179,
-        "wins": 83,
-        "losses": 96,
-        "bans": 132,
-        "totalPickBans": 311,
-        "winRate": 46.1,
-        "pickRate": 19,
-        "banRate": 14,
-        "presenceRate": 33,
-        "tier": "B",
-        "metaScore": 49.7
+        "picks": 159,
+        "wins": 74,
+        "losses": 85,
+        "bans": 122,
+        "totalPickBans": 281,
+        "winRate": 46.54,
+        "pickRate": 20.1,
+        "banRate": 15.6,
+        "presenceRate": 35.7,
+        "tier": "A",
+        "metaScore": 48.1
       },
       "mathilda": {
-        "picks": 93,
-        "wins": 49,
-        "losses": 44,
-        "bans": 186,
-        "totalPickBans": 279,
-        "winRate": 53.5,
-        "pickRate": 9.9,
-        "banRate": 19.7,
-        "presenceRate": 29.6,
-        "tier": "B",
-        "metaScore": 52.2
+        "picks": 84,
+        "wins": 45,
+        "losses": 39,
+        "bans": 162,
+        "totalPickBans": 246,
+        "winRate": 53.57,
+        "pickRate": 11.2,
+        "banRate": 21.2,
+        "presenceRate": 32.4,
+        "tier": "A",
+        "metaScore": 52.7
       },
       "lylia": {
         "picks": 106,
-        "wins": 46,
-        "losses": 60,
-        "bans": 117,
-        "totalPickBans": 223,
-        "winRate": 42.6,
-        "pickRate": 11.2,
-        "banRate": 12.4,
-        "presenceRate": 23.6,
-        "tier": "B",
-        "metaScore": 40.3
-      },
-      "harley": {
-        "picks": 107,
-        "wins": 55,
-        "losses": 52,
-        "bans": 106,
-        "totalPickBans": 213,
-        "winRate": 52.1,
-        "pickRate": 11.4,
-        "banRate": 11.2,
-        "presenceRate": 22.6,
-        "tier": "B",
-        "metaScore": 42.6
-      },
-      "kimmy": {
-        "picks": 139,
-        "wins": 68,
-        "losses": 71,
-        "bans": 65,
-        "totalPickBans": 204,
-        "winRate": 48.7,
-        "pickRate": 14.8,
-        "banRate": 6.9,
-        "presenceRate": 21.6,
-        "tier": "B",
-        "metaScore": 40.6
-      },
-      "miya": {
-        "picks": 124,
-        "wins": 67,
-        "losses": 57,
-        "bans": 73,
-        "totalPickBans": 197,
-        "winRate": 54.7,
+        "wins": 47,
+        "losses": 59,
+        "bans": 126,
+        "totalPickBans": 232,
+        "winRate": 44.34,
         "pickRate": 13.2,
-        "banRate": 7.7,
-        "presenceRate": 20.9,
-        "tier": "B",
-        "metaScore": 42
-      },
-      "kalea": {
-        "picks": 84,
-        "wins": 44,
-        "losses": 40,
-        "bans": 112,
-        "totalPickBans": 196,
-        "winRate": 52.6,
-        "pickRate": 8.9,
-        "banRate": 11.9,
-        "presenceRate": 20.8,
-        "tier": "B",
-        "metaScore": 41.1
-      },
-      "cici": {
-        "picks": 138,
-        "wins": 59,
-        "losses": 79,
-        "bans": 55,
-        "totalPickBans": 193,
-        "winRate": 42.4,
-        "pickRate": 14.7,
-        "banRate": 5.8,
-        "presenceRate": 20.5,
-        "tier": "B",
-        "metaScore": 37.3
-      },
-      "clint": {
-        "picks": 123,
-        "wins": 74,
-        "losses": 49,
-        "bans": 62,
-        "totalPickBans": 185,
-        "winRate": 62.3,
-        "pickRate": 13.1,
-        "banRate": 6.6,
-        "presenceRate": 19.7,
-        "tier": "B",
-        "metaScore": 43.3
-      },
-      "moskov": {
-        "picks": 132,
-        "wins": 65,
-        "losses": 67,
-        "bans": 54,
-        "totalPickBans": 186,
-        "winRate": 49.1,
-        "pickRate": 14,
-        "banRate": 5.7,
-        "presenceRate": 19.6,
-        "tier": "B",
-        "metaScore": 38.9
-      },
-      "yve": {
-        "picks": 98,
-        "wins": 68,
-        "losses": 30,
-        "bans": 87,
-        "totalPickBans": 185,
-        "winRate": 77.4,
-        "pickRate": 10.4,
-        "banRate": 9.2,
-        "presenceRate": 19.5,
-        "tier": "B",
-        "metaScore": 46.7
+        "banRate": 16.2,
+        "presenceRate": 29.4,
+        "tier": "A",
+        "metaScore": 42.1
       },
       "gatotkaca": {
-        "picks": 133,
-        "wins": 52,
-        "losses": 81,
-        "bans": 32,
-        "totalPickBans": 165,
-        "winRate": 38.4,
-        "pickRate": 14.1,
-        "banRate": 3.4,
-        "presenceRate": 17.5,
-        "tier": "B",
-        "metaScore": 33.3
+        "picks": 157,
+        "wins": 62,
+        "losses": 95,
+        "bans": 45,
+        "totalPickBans": 202,
+        "winRate": 39.49,
+        "pickRate": 22.1,
+        "banRate": 6.3,
+        "presenceRate": 28.4,
+        "tier": "A",
+        "metaScore": 39.5
+      },
+      "moskov": {
+        "picks": 153,
+        "wins": 77,
+        "losses": 76,
+        "bans": 61,
+        "totalPickBans": 214,
+        "winRate": 50.33,
+        "pickRate": 20,
+        "banRate": 8.1,
+        "presenceRate": 28.2,
+        "tier": "A",
+        "metaScore": 43.1
+      },
+      "cici": {
+        "picks": 146,
+        "wins": 63,
+        "losses": 83,
+        "bans": 62,
+        "totalPickBans": 208,
+        "winRate": 43.15,
+        "pickRate": 19.5,
+        "banRate": 8.3,
+        "presenceRate": 27.8,
+        "tier": "A",
+        "metaScore": 40.3
       },
       "brody": {
-        "picks": 94,
-        "wins": 38,
-        "losses": 56,
-        "bans": 71,
-        "totalPickBans": 165,
-        "winRate": 39.4,
-        "pickRate": 10,
-        "banRate": 7.5,
-        "presenceRate": 17.5,
-        "tier": "B",
-        "metaScore": 33.8
-      },
-      "lukas": {
-        "picks": 70,
-        "wins": 40,
-        "losses": 30,
-        "bans": 75,
-        "totalPickBans": 145,
-        "winRate": 58,
-        "pickRate": 7.4,
-        "banRate": 8,
-        "presenceRate": 15.4,
-        "tier": "C",
-        "metaScore": 38
-      },
-      "zetian": {
-        "picks": 85,
+        "picks": 115,
         "wins": 46,
-        "losses": 39,
-        "bans": 46,
-        "totalPickBans": 131,
-        "winRate": 54.4,
-        "pickRate": 9,
-        "banRate": 4.9,
-        "presenceRate": 13.9,
-        "tier": "C",
-        "metaScore": 35.7
+        "losses": 69,
+        "bans": 103,
+        "totalPickBans": 218,
+        "winRate": 40,
+        "pickRate": 14.8,
+        "banRate": 12.9,
+        "presenceRate": 27.8,
+        "tier": "A",
+        "metaScore": 39.2
       },
-      "ruby": {
-        "picks": 72,
-        "wins": 39,
-        "losses": 33,
-        "bans": 56,
-        "totalPickBans": 128,
-        "winRate": 54.5,
-        "pickRate": 7.6,
-        "banRate": 5.9,
-        "presenceRate": 13.5,
-        "tier": "C",
-        "metaScore": 35.3
+      "kalea": {
+        "picks": 79,
+        "wins": 41,
+        "losses": 38,
+        "bans": 93,
+        "totalPickBans": 172,
+        "winRate": 51.9,
+        "pickRate": 12.2,
+        "banRate": 14,
+        "presenceRate": 26.2,
+        "tier": "A",
+        "metaScore": 41.9
       },
-      "cecilion": {
-        "picks": 75,
-        "wins": 42,
-        "losses": 33,
-        "bans": 47,
-        "totalPickBans": 122,
-        "winRate": 57.4,
-        "pickRate": 8,
-        "banRate": 5,
-        "presenceRate": 13,
-        "tier": "C",
-        "metaScore": 35.7
-      },
-      "suyou": {
-        "picks": 105,
+      "harley": {
+        "picks": 93,
         "wins": 50,
-        "losses": 55,
-        "bans": 15,
-        "totalPickBans": 120,
-        "winRate": 46.8,
-        "pickRate": 11.1,
-        "banRate": 1.6,
-        "presenceRate": 12.7,
-        "tier": "C",
-        "metaScore": 32.1
+        "losses": 43,
+        "bans": 88,
+        "totalPickBans": 181,
+        "winRate": 53.76,
+        "pickRate": 13.1,
+        "banRate": 12.6,
+        "presenceRate": 25.7,
+        "tier": "A",
+        "metaScore": 44.2
       },
-      "novaria": {
-        "picks": 66,
-        "wins": 29,
-        "losses": 37,
-        "bans": 52,
-        "totalPickBans": 118,
-        "winRate": 42.9,
-        "pickRate": 7,
-        "banRate": 5.5,
-        "presenceRate": 12.5,
-        "tier": "C",
-        "metaScore": 30.6
-      },
-      "arlott": {
-        "picks": 41,
-        "wins": 23,
-        "losses": 18,
-        "bans": 73,
-        "totalPickBans": 114,
-        "winRate": 57.1,
-        "pickRate": 4.3,
-        "banRate": 7.8,
-        "presenceRate": 12.1,
-        "tier": "C",
-        "metaScore": 37.5
-      },
-      "bruno": {
-        "picks": 60,
-        "wins": 30,
-        "losses": 30,
-        "bans": 21,
-        "totalPickBans": 81,
-        "winRate": 50.9,
-        "pickRate": 6.4,
-        "banRate": 2.2,
-        "presenceRate": 8.7,
-        "tier": "C",
-        "metaScore": 29.9
-      },
-      "hylos": {
-        "picks": 62,
-        "wins": 28,
-        "losses": 34,
-        "bans": 13,
-        "totalPickBans": 75,
-        "winRate": 43.8,
-        "pickRate": 6.6,
-        "banRate": 1.4,
-        "presenceRate": 8,
-        "tier": "C",
-        "metaScore": 27
-      },
-      "phoveus": {
-        "picks": 28,
-        "wins": 12,
-        "losses": 16,
-        "bans": 39,
-        "totalPickBans": 67,
-        "winRate": 42.9,
-        "pickRate": 3,
-        "banRate": 4.1,
-        "presenceRate": 7.1,
-        "tier": "C",
-        "metaScore": 26.1
-      },
-      "leomord": {
-        "picks": 46,
-        "wins": 29,
-        "losses": 17,
-        "bans": 18,
-        "totalPickBans": 64,
-        "winRate": 70,
-        "pickRate": 4.9,
-        "banRate": 1.9,
-        "presenceRate": 6.9,
-        "tier": "C",
-        "metaScore": 32.8
-      },
-      "hilda": {
-        "picks": 28,
-        "wins": 18,
-        "losses": 10,
-        "bans": 36,
-        "totalPickBans": 64,
-        "winRate": 73.3,
-        "pickRate": 3,
-        "banRate": 3.8,
-        "presenceRate": 6.8,
-        "tier": "C",
-        "metaScore": 32.9
-      },
-      "yu zhong": {
-        "picks": 29,
-        "wins": 15,
-        "losses": 14,
-        "bans": 30,
-        "totalPickBans": 59,
-        "winRate": 54.5,
-        "pickRate": 3.1,
-        "banRate": 3.2,
-        "presenceRate": 6.3,
-        "tier": "C",
-        "metaScore": 28.6
-      },
-      "dyrroth": {
-        "picks": 24,
-        "wins": 11,
-        "losses": 13,
-        "bans": 29,
-        "totalPickBans": 53,
-        "winRate": 47.1,
-        "pickRate": 2.6,
-        "banRate": 3.1,
-        "presenceRate": 5.8,
-        "tier": "C",
-        "metaScore": 26.3
+      "kimmy": {
+        "picks": 126,
+        "wins": 62,
+        "losses": 64,
+        "bans": 59,
+        "totalPickBans": 185,
+        "winRate": 49.21,
+        "pickRate": 16.1,
+        "banRate": 7.6,
+        "presenceRate": 23.7,
+        "tier": "A",
+        "metaScore": 38.9
       },
       "chou": {
-        "picks": 35,
-        "wins": 15,
-        "losses": 20,
-        "bans": 18,
-        "totalPickBans": 53,
-        "winRate": 41,
-        "pickRate": 3.7,
-        "banRate": 1.9,
-        "presenceRate": 5.7,
-        "tier": "C",
-        "metaScore": 24.2
+        "picks": 89,
+        "wins": 36,
+        "losses": 53,
+        "bans": 57,
+        "totalPickBans": 146,
+        "winRate": 40.45,
+        "pickRate": 14,
+        "banRate": 8.9,
+        "presenceRate": 22.9,
+        "tier": "A",
+        "metaScore": 35.3
       },
-      "badang": {
-        "picks": 28,
-        "wins": 13,
-        "losses": 15,
-        "bans": 19,
-        "totalPickBans": 47,
-        "winRate": 47.6,
-        "pickRate": 3,
-        "banRate": 2,
-        "presenceRate": 5.1,
-        "tier": "C",
-        "metaScore": 25.8
-      },
-      "pharsa": {
-        "picks": 38,
+      "phoveus": {
+        "picks": 52,
         "wins": 21,
-        "losses": 17,
-        "bans": 9,
-        "totalPickBans": 47,
-        "winRate": 59.1,
-        "pickRate": 4,
-        "banRate": 1,
-        "presenceRate": 5,
-        "tier": "C",
+        "losses": 31,
+        "bans": 99,
+        "totalPickBans": 151,
+        "winRate": 40.38,
+        "pickRate": 8.3,
+        "banRate": 14.2,
+        "presenceRate": 22.5,
+        "tier": "A",
+        "metaScore": 35.2
+      },
+      "miya": {
+        "picks": 95,
+        "wins": 52,
+        "losses": 43,
+        "bans": 53,
+        "totalPickBans": 148,
+        "winRate": 54.74,
+        "pickRate": 13.8,
+        "banRate": 7.6,
+        "presenceRate": 21.4,
+        "tier": "A",
+        "metaScore": 41.4
+      },
+      "yve": {
+        "picks": 51,
+        "wins": 33,
+        "losses": 18,
+        "bans": 25,
+        "totalPickBans": 76,
+        "winRate": 64.71,
+        "pickRate": 13.3,
+        "banRate": 6.8,
+        "presenceRate": 20.1,
+        "tier": "A",
+        "metaScore": 48.5
+      },
+      "clint": {
+        "picks": 72,
+        "wins": 43,
+        "losses": 29,
+        "bans": 33,
+        "totalPickBans": 105,
+        "winRate": 59.72,
+        "pickRate": 13.7,
+        "banRate": 6.4,
+        "presenceRate": 20.1,
+        "tier": "A",
+        "metaScore": 44.5
+      },
+      "arlott": {
+        "picks": 42,
+        "wins": 23,
+        "losses": 19,
+        "bans": 76,
+        "totalPickBans": 118,
+        "winRate": 54.76,
+        "pickRate": 7.2,
+        "banRate": 12.7,
+        "presenceRate": 19.9,
+        "tier": "A",
+        "metaScore": 39.9
+      },
+      "novaria": {
+        "picks": 84,
+        "wins": 36,
+        "losses": 48,
+        "bans": 73,
+        "totalPickBans": 157,
+        "winRate": 42.86,
+        "pickRate": 10.5,
+        "banRate": 9.1,
+        "presenceRate": 19.6,
+        "tier": "A",
+        "metaScore": 33.3
+      },
+      "suyou": {
+        "picks": 122,
+        "wins": 54,
+        "losses": 68,
+        "bans": 19,
+        "totalPickBans": 141,
+        "winRate": 44.26,
+        "pickRate": 16.1,
+        "banRate": 2.6,
+        "presenceRate": 18.7,
+        "tier": "A",
+        "metaScore": 33
+      },
+      "hylos": {
+        "picks": 98,
+        "wins": 41,
+        "losses": 57,
+        "bans": 19,
+        "totalPickBans": 117,
+        "winRate": 41.84,
+        "pickRate": 14.5,
+        "banRate": 2.7,
+        "presenceRate": 17.2,
+        "tier": "A",
+        "metaScore": 30.9
+      },
+      "ruby": {
+        "picks": 65,
+        "wins": 37,
+        "losses": 28,
+        "bans": 41,
+        "totalPickBans": 106,
+        "winRate": 56.92,
+        "pickRate": 10.2,
+        "banRate": 6.9,
+        "presenceRate": 17.1,
+        "tier": "A",
+        "metaScore": 39.5
+      },
+      "lukas": {
+        "picks": 51,
+        "wins": 29,
+        "losses": 22,
+        "bans": 50,
+        "totalPickBans": 101,
+        "winRate": 56.86,
+        "pickRate": 8.4,
+        "banRate": 8.6,
+        "presenceRate": 17,
+        "tier": "A",
+        "metaScore": 39.3
+      },
+      "harith": {
+        "picks": 58,
+        "wins": 28,
+        "losses": 30,
+        "bans": 34,
+        "totalPickBans": 92,
+        "winRate": 48.28,
+        "pickRate": 10.3,
+        "banRate": 6.1,
+        "presenceRate": 16.4,
+        "tier": "A",
+        "metaScore": 32.4
+      },
+      "sora": {
+        "picks": 66,
+        "wins": 23,
+        "losses": 43,
+        "bans": 38,
+        "totalPickBans": 104,
+        "winRate": 34.85,
+        "pickRate": 10.2,
+        "banRate": 5.8,
+        "presenceRate": 16,
+        "tier": "A",
+        "metaScore": 27.9
+      },
+      "yi sun-shin": {
+        "picks": 60,
+        "wins": 22,
+        "losses": 38,
+        "bans": 41,
+        "totalPickBans": 101,
+        "winRate": 36.67,
+        "pickRate": 8.6,
+        "banRate": 5.7,
+        "presenceRate": 14.2,
+        "tier": "B",
+        "metaScore": 27
+      },
+      "zetian": {
+        "picks": 74,
+        "wins": 37,
+        "losses": 37,
+        "bans": 38,
+        "totalPickBans": 112,
+        "winRate": 50,
+        "pickRate": 9.3,
+        "banRate": 4.9,
+        "presenceRate": 14.1,
+        "tier": "B",
+        "metaScore": 31
+      },
+      "cecilion": {
+        "picks": 47,
+        "wins": 27,
+        "losses": 20,
+        "bans": 27,
+        "totalPickBans": 74,
+        "winRate": 57.45,
+        "pickRate": 8.8,
+        "banRate": 5.2,
+        "presenceRate": 14,
+        "tier": "B",
+        "metaScore": 37.2
+      },
+      "yu zhong": {
+        "picks": 34,
+        "wins": 19,
+        "losses": 15,
+        "bans": 35,
+        "totalPickBans": 69,
+        "winRate": 55.88,
+        "pickRate": 6.9,
+        "banRate": 6.7,
+        "presenceRate": 13.6,
+        "tier": "B",
+        "metaScore": 35.4
+      },
+      "bruno": {
+        "picks": 61,
+        "wins": 30,
+        "losses": 31,
+        "bans": 21,
+        "totalPickBans": 82,
+        "winRate": 49.18,
+        "pickRate": 8.6,
+        "banRate": 3,
+        "presenceRate": 11.6,
+        "tier": "B",
         "metaScore": 28.6
       },
-      "hanabi": {
+      "lapu-lapu": {
+        "picks": 22,
+        "wins": 14,
+        "losses": 8,
+        "bans": 10,
+        "totalPickBans": 32,
+        "winRate": 63.64,
+        "pickRate": 8,
+        "banRate": 3.5,
+        "presenceRate": 11.5,
+        "tier": "B",
+        "metaScore": 39.4
+      },
+      "leomord": {
+        "picks": 20,
+        "wins": 14,
+        "losses": 6,
+        "bans": 5,
+        "totalPickBans": 25,
+        "winRate": 70,
+        "pickRate": 8.8,
+        "banRate": 2.5,
+        "presenceRate": 11.3,
+        "tier": "B",
+        "metaScore": 44.1
+      },
+      "dyrroth": {
+        "picks": 38,
+        "wins": 18,
+        "losses": 20,
+        "bans": 47,
+        "totalPickBans": 85,
+        "winRate": 47.37,
+        "pickRate": 5,
+        "banRate": 6.2,
+        "presenceRate": 11.2,
+        "tier": "B",
+        "metaScore": 27.8
+      },
+      "guinevere": {
         "picks": 20,
         "wins": 11,
         "losses": 9,
-        "bans": 26,
-        "totalPickBans": 46,
-        "winRate": 57.9,
-        "pickRate": 2.1,
-        "banRate": 2.8,
-        "presenceRate": 4.9,
-        "tier": "C",
-        "metaScore": 28.1
+        "bans": 30,
+        "totalPickBans": 50,
+        "winRate": 55,
+        "pickRate": 4.4,
+        "banRate": 6.5,
+        "presenceRate": 10.9,
+        "tier": "B",
+        "metaScore": 32.1
       },
-      "harith": {
-        "picks": 24,
+      "ling": {
+        "picks": 31,
+        "wins": 14,
+        "losses": 17,
+        "bans": 25,
+        "totalPickBans": 56,
+        "winRate": 45.16,
+        "pickRate": 6,
+        "banRate": 4.8,
+        "presenceRate": 10.8,
+        "tier": "B",
+        "metaScore": 26.9
+      },
+      "badang": {
+        "picks": 51,
+        "wins": 24,
+        "losses": 27,
+        "bans": 34,
+        "totalPickBans": 85,
+        "winRate": 47.06,
+        "pickRate": 6.3,
+        "banRate": 4.4,
+        "presenceRate": 10.7,
+        "tier": "B",
+        "metaScore": 27.2
+      },
+      "hanabi": {
+        "picks": 20,
         "wins": 12,
-        "losses": 12,
-        "bans": 14,
-        "totalPickBans": 38,
-        "winRate": 48,
-        "pickRate": 2.5,
-        "banRate": 1.5,
-        "presenceRate": 4,
-        "tier": "C",
+        "losses": 8,
+        "bans": 25,
+        "totalPickBans": 45,
+        "winRate": 60,
+        "pickRate": 4.3,
+        "banRate": 5.7,
+        "presenceRate": 10,
+        "tier": "B",
+        "metaScore": 35.2
+      },
+      "baxia": {
+        "picks": 17,
+        "wins": 7,
+        "losses": 10,
+        "bans": 27,
+        "totalPickBans": 44,
+        "winRate": 41.18,
+        "pickRate": 3.7,
+        "banRate": 5.5,
+        "presenceRate": 9.2,
+        "tier": "B",
         "metaScore": 25
       },
-      "valir": {
-        "picks": 21,
+      "akai": {
+        "picks": 23,
         "wins": 11,
-        "losses": 10,
-        "bans": 12,
+        "losses": 12,
+        "bans": 16,
+        "totalPickBans": 39,
+        "winRate": 47.83,
+        "pickRate": 5.3,
+        "banRate": 3.7,
+        "presenceRate": 9,
+        "tier": "B",
+        "metaScore": 26.1
+      },
+      "hilda": {
+        "picks": 20,
+        "wins": 12,
+        "losses": 8,
+        "bans": 19,
+        "totalPickBans": 39,
+        "winRate": 60,
+        "pickRate": 4.4,
+        "banRate": 4.4,
+        "presenceRate": 8.7,
+        "tier": "B",
+        "metaScore": 34.1
+      },
+      "vexana": {
+        "picks": 26,
+        "wins": 15,
+        "losses": 11,
+        "bans": 13,
+        "totalPickBans": 39,
+        "winRate": 57.69,
+        "pickRate": 5.7,
+        "banRate": 2.9,
+        "presenceRate": 8.6,
+        "tier": "B",
+        "metaScore": 32.4
+      },
+      "karrie": {
+        "picks": 31,
+        "wins": 11,
+        "losses": 20,
+        "bans": 13,
+        "totalPickBans": 44,
+        "winRate": 35.48,
+        "pickRate": 5.8,
+        "banRate": 2.1,
+        "presenceRate": 7.9,
+        "tier": "B",
+        "metaScore": 21.9
+      },
+      "valir": {
+        "picks": 37,
+        "wins": 19,
+        "losses": 18,
+        "bans": 23,
+        "totalPickBans": 60,
+        "winRate": 51.35,
+        "pickRate": 4.9,
+        "banRate": 3,
+        "presenceRate": 7.8,
+        "tier": "B",
+        "metaScore": 26
+      },
+      "angela": {
+        "picks": 30,
+        "wins": 10,
+        "losses": 20,
+        "bans": 28,
+        "totalPickBans": 58,
+        "winRate": 33.33,
+        "pickRate": 3.9,
+        "banRate": 3.7,
+        "presenceRate": 7.7,
+        "tier": "B",
+        "metaScore": 21.2
+      },
+      "pharsa": {
+        "picks": 28,
+        "wins": 16,
+        "losses": 12,
+        "bans": 5,
         "totalPickBans": 33,
-        "winRate": 50,
-        "pickRate": 2.2,
-        "banRate": 1.3,
-        "presenceRate": 3.5,
-        "tier": "C",
-        "metaScore": 25.1
+        "winRate": 57.14,
+        "pickRate": 6.3,
+        "banRate": 1.1,
+        "presenceRate": 7.4,
+        "tier": "B",
+        "metaScore": 31
       },
       "alpha": {
         "picks": 17,
-        "wins": 9,
-        "losses": 8,
-        "bans": 7,
-        "totalPickBans": 24,
-        "winRate": 58.8,
-        "pickRate": 1.8,
-        "banRate": 0.7,
-        "presenceRate": 2.5,
-        "tier": "C",
-        "metaScore": 26.2
-      },
-      "vexana": {
-        "picks": 14,
-        "wins": 7,
+        "wins": 10,
         "losses": 7,
-        "bans": 8,
-        "totalPickBans": 22,
-        "winRate": 52.4,
-        "pickRate": 1.5,
-        "banRate": 0.8,
-        "presenceRate": 2.3,
-        "tier": "C",
-        "metaScore": 24.6
+        "bans": 6,
+        "totalPickBans": 23,
+        "winRate": 58.82,
+        "pickRate": 5.2,
+        "banRate": 1.9,
+        "presenceRate": 7.1,
+        "tier": "B",
+        "metaScore": 31.7
       },
-      "guinevere": {
-        "picks": 8,
-        "wins": 4,
-        "losses": 4,
-        "bans": 11,
-        "totalPickBans": 19,
-        "winRate": 62.5,
-        "pickRate": 0.8,
-        "banRate": 1.2,
-        "presenceRate": 1.9,
-        "tier": "C",
-        "metaScore": 28.6
+      "fredrinn": {
+        "picks": 20,
+        "wins": 8,
+        "losses": 12,
+        "bans": 15,
+        "totalPickBans": 35,
+        "winRate": 40,
+        "pickRate": 4,
+        "banRate": 3,
+        "presenceRate": 7,
+        "tier": "B",
+        "metaScore": 22.7
       },
-      "estes": {
-        "picks": 5,
-        "wins": 3,
-        "losses": 2,
-        "bans": 8,
-        "totalPickBans": 13,
-        "winRate": 60,
-        "pickRate": 0.5,
-        "banRate": 0.8,
-        "presenceRate": 1.3,
-        "tier": "C",
-        "metaScore": 27.9
-      },
-      "lapu-lapu": {
-        "picks": 8,
-        "wins": 4,
-        "losses": 4,
-        "bans": 5,
-        "totalPickBans": 13,
-        "winRate": 60,
-        "pickRate": 0.8,
-        "banRate": 0.5,
-        "presenceRate": 1.3,
-        "tier": "C",
-        "metaScore": 24.9
+      "gord": {
+        "picks": 19,
+        "wins": 9,
+        "losses": 10,
+        "bans": 9,
+        "totalPickBans": 28,
+        "winRate": 47.37,
+        "pickRate": 4.2,
+        "banRate": 2.1,
+        "presenceRate": 6.3,
+        "tier": "B",
+        "metaScore": 23.8
       },
       "kaja": {
-        "picks": 3,
-        "wins": 1,
-        "losses": 2,
-        "bans": 5,
-        "totalPickBans": 8,
-        "winRate": 40,
-        "pickRate": 0.3,
-        "banRate": 0.5,
-        "presenceRate": 0.9,
-        "tier": "C",
-        "metaScore": 23.7
+        "picks": 17,
+        "wins": 7,
+        "losses": 10,
+        "bans": 27,
+        "totalPickBans": 44,
+        "winRate": 41.18,
+        "pickRate": 2.4,
+        "banRate": 3.9,
+        "presenceRate": 6.2,
+        "tier": "B",
+        "metaScore": 22.4
       },
-      "ling": {
+      "estes": {
+        "picks": 10,
+        "wins": 6,
+        "losses": 4,
+        "bans": 15,
+        "totalPickBans": 25,
+        "winRate": 60,
+        "pickRate": 2.4,
+        "banRate": 3.5,
+        "presenceRate": 5.9,
+        "tier": "B",
+        "metaScore": 25.6
+      },
+      "chip": {
+        "picks": 9,
+        "wins": 2,
+        "losses": 7,
+        "bans": 22,
+        "totalPickBans": 31,
+        "winRate": 22.22,
+        "pickRate": 1.5,
+        "banRate": 3.8,
+        "presenceRate": 5.3,
+        "tier": "B",
+        "metaScore": 19.4
+      },
+      "khaleed": {
+        "picks": 19,
+        "wins": 10,
+        "losses": 9,
+        "bans": 4,
+        "totalPickBans": 23,
+        "winRate": 52.63,
+        "pickRate": 3.9,
+        "banRate": 0.8,
+        "presenceRate": 4.7,
+        "tier": "B",
+        "metaScore": 23.6
+      },
+      "saber": {
+        "picks": 11,
+        "wins": 6,
+        "losses": 5,
+        "bans": 8,
+        "totalPickBans": 19,
+        "winRate": 54.55,
+        "pickRate": 2.3,
+        "banRate": 1.7,
+        "presenceRate": 4,
+        "tier": "B",
+        "metaScore": 23.2
+      },
+      "hayabusa": {
+        "picks": 15,
+        "wins": 5,
+        "losses": 10,
+        "bans": 10,
+        "totalPickBans": 25,
+        "winRate": 33.33,
+        "pickRate": 2,
+        "banRate": 1.3,
+        "presenceRate": 3.3,
+        "tier": "B",
+        "metaScore": 18.5
+      },
+      "hanzo": {
+        "picks": 10,
+        "wins": 3,
+        "losses": 7,
+        "bans": 9,
+        "totalPickBans": 19,
+        "winRate": 30,
+        "pickRate": 1.4,
+        "banRate": 1.2,
+        "presenceRate": 2.6,
+        "tier": "C",
+        "metaScore": 18.1
+      },
+      "granger": {
+        "picks": 10,
+        "wins": 5,
+        "losses": 5,
+        "bans": 1,
+        "totalPickBans": 11,
+        "winRate": 50,
+        "pickRate": 2,
+        "banRate": 0.2,
+        "presenceRate": 2.1,
+        "tier": "C",
+        "metaScore": 20.8
+      },
+      "terizla": {
+        "picks": 12,
+        "wins": 5,
+        "losses": 7,
+        "bans": 3,
+        "totalPickBans": 15,
+        "winRate": 41.67,
+        "pickRate": 1.5,
+        "banRate": 0.4,
+        "presenceRate": 1.9,
+        "tier": "C",
+        "metaScore": 19.2
+      },
+      "lesley": {
         "picks": 4,
         "wins": 2,
         "losses": 2,
-        "bans": 3,
-        "totalPickBans": 7,
+        "bans": 7,
+        "totalPickBans": 11,
         "winRate": 50,
-        "pickRate": 0.4,
-        "banRate": 0.3,
-        "presenceRate": 0.7,
+        "pickRate": 0.6,
+        "banRate": 1.1,
+        "presenceRate": 1.8,
         "tier": "C",
-        "metaScore": 22.6
+        "metaScore": 20.5
       },
-      "baxia": {
-        "picks": 2,
-        "wins": 1,
-        "losses": 1,
-        "bans": 3,
-        "totalPickBans": 5,
-        "winRate": 50,
-        "pickRate": 0.2,
-        "banRate": 0.3,
-        "presenceRate": 0.5,
-        "tier": "C",
-        "metaScore": 25.4
-      },
-      "hayabusa": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 28.6,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 17.6
-      },
-      "granger": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
+      "benedetta": {
+        "picks": 10,
+        "wins": 4,
+        "losses": 6,
+        "bans": 1,
+        "totalPickBans": 11,
         "winRate": 40,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
+        "pickRate": 1.6,
+        "banRate": 0.2,
+        "presenceRate": 1.8,
         "tier": "C",
-        "metaScore": 18.2
+        "metaScore": 18.9
       },
       "aurora": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
+        "picks": 5,
+        "wins": 3,
+        "losses": 2,
+        "bans": 6,
+        "totalPickBans": 11,
+        "winRate": 60,
+        "pickRate": 0.8,
+        "banRate": 0.9,
+        "presenceRate": 1.7,
+        "tier": "C",
+        "metaScore": 21.4
+      },
+      "khufra": {
+        "picks": 9,
+        "wins": 3,
+        "losses": 6,
+        "bans": 4,
+        "totalPickBans": 13,
+        "winRate": 33.33,
+        "pickRate": 1.2,
+        "banRate": 0.5,
+        "presenceRate": 1.7,
+        "tier": "C",
+        "metaScore": 18
+      },
+      "luo yi": {
+        "picks": 7,
+        "wins": 4,
+        "losses": 3,
+        "bans": 4,
+        "totalPickBans": 11,
+        "winRate": 57.14,
+        "pickRate": 1.1,
+        "banRate": 0.5,
+        "presenceRate": 1.6,
+        "tier": "C",
+        "metaScore": 21.3
+      },
+      "lunox": {
+        "picks": 7,
+        "wins": 3,
+        "losses": 4,
+        "bans": 4,
+        "totalPickBans": 11,
+        "winRate": 42.86,
+        "pickRate": 1.1,
+        "banRate": 0.6,
+        "presenceRate": 1.6,
+        "tier": "C",
+        "metaScore": 19.4
+      },
+      "ixia": {
+        "picks": 7,
+        "wins": 6,
+        "losses": 1,
+        "bans": 2,
+        "totalPickBans": 9,
+        "winRate": 85.71,
+        "pickRate": 1.2,
+        "banRate": 0.3,
+        "presenceRate": 1.5,
+        "tier": "C",
+        "metaScore": 24.8
+      },
+      "beatrix": {
+        "picks": 6,
+        "wins": 3,
+        "losses": 3,
+        "bans": 2,
+        "totalPickBans": 8,
         "winRate": 50,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
+        "pickRate": 1.1,
+        "banRate": 0.4,
+        "presenceRate": 1.4,
+        "tier": "C",
+        "metaScore": 20.2
+      },
+      "x.borg": {
+        "picks": 4,
+        "wins": 3,
+        "losses": 1,
+        "bans": 2,
+        "totalPickBans": 6,
+        "winRate": 75,
+        "pickRate": 0.6,
+        "banRate": 0.3,
+        "presenceRate": 1,
         "tier": "C",
         "metaScore": 22
       },
-      "chip": {
-        "picks": 0,
-        "wins": 0,
+      "grock": {
+        "picks": 5,
+        "wins": 2,
+        "losses": 3,
+        "bans": 0,
+        "totalPickBans": 5,
+        "winRate": 40,
+        "pickRate": 1,
+        "banRate": 0,
+        "presenceRate": 1,
+        "tier": "C",
+        "metaScore": 18.9
+      },
+      "faramis": {
+        "picks": 5,
+        "wins": 3,
+        "losses": 2,
+        "bans": 1,
+        "totalPickBans": 6,
+        "winRate": 60,
+        "pickRate": 0.8,
+        "banRate": 0.2,
+        "presenceRate": 0.9,
+        "tier": "C",
+        "metaScore": 20.8
+      },
+      "thamuz": {
+        "picks": 3,
+        "wins": 1,
+        "losses": 2,
+        "bans": 2,
+        "totalPickBans": 5,
+        "winRate": 33.33,
+        "pickRate": 0.5,
+        "banRate": 0.3,
+        "presenceRate": 0.9,
+        "tier": "C",
+        "metaScore": 18.7
+      },
+      "kagura": {
+        "picks": 6,
+        "wins": 1,
+        "losses": 5,
+        "bans": 0,
+        "totalPickBans": 6,
+        "winRate": 16.67,
+        "pickRate": 0.8,
+        "banRate": 0,
+        "presenceRate": 0.8,
+        "tier": "C",
+        "metaScore": 15.9
+      },
+      "joy": {
+        "picks": 4,
+        "wins": 1,
+        "losses": 3,
+        "bans": 1,
+        "totalPickBans": 5,
+        "winRate": 25,
+        "pickRate": 0.6,
+        "banRate": 0.1,
+        "presenceRate": 0.7,
+        "tier": "C",
+        "metaScore": 17.5
+      },
+      "wanwan": {
+        "picks": 4,
+        "wins": 1,
+        "losses": 3,
+        "bans": 1,
+        "totalPickBans": 5,
+        "winRate": 25,
+        "pickRate": 0.6,
+        "banRate": 0.1,
+        "presenceRate": 0.7,
+        "tier": "C",
+        "metaScore": 17.5
+      },
+      "balmond": {
+        "picks": 3,
+        "wins": 3,
         "losses": 0,
         "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 14.3,
-        "pickRate": 0,
+        "totalPickBans": 3,
+        "winRate": 100,
+        "pickRate": 0.5,
         "banRate": 0,
-        "presenceRate": 0,
+        "presenceRate": 0.5,
         "tier": "C",
-        "metaScore": 20
+        "metaScore": 22.8
+      },
+      "lancelot": {
+        "picks": 4,
+        "wins": 1,
+        "losses": 3,
+        "bans": 0,
+        "totalPickBans": 4,
+        "winRate": 25,
+        "pickRate": 0.5,
+        "banRate": 0,
+        "presenceRate": 0.5,
+        "tier": "C",
+        "metaScore": 17.3
+      },
+      "odette": {
+        "picks": 2,
+        "wins": 0,
+        "losses": 2,
+        "bans": 0,
+        "totalPickBans": 2,
+        "winRate": 0,
+        "pickRate": 0.3,
+        "banRate": 0,
+        "presenceRate": 0.4,
+        "tier": "C",
+        "metaScore": 17
+      },
+      "argus": {
+        "picks": 2,
+        "wins": 0,
+        "losses": 2,
+        "bans": 0,
+        "totalPickBans": 2,
+        "winRate": 0,
+        "pickRate": 0.3,
+        "banRate": 0,
+        "presenceRate": 0.4,
+        "tier": "C",
+        "metaScore": 17
+      },
+      "kadita": {
+        "picks": 3,
+        "wins": 0,
+        "losses": 3,
+        "bans": 0,
+        "totalPickBans": 3,
+        "winRate": 0,
+        "pickRate": 0.4,
+        "banRate": 0,
+        "presenceRate": 0.4,
+        "tier": "C",
+        "metaScore": 16
+      },
+      "edith": {
+        "picks": 2,
+        "wins": 1,
+        "losses": 1,
+        "bans": 0,
+        "totalPickBans": 2,
+        "winRate": 50,
+        "pickRate": 0.3,
+        "banRate": 0,
+        "presenceRate": 0.3,
+        "tier": "C",
+        "metaScore": 19.3
+      },
+      "irithel": {
+        "picks": 2,
+        "wins": 1,
+        "losses": 1,
+        "bans": 0,
+        "totalPickBans": 2,
+        "winRate": 50,
+        "pickRate": 0.3,
+        "banRate": 0,
+        "presenceRate": 0.3,
+        "tier": "C",
+        "metaScore": 19.3
+      },
+      "roger": {
+        "picks": 1,
+        "wins": 1,
+        "losses": 0,
+        "bans": 0,
+        "totalPickBans": 1,
+        "winRate": 100,
+        "pickRate": 0.2,
+        "banRate": 0,
+        "presenceRate": 0.2,
+        "tier": "C",
+        "metaScore": 20.4
+      },
+      "tigreal": {
+        "picks": 1,
+        "wins": 0,
+        "losses": 1,
+        "bans": 0,
+        "totalPickBans": 1,
+        "winRate": 0,
+        "pickRate": 0.2,
+        "banRate": 0,
+        "presenceRate": 0.2,
+        "tier": "C",
+        "metaScore": 17.9
+      },
+      "lolita": {
+        "picks": 1,
+        "wins": 0,
+        "losses": 1,
+        "bans": 0,
+        "totalPickBans": 1,
+        "winRate": 0,
+        "pickRate": 0.2,
+        "banRate": 0,
+        "presenceRate": 0.2,
+        "tier": "C",
+        "metaScore": 17.9
+      },
+      "minsitthar": {
+        "picks": 1,
+        "wins": 0,
+        "losses": 1,
+        "bans": 0,
+        "totalPickBans": 1,
+        "winRate": 0,
+        "pickRate": 0.2,
+        "banRate": 0,
+        "presenceRate": 0.2,
+        "tier": "C",
+        "metaScore": 17.9
+      },
+      "helcurt": {
+        "picks": 1,
+        "wins": 0,
+        "losses": 1,
+        "bans": 0,
+        "totalPickBans": 1,
+        "winRate": 0,
+        "pickRate": 0.2,
+        "banRate": 0,
+        "presenceRate": 0.2,
+        "tier": "C",
+        "metaScore": 17.9
+      },
+      "xavier": {
+        "picks": 1,
+        "wins": 0,
+        "losses": 1,
+        "bans": 0,
+        "totalPickBans": 1,
+        "winRate": 0,
+        "pickRate": 0.2,
+        "banRate": 0,
+        "presenceRate": 0.2,
+        "tier": "C",
+        "metaScore": 17.9
+      },
+      "jawhead": {
+        "picks": 1,
+        "wins": 0,
+        "losses": 1,
+        "bans": 0,
+        "totalPickBans": 1,
+        "winRate": 0,
+        "pickRate": 0.2,
+        "banRate": 0,
+        "presenceRate": 0.2,
+        "tier": "C",
+        "metaScore": 17.9
       },
       "diggie": {
         "picks": 0,
@@ -8520,12 +9119,12 @@ window.TOURNAMENTS_METADATA = {
         "losses": 0,
         "bans": 0,
         "totalPickBans": 0,
-        "winRate": 50,
+        "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 22
+        "metaScore": 0
       },
       "popol and kupa": {
         "picks": 0,
@@ -8533,12 +9132,12 @@ window.TOURNAMENTS_METADATA = {
         "losses": 0,
         "bans": 0,
         "totalPickBans": 0,
-        "winRate": 50,
+        "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 22
+        "metaScore": 0
       },
       "floryn": {
         "picks": 0,
@@ -8546,12 +9145,12 @@ window.TOURNAMENTS_METADATA = {
         "losses": 0,
         "bans": 0,
         "totalPickBans": 0,
-        "winRate": 50,
+        "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 22
+        "metaScore": 0
       },
       "julian": {
         "picks": 0,
@@ -8559,38 +9158,12 @@ window.TOURNAMENTS_METADATA = {
         "losses": 0,
         "bans": 0,
         "totalPickBans": 0,
-        "winRate": 50,
+        "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 22
-      },
-      "joy": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 40,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 18.2
-      },
-      "sora": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 34.6,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 17.3
+        "metaScore": 0
       },
       "sun": {
         "picks": 0,
@@ -8598,168 +9171,12 @@ window.TOURNAMENTS_METADATA = {
         "losses": 0,
         "bans": 0,
         "totalPickBans": 0,
-        "winRate": 50,
+        "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 22
-      },
-      "angela": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 33.3,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 17.5
-      },
-      "tigreal": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 46.2,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 20.6
-      },
-      "edith": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 50,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 22
-      },
-      "karrie": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 37.5,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 19.3
-      },
-      "khufra": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 42.9,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 21
-      },
-      "roger": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 50,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 22
-      },
-      "ixia": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 83.3,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 26.2
-      },
-      "terizla": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 41.7,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 20.4
-      },
-      "lolita": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 46.2,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 20.6
-      },
-      "minsitthar": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 46.2,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 20.6
-      },
-      "helcurt": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 50,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 25
-      },
-      "luo yi": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 40,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 20.9
+        "metaScore": 0
       },
       "layla": {
         "picks": 0,
@@ -8767,12 +9184,12 @@ window.TOURNAMENTS_METADATA = {
         "losses": 0,
         "bans": 0,
         "totalPickBans": 0,
-        "winRate": 50,
+        "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 22
+        "metaScore": 0
       },
       "nana": {
         "picks": 0,
@@ -8780,38 +9197,12 @@ window.TOURNAMENTS_METADATA = {
         "losses": 0,
         "bans": 0,
         "totalPickBans": 0,
-        "winRate": 50,
+        "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 22
-      },
-      "benedetta": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 50,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 22
-      },
-      "xavier": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 46.2,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 20.6
+        "metaScore": 0
       },
       "natan": {
         "picks": 0,
@@ -8819,38 +9210,12 @@ window.TOURNAMENTS_METADATA = {
         "losses": 0,
         "bans": 0,
         "totalPickBans": 0,
-        "winRate": 50,
+        "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 22
-      },
-      "faramis": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 60,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 23.1
-      },
-      "khaleed": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 50,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 22
+        "metaScore": 0
       },
       "franco": {
         "picks": 0,
@@ -8858,90 +9223,12 @@ window.TOURNAMENTS_METADATA = {
         "losses": 0,
         "bans": 0,
         "totalPickBans": 0,
-        "winRate": 50,
+        "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 22
-      },
-      "x.borg": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 75,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 24.4
-      },
-      "odette": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 42.9,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 19.3
-      },
-      "wanwan": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 25,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 19.6
-      },
-      "fredrinn": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 25,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 19.6
-      },
-      "lunox": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 42.9,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 21
-      },
-      "lesley": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 50,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 25
+        "metaScore": 0
       },
       "aamon": {
         "picks": 0,
@@ -8949,51 +9236,12 @@ window.TOURNAMENTS_METADATA = {
         "losses": 0,
         "bans": 0,
         "totalPickBans": 0,
-        "winRate": 50,
+        "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 22
-      },
-      "beatrix": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 50,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 22
-      },
-      "kagura": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 16.7,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 17.8
-      },
-      "lancelot": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 33.3,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 20.7
+        "metaScore": 0
       },
       "gusion": {
         "picks": 0,
@@ -9001,103 +9249,12 @@ window.TOURNAMENTS_METADATA = {
         "losses": 0,
         "bans": 0,
         "totalPickBans": 0,
-        "winRate": 50,
+        "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 22
-      },
-      "akai": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 50,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 22
-      },
-      "saber": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 50,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 22
-      },
-      "argus": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 42.9,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 19.3
-      },
-      "kadita": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 40,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 18.2
-      },
-      "gord": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 50,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 22
-      },
-      "irithel": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 50,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 22
-      },
-      "yi sun-shin": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 31.8,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 16.6
+        "metaScore": 0
       },
       "bane": {
         "picks": 0,
@@ -9105,12 +9262,12 @@ window.TOURNAMENTS_METADATA = {
         "losses": 0,
         "bans": 0,
         "totalPickBans": 0,
-        "winRate": 50,
+        "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 22
+        "metaScore": 0
       },
       "zhask": {
         "picks": 0,
@@ -9118,12 +9275,12 @@ window.TOURNAMENTS_METADATA = {
         "losses": 0,
         "bans": 0,
         "totalPickBans": 0,
-        "winRate": 50,
+        "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 22
+        "metaScore": 0
       },
       "cyclops": {
         "picks": 0,
@@ -9131,25 +9288,12 @@ window.TOURNAMENTS_METADATA = {
         "losses": 0,
         "bans": 0,
         "totalPickBans": 0,
-        "winRate": 50,
+        "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 22
-      },
-      "hanzo": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 33.3,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 19.3
+        "metaScore": 0
       },
       "karina": {
         "picks": 0,
@@ -9157,12 +9301,12 @@ window.TOURNAMENTS_METADATA = {
         "losses": 0,
         "bans": 0,
         "totalPickBans": 0,
-        "winRate": 50,
+        "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 22
+        "metaScore": 0
       },
       "silvanna": {
         "picks": 0,
@@ -9170,12 +9314,12 @@ window.TOURNAMENTS_METADATA = {
         "losses": 0,
         "bans": 0,
         "totalPickBans": 0,
-        "winRate": 50,
+        "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 22
+        "metaScore": 0
       },
       "natalia": {
         "picks": 0,
@@ -9183,12 +9327,12 @@ window.TOURNAMENTS_METADATA = {
         "losses": 0,
         "bans": 0,
         "totalPickBans": 0,
-        "winRate": 50,
+        "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 22
+        "metaScore": 0
       },
       "yin": {
         "picks": 0,
@@ -9196,12 +9340,12 @@ window.TOURNAMENTS_METADATA = {
         "losses": 0,
         "bans": 0,
         "totalPickBans": 0,
-        "winRate": 50,
+        "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 22
+        "metaScore": 0
       },
       "aldous": {
         "picks": 0,
@@ -9209,25 +9353,12 @@ window.TOURNAMENTS_METADATA = {
         "losses": 0,
         "bans": 0,
         "totalPickBans": 0,
-        "winRate": 50,
+        "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 22
-      },
-      "thamuz": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 33.3,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 20.7
+        "metaScore": 0
       },
       "alucard": {
         "picks": 0,
@@ -9235,12 +9366,12 @@ window.TOURNAMENTS_METADATA = {
         "losses": 0,
         "bans": 0,
         "totalPickBans": 0,
-        "winRate": 50,
+        "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 22
+        "metaScore": 0
       },
       "vale": {
         "picks": 0,
@@ -9248,12 +9379,12 @@ window.TOURNAMENTS_METADATA = {
         "losses": 0,
         "bans": 0,
         "totalPickBans": 0,
-        "winRate": 50,
+        "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 22
+        "metaScore": 0
       },
       "martis": {
         "picks": 0,
@@ -9261,25 +9392,12 @@ window.TOURNAMENTS_METADATA = {
         "losses": 0,
         "bans": 0,
         "totalPickBans": 0,
-        "winRate": 50,
+        "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 22
-      },
-      "jawhead": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 50,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 22
+        "metaScore": 0
       },
       "johnson": {
         "picks": 0,
@@ -9287,12 +9405,12 @@ window.TOURNAMENTS_METADATA = {
         "losses": 0,
         "bans": 0,
         "totalPickBans": 0,
-        "winRate": 50,
+        "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 22
+        "metaScore": 0
       },
       "chang'e": {
         "picks": 0,
@@ -9300,38 +9418,12 @@ window.TOURNAMENTS_METADATA = {
         "losses": 0,
         "bans": 0,
         "totalPickBans": 0,
-        "winRate": 50,
+        "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 22
-      },
-      "grock": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 100,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 26.4
-      },
-      "balmond": {
-        "picks": 0,
-        "wins": 0,
-        "losses": 0,
-        "bans": 0,
-        "totalPickBans": 0,
-        "winRate": 100,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 24.7
+        "metaScore": 0
       },
       "zilong": {
         "picks": 0,
@@ -9339,12 +9431,12 @@ window.TOURNAMENTS_METADATA = {
         "losses": 0,
         "bans": 0,
         "totalPickBans": 0,
-        "winRate": 50,
+        "winRate": 0,
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 22
+        "metaScore": 0
       }
     }
   }

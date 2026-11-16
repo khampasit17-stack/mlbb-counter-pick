@@ -34,7 +34,7 @@ function isHeroContestedInActiveTournament(heroName) {
   const tData = getActiveTournamentData();
   if (!tData || !tData.stats) return true;
   const s = tData.stats[heroName.toLowerCase()];
-  return Boolean(s && (s.presenceRate >= 4.5 || s.totalPickBans >= 8));
+  return Boolean(s && s.presenceRate >= 15);
 }
 
 function getActiveTournamentSignature(heroName) {
@@ -2179,14 +2179,17 @@ function calculateRecommendations() {
       ssExtraBonus += 8; // Bonus if SS hero directly counters an enemy
     }
 
-    // Competitive Tournament Pro Meta Check (MPL-ID S18 vs MPL-PH S18)
+    // Competitive Tournament Pro Meta Check (MPL-ID S18 vs MPL-PH S18 vs MSL-TH S2 vs M8)
+    const pres = candidate.stats.presenceRate || 0;
     const isPro = PRO_COMPETITIVE_HEROES.has(candidate.name.toLowerCase());
     const hasAnyPickBan = (candidate.stats.totalPickBans || 0) > 0;
     const proBonus = state.strategyMode === 'all'
       ? 0
       : (isPro
-          ? 28 + Math.min(18, Math.round((candidate.stats.presenceRate || 0) * 0.25))
-          : (hasAnyPickBan ? -18 : -75));
+          ? 34 + Math.min(24, Math.round(pres * 0.32))
+          : (pres >= 5
+              ? -18
+              : (hasAnyPickBan ? -52 : -88)));
 
     const effectiveCounterScore = (counterScore + multiCounterBonus) * (isComboPriority ? 0.75 : 0.88);
     const totalScore = Number((effectiveCounterScore + synergyScore + metaWeight + tierBonus + ssExtraBonus + proBonus + laneBonus).toFixed(1));
@@ -3571,32 +3574,32 @@ function renderM8PredictionTab() {
   const m8Tiers = [
     {
       key: 'SS',
-      desc: '👑 M8 God Priority (80–99% Presence) • แบน 100% หรือชิง First Pick ทันที',
+      desc: '👑 M8 God Priority (60–99% Presence) • ตัวเต็งแบนเฟสแรกหรือชิง First Pick ทันที',
       bg: 'linear-gradient(135deg, #ef4444, #f59e0b)'
     },
     {
       key: 'S',
-      desc: '🔥 M8 Core Meta (56–79% Presence) • ตัวหลักเปิดดราฟต์และแบนเฟสแรกของทุกภูมิภาค',
+      desc: '🔥 M8 Core Meta (40–59% Presence) • ตัวหลักเปิดดราฟต์และแกนหลักทีมไฟต์ทุกภูมิภาค',
       bg: 'linear-gradient(135deg, #f59e0b, #eab308)'
     },
     {
       key: 'A',
-      desc: '⭐ M8 High Contested (35–55% Presence) • ตัวทำเกมและแก้ทางหลักที่เจอบ่อยในรอบ Swiss & Knockout',
+      desc: '⭐ M8 Strong Contested (15–39% Presence) • ตัวทำเกมและแก้ทางยอดนิยมในรอบ Swiss & Knockout',
       bg: 'linear-gradient(135deg, #8b5cf6, #6366f1)'
     },
     {
       key: 'B',
-      desc: '🛡️ M8 Situational & Comfort Picks (16–34% Presence) • ตัวเลือกตามแผนเฉพาะทีมหรือแบนเฟสสอง',
+      desc: '🛡️ M8 Situational & Comfort Picks (3–14% Presence) • ตัวเลือกเฉพาะแผนหรือแบนเฟสสอง',
       bg: 'linear-gradient(135deg, #0ea5e9, #2563eb)'
     },
     {
       key: 'C',
-      desc: '⚔️ M8 Pocket / Surprise Picks (4–15% Presence) • ตัวลับเฉพาะทางสำหรับแก้ดราฟต์',
+      desc: '⚔️ M8 Pocket / Surprise Picks (0.2–2.9% Presence) • ตัวลับเฉพาะทางสำหรับแก้ดราฟต์',
       bg: 'linear-gradient(135deg, #475569, #334155)'
     },
     {
       key: 'D',
-      desc: '🚫 Low Probability (<4% Presence) • โอกาสถูกหยิบหรือแบนใน M8 ต่ำมากในแพตช์ปัจจุบัน',
+      desc: '🚫 Uncontested (0% Presence) • ยังไม่ถูกหยิบหรือแบนในลีกหลักแพตช์ปัจจุบัน',
       bg: 'linear-gradient(135deg, #1e293b, #0f172a)'
     }
   ];
