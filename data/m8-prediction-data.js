@@ -1,6 +1,5 @@
 /**
- * M8 World Championship — Pick/Ban Prediction (generated 2026-11-16)
- * Model inputs (Liquipedia official statistics): MPL-PH S18 (172 games), MPL-ID S18 (215 games), MPL-MY S18 (170 games), MSL-TH S2 (135 games), MSC 2026 (113 games), M7 World (137 games)
+ * M8 World Championship — Pick/Ban Prediction + Patch 2.2.23 Adjustments (Checked 2026-11-17)
  */
 window.M8_PREDICTION = {
   "meta": {
@@ -57,6 +56,100 @@ window.M8_PREDICTION = {
         "weight": 0.15,
         "currentPatch": false
       }
+    ],
+    "patchVersion": "Patch 2.2.23 (อัปเดตตัวละครล่าสุด • ตรวจสอบ 17/11/2026)",
+    "patchAdjustments": {
+      "popol and kupa": {
+        "type": "REVAMP",
+        "badge": "♻️ รีแวมป์ใหญ่ (ขี่หมา Kupa)",
+        "deltaPres": 14.5,
+        "summary": "รีแวมป์ใหม่ยกชุด! สกิล 2 กดขี่หลัง Kupa วิ่งเร็ว+รีเลือด, พาสซีฟชุบ Kupa ได้และตีป่า True DMG, อัลติทุบงัดลอยหมู่"
+      },
+      "xavier": {
+        "type": "BUFF",
+        "badge": "⬆️ บัฟใหญ่ (S2 แรง 2 เท่า)",
+        "deltaPres": 12,
+        "summary": "ลดหน่วงร่ายสกิล 1-2 ลง 50%, ดาเมจระเบิดสกิล 2 เพิ่ม 2 เท่า (440-690 +130% MP), พาสซีฟวิ่งเร็วเพิ่มเป็น 60%"
+      },
+      "lunox": {
+        "type": "BUFF",
+        "badge": "⬆️ บัฟต้นเกม (+10% เจาะเวท/ดูดเลือด)",
+        "deltaPres": 10.5,
+        "summary": "พาสซีฟได้ดูดเลือดเวท 10% หรือเจาะเกราะเวท 10% ทันที, สกิล 2 ต้นเกมแรงขึ้น (3.5%-5% HP), อัลติมืดพุ่งไวขึ้น 50%"
+      },
+      "melissa": {
+        "type": "BUFF",
+        "badge": "⬆️ บัฟสกิล 2 + บัฟเงินเลนทอง",
+        "deltaPres": 6.5,
+        "summary": "ตุ๊กตา Muddles ส่งผ่านดาเมจเพิ่มขึ้นเป็น 50%-60% + ได้อานิสงส์รถถัง Gold Lane เพิ่มทองเป็น +60%"
+      },
+      "kaja": {
+        "type": "BUFF",
+        "badge": "⬆️ บัฟอัลติขังทะลุอมตะ CC",
+        "deltaPres": 9.5,
+        "summary": "อัลติ Divine Binding ปรับใหม่: ศัตรูที่มีสถานะอมตะ CC (Control Immunity) ไม่สามารถหนีออกจากวงอัลติได้ + บิน Soaring นานขึ้น"
+      },
+      "aldous": {
+        "type": "BUFF",
+        "badge": "⬆️ บัฟเกราะลดดาเมจ 55%",
+        "deltaPres": 5.5,
+        "summary": "สกิล 2 ลดคูลดาวน์เหลือ 8 วินาทีทุกเลเวล และเพิ่มลดดาเมจ (Damage Reduction) สูงสุดถึง 55% (จากเดิม 30%)"
+      },
+      "freya": {
+        "type": "ADJUST",
+        "badge": "⚖️ ปรับพาสซีฟฮีล + อัลติวิ่งเร็ว",
+        "deltaPres": 0,
+        "summary": "พาสซีฟใช้ลูกแก้วตีดูดเลือดได้ตลอดเวลา + อัลติได้วิ่งเร็ว +30 MS และดาเมจพื้นฐานสูงขึ้น (แลกกับคูลดาวน์อัลตินานขึ้น 60-44s)"
+      },
+      "lukas": {
+        "type": "ADJUST",
+        "badge": "⬆️ ปรับไฟต์เตอร์ถึกขึ้น (ฮีล 8% HP)",
+        "deltaPres": 5,
+        "summary": "เพิ่มเลือดและเกราะพื้นฐาน, สกิล 1 ดาเมจพื้นฐานพุ่งเป็น 400-800 และฮีลเพิ่มจาก 6% เป็น 8% Max HP (ลดสเกล AD ลงเน้นออกกึ่งแทงค์)"
+      },
+      "karrie": {
+        "type": "ADJUST",
+        "badge": "⬆️ บัฟอัลติวิ่งเร็ว 30% + แรงขึ้น",
+        "deltaPres": 6,
+        "summary": "อัลติเพิ่มดาเมจพื้นฐานวงล้อ (40 -> 50) และเพิ่มความเร็วเคลื่อนที่ขณะเปิดอัลติ (20% -> 30%) + รถถังเลนทองรวยไวขึ้น"
+      },
+      "uranus": {
+        "type": "ADJUST",
+        "badge": "⚖️ ปรับตีปกติกระจายเป็นเวท",
+        "deltaPres": -1.5,
+        "summary": "เปลี่ยนดาเมจกระจายของการโจมตีปกติเป็นดาเมจเวท + รูน Concussive Blast โดนเนิร์ฟเคลียร์มินเนี่ยนลดลง 50%"
+      },
+      "kagura": {
+        "type": "ADJUST",
+        "badge": "⚖️ ปรับระยะแสดงผลร่ม",
+        "deltaPres": 1.5,
+        "summary": "ปรับปรุงเส้นแสดงระยะห่างสูงสุดของร่ม Seimei ให้ควบคุมจังหวะคอมโบแม่นยำขึ้น"
+      },
+      "gloo": {
+        "type": "NERF",
+        "badge": "⬇️ เนิร์ฟสกิล 1 & อัลติส่งดาเมจลดลง",
+        "deltaPres": -5.5,
+        "summary": "สกิล 1 ล็อกขาสั้นลง (0.8s -> 0.6s) ดาเมจลดลง และอัลติลดการส่งผ่านดาเมจขณะเกาะร่างจาก 80% เหลือ 60%"
+      },
+      "masha": {
+        "type": "NERF",
+        "badge": "⬇️ เนิร์ฟดาเมจแผล & ฮีลลดลง",
+        "deltaPres": -5,
+        "summary": "ลดดาเมจทำลายแผลและลดฟื้นฟูเลือดพาสซีฟ (4-10% -> 3-6% HP), ลดโบนัสดาเมจสกิล 1-2 แต่เพิ่มดาเมจตีมินเนี่ยนให้กลับไปยืน EXP"
+      },
+      "atlas": {
+        "type": "NERF",
+        "badge": "⬇️ เนิร์ฟพาสซีฟแช่แข็งนานขึ้น",
+        "deltaPres": -3.5,
+        "summary": "พาสซีฟ Frigid Breath ระยะเวลาสั้นลง (5s -> 4s) และคูลดาวน์แช่แข็งนานขึ้น (2.5s -> 4s) ชดเชยด้วยโบนัสเกราะเพิ่มเป็น +0.7% Extra HP"
+      }
+    },
+    "battlefieldNotes": [
+      "⚡ Battle Spell Sprint (บัฟใหญ่ ⬆️): ลดคูลดาวน์จาก 100 วินาที -> 75 วินาที (เมจและแครี่ขาตายหยิบใช้หนีสโลว์ได้บ่อยขึ้นมาก)",
+      "🛡️ ไอเทม Antique Cuirass (บัฟ ⬆️): ลดดาเมจกายภาพศัตรูเพิ่มจาก 6% -> 8% ต่อสแต็ก (ซ้อนทับ 3 ครั้ง ลดดาเมจกายภาพสูงสุด 24% จากเดิม 18%)",
+      "❄️ ไอเทม Chastise Pauldron / Dominance Ice (เนิร์ฟ ⬇️): ลดความเร็วโจมตีศัตรูจากเหลือ 75% -> 80%",
+      "🪙 รถถังเลนทอง Gold Lane Siege Minion (บัฟ ⬆️): เพิ่มโบนัสทองต้นเกมจาก 40% -> 60% ดันแครี่สาย Marksman กลับสู่เมต้าหลัก",
+      "💥 รูนแทงค์ Concussive Blast (ปรับสมดุล ⚖️): ดาเมจใส่ฮีโร่เพิ่มเป็น +8% HP แต่ทำดาเมจใส่มินเนี่ยนลดลง 50% เพื่อลดเมต้าแทงค์โรมไปแย่งยืน EXP Lane"
     ]
   },
   "heroes": [
@@ -148,7 +241,13 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 1
+      "rank": 1,
+      "patchChange": {
+        "type": "ADJUST",
+        "badge": "⚖️ ปรับพาสซีฟฮีล + อัลติวิ่งเร็ว",
+        "deltaPres": 0,
+        "summary": "พาสซีฟใช้ลูกแก้วตีดูดเลือดได้ตลอดเวลา + อัลติได้วิ่งเร็ว +30 MS และดาเมจพื้นฐานสูงขึ้น (แลกกับคูลดาวน์อัลตินานขึ้น 60-44s)"
+      }
     },
     {
       "name": "Atlas",
@@ -156,9 +255,9 @@ window.M8_PREDICTION = {
       "tier": "SS",
       "action": "BAN",
       "confidence": "สูงมาก",
-      "presence": 99.2,
-      "ban": 74,
-      "pick": 25.2,
+      "presence": 95.7,
+      "ban": 71.4,
+      "pick": 24.3,
       "winRate": 56.22,
       "winRateAdj": 55.8,
       "currentPicks": 201,
@@ -238,7 +337,13 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 2
+      "rank": 2,
+      "patchChange": {
+        "type": "NERF",
+        "badge": "⬇️ เนิร์ฟพาสซีฟแช่แข็งนานขึ้น",
+        "deltaPres": -3.5,
+        "summary": "พาสซีฟ Frigid Breath ระยะเวลาสั้นลง (5s -> 4s) และคูลดาวน์แช่แข็งนานขึ้น (2.5s -> 4s) ชดเชยด้วยโบนัสเกราะเพิ่มเป็น +0.7% Extra HP"
+      }
     },
     {
       "name": "Hirara",
@@ -328,7 +433,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 3
+      "rank": 3,
+      "patchChange": null
     },
     {
       "name": "Marcel",
@@ -418,7 +524,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 4
+      "rank": 4,
+      "patchChange": null
     },
     {
       "name": "Paquito",
@@ -508,97 +615,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 5
-    },
-    {
-      "name": "Uranus",
-      "key": "uranus",
-      "tier": "SS",
-      "action": "FLEX",
-      "confidence": "สูงมาก",
-      "presence": 69.8,
-      "ban": 38,
-      "pick": 31.8,
-      "winRate": 50.86,
-      "winRateAdj": 50.8,
-      "currentPicks": 232,
-      "regionsContested": 5,
-      "regionsTotal": 5,
-      "sources": [
-        {
-          "src": "mpl-ph",
-          "label": "MPL-PH S18",
-          "flag": "🇵🇭",
-          "presence": 66.3,
-          "ban": 41.9,
-          "pick": 24.4,
-          "picks": 42,
-          "wins": 21,
-          "bans": 72,
-          "games": 172
-        },
-        {
-          "src": "mpl-id",
-          "label": "MPL-ID S18",
-          "flag": "🇮🇩",
-          "presence": 54,
-          "ban": 27.9,
-          "pick": 26,
-          "picks": 56,
-          "wins": 25,
-          "bans": 60,
-          "games": 215
-        },
-        {
-          "src": "mpl-my",
-          "label": "MPL-MY S18",
-          "flag": "🇲🇾",
-          "presence": 74.1,
-          "ban": 37.1,
-          "pick": 37.1,
-          "picks": 63,
-          "wins": 35,
-          "bans": 63,
-          "games": 170
-        },
-        {
-          "src": "msl-th",
-          "label": "MSL-TH S2",
-          "flag": "🇹🇭",
-          "presence": 60.7,
-          "ban": 36.3,
-          "pick": 24.4,
-          "picks": 33,
-          "wins": 17,
-          "bans": 49,
-          "games": 135
-        },
-        {
-          "src": "msc-2026",
-          "label": "MSC 2026",
-          "flag": "🌍",
-          "presence": 55.8,
-          "ban": 22.1,
-          "pick": 33.6,
-          "picks": 38,
-          "wins": 20,
-          "bans": 25,
-          "games": 113
-        },
-        {
-          "src": "m7",
-          "label": "M7 World",
-          "flag": "🏆",
-          "presence": 62,
-          "ban": 33.6,
-          "pick": 28.5,
-          "picks": 39,
-          "wins": 19,
-          "bans": 46,
-          "games": 137
-        }
-      ],
-      "rank": 6
+      "rank": 5,
+      "patchChange": null
     },
     {
       "name": "Fanny",
@@ -688,7 +706,104 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 7
+      "rank": 6,
+      "patchChange": null
+    },
+    {
+      "name": "Uranus",
+      "key": "uranus",
+      "tier": "SS",
+      "action": "FLEX",
+      "confidence": "สูงมาก",
+      "presence": 68.3,
+      "ban": 37.2,
+      "pick": 31.1,
+      "winRate": 50.86,
+      "winRateAdj": 50.8,
+      "currentPicks": 232,
+      "regionsContested": 5,
+      "regionsTotal": 5,
+      "sources": [
+        {
+          "src": "mpl-ph",
+          "label": "MPL-PH S18",
+          "flag": "🇵🇭",
+          "presence": 66.3,
+          "ban": 41.9,
+          "pick": 24.4,
+          "picks": 42,
+          "wins": 21,
+          "bans": 72,
+          "games": 172
+        },
+        {
+          "src": "mpl-id",
+          "label": "MPL-ID S18",
+          "flag": "🇮🇩",
+          "presence": 54,
+          "ban": 27.9,
+          "pick": 26,
+          "picks": 56,
+          "wins": 25,
+          "bans": 60,
+          "games": 215
+        },
+        {
+          "src": "mpl-my",
+          "label": "MPL-MY S18",
+          "flag": "🇲🇾",
+          "presence": 74.1,
+          "ban": 37.1,
+          "pick": 37.1,
+          "picks": 63,
+          "wins": 35,
+          "bans": 63,
+          "games": 170
+        },
+        {
+          "src": "msl-th",
+          "label": "MSL-TH S2",
+          "flag": "🇹🇭",
+          "presence": 60.7,
+          "ban": 36.3,
+          "pick": 24.4,
+          "picks": 33,
+          "wins": 17,
+          "bans": 49,
+          "games": 135
+        },
+        {
+          "src": "msc-2026",
+          "label": "MSC 2026",
+          "flag": "🌍",
+          "presence": 55.8,
+          "ban": 22.1,
+          "pick": 33.6,
+          "picks": 38,
+          "wins": 20,
+          "bans": 25,
+          "games": 113
+        },
+        {
+          "src": "m7",
+          "label": "M7 World",
+          "flag": "🏆",
+          "presence": 62,
+          "ban": 33.6,
+          "pick": 28.5,
+          "picks": 39,
+          "wins": 19,
+          "bans": 46,
+          "games": 137
+        }
+      ],
+      "rank": 7,
+      "patchChange": {
+        "type": "ADJUST",
+        "badge": "⚖️ ปรับตีปกติกระจายเป็นเวท",
+        "deltaPres": -1.5,
+        "summary": "เปลี่ยนดาเมจกระจายของการโจมตีปกติเป็นดาเมจเวท + รูน Concussive Blast โดนเนิร์ฟเคลียร์มินเนี่ยนลดลง 50%"
+      }
     },
     {
       "name": "Zhuxin",
@@ -778,7 +893,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 8
+      "rank": 8,
+      "patchChange": null
     },
     {
       "name": "Carmilla",
@@ -868,7 +984,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 9
+      "rank": 9,
+      "patchChange": null
     },
     {
       "name": "Belerick",
@@ -958,7 +1075,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 10
+      "rank": 10,
+      "patchChange": null
     },
     {
       "name": "Esmeralda",
@@ -1048,7 +1166,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 11
+      "rank": 11,
+      "patchChange": null
     },
     {
       "name": "Selena",
@@ -1138,7 +1257,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 12
+      "rank": 12,
+      "patchChange": null
     },
     {
       "name": "Nolan",
@@ -1228,7 +1348,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 13
+      "rank": 13,
+      "patchChange": null
     },
     {
       "name": "Barats",
@@ -1318,97 +1439,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 14
-    },
-    {
-      "name": "Masha",
-      "key": "masha",
-      "tier": "S",
-      "action": "BAN",
-      "confidence": "สูง",
-      "presence": 54.5,
-      "ban": 45.3,
-      "pick": 9.3,
-      "winRate": 59.7,
-      "winRateAdj": 58,
-      "currentPicks": 67,
-      "regionsContested": 4,
-      "regionsTotal": 5,
-      "sources": [
-        {
-          "src": "mpl-ph",
-          "label": "MPL-PH S18",
-          "flag": "🇵🇭",
-          "presence": 50.6,
-          "ban": 43,
-          "pick": 7.6,
-          "picks": 13,
-          "wins": 9,
-          "bans": 74,
-          "games": 172
-        },
-        {
-          "src": "mpl-id",
-          "label": "MPL-ID S18",
-          "flag": "🇮🇩",
-          "presence": 53.5,
-          "ban": 40.9,
-          "pick": 12.6,
-          "picks": 27,
-          "wins": 14,
-          "bans": 88,
-          "games": 215
-        },
-        {
-          "src": "mpl-my",
-          "label": "MPL-MY S18",
-          "flag": "🇲🇾",
-          "presence": 40.6,
-          "ban": 32.4,
-          "pick": 8.2,
-          "picks": 14,
-          "wins": 8,
-          "bans": 55,
-          "games": 170
-        },
-        {
-          "src": "msl-th",
-          "label": "MSL-TH S2",
-          "flag": "🇹🇭",
-          "presence": 66.7,
-          "ban": 57,
-          "pick": 9.6,
-          "picks": 13,
-          "wins": 9,
-          "bans": 77,
-          "games": 135
-        },
-        {
-          "src": "msc-2026",
-          "label": "MSC 2026",
-          "flag": "🌍",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 113
-        },
-        {
-          "src": "m7",
-          "label": "M7 World",
-          "flag": "🏆",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 137
-        }
-      ],
-      "rank": 15
+      "rank": 14,
+      "patchChange": null
     },
     {
       "name": "Eudora",
@@ -1498,20 +1530,21 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 16
+      "rank": 15,
+      "patchChange": null
     },
     {
-      "name": "Gloo",
-      "key": "gloo",
+      "name": "Masha",
+      "key": "masha",
       "tier": "S",
-      "action": "FLEX",
+      "action": "BAN",
       "confidence": "สูง",
-      "presence": 48.2,
-      "ban": 25.1,
-      "pick": 23.1,
-      "winRate": 54.94,
-      "winRateAdj": 54.5,
-      "currentPicks": 162,
+      "presence": 49.5,
+      "ban": 41.1,
+      "pick": 8.4,
+      "winRate": 59.7,
+      "winRateAdj": 58,
+      "currentPicks": 67,
       "regionsContested": 4,
       "regionsTotal": 5,
       "sources": [
@@ -1519,76 +1552,178 @@ window.M8_PREDICTION = {
           "src": "mpl-ph",
           "label": "MPL-PH S18",
           "flag": "🇵🇭",
-          "presence": 33.7,
-          "ban": 20.9,
-          "pick": 12.8,
-          "picks": 22,
-          "wins": 13,
-          "bans": 36,
+          "presence": 50.6,
+          "ban": 43,
+          "pick": 7.6,
+          "picks": 13,
+          "wins": 9,
+          "bans": 74,
           "games": 172
         },
         {
           "src": "mpl-id",
           "label": "MPL-ID S18",
           "flag": "🇮🇩",
-          "presence": 45.1,
-          "ban": 21.9,
-          "pick": 23.3,
-          "picks": 50,
-          "wins": 31,
-          "bans": 47,
+          "presence": 53.5,
+          "ban": 40.9,
+          "pick": 12.6,
+          "picks": 27,
+          "wins": 14,
+          "bans": 88,
           "games": 215
         },
         {
           "src": "mpl-my",
           "label": "MPL-MY S18",
           "flag": "🇲🇾",
-          "presence": 31.8,
-          "ban": 17.6,
-          "pick": 14.1,
-          "picks": 24,
-          "wins": 13,
-          "bans": 30,
+          "presence": 40.6,
+          "ban": 32.4,
+          "pick": 8.2,
+          "picks": 14,
+          "wins": 8,
+          "bans": 55,
           "games": 170
         },
         {
           "src": "msl-th",
           "label": "MSL-TH S2",
           "flag": "🇹🇭",
-          "presence": 71.1,
-          "ban": 36.3,
-          "pick": 34.8,
-          "picks": 47,
-          "wins": 22,
-          "bans": 49,
+          "presence": 66.7,
+          "ban": 57,
+          "pick": 9.6,
+          "picks": 13,
+          "wins": 9,
+          "bans": 77,
           "games": 135
         },
         {
           "src": "msc-2026",
           "label": "MSC 2026",
           "flag": "🌍",
-          "presence": 25.7,
-          "ban": 8.8,
-          "pick": 16.8,
-          "picks": 19,
-          "wins": 10,
-          "bans": 10,
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
           "games": 113
         },
         {
           "src": "m7",
           "label": "M7 World",
           "flag": "🏆",
-          "presence": 9.5,
-          "ban": 2.9,
-          "pick": 6.6,
-          "picks": 9,
-          "wins": 5,
-          "bans": 4,
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
           "games": 137
         }
       ],
-      "rank": 17
+      "rank": 16,
+      "patchChange": {
+        "type": "NERF",
+        "badge": "⬇️ เนิร์ฟดาเมจแผล & ฮีลลดลง",
+        "deltaPres": -5,
+        "summary": "ลดดาเมจทำลายแผลและลดฟื้นฟูเลือดพาสซีฟ (4-10% -> 3-6% HP), ลดโบนัสดาเมจสกิล 1-2 แต่เพิ่มดาเมจตีมินเนี่ยนให้กลับไปยืน EXP"
+      }
+    },
+    {
+      "name": "Melissa",
+      "key": "melissa",
+      "tier": "S",
+      "action": "BAN",
+      "confidence": "สูง",
+      "presence": 47.7,
+      "ban": 31,
+      "pick": 16.7,
+      "winRate": 53.7,
+      "winRateAdj": 53.3,
+      "currentPicks": 108,
+      "regionsContested": 3,
+      "regionsTotal": 5,
+      "sources": [
+        {
+          "src": "mpl-ph",
+          "label": "MPL-PH S18",
+          "flag": "🇵🇭",
+          "presence": 43.6,
+          "ban": 30.2,
+          "pick": 13.4,
+          "picks": 23,
+          "wins": 10,
+          "bans": 52,
+          "games": 172
+        },
+        {
+          "src": "mpl-id",
+          "label": "MPL-ID S18",
+          "flag": "🇮🇩",
+          "presence": 40.5,
+          "ban": 24.7,
+          "pick": 15.8,
+          "picks": 34,
+          "wins": 18,
+          "bans": 53,
+          "games": 215
+        },
+        {
+          "src": "mpl-my",
+          "label": "MPL-MY S18",
+          "flag": "🇲🇾",
+          "presence": 51.2,
+          "ban": 32.9,
+          "pick": 18.2,
+          "picks": 31,
+          "wins": 19,
+          "bans": 56,
+          "games": 170
+        },
+        {
+          "src": "msl-th",
+          "label": "MSL-TH S2",
+          "flag": "🇹🇭",
+          "presence": 20,
+          "ban": 14.8,
+          "pick": 5.2,
+          "picks": 7,
+          "wins": 3,
+          "bans": 20,
+          "games": 135
+        },
+        {
+          "src": "msc-2026",
+          "label": "MSC 2026",
+          "flag": "🌍",
+          "presence": 27.4,
+          "ban": 15.9,
+          "pick": 11.5,
+          "picks": 13,
+          "wins": 8,
+          "bans": 18,
+          "games": 113
+        },
+        {
+          "src": "m7",
+          "label": "M7 World",
+          "flag": "🏆",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 137
+        }
+      ],
+      "rank": 17,
+      "patchChange": {
+        "type": "BUFF",
+        "badge": "⬆️ บัฟสกิล 2 + บัฟเงินเลนทอง",
+        "deltaPres": 6.5,
+        "summary": "ตุ๊กตา Muddles ส่งผ่านดาเมจเพิ่มขึ้นเป็น 50%-60% + ได้อานิสงส์รถถัง Gold Lane เพิ่มทองเป็น +60%"
+      }
     },
     {
       "name": "Valentina",
@@ -1678,7 +1813,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 18
+      "rank": 18,
+      "patchChange": null
     },
     {
       "name": "Aulus",
@@ -1768,7 +1904,104 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 19
+      "rank": 19,
+      "patchChange": null
+    },
+    {
+      "name": "Gloo",
+      "key": "gloo",
+      "tier": "S",
+      "action": "FLEX",
+      "confidence": "สูง",
+      "presence": 42.7,
+      "ban": 22.2,
+      "pick": 20.5,
+      "winRate": 54.94,
+      "winRateAdj": 54.5,
+      "currentPicks": 162,
+      "regionsContested": 4,
+      "regionsTotal": 5,
+      "sources": [
+        {
+          "src": "mpl-ph",
+          "label": "MPL-PH S18",
+          "flag": "🇵🇭",
+          "presence": 33.7,
+          "ban": 20.9,
+          "pick": 12.8,
+          "picks": 22,
+          "wins": 13,
+          "bans": 36,
+          "games": 172
+        },
+        {
+          "src": "mpl-id",
+          "label": "MPL-ID S18",
+          "flag": "🇮🇩",
+          "presence": 45.1,
+          "ban": 21.9,
+          "pick": 23.3,
+          "picks": 50,
+          "wins": 31,
+          "bans": 47,
+          "games": 215
+        },
+        {
+          "src": "mpl-my",
+          "label": "MPL-MY S18",
+          "flag": "🇲🇾",
+          "presence": 31.8,
+          "ban": 17.6,
+          "pick": 14.1,
+          "picks": 24,
+          "wins": 13,
+          "bans": 30,
+          "games": 170
+        },
+        {
+          "src": "msl-th",
+          "label": "MSL-TH S2",
+          "flag": "🇹🇭",
+          "presence": 71.1,
+          "ban": 36.3,
+          "pick": 34.8,
+          "picks": 47,
+          "wins": 22,
+          "bans": 49,
+          "games": 135
+        },
+        {
+          "src": "msc-2026",
+          "label": "MSC 2026",
+          "flag": "🌍",
+          "presence": 25.7,
+          "ban": 8.8,
+          "pick": 16.8,
+          "picks": 19,
+          "wins": 10,
+          "bans": 10,
+          "games": 113
+        },
+        {
+          "src": "m7",
+          "label": "M7 World",
+          "flag": "🏆",
+          "presence": 9.5,
+          "ban": 2.9,
+          "pick": 6.6,
+          "picks": 9,
+          "wins": 5,
+          "bans": 4,
+          "games": 137
+        }
+      ],
+      "rank": 20,
+      "patchChange": {
+        "type": "NERF",
+        "badge": "⬇️ เนิร์ฟสกิล 1 & อัลติส่งดาเมจลดลง",
+        "deltaPres": -5.5,
+        "summary": "สกิล 1 ล็อกขาสั้นลง (0.8s -> 0.6s) ดาเมจลดลง และอัลติลดการส่งผ่านดาเมจขณะเกาะร่างจาก 80% เหลือ 60%"
+      }
     },
     {
       "name": "Claude",
@@ -1858,7 +2091,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 20
+      "rank": 21,
+      "patchChange": null
     },
     {
       "name": "Rafaela",
@@ -1948,97 +2182,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 21
-    },
-    {
-      "name": "Melissa",
-      "key": "melissa",
-      "tier": "S",
-      "action": "BAN",
-      "confidence": "สูง",
-      "presence": 41.2,
-      "ban": 26.8,
-      "pick": 14.4,
-      "winRate": 53.7,
-      "winRateAdj": 53.3,
-      "currentPicks": 108,
-      "regionsContested": 3,
-      "regionsTotal": 5,
-      "sources": [
-        {
-          "src": "mpl-ph",
-          "label": "MPL-PH S18",
-          "flag": "🇵🇭",
-          "presence": 43.6,
-          "ban": 30.2,
-          "pick": 13.4,
-          "picks": 23,
-          "wins": 10,
-          "bans": 52,
-          "games": 172
-        },
-        {
-          "src": "mpl-id",
-          "label": "MPL-ID S18",
-          "flag": "🇮🇩",
-          "presence": 40.5,
-          "ban": 24.7,
-          "pick": 15.8,
-          "picks": 34,
-          "wins": 18,
-          "bans": 53,
-          "games": 215
-        },
-        {
-          "src": "mpl-my",
-          "label": "MPL-MY S18",
-          "flag": "🇲🇾",
-          "presence": 51.2,
-          "ban": 32.9,
-          "pick": 18.2,
-          "picks": 31,
-          "wins": 19,
-          "bans": 56,
-          "games": 170
-        },
-        {
-          "src": "msl-th",
-          "label": "MSL-TH S2",
-          "flag": "🇹🇭",
-          "presence": 20,
-          "ban": 14.8,
-          "pick": 5.2,
-          "picks": 7,
-          "wins": 3,
-          "bans": 20,
-          "games": 135
-        },
-        {
-          "src": "msc-2026",
-          "label": "MSC 2026",
-          "flag": "🌍",
-          "presence": 27.4,
-          "ban": 15.9,
-          "pick": 11.5,
-          "picks": 13,
-          "wins": 8,
-          "bans": 18,
-          "games": 113
-        },
-        {
-          "src": "m7",
-          "label": "M7 World",
-          "flag": "🏆",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 137
-        }
-      ],
-      "rank": 22
+      "rank": 22,
+      "patchChange": null
     },
     {
       "name": "Minotaur",
@@ -2128,7 +2273,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 23
+      "rank": 23,
+      "patchChange": null
     },
     {
       "name": "Obsidia",
@@ -2218,7 +2364,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 24
+      "rank": 24,
+      "patchChange": null
     },
     {
       "name": "Alice",
@@ -2308,7 +2455,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 25
+      "rank": 25,
+      "patchChange": null
     },
     {
       "name": "Mathilda",
@@ -2398,7 +2546,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 26
+      "rank": 26,
+      "patchChange": null
     },
     {
       "name": "Lylia",
@@ -2488,7 +2637,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 27
+      "rank": 27,
+      "patchChange": null
     },
     {
       "name": "Gatotkaca",
@@ -2578,7 +2728,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 28
+      "rank": 28,
+      "patchChange": null
     },
     {
       "name": "Moskov",
@@ -2668,7 +2819,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 29
+      "rank": 29,
+      "patchChange": null
     },
     {
       "name": "Cici",
@@ -2758,7 +2910,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 30
+      "rank": 30,
+      "patchChange": null
     },
     {
       "name": "Brody",
@@ -2848,7 +3001,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 31
+      "rank": 31,
+      "patchChange": null
     },
     {
       "name": "Kalea",
@@ -2938,7 +3092,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 32
+      "rank": 32,
+      "patchChange": null
     },
     {
       "name": "Harley",
@@ -3028,7 +3183,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 33
+      "rank": 33,
+      "patchChange": null
     },
     {
       "name": "Kimmy",
@@ -3118,7 +3274,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 34
+      "rank": 34,
+      "patchChange": null
     },
     {
       "name": "Chou",
@@ -3208,7 +3365,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 35
+      "rank": 35,
+      "patchChange": null
     },
     {
       "name": "Phoveus",
@@ -3298,7 +3456,104 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 36
+      "rank": 36,
+      "patchChange": null
+    },
+    {
+      "name": "Lukas",
+      "key": "lukas",
+      "tier": "A",
+      "action": "FLEX",
+      "confidence": "สูง",
+      "presence": 22,
+      "ban": 11.1,
+      "pick": 10.9,
+      "winRate": 56.86,
+      "winRateAdj": 55.4,
+      "currentPicks": 51,
+      "regionsContested": 0,
+      "regionsTotal": 5,
+      "sources": [
+        {
+          "src": "mpl-ph",
+          "label": "MPL-PH S18",
+          "flag": "🇵🇭",
+          "presence": 12.2,
+          "ban": 5.8,
+          "pick": 6.4,
+          "picks": 11,
+          "wins": 5,
+          "bans": 10,
+          "games": 172
+        },
+        {
+          "src": "mpl-id",
+          "label": "MPL-ID S18",
+          "flag": "🇮🇩",
+          "presence": 21.9,
+          "ban": 13,
+          "pick": 8.8,
+          "picks": 19,
+          "wins": 11,
+          "bans": 28,
+          "games": 215
+        },
+        {
+          "src": "mpl-my",
+          "label": "MPL-MY S18",
+          "flag": "🇲🇾",
+          "presence": 5.9,
+          "ban": 3.5,
+          "pick": 2.4,
+          "picks": 4,
+          "wins": 2,
+          "bans": 6,
+          "games": 170
+        },
+        {
+          "src": "msl-th",
+          "label": "MSL-TH S2",
+          "flag": "🇹🇭",
+          "presence": 15.6,
+          "ban": 3.7,
+          "pick": 11.9,
+          "picks": 16,
+          "wins": 11,
+          "bans": 5,
+          "games": 135
+        },
+        {
+          "src": "msc-2026",
+          "label": "MSC 2026",
+          "flag": "🌍",
+          "presence": 1.8,
+          "ban": 0.9,
+          "pick": 0.9,
+          "picks": 1,
+          "wins": 0,
+          "bans": 1,
+          "games": 113
+        },
+        {
+          "src": "m7",
+          "label": "M7 World",
+          "flag": "🏆",
+          "presence": 0.7,
+          "ban": 0,
+          "pick": 0.7,
+          "picks": 1,
+          "wins": 0,
+          "bans": 0,
+          "games": 137
+        }
+      ],
+      "rank": 37,
+      "patchChange": {
+        "type": "ADJUST",
+        "badge": "⬆️ ปรับไฟต์เตอร์ถึกขึ้น (ฮีล 8% HP)",
+        "deltaPres": 5,
+        "summary": "เพิ่มเลือดและเกราะพื้นฐาน, สกิล 1 ดาเมจพื้นฐานพุ่งเป็น 400-800 และฮีลเพิ่มจาก 6% เป็น 8% Max HP (ลดสเกล AD ลงเน้นออกกึ่งแทงค์)"
+      }
     },
     {
       "name": "Miya",
@@ -3388,7 +3643,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 37
+      "rank": 38,
+      "patchChange": null
     },
     {
       "name": "Yve",
@@ -3478,7 +3734,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 38
+      "rank": 39,
+      "patchChange": null
     },
     {
       "name": "Clint",
@@ -3568,7 +3825,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 39
+      "rank": 40,
+      "patchChange": null
     },
     {
       "name": "Arlott",
@@ -3658,7 +3916,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 40
+      "rank": 41,
+      "patchChange": null
     },
     {
       "name": "Novaria",
@@ -3748,7 +4007,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 41
+      "rank": 42,
+      "patchChange": null
     },
     {
       "name": "Suyou",
@@ -3838,7 +4098,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 42
+      "rank": 43,
+      "patchChange": null
     },
     {
       "name": "Hylos",
@@ -3928,7 +4189,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 43
+      "rank": 44,
+      "patchChange": null
     },
     {
       "name": "Ruby",
@@ -4018,97 +4280,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 44
-    },
-    {
-      "name": "Lukas",
-      "key": "lukas",
-      "tier": "A",
-      "action": "FLEX",
-      "confidence": "สูง",
-      "presence": 17,
-      "ban": 8.6,
-      "pick": 8.4,
-      "winRate": 56.86,
-      "winRateAdj": 55.4,
-      "currentPicks": 51,
-      "regionsContested": 0,
-      "regionsTotal": 5,
-      "sources": [
-        {
-          "src": "mpl-ph",
-          "label": "MPL-PH S18",
-          "flag": "🇵🇭",
-          "presence": 12.2,
-          "ban": 5.8,
-          "pick": 6.4,
-          "picks": 11,
-          "wins": 5,
-          "bans": 10,
-          "games": 172
-        },
-        {
-          "src": "mpl-id",
-          "label": "MPL-ID S18",
-          "flag": "🇮🇩",
-          "presence": 21.9,
-          "ban": 13,
-          "pick": 8.8,
-          "picks": 19,
-          "wins": 11,
-          "bans": 28,
-          "games": 215
-        },
-        {
-          "src": "mpl-my",
-          "label": "MPL-MY S18",
-          "flag": "🇲🇾",
-          "presence": 5.9,
-          "ban": 3.5,
-          "pick": 2.4,
-          "picks": 4,
-          "wins": 2,
-          "bans": 6,
-          "games": 170
-        },
-        {
-          "src": "msl-th",
-          "label": "MSL-TH S2",
-          "flag": "🇹🇭",
-          "presence": 15.6,
-          "ban": 3.7,
-          "pick": 11.9,
-          "picks": 16,
-          "wins": 11,
-          "bans": 5,
-          "games": 135
-        },
-        {
-          "src": "msc-2026",
-          "label": "MSC 2026",
-          "flag": "🌍",
-          "presence": 1.8,
-          "ban": 0.9,
-          "pick": 0.9,
-          "picks": 1,
-          "wins": 0,
-          "bans": 1,
-          "games": 113
-        },
-        {
-          "src": "m7",
-          "label": "M7 World",
-          "flag": "🏆",
-          "presence": 0.7,
-          "ban": 0,
-          "pick": 0.7,
-          "picks": 1,
-          "wins": 0,
-          "bans": 0,
-          "games": 137
-        }
-      ],
-      "rank": 45
+      "rank": 45,
+      "patchChange": null
     },
     {
       "name": "Harith",
@@ -4198,7 +4371,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 46
+      "rank": 46,
+      "patchChange": null
     },
     {
       "name": "Sora",
@@ -4288,7 +4462,200 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 47
+      "rank": 47,
+      "patchChange": null
+    },
+    {
+      "name": "Kaja",
+      "key": "kaja",
+      "tier": "A",
+      "action": "BAN",
+      "confidence": "ปานกลาง",
+      "presence": 15.7,
+      "ban": 9.9,
+      "pick": 5.8,
+      "winRate": 41.18,
+      "winRateAdj": 45.2,
+      "currentPicks": 17,
+      "regionsContested": 0,
+      "regionsTotal": 5,
+      "sources": [
+        {
+          "src": "mpl-ph",
+          "label": "MPL-PH S18",
+          "flag": "🇵🇭",
+          "presence": 9.9,
+          "ban": 6.4,
+          "pick": 3.5,
+          "picks": 6,
+          "wins": 4,
+          "bans": 11,
+          "games": 172
+        },
+        {
+          "src": "mpl-id",
+          "label": "MPL-ID S18",
+          "flag": "🇮🇩",
+          "presence": 6,
+          "ban": 4.7,
+          "pick": 1.4,
+          "picks": 3,
+          "wins": 1,
+          "bans": 10,
+          "games": 215
+        },
+        {
+          "src": "mpl-my",
+          "label": "MPL-MY S18",
+          "flag": "🇲🇾",
+          "presence": 3.5,
+          "ban": 1.2,
+          "pick": 2.4,
+          "picks": 4,
+          "wins": 0,
+          "bans": 2,
+          "games": 170
+        },
+        {
+          "src": "msl-th",
+          "label": "MSL-TH S2",
+          "flag": "🇹🇭",
+          "presence": 3,
+          "ban": 1.5,
+          "pick": 1.5,
+          "picks": 2,
+          "wins": 1,
+          "bans": 2,
+          "games": 135
+        },
+        {
+          "src": "msc-2026",
+          "label": "MSC 2026",
+          "flag": "🌍",
+          "presence": 3.5,
+          "ban": 1.8,
+          "pick": 1.8,
+          "picks": 2,
+          "wins": 1,
+          "bans": 2,
+          "games": 113
+        },
+        {
+          "src": "m7",
+          "label": "M7 World",
+          "flag": "🏆",
+          "presence": 1.5,
+          "ban": 0.7,
+          "pick": 0.7,
+          "picks": 1,
+          "wins": 0,
+          "bans": 1,
+          "games": 137
+        }
+      ],
+      "rank": 48,
+      "patchChange": {
+        "type": "BUFF",
+        "badge": "⬆️ บัฟอัลติขังทะลุอมตะ CC",
+        "deltaPres": 9.5,
+        "summary": "อัลติ Divine Binding ปรับใหม่: ศัตรูที่มีสถานะอมตะ CC (Control Immunity) ไม่สามารถหนีออกจากวงอัลติได้ + บิน Soaring นานขึ้น"
+      }
+    },
+    {
+      "name": "Popol and Kupa",
+      "key": "popol and kupa",
+      "tier": "B",
+      "action": "PICK",
+      "confidence": "ปานกลาง",
+      "presence": 14.5,
+      "ban": 3.6,
+      "pick": 10.9,
+      "winRate": 0,
+      "winRateAdj": 50,
+      "currentPicks": 0,
+      "regionsContested": 0,
+      "regionsTotal": 5,
+      "sources": [
+        {
+          "src": "mpl-ph",
+          "label": "MPL-PH S18",
+          "flag": "🇵🇭",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 172
+        },
+        {
+          "src": "mpl-id",
+          "label": "MPL-ID S18",
+          "flag": "🇮🇩",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 215
+        },
+        {
+          "src": "mpl-my",
+          "label": "MPL-MY S18",
+          "flag": "🇲🇾",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 170
+        },
+        {
+          "src": "msl-th",
+          "label": "MSL-TH S2",
+          "flag": "🇹🇭",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 135
+        },
+        {
+          "src": "msc-2026",
+          "label": "MSC 2026",
+          "flag": "🌍",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 113
+        },
+        {
+          "src": "m7",
+          "label": "M7 World",
+          "flag": "🏆",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 137
+        }
+      ],
+      "rank": 49,
+      "patchChange": {
+        "type": "REVAMP",
+        "badge": "♻️ รีแวมป์ใหญ่ (ขี่หมา Kupa)",
+        "deltaPres": 14.5,
+        "summary": "รีแวมป์ใหม่ยกชุด! สกิล 2 กดขี่หลัง Kupa วิ่งเร็ว+รีเลือด, พาสซีฟชุบ Kupa ได้และตีป่า True DMG, อัลติทุบงัดลอยหมู่"
+      }
     },
     {
       "name": "Yi Sun-shin",
@@ -4378,7 +4745,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 48
+      "rank": 50,
+      "patchChange": null
     },
     {
       "name": "Zetian",
@@ -4468,7 +4836,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 49
+      "rank": 51,
+      "patchChange": null
     },
     {
       "name": "Cecilion",
@@ -4558,7 +4927,104 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 50
+      "rank": 52,
+      "patchChange": null
+    },
+    {
+      "name": "Karrie",
+      "key": "karrie",
+      "tier": "B",
+      "action": "PICK",
+      "confidence": "ปานกลาง",
+      "presence": 13.9,
+      "ban": 3.7,
+      "pick": 10.2,
+      "winRate": 35.48,
+      "winRateAdj": 40,
+      "currentPicks": 31,
+      "regionsContested": 0,
+      "regionsTotal": 5,
+      "sources": [
+        {
+          "src": "mpl-ph",
+          "label": "MPL-PH S18",
+          "flag": "🇵🇭",
+          "presence": 3.5,
+          "ban": 0,
+          "pick": 3.5,
+          "picks": 6,
+          "wins": 3,
+          "bans": 0,
+          "games": 172
+        },
+        {
+          "src": "mpl-id",
+          "label": "MPL-ID S18",
+          "flag": "🇮🇩",
+          "presence": 0.9,
+          "ban": 0,
+          "pick": 0.9,
+          "picks": 2,
+          "wins": 0,
+          "bans": 0,
+          "games": 215
+        },
+        {
+          "src": "mpl-my",
+          "label": "MPL-MY S18",
+          "flag": "🇲🇾",
+          "presence": 2.4,
+          "ban": 0,
+          "pick": 2.4,
+          "picks": 4,
+          "wins": 1,
+          "bans": 0,
+          "games": 170
+        },
+        {
+          "src": "msl-th",
+          "label": "MSL-TH S2",
+          "flag": "🇹🇭",
+          "presence": 3.7,
+          "ban": 0.7,
+          "pick": 3,
+          "picks": 4,
+          "wins": 2,
+          "bans": 1,
+          "games": 135
+        },
+        {
+          "src": "msc-2026",
+          "label": "MSC 2026",
+          "flag": "🌍",
+          "presence": 23.9,
+          "ban": 10.6,
+          "pick": 13.3,
+          "picks": 15,
+          "wins": 5,
+          "bans": 12,
+          "games": 113
+        },
+        {
+          "src": "m7",
+          "label": "M7 World",
+          "flag": "🏆",
+          "presence": 41.6,
+          "ban": 15.3,
+          "pick": 26.3,
+          "picks": 36,
+          "wins": 13,
+          "bans": 21,
+          "games": 137
+        }
+      ],
+      "rank": 53,
+      "patchChange": {
+        "type": "ADJUST",
+        "badge": "⬆️ บัฟอัลติวิ่งเร็ว 30% + แรงขึ้น",
+        "deltaPres": 6,
+        "summary": "อัลติเพิ่มดาเมจพื้นฐานวงล้อ (40 -> 50) และเพิ่มความเร็วเคลื่อนที่ขณะเปิดอัลติ (20% -> 30%) + รถถังเลนทองรวยไวขึ้น"
+      }
     },
     {
       "name": "Yu Zhong",
@@ -4648,7 +5114,200 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 51
+      "rank": 54,
+      "patchChange": null
+    },
+    {
+      "name": "Xavier",
+      "key": "xavier",
+      "tier": "B",
+      "action": "PICK",
+      "confidence": "ปานกลาง",
+      "presence": 12.2,
+      "ban": 0,
+      "pick": 12.2,
+      "winRate": 0,
+      "winRateAdj": 46.7,
+      "currentPicks": 1,
+      "regionsContested": 0,
+      "regionsTotal": 5,
+      "sources": [
+        {
+          "src": "mpl-ph",
+          "label": "MPL-PH S18",
+          "flag": "🇵🇭",
+          "presence": 0.6,
+          "ban": 0,
+          "pick": 0.6,
+          "picks": 1,
+          "wins": 0,
+          "bans": 0,
+          "games": 172
+        },
+        {
+          "src": "mpl-id",
+          "label": "MPL-ID S18",
+          "flag": "🇮🇩",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 215
+        },
+        {
+          "src": "mpl-my",
+          "label": "MPL-MY S18",
+          "flag": "🇲🇾",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 170
+        },
+        {
+          "src": "msl-th",
+          "label": "MSL-TH S2",
+          "flag": "🇹🇭",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 135
+        },
+        {
+          "src": "msc-2026",
+          "label": "MSC 2026",
+          "flag": "🌍",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 113
+        },
+        {
+          "src": "m7",
+          "label": "M7 World",
+          "flag": "🏆",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 137
+        }
+      ],
+      "rank": 55,
+      "patchChange": {
+        "type": "BUFF",
+        "badge": "⬆️ บัฟใหญ่ (S2 แรง 2 เท่า)",
+        "deltaPres": 12,
+        "summary": "ลดหน่วงร่ายสกิล 1-2 ลง 50%, ดาเมจระเบิดสกิล 2 เพิ่ม 2 เท่า (440-690 +130% MP), พาสซีฟวิ่งเร็วเพิ่มเป็น 60%"
+      }
+    },
+    {
+      "name": "Lunox",
+      "key": "lunox",
+      "tier": "B",
+      "action": "PICK",
+      "confidence": "ปานกลาง",
+      "presence": 12.1,
+      "ban": 4.5,
+      "pick": 7.6,
+      "winRate": 42.86,
+      "winRateAdj": 47.6,
+      "currentPicks": 7,
+      "regionsContested": 0,
+      "regionsTotal": 5,
+      "sources": [
+        {
+          "src": "mpl-ph",
+          "label": "MPL-PH S18",
+          "flag": "🇵🇭",
+          "presence": 0.6,
+          "ban": 0,
+          "pick": 0.6,
+          "picks": 1,
+          "wins": 1,
+          "bans": 0,
+          "games": 172
+        },
+        {
+          "src": "mpl-id",
+          "label": "MPL-ID S18",
+          "flag": "🇮🇩",
+          "presence": 3.3,
+          "ban": 0.9,
+          "pick": 2.3,
+          "picks": 5,
+          "wins": 1,
+          "bans": 2,
+          "games": 215
+        },
+        {
+          "src": "mpl-my",
+          "label": "MPL-MY S18",
+          "flag": "🇲🇾",
+          "presence": 0.6,
+          "ban": 0.6,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 1,
+          "games": 170
+        },
+        {
+          "src": "msl-th",
+          "label": "MSL-TH S2",
+          "flag": "🇹🇭",
+          "presence": 0.7,
+          "ban": 0,
+          "pick": 0.7,
+          "picks": 1,
+          "wins": 1,
+          "bans": 0,
+          "games": 135
+        },
+        {
+          "src": "msc-2026",
+          "label": "MSC 2026",
+          "flag": "🌍",
+          "presence": 0.9,
+          "ban": 0.9,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 1,
+          "games": 113
+        },
+        {
+          "src": "m7",
+          "label": "M7 World",
+          "flag": "🏆",
+          "presence": 38,
+          "ban": 20.4,
+          "pick": 17.5,
+          "picks": 24,
+          "wins": 18,
+          "bans": 28,
+          "games": 137
+        }
+      ],
+      "rank": 56,
+      "patchChange": {
+        "type": "BUFF",
+        "badge": "⬆️ บัฟต้นเกม (+10% เจาะเวท/ดูดเลือด)",
+        "deltaPres": 10.5,
+        "summary": "พาสซีฟได้ดูดเลือดเวท 10% หรือเจาะเกราะเวท 10% ทันที, สกิล 2 ต้นเกมแรงขึ้น (3.5%-5% HP), อัลติมืดพุ่งไวขึ้น 50%"
+      }
     },
     {
       "name": "Bruno",
@@ -4738,7 +5397,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 52
+      "rank": 57,
+      "patchChange": null
     },
     {
       "name": "Lapu-Lapu",
@@ -4828,7 +5488,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 53
+      "rank": 58,
+      "patchChange": null
     },
     {
       "name": "Leomord",
@@ -4918,7 +5579,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 54
+      "rank": 59,
+      "patchChange": null
     },
     {
       "name": "Dyrroth",
@@ -5008,7 +5670,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 55
+      "rank": 60,
+      "patchChange": null
     },
     {
       "name": "Guinevere",
@@ -5098,7 +5761,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 56
+      "rank": 61,
+      "patchChange": null
     },
     {
       "name": "Ling",
@@ -5188,7 +5852,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 57
+      "rank": 62,
+      "patchChange": null
     },
     {
       "name": "Badang",
@@ -5278,7 +5943,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 58
+      "rank": 63,
+      "patchChange": null
     },
     {
       "name": "Hanabi",
@@ -5368,7 +6034,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 59
+      "rank": 64,
+      "patchChange": null
     },
     {
       "name": "Baxia",
@@ -5458,7 +6125,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 60
+      "rank": 65,
+      "patchChange": null
     },
     {
       "name": "Akai",
@@ -5548,7 +6216,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 61
+      "rank": 66,
+      "patchChange": null
     },
     {
       "name": "Hilda",
@@ -5638,7 +6307,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 62
+      "rank": 67,
+      "patchChange": null
     },
     {
       "name": "Vexana",
@@ -5728,97 +6398,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 63
-    },
-    {
-      "name": "Karrie",
-      "key": "karrie",
-      "tier": "B",
-      "action": "PICK",
-      "confidence": "ปานกลาง",
-      "presence": 7.9,
-      "ban": 2.1,
-      "pick": 5.8,
-      "winRate": 35.48,
-      "winRateAdj": 40,
-      "currentPicks": 31,
-      "regionsContested": 0,
-      "regionsTotal": 5,
-      "sources": [
-        {
-          "src": "mpl-ph",
-          "label": "MPL-PH S18",
-          "flag": "🇵🇭",
-          "presence": 3.5,
-          "ban": 0,
-          "pick": 3.5,
-          "picks": 6,
-          "wins": 3,
-          "bans": 0,
-          "games": 172
-        },
-        {
-          "src": "mpl-id",
-          "label": "MPL-ID S18",
-          "flag": "🇮🇩",
-          "presence": 0.9,
-          "ban": 0,
-          "pick": 0.9,
-          "picks": 2,
-          "wins": 0,
-          "bans": 0,
-          "games": 215
-        },
-        {
-          "src": "mpl-my",
-          "label": "MPL-MY S18",
-          "flag": "🇲🇾",
-          "presence": 2.4,
-          "ban": 0,
-          "pick": 2.4,
-          "picks": 4,
-          "wins": 1,
-          "bans": 0,
-          "games": 170
-        },
-        {
-          "src": "msl-th",
-          "label": "MSL-TH S2",
-          "flag": "🇹🇭",
-          "presence": 3.7,
-          "ban": 0.7,
-          "pick": 3,
-          "picks": 4,
-          "wins": 2,
-          "bans": 1,
-          "games": 135
-        },
-        {
-          "src": "msc-2026",
-          "label": "MSC 2026",
-          "flag": "🌍",
-          "presence": 23.9,
-          "ban": 10.6,
-          "pick": 13.3,
-          "picks": 15,
-          "wins": 5,
-          "bans": 12,
-          "games": 113
-        },
-        {
-          "src": "m7",
-          "label": "M7 World",
-          "flag": "🏆",
-          "presence": 41.6,
-          "ban": 15.3,
-          "pick": 26.3,
-          "picks": 36,
-          "wins": 13,
-          "bans": 21,
-          "games": 137
-        }
-      ],
-      "rank": 64
+      "rank": 68,
+      "patchChange": null
     },
     {
       "name": "Valir",
@@ -5908,7 +6489,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 65
+      "rank": 69,
+      "patchChange": null
     },
     {
       "name": "Angela",
@@ -5998,7 +6580,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 66
+      "rank": 70,
+      "patchChange": null
     },
     {
       "name": "Pharsa",
@@ -6088,7 +6671,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 67
+      "rank": 71,
+      "patchChange": null
     },
     {
       "name": "Alpha",
@@ -6178,7 +6762,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 68
+      "rank": 72,
+      "patchChange": null
     },
     {
       "name": "Fredrinn",
@@ -6268,7 +6853,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 69
+      "rank": 73,
+      "patchChange": null
     },
     {
       "name": "Gord",
@@ -6358,97 +6944,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 70
-    },
-    {
-      "name": "Kaja",
-      "key": "kaja",
-      "tier": "B",
-      "action": "BAN",
-      "confidence": "ปานกลาง",
-      "presence": 6.2,
-      "ban": 3.9,
-      "pick": 2.4,
-      "winRate": 41.18,
-      "winRateAdj": 45.2,
-      "currentPicks": 17,
-      "regionsContested": 0,
-      "regionsTotal": 5,
-      "sources": [
-        {
-          "src": "mpl-ph",
-          "label": "MPL-PH S18",
-          "flag": "🇵🇭",
-          "presence": 9.9,
-          "ban": 6.4,
-          "pick": 3.5,
-          "picks": 6,
-          "wins": 4,
-          "bans": 11,
-          "games": 172
-        },
-        {
-          "src": "mpl-id",
-          "label": "MPL-ID S18",
-          "flag": "🇮🇩",
-          "presence": 6,
-          "ban": 4.7,
-          "pick": 1.4,
-          "picks": 3,
-          "wins": 1,
-          "bans": 10,
-          "games": 215
-        },
-        {
-          "src": "mpl-my",
-          "label": "MPL-MY S18",
-          "flag": "🇲🇾",
-          "presence": 3.5,
-          "ban": 1.2,
-          "pick": 2.4,
-          "picks": 4,
-          "wins": 0,
-          "bans": 2,
-          "games": 170
-        },
-        {
-          "src": "msl-th",
-          "label": "MSL-TH S2",
-          "flag": "🇹🇭",
-          "presence": 3,
-          "ban": 1.5,
-          "pick": 1.5,
-          "picks": 2,
-          "wins": 1,
-          "bans": 2,
-          "games": 135
-        },
-        {
-          "src": "msc-2026",
-          "label": "MSC 2026",
-          "flag": "🌍",
-          "presence": 3.5,
-          "ban": 1.8,
-          "pick": 1.8,
-          "picks": 2,
-          "wins": 1,
-          "bans": 2,
-          "games": 113
-        },
-        {
-          "src": "m7",
-          "label": "M7 World",
-          "flag": "🏆",
-          "presence": 1.5,
-          "ban": 0.7,
-          "pick": 0.7,
-          "picks": 1,
-          "wins": 0,
-          "bans": 1,
-          "games": 137
-        }
-      ],
-      "rank": 71
+      "rank": 74,
+      "patchChange": null
     },
     {
       "name": "Estes",
@@ -6538,7 +7035,104 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 72
+      "rank": 75,
+      "patchChange": null
+    },
+    {
+      "name": "Aldous",
+      "key": "aldous",
+      "tier": "B",
+      "action": "PICK",
+      "confidence": "ปานกลาง",
+      "presence": 5.5,
+      "ban": 1.4,
+      "pick": 4.1,
+      "winRate": 0,
+      "winRateAdj": 50,
+      "currentPicks": 0,
+      "regionsContested": 0,
+      "regionsTotal": 5,
+      "sources": [
+        {
+          "src": "mpl-ph",
+          "label": "MPL-PH S18",
+          "flag": "🇵🇭",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 172
+        },
+        {
+          "src": "mpl-id",
+          "label": "MPL-ID S18",
+          "flag": "🇮🇩",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 215
+        },
+        {
+          "src": "mpl-my",
+          "label": "MPL-MY S18",
+          "flag": "🇲🇾",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 170
+        },
+        {
+          "src": "msl-th",
+          "label": "MSL-TH S2",
+          "flag": "🇹🇭",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 135
+        },
+        {
+          "src": "msc-2026",
+          "label": "MSC 2026",
+          "flag": "🌍",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 113
+        },
+        {
+          "src": "m7",
+          "label": "M7 World",
+          "flag": "🏆",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 137
+        }
+      ],
+      "rank": 76,
+      "patchChange": {
+        "type": "BUFF",
+        "badge": "⬆️ บัฟเกราะลดดาเมจ 55%",
+        "deltaPres": 5.5,
+        "summary": "สกิล 2 ลดคูลดาวน์เหลือ 8 วินาทีทุกเลเวล และเพิ่มลดดาเมจ (Damage Reduction) สูงสุดถึง 55% (จากเดิม 30%)"
+      }
     },
     {
       "name": "Chip",
@@ -6628,7 +7222,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 73
+      "rank": 77,
+      "patchChange": null
     },
     {
       "name": "Khaleed",
@@ -6718,7 +7313,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 74
+      "rank": 78,
+      "patchChange": null
     },
     {
       "name": "Saber",
@@ -6808,7 +7404,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 75
+      "rank": 79,
+      "patchChange": null
     },
     {
       "name": "Hayabusa",
@@ -6898,7 +7495,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 76
+      "rank": 80,
+      "patchChange": null
     },
     {
       "name": "Hanzo",
@@ -6988,7 +7586,104 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 77
+      "rank": 81,
+      "patchChange": null
+    },
+    {
+      "name": "Kagura",
+      "key": "kagura",
+      "tier": "C",
+      "action": "PICK",
+      "confidence": "ปานกลาง",
+      "presence": 2.3,
+      "ban": 0,
+      "pick": 2.3,
+      "winRate": 16.67,
+      "winRateAdj": 40,
+      "currentPicks": 6,
+      "regionsContested": 0,
+      "regionsTotal": 5,
+      "sources": [
+        {
+          "src": "mpl-ph",
+          "label": "MPL-PH S18",
+          "flag": "🇵🇭",
+          "presence": 0.6,
+          "ban": 0,
+          "pick": 0.6,
+          "picks": 1,
+          "wins": 0,
+          "bans": 0,
+          "games": 172
+        },
+        {
+          "src": "mpl-id",
+          "label": "MPL-ID S18",
+          "flag": "🇮🇩",
+          "presence": 0.9,
+          "ban": 0,
+          "pick": 0.9,
+          "picks": 2,
+          "wins": 1,
+          "bans": 0,
+          "games": 215
+        },
+        {
+          "src": "mpl-my",
+          "label": "MPL-MY S18",
+          "flag": "🇲🇾",
+          "presence": 0.6,
+          "ban": 0,
+          "pick": 0.6,
+          "picks": 1,
+          "wins": 0,
+          "bans": 0,
+          "games": 170
+        },
+        {
+          "src": "msl-th",
+          "label": "MSL-TH S2",
+          "flag": "🇹🇭",
+          "presence": 1.5,
+          "ban": 0,
+          "pick": 1.5,
+          "picks": 2,
+          "wins": 0,
+          "bans": 0,
+          "games": 135
+        },
+        {
+          "src": "msc-2026",
+          "label": "MSC 2026",
+          "flag": "🌍",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 113
+        },
+        {
+          "src": "m7",
+          "label": "M7 World",
+          "flag": "🏆",
+          "presence": 4.4,
+          "ban": 0.7,
+          "pick": 3.6,
+          "picks": 5,
+          "wins": 2,
+          "bans": 1,
+          "games": 137
+        }
+      ],
+      "rank": 82,
+      "patchChange": {
+        "type": "ADJUST",
+        "badge": "⚖️ ปรับระยะแสดงผลร่ม",
+        "deltaPres": 1.5,
+        "summary": "ปรับปรุงเส้นแสดงระยะห่างสูงสุดของร่ม Seimei ให้ควบคุมจังหวะคอมโบแม่นยำขึ้น"
+      }
     },
     {
       "name": "Granger",
@@ -7078,7 +7773,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 78
+      "rank": 83,
+      "patchChange": null
     },
     {
       "name": "Terizla",
@@ -7168,7 +7864,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 79
+      "rank": 84,
+      "patchChange": null
     },
     {
       "name": "Lesley",
@@ -7258,7 +7955,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 80
+      "rank": 85,
+      "patchChange": null
     },
     {
       "name": "Benedetta",
@@ -7348,7 +8046,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 81
+      "rank": 86,
+      "patchChange": null
     },
     {
       "name": "Aurora",
@@ -7438,7 +8137,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 82
+      "rank": 87,
+      "patchChange": null
     },
     {
       "name": "Khufra",
@@ -7528,7 +8228,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 83
+      "rank": 88,
+      "patchChange": null
     },
     {
       "name": "Luo Yi",
@@ -7618,97 +8319,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 84
-    },
-    {
-      "name": "Lunox",
-      "key": "lunox",
-      "tier": "C",
-      "action": "PICK",
-      "confidence": "ปานกลาง",
-      "presence": 1.6,
-      "ban": 0.6,
-      "pick": 1.1,
-      "winRate": 42.86,
-      "winRateAdj": 47.6,
-      "currentPicks": 7,
-      "regionsContested": 0,
-      "regionsTotal": 5,
-      "sources": [
-        {
-          "src": "mpl-ph",
-          "label": "MPL-PH S18",
-          "flag": "🇵🇭",
-          "presence": 0.6,
-          "ban": 0,
-          "pick": 0.6,
-          "picks": 1,
-          "wins": 1,
-          "bans": 0,
-          "games": 172
-        },
-        {
-          "src": "mpl-id",
-          "label": "MPL-ID S18",
-          "flag": "🇮🇩",
-          "presence": 3.3,
-          "ban": 0.9,
-          "pick": 2.3,
-          "picks": 5,
-          "wins": 1,
-          "bans": 2,
-          "games": 215
-        },
-        {
-          "src": "mpl-my",
-          "label": "MPL-MY S18",
-          "flag": "🇲🇾",
-          "presence": 0.6,
-          "ban": 0.6,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 1,
-          "games": 170
-        },
-        {
-          "src": "msl-th",
-          "label": "MSL-TH S2",
-          "flag": "🇹🇭",
-          "presence": 0.7,
-          "ban": 0,
-          "pick": 0.7,
-          "picks": 1,
-          "wins": 1,
-          "bans": 0,
-          "games": 135
-        },
-        {
-          "src": "msc-2026",
-          "label": "MSC 2026",
-          "flag": "🌍",
-          "presence": 0.9,
-          "ban": 0.9,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 1,
-          "games": 113
-        },
-        {
-          "src": "m7",
-          "label": "M7 World",
-          "flag": "🏆",
-          "presence": 38,
-          "ban": 20.4,
-          "pick": 17.5,
-          "picks": 24,
-          "wins": 18,
-          "bans": 28,
-          "games": 137
-        }
-      ],
-      "rank": 85
+      "rank": 89,
+      "patchChange": null
     },
     {
       "name": "Ixia",
@@ -7798,7 +8410,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 86
+      "rank": 90,
+      "patchChange": null
     },
     {
       "name": "Beatrix",
@@ -7888,7 +8501,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 87
+      "rank": 91,
+      "patchChange": null
     },
     {
       "name": "X.Borg",
@@ -7978,7 +8592,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 88
+      "rank": 92,
+      "patchChange": null
     },
     {
       "name": "Grock",
@@ -8068,7 +8683,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 89
+      "rank": 93,
+      "patchChange": null
     },
     {
       "name": "Faramis",
@@ -8158,7 +8774,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 90
+      "rank": 94,
+      "patchChange": null
     },
     {
       "name": "Thamuz",
@@ -8248,97 +8865,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 91
-    },
-    {
-      "name": "Kagura",
-      "key": "kagura",
-      "tier": "C",
-      "action": "PICK",
-      "confidence": "ปานกลาง",
-      "presence": 0.8,
-      "ban": 0,
-      "pick": 0.8,
-      "winRate": 16.67,
-      "winRateAdj": 40,
-      "currentPicks": 6,
-      "regionsContested": 0,
-      "regionsTotal": 5,
-      "sources": [
-        {
-          "src": "mpl-ph",
-          "label": "MPL-PH S18",
-          "flag": "🇵🇭",
-          "presence": 0.6,
-          "ban": 0,
-          "pick": 0.6,
-          "picks": 1,
-          "wins": 0,
-          "bans": 0,
-          "games": 172
-        },
-        {
-          "src": "mpl-id",
-          "label": "MPL-ID S18",
-          "flag": "🇮🇩",
-          "presence": 0.9,
-          "ban": 0,
-          "pick": 0.9,
-          "picks": 2,
-          "wins": 1,
-          "bans": 0,
-          "games": 215
-        },
-        {
-          "src": "mpl-my",
-          "label": "MPL-MY S18",
-          "flag": "🇲🇾",
-          "presence": 0.6,
-          "ban": 0,
-          "pick": 0.6,
-          "picks": 1,
-          "wins": 0,
-          "bans": 0,
-          "games": 170
-        },
-        {
-          "src": "msl-th",
-          "label": "MSL-TH S2",
-          "flag": "🇹🇭",
-          "presence": 1.5,
-          "ban": 0,
-          "pick": 1.5,
-          "picks": 2,
-          "wins": 0,
-          "bans": 0,
-          "games": 135
-        },
-        {
-          "src": "msc-2026",
-          "label": "MSC 2026",
-          "flag": "🌍",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 113
-        },
-        {
-          "src": "m7",
-          "label": "M7 World",
-          "flag": "🏆",
-          "presence": 4.4,
-          "ban": 0.7,
-          "pick": 3.6,
-          "picks": 5,
-          "wins": 2,
-          "bans": 1,
-          "games": 137
-        }
-      ],
-      "rank": 92
+      "rank": 95,
+      "patchChange": null
     },
     {
       "name": "Joy",
@@ -8428,7 +8956,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 93
+      "rank": 96,
+      "patchChange": null
     },
     {
       "name": "Wanwan",
@@ -8518,7 +9047,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 94
+      "rank": 97,
+      "patchChange": null
     },
     {
       "name": "Balmond",
@@ -8608,7 +9138,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 95
+      "rank": 98,
+      "patchChange": null
     },
     {
       "name": "Lancelot",
@@ -8698,7 +9229,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 96
+      "rank": 99,
+      "patchChange": null
     },
     {
       "name": "Odette",
@@ -8788,7 +9320,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 97
+      "rank": 100,
+      "patchChange": null
     },
     {
       "name": "Argus",
@@ -8878,7 +9411,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 98
+      "rank": 101,
+      "patchChange": null
     },
     {
       "name": "Kadita",
@@ -8968,7 +9502,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 99
+      "rank": 102,
+      "patchChange": null
     },
     {
       "name": "Edith",
@@ -9058,7 +9593,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 100
+      "rank": 103,
+      "patchChange": null
     },
     {
       "name": "Irithel",
@@ -9148,7 +9684,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 101
+      "rank": 104,
+      "patchChange": null
     },
     {
       "name": "Roger",
@@ -9238,7 +9775,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 102
+      "rank": 105,
+      "patchChange": null
     },
     {
       "name": "Tigreal",
@@ -9328,7 +9866,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 103
+      "rank": 106,
+      "patchChange": null
     },
     {
       "name": "Lolita",
@@ -9418,7 +9957,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 104
+      "rank": 107,
+      "patchChange": null
     },
     {
       "name": "Minsitthar",
@@ -9508,7 +10048,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 105
+      "rank": 108,
+      "patchChange": null
     },
     {
       "name": "Helcurt",
@@ -9598,97 +10139,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 106
-    },
-    {
-      "name": "Xavier",
-      "key": "xavier",
-      "tier": "C",
-      "action": "PICK",
-      "confidence": "ปานกลาง",
-      "presence": 0.2,
-      "ban": 0,
-      "pick": 0.2,
-      "winRate": 0,
-      "winRateAdj": 46.7,
-      "currentPicks": 1,
-      "regionsContested": 0,
-      "regionsTotal": 5,
-      "sources": [
-        {
-          "src": "mpl-ph",
-          "label": "MPL-PH S18",
-          "flag": "🇵🇭",
-          "presence": 0.6,
-          "ban": 0,
-          "pick": 0.6,
-          "picks": 1,
-          "wins": 0,
-          "bans": 0,
-          "games": 172
-        },
-        {
-          "src": "mpl-id",
-          "label": "MPL-ID S18",
-          "flag": "🇮🇩",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 215
-        },
-        {
-          "src": "mpl-my",
-          "label": "MPL-MY S18",
-          "flag": "🇲🇾",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 170
-        },
-        {
-          "src": "msl-th",
-          "label": "MSL-TH S2",
-          "flag": "🇹🇭",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 135
-        },
-        {
-          "src": "msc-2026",
-          "label": "MSC 2026",
-          "flag": "🌍",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 113
-        },
-        {
-          "src": "m7",
-          "label": "M7 World",
-          "flag": "🏆",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 137
-        }
-      ],
-      "rank": 107
+      "rank": 109,
+      "patchChange": null
     },
     {
       "name": "Jawhead",
@@ -9778,7 +10230,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 108
+      "rank": 110,
+      "patchChange": null
     },
     {
       "name": "Diggie",
@@ -9868,97 +10321,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 109
-    },
-    {
-      "name": "Popol and Kupa",
-      "key": "popol and kupa",
-      "tier": "D",
-      "action": "PICK",
-      "confidence": "ปานกลาง",
-      "presence": 0,
-      "ban": 0,
-      "pick": 0,
-      "winRate": 0,
-      "winRateAdj": 50,
-      "currentPicks": 0,
-      "regionsContested": 0,
-      "regionsTotal": 5,
-      "sources": [
-        {
-          "src": "mpl-ph",
-          "label": "MPL-PH S18",
-          "flag": "🇵🇭",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 172
-        },
-        {
-          "src": "mpl-id",
-          "label": "MPL-ID S18",
-          "flag": "🇮🇩",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 215
-        },
-        {
-          "src": "mpl-my",
-          "label": "MPL-MY S18",
-          "flag": "🇲🇾",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 170
-        },
-        {
-          "src": "msl-th",
-          "label": "MSL-TH S2",
-          "flag": "🇹🇭",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 135
-        },
-        {
-          "src": "msc-2026",
-          "label": "MSC 2026",
-          "flag": "🌍",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 113
-        },
-        {
-          "src": "m7",
-          "label": "M7 World",
-          "flag": "🏆",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 137
-        }
-      ],
-      "rank": 110
+      "rank": 111,
+      "patchChange": null
     },
     {
       "name": "Floryn",
@@ -10048,7 +10412,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 111
+      "rank": 112,
+      "patchChange": null
     },
     {
       "name": "Julian",
@@ -10138,7 +10503,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 112
+      "rank": 113,
+      "patchChange": null
     },
     {
       "name": "Sun",
@@ -10228,7 +10594,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 113
+      "rank": 114,
+      "patchChange": null
     },
     {
       "name": "Layla",
@@ -10318,7 +10685,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 114
+      "rank": 115,
+      "patchChange": null
     },
     {
       "name": "Nana",
@@ -10408,7 +10776,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 115
+      "rank": 116,
+      "patchChange": null
     },
     {
       "name": "Natan",
@@ -10498,7 +10867,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 116
+      "rank": 117,
+      "patchChange": null
     },
     {
       "name": "Franco",
@@ -10588,7 +10958,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 117
+      "rank": 118,
+      "patchChange": null
     },
     {
       "name": "Aamon",
@@ -10678,7 +11049,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 118
+      "rank": 119,
+      "patchChange": null
     },
     {
       "name": "Gusion",
@@ -10768,7 +11140,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 119
+      "rank": 120,
+      "patchChange": null
     },
     {
       "name": "Bane",
@@ -10858,7 +11231,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 120
+      "rank": 121,
+      "patchChange": null
     },
     {
       "name": "Zhask",
@@ -10948,7 +11322,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 121
+      "rank": 122,
+      "patchChange": null
     },
     {
       "name": "Cyclops",
@@ -11038,7 +11413,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 122
+      "rank": 123,
+      "patchChange": null
     },
     {
       "name": "Karina",
@@ -11128,7 +11504,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 123
+      "rank": 124,
+      "patchChange": null
     },
     {
       "name": "Silvanna",
@@ -11218,7 +11595,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 124
+      "rank": 125,
+      "patchChange": null
     },
     {
       "name": "Natalia",
@@ -11308,7 +11686,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 125
+      "rank": 126,
+      "patchChange": null
     },
     {
       "name": "Yin",
@@ -11398,97 +11777,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 126
-    },
-    {
-      "name": "Aldous",
-      "key": "aldous",
-      "tier": "D",
-      "action": "PICK",
-      "confidence": "ปานกลาง",
-      "presence": 0,
-      "ban": 0,
-      "pick": 0,
-      "winRate": 0,
-      "winRateAdj": 50,
-      "currentPicks": 0,
-      "regionsContested": 0,
-      "regionsTotal": 5,
-      "sources": [
-        {
-          "src": "mpl-ph",
-          "label": "MPL-PH S18",
-          "flag": "🇵🇭",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 172
-        },
-        {
-          "src": "mpl-id",
-          "label": "MPL-ID S18",
-          "flag": "🇮🇩",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 215
-        },
-        {
-          "src": "mpl-my",
-          "label": "MPL-MY S18",
-          "flag": "🇲🇾",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 170
-        },
-        {
-          "src": "msl-th",
-          "label": "MSL-TH S2",
-          "flag": "🇹🇭",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 135
-        },
-        {
-          "src": "msc-2026",
-          "label": "MSC 2026",
-          "flag": "🌍",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 113
-        },
-        {
-          "src": "m7",
-          "label": "M7 World",
-          "flag": "🏆",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 137
-        }
-      ],
-      "rank": 127
+      "rank": 127,
+      "patchChange": null
     },
     {
       "name": "Alucard",
@@ -11578,7 +11868,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 128
+      "rank": 128,
+      "patchChange": null
     },
     {
       "name": "Vale",
@@ -11668,7 +11959,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 129
+      "rank": 129,
+      "patchChange": null
     },
     {
       "name": "Martis",
@@ -11758,7 +12050,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 130
+      "rank": 130,
+      "patchChange": null
     },
     {
       "name": "Johnson",
@@ -11848,7 +12141,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 131
+      "rank": 131,
+      "patchChange": null
     },
     {
       "name": "Chang'e",
@@ -11938,7 +12232,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 132
+      "rank": 132,
+      "patchChange": null
     },
     {
       "name": "Zilong",
@@ -12028,7 +12323,8 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 133
+      "rank": 133,
+      "patchChange": null
     }
   ]
 };

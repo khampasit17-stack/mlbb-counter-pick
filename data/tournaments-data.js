@@ -5,7 +5,7 @@
  * 2. MPL Philippines Season 18 (172 Games)
  * 3. MLBB Super League Thailand Season 2 (135 Games)
  * 4. Combined Pro Meta (522 Games)
- * 5. M8 World Championship Prediction Model (6 Tournaments / 942 Games)
+ * 5. M8 World Championship Prediction Model + Patch 2.2.23 Adjustments (6 Tournaments / 942 Games)
  */
 
 window.TOURNAMENTS_METADATA = {
@@ -7596,12 +7596,12 @@ window.TOURNAMENTS_METADATA = {
     },
     "signatures": {
       "freya": {
-        "role": "🔮 M8 Rank #1 (99.2% Presence | แบน 80.9% / พิก 18.3%)",
-        "note": "🚫 คาดโดนแบนอันดับต้นใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 158 เกม แบน 631 เกม (WR 58.86%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 100% • 🇮🇩MPL-ID 98.1% • 🇲🇾MPL-MY 100% • 🇹🇭MSL-TH 94.1% • 🌍MSC 96.5% • 🏆M7 40.1%"
+        "role": "⚖️ ปรับพาสซีฟฮีล + อัลติวิ่งเร็ว • M8 #1 (99.2% Presence)",
+        "note": "[อัปเดตแพตช์ 2.2.23 ล่าสุด] พาสซีฟใช้ลูกแก้วตีดูดเลือดได้ตลอดเวลา + อัลติได้วิ่งเร็ว +30 MS และดาเมจพื้นฐานสูงขึ้น (แลกกับคูลดาวน์อัลตินานขึ้น 60-44s) • คาดการณ์ M8: Presence 99.2% (แบน 80.9% / พิก 18.3%)"
       },
       "atlas": {
-        "role": "🔮 M8 Rank #2 (99.2% Presence | แบน 74% / พิก 25.2%)",
-        "note": "🚫 คาดโดนแบนอันดับต้นใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 201 เกม แบน 548 เกม (WR 56.22%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 97.7% • 🇮🇩MPL-ID 92.6% • 🇲🇾MPL-MY 88.2% • 🇹🇭MSL-TH 91.1% • 🌍MSC 96.5%"
+        "role": "⬇️ เนิร์ฟพาสซีฟแช่แข็งนานขึ้น • M8 #2 (95.7% Presence)",
+        "note": "[อัปเดตแพตช์ 2.2.23 ล่าสุด] พาสซีฟ Frigid Breath ระยะเวลาสั้นลง (5s -> 4s) และคูลดาวน์แช่แข็งนานขึ้น (2.5s -> 4s) ชดเชยด้วยโบนัสเกราะเพิ่มเป็น +0.7% Extra HP • คาดการณ์ M8: Presence 95.7% (แบน 71.4% / พิก 24.3%)"
       },
       "hirara": {
         "role": "🔮 M8 Rank #3 (93.5% Presence | แบน 35.9% / พิก 57.6%)",
@@ -7616,8 +7616,8 @@ window.TOURNAMENTS_METADATA = {
         "note": "⚖️ ตัว Flex แบนหรือชิงหยิบใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 361 เกม แบน 277 เกม (WR 49.86%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 88.4% • 🇮🇩MPL-ID 84.2% • 🇲🇾MPL-MY 81.8% • 🇹🇭MSL-TH 65.2% • 🌍MSC 69%"
       },
       "uranus": {
-        "role": "🔮 M8 Rank #6 (69.8% Presence | แบน 38% / พิก 31.8%)",
-        "note": "⚖️ ตัว Flex แบนหรือชิงหยิบใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 232 เกม แบน 269 เกม (WR 50.86%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 66.3% • 🇮🇩MPL-ID 54% • 🇲🇾MPL-MY 74.1% • 🇹🇭MSL-TH 60.7% • 🌍MSC 55.8% • 🏆M7 62%"
+        "role": "⚖️ ปรับตีปกติกระจายเป็นเวท • M8 #7 (68.3% Presence)",
+        "note": "[อัปเดตแพตช์ 2.2.23 ล่าสุด] เปลี่ยนดาเมจกระจายของการโจมตีปกติเป็นดาเมจเวท + รูน Concussive Blast โดนเนิร์ฟเคลียร์มินเนี่ยนลดลง 50% • คาดการณ์ M8: Presence 68.3% (แบน 37.2% / พิก 31.1%)"
       },
       "fanny": {
         "role": "🔮 M8 Rank #7 (68.5% Presence | แบน 58.2% / พิก 10.3%)",
@@ -7652,16 +7652,16 @@ window.TOURNAMENTS_METADATA = {
         "note": "⚖️ ตัว Flex แบนหรือชิงหยิบใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 194 เกม แบน 191 เกม (WR 52.58%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 66.9% • 🇮🇩MPL-ID 40% • 🇲🇾MPL-MY 52.4% • 🇹🇭MSL-TH 29.6% • 🌍MSC 48.7%"
       },
       "masha": {
-        "role": "🔮 M8 Rank #15 (54.5% Presence | แบน 45.3% / พิก 9.3%)",
-        "note": "🚫 คาดโดนแบนอันดับต้นใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 67 เกม แบน 294 เกม (WR 59.7%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 50.6% • 🇮🇩MPL-ID 53.5% • 🇲🇾MPL-MY 40.6% • 🇹🇭MSL-TH 66.7%"
+        "role": "⬇️ เนิร์ฟดาเมจแผล & ฮีลลดลง • M8 #16 (49.5% Presence)",
+        "note": "[อัปเดตแพตช์ 2.2.23 ล่าสุด] ลดดาเมจทำลายแผลและลดฟื้นฟูเลือดพาสซีฟ (4-10% -> 3-6% HP), ลดโบนัสดาเมจสกิล 1-2 แต่เพิ่มดาเมจตีมินเนี่ยนให้กลับไปยืน EXP • คาดการณ์ M8: Presence 49.5% (แบน 41.1% / พิก 8.4%)"
       },
       "eudora": {
         "role": "🔮 M8 Rank #16 (54.4% Presence | แบน 20.1% / พิก 34.3%)",
         "note": "✅ คาดถูกแย่งชิงหยิบ (Priority Pick) ใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 243 เกม แบน 144 เกม (WR 52.26%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 54.7% • 🇮🇩MPL-ID 39.1% • 🇲🇾MPL-MY 36.5% • 🇹🇭MSL-TH 60% • 🌍MSC 58.4%"
       },
       "gloo": {
-        "role": "🔮 M8 Rank #17 (48.2% Presence | แบน 25.1% / พิก 23.1%)",
-        "note": "⚖️ ตัว Flex แบนหรือชิงหยิบใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 162 เกม แบน 172 เกม (WR 54.94%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 33.7% • 🇮🇩MPL-ID 45.1% • 🇲🇾MPL-MY 31.8% • 🇹🇭MSL-TH 71.1% • 🌍MSC 25.7% • 🏆M7 9.5%"
+        "role": "⬇️ เนิร์ฟสกิล 1 & อัลติส่งดาเมจลดลง • M8 #20 (42.7% Presence)",
+        "note": "[อัปเดตแพตช์ 2.2.23 ล่าสุด] สกิล 1 ล็อกขาสั้นลง (0.8s -> 0.6s) ดาเมจลดลง และอัลติลดการส่งผ่านดาเมจขณะเกาะร่างจาก 80% เหลือ 60% • คาดการณ์ M8: Presence 42.7% (แบน 22.2% / พิก 20.5%)"
       },
       "valentina": {
         "role": "🔮 M8 Rank #18 (47.1% Presence | แบน 21% / พิก 26.1%)",
@@ -7680,8 +7680,8 @@ window.TOURNAMENTS_METADATA = {
         "note": "🚫 คาดโดนแบนอันดับต้นใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 132 เกม แบน 163 เกม (WR 58.33%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 42.4% • 🇮🇩MPL-ID 38.6% • 🇲🇾MPL-MY 54.7% • 🇹🇭MSL-TH 28.9% • 🌍MSC 6.2%"
       },
       "melissa": {
-        "role": "🔮 M8 Rank #22 (41.2% Presence | แบน 26.8% / พิก 14.4%)",
-        "note": "🚫 คาดโดนแบนอันดับต้นใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 108 เกม แบน 199 เกม (WR 53.7%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 43.6% • 🇮🇩MPL-ID 40.5% • 🇲🇾MPL-MY 51.2% • 🇹🇭MSL-TH 20% • 🌍MSC 27.4%"
+        "role": "⬆️ บัฟสกิล 2 + บัฟเงินเลนทอง • M8 #17 (47.7% Presence)",
+        "note": "[อัปเดตแพตช์ 2.2.23 ล่าสุด] ตุ๊กตา Muddles ส่งผ่านดาเมจเพิ่มขึ้นเป็น 50%-60% + ได้อานิสงส์รถถัง Gold Lane เพิ่มทองเป็น +60% • คาดการณ์ M8: Presence 47.7% (แบน 31% / พิก 16.7%)"
       },
       "minotaur": {
         "role": "🔮 M8 Rank #23 (40% Presence | แบน 13.4% / พิก 26.6%)",
@@ -7706,6 +7706,38 @@ window.TOURNAMENTS_METADATA = {
       "gatotkaca": {
         "role": "🔮 M8 Rank #28 (28.4% Presence | แบน 6.3% / พิก 22.1%)",
         "note": "✅ คาดถูกแย่งชิงหยิบ (Priority Pick) ใน M8 • สถิติรวมแพตช์ปัจจุบัน: พิก 157 เกม แบน 45 เกม (WR 39.49%) • เทียบ 6 ทัวร์: 🇵🇭MPL-PH 38.4% • 🇮🇩MPL-ID 20.5% • 🇲🇾MPL-MY 31.2% • 🇹🇭MSL-TH 19.3% • 🌍MSC 11.5% • 🏆M7 46%"
+      },
+      "lukas": {
+        "role": "⬆️ ปรับไฟต์เตอร์ถึกขึ้น (ฮีล 8% HP) • M8 #37 (22% Presence)",
+        "note": "[อัปเดตแพตช์ 2.2.23 ล่าสุด] เพิ่มเลือดและเกราะพื้นฐาน, สกิล 1 ดาเมจพื้นฐานพุ่งเป็น 400-800 และฮีลเพิ่มจาก 6% เป็น 8% Max HP (ลดสเกล AD ลงเน้นออกกึ่งแทงค์) • คาดการณ์ M8: Presence 22% (แบน 11.1% / พิก 10.9%)"
+      },
+      "kaja": {
+        "role": "⬆️ บัฟอัลติขังทะลุอมตะ CC • M8 #48 (15.7% Presence)",
+        "note": "[อัปเดตแพตช์ 2.2.23 ล่าสุด] อัลติ Divine Binding ปรับใหม่: ศัตรูที่มีสถานะอมตะ CC (Control Immunity) ไม่สามารถหนีออกจากวงอัลติได้ + บิน Soaring นานขึ้น • คาดการณ์ M8: Presence 15.7% (แบน 9.9% / พิก 5.8%)"
+      },
+      "popol and kupa": {
+        "role": "♻️ รีแวมป์ใหญ่ (ขี่หมา Kupa) • M8 #49 (14.5% Presence)",
+        "note": "[อัปเดตแพตช์ 2.2.23 ล่าสุด] รีแวมป์ใหม่ยกชุด! สกิล 2 กดขี่หลัง Kupa วิ่งเร็ว+รีเลือด, พาสซีฟชุบ Kupa ได้และตีป่า True DMG, อัลติทุบงัดลอยหมู่ • คาดการณ์ M8: Presence 14.5% (แบน 3.6% / พิก 10.9%)"
+      },
+      "karrie": {
+        "role": "⬆️ บัฟอัลติวิ่งเร็ว 30% + แรงขึ้น • M8 #53 (13.9% Presence)",
+        "note": "[อัปเดตแพตช์ 2.2.23 ล่าสุด] อัลติเพิ่มดาเมจพื้นฐานวงล้อ (40 -> 50) และเพิ่มความเร็วเคลื่อนที่ขณะเปิดอัลติ (20% -> 30%) + รถถังเลนทองรวยไวขึ้น • คาดการณ์ M8: Presence 13.9% (แบน 3.7% / พิก 10.2%)"
+      },
+      "xavier": {
+        "role": "⬆️ บัฟใหญ่ (S2 แรง 2 เท่า) • M8 #55 (12.2% Presence)",
+        "note": "[อัปเดตแพตช์ 2.2.23 ล่าสุด] ลดหน่วงร่ายสกิล 1-2 ลง 50%, ดาเมจระเบิดสกิล 2 เพิ่ม 2 เท่า (440-690 +130% MP), พาสซีฟวิ่งเร็วเพิ่มเป็น 60% • คาดการณ์ M8: Presence 12.2% (แบน 0% / พิก 12.2%)"
+      },
+      "lunox": {
+        "role": "⬆️ บัฟต้นเกม (+10% เจาะเวท/ดูดเลือด) • M8 #56 (12.1% Presence)",
+        "note": "[อัปเดตแพตช์ 2.2.23 ล่าสุด] พาสซีฟได้ดูดเลือดเวท 10% หรือเจาะเกราะเวท 10% ทันที, สกิล 2 ต้นเกมแรงขึ้น (3.5%-5% HP), อัลติมืดพุ่งไวขึ้น 50% • คาดการณ์ M8: Presence 12.1% (แบน 4.5% / พิก 7.6%)"
+      },
+      "aldous": {
+        "role": "⬆️ บัฟเกราะลดดาเมจ 55% • M8 #76 (5.5% Presence)",
+        "note": "[อัปเดตแพตช์ 2.2.23 ล่าสุด] สกิล 2 ลดคูลดาวน์เหลือ 8 วินาทีทุกเลเวล และเพิ่มลดดาเมจ (Damage Reduction) สูงสุดถึง 55% (จากเดิม 30%) • คาดการณ์ M8: Presence 5.5% (แบน 1.4% / พิก 4.1%)"
+      },
+      "kagura": {
+        "role": "⚖️ ปรับระยะแสดงผลร่ม • M8 #82 (2.3% Presence)",
+        "note": "[อัปเดตแพตช์ 2.2.23 ล่าสุด] ปรับปรุงเส้นแสดงระยะห่างสูงสุดของร่ม Seimei ให้ควบคุมจังหวะคอมโบแม่นยำขึ้น • คาดการณ์ M8: Presence 2.3% (แบน 0% / พิก 2.3%)"
       }
     },
     "stats": {
@@ -7729,11 +7761,11 @@ window.TOURNAMENTS_METADATA = {
         "bans": 548,
         "totalPickBans": 749,
         "winRate": 56.22,
-        "pickRate": 25.2,
-        "banRate": 74,
-        "presenceRate": 99.2,
+        "pickRate": 24.3,
+        "banRate": 71.4,
+        "presenceRate": 95.7,
         "tier": "SS",
-        "metaScore": 114.9
+        "metaScore": 112
       },
       "hirara": {
         "picks": 434,
@@ -7781,11 +7813,11 @@ window.TOURNAMENTS_METADATA = {
         "bans": 269,
         "totalPickBans": 501,
         "winRate": 50.86,
-        "pickRate": 31.8,
-        "banRate": 38,
-        "presenceRate": 69.8,
+        "pickRate": 31.1,
+        "banRate": 37.2,
+        "presenceRate": 68.3,
         "tier": "SS",
-        "metaScore": 84.6
+        "metaScore": 83.4
       },
       "fanny": {
         "picks": 75,
@@ -7898,11 +7930,11 @@ window.TOURNAMENTS_METADATA = {
         "bans": 294,
         "totalPickBans": 361,
         "winRate": 59.7,
-        "pickRate": 9.3,
-        "banRate": 45.3,
-        "presenceRate": 54.5,
+        "pickRate": 8.4,
+        "banRate": 41.1,
+        "presenceRate": 49.5,
         "tier": "S",
-        "metaScore": 79.7
+        "metaScore": 75.5
       },
       "eudora": {
         "picks": 243,
@@ -7924,11 +7956,11 @@ window.TOURNAMENTS_METADATA = {
         "bans": 172,
         "totalPickBans": 334,
         "winRate": 54.94,
-        "pickRate": 23.1,
-        "banRate": 25.1,
-        "presenceRate": 48.2,
+        "pickRate": 20.5,
+        "banRate": 22.2,
+        "presenceRate": 42.7,
         "tier": "S",
-        "metaScore": 67.4
+        "metaScore": 62.7
       },
       "valentina": {
         "picks": 197,
@@ -7989,11 +8021,11 @@ window.TOURNAMENTS_METADATA = {
         "bans": 199,
         "totalPickBans": 307,
         "winRate": 53.7,
-        "pickRate": 14.4,
-        "banRate": 26.8,
-        "presenceRate": 41.2,
+        "pickRate": 16.7,
+        "banRate": 31,
+        "presenceRate": 47.7,
         "tier": "S",
-        "metaScore": 60.3
+        "metaScore": 65.8
       },
       "minotaur": {
         "picks": 197,
@@ -8288,11 +8320,11 @@ window.TOURNAMENTS_METADATA = {
         "bans": 50,
         "totalPickBans": 101,
         "winRate": 56.86,
-        "pickRate": 8.4,
-        "banRate": 8.6,
-        "presenceRate": 17,
+        "pickRate": 10.9,
+        "banRate": 11.1,
+        "presenceRate": 22,
         "tier": "A",
-        "metaScore": 39.3
+        "metaScore": 43.5
       },
       "harith": {
         "picks": 58,
@@ -8535,11 +8567,11 @@ window.TOURNAMENTS_METADATA = {
         "bans": 13,
         "totalPickBans": 44,
         "winRate": 35.48,
-        "pickRate": 5.8,
-        "banRate": 2.1,
-        "presenceRate": 7.9,
+        "pickRate": 10.2,
+        "banRate": 3.7,
+        "presenceRate": 13.9,
         "tier": "B",
-        "metaScore": 21.9
+        "metaScore": 27
       },
       "valir": {
         "picks": 37,
@@ -8626,11 +8658,11 @@ window.TOURNAMENTS_METADATA = {
         "bans": 27,
         "totalPickBans": 44,
         "winRate": 41.18,
-        "pickRate": 2.4,
-        "banRate": 3.9,
-        "presenceRate": 6.2,
-        "tier": "B",
-        "metaScore": 22.4
+        "pickRate": 5.8,
+        "banRate": 9.9,
+        "presenceRate": 15.7,
+        "tier": "A",
+        "metaScore": 30.5
       },
       "estes": {
         "picks": 10,
@@ -8808,11 +8840,11 @@ window.TOURNAMENTS_METADATA = {
         "bans": 4,
         "totalPickBans": 11,
         "winRate": 42.86,
-        "pickRate": 1.1,
-        "banRate": 0.6,
-        "presenceRate": 1.6,
-        "tier": "C",
-        "metaScore": 19.4
+        "pickRate": 7.6,
+        "banRate": 4.5,
+        "presenceRate": 12.1,
+        "tier": "B",
+        "metaScore": 28.4
       },
       "ixia": {
         "picks": 7,
@@ -8899,11 +8931,11 @@ window.TOURNAMENTS_METADATA = {
         "bans": 0,
         "totalPickBans": 6,
         "winRate": 16.67,
-        "pickRate": 0.8,
+        "pickRate": 2.3,
         "banRate": 0,
-        "presenceRate": 0.8,
+        "presenceRate": 2.3,
         "tier": "C",
-        "metaScore": 15.9
+        "metaScore": 17.2
       },
       "joy": {
         "picks": 4,
@@ -9094,11 +9126,11 @@ window.TOURNAMENTS_METADATA = {
         "bans": 0,
         "totalPickBans": 1,
         "winRate": 0,
-        "pickRate": 0.2,
+        "pickRate": 12.2,
         "banRate": 0,
-        "presenceRate": 0.2,
-        "tier": "C",
-        "metaScore": 17.9
+        "presenceRate": 12.2,
+        "tier": "B",
+        "metaScore": 28.1
       },
       "jawhead": {
         "picks": 1,
@@ -9133,11 +9165,11 @@ window.TOURNAMENTS_METADATA = {
         "bans": 0,
         "totalPickBans": 0,
         "winRate": 0,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 0
+        "pickRate": 10.9,
+        "banRate": 3.6,
+        "presenceRate": 14.5,
+        "tier": "B",
+        "metaScore": 31.3
       },
       "floryn": {
         "picks": 0,
@@ -9354,11 +9386,11 @@ window.TOURNAMENTS_METADATA = {
         "bans": 0,
         "totalPickBans": 0,
         "winRate": 0,
-        "pickRate": 0,
-        "banRate": 0,
-        "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 0
+        "pickRate": 4.1,
+        "banRate": 1.4,
+        "presenceRate": 5.5,
+        "tier": "B",
+        "metaScore": 23.7
       },
       "alucard": {
         "picks": 0,

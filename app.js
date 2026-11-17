@@ -163,7 +163,7 @@ const BATTLE_SPELLS = [
   { key: 'Vengeance', en: 'Vengeance', th: 'สะท้อนดาเมจ', cd: '75s', desc: 'ลดดาเมจที่ได้รับลง 35% และสะท้อนดาเมจเวทกลับไปหาผู้โจมตี 35% นาน 3 วินาที', img: 'assets/spells/Vengeance.png' },
   { key: 'Petrify', en: 'Petrify', th: 'สตั๊นหิน', cd: '75s', desc: 'สาปศัตรูรอบตัวให้กลายเป็นหิน (สตั๊น) 0.8 วินาที และสโลว์ต่อ 50% หยุดตัวพริ้วได้ดีมาก', img: 'assets/spells/Petrify.png' },
   { key: 'Inspire', en: 'Inspire', th: 'เร่งตีเร็ว', cd: '75s', desc: 'เพิ่มความเร็วโจมตีสูงสุด 1.55 เท่า เจาะเกราะกายภาพ และดูดเลือดทุกการโจมตีปกติ', img: 'assets/spells/Inspire.png' },
-  { key: 'Sprint', en: 'Sprint', th: 'วิ่งเร็ว', cd: '100s', desc: 'เพิ่มความเร็วเคลื่อนที่ 50% และต้านทานสถานะสโลว์ (Slow Immunity) 100% ตลอดระยะเวลา', img: 'assets/spells/Sprint.png' },
+  { key: 'Sprint', en: 'Sprint', th: 'วิ่งเร็ว (บัฟใหม่ 75s)', cd: '75s', desc: '[บัฟแพตช์ 2.2.23 ลดคูลดาวน์ 100s -> 75s!] เพิ่มความเร็วเคลื่อนที่ 50% และต้านทานสถานะสโลว์ (Slow Immunity) 100% ตลอดระยะเวลา', img: 'assets/spells/Sprint.png' },
   { key: 'Execute', en: 'Execute', th: 'ประหาร', cd: '90s', desc: 'ฟันทำดาเมจจริง (True Damage) ตามเลือดที่หายไปของศัตรู ทะลุเกราะขาวทั้งหมด', img: 'assets/spells/Execute.png' },
   { key: 'Flameshot', en: 'Flameshot', th: 'ยิงไฟผลัก', cd: '50s', desc: 'ยิงกระสุนไฟระยะไกล และผลักศัตรูที่อยู่ใกล้ตัวให้กระเด็นถอยหลังพร้อมสโลว์', img: 'assets/spells/Flameshot.png' },
   { key: 'Aegis', en: 'Aegis', th: 'เกราะป้องกัน', cd: '75s', desc: 'สร้างเกราะดูดซับดาเมจขนาดใหญ่ให้ตัวเองเป็นเวลา 5 วินาที ป้องกันการโดนเบิร์สต์ชุดเดียว', img: 'assets/spells/Aegis.png' },
@@ -449,10 +449,10 @@ const COUNTER_ITEMS_DB = [
   {
     id: 'antique_cuirass',
     name: 'Antique Cuirass',
-    thName: 'เกราะเขียวลดพลังสกิลกายภาพ 18%',
-    shortTag: '🛡️ ลดพลังโจมตีสกิลกายภาพศัตรู 18%',
+    thName: 'เกราะเขียวลดดาเมจกายภาพ 24% (บัฟใหม่แพตช์ 2.2.23)',
+    shortTag: '🛡️ บัฟใหม่: ลดดาเมจกายภาพศัตรูสูงสุด 24% (8%×3)',
     category: 'Anti-Burst',
-    isNewMeta: false,
+    isNewMeta: true,
     roleGroup: 'tank',
     forRoles: ['Tank', 'Fighter', 'Support'],
     forLanes: 'Roam / EXP Lane',
@@ -461,7 +461,7 @@ const COUNTER_ITEMS_DB = [
     img: 'assets/items/antique_cuirass.png',
     icon: '🛡️🌿',
     stats: '+920 HP • +54 เกราะกายภาพ • +4 ฟื้นฟู HP',
-    passive: 'Deter: เมื่อถูกโจมตีด้วยสกิล จะลดพลังโจมตีของศัตรูตัวนั้นลง 6% นาน 2 วินาที (ซ้อนทับ 3 ครั้ง รวมลด 18%) แก้ทางแอสซาซินและไฟต์เตอร์สกิลหนัก เช่น Fanny, Hayabusa, Paquito, Saber'
+    passive: 'Deter (บัฟใหม่แพตช์ 2.2.23): เมื่อถูกโจมตีด้วยสกิล จะลดดาเมจกายภาพของศัตรูตัวนั้นลง 8% นาน 2 วินาที (ซ้อนทับ 3 ครั้ง รวมลดสูงสุด 24% จากเดิม 18%!) แก้ทางแอสซาซินและไฟต์เตอร์สกิลหนัก เช่น Fanny, Hayabusa, Paquito, Saber'
   },
   {
     id: 'blade_armor',
@@ -1474,6 +1474,102 @@ const REVAMPED_HERO_KITS = {
       '🌨️ สกิล 1 (Hailstone Blast): เรียกอุกกาบาตน้ำแข็งตกใส่พื้นที่รัวๆ สโลว์ต่อเนื่อง',
       '🌬️ สกิล 2 (Frosty Breeze): พัดพายุน้ำแข็งแช่แข็งศัตรูด้านหน้า (ระยไกลมีจุดแช่แข็งทันที)',
       '🏔️ อัลติ (Frigid Glacier): สร้างธารน้ำแข็งยักษ์พุ่งไปข้างหน้า แช่แข็งศัตรูและป้อมปราการทั้งแถบเป็นเวลานาน'
+    ]
+  },
+  'Xavier': {
+    badge: '⬆️ BUFF ใหญ่ล่าสุด (Patch 2.2.23 • 17/11/2026): สกิล 2 แรงขึ้น 2 เท่า & ร่ายไวขึ้น 50%',
+    summary: 'ปรับเพิ่มดาเมจทีมไฟต์และความคล่องตัวครั้งใหญ่: ย้ายดาเมจสกิล 2 มารวมตอนระเบิดสนามพลัง (แรงขึ้น 2 เท่า!) และลดเวลาหน่วงหลังร่ายสกิล 1-2 ลง 50%',
+    skills: [
+      '⚡ พาสซีฟ (Transcendence — บัฟ): โบนัสความเร็วเคลื่อนที่เพิ่มจาก 50% → 60% และความเร็วลดลงช้ากว่าเดิม',
+      '✨ สกิล 1 (Infinite Extension — บัฟ): ลดเวลาหน่วงอนิเมชันหลังร่าย (Backswing) ลงถึง 50% เดินยิงต่อเนื่องลื่นขึ้นมาก',
+      '💥 สกิล 2 (Mystic Field — บัฟใหญ่): ลดเวลาหน่วงหลังร่ายลง 50% และเพิ่มดาเมจระเบิดสนามพลังเป็น 2 เท่า (220–345 (+65% MP) → 440–690 (+130% MP)) พร้อมติดวิ่งเร็วจากพาสซีฟทันที'
+    ]
+  },
+  'Lunox': {
+    badge: '⬆️ BUFF ล่าสุด (Patch 2.2.23 • 17/11/2026): ได้ดูดเลือด/เจาะเวท 10% ตั้งแต่ต้นเกม',
+    summary: 'ปรับให้เก่งตั้งแต่ต้น-กลางเกม: พาสซีฟมอบดูดเลือดเวท 10% หรือเจาะเกราะเวท 10% ทันทีโดยไม่ต้องรอของเลทเกม พร้อมบัฟสกิล 2 และอัลติพุ่งไวขึ้น',
+    skills: [
+      '☯️ พาสซีฟ (Dreamland Twist — บัฟ): เมื่ออยู่โหมดแสง (Order) ได้รับ +10% Spell Vamp ทันที และเมื่ออยู่โหมดมืด (Chaos) ได้รับ +10% Magic Penetration ทันที',
+      '🔮 สกิล 2 (Chaos Assault — บัฟ): เพิ่มโบนัสดาเมจ %HP ช่วงต้นเกม (2.5%–5% → 3.5%–5%) และตีมอนสเตอร์ป่าแรงขึ้น (1.5%–3% → 2.1%–3%)',
+      '🌑 อัลติมืด (Power of Chaos: Darkening — ปรับสมดุล): ลดเวลาหน่วงก่อนพุ่งแดชลง 50% และปรับสเกลพลังเวทจาก +100% MP → +135% MP'
+    ]
+  },
+  'Freya': {
+    badge: '⚖️ ADJUST/BUFF ล่าสุด (Patch 2.2.23 • 17/11/2026): พาสซีฟตีดูดเลือดได้ตลอด + อัลติวิ่งเร็ว',
+    summary: 'ย้ายการฟื้นฟูเลือดมาไว้ที่พาสซีฟ ทำให้ยืนแลกในเลนดูดเลือดได้ตลอดเวลาโดยไม่ต้องรอเปิดอัลติ และเพิ่มความเร็วเคลื่อนที่ตอนเปิดอัลติ',
+    skills: [
+      '🛡️ พาสซีฟ (Power of Einherjar — บัฟใหม่): ทุกครั้งที่ใช้ลูกแก้ว Sacred Orb การโจมตีปกติครั้งถัดไปจะฟื้นฟู HP 20 (+3×เลเวล) (+20% Total Physical Attack) ทันที',
+      '🪽 อัลติ (Valkyrie Descent — ปรับสมดุล): เพิ่มความเร็วเคลื่อนที่ +30 หน่วยตลอดช่วงอัลติ และเพิ่มดาเมจพื้นฐาน (30–60 (+100% AD) → 100–200 (+70% AD)) แต่คูลดาวน์นานขึ้น (44–28s → 60–44s)'
+    ]
+  },
+  'Gloo': {
+    badge: '⬇️ NERF ล่าสุด (Patch 2.2.23 • 17/11/2026): ลดเวลาล็อกขาสกิล 1 & ลดส่งดาเมจอัลติ',
+    summary: 'ถูกเนิร์ฟลดความโกงหลังครองสถิติท็อปแบนในแรงก์สูงและโปรลีก โดยลดเวลาจับล็อกขาและลดดาเมจตอนสิงร่างศัตรู',
+    skills: [
+      '🟣 สกิล 1 (Slam, Slam — เนิร์ฟ): ลดเวลาล็อกขา (Immobilize) จาก 0.8 วินาที → 0.6 วินาที และลดดาเมจระเบิดลง (250–400 (+12% Extra HP) → 230–380 (+11% Extra HP))',
+      '👾 อัลติ (Split, Split — เนิร์ฟ): ลดอัตราส่วนส่งผ่านดาเมจขณะเกาะร่างเป้าหมายจาก 80% → 60%'
+    ]
+  },
+  'Masha': {
+    badge: '⬇️ NERF/ADJUST ล่าสุด (Patch 2.2.23 • 17/11/2026): ลดดาเมจแผล/ฮีล & ดันกลับเลน EXP',
+    summary: 'ลดดาเมจ爆发และการฟื้นฟูเลือดจากแผล (Wounds) ลง แต่เพิ่มดาเมจสกิล 1 ต่อมินเนี่ยนเพื่อให้เน้นเคลียร์เลน EXP แทนการโรม/ป่า',
+    skills: [
+      '🩸 พาสซีฟ (Primal Pact — เนิร์ฟ): ลดโบนัสดาเมจทำลายแผล (3% + 1% Extra AD → 2% + 0.5% Extra AD) และลดการฟื้นฟูเลือด (4–10% Max HP → 3–6% Max HP)',
+      '🐾 สกิล 1 (Feral Swipe — ปรับสมดุล): ลดโบนัสดาเมจใส่ฮีโร่ (70% → 55%) และถอดสโลว์ออก แต่เพิ่มดาเมจต่อมินเนี่ยนเป็น 150%–200%',
+      '⚡ สกิล 2 (Claw Strike — ปรับสมดุล): ย้ายสโลว์ 50% (1 วิ) มาไว้ที่สกิล 2 แทน แต่ความกว้างแคบลง 20% และลดดาเมจสกิลลง'
+    ]
+  },
+  'Atlas': {
+    badge: '⬇️ NERF ล่าสุด (Patch 2.2.23 • 17/11/2026): เพิ่มคูลดาวน์พาสซีฟแช่แข็ง (ชดเชยเกราะเพิ่ม)',
+    summary: 'ปรับลดความถี่ในการแช่แข็งศัตรูจากพาสซีฟ Frigid Breath แต่เพิ่มโบนัสเกราะกายภาพและเวทให้ยืนรับดาเมจหลังเปิดไฟต์ได้ถึกขึ้น',
+    skills: [
+      '❄️ พาสซีฟ (Frigid Breath — เนิร์ฟแช่แข็ง / บัฟเกราะ): ลดระยะเวลาไอเย็น (5s → 4s) และเพิ่มคูลดาวน์การแช่แข็งศัตรู (2.5s → 4s) แต่เพิ่มโบนัสเกราะกายภาพและเวทจาก 20 (+0.5% Extra HP) → 20 (+0.7% Extra HP)'
+    ]
+  },
+  'Lukas': {
+    badge: '⬆️ ADJUST ล่าสุด (Patch 2.2.23 • 17/11/2026): บัฟเลือด/เกราะ/ฮีลสกิล 1 เน้นสายไฟต์เตอร์กึ่งแทงค์',
+    summary: 'ปรับลดการพึ่งพาของดาเมจล้วน โดยเพิ่มดาเมจพื้นฐานและเพิ่มฮีลสกิล 1 เป็น 8% Max HP ทำให้สายออกของกึ่งแทงค์ (Thunder Belt / War Axe) เก่งและถึกขึ้นมาก',
+    skills: [
+      '🛡️ ค่าสถานะพื้นฐาน (บัฟ): เพิ่ม Base HP (2550 → 2620) และเพิ่มเกราะกายภาพพื้นฐาน (21 → 23)',
+      '🦁 สกิล 1 (Flash Combo — บัฟดาเมจต้น & ฮีล): ดาเมจทุบเพิ่มจาก 280–580 (+120% AD) → 400–800 (+60% AD) และเพิ่มฟื้นฟูเลือดจาก 6% Max HP → 8% Max HP'
+    ]
+  },
+  'Karrie': {
+    badge: '⬆️ ADJUST/BUFF ล่าสุด (Patch 2.2.23 • 17/11/2026): อัลติวิ่งเร็วขึ้น 30% & ยิงแรงขึ้น',
+    summary: 'อัปเกรดความคล่องตัวและดาเมจขณะเปิดอัลติ Speedy Lightwheel ให้ไล่ยิงละลายแทงค์ในเลทเกมได้ดุดันขึ้น',
+    skills: [
+      '⚙️ สกิล 1 (Spinning Light Wheel — ปรับสมดุล): ปรับวงล้อให้มองเห็นและตรวจจับการชนชัดเจนขึ้น เน้นใช้สโลว์โซนพื้นที่ (ลดโบนัส AD ของสกิล 1 ลง)',
+      '💨 สกิล 2 (Phantom Step — บัฟ): ตรวจจับฮีโร่ศัตรูตลอดจังหวะพุ่งแดช',
+      '🛞 อัลติ (Speedy Lightwheel — บัฟ): เพิ่มดาเมจพื้นฐานต่อวงล้อ (40 → 50) และเพิ่มความเร็วเคลื่อนที่ขณะเปิดอัลติจาก 20% → 30%'
+    ]
+  },
+  'Melissa': {
+    badge: '⬆️ BUFF ล่าสุด (Patch 2.2.23 • 17/11/2026): บัฟดาเมจตุ๊กตาสกิล 2 เลทเกม 60%',
+    summary: 'คืนพลังช่วงกลาง-เลทเกมให้ตุ๊กตา Muddles ส่งผ่านดาเมจและเอฟเฟกต์โจมตีเพิ่มขึ้นสูงสุด 60% พร้อมได้บัฟเงินรถถังเลนทอง +60%',
+    skills: [
+      '🪆 สกิล 2 (Eyes on You! — บัฟ): เพิ่มสัดส่วนส่งผ่านดาเมจและเอฟเฟกต์ไอเทมโจมตีของตุ๊กตา Muddles จาก 52% ทุกเลเวล → 50%–60% ตามเลเวลสกิล'
+    ]
+  },
+  'Kaja': {
+    badge: '⬆️ BUFF ล่าสุด (Patch 2.2.23 • 17/11/2026): อัลติขังศัตรูทะลุอมตะ CC!',
+    summary: 'ปรับอัลติใหม่ให้ศัตรูที่มีสถานะอมตะ CC (Control Immunity) ไม่สามารถหนีออกจากขอบเขตอัลติได้เมื่อทำงาน พร้อมบัฟสกิล 2 ให้บินได้นานและเลี้ยวไวขึ้น',
+    skills: [
+      '🦅 สกิล 2 (Soaring Wings — บัฟ): เลี้ยวขณะบินไวขึ้น และเมื่อโจมตีปกติเสริมพลังหรือใช้สกิล 2 โดนศัตรู/มินเนี่ยนจะช่วยยืดเวลาสถานะบิน (Soaring) ให้นานขึ้น',
+      '⛓️ อัลติ (Divine Binding — บัฟเมคคานิคใหม่): เพิ่มดีเลย์ก่อนทำงานเล็กน้อย แต่เมื่อทำงานแล้ว เป้าหมายที่มี Control Immunity จะไม่สามารถหนีออกจากวงอัลติได้!'
+    ]
+  },
+  'Aldous': {
+    badge: '⬆️ BUFF ล่าสุด (Patch 2.2.23 • 17/11/2026): สกิล 2 คูลดาวน์ 8 วิ & ลดดาเมจสูงสุด 55%',
+    summary: 'บัฟความอึดและการเทรดในเลนครั้งใหญ่ ลดคูลดาวน์สกิล 2 เหลือ 8 วินาทีตั้งแต่เลเวลแรก และเพิ่มลดดาเมจสูงสุดถึง 55%',
+    skills: [
+      '🛡️ สกิล 2 (Contract: Explosion — บัฟใหญ่): ลดคูลดาวน์จาก 12–9.5 วินาที → 8 วินาทีทุกเลเวล และเพิ่มการลดดาเมจ (Damage Reduction) จาก 30% ทุกเลเวล → 30%–55%'
+    ]
+  },
+  'Uranus': {
+    badge: '⚖️ ADJUST ล่าสุด (Patch 2.2.23 • 17/11/2026): ปรับดาเมจกระจายตีปกติเป็นดาเมจเวท',
+    summary: 'เปลี่ยนดาเมจกระจาย (Splash Damage) ของการโจมตีปกติให้เป็นดาเมจเวท (Magic Damage) เพื่อให้สอดคล้องกับเซ็ตไอเทมสายเวท/แทงค์',
+    skills: [
+      '✨ การโจมตีปกติ (ปรับสมดุล): ดาเมจกระจาย (Splash Damage) เปลี่ยนจากกายภาพเป็นดาเมจเวท (Magic Damage)'
     ]
   }
 };
@@ -3641,6 +3737,12 @@ function renderM8PredictionTab() {
               .map(s => `<span class="m8-src-mini" title="${s.label}: Presence ${s.presence}% (Pick ${s.picks} / Ban ${s.bans})">${s.flag} ${s.presence}%</span>`)
               .join('');
 
+            const pChange = item.patchChange;
+            const pCls = pChange ? (pChange.type === 'NERF' ? 'm8-act-ban' : (pChange.type === 'BUFF' || pChange.type === 'REVAMP' ? 'm8-act-pick' : 'm8-act-flex')) : '';
+            const patchBadgeHtml = pChange
+              ? `<span class="m8-action-pill ${pCls}" title="${pChange.summary}">${pChange.badge}</span>`
+              : '';
+
             return `
               <div class="m8-hero-card ${item.tier === 'SS' ? 'is-m8-ss' : ''}" onclick="openHeroModal(${h.id})">
                 <div class="m8-card-top">
@@ -3655,6 +3757,7 @@ function renderM8PredictionTab() {
                     </div>
                     <div class="m8-action-row">
                       <span class="m8-action-pill ${act.cls}">${act.label}</span>
+                      ${patchBadgeHtml}
                       <span class="m8-conf-pill" title="ความสอดคล้องของข้อมูลข้ามลีก">ความแม่นยำ: ${item.confidence}</span>
                     </div>
                   </div>
@@ -3677,6 +3780,8 @@ function renderM8PredictionTab() {
                   </div>
                 </div>
 
+                ${pChange ? `<div style="font-size:0.68rem; color:#fde68a; background:rgba(245,158,11,0.1); padding:3px 6px; border-radius:6px; border-left:2px solid #f59e0b;">${pChange.summary}</div>` : ''}
+
                 <!-- Cross-Tournament Comparison Pills -->
                 ${srcBadges ? `<div class="m8-src-row">${srcBadges}</div>` : `<div class="m8-src-row"><span class="m8-src-mini" style="opacity:0.55;">ยังไม่ถูกหยิบ/แบนในทัวร์หลัก</span></div>`}
               </div>
@@ -3688,16 +3793,49 @@ function renderM8PredictionTab() {
   }).join('');
 
   if (methodEl) {
+    const patchedHeroes = pred.heroes.filter(x => x.patchChange);
+    const patchCardsHtml = patchedHeroes.map(item => {
+      const h = HERO_BY_NAME.get(item.key);
+      if (!h) return '';
+      const p = item.patchChange;
+      const borderCol = p.type === 'NERF' ? 'rgba(244,63,94,0.5)' : (p.type === 'BUFF' || p.type === 'REVAMP' ? 'rgba(16,185,129,0.5)' : 'rgba(56,189,248,0.5)');
+      return `
+        <div onclick="openHeroModal(${h.id})" style="display:flex; align-items:flex-start; gap:0.55rem; background:rgba(7,11,20,0.85); border:1px solid ${borderCol}; border-radius:10px; padding:0.55rem 0.65rem; cursor:pointer;">
+          <img src="${h.head}" alt="${h.name}" style="width:40px; height:40px; border-radius:8px; object-fit:cover; flex-shrink:0;" />
+          <div style="min-width:0; flex:1;">
+            <div style="display:flex; align-items:center; gap:0.35rem; flex-wrap:wrap; font-size:0.84rem; font-weight:700; color:#fff;">
+              <span>${h.name}</span>
+              <span class="tier-badge tier-${item.tier}">${item.tier}</span>
+              <span style="font-size:0.68rem; color:#fde047;">${p.badge}</span>
+            </div>
+            <div style="font-size:0.72rem; color:#cbd5e1; margin-top:2px; line-height:1.4;">${p.summary}</div>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    const bfNotesHtml = (pred.meta.battlefieldNotes || []).map(n => `<div style="margin-bottom:3px;">• ${n}</div>`).join('');
+
     methodEl.innerHTML = `
+      <div style="font-weight:700; font-size:0.95rem; color:#fde047; margin-bottom:0.55rem;">
+        ⚖️ สรุปตัวละคร 14 ตัว &amp; ระบบเกมที่โดนปรับสมดุลล่าสุด (${pred.meta.patchVersion || 'Patch 2.2.23 • 17/11/2026'})
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:0.55rem; margin-bottom:0.85rem;">
+        ${patchCardsHtml}
+      </div>
+      <div style="font-size:0.76rem; color:#e2e8f0; background:rgba(7,11,20,0.65); padding:0.6rem 0.75rem; border-radius:8px; border-left:3px solid #38bdf8; margin-bottom:0.85rem;">
+        <div style="font-weight:700; color:#7dd3fc; margin-bottom:4px;">🗺️ การปรับสมดุลสนามรบ ไอเทม และสเปล (Battlefield &amp; Equipment Adjustments):</div>
+        ${bfNotesHtml}
+      </div>
       <div style="font-weight:700; color:#c4b5fd; margin-bottom:0.35rem;">📊 ระเบียบวิธีคำนวณโมเดลคาดการณ์ M8 (Multi-Tournament Statistical Forecast — ${pred.meta.totalGames} Games)</div>
       <div style="font-size:0.78rem; color:#cbd5e1; line-height:1.55;">
         • <strong>ฐานข้อมูลเปรียบเทียบ 6 ทัวร์นาเมนต์ทางการ (Liquipedia):</strong> ถ่วงน้ำหนักตามความใกล้เคียงของแพตช์ปัจจุบันและความแข็งแกร่งของลีก ได้แก่
-        <strong>🇵🇭 MPL-PH S18</strong> (172 นัด, น้ำหนัก 1.25×),
-        <strong>🇮🇩 MPL-ID S18</strong> (215 นัด, น้ำหนัก 1.20×),
-        <strong>🇲🇾 MPL-MY S18</strong> (170 นัด, น้ำหนัก 0.95×),
-        <strong>🇹🇭 MSL-TH S2</strong> (135 นัด, น้ำหนัก 0.85×)
-        ร่วมกับทัวร์นาเมนต์ระดับนานาชาติก่อนหน้า <strong>🌍 MSC 2026</strong> (113 นัด, น้ำหนัก 0.55×) และ <strong>🏆 M7 World Championship</strong> (137 นัด, น้ำหนัก 0.25×)<br/>
-        • <strong>สูตรคำนวณโอกาสปรากฏตัว (M8 Predicted Presence):</strong> <code>0.52 × ค่าเฉลี่ยถ่วงน้ำหนักทุกทัวร์ + 0.28 × ค่าต่ำสุดของลีกแพตช์ปัจจุบัน + 0.20 × ค่าสูงสุดของลีกแพตช์ปัจจุบัน + โบนัส Bayesian Win Rate + โบนัสฉันทามติข้ามภูมิภาค (Cross-Region Consensus)</code>
+        <strong>🇵🇭 MPL-PH S18</strong> (172 นัด, น้ำหนัก 1.30×),
+        <strong>🇮🇩 MPL-ID S18</strong> (215 นัด, น้ำหนัก 1.25×),
+        <strong>🇲🇾 MPL-MY S18</strong> (170 นัด, น้ำหนัก 1.00×),
+        <strong>🇹🇭 MSL-TH S2</strong> (135 นัด, น้ำหนัก 0.90×),
+        <strong>🌍 MSC 2026</strong> (113 นัด, น้ำหนัก 0.70×) และ <strong>🏆 M7 World Championship</strong> (137 นัด)<br/>
+        • <strong>ผสานผลกระทบแพตช์ 2.2.23 (17/11/2026):</strong> ปรับเพิ่ม/ลดโอกาสปรากฏตัวตามการ Buff / Nerf / Revamp ล่าสุดของฮีโร่ทั้ง 14 ตัวและเมต้าเลนทอง (+60% Gold)
       </div>
     `;
   }
