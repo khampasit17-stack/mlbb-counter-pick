@@ -34,7 +34,7 @@ function isHeroContestedInActiveTournament(heroName) {
   const tData = getActiveTournamentData();
   if (!tData || !tData.stats) return true;
   const s = tData.stats[heroName.toLowerCase()];
-  return Boolean(s && s.presenceRate >= 15);
+  return Boolean(s && (s.presenceRate >= 15 || s.tier === 'SS' || s.tier === 'S' || s.tier === 'A'));
 }
 
 function getActiveTournamentSignature(heroName) {
@@ -1627,6 +1627,8 @@ function setTournamentMeta(tournId, suppressRefresh = false) {
       h.stats.pickRate = s.pickRate;
       h.stats.presenceRate = s.presenceRate;
       h.tier = s.tier;
+      h.stats.patchBadge = s.patchBadge || null;
+      h.stats.tierShift = s.tierShift || null;
       h.stats.metaScore = s.metaScore !== undefined
         ? s.metaScore
         : Number(((s.presenceRate * 0.8) + (s.winRate * 0.4)).toFixed(1));
@@ -1640,6 +1642,8 @@ function setTournamentMeta(tournId, suppressRefresh = false) {
       h.stats.banRate = 0;
       h.stats.pickRate = 0;
       h.stats.presenceRate = 0;
+      h.stats.patchBadge = null;
+      h.stats.tierShift = null;
       h.tier = 'C';
       h.stats.metaScore = 0;
     }
@@ -3556,13 +3560,14 @@ function renderMetaTierList() {
         </div>
         <div class="tier-heroes-wrap">
           ${heroesInTier.map(h => `
-            <div class="meta-hero-tile" onclick="openHeroModal(${h.id})" title="${h.name}: Presence ${h.stats.presenceRate || 0}% (${h.stats.picks || 0} Picks / ${h.stats.bans || 0} Bans), WR ${h.stats.winRate}%">
+            <div class="meta-hero-tile" onclick="openHeroModal(${h.id})" title="${h.name}: Presence ${h.stats.presenceRate || 0}% (${h.stats.picks || 0} Picks / ${h.stats.bans || 0} Bans), WR ${h.stats.winRate}%${h.stats.patchBadge ? ' • ' + h.stats.patchBadge : ''}">
               <img src="${h.head}" alt="${h.name}" loading="lazy" />
               <div style="min-width:0; flex:1;">
-                <div style="font-weight:700; font-size:0.88rem; display:flex; justify-content:space-between;">
+                <div style="font-weight:700; font-size:0.88rem; display:flex; justify-content:space-between; align-items:center; gap:4px;">
                   <span>${h.name}</span>
                   <span style="font-size:0.7rem; color:#fcd34d; display:inline-flex; align-items:center; gap:2px;"><img src="${LANE_IMAGE[h.lanes[0]] || 'assets/lanes/mid.png'}" class="lane-pill-img" alt="${h.lanes[0]}" /> ${LANE_SHORT_LABEL[h.lanes[0]] || h.lanes[0]}</span>
                 </div>
+                ${h.stats.patchBadge ? `<div style="font-size:0.64rem; color:#fde047; background:rgba(245,158,11,0.14); border:1px solid rgba(245,158,11,0.38); border-radius:5px; padding:1px 5px; margin:2px 0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${h.stats.patchBadge}</div>` : ''}
                 <div style="font-size:0.72rem; color:var(--text-muted); display:flex; gap:0.45rem;">
                   <span style="color:#38bdf8; font-weight:600;">#${tournData.shortLabel} ${h.stats.presenceRate ? h.stats.presenceRate + '%' : '0%'}</span>
                   <span style="color:#6ee7b7;">WR ${h.stats.winRate}%</span>

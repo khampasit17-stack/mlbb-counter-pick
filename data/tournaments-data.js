@@ -1,13 +1,6 @@
 /**
- * MLBB Pro Tournaments Statistics Data
- * Contains verified Liquipedia statistics for:
- * 1. MPL Indonesia Season 18 (215 Games)
- * 2. MPL Philippines Season 18 (172 Games)
- * 3. MLBB Super League Thailand Season 2 (135 Games)
- * 4. Combined Pro Meta (522 Games)
- * 5. M8 World Championship Prediction Model + Patch 2.2.23 Adjustments (6 Tournaments / 942 Games)
+ * MLBB Pro Tournaments Statistics Data (Post-Patch 2.2.23 Re-Ranked Tier List)
  */
-
 window.TOURNAMENTS_METADATA = {
   "mpl-id": {
     "id": "mpl-id",
@@ -64,12 +57,12 @@ window.TOURNAMENTS_METADATA = {
     },
     "signatures": {
       "freya": {
-        "role": "👑 #1 Priority (98.14% Presence / 53.23% WR)",
-        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 211/215 เกม (98.14% Presence) • พิก 62 เกม (ชนะ 33 แพ้ 29, WR 53.23%) • แบน 149 เกม (BR 69.3%)"
+        "role": "⚖️ ปรับพาสซีฟฮีลตลอด + อัลติวิ่งเร็ว (SS) • MPL-ID S18",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] พาสซีฟใช้ลูกแก้วตีดูดเลือดได้ตลอดเวลาในเลน + อัลติได้วิ่งเร็ว +30 MS และดาเมจพื้นฐานสูงขึ้น (แลกกับคูลดาวน์อัลตินานขึ้น 60-44s) • สถิติใน MPL-ID S18: ปรากฏตัว 211/215 เกม (98.14% Presence) พิก 62 เกม (WR 53.23%) แบน 149 เกม"
       },
       "atlas": {
-        "role": "🚫 Top Ban Priority (133 Bans / 92.56% Presence)",
-        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 199/215 เกม (92.56% Presence) • พิก 66 เกม (ชนะ 33 แพ้ 33, WR 50%) • แบน 133 เกม (BR 61.86%)"
+        "role": "⬇️ เนิร์ฟพาสซีฟแช่แข็งนานขึ้น (2.5s → 4s) • MPL-ID S18",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] พาสซีฟ Frigid Breath ระยะเวลาสั้นลง (5s -> 4s) และคูลดาวน์แช่แข็งนานขึ้น (2.5s -> 4s) ชดเชยด้วยโบนัสเกราะเพิ่มเป็น +0.7% Extra HP • สถิติใน MPL-ID S18: ปรากฏตัว 199/215 เกม (92.56% Presence) พิก 66 เกม (WR 50%) แบน 133 เกม"
       },
       "hirara": {
         "role": "🚫 Top Ban Priority (88 Bans / 88.84% Presence)",
@@ -104,12 +97,12 @@ window.TOURNAMENTS_METADATA = {
         "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 117/215 เกม (54.42% Presence) • พิก 48 เกม (ชนะ 26 แพ้ 22, WR 54.17%) • แบน 69 เกม (BR 32.09%)"
       },
       "uranus": {
-        "role": "⭐ Core Meta #11 (56 Picks / 53.95% Presence)",
-        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 116/215 เกม (53.95% Presence) • พิก 56 เกม (ชนะ 25 แพ้ 31, WR 44.64%) • แบน 60 เกม (BR 27.91%)"
+        "role": "⬇️ ปรับตีกระจายเวท + เนิร์ฟรูนเคลียร์เลน (ลดลง Tier S) • MPL-ID S18",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] เปลี่ยนดาเมจกระจายตีปกติเป็นเวท + รูน Concussive Blast โดนเนิร์ฟดาเมจใส่มินเนี่ยนลดลง 50% ทำให้เคลียร์เลน EXP ช้าลง • สถิติใน MPL-ID S18: ปรากฏตัว 116/215 เกม (53.95% Presence) พิก 56 เกม (WR 44.64%) แบน 60 เกม"
       },
       "masha": {
-        "role": "🚫 Top Ban Priority (88 Bans / 53.49% Presence)",
-        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 115/215 เกม (53.49% Presence) • พิก 27 เกม (ชนะ 14 แพ้ 13, WR 51.85%) • แบน 88 เกม (BR 40.93%)"
+        "role": "⬇️ เนิร์ฟหนักดาเมจแผล & ฮีลลดลง (ลดลง Tier A) • MPL-ID S18",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] ลดดาเมจทำลายแผลและลดฟื้นฟูเลือดพาสซีฟ (4-10% -> 3-6% HP), ลดโบนัสดาเมจสกิล 1-2 และถอดสโลว์สกิล 1 ดันให้กลับไปยืนเคลียร์มินเนี่ยนเลน EXP • สถิติใน MPL-ID S18: ปรากฏตัว 115/215 เกม (53.49% Presence) พิก 27 เกม (WR 51.85%) แบน 88 เกม"
       },
       "selena": {
         "role": "⭐ Core Meta #13 (52 Picks / 48.84% Presence)",
@@ -124,12 +117,12 @@ window.TOURNAMENTS_METADATA = {
         "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 98/215 เกม (45.58% Presence) • พิก 69 เกม (ชนะ 36 แพ้ 33, WR 52.17%) • แบน 29 เกม (BR 13.49%)"
       },
       "gloo": {
-        "role": "🔥 High-Winrate Meta (62% WR / 50 Picks)",
-        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 97/215 เกม (45.12% Presence) • พิก 50 เกม (ชนะ 31 แพ้ 19, WR 62%) • แบน 47 เกม (BR 21.86%)"
+        "role": "⬇️ เนิร์ฟสกิล 1 & อัลติส่งดาเมจ 60% (ลดลง Tier A) • MPL-ID S18",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] สกิล 1 ล็อกขาสั้นลง (0.8s -> 0.6s) ดาเมจลดลง, อัลติลดส่งผ่านดาเมจจาก 80% เหลือ 60%, และรูน Concussive Blast ตีมินเนี่ยนเบาลง 50% • สถิติใน MPL-ID S18: ปรากฏตัว 97/215 เกม (45.12% Presence) พิก 50 เกม (WR 62%) แบน 47 เกม"
       },
       "melissa": {
-        "role": "⭐ Core Meta #17 (34 Picks / 40.47% Presence)",
-        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 87/215 เกม (40.47% Presence) • พิก 34 เกม (ชนะ 18 แพ้ 16, WR 52.94%) • แบน 53 เกม (BR 24.65%)"
+        "role": "⬆️ บัฟสกิล 2 + บัฟเลนทอง (ขึ้น Tier SS) • MPL-ID S18",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] ตุ๊กตา Muddles ส่งผ่านดาเมจเพิ่มเป็น 50%-60% + รถถัง Gold Lane เพิ่มทองเป็น +60% + ไอเทมลดความเร็วโจมตีโดนเนิร์ฟ • สถิติใน MPL-ID S18: ปรากฏตัว 87/215 เกม (40.47% Presence) พิก 34 เกม (WR 52.94%) แบน 53 เกม"
       },
       "barats": {
         "role": "⭐ Core Meta #18 (42 Picks / 40% Presence)",
@@ -140,8 +133,8 @@ window.TOURNAMENTS_METADATA = {
         "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 85/215 เกม (39.53% Presence) • พิก 49 เกม (ชนะ 27 แพ้ 22, WR 55.1%) • แบน 36 เกม (BR 16.74%)"
       },
       "obsidia": {
-        "role": "⭐ Core Meta #20 (51 Picks / 39.07% Presence)",
-        "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 84/215 เกม (39.07% Presence) • พิก 51 เกม (ชนะ 29 แพ้ 22, WR 56.86%) • แบน 33 เกม (BR 15.35%)"
+        "role": "⬆️ รับบัฟเงินเลนทอง +60% (ขึ้น Tier S) • MPL-ID S18",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] ได้อานิสงส์เต็มๆ จากบัฟรถถัง Gold Lane (+40% -> +60% Gold) และการเนิร์ฟ Chastise Pauldron ทำให้แครี่ตีเร็วขึ้นเป็นแกนหลักเลทเกม • สถิติใน MPL-ID S18: ปรากฏตัว 84/215 เกม (39.07% Presence) พิก 51 เกม (WR 56.86%) แบน 33 เกม"
       },
       "eudora": {
         "role": "⭐ Core Meta #21 (51 Picks / 39.07% Presence)",
@@ -158,6 +151,38 @@ window.TOURNAMENTS_METADATA = {
       "lylia": {
         "role": "⭐ Core Meta #24 (38 Picks / 36.28% Presence)",
         "note": "สถิติจริง MPL-ID S18: ปรากฏตัว 78/215 เกม (36.28% Presence) • พิก 38 เกม (ชนะ 18 แพ้ 20, WR 47.37%) • แบน 40 เกม (BR 18.6%)"
+      },
+      "lukas": {
+        "role": "⬆️ บัฟไฟต์เตอร์ถึกขึ้น ฮีล 8% HP (ขึ้น Tier S) • MPL-ID S18",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] เพิ่มเลือดและเกราะพื้นฐาน, สกิล 1 ดาเมจพื้นฐานพุ่งเป็น 400-800 และฮีลเพิ่มเป็น 8% Max HP + แทงค์ยืน EXP โดนเนิร์ฟรูนเคลียร์ครีป -50% • สถิติใน MPL-ID S18: ปรากฏตัว 47/215 เกม (21.86% Presence) พิก 19 เกม (WR 57.89%) แบน 28 เกม"
+      },
+      "popol and kupa": {
+        "role": "♻️ รีแวมป์ใหญ่ (ขี่หมา Kupa • ขึ้น Tier A) • MPL-ID S18",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] รีแวมป์ใหม่ยกชุด! สกิล 2 กดขี่หลัง Kupa วิ่งเร็ว+รีเลือด, พาสซีฟชุบ Kupa ได้และตีป่า True DMG, อัลติทุบงัดลอยหมู่ (+ บัฟทองเลน Gold +60%) • สถิติใน MPL-ID S18: ปรากฏตัว 0/215 เกม (0% Presence) พิก 0 เกม (WR 0%) แบน 0 เกม"
+      },
+      "karrie": {
+        "role": "⬆️ บัฟอัลติวิ่งเร็ว 30% + แรงขึ้น (ขึ้น Tier A) • MPL-ID S18",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] อัลติเพิ่มดาเมจพื้นฐานวงล้อ (40 -> 50) และเพิ่มความเร็วเคลื่อนที่ขณะเปิดอัลติ (20% -> 30%) + รถถังเลนทองรวยไวขึ้น +60% • สถิติใน MPL-ID S18: ปรากฏตัว 2/215 เกม (0.93% Presence) พิก 2 เกม (WR 0%) แบน 0 เกม"
+      },
+      "xavier": {
+        "role": "⬆️ บัฟใหญ่ S2 แรง 2 เท่า (ขึ้น Tier A) • MPL-ID S18",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] ลดหน่วงร่ายสกิล 1-2 ลง 50%, ดาเมจระเบิดสกิล 2 เพิ่ม 2 เท่า (440-690 +130% MP), พาสซีฟวิ่งเร็ว 60% (+ สเปล Sprint บัฟคูลดาวน์เหลือ 75s) • สถิติใน MPL-ID S18: ปรากฏตัว 0/215 เกม (0% Presence) พิก 0 เกม (WR 0%) แบน 0 เกม"
+      },
+      "lunox": {
+        "role": "⬆️ บัฟต้นเกม +10% เจาะเวท/ดูดเลือด (ขึ้น Tier A) • MPL-ID S18",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] พาสซีฟได้ดูดเลือดเวท 10% หรือเจาะเกราะเวท 10% ทันทีตั้งแต่เลเวล 1, สกิล 2 ต้นเกมแรงขึ้น (3.5%-5% HP), อัลติมืดพุ่งไวขึ้น 50% • สถิติใน MPL-ID S18: ปรากฏตัว 7/215 เกม (3.26% Presence) พิก 5 เกม (WR 20%) แบน 2 เกม"
+      },
+      "kagura": {
+        "role": "⚖️ ปรับระยะร่ม Seimei (ขึ้น Tier B) • MPL-ID S18",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] ปรับปรุงเส้นแสดงระยะห่างสูงสุดของร่ม Seimei ให้ควบคุมจังหวะคอมโบแม่นยำขึ้น • สถิติใน MPL-ID S18: ปรากฏตัว 2/215 เกม (0.93% Presence) พิก 2 เกม (WR 50%) แบน 0 เกม"
+      },
+      "kaja": {
+        "role": "⬆️ บัฟอัลติขังทะลุอมตะ CC (ขึ้น Tier A) • MPL-ID S18",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] อัลติ Divine Binding ปรับใหม่: ศัตรูที่มีสถานะอมตะ CC (Control Immunity) ไม่สามารถหนีออกจากวงอัลติได้ + บิน Soaring นานและเลี้ยวไวขึ้น • สถิติใน MPL-ID S18: ปรากฏตัว 13/215 เกม (6.05% Presence) พิก 3 เกม (WR 33.33%) แบน 10 เกม"
+      },
+      "aldous": {
+        "role": "⬆️ บัฟเกราะลดดาเมจ 55% (ขึ้น Tier B) • MPL-ID S18",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] สกิล 2 ลดคูลดาวน์เหลือ 8 วินาทีทุกเลเวล และเพิ่มลดดาเมจ (Damage Reduction) สูงสุดถึง 55% (จากเดิม 30%) • สถิติใน MPL-ID S18: ปรากฏตัว 0/215 เกม (0% Presence) พิก 0 เกม (WR 0%) แบน 0 เกม"
       }
     },
     "stats": {
@@ -172,7 +197,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 40.93,
         "presenceRate": 88.84,
         "tier": "SS",
-        "metaScore": 104.2
+        "metaScore": 104.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "masha": {
         "picks": 27,
@@ -184,8 +211,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 12.56,
         "banRate": 40.93,
         "presenceRate": 53.49,
-        "tier": "S",
-        "metaScore": 71.2
+        "tier": "A",
+        "metaScore": 52.5,
+        "patchBadge": "⬇️ เนิร์ฟหนักดาเมจแผล & ฮีลลดลง (ลดลง Tier A)",
+        "tierShift": "SS/S → A"
       },
       "marcel": {
         "picks": 35,
@@ -198,7 +227,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 53.02,
         "presenceRate": 69.3,
         "tier": "SS",
-        "metaScore": 100.7
+        "metaScore": 100.7,
+        "patchBadge": null,
+        "tierShift": null
       },
       "obsidia": {
         "picks": 51,
@@ -211,7 +242,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 15.35,
         "presenceRate": 39.07,
         "tier": "S",
-        "metaScore": 59.5
+        "metaScore": 69.7,
+        "patchBadge": "⬆️ รับบัฟเงินเลนทอง +60% (ขึ้น Tier S)",
+        "tierShift": "A → S"
       },
       "fanny": {
         "picks": 23,
@@ -224,7 +257,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 60.93,
         "presenceRate": 71.63,
         "tier": "SS",
-        "metaScore": 92.9
+        "metaScore": 92.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "hayabusa": {
         "picks": 6,
@@ -237,7 +272,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.4,
         "presenceRate": 4.19,
         "tier": "B",
-        "metaScore": 16.2
+        "metaScore": 16.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "zhuxin": {
         "picks": 68,
@@ -250,7 +287,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 26.05,
         "presenceRate": 57.67,
         "tier": "SS",
-        "metaScore": 71
+        "metaScore": 71,
+        "patchBadge": null,
+        "tierShift": null
       },
       "granger": {
         "picks": 1,
@@ -263,7 +302,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.47,
         "tier": "B",
-        "metaScore": 0.4
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lukas": {
         "picks": 19,
@@ -275,8 +316,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 8.84,
         "banRate": 13.02,
         "presenceRate": 21.86,
-        "tier": "A",
-        "metaScore": 46
+        "tier": "S",
+        "metaScore": 61.3,
+        "patchBadge": "⬆️ บัฟไฟต์เตอร์ถึกขึ้น ฮีล 8% HP (ขึ้น Tier S)",
+        "tierShift": "A → S"
       },
       "hylos": {
         "picks": 21,
@@ -289,7 +332,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.4,
         "presenceRate": 11.16,
         "tier": "B",
-        "metaScore": 25.8
+        "metaScore": 25.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "suyou": {
         "picks": 25,
@@ -302,7 +347,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.86,
         "presenceRate": 13.49,
         "tier": "A",
-        "metaScore": 25.1
+        "metaScore": 25.1,
+        "patchBadge": null,
+        "tierShift": null
       },
       "mathilda": {
         "picks": 23,
@@ -315,7 +362,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 23.72,
         "presenceRate": 34.42,
         "tier": "A",
-        "metaScore": 50.4
+        "metaScore": 50.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "kalea": {
         "picks": 22,
@@ -328,7 +377,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 18.14,
         "presenceRate": 28.37,
         "tier": "A",
-        "metaScore": 52.8
+        "metaScore": 52.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "harith": {
         "picks": 5,
@@ -341,7 +392,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 2.33,
         "tier": "B",
-        "metaScore": 17.2
+        "metaScore": 17.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "belerick": {
         "picks": 75,
@@ -354,7 +407,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 12.09,
         "presenceRate": 46.98,
         "tier": "S",
-        "metaScore": 59.7
+        "metaScore": 59.7,
+        "patchBadge": null,
+        "tierShift": null
       },
       "carmilla": {
         "picks": 48,
@@ -367,7 +422,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 32.09,
         "presenceRate": 54.42,
         "tier": "S",
-        "metaScore": 72.7
+        "metaScore": 72.7,
+        "patchBadge": null,
+        "tierShift": null
       },
       "gatotkaca": {
         "picks": 33,
@@ -380,7 +437,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 5.12,
         "presenceRate": 20.47,
         "tier": "A",
-        "metaScore": 41.3
+        "metaScore": 41.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "aurora": {
         "picks": 0,
@@ -393,7 +452,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "chip": {
         "picks": 7,
@@ -406,7 +467,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 10.23,
         "presenceRate": 13.49,
         "tier": "A",
-        "metaScore": 16.9
+        "metaScore": 16.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "ling": {
         "picks": 1,
@@ -419,7 +482,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.47,
         "presenceRate": 0.93,
         "tier": "B",
-        "metaScore": 0.8
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "diggie": {
         "picks": 0,
@@ -432,7 +497,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "estes": {
         "picks": 4,
@@ -445,7 +512,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 3.26,
         "presenceRate": 5.12,
         "tier": "B",
-        "metaScore": 32.9
+        "metaScore": 32.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "zetian": {
         "picks": 22,
@@ -458,7 +527,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 9.3,
         "presenceRate": 19.53,
         "tier": "S",
-        "metaScore": 59.9
+        "metaScore": 59.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "nolan": {
         "picks": 74,
@@ -471,7 +542,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 28.37,
         "presenceRate": 62.79,
         "tier": "SS",
-        "metaScore": 84
+        "metaScore": 84,
+        "patchBadge": null,
+        "tierShift": null
       },
       "badang": {
         "picks": 19,
@@ -484,7 +557,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 4.19,
         "presenceRate": 13.02,
         "tier": "A",
-        "metaScore": 31.1
+        "metaScore": 31.1,
+        "patchBadge": null,
+        "tierShift": null
       },
       "cecilion": {
         "picks": 15,
@@ -497,7 +572,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 3.26,
         "presenceRate": 10.23,
         "tier": "A",
-        "metaScore": 45.5
+        "metaScore": 45.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "popol and kupa": {
         "picks": 0,
@@ -509,8 +586,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 0
+        "tier": "A",
+        "metaScore": 20.4,
+        "patchBadge": "♻️ รีแวมป์ใหญ่ (ขี่หมา Kupa • ขึ้น Tier A)",
+        "tierShift": "C → A"
       },
       "floryn": {
         "picks": 0,
@@ -523,7 +602,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "julian": {
         "picks": 0,
@@ -536,7 +617,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "aulus": {
         "picks": 69,
@@ -549,7 +632,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 13.49,
         "presenceRate": 45.58,
         "tier": "S",
-        "metaScore": 58.6
+        "metaScore": 58.6,
+        "patchBadge": null,
+        "tierShift": null
       },
       "joy": {
         "picks": 2,
@@ -562,7 +647,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.93,
         "tier": "B",
-        "metaScore": 0.8
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "alpha": {
         "picks": 16,
@@ -575,7 +662,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.79,
         "presenceRate": 10.23,
         "tier": "A",
-        "metaScore": 34.4
+        "metaScore": 34.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "phoveus": {
         "picks": 22,
@@ -588,7 +677,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 12.09,
         "presenceRate": 22.33,
         "tier": "A",
-        "metaScore": 38
+        "metaScore": 38,
+        "patchBadge": null,
+        "tierShift": null
       },
       "eudora": {
         "picks": 51,
@@ -601,7 +692,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 15.35,
         "presenceRate": 39.07,
         "tier": "S",
-        "metaScore": 59.5
+        "metaScore": 59.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "miya": {
         "picks": 27,
@@ -614,7 +707,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 8.37,
         "presenceRate": 20.93,
         "tier": "A",
-        "metaScore": 50.7
+        "metaScore": 50.7,
+        "patchBadge": null,
+        "tierShift": null
       },
       "moskov": {
         "picks": 35,
@@ -627,7 +722,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 6.98,
         "presenceRate": 23.26,
         "tier": "A",
-        "metaScore": 39.3
+        "metaScore": 39.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "sora": {
         "picks": 25,
@@ -640,7 +737,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 4.19,
         "presenceRate": 15.81,
         "tier": "A",
-        "metaScore": 30.2
+        "metaScore": 30.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "sun": {
         "picks": 0,
@@ -653,7 +752,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "angela": {
         "picks": 3,
@@ -666,7 +767,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.4,
         "presenceRate": 2.79,
         "tier": "B",
-        "metaScore": 2.4
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "ruby": {
         "picks": 14,
@@ -679,7 +782,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 3.72,
         "presenceRate": 10.23,
         "tier": "B",
-        "metaScore": 27.7
+        "metaScore": 27.7,
+        "patchBadge": null,
+        "tierShift": null
       },
       "gloo": {
         "picks": 50,
@@ -691,8 +796,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 23.26,
         "banRate": 21.86,
         "presenceRate": 45.12,
-        "tier": "S",
-        "metaScore": 73.2
+        "tier": "A",
+        "metaScore": 54.5,
+        "patchBadge": "⬇️ เนิร์ฟสกิล 1 & อัลติส่งดาเมจ 60% (ลดลง Tier A)",
+        "tierShift": "SS/S → A"
       },
       "tigreal": {
         "picks": 1,
@@ -705,7 +812,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.47,
         "tier": "B",
-        "metaScore": 0.4
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "bruno": {
         "picks": 7,
@@ -718,7 +827,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.79,
         "presenceRate": 6.05,
         "tier": "B",
-        "metaScore": 37.7
+        "metaScore": 37.7,
+        "patchBadge": null,
+        "tierShift": null
       },
       "edith": {
         "picks": 1,
@@ -731,7 +842,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.47,
         "tier": "B",
-        "metaScore": 0.4
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "minotaur": {
         "picks": 44,
@@ -744,7 +857,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 13.02,
         "presenceRate": 33.49,
         "tier": "A",
-        "metaScore": 44
+        "metaScore": 44,
+        "patchBadge": null,
+        "tierShift": null
       },
       "karrie": {
         "picks": 2,
@@ -756,8 +871,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 0.93,
         "banRate": 0,
         "presenceRate": 0.93,
-        "tier": "B",
-        "metaScore": 0.8
+        "tier": "A",
+        "metaScore": 15.2,
+        "patchBadge": "⬆️ บัฟอัลติวิ่งเร็ว 30% + แรงขึ้น (ขึ้น Tier A)",
+        "tierShift": "B → A"
       },
       "khufra": {
         "picks": 2,
@@ -770,7 +887,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.47,
         "presenceRate": 1.4,
         "tier": "B",
-        "metaScore": 1.2
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "vexana": {
         "picks": 2,
@@ -783,7 +902,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.33,
         "presenceRate": 3.26,
         "tier": "B",
-        "metaScore": 21.8
+        "metaScore": 21.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "rafaela": {
         "picks": 39,
@@ -796,7 +917,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 20.47,
         "presenceRate": 38.6,
         "tier": "S",
-        "metaScore": 55.3
+        "metaScore": 55.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "claude": {
         "picks": 65,
@@ -809,7 +932,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 5.12,
         "presenceRate": 35.35,
         "tier": "S",
-        "metaScore": 48.8
+        "metaScore": 48.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "roger": {
         "picks": 0,
@@ -822,7 +947,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "ixia": {
         "picks": 1,
@@ -835,7 +962,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.47,
         "tier": "B",
-        "metaScore": 38.4
+        "metaScore": 38.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "arlott": {
         "picks": 11,
@@ -848,7 +977,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 12.56,
         "presenceRate": 17.67,
         "tier": "A",
-        "metaScore": 32.3
+        "metaScore": 32.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "terizla": {
         "picks": 6,
@@ -861,7 +992,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 2.79,
         "tier": "B",
-        "metaScore": 21.4
+        "metaScore": 21.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "atlas": {
         "picks": 66,
@@ -874,7 +1007,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 61.86,
         "presenceRate": 92.56,
         "tier": "SS",
-        "metaScore": 103.7
+        "metaScore": 96.9,
+        "patchBadge": "⬇️ เนิร์ฟพาสซีฟแช่แข็งนานขึ้น (2.5s → 4s)",
+        "tierShift": "SS → S/SS (ลดความถี่แช่แข็ง)"
       },
       "yu zhong": {
         "picks": 11,
@@ -887,7 +1022,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.79,
         "presenceRate": 7.91,
         "tier": "B",
-        "metaScore": 30.6
+        "metaScore": 30.6,
+        "patchBadge": null,
+        "tierShift": null
       },
       "cici": {
         "picks": 57,
@@ -900,7 +1037,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 11.63,
         "presenceRate": 38.14,
         "tier": "S",
-        "metaScore": 51.8
+        "metaScore": 51.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lolita": {
         "picks": 0,
@@ -913,7 +1052,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "minsitthar": {
         "picks": 1,
@@ -926,7 +1067,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.47,
         "tier": "B",
-        "metaScore": 0.4
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "helcurt": {
         "picks": 0,
@@ -939,7 +1082,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "luo yi": {
         "picks": 1,
@@ -952,7 +1097,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.47,
         "tier": "B",
-        "metaScore": 0.4
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "layla": {
         "picks": 0,
@@ -965,7 +1112,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "nana": {
         "picks": 0,
@@ -978,7 +1127,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "benedetta": {
         "picks": 1,
@@ -991,7 +1142,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.47,
         "tier": "B",
-        "metaScore": 0.4
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "xavier": {
         "picks": 0,
@@ -1003,8 +1156,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 0
+        "tier": "A",
+        "metaScore": 18.7,
+        "patchBadge": "⬆️ บัฟใหญ่ S2 แรง 2 เท่า (ขึ้น Tier A)",
+        "tierShift": "C → A"
       },
       "natan": {
         "picks": 0,
@@ -1017,7 +1172,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "faramis": {
         "picks": 2,
@@ -1030,7 +1187,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.47,
         "presenceRate": 1.4,
         "tier": "B",
-        "metaScore": 20.2
+        "metaScore": 20.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "khaleed": {
         "picks": 5,
@@ -1043,7 +1202,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.47,
         "presenceRate": 2.79,
         "tier": "B",
-        "metaScore": 17.6
+        "metaScore": 17.6,
+        "patchBadge": null,
+        "tierShift": null
       },
       "franco": {
         "picks": 0,
@@ -1056,7 +1217,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "x.borg": {
         "picks": 1,
@@ -1069,7 +1232,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.47,
         "tier": "B",
-        "metaScore": 0.4
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "odette": {
         "picks": 2,
@@ -1082,7 +1247,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.93,
         "tier": "B",
-        "metaScore": 0.8
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "clint": {
         "picks": 11,
@@ -1095,7 +1262,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.4,
         "presenceRate": 6.51,
         "tier": "B",
-        "metaScore": 22.8
+        "metaScore": 22.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "novaria": {
         "picks": 23,
@@ -1108,7 +1277,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 17.67,
         "presenceRate": 28.37,
         "tier": "A",
-        "metaScore": 43.9
+        "metaScore": 43.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "valentina": {
         "picks": 43,
@@ -1121,7 +1292,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 15.35,
         "presenceRate": 35.35,
         "tier": "S",
-        "metaScore": 43.3
+        "metaScore": 43.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "baxia": {
         "picks": 0,
@@ -1134,7 +1307,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.47,
         "presenceRate": 0.47,
         "tier": "B",
-        "metaScore": 0.4
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "wanwan": {
         "picks": 2,
@@ -1147,7 +1322,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.47,
         "presenceRate": 1.4,
         "tier": "B",
-        "metaScore": 20.2
+        "metaScore": 20.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "fredrinn": {
         "picks": 3,
@@ -1160,7 +1337,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.93,
         "presenceRate": 2.33,
         "tier": "B",
-        "metaScore": 14.6
+        "metaScore": 14.6,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lunox": {
         "picks": 5,
@@ -1172,8 +1351,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 2.33,
         "banRate": 0.93,
         "presenceRate": 3.26,
-        "tier": "B",
-        "metaScore": 10.4
+        "tier": "A",
+        "metaScore": 27.4,
+        "patchBadge": "⬆️ บัฟต้นเกม +10% เจาะเวท/ดูดเลือด (ขึ้น Tier A)",
+        "tierShift": "B → A"
       },
       "melissa": {
         "picks": 34,
@@ -1186,7 +1367,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 24.65,
         "presenceRate": 40.47,
         "tier": "S",
-        "metaScore": 57.5
+        "metaScore": 72.8,
+        "patchBadge": "⬆️ บัฟสกิล 2 + บัฟเลนทอง (ขึ้น Tier SS)",
+        "tierShift": "S → SS"
       },
       "barats": {
         "picks": 42,
@@ -1199,7 +1382,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 20.47,
         "presenceRate": 40,
         "tier": "S",
-        "metaScore": 54.2
+        "metaScore": 54.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "hilda": {
         "picks": 5,
@@ -1212,7 +1397,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.93,
         "presenceRate": 3.26,
         "tier": "B",
-        "metaScore": 33.2
+        "metaScore": 33.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "chou": {
         "picks": 22,
@@ -1225,7 +1412,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 7.91,
         "presenceRate": 18.14,
         "tier": "A",
-        "metaScore": 31
+        "metaScore": 31,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lesley": {
         "picks": 3,
@@ -1238,7 +1427,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.79,
         "presenceRate": 4.19,
         "tier": "B",
-        "metaScore": 28.9
+        "metaScore": 28.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "aamon": {
         "picks": 0,
@@ -1251,7 +1442,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "uranus": {
         "picks": 56,
@@ -1264,7 +1457,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 27.91,
         "presenceRate": 53.95,
         "tier": "S",
-        "metaScore": 65.8
+        "metaScore": 53.9,
+        "patchBadge": "⬇️ ปรับตีกระจายเวท + เนิร์ฟรูนเคลียร์เลน (ลดลง Tier S)",
+        "tierShift": "SS → S"
       },
       "beatrix": {
         "picks": 0,
@@ -1277,7 +1472,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "kagura": {
         "picks": 2,
@@ -1290,7 +1487,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.93,
         "tier": "B",
-        "metaScore": 19.8
+        "metaScore": 24,
+        "patchBadge": "⚖️ ปรับระยะร่ม Seimei (ขึ้น Tier B)",
+        "tierShift": "C → B"
       },
       "lylia": {
         "picks": 38,
@@ -1303,7 +1502,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 18.6,
         "presenceRate": 36.28,
         "tier": "S",
-        "metaScore": 48.8
+        "metaScore": 48.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "yve": {
         "picks": 13,
@@ -1316,7 +1517,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.93,
         "presenceRate": 6.98,
         "tier": "S",
-        "metaScore": 62
+        "metaScore": 62,
+        "patchBadge": null,
+        "tierShift": null
       },
       "brody": {
         "picks": 30,
@@ -1329,7 +1532,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 6.05,
         "presenceRate": 20,
         "tier": "A",
-        "metaScore": 28.4
+        "metaScore": 28.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "pharsa": {
         "picks": 6,
@@ -1342,7 +1547,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 2.79,
         "tier": "B",
-        "metaScore": 15
+        "metaScore": 15,
+        "patchBadge": null,
+        "tierShift": null
       },
       "esmeralda": {
         "picks": 37,
@@ -1355,7 +1562,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 38.6,
         "presenceRate": 55.81,
         "tier": "SS",
-        "metaScore": 68.8
+        "metaScore": 68.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lancelot": {
         "picks": 1,
@@ -1368,7 +1577,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.47,
         "tier": "B",
-        "metaScore": 0.4
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "gusion": {
         "picks": 0,
@@ -1381,7 +1592,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lapu-lapu": {
         "picks": 1,
@@ -1394,7 +1607,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.47,
         "tier": "B",
-        "metaScore": 38.4
+        "metaScore": 38.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "akai": {
         "picks": 0,
@@ -1407,7 +1622,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "paquito": {
         "picks": 102,
@@ -1420,7 +1637,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 36.74,
         "presenceRate": 84.19,
         "tier": "SS",
-        "metaScore": 94.3
+        "metaScore": 94.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "kaja": {
         "picks": 3,
@@ -1432,8 +1651,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 1.4,
         "banRate": 4.65,
         "presenceRate": 6.05,
-        "tier": "B",
-        "metaScore": 17.8
+        "tier": "A",
+        "metaScore": 32.3,
+        "patchBadge": "⬆️ บัฟอัลติขังทะลุอมตะ CC (ขึ้น Tier A)",
+        "tierShift": "B → A"
       },
       "saber": {
         "picks": 6,
@@ -1446,7 +1667,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.86,
         "presenceRate": 4.65,
         "tier": "B",
-        "metaScore": 29.3
+        "metaScore": 29.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "valir": {
         "picks": 13,
@@ -1459,7 +1682,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.79,
         "presenceRate": 8.84,
         "tier": "B",
-        "metaScore": 22.1
+        "metaScore": 22.1,
+        "patchBadge": null,
+        "tierShift": null
       },
       "argus": {
         "picks": 2,
@@ -1472,7 +1697,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.93,
         "tier": "B",
-        "metaScore": 0.8
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "alice": {
         "picks": 49,
@@ -1485,7 +1712,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 16.74,
         "presenceRate": 39.53,
         "tier": "S",
-        "metaScore": 58.1
+        "metaScore": 58.1,
+        "patchBadge": null,
+        "tierShift": null
       },
       "selena": {
         "picks": 52,
@@ -1498,7 +1727,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 24.65,
         "presenceRate": 48.84,
         "tier": "S",
-        "metaScore": 59.9
+        "metaScore": 59.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "kadita": {
         "picks": 2,
@@ -1511,7 +1742,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.93,
         "tier": "B",
-        "metaScore": 0.8
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "hanabi": {
         "picks": 4,
@@ -1524,7 +1757,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.4,
         "presenceRate": 3.26,
         "tier": "B",
-        "metaScore": 21.8
+        "metaScore": 21.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "guinevere": {
         "picks": 3,
@@ -1537,7 +1772,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.79,
         "presenceRate": 4.19,
         "tier": "B",
-        "metaScore": 28.9
+        "metaScore": 28.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "dyrroth": {
         "picks": 10,
@@ -1550,7 +1787,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.33,
         "presenceRate": 6.98,
         "tier": "B",
-        "metaScore": 24.9
+        "metaScore": 24.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "gord": {
         "picks": 0,
@@ -1563,7 +1802,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.47,
         "presenceRate": 0.47,
         "tier": "B",
-        "metaScore": 0.4
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "irithel": {
         "picks": 0,
@@ -1576,7 +1817,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "yi sun-shin": {
         "picks": 15,
@@ -1589,7 +1832,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 5.12,
         "presenceRate": 12.09,
         "tier": "A",
-        "metaScore": 22.9
+        "metaScore": 22.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "freya": {
         "picks": 62,
@@ -1602,7 +1847,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 69.3,
         "presenceRate": 98.14,
         "tier": "SS",
-        "metaScore": 111.9
+        "metaScore": 111.9,
+        "patchBadge": "⚖️ ปรับพาสซีฟฮีลตลอด + อัลติวิ่งเร็ว (SS)",
+        "tierShift": "SS (คงเดิม #1)"
       },
       "kimmy": {
         "picks": 53,
@@ -1615,7 +1862,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 6.05,
         "presenceRate": 30.7,
         "tier": "A",
-        "metaScore": 45.5
+        "metaScore": 45.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "bane": {
         "picks": 0,
@@ -1628,7 +1877,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "zhask": {
         "picks": 0,
@@ -1641,7 +1892,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "cyclops": {
         "picks": 0,
@@ -1654,7 +1907,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "hanzo": {
         "picks": 4,
@@ -1667,7 +1922,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.4,
         "presenceRate": 3.26,
         "tier": "B",
-        "metaScore": 21.8
+        "metaScore": 21.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "karina": {
         "picks": 0,
@@ -1680,7 +1937,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "leomord": {
         "picks": 4,
@@ -1693,7 +1952,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.47,
         "presenceRate": 2.33,
         "tier": "B",
-        "metaScore": 21
+        "metaScore": 21,
+        "patchBadge": null,
+        "tierShift": null
       },
       "silvanna": {
         "picks": 0,
@@ -1706,7 +1967,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "natalia": {
         "picks": 0,
@@ -1719,7 +1982,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "yin": {
         "picks": 0,
@@ -1732,7 +1997,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "aldous": {
         "picks": 0,
@@ -1744,8 +2011,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 0
+        "tier": "B",
+        "metaScore": 8.5,
+        "patchBadge": "⬆️ บัฟเกราะลดดาเมจ 55% (ขึ้น Tier B)",
+        "tierShift": "C → B"
       },
       "harley": {
         "picks": 20,
@@ -1758,7 +2027,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 7.91,
         "presenceRate": 17.21,
         "tier": "A",
-        "metaScore": 29.8
+        "metaScore": 29.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "thamuz": {
         "picks": 0,
@@ -1771,7 +2042,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "alucard": {
         "picks": 0,
@@ -1784,7 +2057,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "vale": {
         "picks": 0,
@@ -1797,7 +2072,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "martis": {
         "picks": 0,
@@ -1810,7 +2087,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "jawhead": {
         "picks": 0,
@@ -1823,7 +2102,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "johnson": {
         "picks": 0,
@@ -1836,7 +2117,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "chang'e": {
         "picks": 0,
@@ -1849,7 +2132,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "grock": {
         "picks": 0,
@@ -1862,7 +2147,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "balmond": {
         "picks": 0,
@@ -1875,7 +2162,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "zilong": {
         "picks": 0,
@@ -1888,7 +2177,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       }
     }
   },
@@ -1947,12 +2238,12 @@ window.TOURNAMENTS_METADATA = {
     },
     "signatures": {
       "freya": {
-        "role": "👑 #1 Priority (100% Presence / 75% WR)",
-        "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 172/172 เกม (100% Presence) • พิก 24 เกม (ชนะ 18 แพ้ 6, WR 75%) • แบน 148 เกม (BR 86.05%)"
+        "role": "⚖️ ปรับพาสซีฟฮีลตลอด + อัลติวิ่งเร็ว (SS) • MPL-PH S18",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] พาสซีฟใช้ลูกแก้วตีดูดเลือดได้ตลอดเวลาในเลน + อัลติได้วิ่งเร็ว +30 MS และดาเมจพื้นฐานสูงขึ้น (แลกกับคูลดาวน์อัลตินานขึ้น 60-44s) • สถิติใน MPL-PH S18: ปรากฏตัว 172/172 เกม (100% Presence) พิก 24 เกม (WR 75%) แบน 148 เกม"
       },
       "atlas": {
-        "role": "🚫 Top Ban Priority (133 Bans / 97.67% Presence)",
-        "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 168/172 เกม (97.67% Presence) • พิก 35 เกม (ชนะ 22 แพ้ 13, WR 62.86%) • แบน 133 เกม (BR 77.33%)"
+        "role": "⬇️ เนิร์ฟพาสซีฟแช่แข็งนานขึ้น (2.5s → 4s) • MPL-PH S18",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] พาสซีฟ Frigid Breath ระยะเวลาสั้นลง (5s -> 4s) และคูลดาวน์แช่แข็งนานขึ้น (2.5s -> 4s) ชดเชยด้วยโบนัสเกราะเพิ่มเป็น +0.7% Extra HP • สถิติใน MPL-PH S18: ปรากฏตัว 168/172 เกม (97.67% Presence) พิก 35 เกม (WR 62.86%) แบน 133 เกม"
       },
       "hirara": {
         "role": "⭐ Core Meta #3 (127 Picks / 96.51% Presence)",
@@ -1971,8 +2262,8 @@ window.TOURNAMENTS_METADATA = {
         "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 115/172 เกม (66.86% Presence) • พิก 54 เกม (ชนะ 31 แพ้ 23, WR 57.41%) • แบน 61 เกม (BR 35.47%)"
       },
       "uranus": {
-        "role": "🚫 Top Ban Priority (72 Bans / 66.28% Presence)",
-        "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 114/172 เกม (66.28% Presence) • พิก 42 เกม (ชนะ 21 แพ้ 21, WR 50%) • แบน 72 เกม (BR 41.86%)"
+        "role": "⬇️ ปรับตีกระจายเวท + เนิร์ฟรูนเคลียร์เลน (ลดลง Tier S) • MPL-PH S18",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] เปลี่ยนดาเมจกระจายตีปกติเป็นเวท + รูน Concussive Blast โดนเนิร์ฟดาเมจใส่มินเนี่ยนลดลง 50% ทำให้เคลียร์เลน EXP ช้าลง • สถิติใน MPL-PH S18: ปรากฏตัว 114/172 เกม (66.28% Presence) พิก 42 เกม (WR 50%) แบน 72 เกม"
       },
       "fanny": {
         "role": "🚫 Top Ban Priority (96 Bans / 64.53% Presence)",
@@ -1999,8 +2290,8 @@ window.TOURNAMENTS_METADATA = {
         "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 93/172 เกม (54.07% Presence) • พิก 68 เกม (ชนะ 36 แพ้ 32, WR 52.94%) • แบน 25 เกม (BR 14.53%)"
       },
       "masha": {
-        "role": "🚫 Top Ban Priority (74 Bans / 50.58% Presence)",
-        "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 87/172 เกม (50.58% Presence) • พิก 13 เกม (ชนะ 9 แพ้ 4, WR 69.23%) • แบน 74 เกม (BR 43.02%)"
+        "role": "⬇️ เนิร์ฟหนักดาเมจแผล & ฮีลลดลง (ลดลง Tier A) • MPL-PH S18",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] ลดดาเมจทำลายแผลและลดฟื้นฟูเลือดพาสซีฟ (4-10% -> 3-6% HP), ลดโบนัสดาเมจสกิล 1-2 และถอดสโลว์สกิล 1 ดันให้กลับไปยืนเคลียร์มินเนี่ยนเลน EXP • สถิติใน MPL-PH S18: ปรากฏตัว 87/172 เกม (50.58% Presence) พิก 13 เกม (WR 69.23%) แบน 74 เกม"
       },
       "esmeralda": {
         "role": "⭐ Core Meta #15 (28 Picks / 49.42% Presence)",
@@ -2023,8 +2314,8 @@ window.TOURNAMENTS_METADATA = {
         "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 76/172 เกม (44.19% Presence) • พิก 56 เกม (ชนะ 26 แพ้ 30, WR 46.43%) • แบน 20 เกม (BR 11.63%)"
       },
       "melissa": {
-        "role": "⭐ Core Meta #20 (23 Picks / 43.6% Presence)",
-        "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 75/172 เกม (43.6% Presence) • พิก 23 เกม (ชนะ 10 แพ้ 13, WR 43.48%) • แบน 52 เกม (BR 30.23%)"
+        "role": "⬆️ บัฟสกิล 2 + บัฟเลนทอง (ขึ้น Tier SS) • MPL-PH S18",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] ตุ๊กตา Muddles ส่งผ่านดาเมจเพิ่มเป็น 50%-60% + รถถัง Gold Lane เพิ่มทองเป็น +60% + ไอเทมลดความเร็วโจมตีโดนเนิร์ฟ • สถิติใน MPL-PH S18: ปรากฏตัว 75/172 เกม (43.6% Presence) พิก 23 เกม (WR 43.48%) แบน 52 เกม"
       },
       "rafaela": {
         "role": "🔥 High-Winrate Meta (65.52% WR / 29 Picks)",
@@ -2039,8 +2330,44 @@ window.TOURNAMENTS_METADATA = {
         "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 64/172 เกม (37.21% Presence) • พิก 26 เกม (ชนะ 12 แพ้ 14, WR 46.15%) • แบน 38 เกม (BR 22.09%)"
       },
       "obsidia": {
-        "role": "⭐ Core Meta #24 (37 Picks / 36.05% Presence)",
-        "note": "สถิติจริง MPL-PH S18: ปรากฏตัว 62/172 เกม (36.05% Presence) • พิก 37 เกม (ชนะ 19 แพ้ 18, WR 51.35%) • แบน 25 เกม (BR 14.53%)"
+        "role": "⬆️ รับบัฟเงินเลนทอง +60% (ขึ้น Tier S) • MPL-PH S18",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] ได้อานิสงส์เต็มๆ จากบัฟรถถัง Gold Lane (+40% -> +60% Gold) และการเนิร์ฟ Chastise Pauldron ทำให้แครี่ตีเร็วขึ้นเป็นแกนหลักเลทเกม • สถิติใน MPL-PH S18: ปรากฏตัว 62/172 เกม (36.05% Presence) พิก 37 เกม (WR 51.35%) แบน 25 เกม"
+      },
+      "lukas": {
+        "role": "⬆️ บัฟไฟต์เตอร์ถึกขึ้น ฮีล 8% HP (ขึ้น Tier S) • MPL-PH S18",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] เพิ่มเลือดและเกราะพื้นฐาน, สกิล 1 ดาเมจพื้นฐานพุ่งเป็น 400-800 และฮีลเพิ่มเป็น 8% Max HP + แทงค์ยืน EXP โดนเนิร์ฟรูนเคลียร์ครีป -50% • สถิติใน MPL-PH S18: ปรากฏตัว 21/172 เกม (12.21% Presence) พิก 11 เกม (WR 45.45%) แบน 10 เกม"
+      },
+      "popol and kupa": {
+        "role": "♻️ รีแวมป์ใหญ่ (ขี่หมา Kupa • ขึ้น Tier A) • MPL-PH S18",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] รีแวมป์ใหม่ยกชุด! สกิล 2 กดขี่หลัง Kupa วิ่งเร็ว+รีเลือด, พาสซีฟชุบ Kupa ได้และตีป่า True DMG, อัลติทุบงัดลอยหมู่ (+ บัฟทองเลน Gold +60%) • สถิติใน MPL-PH S18: ปรากฏตัว 0/172 เกม (0% Presence) พิก 0 เกม (WR 0%) แบน 0 เกม"
+      },
+      "gloo": {
+        "role": "⬇️ เนิร์ฟสกิล 1 & อัลติส่งดาเมจ 60% (ลดลง Tier A) • MPL-PH S18",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] สกิล 1 ล็อกขาสั้นลง (0.8s -> 0.6s) ดาเมจลดลง, อัลติลดส่งผ่านดาเมจจาก 80% เหลือ 60%, และรูน Concussive Blast ตีมินเนี่ยนเบาลง 50% • สถิติใน MPL-PH S18: ปรากฏตัว 58/172 เกม (33.72% Presence) พิก 22 เกม (WR 59.09%) แบน 36 เกม"
+      },
+      "karrie": {
+        "role": "⬆️ บัฟอัลติวิ่งเร็ว 30% + แรงขึ้น (ขึ้น Tier A) • MPL-PH S18",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] อัลติเพิ่มดาเมจพื้นฐานวงล้อ (40 -> 50) และเพิ่มความเร็วเคลื่อนที่ขณะเปิดอัลติ (20% -> 30%) + รถถังเลนทองรวยไวขึ้น +60% • สถิติใน MPL-PH S18: ปรากฏตัว 6/172 เกม (3.49% Presence) พิก 6 เกม (WR 50%) แบน 0 เกม"
+      },
+      "xavier": {
+        "role": "⬆️ บัฟใหญ่ S2 แรง 2 เท่า (ขึ้น Tier A) • MPL-PH S18",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] ลดหน่วงร่ายสกิล 1-2 ลง 50%, ดาเมจระเบิดสกิล 2 เพิ่ม 2 เท่า (440-690 +130% MP), พาสซีฟวิ่งเร็ว 60% (+ สเปล Sprint บัฟคูลดาวน์เหลือ 75s) • สถิติใน MPL-PH S18: ปรากฏตัว 1/172 เกม (0.58% Presence) พิก 1 เกม (WR 0%) แบน 0 เกม"
+      },
+      "lunox": {
+        "role": "⬆️ บัฟต้นเกม +10% เจาะเวท/ดูดเลือด (ขึ้น Tier A) • MPL-PH S18",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] พาสซีฟได้ดูดเลือดเวท 10% หรือเจาะเกราะเวท 10% ทันทีตั้งแต่เลเวล 1, สกิล 2 ต้นเกมแรงขึ้น (3.5%-5% HP), อัลติมืดพุ่งไวขึ้น 50% • สถิติใน MPL-PH S18: ปรากฏตัว 1/172 เกม (0.58% Presence) พิก 1 เกม (WR 100%) แบน 0 เกม"
+      },
+      "kagura": {
+        "role": "⚖️ ปรับระยะร่ม Seimei (ขึ้น Tier B) • MPL-PH S18",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] ปรับปรุงเส้นแสดงระยะห่างสูงสุดของร่ม Seimei ให้ควบคุมจังหวะคอมโบแม่นยำขึ้น • สถิติใน MPL-PH S18: ปรากฏตัว 1/172 เกม (0.58% Presence) พิก 1 เกม (WR 0%) แบน 0 เกม"
+      },
+      "kaja": {
+        "role": "⬆️ บัฟอัลติขังทะลุอมตะ CC (ขึ้น Tier A) • MPL-PH S18",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] อัลติ Divine Binding ปรับใหม่: ศัตรูที่มีสถานะอมตะ CC (Control Immunity) ไม่สามารถหนีออกจากวงอัลติได้ + บิน Soaring นานและเลี้ยวไวขึ้น • สถิติใน MPL-PH S18: ปรากฏตัว 17/172 เกม (9.88% Presence) พิก 6 เกม (WR 66.67%) แบน 11 เกม"
+      },
+      "aldous": {
+        "role": "⬆️ บัฟเกราะลดดาเมจ 55% (ขึ้น Tier B) • MPL-PH S18",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] สกิล 2 ลดคูลดาวน์เหลือ 8 วินาทีทุกเลเวล และเพิ่มลดดาเมจ (Damage Reduction) สูงสุดถึง 55% (จากเดิม 30%) • สถิติใน MPL-PH S18: ปรากฏตัว 0/172 เกม (0% Presence) พิก 0 เกม (WR 0%) แบน 0 เกม"
       }
     },
     "stats": {
@@ -2055,7 +2382,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 22.67,
         "presenceRate": 96.51,
         "tier": "SS",
-        "metaScore": 102.1
+        "metaScore": 102.1,
+        "patchBadge": null,
+        "tierShift": null
       },
       "masha": {
         "picks": 13,
@@ -2067,8 +2396,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 7.56,
         "banRate": 43.02,
         "presenceRate": 50.58,
-        "tier": "SS",
-        "metaScore": 88.6
+        "tier": "A",
+        "metaScore": 69.9,
+        "patchBadge": "⬇️ เนิร์ฟหนักดาเมจแผล & ฮีลลดลง (ลดลง Tier A)",
+        "tierShift": "SS/S → A"
       },
       "marcel": {
         "picks": 47,
@@ -2081,7 +2412,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 43.6,
         "presenceRate": 70.93,
         "tier": "SS",
-        "metaScore": 91
+        "metaScore": 91,
+        "patchBadge": null,
+        "tierShift": null
       },
       "obsidia": {
         "picks": 37,
@@ -2094,7 +2427,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 14.53,
         "presenceRate": 36.05,
         "tier": "S",
-        "metaScore": 50.2
+        "metaScore": 60.4,
+        "patchBadge": "⬆️ รับบัฟเงินเลนทอง +60% (ขึ้น Tier S)",
+        "tierShift": "A → S"
       },
       "fanny": {
         "picks": 15,
@@ -2107,7 +2442,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 55.81,
         "presenceRate": 64.53,
         "tier": "SS",
-        "metaScore": 78.6
+        "metaScore": 78.6,
+        "patchBadge": null,
+        "tierShift": null
       },
       "hayabusa": {
         "picks": 4,
@@ -2120,7 +2457,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.16,
         "presenceRate": 3.49,
         "tier": "B",
-        "metaScore": 12.5
+        "metaScore": 12.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "zhuxin": {
         "picks": 44,
@@ -2133,7 +2472,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 19.77,
         "presenceRate": 45.35,
         "tier": "S",
-        "metaScore": 64.8
+        "metaScore": 64.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "granger": {
         "picks": 1,
@@ -2146,7 +2487,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.58,
         "tier": "B",
-        "metaScore": 0.5
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lukas": {
         "picks": 11,
@@ -2159,7 +2502,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 5.81,
         "presenceRate": 12.21,
         "tier": "A",
-        "metaScore": 27.6
+        "metaScore": 42.9,
+        "patchBadge": "⬆️ บัฟไฟต์เตอร์ถึกขึ้น ฮีล 8% HP (ขึ้น Tier S)",
+        "tierShift": "A → S"
       },
       "hylos": {
         "picks": 31,
@@ -2172,7 +2517,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 3.49,
         "presenceRate": 21.51,
         "tier": "A",
-        "metaScore": 36.7
+        "metaScore": 36.7,
+        "patchBadge": null,
+        "tierShift": null
       },
       "suyou": {
         "picks": 30,
@@ -2185,7 +2532,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.91,
         "presenceRate": 20.35,
         "tier": "A",
-        "metaScore": 43.4
+        "metaScore": 43.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "mathilda": {
         "picks": 26,
@@ -2198,7 +2547,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 22.09,
         "presenceRate": 37.21,
         "tier": "S",
-        "metaScore": 52.2
+        "metaScore": 52.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "kalea": {
         "picks": 29,
@@ -2211,7 +2562,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 12.21,
         "presenceRate": 29.07,
         "tier": "A",
-        "metaScore": 39.1
+        "metaScore": 39.1,
+        "patchBadge": null,
+        "tierShift": null
       },
       "harith": {
         "picks": 7,
@@ -2224,7 +2577,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 4.07,
         "presenceRate": 8.14,
         "tier": "B",
-        "metaScore": 28.6
+        "metaScore": 28.6,
+        "patchBadge": null,
+        "tierShift": null
       },
       "belerick": {
         "picks": 68,
@@ -2237,7 +2592,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 14.53,
         "presenceRate": 54.07,
         "tier": "S",
-        "metaScore": 66.1
+        "metaScore": 66.1,
+        "patchBadge": null,
+        "tierShift": null
       },
       "carmilla": {
         "picks": 49,
@@ -2250,7 +2607,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 26.16,
         "presenceRate": 54.65,
         "tier": "S",
-        "metaScore": 66.5
+        "metaScore": 66.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "gatotkaca": {
         "picks": 54,
@@ -2263,7 +2622,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 6.98,
         "presenceRate": 38.37,
         "tier": "S",
-        "metaScore": 48.1
+        "metaScore": 48.1,
+        "patchBadge": null,
+        "tierShift": null
       },
       "aurora": {
         "picks": 3,
@@ -2276,7 +2637,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.74,
         "presenceRate": 3.49,
         "tier": "B",
-        "metaScore": 28.3
+        "metaScore": 28.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "chip": {
         "picks": 0,
@@ -2289,7 +2652,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "ling": {
         "picks": 1,
@@ -2302,7 +2667,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.58,
         "tier": "B",
-        "metaScore": 0.5
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "diggie": {
         "picks": 0,
@@ -2315,7 +2682,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "estes": {
         "picks": 3,
@@ -2328,7 +2697,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.16,
         "presenceRate": 2.91,
         "tier": "B",
-        "metaScore": 40.5
+        "metaScore": 40.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "zetian": {
         "picks": 10,
@@ -2341,7 +2712,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.91,
         "presenceRate": 8.72,
         "tier": "B",
-        "metaScore": 22.6
+        "metaScore": 22.6,
+        "patchBadge": null,
+        "tierShift": null
       },
       "nolan": {
         "picks": 63,
@@ -2354,7 +2727,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 20.93,
         "presenceRate": 57.56,
         "tier": "SS",
-        "metaScore": 78.6
+        "metaScore": 78.6,
+        "patchBadge": null,
+        "tierShift": null
       },
       "badang": {
         "picks": 10,
@@ -2367,7 +2742,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 6.98,
         "presenceRate": 12.79,
         "tier": "A",
-        "metaScore": 22.3
+        "metaScore": 22.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "cecilion": {
         "picks": 8,
@@ -2380,7 +2757,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.91,
         "presenceRate": 7.56,
         "tier": "B",
-        "metaScore": 11.2
+        "metaScore": 11.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "popol and kupa": {
         "picks": 0,
@@ -2392,8 +2771,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 0
+        "tier": "A",
+        "metaScore": 20.4,
+        "patchBadge": "♻️ รีแวมป์ใหญ่ (ขี่หมา Kupa • ขึ้น Tier A)",
+        "tierShift": "C → A"
       },
       "floryn": {
         "picks": 0,
@@ -2406,7 +2787,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "julian": {
         "picks": 0,
@@ -2419,7 +2802,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "aulus": {
         "picks": 48,
@@ -2432,7 +2817,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 17.44,
         "presenceRate": 45.35,
         "tier": "S",
-        "metaScore": 62
+        "metaScore": 62,
+        "patchBadge": null,
+        "tierShift": null
       },
       "joy": {
         "picks": 0,
@@ -2445,7 +2832,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "alpha": {
         "picks": 0,
@@ -2458,7 +2847,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "phoveus": {
         "picks": 10,
@@ -2471,7 +2862,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.74,
         "presenceRate": 7.56,
         "tier": "B",
-        "metaScore": 17.8
+        "metaScore": 17.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "eudora": {
         "picks": 64,
@@ -2484,7 +2877,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 17.44,
         "presenceRate": 54.65,
         "tier": "S",
-        "metaScore": 65.5
+        "metaScore": 65.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "miya": {
         "picks": 22,
@@ -2497,7 +2892,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 4.65,
         "presenceRate": 17.44,
         "tier": "A",
-        "metaScore": 28.6
+        "metaScore": 28.6,
+        "patchBadge": null,
+        "tierShift": null
       },
       "moskov": {
         "picks": 20,
@@ -2510,7 +2907,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 5.81,
         "presenceRate": 17.44,
         "tier": "A",
-        "metaScore": 28.1
+        "metaScore": 28.1,
+        "patchBadge": null,
+        "tierShift": null
       },
       "sora": {
         "picks": 7,
@@ -2523,7 +2922,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.33,
         "presenceRate": 6.4,
         "tier": "B",
-        "metaScore": 21.7
+        "metaScore": 21.7,
+        "patchBadge": null,
+        "tierShift": null
       },
       "sun": {
         "picks": 0,
@@ -2536,7 +2937,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "angela": {
         "picks": 10,
@@ -2549,7 +2952,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 5.81,
         "presenceRate": 11.63,
         "tier": "B",
-        "metaScore": 25.1
+        "metaScore": 25.1,
+        "patchBadge": null,
+        "tierShift": null
       },
       "ruby": {
         "picks": 12,
@@ -2562,7 +2967,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 6.4,
         "presenceRate": 13.37,
         "tier": "A",
-        "metaScore": 39.3
+        "metaScore": 39.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "gloo": {
         "picks": 22,
@@ -2574,8 +2981,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 12.79,
         "banRate": 20.93,
         "presenceRate": 33.72,
-        "tier": "S",
-        "metaScore": 60.4
+        "tier": "A",
+        "metaScore": 41.7,
+        "patchBadge": "⬇️ เนิร์ฟสกิล 1 & อัลติส่งดาเมจ 60% (ลดลง Tier A)",
+        "tierShift": "SS/S → A"
       },
       "tigreal": {
         "picks": 0,
@@ -2588,7 +2997,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "bruno": {
         "picks": 10,
@@ -2601,7 +3012,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.16,
         "presenceRate": 6.98,
         "tier": "B",
-        "metaScore": 17.3
+        "metaScore": 17.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "edith": {
         "picks": 1,
@@ -2614,7 +3027,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.58,
         "tier": "B",
-        "metaScore": 38.5
+        "metaScore": 38.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "minotaur": {
         "picks": 56,
@@ -2627,7 +3042,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 11.63,
         "presenceRate": 44.19,
         "tier": "S",
-        "metaScore": 55.2
+        "metaScore": 55.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "karrie": {
         "picks": 6,
@@ -2639,8 +3056,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 3.49,
         "banRate": 0,
         "presenceRate": 3.49,
-        "tier": "B",
-        "metaScore": 22
+        "tier": "A",
+        "metaScore": 36.4,
+        "patchBadge": "⬆️ บัฟอัลติวิ่งเร็ว 30% + แรงขึ้น (ขึ้น Tier A)",
+        "tierShift": "B → A"
       },
       "khufra": {
         "picks": 4,
@@ -2653,7 +3072,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.58,
         "presenceRate": 2.91,
         "tier": "B",
-        "metaScore": 31
+        "metaScore": 31,
+        "patchBadge": null,
+        "tierShift": null
       },
       "vexana": {
         "picks": 12,
@@ -2666,7 +3087,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.33,
         "presenceRate": 9.3,
         "tier": "A",
-        "metaScore": 35.8
+        "metaScore": 35.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "rafaela": {
         "picks": 29,
@@ -2679,7 +3102,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 25.58,
         "presenceRate": 42.44,
         "tier": "S",
-        "metaScore": 74.7
+        "metaScore": 74.7,
+        "patchBadge": null,
+        "tierShift": null
       },
       "claude": {
         "picks": 43,
@@ -2692,7 +3117,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 4.65,
         "presenceRate": 29.65,
         "tier": "A",
-        "metaScore": 55.4
+        "metaScore": 55.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "roger": {
         "picks": 0,
@@ -2705,7 +3132,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "ixia": {
         "picks": 0,
@@ -2718,7 +3147,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "arlott": {
         "picks": 5,
@@ -2731,7 +3162,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.91,
         "presenceRate": 5.81,
         "tier": "B",
-        "metaScore": 27.7
+        "metaScore": 27.7,
+        "patchBadge": null,
+        "tierShift": null
       },
       "terizla": {
         "picks": 0,
@@ -2744,7 +3177,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.58,
         "presenceRate": 0.58,
         "tier": "B",
-        "metaScore": 0.5
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "atlas": {
         "picks": 35,
@@ -2757,7 +3192,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 77.33,
         "presenceRate": 97.67,
         "tier": "SS",
-        "metaScore": 121.8
+        "metaScore": 115,
+        "patchBadge": "⬇️ เนิร์ฟพาสซีฟแช่แข็งนานขึ้น (2.5s → 4s)",
+        "tierShift": "SS → S/SS (ลดความถี่แช่แข็ง)"
       },
       "yu zhong": {
         "picks": 3,
@@ -2770,7 +3207,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.16,
         "presenceRate": 2.91,
         "tier": "B",
-        "metaScore": 27.8
+        "metaScore": 27.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "cici": {
         "picks": 32,
@@ -2783,7 +3222,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 8.72,
         "presenceRate": 27.33,
         "tier": "A",
-        "metaScore": 38.7
+        "metaScore": 38.7,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lolita": {
         "picks": 1,
@@ -2796,7 +3237,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.58,
         "tier": "B",
-        "metaScore": 0.5
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "minsitthar": {
         "picks": 0,
@@ -2809,7 +3252,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "helcurt": {
         "picks": 0,
@@ -2822,7 +3267,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "luo yi": {
         "picks": 3,
@@ -2835,7 +3282,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 1.74,
         "tier": "B",
-        "metaScore": 14.1
+        "metaScore": 14.1,
+        "patchBadge": null,
+        "tierShift": null
       },
       "layla": {
         "picks": 0,
@@ -2848,7 +3297,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "nana": {
         "picks": 0,
@@ -2861,7 +3312,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "benedetta": {
         "picks": 0,
@@ -2874,7 +3327,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "xavier": {
         "picks": 1,
@@ -2886,8 +3341,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 0.58,
         "banRate": 0,
         "presenceRate": 0.58,
-        "tier": "B",
-        "metaScore": 0.5
+        "tier": "A",
+        "metaScore": 19.2,
+        "patchBadge": "⬆️ บัฟใหญ่ S2 แรง 2 เท่า (ขึ้น Tier A)",
+        "tierShift": "C → A"
       },
       "natan": {
         "picks": 0,
@@ -2900,7 +3357,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "faramis": {
         "picks": 0,
@@ -2913,7 +3372,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "khaleed": {
         "picks": 3,
@@ -2926,7 +3387,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.58,
         "presenceRate": 2.33,
         "tier": "B",
-        "metaScore": 14.6
+        "metaScore": 14.6,
+        "patchBadge": null,
+        "tierShift": null
       },
       "franco": {
         "picks": 0,
@@ -2939,7 +3402,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "x.borg": {
         "picks": 0,
@@ -2952,7 +3417,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.58,
         "presenceRate": 0.58,
         "tier": "B",
-        "metaScore": 0.5
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "odette": {
         "picks": 0,
@@ -2965,7 +3432,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "clint": {
         "picks": 32,
@@ -2978,7 +3447,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 6.4,
         "presenceRate": 25,
         "tier": "S",
-        "metaScore": 63.7
+        "metaScore": 63.7,
+        "patchBadge": null,
+        "tierShift": null
       },
       "novaria": {
         "picks": 21,
@@ -2991,7 +3462,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 6.4,
         "presenceRate": 18.6,
         "tier": "A",
-        "metaScore": 33.9
+        "metaScore": 33.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "valentina": {
         "picks": 46,
@@ -3004,7 +3477,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 19.77,
         "presenceRate": 46.51,
         "tier": "S",
-        "metaScore": 56.9
+        "metaScore": 56.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "baxia": {
         "picks": 1,
@@ -3017,7 +3492,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.58,
         "tier": "B",
-        "metaScore": 0.5
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "wanwan": {
         "picks": 0,
@@ -3030,7 +3507,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "fredrinn": {
         "picks": 1,
@@ -3043,7 +3522,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.58,
         "presenceRate": 1.16,
         "tier": "B",
-        "metaScore": 1
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lunox": {
         "picks": 1,
@@ -3055,8 +3536,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 0.58,
         "banRate": 0,
         "presenceRate": 0.58,
-        "tier": "B",
-        "metaScore": 38.5
+        "tier": "A",
+        "metaScore": 55.5,
+        "patchBadge": "⬆️ บัฟต้นเกม +10% เจาะเวท/ดูดเลือด (ขึ้น Tier A)",
+        "tierShift": "B → A"
       },
       "melissa": {
         "picks": 23,
@@ -3068,8 +3551,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 13.37,
         "banRate": 30.23,
         "presenceRate": 43.6,
-        "tier": "S",
-        "metaScore": 56.6
+        "tier": "SS",
+        "metaScore": 71.9,
+        "patchBadge": "⬆️ บัฟสกิล 2 + บัฟเลนทอง (ขึ้น Tier SS)",
+        "tierShift": "S → SS"
       },
       "barats": {
         "picks": 54,
@@ -3082,7 +3567,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 35.47,
         "presenceRate": 66.86,
         "tier": "SS",
-        "metaScore": 89.8
+        "metaScore": 89.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "hilda": {
         "picks": 4,
@@ -3095,7 +3582,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.91,
         "presenceRate": 5.23,
         "tier": "B",
-        "metaScore": 32.9
+        "metaScore": 32.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "chou": {
         "picks": 15,
@@ -3108,7 +3597,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 5.23,
         "presenceRate": 13.95,
         "tier": "A",
-        "metaScore": 27.1
+        "metaScore": 27.1,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lesley": {
         "picks": 0,
@@ -3121,7 +3612,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "aamon": {
         "picks": 0,
@@ -3134,7 +3627,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "uranus": {
         "picks": 42,
@@ -3146,8 +3641,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 24.42,
         "banRate": 41.86,
         "presenceRate": 66.28,
-        "tier": "SS",
-        "metaScore": 81.3
+        "tier": "S",
+        "metaScore": 69.4,
+        "patchBadge": "⬇️ ปรับตีกระจายเวท + เนิร์ฟรูนเคลียร์เลน (ลดลง Tier S)",
+        "tierShift": "SS → S"
       },
       "beatrix": {
         "picks": 4,
@@ -3160,7 +3657,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.16,
         "presenceRate": 3.49,
         "tier": "B",
-        "metaScore": 31.5
+        "metaScore": 31.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "kagura": {
         "picks": 1,
@@ -3173,7 +3672,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.58,
         "tier": "B",
-        "metaScore": 0.5
+        "metaScore": 5,
+        "patchBadge": "⚖️ ปรับระยะร่ม Seimei (ขึ้น Tier B)",
+        "tierShift": "C → B"
       },
       "lylia": {
         "picks": 19,
@@ -3186,7 +3687,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 20.35,
         "presenceRate": 31.4,
         "tier": "A",
-        "metaScore": 45.7
+        "metaScore": 45.7,
+        "patchBadge": null,
+        "tierShift": null
       },
       "yve": {
         "picks": 10,
@@ -3199,7 +3702,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.33,
         "presenceRate": 8.14,
         "tier": "A",
-        "metaScore": 47.3
+        "metaScore": 47.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "brody": {
         "picks": 28,
@@ -3212,7 +3717,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 12.21,
         "presenceRate": 28.49,
         "tier": "A",
-        "metaScore": 33.7
+        "metaScore": 33.7,
+        "patchBadge": null,
+        "tierShift": null
       },
       "pharsa": {
         "picks": 10,
@@ -3225,7 +3732,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.16,
         "presenceRate": 6.98,
         "tier": "A",
-        "metaScore": 57
+        "metaScore": 57,
+        "patchBadge": null,
+        "tierShift": null
       },
       "esmeralda": {
         "picks": 28,
@@ -3238,7 +3747,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 33.14,
         "presenceRate": 49.42,
         "tier": "S",
-        "metaScore": 59.9
+        "metaScore": 59.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lancelot": {
         "picks": 0,
@@ -3251,7 +3762,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "gusion": {
         "picks": 0,
@@ -3264,7 +3777,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lapu-lapu": {
         "picks": 3,
@@ -3277,7 +3792,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 1.74,
         "tier": "B",
-        "metaScore": 26.8
+        "metaScore": 26.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "akai": {
         "picks": 0,
@@ -3290,7 +3807,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "paquito": {
         "picks": 71,
@@ -3303,7 +3822,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 47.09,
         "presenceRate": 88.37,
         "tier": "SS",
-        "metaScore": 109.9
+        "metaScore": 109.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "kaja": {
         "picks": 6,
@@ -3315,8 +3836,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 3.49,
         "banRate": 6.4,
         "presenceRate": 9.88,
-        "tier": "B",
-        "metaScore": 33.7
+        "tier": "A",
+        "metaScore": 48.2,
+        "patchBadge": "⬆️ บัฟอัลติขังทะลุอมตะ CC (ขึ้น Tier A)",
+        "tierShift": "B → A"
       },
       "saber": {
         "picks": 2,
@@ -3329,7 +3852,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.74,
         "presenceRate": 2.91,
         "tier": "B",
-        "metaScore": 21.5
+        "metaScore": 21.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "valir": {
         "picks": 0,
@@ -3342,7 +3867,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "argus": {
         "picks": 0,
@@ -3355,7 +3882,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "alice": {
         "picks": 25,
@@ -3368,7 +3897,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 13.95,
         "presenceRate": 28.49,
         "tier": "A",
-        "metaScore": 39.4
+        "metaScore": 39.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "selena": {
         "picks": 36,
@@ -3381,7 +3912,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 36.63,
         "presenceRate": 57.56,
         "tier": "SS",
-        "metaScore": 72.9
+        "metaScore": 72.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "kadita": {
         "picks": 0,
@@ -3394,7 +3927,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "hanabi": {
         "picks": 4,
@@ -3407,7 +3942,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 4.65,
         "presenceRate": 6.98,
         "tier": "B",
-        "metaScore": 34.4
+        "metaScore": 34.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "guinevere": {
         "picks": 1,
@@ -3420,7 +3957,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.58,
         "tier": "B",
-        "metaScore": 0.5
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "dyrroth": {
         "picks": 6,
@@ -3433,7 +3972,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 5.23,
         "presenceRate": 8.72,
         "tier": "B",
-        "metaScore": 26.4
+        "metaScore": 26.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "gord": {
         "picks": 0,
@@ -3446,7 +3987,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "irithel": {
         "picks": 0,
@@ -3459,7 +4002,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "yi sun-shin": {
         "picks": 9,
@@ -3472,7 +4017,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.74,
         "presenceRate": 6.98,
         "tier": "B",
-        "metaScore": 18.6
+        "metaScore": 18.6,
+        "patchBadge": null,
+        "tierShift": null
       },
       "freya": {
         "picks": 24,
@@ -3485,7 +4032,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 86.05,
         "presenceRate": 100,
         "tier": "SS",
-        "metaScore": 136.8
+        "metaScore": 136.8,
+        "patchBadge": "⚖️ ปรับพาสซีฟฮีลตลอด + อัลติวิ่งเร็ว (SS)",
+        "tierShift": "SS (คงเดิม #1)"
       },
       "kimmy": {
         "picks": 27,
@@ -3498,7 +4047,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 11.05,
         "presenceRate": 26.74,
         "tier": "A",
-        "metaScore": 41
+        "metaScore": 41,
+        "patchBadge": null,
+        "tierShift": null
       },
       "bane": {
         "picks": 0,
@@ -3511,7 +4062,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "zhask": {
         "picks": 0,
@@ -3524,7 +4077,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "cyclops": {
         "picks": 0,
@@ -3537,7 +4092,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "hanzo": {
         "picks": 1,
@@ -3550,7 +4107,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.58,
         "presenceRate": 1.16,
         "tier": "B",
-        "metaScore": 1
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "karina": {
         "picks": 0,
@@ -3563,7 +4122,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "leomord": {
         "picks": 1,
@@ -3576,7 +4137,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.58,
         "tier": "B",
-        "metaScore": 0.5
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "silvanna": {
         "picks": 0,
@@ -3589,7 +4152,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "natalia": {
         "picks": 0,
@@ -3602,7 +4167,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "yin": {
         "picks": 0,
@@ -3615,7 +4182,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "aldous": {
         "picks": 0,
@@ -3627,8 +4196,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 0
+        "tier": "B",
+        "metaScore": 8.5,
+        "patchBadge": "⬆️ บัฟเกราะลดดาเมจ 55% (ขึ้น Tier B)",
+        "tierShift": "C → B"
       },
       "harley": {
         "picks": 13,
@@ -3641,7 +4212,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 9.88,
         "presenceRate": 17.44,
         "tier": "A",
-        "metaScore": 26.5
+        "metaScore": 26.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "thamuz": {
         "picks": 1,
@@ -3654,7 +4227,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.58,
         "tier": "B",
-        "metaScore": 0.5
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "alucard": {
         "picks": 0,
@@ -3667,7 +4242,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "vale": {
         "picks": 0,
@@ -3680,7 +4257,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "martis": {
         "picks": 0,
@@ -3693,7 +4272,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "jawhead": {
         "picks": 0,
@@ -3706,7 +4287,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "johnson": {
         "picks": 0,
@@ -3719,7 +4302,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "chang'e": {
         "picks": 0,
@@ -3732,7 +4317,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "grock": {
         "picks": 0,
@@ -3745,7 +4332,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "balmond": {
         "picks": 0,
@@ -3758,7 +4347,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "zilong": {
         "picks": 0,
@@ -3771,7 +4362,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       }
     }
   },
@@ -3838,28 +4431,28 @@ window.TOURNAMENTS_METADATA = {
         "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 130/135 เกม (96.3% Presence) • พิก 69 เกม (ชนะ 38 แพ้ 31, WR 55.07%) • แบน 61 เกม (BR 45.19%)"
       },
       "freya": {
-        "role": "🚫 Top Ban Priority (95 Bans / 94.07% Presence)",
-        "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 127/135 เกม (94.07% Presence) • พิก 32 เกม (ชนะ 17 แพ้ 15, WR 53.13%) • แบน 95 เกม (BR 70.37%)"
+        "role": "⚖️ ปรับพาสซีฟฮีลตลอด + อัลติวิ่งเร็ว (SS) • MSL-TH S2",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] พาสซีฟใช้ลูกแก้วตีดูดเลือดได้ตลอดเวลาในเลน + อัลติได้วิ่งเร็ว +30 MS และดาเมจพื้นฐานสูงขึ้น (แลกกับคูลดาวน์อัลตินานขึ้น 60-44s) • สถิติใน MSL-TH S2: ปรากฏตัว 127/135 เกม (94.07% Presence) พิก 32 เกม (WR 53.13%) แบน 95 เกม"
       },
       "atlas": {
-        "role": "🚫 Top Ban Priority (109 Bans / 91.11% Presence)",
-        "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 123/135 เกม (91.11% Presence) • พิก 14 เกม (ชนะ 8 แพ้ 6, WR 57.14%) • แบน 109 เกม (BR 80.74%)"
+        "role": "⬇️ เนิร์ฟพาสซีฟแช่แข็งนานขึ้น (2.5s → 4s) • MSL-TH S2",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] พาสซีฟ Frigid Breath ระยะเวลาสั้นลง (5s -> 4s) และคูลดาวน์แช่แข็งนานขึ้น (2.5s -> 4s) ชดเชยด้วยโบนัสเกราะเพิ่มเป็น +0.7% Extra HP • สถิติใน MSL-TH S2: ปรากฏตัว 123/135 เกม (91.11% Presence) พิก 14 เกม (WR 57.14%) แบน 109 เกม"
       },
       "marcel": {
         "role": "🚫 Top Ban Priority (75 Bans / 71.11% Presence)",
         "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 96/135 เกม (71.11% Presence) • พิก 21 เกม (ชนะ 12 แพ้ 9, WR 57.14%) • แบน 75 เกม (BR 55.56%)"
       },
       "gloo": {
-        "role": "🚫 Top Ban Priority (49 Bans / 71.11% Presence)",
-        "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 96/135 เกม (71.11% Presence) • พิก 47 เกม (ชนะ 22 แพ้ 25, WR 46.81%) • แบน 49 เกม (BR 36.3%)"
+        "role": "⬇️ เนิร์ฟสกิล 1 & อัลติส่งดาเมจ 60% (ลดลง Tier A) • MSL-TH S2",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] สกิล 1 ล็อกขาสั้นลง (0.8s -> 0.6s) ดาเมจลดลง, อัลติลดส่งผ่านดาเมจจาก 80% เหลือ 60%, และรูน Concussive Blast ตีมินเนี่ยนเบาลง 50% • สถิติใน MSL-TH S2: ปรากฏตัว 96/135 เกม (71.11% Presence) พิก 47 เกม (WR 46.81%) แบน 49 เกม"
       },
       "belerick": {
         "role": "⭐ Core Meta #7 (57 Picks / 70.37% Presence)",
         "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 95/135 เกม (70.37% Presence) • พิก 57 เกม (ชนะ 30 แพ้ 27, WR 52.63%) • แบน 38 เกม (BR 28.15%)"
       },
       "masha": {
-        "role": "🚫 Top Ban Priority (77 Bans / 66.67% Presence)",
-        "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 90/135 เกม (66.67% Presence) • พิก 13 เกม (ชนะ 9 แพ้ 4, WR 69.23%) • แบน 77 เกม (BR 57.04%)"
+        "role": "⬇️ เนิร์ฟหนักดาเมจแผล & ฮีลลดลง (ลดลง Tier A) • MSL-TH S2",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] ลดดาเมจทำลายแผลและลดฟื้นฟูเลือดพาสซีฟ (4-10% -> 3-6% HP), ลดโบนัสดาเมจสกิล 1-2 และถอดสโลว์สกิล 1 ดันให้กลับไปยืนเคลียร์มินเนี่ยนเลน EXP • สถิติใน MSL-TH S2: ปรากฏตัว 90/135 เกม (66.67% Presence) พิก 13 เกม (WR 69.23%) แบน 77 เกม"
       },
       "paquito": {
         "role": "⭐ Core Meta #9 (62 Picks / 65.19% Presence)",
@@ -3878,8 +4471,8 @@ window.TOURNAMENTS_METADATA = {
         "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 82/135 เกม (60.74% Presence) • พิก 49 เกม (ชนะ 29 แพ้ 20, WR 59.18%) • แบน 33 เกม (BR 24.44%)"
       },
       "uranus": {
-        "role": "🚫 Top Ban Priority (49 Bans / 60.74% Presence)",
-        "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 82/135 เกม (60.74% Presence) • พิก 33 เกม (ชนะ 17 แพ้ 16, WR 51.52%) • แบน 49 เกม (BR 36.3%)"
+        "role": "⬇️ ปรับตีกระจายเวท + เนิร์ฟรูนเคลียร์เลน (ลดลง Tier S) • MSL-TH S2",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] เปลี่ยนดาเมจกระจายตีปกติเป็นเวท + รูน Concussive Blast โดนเนิร์ฟดาเมจใส่มินเนี่ยนลดลง 50% ทำให้เคลียร์เลน EXP ช้าลง • สถิติใน MSL-TH S2: ปรากฏตัว 82/135 เกม (60.74% Presence) พิก 33 เกม (WR 51.52%) แบน 49 เกม"
       },
       "eudora": {
         "role": "🔥 High-Winrate Meta (57.45% WR / 47 Picks)",
@@ -3890,8 +4483,8 @@ window.TOURNAMENTS_METADATA = {
         "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 80/135 เกม (59.26% Presence) • พิก 39 เกม (ชนะ 18 แพ้ 21, WR 46.15%) • แบน 41 เกม (BR 30.37%)"
       },
       "obsidia": {
-        "role": "⭐ Core Meta #16 (57 Picks / 54.81% Presence)",
-        "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 74/135 เกม (54.81% Presence) • พิก 57 เกม (ชนะ 31 แพ้ 26, WR 54.39%) • แบน 17 เกม (BR 12.59%)"
+        "role": "⬆️ รับบัฟเงินเลนทอง +60% (ขึ้น Tier S) • MSL-TH S2",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] ได้อานิสงส์เต็มๆ จากบัฟรถถัง Gold Lane (+40% -> +60% Gold) และการเนิร์ฟ Chastise Pauldron ทำให้แครี่ตีเร็วขึ้นเป็นแกนหลักเลทเกม • สถิติใน MSL-TH S2: ปรากฏตัว 74/135 เกม (54.81% Presence) พิก 57 เกม (WR 54.39%) แบน 17 เกม"
       },
       "zhuxin": {
         "role": "⭐ Core Meta #17 (43 Picks / 51.11% Presence)",
@@ -3924,6 +4517,42 @@ window.TOURNAMENTS_METADATA = {
       "barats": {
         "role": "⭐ Core Meta #24 (16 Picks / 29.63% Presence)",
         "note": "สถิติจริง MSL-TH S2: ปรากฏตัว 40/135 เกม (29.63% Presence) • พิก 16 เกม (ชนะ 6 แพ้ 10, WR 37.5%) • แบน 24 เกม (BR 17.78%)"
+      },
+      "lukas": {
+        "role": "⬆️ บัฟไฟต์เตอร์ถึกขึ้น ฮีล 8% HP (ขึ้น Tier S) • MSL-TH S2",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] เพิ่มเลือดและเกราะพื้นฐาน, สกิล 1 ดาเมจพื้นฐานพุ่งเป็น 400-800 และฮีลเพิ่มเป็น 8% Max HP + แทงค์ยืน EXP โดนเนิร์ฟรูนเคลียร์ครีป -50% • สถิติใน MSL-TH S2: ปรากฏตัว 21/135 เกม (15.56% Presence) พิก 16 เกม (WR 68.75%) แบน 5 เกม"
+      },
+      "popol and kupa": {
+        "role": "♻️ รีแวมป์ใหญ่ (ขี่หมา Kupa • ขึ้น Tier A) • MSL-TH S2",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] รีแวมป์ใหม่ยกชุด! สกิล 2 กดขี่หลัง Kupa วิ่งเร็ว+รีเลือด, พาสซีฟชุบ Kupa ได้และตีป่า True DMG, อัลติทุบงัดลอยหมู่ (+ บัฟทองเลน Gold +60%) • สถิติใน MSL-TH S2: ปรากฏตัว 0/135 เกม (0% Presence) พิก 0 เกม (WR 0%) แบน 0 เกม"
+      },
+      "karrie": {
+        "role": "⬆️ บัฟอัลติวิ่งเร็ว 30% + แรงขึ้น (ขึ้น Tier A) • MSL-TH S2",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] อัลติเพิ่มดาเมจพื้นฐานวงล้อ (40 -> 50) และเพิ่มความเร็วเคลื่อนที่ขณะเปิดอัลติ (20% -> 30%) + รถถังเลนทองรวยไวขึ้น +60% • สถิติใน MSL-TH S2: ปรากฏตัว 5/135 เกม (3.7% Presence) พิก 4 เกม (WR 50%) แบน 1 เกม"
+      },
+      "xavier": {
+        "role": "⬆️ บัฟใหญ่ S2 แรง 2 เท่า (ขึ้น Tier A) • MSL-TH S2",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] ลดหน่วงร่ายสกิล 1-2 ลง 50%, ดาเมจระเบิดสกิล 2 เพิ่ม 2 เท่า (440-690 +130% MP), พาสซีฟวิ่งเร็ว 60% (+ สเปล Sprint บัฟคูลดาวน์เหลือ 75s) • สถิติใน MSL-TH S2: ปรากฏตัว 0/135 เกม (0% Presence) พิก 0 เกม (WR 0%) แบน 0 เกม"
+      },
+      "lunox": {
+        "role": "⬆️ บัฟต้นเกม +10% เจาะเวท/ดูดเลือด (ขึ้น Tier A) • MSL-TH S2",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] พาสซีฟได้ดูดเลือดเวท 10% หรือเจาะเกราะเวท 10% ทันทีตั้งแต่เลเวล 1, สกิล 2 ต้นเกมแรงขึ้น (3.5%-5% HP), อัลติมืดพุ่งไวขึ้น 50% • สถิติใน MSL-TH S2: ปรากฏตัว 1/135 เกม (0.74% Presence) พิก 1 เกม (WR 100%) แบน 0 เกม"
+      },
+      "melissa": {
+        "role": "⬆️ บัฟสกิล 2 + บัฟเลนทอง (ขึ้น Tier SS) • MSL-TH S2",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] ตุ๊กตา Muddles ส่งผ่านดาเมจเพิ่มเป็น 50%-60% + รถถัง Gold Lane เพิ่มทองเป็น +60% + ไอเทมลดความเร็วโจมตีโดนเนิร์ฟ • สถิติใน MSL-TH S2: ปรากฏตัว 27/135 เกม (20% Presence) พิก 7 เกม (WR 42.86%) แบน 20 เกม"
+      },
+      "kagura": {
+        "role": "⚖️ ปรับระยะร่ม Seimei (ขึ้น Tier B) • MSL-TH S2",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] ปรับปรุงเส้นแสดงระยะห่างสูงสุดของร่ม Seimei ให้ควบคุมจังหวะคอมโบแม่นยำขึ้น • สถิติใน MSL-TH S2: ปรากฏตัว 2/135 เกม (1.48% Presence) พิก 2 เกม (WR 0%) แบน 0 เกม"
+      },
+      "kaja": {
+        "role": "⬆️ บัฟอัลติขังทะลุอมตะ CC (ขึ้น Tier A) • MSL-TH S2",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] อัลติ Divine Binding ปรับใหม่: ศัตรูที่มีสถานะอมตะ CC (Control Immunity) ไม่สามารถหนีออกจากวงอัลติได้ + บิน Soaring นานและเลี้ยวไวขึ้น • สถิติใน MSL-TH S2: ปรากฏตัว 4/135 เกม (2.96% Presence) พิก 2 เกม (WR 50%) แบน 2 เกม"
+      },
+      "aldous": {
+        "role": "⬆️ บัฟเกราะลดดาเมจ 55% (ขึ้น Tier B) • MSL-TH S2",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] สกิล 2 ลดคูลดาวน์เหลือ 8 วินาทีทุกเลเวล และเพิ่มลดดาเมจ (Damage Reduction) สูงสุดถึง 55% (จากเดิม 30%) • สถิติใน MSL-TH S2: ปรากฏตัว 0/135 เกม (0% Presence) พิก 0 เกม (WR 0%) แบน 0 เกม"
       }
     },
     "stats": {
@@ -3938,7 +4567,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 45.19,
         "presenceRate": 96.3,
         "tier": "SS",
-        "metaScore": 112.3
+        "metaScore": 112.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "masha": {
         "picks": 13,
@@ -3950,8 +4581,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 9.63,
         "banRate": 57.04,
         "presenceRate": 66.67,
-        "tier": "SS",
-        "metaScore": 102.2
+        "tier": "A",
+        "metaScore": 83.5,
+        "patchBadge": "⬇️ เนิร์ฟหนักดาเมจแผล & ฮีลลดลง (ลดลง Tier A)",
+        "tierShift": "SS/S → A"
       },
       "marcel": {
         "picks": 21,
@@ -3964,7 +4597,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 55.56,
         "presenceRate": 71.11,
         "tier": "SS",
-        "metaScore": 93.1
+        "metaScore": 93.1,
+        "patchBadge": null,
+        "tierShift": null
       },
       "obsidia": {
         "picks": 57,
@@ -3976,8 +4611,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 42.22,
         "banRate": 12.59,
         "presenceRate": 54.81,
-        "tier": "S",
-        "metaScore": 70.3
+        "tier": "SS",
+        "metaScore": 80.5,
+        "patchBadge": "⬆️ รับบัฟเงินเลนทอง +60% (ขึ้น Tier S)",
+        "tierShift": "A → S"
       },
       "fanny": {
         "picks": 9,
@@ -3990,7 +4627,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 40,
         "presenceRate": 46.67,
         "tier": "S",
-        "metaScore": 54.1
+        "metaScore": 54.1,
+        "patchBadge": null,
+        "tierShift": null
       },
       "hayabusa": {
         "picks": 3,
@@ -4003,7 +4642,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.96,
         "presenceRate": 5.19,
         "tier": "B",
-        "metaScore": 17.1
+        "metaScore": 17.1,
+        "patchBadge": null,
+        "tierShift": null
       },
       "zhuxin": {
         "picks": 43,
@@ -4016,7 +4657,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 19.26,
         "presenceRate": 51.11,
         "tier": "S",
-        "metaScore": 60.2
+        "metaScore": 60.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "granger": {
         "picks": 1,
@@ -4029,7 +4672,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.74,
         "tier": "B",
-        "metaScore": 0.6
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lukas": {
         "picks": 16,
@@ -4041,8 +4686,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 11.85,
         "banRate": 3.7,
         "presenceRate": 15.56,
-        "tier": "A",
-        "metaScore": 52.3
+        "tier": "S",
+        "metaScore": 67.6,
+        "patchBadge": "⬆️ บัฟไฟต์เตอร์ถึกขึ้น ฮีล 8% HP (ขึ้น Tier S)",
+        "tierShift": "A → S"
       },
       "hylos": {
         "picks": 14,
@@ -4055,7 +4702,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.48,
         "presenceRate": 11.85,
         "tier": "B",
-        "metaScore": 18.2
+        "metaScore": 18.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "suyou": {
         "picks": 13,
@@ -4068,7 +4717,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 4.44,
         "presenceRate": 14.07,
         "tier": "A",
-        "metaScore": 26.6
+        "metaScore": 26.6,
+        "patchBadge": null,
+        "tierShift": null
       },
       "mathilda": {
         "picks": 8,
@@ -4081,7 +4732,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 8.15,
         "presenceRate": 14.07,
         "tier": "A",
-        "metaScore": 31
+        "metaScore": 31,
+        "patchBadge": null,
+        "tierShift": null
       },
       "kalea": {
         "picks": 1,
@@ -4094,7 +4747,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.74,
         "presenceRate": 1.48,
         "tier": "B",
-        "metaScore": 39.3
+        "metaScore": 39.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "harith": {
         "picks": 5,
@@ -4107,7 +4762,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.48,
         "presenceRate": 5.19,
         "tier": "B",
-        "metaScore": 27.2
+        "metaScore": 27.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "belerick": {
         "picks": 57,
@@ -4120,7 +4777,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 28.15,
         "presenceRate": 70.37,
         "tier": "SS",
-        "metaScore": 82.8
+        "metaScore": 82.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "carmilla": {
         "picks": 74,
@@ -4133,7 +4792,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 43.7,
         "presenceRate": 98.52,
         "tier": "SS",
-        "metaScore": 123.2
+        "metaScore": 123.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "gatotkaca": {
         "picks": 22,
@@ -4146,7 +4807,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.96,
         "presenceRate": 19.26,
         "tier": "A",
-        "metaScore": 28.5
+        "metaScore": 28.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "aurora": {
         "picks": 0,
@@ -4159,7 +4822,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "chip": {
         "picks": 0,
@@ -4172,7 +4837,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "ling": {
         "picks": 2,
@@ -4185,7 +4852,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.48,
         "presenceRate": 2.96,
         "tier": "B",
-        "metaScore": 21.5
+        "metaScore": 21.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "diggie": {
         "picks": 0,
@@ -4198,7 +4867,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "estes": {
         "picks": 3,
@@ -4211,7 +4882,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.48,
         "presenceRate": 3.7,
         "tier": "B",
-        "metaScore": 3.1
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "zetian": {
         "picks": 13,
@@ -4224,7 +4897,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.96,
         "presenceRate": 12.59,
         "tier": "A",
-        "metaScore": 42
+        "metaScore": 42,
+        "patchBadge": null,
+        "tierShift": null
       },
       "nolan": {
         "picks": 39,
@@ -4237,7 +4912,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 30.37,
         "presenceRate": 59.26,
         "tier": "SS",
-        "metaScore": 70.9
+        "metaScore": 70.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "badang": {
         "picks": 7,
@@ -4250,7 +4927,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 3.7,
         "presenceRate": 8.89,
         "tier": "B",
-        "metaScore": 29.3
+        "metaScore": 29.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "cecilion": {
         "picks": 16,
@@ -4263,7 +4942,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 8.15,
         "presenceRate": 20,
         "tier": "S",
-        "metaScore": 62.8
+        "metaScore": 62.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "popol and kupa": {
         "picks": 0,
@@ -4275,8 +4956,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 0
+        "tier": "A",
+        "metaScore": 20.4,
+        "patchBadge": "♻️ รีแวมป์ใหญ่ (ขี่หมา Kupa • ขึ้น Tier A)",
+        "tierShift": "C → A"
       },
       "floryn": {
         "picks": 0,
@@ -4289,7 +4972,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "julian": {
         "picks": 0,
@@ -4302,7 +4987,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "aulus": {
         "picks": 49,
@@ -4315,7 +5002,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 24.44,
         "presenceRate": 60.74,
         "tier": "SS",
-        "metaScore": 83.5
+        "metaScore": 83.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "joy": {
         "picks": 1,
@@ -4328,7 +5017,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.74,
         "tier": "B",
-        "metaScore": 0.6
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "alpha": {
         "picks": 0,
@@ -4341,7 +5032,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "phoveus": {
         "picks": 2,
@@ -4354,7 +5047,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 4.44,
         "presenceRate": 5.93,
         "tier": "B",
-        "metaScore": 5
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "eudora": {
         "picks": 47,
@@ -4367,7 +5062,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 25.19,
         "presenceRate": 60,
         "tier": "SS",
-        "metaScore": 81
+        "metaScore": 81,
+        "patchBadge": null,
+        "tierShift": null
       },
       "miya": {
         "picks": 24,
@@ -4380,7 +5077,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 11.11,
         "presenceRate": 28.89,
         "tier": "S",
-        "metaScore": 61.4
+        "metaScore": 61.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "moskov": {
         "picks": 25,
@@ -4393,7 +5092,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 8.15,
         "presenceRate": 26.67,
         "tier": "A",
-        "metaScore": 42.4
+        "metaScore": 42.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "sora": {
         "picks": 9,
@@ -4406,7 +5107,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 8.89,
         "presenceRate": 15.56,
         "tier": "A",
-        "metaScore": 25.9
+        "metaScore": 25.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "sun": {
         "picks": 0,
@@ -4419,7 +5122,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "angela": {
         "picks": 8,
@@ -4432,7 +5137,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 6.67,
         "presenceRate": 12.59,
         "tier": "A",
-        "metaScore": 29.7
+        "metaScore": 29.7,
+        "patchBadge": null,
+        "tierShift": null
       },
       "ruby": {
         "picks": 13,
@@ -4445,7 +5152,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.96,
         "presenceRate": 12.59,
         "tier": "A",
-        "metaScore": 25.3
+        "metaScore": 25.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "gloo": {
         "picks": 47,
@@ -4457,8 +5166,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 34.81,
         "banRate": 36.3,
         "presenceRate": 71.11,
-        "tier": "SS",
-        "metaScore": 84.2
+        "tier": "A",
+        "metaScore": 65.5,
+        "patchBadge": "⬇️ เนิร์ฟสกิล 1 & อัลติส่งดาเมจ 60% (ลดลง Tier A)",
+        "tierShift": "SS/S → A"
       },
       "tigreal": {
         "picks": 0,
@@ -4471,7 +5182,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "bruno": {
         "picks": 22,
@@ -4484,7 +5197,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 5.19,
         "presenceRate": 21.48,
         "tier": "A",
-        "metaScore": 33.8
+        "metaScore": 33.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "edith": {
         "picks": 0,
@@ -4497,7 +5212,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "minotaur": {
         "picks": 51,
@@ -4510,7 +5227,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 24.44,
         "presenceRate": 62.22,
         "tier": "SS",
-        "metaScore": 73.8
+        "metaScore": 73.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "karrie": {
         "picks": 4,
@@ -4522,8 +5241,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 2.96,
         "banRate": 0.74,
         "presenceRate": 3.7,
-        "tier": "B",
-        "metaScore": 22.1
+        "tier": "A",
+        "metaScore": 36.6,
+        "patchBadge": "⬆️ บัฟอัลติวิ่งเร็ว 30% + แรงขึ้น (ขึ้น Tier A)",
+        "tierShift": "B → A"
       },
       "khufra": {
         "picks": 0,
@@ -4536,7 +5257,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "vexana": {
         "picks": 1,
@@ -4549,7 +5272,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.74,
         "tier": "B",
-        "metaScore": 0.6
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "rafaela": {
         "picks": 11,
@@ -4562,7 +5287,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 20.74,
         "presenceRate": 28.89,
         "tier": "A",
-        "metaScore": 41.4
+        "metaScore": 41.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "claude": {
         "picks": 32,
@@ -4575,7 +5302,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 3.7,
         "presenceRate": 27.41,
         "tier": "A",
-        "metaScore": 39.9
+        "metaScore": 39.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "roger": {
         "picks": 0,
@@ -4588,7 +5317,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "ixia": {
         "picks": 0,
@@ -4601,7 +5332,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "arlott": {
         "picks": 2,
@@ -4614,7 +5347,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.22,
         "presenceRate": 3.7,
         "tier": "B",
-        "metaScore": 3.1
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "terizla": {
         "picks": 2,
@@ -4627,7 +5362,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 1.48,
         "tier": "B",
-        "metaScore": 20.3
+        "metaScore": 20.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "atlas": {
         "picks": 14,
@@ -4640,7 +5377,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 80.74,
         "presenceRate": 91.11,
         "tier": "SS",
-        "metaScore": 110.1
+        "metaScore": 103.3,
+        "patchBadge": "⬇️ เนิร์ฟพาสซีฟแช่แข็งนานขึ้น (2.5s → 4s)",
+        "tierShift": "SS → S/SS (ลดความถี่แช่แข็ง)"
       },
       "yu zhong": {
         "picks": 5,
@@ -4653,7 +5392,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.22,
         "presenceRate": 5.93,
         "tier": "B",
-        "metaScore": 20.2
+        "metaScore": 20.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "cici": {
         "picks": 31,
@@ -4666,7 +5407,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 5.19,
         "presenceRate": 28.15,
         "tier": "A",
-        "metaScore": 38.6
+        "metaScore": 38.6,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lolita": {
         "picks": 0,
@@ -4679,7 +5422,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "minsitthar": {
         "picks": 0,
@@ -4692,7 +5437,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "helcurt": {
         "picks": 0,
@@ -4705,7 +5452,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "luo yi": {
         "picks": 0,
@@ -4718,7 +5467,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "layla": {
         "picks": 0,
@@ -4731,7 +5482,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "nana": {
         "picks": 0,
@@ -4744,7 +5497,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "benedetta": {
         "picks": 0,
@@ -4757,7 +5512,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "xavier": {
         "picks": 0,
@@ -4769,8 +5526,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 0
+        "tier": "A",
+        "metaScore": 18.7,
+        "patchBadge": "⬆️ บัฟใหญ่ S2 แรง 2 เท่า (ขึ้น Tier A)",
+        "tierShift": "C → A"
       },
       "natan": {
         "picks": 0,
@@ -4783,7 +5542,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "faramis": {
         "picks": 3,
@@ -4796,7 +5557,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 2.22,
         "tier": "B",
-        "metaScore": 27.2
+        "metaScore": 27.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "khaleed": {
         "picks": 1,
@@ -4809,7 +5572,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.74,
         "tier": "B",
-        "metaScore": 38.6
+        "metaScore": 38.6,
+        "patchBadge": null,
+        "tierShift": null
       },
       "franco": {
         "picks": 0,
@@ -4822,7 +5587,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "x.borg": {
         "picks": 0,
@@ -4835,7 +5602,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "odette": {
         "picks": 0,
@@ -4848,7 +5617,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "clint": {
         "picks": 6,
@@ -4861,7 +5632,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 3.7,
         "presenceRate": 8.15,
         "tier": "B",
-        "metaScore": 25.9
+        "metaScore": 25.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "novaria": {
         "picks": 20,
@@ -4874,7 +5647,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 8.15,
         "presenceRate": 22.96,
         "tier": "A",
-        "metaScore": 29
+        "metaScore": 29,
+        "patchBadge": null,
+        "tierShift": null
       },
       "valentina": {
         "picks": 17,
@@ -4887,7 +5662,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 21.48,
         "presenceRate": 34.07,
         "tier": "A",
-        "metaScore": 40.9
+        "metaScore": 40.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "baxia": {
         "picks": 2,
@@ -4900,7 +5677,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 1.48,
         "tier": "B",
-        "metaScore": 20.3
+        "metaScore": 20.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "wanwan": {
         "picks": 0,
@@ -4913,7 +5692,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "fredrinn": {
         "picks": 0,
@@ -4926,7 +5707,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.74,
         "presenceRate": 0.74,
         "tier": "B",
-        "metaScore": 0.6
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lunox": {
         "picks": 1,
@@ -4938,8 +5721,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 0.74,
         "banRate": 0,
         "presenceRate": 0.74,
-        "tier": "B",
-        "metaScore": 38.6
+        "tier": "A",
+        "metaScore": 55.6,
+        "patchBadge": "⬆️ บัฟต้นเกม +10% เจาะเวท/ดูดเลือด (ขึ้น Tier A)",
+        "tierShift": "B → A"
       },
       "melissa": {
         "picks": 7,
@@ -4951,8 +5736,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 5.19,
         "banRate": 14.81,
         "presenceRate": 20,
-        "tier": "A",
-        "metaScore": 33.3
+        "tier": "S",
+        "metaScore": 48.6,
+        "patchBadge": "⬆️ บัฟสกิล 2 + บัฟเลนทอง (ขึ้น Tier SS)",
+        "tierShift": "S → SS"
       },
       "barats": {
         "picks": 16,
@@ -4965,7 +5752,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 17.78,
         "presenceRate": 29.63,
         "tier": "A",
-        "metaScore": 39.4
+        "metaScore": 39.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "hilda": {
         "picks": 0,
@@ -4978,7 +5767,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "chou": {
         "picks": 8,
@@ -4991,7 +5782,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.48,
         "presenceRate": 7.41,
         "tier": "B",
-        "metaScore": 15.8
+        "metaScore": 15.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lesley": {
         "picks": 0,
@@ -5004,7 +5797,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "aamon": {
         "picks": 0,
@@ -5017,7 +5812,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "uranus": {
         "picks": 33,
@@ -5029,8 +5826,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 24.44,
         "banRate": 36.3,
         "presenceRate": 60.74,
-        "tier": "SS",
-        "metaScore": 77.2
+        "tier": "S",
+        "metaScore": 65.3,
+        "patchBadge": "⬇️ ปรับตีกระจายเวท + เนิร์ฟรูนเคลียร์เลน (ลดลง Tier S)",
+        "tierShift": "SS → S"
       },
       "beatrix": {
         "picks": 0,
@@ -5043,7 +5842,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "kagura": {
         "picks": 2,
@@ -5056,7 +5857,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 1.48,
         "tier": "B",
-        "metaScore": 1.3
+        "metaScore": 5.5,
+        "patchBadge": "⚖️ ปรับระยะร่ม Seimei (ขึ้น Tier B)",
+        "tierShift": "C → B"
       },
       "lylia": {
         "picks": 16,
@@ -5069,7 +5872,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 14.81,
         "presenceRate": 26.67,
         "tier": "A",
-        "metaScore": 39.3
+        "metaScore": 39.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "yve": {
         "picks": 3,
@@ -5082,7 +5887,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.74,
         "presenceRate": 2.96,
         "tier": "B",
-        "metaScore": 40.5
+        "metaScore": 40.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "brody": {
         "picks": 22,
@@ -5095,7 +5902,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 18.52,
         "presenceRate": 34.81,
         "tier": "S",
-        "metaScore": 58.3
+        "metaScore": 58.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "pharsa": {
         "picks": 1,
@@ -5108,7 +5917,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.74,
         "tier": "B",
-        "metaScore": 38.6
+        "metaScore": 38.6,
+        "patchBadge": null,
+        "tierShift": null
       },
       "esmeralda": {
         "picks": 31,
@@ -5121,7 +5932,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 27.41,
         "presenceRate": 50.37,
         "tier": "S",
-        "metaScore": 63
+        "metaScore": 63,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lancelot": {
         "picks": 1,
@@ -5134,7 +5947,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.74,
         "tier": "B",
-        "metaScore": 0.6
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "gusion": {
         "picks": 0,
@@ -5147,7 +5962,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lapu-lapu": {
         "picks": 3,
@@ -5160,7 +5977,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 2.22,
         "tier": "B",
-        "metaScore": 14.6
+        "metaScore": 14.6,
+        "patchBadge": null,
+        "tierShift": null
       },
       "akai": {
         "picks": 0,
@@ -5173,7 +5992,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "paquito": {
         "picks": 62,
@@ -5186,7 +6007,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 19.26,
         "presenceRate": 65.19,
         "tier": "SS",
-        "metaScore": 73.8
+        "metaScore": 73.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "kaja": {
         "picks": 2,
@@ -5198,8 +6021,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 1.48,
         "banRate": 1.48,
         "presenceRate": 2.96,
-        "tier": "B",
-        "metaScore": 21.5
+        "tier": "A",
+        "metaScore": 36,
+        "patchBadge": "⬆️ บัฟอัลติขังทะลุอมตะ CC (ขึ้น Tier A)",
+        "tierShift": "B → A"
       },
       "saber": {
         "picks": 1,
@@ -5212,7 +6037,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.74,
         "tier": "B",
-        "metaScore": 0.6
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "valir": {
         "picks": 12,
@@ -5225,7 +6052,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 5.93,
         "presenceRate": 14.81,
         "tier": "A",
-        "metaScore": 28.4
+        "metaScore": 28.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "argus": {
         "picks": 0,
@@ -5238,7 +6067,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "alice": {
         "picks": 28,
@@ -5251,7 +6082,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 10.37,
         "presenceRate": 31.11,
         "tier": "A",
-        "metaScore": 38.7
+        "metaScore": 38.7,
+        "patchBadge": null,
+        "tierShift": null
       },
       "selena": {
         "picks": 34,
@@ -5264,7 +6097,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 36.3,
         "presenceRate": 61.48,
         "tier": "SS",
-        "metaScore": 102.4
+        "metaScore": 102.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "kadita": {
         "picks": 1,
@@ -5277,7 +6112,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.74,
         "tier": "B",
-        "metaScore": 0.6
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "hanabi": {
         "picks": 4,
@@ -5290,7 +6127,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 7.41,
         "presenceRate": 10.37,
         "tier": "B",
-        "metaScore": 27.8
+        "metaScore": 27.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "guinevere": {
         "picks": 0,
@@ -5303,7 +6142,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "dyrroth": {
         "picks": 8,
@@ -5316,7 +6157,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 8.15,
         "presenceRate": 14.07,
         "tier": "A",
-        "metaScore": 26.2
+        "metaScore": 26.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "gord": {
         "picks": 0,
@@ -5329,7 +6172,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "irithel": {
         "picks": 1,
@@ -5342,7 +6187,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.74,
         "tier": "B",
-        "metaScore": 0.6
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "yi sun-shin": {
         "picks": 12,
@@ -5355,7 +6202,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 5.19,
         "presenceRate": 14.07,
         "tier": "A",
-        "metaScore": 27.8
+        "metaScore": 27.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "freya": {
         "picks": 32,
@@ -5368,7 +6217,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 70.37,
         "presenceRate": 94.07,
         "tier": "SS",
-        "metaScore": 108.3
+        "metaScore": 108.3,
+        "patchBadge": "⚖️ ปรับพาสซีฟฮีลตลอด + อัลติวิ่งเร็ว (SS)",
+        "tierShift": "SS (คงเดิม #1)"
       },
       "kimmy": {
         "picks": 21,
@@ -5381,7 +6232,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 4.44,
         "presenceRate": 20,
         "tier": "A",
-        "metaScore": 31.5
+        "metaScore": 31.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "bane": {
         "picks": 0,
@@ -5394,7 +6247,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "zhask": {
         "picks": 0,
@@ -5407,7 +6262,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "cyclops": {
         "picks": 0,
@@ -5420,7 +6277,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "hanzo": {
         "picks": 1,
@@ -5433,7 +6292,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.74,
         "tier": "B",
-        "metaScore": 0.6
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "karina": {
         "picks": 0,
@@ -5446,7 +6307,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "leomord": {
         "picks": 5,
@@ -5459,7 +6322,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 3.7,
         "tier": "B",
-        "metaScore": 33.5
+        "metaScore": 33.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "silvanna": {
         "picks": 0,
@@ -5472,7 +6337,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "natalia": {
         "picks": 0,
@@ -5485,7 +6352,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "yin": {
         "picks": 0,
@@ -5498,7 +6367,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "aldous": {
         "picks": 0,
@@ -5510,8 +6381,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 0
+        "tier": "B",
+        "metaScore": 8.5,
+        "patchBadge": "⬆️ บัฟเกราะลดดาเมจ 55% (ขึ้น Tier B)",
+        "tierShift": "C → B"
       },
       "harley": {
         "picks": 24,
@@ -5524,7 +6397,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 16.3,
         "presenceRate": 34.07,
         "tier": "S",
-        "metaScore": 74.7
+        "metaScore": 74.7,
+        "patchBadge": null,
+        "tierShift": null
       },
       "thamuz": {
         "picks": 0,
@@ -5537,7 +6412,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "alucard": {
         "picks": 0,
@@ -5550,7 +6427,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "vale": {
         "picks": 0,
@@ -5563,7 +6442,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "martis": {
         "picks": 0,
@@ -5576,7 +6457,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "jawhead": {
         "picks": 0,
@@ -5589,7 +6472,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "johnson": {
         "picks": 0,
@@ -5602,7 +6487,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "chang'e": {
         "picks": 0,
@@ -5615,7 +6502,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "grock": {
         "picks": 1,
@@ -5628,7 +6517,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.74,
         "tier": "B",
-        "metaScore": 38.6
+        "metaScore": 38.6,
+        "patchBadge": null,
+        "tierShift": null
       },
       "balmond": {
         "picks": 2,
@@ -5641,7 +6532,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 1.48,
         "tier": "B",
-        "metaScore": 39.3
+        "metaScore": 39.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "zilong": {
         "picks": 0,
@@ -5654,7 +6547,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       }
     }
   },
@@ -5713,12 +6608,12 @@ window.TOURNAMENTS_METADATA = {
     },
     "signatures": {
       "freya": {
-        "role": "👑 #1 Priority (97.7% Presence / 57.63% WR)",
-        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 510/522 เกม (97.7% Presence) • พิก 118 เกม (ชนะ 68 แพ้ 50, WR 57.63%) • แบน 392 เกม (BR 75.1%)"
+        "role": "⚖️ ปรับพาสซีฟฮีลตลอด + อัลติวิ่งเร็ว (SS) • รวม 3 ลีก (ID+PH+TH)",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] พาสซีฟใช้ลูกแก้วตีดูดเลือดได้ตลอดเวลาในเลน + อัลติได้วิ่งเร็ว +30 MS และดาเมจพื้นฐานสูงขึ้น (แลกกับคูลดาวน์อัลตินานขึ้น 60-44s) • สถิติใน รวม 3 ลีก (ID+PH+TH): ปรากฏตัว 510/522 เกม (97.7% Presence) พิก 118 เกม (WR 57.63%) แบน 392 เกม"
       },
       "atlas": {
-        "role": "🚫 Top Ban Priority (375 Bans / 93.87% Presence)",
-        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 490/522 เกม (93.87% Presence) • พิก 115 เกม (ชนะ 63 แพ้ 52, WR 54.78%) • แบน 375 เกม (BR 71.84%)"
+        "role": "⬇️ เนิร์ฟพาสซีฟแช่แข็งนานขึ้น (2.5s → 4s) • รวม 3 ลีก (ID+PH+TH)",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] พาสซีฟ Frigid Breath ระยะเวลาสั้นลง (5s -> 4s) และคูลดาวน์แช่แข็งนานขึ้น (2.5s -> 4s) ชดเชยด้วยโบนัสเกราะเพิ่มเป็น +0.7% Extra HP • สถิติใน รวม 3 ลีก (ID+PH+TH): ปรากฏตัว 490/522 เกม (93.87% Presence) พิก 115 เกม (WR 54.78%) แบน 375 เกม"
       },
       "hirara": {
         "role": "🚫 Top Ban Priority (188 Bans / 93.3% Presence)",
@@ -5745,12 +6640,12 @@ window.TOURNAMENTS_METADATA = {
         "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 314/522 เกม (60.15% Presence) • พิก 176 เกม (ชนะ 97 แพ้ 79, WR 55.11%) • แบน 138 เกม (BR 26.44%)"
       },
       "uranus": {
-        "role": "⭐ Core Meta #9 (131 Picks / 59.77% Presence)",
-        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 312/522 เกม (59.77% Presence) • พิก 131 เกม (ชนะ 63 แพ้ 68, WR 48.09%) • แบน 181 เกม (BR 34.67%)"
+        "role": "⬇️ ปรับตีกระจายเวท + เนิร์ฟรูนเคลียร์เลน (ลดลง Tier S) • รวม 3 ลีก (ID+PH+TH)",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] เปลี่ยนดาเมจกระจายตีปกติเป็นเวท + รูน Concussive Blast โดนเนิร์ฟดาเมจใส่มินเนี่ยนลดลง 50% ทำให้เคลียร์เลน EXP ช้าลง • สถิติใน รวม 3 ลีก (ID+PH+TH): ปรากฏตัว 312/522 เกม (59.77% Presence) พิก 131 เกม (WR 48.09%) แบน 181 เกม"
       },
       "masha": {
-        "role": "🚫 Top Ban Priority (239 Bans / 55.94% Presence)",
-        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 292/522 เกม (55.94% Presence) • พิก 53 เกม (ชนะ 32 แพ้ 21, WR 60.38%) • แบน 239 เกม (BR 45.79%)"
+        "role": "⬇️ เนิร์ฟหนักดาเมจแผล & ฮีลลดลง (ลดลง Tier A) • รวม 3 ลีก (ID+PH+TH)",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] ลดดาเมจทำลายแผลและลดฟื้นฟูเลือดพาสซีฟ (4-10% -> 3-6% HP), ลดโบนัสดาเมจสกิล 1-2 และถอดสโลว์สกิล 1 ดันให้กลับไปยืนเคลียร์มินเนี่ยนเลน EXP • สถิติใน รวม 3 ลีก (ID+PH+TH): ปรากฏตัว 292/522 เกม (55.94% Presence) พิก 53 เกม (WR 60.38%) แบน 239 เกม"
       },
       "belerick": {
         "role": "⭐ Core Meta #11 (200 Picks / 55.36% Presence)",
@@ -5777,8 +6672,8 @@ window.TOURNAMENTS_METADATA = {
         "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 258/522 เกม (49.43% Presence) • พิก 166 เกม (ชนะ 91 แพ้ 75, WR 54.82%) • แบน 92 เกม (BR 17.62%)"
       },
       "gloo": {
-        "role": "⭐ Core Meta #17 (119 Picks / 48.08% Presence)",
-        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 251/522 เกม (48.08% Presence) • พิก 119 เกม (ชนะ 66 แพ้ 53, WR 55.46%) • แบน 132 เกม (BR 25.29%)"
+        "role": "⬇️ เนิร์ฟสกิล 1 & อัลติส่งดาเมจ 60% (ลดลง Tier A) • รวม 3 ลีก (ID+PH+TH)",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] สกิล 1 ล็อกขาสั้นลง (0.8s -> 0.6s) ดาเมจลดลง, อัลติลดส่งผ่านดาเมจจาก 80% เหลือ 60%, และรูน Concussive Blast ตีมินเนี่ยนเบาลง 50% • สถิติใน รวม 3 ลีก (ID+PH+TH): ปรากฏตัว 251/522 เกม (48.08% Presence) พิก 119 เกม (WR 55.46%) แบน 132 เกม"
       },
       "barats": {
         "role": "⭐ Core Meta #18 (112 Picks / 46.17% Presence)",
@@ -5789,8 +6684,8 @@ window.TOURNAMENTS_METADATA = {
         "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 232/522 เกม (44.44% Presence) • พิก 151 เกม (ชนะ 68 แพ้ 83, WR 45.03%) • แบน 81 เกม (BR 15.52%)"
       },
       "obsidia": {
-        "role": "⭐ Core Meta #20 (145 Picks / 42.15% Presence)",
-        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 220/522 เกม (42.15% Presence) • พิก 145 เกม (ชนะ 79 แพ้ 66, WR 54.48%) • แบน 75 เกม (BR 14.37%)"
+        "role": "⬆️ รับบัฟเงินเลนทอง +60% (ขึ้น Tier S) • รวม 3 ลีก (ID+PH+TH)",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] ได้อานิสงส์เต็มๆ จากบัฟรถถัง Gold Lane (+40% -> +60% Gold) และการเนิร์ฟ Chastise Pauldron ทำให้แครี่ตีเร็วขึ้นเป็นแกนหลักเลทเกม • สถิติใน รวม 3 ลีก (ID+PH+TH): ปรากฏตัว 220/522 เกม (42.15% Presence) พิก 145 เกม (WR 54.48%) แบน 75 เกม"
       },
       "valentina": {
         "role": "⭐ Core Meta #21 (106 Picks / 38.7% Presence)",
@@ -5801,12 +6696,44 @@ window.TOURNAMENTS_METADATA = {
         "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 195/522 เกม (37.36% Presence) • พิก 79 เกม (ชนะ 43 แพ้ 36, WR 54.43%) • แบน 116 เกม (BR 22.22%)"
       },
       "melissa": {
-        "role": "⭐ Core Meta #23 (64 Picks / 36.21% Presence)",
-        "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 189/522 เกม (36.21% Presence) • พิก 64 เกม (ชนะ 31 แพ้ 33, WR 48.44%) • แบน 125 เกม (BR 23.95%)"
+        "role": "⬆️ บัฟสกิล 2 + บัฟเลนทอง (ขึ้น Tier SS) • รวม 3 ลีก (ID+PH+TH)",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] ตุ๊กตา Muddles ส่งผ่านดาเมจเพิ่มเป็น 50%-60% + รถถัง Gold Lane เพิ่มทองเป็น +60% + ไอเทมลดความเร็วโจมตีโดนเนิร์ฟ • สถิติใน รวม 3 ลีก (ID+PH+TH): ปรากฏตัว 189/522 เกม (36.21% Presence) พิก 64 เกม (WR 48.44%) แบน 125 เกม"
       },
       "alice": {
         "role": "⭐ Core Meta #24 (102 Picks / 33.72% Presence)",
         "note": "สถิติจริง รวม 3 ลีก (522 นัด): ปรากฏตัว 176/522 เกม (33.72% Presence) • พิก 102 เกม (ชนะ 46 แพ้ 56, WR 45.1%) • แบน 74 เกม (BR 14.18%)"
+      },
+      "lukas": {
+        "role": "⬆️ บัฟไฟต์เตอร์ถึกขึ้น ฮีล 8% HP (ขึ้น Tier S) • รวม 3 ลีก (ID+PH+TH)",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] เพิ่มเลือดและเกราะพื้นฐาน, สกิล 1 ดาเมจพื้นฐานพุ่งเป็น 400-800 และฮีลเพิ่มเป็น 8% Max HP + แทงค์ยืน EXP โดนเนิร์ฟรูนเคลียร์ครีป -50% • สถิติใน รวม 3 ลีก (ID+PH+TH): ปรากฏตัว 89/522 เกม (17.05% Presence) พิก 46 เกม (WR 58.7%) แบน 43 เกม"
+      },
+      "popol and kupa": {
+        "role": "♻️ รีแวมป์ใหญ่ (ขี่หมา Kupa • ขึ้น Tier A) • รวม 3 ลีก (ID+PH+TH)",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] รีแวมป์ใหม่ยกชุด! สกิล 2 กดขี่หลัง Kupa วิ่งเร็ว+รีเลือด, พาสซีฟชุบ Kupa ได้และตีป่า True DMG, อัลติทุบงัดลอยหมู่ (+ บัฟทองเลน Gold +60%) • สถิติใน รวม 3 ลีก (ID+PH+TH): ปรากฏตัว 0/522 เกม (0% Presence) พิก 0 เกม (WR 0%) แบน 0 เกม"
+      },
+      "karrie": {
+        "role": "⬆️ บัฟอัลติวิ่งเร็ว 30% + แรงขึ้น (ขึ้น Tier A) • รวม 3 ลีก (ID+PH+TH)",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] อัลติเพิ่มดาเมจพื้นฐานวงล้อ (40 -> 50) และเพิ่มความเร็วเคลื่อนที่ขณะเปิดอัลติ (20% -> 30%) + รถถังเลนทองรวยไวขึ้น +60% • สถิติใน รวม 3 ลีก (ID+PH+TH): ปรากฏตัว 13/522 เกม (2.49% Presence) พิก 12 เกม (WR 41.67%) แบน 1 เกม"
+      },
+      "xavier": {
+        "role": "⬆️ บัฟใหญ่ S2 แรง 2 เท่า (ขึ้น Tier A) • รวม 3 ลีก (ID+PH+TH)",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] ลดหน่วงร่ายสกิล 1-2 ลง 50%, ดาเมจระเบิดสกิล 2 เพิ่ม 2 เท่า (440-690 +130% MP), พาสซีฟวิ่งเร็ว 60% (+ สเปล Sprint บัฟคูลดาวน์เหลือ 75s) • สถิติใน รวม 3 ลีก (ID+PH+TH): ปรากฏตัว 1/522 เกม (0.19% Presence) พิก 1 เกม (WR 0%) แบน 0 เกม"
+      },
+      "lunox": {
+        "role": "⬆️ บัฟต้นเกม +10% เจาะเวท/ดูดเลือด (ขึ้น Tier A) • รวม 3 ลีก (ID+PH+TH)",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] พาสซีฟได้ดูดเลือดเวท 10% หรือเจาะเกราะเวท 10% ทันทีตั้งแต่เลเวล 1, สกิล 2 ต้นเกมแรงขึ้น (3.5%-5% HP), อัลติมืดพุ่งไวขึ้น 50% • สถิติใน รวม 3 ลีก (ID+PH+TH): ปรากฏตัว 9/522 เกม (1.72% Presence) พิก 7 เกม (WR 42.86%) แบน 2 เกม"
+      },
+      "kagura": {
+        "role": "⚖️ ปรับระยะร่ม Seimei (ขึ้น Tier B) • รวม 3 ลีก (ID+PH+TH)",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] ปรับปรุงเส้นแสดงระยะห่างสูงสุดของร่ม Seimei ให้ควบคุมจังหวะคอมโบแม่นยำขึ้น • สถิติใน รวม 3 ลีก (ID+PH+TH): ปรากฏตัว 5/522 เกม (0.96% Presence) พิก 5 เกม (WR 20%) แบน 0 เกม"
+      },
+      "kaja": {
+        "role": "⬆️ บัฟอัลติขังทะลุอมตะ CC (ขึ้น Tier A) • รวม 3 ลีก (ID+PH+TH)",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] อัลติ Divine Binding ปรับใหม่: ศัตรูที่มีสถานะอมตะ CC (Control Immunity) ไม่สามารถหนีออกจากวงอัลติได้ + บิน Soaring นานและเลี้ยวไวขึ้น • สถิติใน รวม 3 ลีก (ID+PH+TH): ปรากฏตัว 34/522 เกม (6.51% Presence) พิก 11 เกม (WR 54.55%) แบน 23 เกม"
+      },
+      "aldous": {
+        "role": "⬆️ บัฟเกราะลดดาเมจ 55% (ขึ้น Tier B) • รวม 3 ลีก (ID+PH+TH)",
+        "note": "[อัปเดตแพตช์ 2.2.23 • 17/11/2026] สกิล 2 ลดคูลดาวน์เหลือ 8 วินาทีทุกเลเวล และเพิ่มลดดาเมจ (Damage Reduction) สูงสุดถึง 55% (จากเดิม 30%) • สถิติใน รวม 3 ลีก (ID+PH+TH): ปรากฏตัว 0/522 เกม (0% Presence) พิก 0 เกม (WR 0%) แบน 0 เกม"
       }
     },
     "stats": {
@@ -5821,7 +6748,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 36.02,
         "presenceRate": 93.3,
         "tier": "SS",
-        "metaScore": 104.4
+        "metaScore": 104.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "masha": {
         "picks": 53,
@@ -5833,8 +6762,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 10.15,
         "banRate": 45.79,
         "presenceRate": 55.94,
-        "tier": "SS",
-        "metaScore": 83.7
+        "tier": "A",
+        "metaScore": 65,
+        "patchBadge": "⬇️ เนิร์ฟหนักดาเมจแผล & ฮีลลดลง (ลดลง Tier A)",
+        "tierShift": "SS/S → A"
       },
       "marcel": {
         "picks": 103,
@@ -5847,7 +6778,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 50.57,
         "presenceRate": 70.31,
         "tier": "SS",
-        "metaScore": 94.6
+        "metaScore": 94.6,
+        "patchBadge": null,
+        "tierShift": null
       },
       "obsidia": {
         "picks": 145,
@@ -5860,7 +6793,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 14.37,
         "presenceRate": 42.15,
         "tier": "S",
-        "metaScore": 59.6
+        "metaScore": 69.8,
+        "patchBadge": "⬆️ รับบัฟเงินเลนทอง +60% (ขึ้น Tier S)",
+        "tierShift": "A → S"
       },
       "fanny": {
         "picks": 47,
@@ -5873,7 +6808,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 53.83,
         "presenceRate": 62.84,
         "tier": "SS",
-        "metaScore": 77.2
+        "metaScore": 77.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "hayabusa": {
         "picks": 13,
@@ -5886,7 +6823,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.72,
         "presenceRate": 4.21,
         "tier": "B",
-        "metaScore": 15.3
+        "metaScore": 15.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "zhuxin": {
         "picks": 155,
@@ -5899,7 +6838,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 22.22,
         "presenceRate": 51.92,
         "tier": "S",
-        "metaScore": 66.3
+        "metaScore": 66.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "granger": {
         "picks": 3,
@@ -5912,7 +6853,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.57,
         "tier": "B",
-        "metaScore": 0.5
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lukas": {
         "picks": 46,
@@ -5924,8 +6867,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 8.81,
         "banRate": 8.24,
         "presenceRate": 17.05,
-        "tier": "A",
-        "metaScore": 42.8
+        "tier": "S",
+        "metaScore": 58.1,
+        "patchBadge": "⬆️ บัฟไฟต์เตอร์ถึกขึ้น ฮีล 8% HP (ขึ้น Tier S)",
+        "tierShift": "A → S"
       },
       "hylos": {
         "picks": 66,
@@ -5938,7 +6883,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.11,
         "presenceRate": 14.75,
         "tier": "A",
-        "metaScore": 28.1
+        "metaScore": 28.1,
+        "patchBadge": null,
+        "tierShift": null
       },
       "suyou": {
         "picks": 68,
@@ -5951,7 +6898,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.87,
         "presenceRate": 15.9,
         "tier": "A",
-        "metaScore": 30.8
+        "metaScore": 30.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "mathilda": {
         "picks": 57,
@@ -5964,7 +6913,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 19.16,
         "presenceRate": 30.08,
         "tier": "A",
-        "metaScore": 43.6
+        "metaScore": 43.6,
+        "patchBadge": null,
+        "tierShift": null
       },
       "kalea": {
         "picks": 52,
@@ -5977,7 +6928,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 11.69,
         "presenceRate": 21.65,
         "tier": "A",
-        "metaScore": 36.7
+        "metaScore": 36.7,
+        "patchBadge": null,
+        "tierShift": null
       },
       "harith": {
         "picks": 17,
@@ -5990,7 +6943,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.72,
         "presenceRate": 4.98,
         "tier": "B",
-        "metaScore": 24.4
+        "metaScore": 24.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "belerick": {
         "picks": 200,
@@ -6003,7 +6958,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 17.05,
         "presenceRate": 55.36,
         "tier": "SS",
-        "metaScore": 67
+        "metaScore": 67,
+        "patchBadge": null,
+        "tierShift": null
       },
       "carmilla": {
         "picks": 171,
@@ -6016,7 +6973,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 33.14,
         "presenceRate": 65.9,
         "tier": "SS",
-        "metaScore": 84
+        "metaScore": 84,
+        "patchBadge": null,
+        "tierShift": null
       },
       "gatotkaca": {
         "picks": 109,
@@ -6029,7 +6988,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 5.17,
         "presenceRate": 26.05,
         "tier": "A",
-        "metaScore": 38.5
+        "metaScore": 38.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "aurora": {
         "picks": 3,
@@ -6042,7 +7003,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.57,
         "presenceRate": 1.15,
         "tier": "B",
-        "metaScore": 26.3
+        "metaScore": 26.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "chip": {
         "picks": 7,
@@ -6055,7 +7018,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 4.21,
         "presenceRate": 5.56,
         "tier": "B",
-        "metaScore": 10.2
+        "metaScore": 10.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "ling": {
         "picks": 4,
@@ -6068,7 +7033,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.57,
         "presenceRate": 1.34,
         "tier": "B",
-        "metaScore": 10.6
+        "metaScore": 10.6,
+        "patchBadge": null,
+        "tierShift": null
       },
       "diggie": {
         "picks": 0,
@@ -6081,7 +7048,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "estes": {
         "picks": 10,
@@ -6094,7 +7063,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.11,
         "presenceRate": 4.02,
         "tier": "B",
-        "metaScore": 33.1
+        "metaScore": 33.1,
+        "patchBadge": null,
+        "tierShift": null
       },
       "zetian": {
         "picks": 45,
@@ -6107,7 +7078,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 5.56,
         "presenceRate": 14.18,
         "tier": "A",
-        "metaScore": 44.1
+        "metaScore": 44.1,
+        "patchBadge": null,
+        "tierShift": null
       },
       "nolan": {
         "picks": 176,
@@ -6120,7 +7093,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 26.44,
         "presenceRate": 60.15,
         "tier": "SS",
-        "metaScore": 78.6
+        "metaScore": 78.6,
+        "patchBadge": null,
+        "tierShift": null
       },
       "badang": {
         "picks": 36,
@@ -6133,7 +7108,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 4.98,
         "presenceRate": 11.88,
         "tier": "B",
-        "metaScore": 28
+        "metaScore": 28,
+        "patchBadge": null,
+        "tierShift": null
       },
       "cecilion": {
         "picks": 39,
@@ -6146,7 +7123,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 4.41,
         "presenceRate": 11.88,
         "tier": "A",
-        "metaScore": 38.7
+        "metaScore": 38.7,
+        "patchBadge": null,
+        "tierShift": null
       },
       "popol and kupa": {
         "picks": 0,
@@ -6158,8 +7137,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 0
+        "tier": "A",
+        "metaScore": 20.4,
+        "patchBadge": "♻️ รีแวมป์ใหญ่ (ขี่หมา Kupa • ขึ้น Tier A)",
+        "tierShift": "C → A"
       },
       "floryn": {
         "picks": 0,
@@ -6172,7 +7153,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "julian": {
         "picks": 0,
@@ -6185,7 +7168,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "aulus": {
         "picks": 166,
@@ -6198,7 +7183,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 17.62,
         "presenceRate": 49.43,
         "tier": "S",
-        "metaScore": 66.2
+        "metaScore": 66.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "joy": {
         "picks": 3,
@@ -6211,7 +7198,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.57,
         "tier": "B",
-        "metaScore": 0.5
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "alpha": {
         "picks": 16,
@@ -6224,7 +7213,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.15,
         "presenceRate": 4.21,
         "tier": "B",
-        "metaScore": 29.3
+        "metaScore": 29.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "phoveus": {
         "picks": 34,
@@ -6237,7 +7228,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 6.7,
         "presenceRate": 13.22,
         "tier": "A",
-        "metaScore": 26.9
+        "metaScore": 26.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "eudora": {
         "picks": 162,
@@ -6250,7 +7243,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 18.58,
         "presenceRate": 49.62,
         "tier": "S",
-        "metaScore": 65.8
+        "metaScore": 65.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "miya": {
         "picks": 73,
@@ -6263,7 +7258,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 7.85,
         "presenceRate": 21.84,
         "tier": "A",
-        "metaScore": 44.2
+        "metaScore": 44.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "moskov": {
         "picks": 80,
@@ -6276,7 +7273,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 6.9,
         "presenceRate": 22.22,
         "tier": "A",
-        "metaScore": 36.9
+        "metaScore": 36.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "sora": {
         "picks": 41,
@@ -6289,7 +7288,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 4.79,
         "presenceRate": 12.64,
         "tier": "A",
-        "metaScore": 26.5
+        "metaScore": 26.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "sun": {
         "picks": 0,
@@ -6302,7 +7303,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "angela": {
         "picks": 21,
@@ -6315,7 +7318,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 4.21,
         "presenceRate": 8.24,
         "tier": "B",
-        "metaScore": 21.5
+        "metaScore": 21.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "ruby": {
         "picks": 39,
@@ -6328,7 +7333,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 4.41,
         "presenceRate": 11.88,
         "tier": "B",
-        "metaScore": 28.6
+        "metaScore": 28.6,
+        "patchBadge": null,
+        "tierShift": null
       },
       "gloo": {
         "picks": 119,
@@ -6340,8 +7347,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 22.8,
         "banRate": 25.29,
         "presenceRate": 48.08,
-        "tier": "S",
-        "metaScore": 68.7
+        "tier": "A",
+        "metaScore": 50,
+        "patchBadge": "⬇️ เนิร์ฟสกิล 1 & อัลติส่งดาเมจ 60% (ลดลง Tier A)",
+        "tierShift": "SS/S → A"
       },
       "tigreal": {
         "picks": 1,
@@ -6354,7 +7363,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.19,
         "tier": "B",
-        "metaScore": 0.2
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "bruno": {
         "picks": 39,
@@ -6367,7 +7378,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.87,
         "presenceRate": 10.34,
         "tier": "B",
-        "metaScore": 26.3
+        "metaScore": 26.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "edith": {
         "picks": 2,
@@ -6380,7 +7393,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.38,
         "tier": "B",
-        "metaScore": 19.3
+        "metaScore": 19.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "minotaur": {
         "picks": 151,
@@ -6393,7 +7408,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 15.52,
         "presenceRate": 44.44,
         "tier": "S",
-        "metaScore": 54.9
+        "metaScore": 54.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "karrie": {
         "picks": 12,
@@ -6405,8 +7422,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 2.3,
         "banRate": 0.19,
         "presenceRate": 2.49,
-        "tier": "B",
-        "metaScore": 18
+        "tier": "A",
+        "metaScore": 32.4,
+        "patchBadge": "⬆️ บัฟอัลติวิ่งเร็ว 30% + แรงขึ้น (ขึ้น Tier A)",
+        "tierShift": "B → A"
       },
       "khufra": {
         "picks": 6,
@@ -6419,7 +7438,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.38,
         "presenceRate": 1.53,
         "tier": "B",
-        "metaScore": 20.3
+        "metaScore": 20.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "vexana": {
         "picks": 15,
@@ -6432,7 +7453,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.72,
         "presenceRate": 4.6,
         "tier": "B",
-        "metaScore": 26.5
+        "metaScore": 26.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "rafaela": {
         "picks": 79,
@@ -6445,7 +7468,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 22.22,
         "presenceRate": 37.36,
         "tier": "S",
-        "metaScore": 58.5
+        "metaScore": 58.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "claude": {
         "picks": 140,
@@ -6458,7 +7483,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 4.6,
         "presenceRate": 31.42,
         "tier": "A",
-        "metaScore": 46.3
+        "metaScore": 46.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "roger": {
         "picks": 0,
@@ -6471,7 +7498,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "ixia": {
         "picks": 1,
@@ -6484,7 +7513,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.19,
         "tier": "B",
-        "metaScore": 38.2
+        "metaScore": 38.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "arlott": {
         "picks": 18,
@@ -6497,7 +7528,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 6.7,
         "presenceRate": 10.15,
         "tier": "B",
-        "metaScore": 25.5
+        "metaScore": 25.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "terizla": {
         "picks": 8,
@@ -6510,7 +7543,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.19,
         "presenceRate": 1.72,
         "tier": "B",
-        "metaScore": 20.5
+        "metaScore": 20.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "atlas": {
         "picks": 115,
@@ -6523,7 +7558,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 71.84,
         "presenceRate": 93.87,
         "tier": "SS",
-        "metaScore": 109.9
+        "metaScore": 103.1,
+        "patchBadge": "⬇️ เนิร์ฟพาสซีฟแช่แข็งนานขึ้น (2.5s → 4s)",
+        "tierShift": "SS → S/SS (ลดความถี่แช่แข็ง)"
       },
       "yu zhong": {
         "picks": 19,
@@ -6536,7 +7573,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.11,
         "presenceRate": 5.75,
         "tier": "B",
-        "metaScore": 24.9
+        "metaScore": 24.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "cici": {
         "picks": 120,
@@ -6549,7 +7588,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 9,
         "presenceRate": 31.99,
         "tier": "A",
-        "metaScore": 44.3
+        "metaScore": 44.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lolita": {
         "picks": 1,
@@ -6562,7 +7603,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.19,
         "tier": "B",
-        "metaScore": 0.2
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "minsitthar": {
         "picks": 1,
@@ -6575,7 +7618,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.19,
         "tier": "B",
-        "metaScore": 0.2
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "helcurt": {
         "picks": 0,
@@ -6588,7 +7633,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "luo yi": {
         "picks": 4,
@@ -6601,7 +7648,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.77,
         "tier": "B",
-        "metaScore": 10.2
+        "metaScore": 10.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "layla": {
         "picks": 0,
@@ -6614,7 +7663,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "nana": {
         "picks": 0,
@@ -6627,7 +7678,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "benedetta": {
         "picks": 1,
@@ -6640,7 +7693,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.19,
         "tier": "B",
-        "metaScore": 0.2
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "xavier": {
         "picks": 1,
@@ -6652,8 +7707,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 0.19,
         "banRate": 0,
         "presenceRate": 0.19,
-        "tier": "B",
-        "metaScore": 0.2
+        "tier": "A",
+        "metaScore": 18.9,
+        "patchBadge": "⬆️ บัฟใหญ่ S2 แรง 2 เท่า (ขึ้น Tier A)",
+        "tierShift": "C → A"
       },
       "natan": {
         "picks": 0,
@@ -6666,7 +7723,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "faramis": {
         "picks": 5,
@@ -6679,7 +7738,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.19,
         "presenceRate": 1.15,
         "tier": "B",
-        "metaScore": 23.8
+        "metaScore": 23.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "khaleed": {
         "picks": 9,
@@ -6692,7 +7753,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.38,
         "presenceRate": 2.11,
         "tier": "B",
-        "metaScore": 18.7
+        "metaScore": 18.7,
+        "patchBadge": null,
+        "tierShift": null
       },
       "franco": {
         "picks": 0,
@@ -6705,7 +7768,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "x.borg": {
         "picks": 1,
@@ -6718,7 +7783,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.19,
         "presenceRate": 0.38,
         "tier": "B",
-        "metaScore": 0.3
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "odette": {
         "picks": 2,
@@ -6731,7 +7798,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.38,
         "tier": "B",
-        "metaScore": 0.3
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "clint": {
         "picks": 49,
@@ -6744,7 +7813,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 3.64,
         "presenceRate": 13.03,
         "tier": "A",
-        "metaScore": 44.3
+        "metaScore": 44.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "novaria": {
         "picks": 64,
@@ -6757,7 +7828,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 11.49,
         "presenceRate": 23.75,
         "tier": "A",
-        "metaScore": 36.2
+        "metaScore": 36.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "valentina": {
         "picks": 106,
@@ -6770,7 +7843,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 18.39,
         "presenceRate": 38.7,
         "tier": "S",
-        "metaScore": 47.2
+        "metaScore": 47.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "baxia": {
         "picks": 3,
@@ -6783,7 +7858,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.19,
         "presenceRate": 0.77,
         "tier": "B",
-        "metaScore": 13.3
+        "metaScore": 13.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "wanwan": {
         "picks": 2,
@@ -6796,7 +7873,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.19,
         "presenceRate": 0.57,
         "tier": "B",
-        "metaScore": 19.5
+        "metaScore": 19.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "fredrinn": {
         "picks": 4,
@@ -6809,7 +7888,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.77,
         "presenceRate": 1.53,
         "tier": "B",
-        "metaScore": 10.8
+        "metaScore": 10.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lunox": {
         "picks": 7,
@@ -6821,8 +7902,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 1.34,
         "banRate": 0.38,
         "presenceRate": 1.72,
-        "tier": "B",
-        "metaScore": 17.7
+        "tier": "A",
+        "metaScore": 34.7,
+        "patchBadge": "⬆️ บัฟต้นเกม +10% เจาะเวท/ดูดเลือด (ขึ้น Tier A)",
+        "tierShift": "B → A"
       },
       "melissa": {
         "picks": 64,
@@ -6835,7 +7918,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 23.95,
         "presenceRate": 36.21,
         "tier": "S",
-        "metaScore": 52.2
+        "metaScore": 67.5,
+        "patchBadge": "⬆️ บัฟสกิล 2 + บัฟเลนทอง (ขึ้น Tier SS)",
+        "tierShift": "S → SS"
       },
       "barats": {
         "picks": 112,
@@ -6848,7 +7933,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 24.71,
         "presenceRate": 46.17,
         "tier": "S",
-        "metaScore": 61.2
+        "metaScore": 61.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "hilda": {
         "picks": 9,
@@ -6861,7 +7948,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.34,
         "presenceRate": 3.07,
         "tier": "A",
-        "metaScore": 51.3
+        "metaScore": 51.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "chou": {
         "picks": 45,
@@ -6874,7 +7963,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 5.36,
         "presenceRate": 13.98,
         "tier": "A",
-        "metaScore": 26.2
+        "metaScore": 26.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lesley": {
         "picks": 3,
@@ -6887,7 +7978,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.15,
         "presenceRate": 1.72,
         "tier": "B",
-        "metaScore": 26.8
+        "metaScore": 26.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "aamon": {
         "picks": 0,
@@ -6900,7 +7993,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "uranus": {
         "picks": 131,
@@ -6912,8 +8007,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 25.1,
         "banRate": 34.67,
         "presenceRate": 59.77,
-        "tier": "SS",
-        "metaScore": 72.1
+        "tier": "S",
+        "metaScore": 60.2,
+        "patchBadge": "⬇️ ปรับตีกระจายเวท + เนิร์ฟรูนเคลียร์เลน (ลดลง Tier S)",
+        "tierShift": "SS → S"
       },
       "beatrix": {
         "picks": 4,
@@ -6926,7 +8023,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.38,
         "presenceRate": 1.15,
         "tier": "B",
-        "metaScore": 29.5
+        "metaScore": 29.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "kagura": {
         "picks": 5,
@@ -6939,7 +8038,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.96,
         "tier": "B",
-        "metaScore": 8.4
+        "metaScore": 12.7,
+        "patchBadge": "⚖️ ปรับระยะร่ม Seimei (ขึ้น Tier B)",
+        "tierShift": "C → B"
       },
       "lylia": {
         "picks": 73,
@@ -6952,7 +8053,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 18.2,
         "presenceRate": 32.18,
         "tier": "A",
-        "metaScore": 44.5
+        "metaScore": 44.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "yve": {
         "picks": 26,
@@ -6965,7 +8068,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.34,
         "presenceRate": 6.32,
         "tier": "A",
-        "metaScore": 57.3
+        "metaScore": 57.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "brody": {
         "picks": 80,
@@ -6978,7 +8083,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 11.3,
         "presenceRate": 26.63,
         "tier": "A",
-        "metaScore": 36.4
+        "metaScore": 36.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "pharsa": {
         "picks": 17,
@@ -6991,7 +8098,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.38,
         "presenceRate": 3.64,
         "tier": "A",
-        "metaScore": 37.8
+        "metaScore": 37.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "esmeralda": {
         "picks": 96,
@@ -7004,7 +8113,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 33.91,
         "presenceRate": 52.3,
         "tier": "S",
-        "metaScore": 63.3
+        "metaScore": 63.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lancelot": {
         "picks": 2,
@@ -7017,7 +8128,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.38,
         "tier": "B",
-        "metaScore": 0.3
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "gusion": {
         "picks": 0,
@@ -7030,7 +8143,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lapu-lapu": {
         "picks": 7,
@@ -7043,7 +8158,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 1.34,
         "tier": "B",
-        "metaScore": 22.9
+        "metaScore": 22.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "akai": {
         "picks": 0,
@@ -7056,7 +8173,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "paquito": {
         "picks": 235,
@@ -7069,7 +8188,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 35.63,
         "presenceRate": 80.65,
         "tier": "SS",
-        "metaScore": 93.5
+        "metaScore": 93.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "kaja": {
         "picks": 11,
@@ -7081,8 +8202,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 2.11,
         "banRate": 4.41,
         "presenceRate": 6.51,
-        "tier": "B",
-        "metaScore": 29.4
+        "tier": "A",
+        "metaScore": 43.9,
+        "patchBadge": "⬆️ บัฟอัลติขังทะลุอมตะ CC (ขึ้น Tier A)",
+        "tierShift": "B → A"
       },
       "saber": {
         "picks": 9,
@@ -7095,7 +8218,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.34,
         "presenceRate": 3.07,
         "tier": "B",
-        "metaScore": 27.6
+        "metaScore": 27.6,
+        "patchBadge": null,
+        "tierShift": null
       },
       "valir": {
         "picks": 25,
@@ -7108,7 +8233,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.68,
         "presenceRate": 7.47,
         "tier": "B",
-        "metaScore": 21.5
+        "metaScore": 21.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "argus": {
         "picks": 2,
@@ -7121,7 +8248,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.38,
         "tier": "B",
-        "metaScore": 0.3
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "alice": {
         "picks": 102,
@@ -7134,7 +8263,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 14.18,
         "presenceRate": 33.72,
         "tier": "A",
-        "metaScore": 45.8
+        "metaScore": 45.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "selena": {
         "picks": 122,
@@ -7147,7 +8278,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 31.61,
         "presenceRate": 54.98,
         "tier": "S",
-        "metaScore": 69.4
+        "metaScore": 69.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "kadita": {
         "picks": 3,
@@ -7160,7 +8293,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.57,
         "tier": "B",
-        "metaScore": 0.5
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "hanabi": {
         "picks": 12,
@@ -7173,7 +8308,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 4.02,
         "presenceRate": 6.32,
         "tier": "B",
-        "metaScore": 33.3
+        "metaScore": 33.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "guinevere": {
         "picks": 4,
@@ -7186,7 +8323,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.15,
         "presenceRate": 1.92,
         "tier": "B",
-        "metaScore": 20.6
+        "metaScore": 20.6,
+        "patchBadge": null,
+        "tierShift": null
       },
       "dyrroth": {
         "picks": 24,
@@ -7199,7 +8338,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 4.79,
         "presenceRate": 9.39,
         "tier": "B",
-        "metaScore": 25.4
+        "metaScore": 25.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "gord": {
         "picks": 0,
@@ -7212,7 +8353,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.19,
         "presenceRate": 0.19,
         "tier": "B",
-        "metaScore": 0.2
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "irithel": {
         "picks": 1,
@@ -7225,7 +8368,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.19,
         "tier": "B",
-        "metaScore": 0.2
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "yi sun-shin": {
         "picks": 36,
@@ -7238,7 +8383,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 4.02,
         "presenceRate": 10.92,
         "tier": "B",
-        "metaScore": 23
+        "metaScore": 23,
+        "patchBadge": null,
+        "tierShift": null
       },
       "freya": {
         "picks": 118,
@@ -7251,7 +8398,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 75.1,
         "presenceRate": 97.7,
         "tier": "SS",
-        "metaScore": 116.2
+        "metaScore": 116.2,
+        "patchBadge": "⚖️ ปรับพาสซีฟฮีลตลอด + อัลติวิ่งเร็ว (SS)",
+        "tierShift": "SS (คงเดิม #1)"
       },
       "kimmy": {
         "picks": 101,
@@ -7264,7 +8413,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 7.28,
         "presenceRate": 26.63,
         "tier": "A",
-        "metaScore": 40.7
+        "metaScore": 40.7,
+        "patchBadge": null,
+        "tierShift": null
       },
       "bane": {
         "picks": 0,
@@ -7277,7 +8428,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "zhask": {
         "picks": 0,
@@ -7290,7 +8443,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "cyclops": {
         "picks": 0,
@@ -7303,7 +8458,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "hanzo": {
         "picks": 6,
@@ -7316,7 +8473,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.77,
         "presenceRate": 1.92,
         "tier": "B",
-        "metaScore": 14.3
+        "metaScore": 14.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "karina": {
         "picks": 0,
@@ -7329,7 +8488,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "leomord": {
         "picks": 10,
@@ -7342,7 +8503,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.19,
         "presenceRate": 2.11,
         "tier": "B",
-        "metaScore": 31.5
+        "metaScore": 31.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "silvanna": {
         "picks": 0,
@@ -7355,7 +8518,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "natalia": {
         "picks": 0,
@@ -7368,7 +8533,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "yin": {
         "picks": 0,
@@ -7381,7 +8548,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "aldous": {
         "picks": 0,
@@ -7393,8 +8562,10 @@ window.TOURNAMENTS_METADATA = {
         "pickRate": 0,
         "banRate": 0,
         "presenceRate": 0,
-        "tier": "C",
-        "metaScore": 0
+        "tier": "B",
+        "metaScore": 8.5,
+        "patchBadge": "⬆️ บัฟเกราะลดดาเมจ 55% (ขึ้น Tier B)",
+        "tierShift": "C → B"
       },
       "harley": {
         "picks": 57,
@@ -7407,7 +8578,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 10.73,
         "presenceRate": 21.65,
         "tier": "A",
-        "metaScore": 38.4
+        "metaScore": 38.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "thamuz": {
         "picks": 1,
@@ -7420,7 +8593,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.19,
         "tier": "B",
-        "metaScore": 0.2
+        "metaScore": 5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "alucard": {
         "picks": 0,
@@ -7433,7 +8608,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "vale": {
         "picks": 0,
@@ -7446,7 +8623,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "martis": {
         "picks": 0,
@@ -7459,7 +8638,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "jawhead": {
         "picks": 0,
@@ -7472,7 +8653,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "johnson": {
         "picks": 0,
@@ -7485,7 +8668,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "chang'e": {
         "picks": 0,
@@ -7498,7 +8683,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "grock": {
         "picks": 1,
@@ -7511,7 +8698,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.19,
         "tier": "B",
-        "metaScore": 38.2
+        "metaScore": 38.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "balmond": {
         "picks": 2,
@@ -7524,7 +8713,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.38,
         "tier": "B",
-        "metaScore": 38.3
+        "metaScore": 38.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "zilong": {
         "picks": 0,
@@ -7537,7 +8728,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       }
     }
   },
@@ -7553,46 +8746,46 @@ window.TOURNAMENTS_METADATA = {
     "badgeText": "🔮 M8 PREDICTION",
     "topBans": [
       "freya",
-      "atlas",
       "marcel",
       "fanny",
-      "masha",
+      "atlas",
+      "melissa",
       "esmeralda",
-      "uranus",
       "paquito",
       "hirara",
       "carmilla",
       "selena",
       "zhuxin",
       "barats",
-      "melissa",
-      "gloo",
+      "masha",
       "rafaela",
       "nolan",
+      "lukas",
+      "uranus",
       "mathilda"
     ],
     "demoDraft": {
       "bans": [
         "Freya",
+        "Hirara",
         "Atlas",
         "Marcel",
+        "Paquito",
         "Fanny",
-        "Masha",
-        "Hirara",
-        "Uranus",
-        "Selena",
+        "Zhuxin",
         "Carmilla",
-        "Paquito"
+        "Esmeralda",
+        "Melissa"
       ],
       "enemyPicks": [
         "Nolan",
-        "Zhuxin",
+        "Eudora",
         "Belerick"
       ],
       "allyPicks": [
-        "Gloo"
+        "Lukas"
       ],
-      "note": "ดราฟต์จำลองคาดการณ์ M8 World Championship (วิเคราะห์จาก 6 ทัวร์นาเมนต์ 942 นัด)"
+      "note": "ดราฟต์จำลองคาดการณ์ M8 หลังปรับสมดุล Patch 2.2.23 (17/11/2026)"
     },
     "signatures": {
       "freya": {
@@ -7748,11 +8941,13 @@ window.TOURNAMENTS_METADATA = {
         "bans": 631,
         "totalPickBans": 789,
         "winRate": 58.86,
-        "pickRate": 18.3,
-        "banRate": 80.9,
-        "presenceRate": 99.2,
+        "pickRate": 17.9,
+        "banRate": 78.9,
+        "presenceRate": 96.8,
         "tier": "SS",
-        "metaScore": 117.3
+        "metaScore": 115.2,
+        "patchBadge": "⚖️ ปรับพาสซีฟฮีลตลอด + อัลติวิ่งเร็ว (SS)",
+        "tierShift": "SS (คงเดิม #1)"
       },
       "atlas": {
         "picks": 201,
@@ -7761,11 +8956,13 @@ window.TOURNAMENTS_METADATA = {
         "bans": 548,
         "totalPickBans": 749,
         "winRate": 56.22,
-        "pickRate": 24.3,
-        "banRate": 71.4,
-        "presenceRate": 95.7,
+        "pickRate": 32.3,
+        "banRate": 54.1,
+        "presenceRate": 86.4,
         "tier": "SS",
-        "metaScore": 112
+        "metaScore": 98.5,
+        "patchBadge": "⬇️ เนิร์ฟพาสซีฟแช่แข็งนานขึ้น (2.5s → 4s)",
+        "tierShift": "SS → S/SS (ลดความถี่แช่แข็ง)"
       },
       "hirara": {
         "picks": 434,
@@ -7778,7 +8975,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 35.9,
         "presenceRate": 93.5,
         "tier": "SS",
-        "metaScore": 104.8
+        "metaScore": 104.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "marcel": {
         "picks": 156,
@@ -7791,7 +8990,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 63.9,
         "presenceRate": 85.5,
         "tier": "SS",
-        "metaScore": 104.6
+        "metaScore": 104.6,
+        "patchBadge": null,
+        "tierShift": null
       },
       "paquito": {
         "picks": 361,
@@ -7804,7 +9005,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 37.1,
         "presenceRate": 84.1,
         "tier": "SS",
-        "metaScore": 96.4
+        "metaScore": 96.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "uranus": {
         "picks": 232,
@@ -7813,11 +9016,13 @@ window.TOURNAMENTS_METADATA = {
         "bans": 269,
         "totalPickBans": 501,
         "winRate": 50.86,
-        "pickRate": 31.1,
-        "banRate": 37.2,
-        "presenceRate": 68.3,
-        "tier": "SS",
-        "metaScore": 83.4
+        "pickRate": 30.4,
+        "banRate": 22.4,
+        "presenceRate": 52.8,
+        "tier": "S",
+        "metaScore": 57.4,
+        "patchBadge": "⬇️ ปรับตีกระจายเวท + เนิร์ฟรูนเคลียร์เลน (ลดลง Tier S)",
+        "tierShift": "SS → S"
       },
       "fanny": {
         "picks": 75,
@@ -7830,7 +9035,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 58.2,
         "presenceRate": 68.5,
         "tier": "SS",
-        "metaScore": 81.3
+        "metaScore": 81.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "zhuxin": {
         "picks": 242,
@@ -7843,7 +9050,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 30.1,
         "presenceRate": 66.4,
         "tier": "SS",
-        "metaScore": 78.9
+        "metaScore": 78.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "carmilla": {
         "picks": 205,
@@ -7856,7 +9065,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 35.4,
         "presenceRate": 65.6,
         "tier": "SS",
-        "metaScore": 85.9
+        "metaScore": 85.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "belerick": {
         "picks": 314,
@@ -7869,7 +9080,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 20.3,
         "presenceRate": 62.9,
         "tier": "SS",
-        "metaScore": 75.7
+        "metaScore": 75.7,
+        "patchBadge": null,
+        "tierShift": null
       },
       "esmeralda": {
         "picks": 175,
@@ -7882,7 +9095,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 38.4,
         "presenceRate": 62.7,
         "tier": "SS",
-        "metaScore": 75.6
+        "metaScore": 75.6,
+        "patchBadge": null,
+        "tierShift": null
       },
       "selena": {
         "picks": 180,
@@ -7895,7 +9110,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 33.4,
         "presenceRate": 58.3,
         "tier": "S",
-        "metaScore": 74.6
+        "metaScore": 74.6,
+        "patchBadge": null,
+        "tierShift": null
       },
       "nolan": {
         "picks": 252,
@@ -7908,7 +9125,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 23.9,
         "presenceRate": 57.9,
         "tier": "S",
-        "metaScore": 74.1
+        "metaScore": 74.1,
+        "patchBadge": null,
+        "tierShift": null
       },
       "barats": {
         "picks": 194,
@@ -7921,7 +9140,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 27.8,
         "presenceRate": 55.6,
         "tier": "S",
-        "metaScore": 70.2
+        "metaScore": 70.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "masha": {
         "picks": 67,
@@ -7930,11 +9151,13 @@ window.TOURNAMENTS_METADATA = {
         "bans": 294,
         "totalPickBans": 361,
         "winRate": 59.7,
-        "pickRate": 8.4,
-        "banRate": 41.1,
-        "presenceRate": 49.5,
-        "tier": "S",
-        "metaScore": 75.5
+        "pickRate": 10.5,
+        "banRate": 25.7,
+        "presenceRate": 36.2,
+        "tier": "A",
+        "metaScore": 45.7,
+        "patchBadge": "⬇️ เนิร์ฟหนักดาเมจแผล & ฮีลลดลง (ลดลง Tier A)",
+        "tierShift": "SS/S → A"
       },
       "eudora": {
         "picks": 243,
@@ -7947,7 +9170,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 20.1,
         "presenceRate": 54.4,
         "tier": "S",
-        "metaScore": 69
+        "metaScore": 69,
+        "patchBadge": null,
+        "tierShift": null
       },
       "gloo": {
         "picks": 162,
@@ -7956,11 +9181,13 @@ window.TOURNAMENTS_METADATA = {
         "bans": 172,
         "totalPickBans": 334,
         "winRate": 54.94,
-        "pickRate": 20.5,
-        "banRate": 22.2,
-        "presenceRate": 42.7,
-        "tier": "S",
-        "metaScore": 62.7
+        "pickRate": 20.3,
+        "banRate": 13.5,
+        "presenceRate": 33.8,
+        "tier": "A",
+        "metaScore": 36.8,
+        "patchBadge": "⬇️ เนิร์ฟสกิล 1 & อัลติส่งดาเมจ 60% (ลดลง Tier A)",
+        "tierShift": "SS/S → A"
       },
       "valentina": {
         "picks": 197,
@@ -7973,7 +9200,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 21,
         "presenceRate": 47.1,
         "tier": "S",
-        "metaScore": 58.3
+        "metaScore": 58.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "aulus": {
         "picks": 193,
@@ -7986,7 +9215,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 17.3,
         "presenceRate": 43.6,
         "tier": "S",
-        "metaScore": 61
+        "metaScore": 61,
+        "patchBadge": null,
+        "tierShift": null
       },
       "claude": {
         "picks": 240,
@@ -7999,7 +9230,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 7.8,
         "presenceRate": 42.6,
         "tier": "S",
-        "metaScore": 54.8
+        "metaScore": 54.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "rafaela": {
         "picks": 132,
@@ -8012,7 +9245,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 24.1,
         "presenceRate": 42.4,
         "tier": "S",
-        "metaScore": 65.5
+        "metaScore": 65.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "melissa": {
         "picks": 108,
@@ -8021,11 +9256,13 @@ window.TOURNAMENTS_METADATA = {
         "bans": 199,
         "totalPickBans": 307,
         "winRate": 53.7,
-        "pickRate": 16.7,
-        "banRate": 31,
-        "presenceRate": 47.7,
-        "tier": "S",
-        "metaScore": 65.8
+        "pickRate": 17.8,
+        "banRate": 43.7,
+        "presenceRate": 61.5,
+        "tier": "SS",
+        "metaScore": 93.2,
+        "patchBadge": "⬆️ บัฟสกิล 2 + บัฟเลนทอง (ขึ้น Tier SS)",
+        "tierShift": "S → SS"
       },
       "minotaur": {
         "picks": 197,
@@ -8038,7 +9275,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 13.4,
         "presenceRate": 40,
         "tier": "S",
-        "metaScore": 51.1
+        "metaScore": 51.1,
+        "patchBadge": null,
+        "tierShift": null
       },
       "obsidia": {
         "picks": 199,
@@ -8047,11 +9286,13 @@ window.TOURNAMENTS_METADATA = {
         "bans": 105,
         "totalPickBans": 304,
         "winRate": 52.26,
-        "pickRate": 25.5,
-        "banRate": 13.7,
-        "presenceRate": 39.1,
-        "tier": "A",
-        "metaScore": 53
+        "pickRate": 30.3,
+        "banRate": 21.1,
+        "presenceRate": 51.4,
+        "tier": "S",
+        "metaScore": 74.9,
+        "patchBadge": "⬆️ รับบัฟเงินเลนทอง +60% (ขึ้น Tier S)",
+        "tierShift": "A → S"
       },
       "alice": {
         "picks": 159,
@@ -8064,7 +9305,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 15.6,
         "presenceRate": 35.7,
         "tier": "A",
-        "metaScore": 48.1
+        "metaScore": 48.1,
+        "patchBadge": null,
+        "tierShift": null
       },
       "mathilda": {
         "picks": 84,
@@ -8077,7 +9320,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 21.2,
         "presenceRate": 32.4,
         "tier": "A",
-        "metaScore": 52.7
+        "metaScore": 52.7,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lylia": {
         "picks": 106,
@@ -8090,7 +9335,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 16.2,
         "presenceRate": 29.4,
         "tier": "A",
-        "metaScore": 42.1
+        "metaScore": 42.1,
+        "patchBadge": null,
+        "tierShift": null
       },
       "gatotkaca": {
         "picks": 157,
@@ -8103,7 +9350,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 6.3,
         "presenceRate": 28.4,
         "tier": "A",
-        "metaScore": 39.5
+        "metaScore": 39.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "moskov": {
         "picks": 153,
@@ -8116,7 +9365,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 8.1,
         "presenceRate": 28.2,
         "tier": "A",
-        "metaScore": 43.1
+        "metaScore": 43.1,
+        "patchBadge": null,
+        "tierShift": null
       },
       "cici": {
         "picks": 146,
@@ -8129,7 +9380,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 8.3,
         "presenceRate": 27.8,
         "tier": "A",
-        "metaScore": 40.3
+        "metaScore": 40.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "brody": {
         "picks": 115,
@@ -8142,7 +9395,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 12.9,
         "presenceRate": 27.8,
         "tier": "A",
-        "metaScore": 39.2
+        "metaScore": 39.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "kalea": {
         "picks": 79,
@@ -8155,7 +9410,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 14,
         "presenceRate": 26.2,
         "tier": "A",
-        "metaScore": 41.9
+        "metaScore": 41.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "harley": {
         "picks": 93,
@@ -8168,7 +9425,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 12.6,
         "presenceRate": 25.7,
         "tier": "A",
-        "metaScore": 44.2
+        "metaScore": 44.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "kimmy": {
         "picks": 126,
@@ -8181,7 +9440,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 7.6,
         "presenceRate": 23.7,
         "tier": "A",
-        "metaScore": 38.9
+        "metaScore": 38.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "chou": {
         "picks": 89,
@@ -8194,7 +9455,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 8.9,
         "presenceRate": 22.9,
         "tier": "A",
-        "metaScore": 35.3
+        "metaScore": 35.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "phoveus": {
         "picks": 52,
@@ -8207,7 +9470,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 14.2,
         "presenceRate": 22.5,
         "tier": "A",
-        "metaScore": 35.2
+        "metaScore": 35.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "miya": {
         "picks": 95,
@@ -8220,7 +9485,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 7.6,
         "presenceRate": 21.4,
         "tier": "A",
-        "metaScore": 41.4
+        "metaScore": 41.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "yve": {
         "picks": 51,
@@ -8233,7 +9500,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 6.8,
         "presenceRate": 20.1,
         "tier": "A",
-        "metaScore": 48.5
+        "metaScore": 48.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "clint": {
         "picks": 72,
@@ -8246,7 +9515,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 6.4,
         "presenceRate": 20.1,
         "tier": "A",
-        "metaScore": 44.5
+        "metaScore": 44.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "arlott": {
         "picks": 42,
@@ -8259,7 +9530,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 12.7,
         "presenceRate": 19.9,
         "tier": "A",
-        "metaScore": 39.9
+        "metaScore": 39.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "novaria": {
         "picks": 84,
@@ -8272,7 +9545,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 9.1,
         "presenceRate": 19.6,
         "tier": "A",
-        "metaScore": 33.3
+        "metaScore": 33.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "suyou": {
         "picks": 122,
@@ -8285,7 +9560,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.6,
         "presenceRate": 18.7,
         "tier": "A",
-        "metaScore": 33
+        "metaScore": 33,
+        "patchBadge": null,
+        "tierShift": null
       },
       "hylos": {
         "picks": 98,
@@ -8298,7 +9575,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.7,
         "presenceRate": 17.2,
         "tier": "A",
-        "metaScore": 30.9
+        "metaScore": 30.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "ruby": {
         "picks": 65,
@@ -8311,7 +9590,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 6.9,
         "presenceRate": 17.1,
         "tier": "A",
-        "metaScore": 39.5
+        "metaScore": 39.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lukas": {
         "picks": 51,
@@ -8320,11 +9601,13 @@ window.TOURNAMENTS_METADATA = {
         "bans": 50,
         "totalPickBans": 101,
         "winRate": 56.86,
-        "pickRate": 10.9,
-        "banRate": 11.1,
-        "presenceRate": 22,
-        "tier": "A",
-        "metaScore": 43.5
+        "pickRate": 17.9,
+        "banRate": 23.3,
+        "presenceRate": 41.2,
+        "tier": "S",
+        "metaScore": 75.4,
+        "patchBadge": "⬆️ บัฟไฟต์เตอร์ถึกขึ้น ฮีล 8% HP (ขึ้น Tier S)",
+        "tierShift": "A → S"
       },
       "harith": {
         "picks": 58,
@@ -8337,7 +9620,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 6.1,
         "presenceRate": 16.4,
         "tier": "A",
-        "metaScore": 32.4
+        "metaScore": 32.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "sora": {
         "picks": 66,
@@ -8350,7 +9635,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 5.8,
         "presenceRate": 16,
         "tier": "A",
-        "metaScore": 27.9
+        "metaScore": 27.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "yi sun-shin": {
         "picks": 60,
@@ -8363,7 +9650,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 5.7,
         "presenceRate": 14.2,
         "tier": "B",
-        "metaScore": 27
+        "metaScore": 27,
+        "patchBadge": null,
+        "tierShift": null
       },
       "zetian": {
         "picks": 74,
@@ -8376,7 +9665,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 4.9,
         "presenceRate": 14.1,
         "tier": "B",
-        "metaScore": 31
+        "metaScore": 31,
+        "patchBadge": null,
+        "tierShift": null
       },
       "cecilion": {
         "picks": 47,
@@ -8389,7 +9680,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 5.2,
         "presenceRate": 14,
         "tier": "B",
-        "metaScore": 37.2
+        "metaScore": 37.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "yu zhong": {
         "picks": 34,
@@ -8402,7 +9695,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 6.7,
         "presenceRate": 13.6,
         "tier": "B",
-        "metaScore": 35.4
+        "metaScore": 35.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "bruno": {
         "picks": 61,
@@ -8415,7 +9710,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 3,
         "presenceRate": 11.6,
         "tier": "B",
-        "metaScore": 28.6
+        "metaScore": 28.6,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lapu-lapu": {
         "picks": 22,
@@ -8428,7 +9725,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 3.5,
         "presenceRate": 11.5,
         "tier": "B",
-        "metaScore": 39.4
+        "metaScore": 39.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "leomord": {
         "picks": 20,
@@ -8441,7 +9740,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.5,
         "presenceRate": 11.3,
         "tier": "B",
-        "metaScore": 44.1
+        "metaScore": 44.1,
+        "patchBadge": null,
+        "tierShift": null
       },
       "dyrroth": {
         "picks": 38,
@@ -8454,7 +9755,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 6.2,
         "presenceRate": 11.2,
         "tier": "B",
-        "metaScore": 27.8
+        "metaScore": 27.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "guinevere": {
         "picks": 20,
@@ -8467,7 +9770,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 6.5,
         "presenceRate": 10.9,
         "tier": "B",
-        "metaScore": 32.1
+        "metaScore": 32.1,
+        "patchBadge": null,
+        "tierShift": null
       },
       "ling": {
         "picks": 31,
@@ -8480,7 +9785,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 4.8,
         "presenceRate": 10.8,
         "tier": "B",
-        "metaScore": 26.9
+        "metaScore": 26.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "badang": {
         "picks": 51,
@@ -8493,7 +9800,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 4.4,
         "presenceRate": 10.7,
         "tier": "B",
-        "metaScore": 27.2
+        "metaScore": 27.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "hanabi": {
         "picks": 20,
@@ -8506,7 +9815,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 5.7,
         "presenceRate": 10,
         "tier": "B",
-        "metaScore": 35.2
+        "metaScore": 35.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "baxia": {
         "picks": 17,
@@ -8519,7 +9830,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 5.5,
         "presenceRate": 9.2,
         "tier": "B",
-        "metaScore": 25
+        "metaScore": 25,
+        "patchBadge": null,
+        "tierShift": null
       },
       "akai": {
         "picks": 23,
@@ -8532,7 +9845,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 3.7,
         "presenceRate": 9,
         "tier": "B",
-        "metaScore": 26.1
+        "metaScore": 26.1,
+        "patchBadge": null,
+        "tierShift": null
       },
       "hilda": {
         "picks": 20,
@@ -8545,7 +9860,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 4.4,
         "presenceRate": 8.7,
         "tier": "B",
-        "metaScore": 34.1
+        "metaScore": 34.1,
+        "patchBadge": null,
+        "tierShift": null
       },
       "vexana": {
         "picks": 26,
@@ -8558,7 +9875,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.9,
         "presenceRate": 8.6,
         "tier": "B",
-        "metaScore": 32.4
+        "metaScore": 32.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "karrie": {
         "picks": 31,
@@ -8567,11 +9886,13 @@ window.TOURNAMENTS_METADATA = {
         "bans": 13,
         "totalPickBans": 44,
         "winRate": 35.48,
-        "pickRate": 10.2,
-        "banRate": 3.7,
-        "presenceRate": 13.9,
-        "tier": "B",
-        "metaScore": 27
+        "pickRate": 19.9,
+        "banRate": 9.6,
+        "presenceRate": 29.5,
+        "tier": "A",
+        "metaScore": 52.2,
+        "patchBadge": "⬆️ บัฟอัลติวิ่งเร็ว 30% + แรงขึ้น (ขึ้น Tier A)",
+        "tierShift": "B → A"
       },
       "valir": {
         "picks": 37,
@@ -8584,7 +9905,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 3,
         "presenceRate": 7.8,
         "tier": "B",
-        "metaScore": 26
+        "metaScore": 26,
+        "patchBadge": null,
+        "tierShift": null
       },
       "angela": {
         "picks": 30,
@@ -8597,7 +9920,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 3.7,
         "presenceRate": 7.7,
         "tier": "B",
-        "metaScore": 21.2
+        "metaScore": 21.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "pharsa": {
         "picks": 28,
@@ -8610,7 +9935,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.1,
         "presenceRate": 7.4,
         "tier": "B",
-        "metaScore": 31
+        "metaScore": 31,
+        "patchBadge": null,
+        "tierShift": null
       },
       "alpha": {
         "picks": 17,
@@ -8623,7 +9950,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.9,
         "presenceRate": 7.1,
         "tier": "B",
-        "metaScore": 31.7
+        "metaScore": 31.7,
+        "patchBadge": null,
+        "tierShift": null
       },
       "fredrinn": {
         "picks": 20,
@@ -8636,7 +9965,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 3,
         "presenceRate": 7,
         "tier": "B",
-        "metaScore": 22.7
+        "metaScore": 22.7,
+        "patchBadge": null,
+        "tierShift": null
       },
       "gord": {
         "picks": 19,
@@ -8649,7 +9980,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 2.1,
         "presenceRate": 6.3,
         "tier": "B",
-        "metaScore": 23.8
+        "metaScore": 23.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "kaja": {
         "picks": 17,
@@ -8658,11 +9991,13 @@ window.TOURNAMENTS_METADATA = {
         "bans": 27,
         "totalPickBans": 44,
         "winRate": 41.18,
-        "pickRate": 5.8,
-        "banRate": 9.9,
-        "presenceRate": 15.7,
+        "pickRate": 8.6,
+        "banRate": 19.2,
+        "presenceRate": 27.8,
         "tier": "A",
-        "metaScore": 30.5
+        "metaScore": 52.7,
+        "patchBadge": "⬆️ บัฟอัลติขังทะลุอมตะ CC (ขึ้น Tier A)",
+        "tierShift": "B → A"
       },
       "estes": {
         "picks": 10,
@@ -8675,7 +10010,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 3.5,
         "presenceRate": 5.9,
         "tier": "B",
-        "metaScore": 25.6
+        "metaScore": 25.6,
+        "patchBadge": null,
+        "tierShift": null
       },
       "chip": {
         "picks": 9,
@@ -8688,7 +10025,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 3.8,
         "presenceRate": 5.3,
         "tier": "B",
-        "metaScore": 19.4
+        "metaScore": 19.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "khaleed": {
         "picks": 19,
@@ -8701,7 +10040,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.8,
         "presenceRate": 4.7,
         "tier": "B",
-        "metaScore": 23.6
+        "metaScore": 23.6,
+        "patchBadge": null,
+        "tierShift": null
       },
       "saber": {
         "picks": 11,
@@ -8714,7 +10055,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.7,
         "presenceRate": 4,
         "tier": "B",
-        "metaScore": 23.2
+        "metaScore": 23.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "hayabusa": {
         "picks": 15,
@@ -8727,7 +10070,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.3,
         "presenceRate": 3.3,
         "tier": "B",
-        "metaScore": 18.5
+        "metaScore": 18.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "hanzo": {
         "picks": 10,
@@ -8740,7 +10085,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.2,
         "presenceRate": 2.6,
         "tier": "C",
-        "metaScore": 18.1
+        "metaScore": 18.1,
+        "patchBadge": null,
+        "tierShift": null
       },
       "granger": {
         "picks": 10,
@@ -8753,7 +10100,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.2,
         "presenceRate": 2.1,
         "tier": "C",
-        "metaScore": 20.8
+        "metaScore": 20.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "terizla": {
         "picks": 12,
@@ -8766,7 +10115,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.4,
         "presenceRate": 1.9,
         "tier": "C",
-        "metaScore": 19.2
+        "metaScore": 19.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lesley": {
         "picks": 4,
@@ -8779,7 +10130,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 1.1,
         "presenceRate": 1.8,
         "tier": "C",
-        "metaScore": 20.5
+        "metaScore": 20.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "benedetta": {
         "picks": 10,
@@ -8792,7 +10145,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.2,
         "presenceRate": 1.8,
         "tier": "C",
-        "metaScore": 18.9
+        "metaScore": 18.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "aurora": {
         "picks": 5,
@@ -8805,7 +10160,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.9,
         "presenceRate": 1.7,
         "tier": "C",
-        "metaScore": 21.4
+        "metaScore": 21.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "khufra": {
         "picks": 9,
@@ -8818,7 +10175,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.5,
         "presenceRate": 1.7,
         "tier": "C",
-        "metaScore": 18
+        "metaScore": 18,
+        "patchBadge": null,
+        "tierShift": null
       },
       "luo yi": {
         "picks": 7,
@@ -8831,7 +10190,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.5,
         "presenceRate": 1.6,
         "tier": "C",
-        "metaScore": 21.3
+        "metaScore": 21.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lunox": {
         "picks": 7,
@@ -8840,11 +10201,13 @@ window.TOURNAMENTS_METADATA = {
         "bans": 4,
         "totalPickBans": 11,
         "winRate": 42.86,
-        "pickRate": 7.6,
-        "banRate": 4.5,
-        "presenceRate": 12.1,
-        "tier": "B",
-        "metaScore": 28.4
+        "pickRate": 18.4,
+        "banRate": 14,
+        "presenceRate": 32.4,
+        "tier": "A",
+        "metaScore": 59.6,
+        "patchBadge": "⬆️ บัฟต้นเกม +10% เจาะเวท/ดูดเลือด (ขึ้น Tier A)",
+        "tierShift": "B → A"
       },
       "ixia": {
         "picks": 7,
@@ -8857,7 +10220,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.3,
         "presenceRate": 1.5,
         "tier": "C",
-        "metaScore": 24.8
+        "metaScore": 24.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "beatrix": {
         "picks": 6,
@@ -8870,7 +10235,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.4,
         "presenceRate": 1.4,
         "tier": "C",
-        "metaScore": 20.2
+        "metaScore": 20.2,
+        "patchBadge": null,
+        "tierShift": null
       },
       "x.borg": {
         "picks": 4,
@@ -8883,7 +10250,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.3,
         "presenceRate": 1,
         "tier": "C",
-        "metaScore": 22
+        "metaScore": 22,
+        "patchBadge": null,
+        "tierShift": null
       },
       "grock": {
         "picks": 5,
@@ -8896,7 +10265,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 1,
         "tier": "C",
-        "metaScore": 18.9
+        "metaScore": 18.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "faramis": {
         "picks": 5,
@@ -8909,7 +10280,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.2,
         "presenceRate": 0.9,
         "tier": "C",
-        "metaScore": 20.8
+        "metaScore": 20.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "thamuz": {
         "picks": 3,
@@ -8922,7 +10295,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.3,
         "presenceRate": 0.9,
         "tier": "C",
-        "metaScore": 18.7
+        "metaScore": 18.7,
+        "patchBadge": null,
+        "tierShift": null
       },
       "kagura": {
         "picks": 6,
@@ -8931,11 +10306,13 @@ window.TOURNAMENTS_METADATA = {
         "bans": 0,
         "totalPickBans": 6,
         "winRate": 16.67,
-        "pickRate": 2.3,
-        "banRate": 0,
-        "presenceRate": 2.3,
-        "tier": "C",
-        "metaScore": 17.2
+        "pickRate": 5.5,
+        "banRate": 1,
+        "presenceRate": 6.5,
+        "tier": "B",
+        "metaScore": 24.2,
+        "patchBadge": "⚖️ ปรับระยะร่ม Seimei (ขึ้น Tier B)",
+        "tierShift": "C → B"
       },
       "joy": {
         "picks": 4,
@@ -8948,7 +10325,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.1,
         "presenceRate": 0.7,
         "tier": "C",
-        "metaScore": 17.5
+        "metaScore": 17.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "wanwan": {
         "picks": 4,
@@ -8961,7 +10340,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0.1,
         "presenceRate": 0.7,
         "tier": "C",
-        "metaScore": 17.5
+        "metaScore": 17.5,
+        "patchBadge": null,
+        "tierShift": null
       },
       "balmond": {
         "picks": 3,
@@ -8974,7 +10355,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.5,
         "tier": "C",
-        "metaScore": 22.8
+        "metaScore": 22.8,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lancelot": {
         "picks": 4,
@@ -8987,7 +10370,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.5,
         "tier": "C",
-        "metaScore": 17.3
+        "metaScore": 17.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "odette": {
         "picks": 2,
@@ -9000,7 +10385,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.4,
         "tier": "C",
-        "metaScore": 17
+        "metaScore": 17,
+        "patchBadge": null,
+        "tierShift": null
       },
       "argus": {
         "picks": 2,
@@ -9013,7 +10400,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.4,
         "tier": "C",
-        "metaScore": 17
+        "metaScore": 17,
+        "patchBadge": null,
+        "tierShift": null
       },
       "kadita": {
         "picks": 3,
@@ -9026,7 +10415,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.4,
         "tier": "C",
-        "metaScore": 16
+        "metaScore": 16,
+        "patchBadge": null,
+        "tierShift": null
       },
       "edith": {
         "picks": 2,
@@ -9039,7 +10430,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.3,
         "tier": "C",
-        "metaScore": 19.3
+        "metaScore": 19.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "irithel": {
         "picks": 2,
@@ -9052,7 +10445,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.3,
         "tier": "C",
-        "metaScore": 19.3
+        "metaScore": 19.3,
+        "patchBadge": null,
+        "tierShift": null
       },
       "roger": {
         "picks": 1,
@@ -9065,7 +10460,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.2,
         "tier": "C",
-        "metaScore": 20.4
+        "metaScore": 20.4,
+        "patchBadge": null,
+        "tierShift": null
       },
       "tigreal": {
         "picks": 1,
@@ -9078,7 +10475,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.2,
         "tier": "C",
-        "metaScore": 17.9
+        "metaScore": 17.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "lolita": {
         "picks": 1,
@@ -9091,7 +10490,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.2,
         "tier": "C",
-        "metaScore": 17.9
+        "metaScore": 17.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "minsitthar": {
         "picks": 1,
@@ -9104,7 +10505,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.2,
         "tier": "C",
-        "metaScore": 17.9
+        "metaScore": 17.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "helcurt": {
         "picks": 1,
@@ -9117,7 +10520,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.2,
         "tier": "C",
-        "metaScore": 17.9
+        "metaScore": 17.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "xavier": {
         "picks": 1,
@@ -9126,11 +10531,13 @@ window.TOURNAMENTS_METADATA = {
         "bans": 0,
         "totalPickBans": 1,
         "winRate": 0,
-        "pickRate": 12.2,
-        "banRate": 0,
-        "presenceRate": 12.2,
-        "tier": "B",
-        "metaScore": 28.1
+        "pickRate": 27.5,
+        "banRate": 7.3,
+        "presenceRate": 34.8,
+        "tier": "A",
+        "metaScore": 62.7,
+        "patchBadge": "⬆️ บัฟใหญ่ S2 แรง 2 เท่า (ขึ้น Tier A)",
+        "tierShift": "C → A"
       },
       "jawhead": {
         "picks": 1,
@@ -9143,7 +10550,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0.2,
         "tier": "C",
-        "metaScore": 17.9
+        "metaScore": 17.9,
+        "patchBadge": null,
+        "tierShift": null
       },
       "diggie": {
         "picks": 0,
@@ -9156,7 +10565,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "popol and kupa": {
         "picks": 0,
@@ -9165,11 +10576,13 @@ window.TOURNAMENTS_METADATA = {
         "bans": 0,
         "totalPickBans": 0,
         "winRate": 0,
-        "pickRate": 10.9,
-        "banRate": 3.6,
-        "presenceRate": 14.5,
-        "tier": "B",
-        "metaScore": 31.3
+        "pickRate": 25.2,
+        "banRate": 11.3,
+        "presenceRate": 36.5,
+        "tier": "A",
+        "metaScore": 66.8,
+        "patchBadge": "♻️ รีแวมป์ใหญ่ (ขี่หมา Kupa • ขึ้น Tier A)",
+        "tierShift": "C → A"
       },
       "floryn": {
         "picks": 0,
@@ -9182,7 +10595,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "julian": {
         "picks": 0,
@@ -9195,7 +10610,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "sun": {
         "picks": 0,
@@ -9208,7 +10625,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "layla": {
         "picks": 0,
@@ -9221,7 +10640,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "nana": {
         "picks": 0,
@@ -9234,7 +10655,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "natan": {
         "picks": 0,
@@ -9247,7 +10670,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "franco": {
         "picks": 0,
@@ -9260,7 +10685,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "aamon": {
         "picks": 0,
@@ -9273,7 +10700,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "gusion": {
         "picks": 0,
@@ -9286,7 +10715,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "bane": {
         "picks": 0,
@@ -9299,7 +10730,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "zhask": {
         "picks": 0,
@@ -9312,7 +10745,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "cyclops": {
         "picks": 0,
@@ -9325,7 +10760,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "karina": {
         "picks": 0,
@@ -9338,7 +10775,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "silvanna": {
         "picks": 0,
@@ -9351,7 +10790,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "natalia": {
         "picks": 0,
@@ -9364,7 +10805,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "yin": {
         "picks": 0,
@@ -9377,7 +10820,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "aldous": {
         "picks": 0,
@@ -9386,11 +10831,13 @@ window.TOURNAMENTS_METADATA = {
         "bans": 0,
         "totalPickBans": 0,
         "winRate": 0,
-        "pickRate": 4.1,
-        "banRate": 1.4,
-        "presenceRate": 5.5,
+        "pickRate": 9.3,
+        "banRate": 4.2,
+        "presenceRate": 13.5,
         "tier": "B",
-        "metaScore": 23.7
+        "metaScore": 37.5,
+        "patchBadge": "⬆️ บัฟเกราะลดดาเมจ 55% (ขึ้น Tier B)",
+        "tierShift": "C → B"
       },
       "alucard": {
         "picks": 0,
@@ -9403,7 +10850,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "vale": {
         "picks": 0,
@@ -9416,7 +10865,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "martis": {
         "picks": 0,
@@ -9429,7 +10880,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "johnson": {
         "picks": 0,
@@ -9442,7 +10895,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "chang'e": {
         "picks": 0,
@@ -9455,7 +10910,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       },
       "zilong": {
         "picks": 0,
@@ -9468,7 +10925,9 @@ window.TOURNAMENTS_METADATA = {
         "banRate": 0,
         "presenceRate": 0,
         "tier": "C",
-        "metaScore": 0
+        "metaScore": 0,
+        "patchBadge": null,
+        "tierShift": null
       }
     }
   }
