@@ -149,6 +149,11 @@ window.MLBB_DATA = {
           "id": 114,
           "score": 17.04,
           "deltaWr": 1.02
+        },
+        {
+          "id": 124,
+          "score": 28.5,
+          "deltaWr": 5.8
         }
       ],
       "guides": {
@@ -201,10 +206,10 @@ window.MLBB_DATA = {
         },
         {
           "id": 124,
-          "score": 32.4,
+          "score": 45.8,
           "deltaWr": 1.75,
-          "badge": "กดอัตราชนะศัตรู -1.75%",
-          "reason": "สถิติ Mythical Glory ยืนยันว่าเมื่อเจอ Chip อัตราชนะของ Hirara จะลดลงถึง -1.75%"
+          "badge": "Portal Counter-Gank",
+          "reason": "เมื่อ Hirara พยายามล้วงแนวหลังหรือแยกดัน Chip วาร์ปผ่านเสา Beacon มาเปิดประตูมิติซ้อน 5 คนใน 2 วินาที"
         },
         {
           "id": 62,
@@ -570,6 +575,12 @@ window.MLBB_DATA = {
           "deltaWr": null,
           "badge": "Meta Counter Pick",
           "reason": "Sun เป็นตัวเลือกยอดนิยมในการแก้ทาง Masha ในดราฟต์แรงก์ระดับสูง"
+        },
+        {
+          "id": 68,
+          "score": 42.5,
+          "badge": "3-Bar Shredder",
+          "reason": "สาดสกิล 2 %Max HP ตัดหลอดเลือดทั้ง 3 หลอดของ Masha อย่างรวดเร็ว และกดอัลติแสงคั่นจังหวะตอน Masha พุ่งเข้าขย้ำ"
         }
       ]
     },
@@ -748,6 +759,11 @@ window.MLBB_DATA = {
           "id": 121,
           "score": 18,
           "deltaWr": null
+        },
+        {
+          "id": 68,
+          "score": 28,
+          "deltaWr": 5.7
         }
       ],
       "guides": {
@@ -1160,6 +1176,12 @@ window.MLBB_DATA = {
           "deltaWr": null,
           "badge": "ล้วงแนวหลังตัวบาง",
           "reason": "ไต่กำแพงข้ามแนวหน้าไปล้วงเมจ/แครี่แนวหลังได้จากทุกมุมแผนที่ พร้อมอัลติหลบสกิล"
+        },
+        {
+          "id": 124,
+          "score": 52.4,
+          "badge": "5-Man Portal Gank",
+          "reason": "Chip ขับสกิล 2 พุ่งสตั๊นและหย่อนอัลติ Shortcut เปิดประตูมิติเรียกเพื่อน 4 คนวาร์ปลงมารุมสังหาร Obsidia ในเลนทองทันที"
         }
       ]
     },
@@ -2141,6 +2163,12 @@ window.MLBB_DATA = {
           "deltaWr": null,
           "badge": "Meta Counter Pick",
           "reason": "Faramis เป็นตัวเลือกยอดนิยมในการแก้ทาง Zhuxin ในดราฟต์แรงก์ระดับสูง"
+        },
+        {
+          "id": 124,
+          "score": 48.2,
+          "badge": "Instant Engage",
+          "reason": "พุ่งสตั๊นด้วย Overtime แล้วเปิดประตูมิติ Shortcut เรียกตัวล้วงวาร์ปข้ามวงโคมไฟของ Zhuxin เข้าประชิดตัวทันที"
         }
       ]
     },
@@ -2639,8 +2667,8 @@ window.MLBB_DATA = {
         },
         {
           "id": 124,
-          "score": 12,
-          "deltaWr": null
+          "score": 26.8,
+          "deltaWr": 5.4
         },
         {
           "id": 67,
@@ -2756,6 +2784,12 @@ window.MLBB_DATA = {
           "deltaWr": null,
           "badge": "หยุดตัวพริ้ว (Anti-Dash)",
           "reason": "อัลติ Triple Sweep ล็อกเป้าหมายกลางอากาศแบบจุดเดียวตาย แก้ทางตัวพริ้วตัวบางได้ดีมาก"
+        },
+        {
+          "id": 68,
+          "score": 47.5,
+          "badge": "Beast Buster",
+          "reason": "ละลายเลือดก้อนโตของ Lukas ในร่างสัตว์เทพ Sacred Beast ด้วยดาเมจ %Max HP + เจาะเกราะเวท"
         }
       ]
     },
@@ -3883,6 +3917,11 @@ window.MLBB_DATA = {
           "id": 88,
           "score": 12,
           "deltaWr": null
+        },
+        {
+          "id": 68,
+          "score": 26.5,
+          "deltaWr": 5.4
         }
       ],
       "guides": {
@@ -4632,6 +4671,12 @@ window.MLBB_DATA = {
           "deltaWr": null,
           "badge": "Official Counter",
           "reason": "Barats counters Tank heroes that rely on CC skills, such as Belerick and Lolita, since the extra Resilience provided by his Passive will greatly reduce the duration of their CC."
+        },
+        {
+          "id": 68,
+          "score": 54.2,
+          "badge": "Anti-Tank Flex",
+          "reason": "ยิงเวท %Max HP จากระยะปลอดภัยและกดอัลติแสง Brilliance เป็นอมตะ 2.5 วิ ไม่โดนหนามสะท้อนหรืออัลติยั่วยุของ Belerick"
         }
       ]
     },
@@ -4864,6 +4909,11 @@ window.MLBB_DATA = {
           "id": 17,
           "score": 12,
           "deltaWr": null
+        },
+        {
+          "id": 68,
+          "score": 29.5,
+          "deltaWr": 6.1
         }
       ],
       "guides": {
@@ -4969,6 +5019,12 @@ window.MLBB_DATA = {
           "deltaWr": null,
           "badge": "Meta Counter Pick",
           "reason": "Novaria เป็นตัวเลือกยอดนิยมในการแก้ทาง Carmilla ในดราฟต์แรงก์ระดับสูง"
+        },
+        {
+          "id": 68,
+          "score": 48.6,
+          "badge": "Link Immune",
+          "reason": "กดอัลติแสง Power of Order: Brilliance เป็นอมตะ 2.5 วินาที ตัดจังหวะคอมโบเชื่อมเลือด Curse of Blood ของ Carmilla ได้ทันที"
         }
       ]
     },
@@ -5293,6 +5349,12 @@ window.MLBB_DATA = {
           "deltaWr": null,
           "badge": "Meta Counter Pick",
           "reason": "Aldous เป็นตัวเลือกยอดนิยมในการแก้ทาง Gatotkaca ในดราฟต์แรงก์ระดับสูง"
+        },
+        {
+          "id": 68,
+          "score": 46.8,
+          "badge": "Magic Shred",
+          "reason": "Gatotkaca เน้นเกราะกายภาพเป็นหลัก เจอดาเมจเวท %Max HP + เจาะเวท +10% ตั้งแต่ต้นเกมของ Lunox ยืนรับไม่ไหว"
         }
       ]
     },
@@ -5602,7 +5664,7 @@ window.MLBB_DATA = {
       "name": "Chip",
       "head": "https://akmweb.youngjoygame.com/web/svnres/img/test/homepage_2_2_16_1232_1/100_79224d297f14377ad2eda8543432330d.png",
       "portrait": "https://akmweb.youngjoygame.com/web/svnres/file/mlbb/homepage/100_fb8b4e345db174545e967b7bcbd219f4.jpg",
-      "tier": "A",
+      "tier": "S",
       "roles": [
         "Support",
         "Tank"
@@ -5630,7 +5692,7 @@ window.MLBB_DATA = {
         "losses": 0,
         "bans": 0,
         "totalPickBans": 0,
-        "metaScore": 16.9
+        "metaScore": 68.5
       },
       "counterGear": {
         "items": [
@@ -5658,11 +5720,35 @@ window.MLBB_DATA = {
           "reason": "จากสถิติแรงก์ Mythical Glory Chip กดดันและชนะทาง Zilong โดยมีอัตราชนะเพิ่มขึ้น +4.85%"
         },
         {
+          "id": 130,
+          "score": 52.4,
+          "badge": "5-Man Portal Gank",
+          "reason": "Chip ขับสกิล 2 พุ่งสตั๊นและหย่อนอัลติ Shortcut เปิดประตูมิติเรียกเพื่อน 4 คนวาร์ปลงมารุมสังหาร Obsidia ในเลนทองทันที"
+        },
+        {
           "id": 56,
           "score": 52.2,
           "deltaWr": 2.99,
           "badge": "สถิติชนะทาง +2.99% WR",
           "reason": "จากสถิติแรงก์ Mythical Glory Chip กดดันและชนะทาง Gusion โดยมีอัตราชนะเพิ่มขึ้น +2.99%"
+        },
+        {
+          "id": 114,
+          "score": 50.8,
+          "badge": "Portal Lockdown",
+          "reason": "เปิดประตูวาร์ป Shortcut ทับวงตุ๊กตาของ Melissa ให้ไฟต์เตอร์และเมจทีมเราวาร์ปพร้อมเกราะ +500 ลงมาขยี้ถึงตัว"
+        },
+        {
+          "id": 15,
+          "score": 49.5,
+          "badge": "Vision & Collapse",
+          "reason": "Chip มีเกราะสกิล 1 และขับรถเช็คพุ่มรับคอมโบแทนเพื่อน แล้วเปิดประตูวาร์ปเรียกทั้งทีมมารุมจับ Eudora ที่ไม่มีสกิลหนี"
+        },
+        {
+          "id": 125,
+          "score": 48.2,
+          "badge": "Instant Engage",
+          "reason": "พุ่งสตั๊นด้วย Overtime แล้วเปิดประตูมิติ Shortcut เรียกตัวล้วงวาร์ปข้ามวงโคมไฟของ Zhuxin เข้าประชิดตัวทันที"
         },
         {
           "id": 18,
@@ -5672,11 +5758,38 @@ window.MLBB_DATA = {
           "reason": "Chip possesses strong initiation and CC abilities, making him a great counter against heroes with low mobility or those who are relatively squishy, such as Vexana, Layla, and Ixia."
         },
         {
+          "id": 103,
+          "score": 46.5,
+          "deltaWr": 1.88,
+          "badge": "Anti-Skirmish",
+          "reason": "ดักจังหวะที่ Paquito พุ่งเข้าไฟต์ด้วยสตั๊นสกิล 2 + อัลติ Shortcut ขังและเรียกเพื่อนมารุมเบิร์สต์ก่อนถอยออก"
+        },
+        {
+          "id": 133,
+          "score": 45.8,
+          "deltaWr": 1.75,
+          "badge": "Portal Counter-Gank",
+          "reason": "เมื่อ Hirara พยายามล้วงแนวหลังหรือแยกดัน Chip วาร์ปผ่านเสา Beacon มาเปิดประตูมิติซ้อน 5 คนใน 2 วินาที"
+        },
+        {
           "id": 110,
-          "score": 44.3,
+          "score": 45,
           "deltaWr": 3.32,
-          "badge": "สถิติชนะทาง +3.32% WR",
-          "reason": "จากสถิติแรงก์ Mythical Glory Chip กดดันและชนะทาง Valentina โดยมีอัตราชนะเพิ่มขึ้น +3.32%"
+          "badge": "Macro Outrotate",
+          "reason": "แม้ Valentina จะก๊อปอัลติ Chip ไป แต่ทีมที่ไม่ได้เซ็ตจังหวะจะใช้ประตูมิติได้ไม่คุ้มเท่าทีมของ Chip ที่เตรียมรุม"
+        },
+        {
+          "id": 63,
+          "score": 44.2,
+          "deltaWr": 2.31,
+          "badge": "Beacon Mobility",
+          "reason": "ยืนรับลูกธนูแทนเพื่อนและใช้เสาวาร์ป Beacon เติมไฟต์ทั่วแมพเร็วกว่าการเดินแก๊งของ Selena"
+        },
+        {
+          "id": 100,
+          "score": 43.5,
+          "badge": "Gold Lane Dive",
+          "reason": "เปิดประตูวาร์ป 5 คนบุกป้อมเลนทองเพื่อตัดจังหวะกดเลนของ Brody และชิงรถถังทอง +60%"
         },
         {
           "id": 112,
@@ -5686,11 +5799,10 @@ window.MLBB_DATA = {
           "reason": "จากสถิติแรงก์ Mythical Glory Chip กดดันและชนะทาง Floryn โดยมีอัตราชนะเพิ่มขึ้น +2.8%"
         },
         {
-          "id": 63,
-          "score": 42.5,
-          "deltaWr": 2.31,
-          "badge": "กดอัตราชนะศัตรู -2.31%",
-          "reason": "สถิติ Mythical Glory ยืนยันว่าเมื่อเจอ Chip อัตราชนะของ Selena จะลดลงถึง -2.31%"
+          "id": 13,
+          "score": 42.8,
+          "badge": "Backline Collapse",
+          "reason": "พุ่งสตั๊นและเปิดประตูวาร์ปดักทางหนีของ Clint ให้เพื่อนร่วมทีมวาร์ปลงมาปิดบัญชี"
         },
         {
           "id": 23,
@@ -5698,20 +5810,6 @@ window.MLBB_DATA = {
           "deltaWr": 1.99,
           "badge": "กดอัตราชนะศัตรู -1.99%",
           "reason": "สถิติ Mythical Glory ยืนยันว่าเมื่อเจอ Chip อัตราชนะของ Gord จะลดลงถึง -1.99%"
-        },
-        {
-          "id": 103,
-          "score": 32.7,
-          "deltaWr": 1.88,
-          "badge": "กดอัตราชนะศัตรู -1.88%",
-          "reason": "สถิติ Mythical Glory ยืนยันว่าเมื่อเจอ Chip อัตราชนะของ Paquito จะลดลงถึง -1.88%"
-        },
-        {
-          "id": 133,
-          "score": 32.4,
-          "deltaWr": 1.75,
-          "badge": "กดอัตราชนะศัตรู -1.75%",
-          "reason": "สถิติ Mythical Glory ยืนยันว่าเมื่อเจอ Chip อัตราชนะของ Hirara จะลดลงถึง -1.75%"
         },
         {
           "id": 38,
@@ -5809,18 +5907,38 @@ window.MLBB_DATA = {
         },
         {
           "id": 108,
-          "score": 12,
-          "deltaWr": null
+          "score": 27.8,
+          "deltaWr": 5.6
         },
         {
           "id": 68,
-          "score": 12,
-          "deltaWr": null
+          "score": 34.5,
+          "deltaWr": 6.8
         },
         {
           "id": 74,
           "score": 12,
           "deltaWr": null
+        },
+        {
+          "id": 103,
+          "score": 29,
+          "deltaWr": 5.9
+        },
+        {
+          "id": 133,
+          "score": 28.5,
+          "deltaWr": 5.8
+        },
+        {
+          "id": 122,
+          "score": 27.2,
+          "deltaWr": 5.5
+        },
+        {
+          "id": 127,
+          "score": 26.8,
+          "deltaWr": 5.4
         }
       ],
       "guides": {
@@ -7358,6 +7476,11 @@ window.MLBB_DATA = {
           "id": 48,
           "score": 12,
           "deltaWr": null
+        },
+        {
+          "id": 124,
+          "score": 27.2,
+          "deltaWr": 5.5
         }
       ],
       "guides": {
@@ -9163,8 +9286,8 @@ window.MLBB_DATA = {
         },
         {
           "id": 124,
-          "score": 12,
-          "deltaWr": null
+          "score": 27.8,
+          "deltaWr": 5.6
         },
         {
           "id": 81,
@@ -10610,6 +10733,12 @@ window.MLBB_DATA = {
           "deltaWr": null,
           "badge": "Official Counter",
           "reason": "Faramis' ability to temporarily prevent teammates from being killed makes him a good pick against heroes that go all-in to burst down a target, like Saber and Eudora."
+        },
+        {
+          "id": 124,
+          "score": 49.5,
+          "badge": "Vision & Collapse",
+          "reason": "Chip มีเกราะสกิล 1 และขับรถเช็คพุ่มรับคอมโบแทนเพื่อน แล้วเปิดประตูวาร์ปเรียกทั้งทีมมารุมจับ Eudora ที่ไม่มีสกิลหนี"
         }
       ]
     },
@@ -12669,10 +12798,10 @@ window.MLBB_DATA = {
         },
         {
           "id": 68,
-          "score": 49.1,
+          "score": 51.5,
           "deltaWr": 2.75,
-          "badge": "ละลายแทงค์ (%HP/True DMG)",
-          "reason": "สกิลโหมดมืด (Chaos Assault) ยิงดาเมจเวทตาม % เลือดศัตรู ละลายแนวหน้าสายถึกได้ในพริบตา"
+          "badge": "Anti-Attach",
+          "reason": "เมื่อ Gloo พยายามเข้าเกาะร่าง Lunox กดอัลติแสง Brilliance เป็นอมตะ 2.5 วิ หรือพุ่งอัลติมืดสาด %HP สวนกลับจนละลาย"
         },
         {
           "id": 29,
@@ -13977,6 +14106,12 @@ window.MLBB_DATA = {
           "deltaWr": null,
           "badge": "ละลายแทงค์ (%HP/True DMG)",
           "reason": "สกิล 2 Spectre Step ลดเกราะกายภาพศัตรูสูงสุดถึง 75% ทำให้ตัวชนแนวหน้าตัวนิ่มลงทันที"
+        },
+        {
+          "id": 68,
+          "score": 45.2,
+          "badge": "Frontline Melt",
+          "reason": "เบิร์สต์แนวหน้าเป็น %HP เร็วกว่าที่ Minotaur จะฮีลทัน และกดอัลติแสงหลบจังหวะทุบยก Minoan Fury"
         }
       ]
     },
@@ -16962,6 +17097,11 @@ window.MLBB_DATA = {
           "id": 76,
           "score": 12,
           "deltaWr": null
+        },
+        {
+          "id": 68,
+          "score": 28.4,
+          "deltaWr": 5.8
         }
       ],
       "guides": {
@@ -17067,6 +17207,12 @@ window.MLBB_DATA = {
           "deltaWr": null,
           "badge": "Meta Counter Pick",
           "reason": "Hanzo เป็นตัวเลือกยอดนิยมในการแก้ทาง Atlas ในดราฟต์แรงก์ระดับสูง"
+        },
+        {
+          "id": 68,
+          "score": 44,
+          "badge": "Ult Immunity",
+          "reason": "กดอัลติแสง Brilliance เป็นอมตะ 2.5 วิ ทันทีที่ Atlas พุ่งเข้ามารวบ Fatal Links ทำให้ไม่โดนดึง"
         }
       ]
     },
@@ -22394,6 +22540,12 @@ window.MLBB_DATA = {
           "deltaWr": null,
           "badge": "ล้วงแนวหลังตัวบาง",
           "reason": "ดำน้ำผ่าน CC เข้าไปยกและระเบิดคลื่นสังหารตัวบางได้ในชุดเดียว"
+        },
+        {
+          "id": 124,
+          "score": 42.8,
+          "badge": "Backline Collapse",
+          "reason": "พุ่งสตั๊นและเปิดประตูวาร์ปดักทางหนีของ Clint ให้เพื่อนร่วมทีมวาร์ปลงมาปิดบัญชี"
         }
       ]
     },
@@ -22958,10 +23110,10 @@ window.MLBB_DATA = {
         },
         {
           "id": 124,
-          "score": 44.3,
+          "score": 45,
           "deltaWr": 3.32,
-          "badge": "สถิติชนะทาง +3.32% WR",
-          "reason": "จากสถิติแรงก์ Mythical Glory Chip กดดันและชนะทาง Valentina โดยมีอัตราชนะเพิ่มขึ้น +3.32%"
+          "badge": "Macro Outrotate",
+          "reason": "แม้ Valentina จะก๊อปอัลติ Chip ไป แต่ทีมที่ไม่ได้เซ็ตจังหวะจะใช้ประตูมิติได้ไม่คุ้มเท่าทีมของ Chip ที่เตรียมรุม"
         },
         {
           "id": 90,
@@ -24001,7 +24153,7 @@ window.MLBB_DATA = {
       "name": "Lunox",
       "head": "https://akmweb.youngjoygame.com/web/svnres/img/test/homepage_2_2_16_1232_1/100_e162688afdcaf3f6498af30badfe31c5.png",
       "portrait": "https://akmweb.youngjoygame.com/web/svnres/file/mlbb/homepage/100_8cd47d47126be5496fecb45304368069.jpg",
-      "tier": "A",
+      "tier": "S",
       "roles": [
         "Mage"
       ],
@@ -24028,7 +24180,7 @@ window.MLBB_DATA = {
         "losses": 0,
         "bans": 0,
         "totalPickBans": 1,
-        "metaScore": 27.4
+        "metaScore": 68.5
       },
       "counterGear": {
         "items": [
@@ -24045,8 +24197,8 @@ window.MLBB_DATA = {
           "id": 81,
           "score": 68.5,
           "deltaWr": 3.12,
-          "badge": "ละลายแทงค์ (%HP/True DMG)",
-          "reason": "สกิลโหมดมืด (Chaos Assault) ยิงดาเมจเวทตาม % เลือดศัตรู ละลายแนวหน้าสายถึกได้ในพริบตา"
+          "badge": "Hard Counter #1",
+          "reason": "สกิล 2 Chaos Assault ยิงเป็น %Max HP (3.5%-5%) พร้อมพาสซีฟเจาะเวท +10% ละลายเลือดและเกราะขาว Esmeralda จนยืนไม่อยู่"
         },
         {
           "id": 95,
@@ -24056,6 +24208,12 @@ window.MLBB_DATA = {
           "reason": "สกิลโหมดมืด (Chaos Assault) ยิงดาเมจเวทตาม % เลือดศัตรู ละลายแนวหน้าสายถึกได้ในพริบตา"
         },
         {
+          "id": 59,
+          "score": 56.4,
+          "badge": "Tank Shredder",
+          "reason": "สาดสกิล 2 รัวขณะเปิดอัลติมืด Darkening ละลายเลือด Uranus เต็มหลอดใน 3 วินาทีแบบฮีลไม่ทัน"
+        },
+        {
           "id": 8,
           "score": 55.7,
           "deltaWr": 2.97,
@@ -24063,11 +24221,58 @@ window.MLBB_DATA = {
           "reason": "จากสถิติแรงก์ Mythical Glory Lunox กดดันและชนะทาง Karina โดยมีอัตราชนะเพิ่มขึ้น +2.97%"
         },
         {
+          "id": 70,
+          "score": 54.2,
+          "deltaWr": null,
+          "badge": "Anti-Tank Flex",
+          "reason": "ยิงเวท %Max HP จากระยะปลอดภัยและกดอัลติแสง Brilliance เป็นอมตะ 2.5 วิ ไม่โดนหนามสะท้อนหรืออัลติยั่วยุของ Belerick"
+        },
+        {
+          "id": 99,
+          "score": 52.8,
+          "deltaWr": null,
+          "badge": "Giant Slayer",
+          "reason": "ยิ่ง Barats ตัวใหญ่เลือดเยอะ สกิล 2 Chaos Assault ของ Lunox ยิ่งทำดาเมจ %Max HP แรงขึ้นมหาศาล และกดอัลติแสงหลบจังหวะกลืนได้"
+        },
+        {
           "id": 104,
-          "score": 49.1,
+          "score": 51.5,
           "deltaWr": 2.75,
-          "badge": "ละลายแทงค์ (%HP/True DMG)",
-          "reason": "สกิลโหมดมืด (Chaos Assault) ยิงดาเมจเวทตาม % เลือดศัตรู ละลายแนวหน้าสายถึกได้ในพริบตา"
+          "badge": "Anti-Attach",
+          "reason": "เมื่อ Gloo พยายามเข้าเกาะร่าง Lunox กดอัลติแสง Brilliance เป็นอมตะ 2.5 วิ หรือพุ่งอัลติมืดสาด %HP สวนกลับจนละลาย"
+        },
+        {
+          "id": 92,
+          "score": 48.6,
+          "deltaWr": null,
+          "badge": "Link Immune",
+          "reason": "กดอัลติแสง Power of Order: Brilliance เป็นอมตะ 2.5 วินาที ตัดจังหวะคอมโบเชื่อมเลือด Curse of Blood ของ Carmilla ได้ทันที"
+        },
+        {
+          "id": 127,
+          "score": 47.5,
+          "deltaWr": null,
+          "badge": "Beast Buster",
+          "reason": "ละลายเลือดก้อนโตของ Lukas ในร่างสัตว์เทพ Sacred Beast ด้วยดาเมจ %Max HP + เจาะเกราะเวท"
+        },
+        {
+          "id": 41,
+          "score": 46.8,
+          "badge": "Magic Shred",
+          "reason": "Gatotkaca เน้นเกราะกายภาพเป็นหลัก เจอดาเมจเวท %Max HP + เจาะเวท +10% ตั้งแต่ต้นเกมของ Lunox ยืนรับไม่ไหว"
+        },
+        {
+          "id": 19,
+          "score": 45.2,
+          "deltaWr": null,
+          "badge": "Frontline Melt",
+          "reason": "เบิร์สต์แนวหน้าเป็น %HP เร็วกว่าที่ Minotaur จะฮีลทัน และกดอัลติแสงหลบจังหวะทุบยก Minoan Fury"
+        },
+        {
+          "id": 93,
+          "score": 44,
+          "badge": "Ult Immunity",
+          "reason": "กดอัลติแสง Brilliance เป็นอมตะ 2.5 วิ ทันทีที่ Atlas พุ่งเข้ามารวบ Fatal Links ทำให้ไม่โดนดึง"
         },
         {
           "id": 62,
@@ -24075,6 +24280,13 @@ window.MLBB_DATA = {
           "deltaWr": 3.14,
           "badge": "สถิติชนะทาง +3.14% WR",
           "reason": "จากสถิติแรงก์ Mythical Glory Lunox กดดันและชนะทาง Kaja โดยมีอัตราชนะเพิ่มขึ้น +3.14%"
+        },
+        {
+          "id": 88,
+          "score": 42.5,
+          "deltaWr": null,
+          "badge": "3-Bar Shredder",
+          "reason": "สาดสกิล 2 %Max HP ตัดหลอดเลือดทั้ง 3 หลอดของ Masha อย่างรวดเร็ว และกดอัลติแสงคั่นจังหวะตอน Masha พุ่งเข้าขย้ำ"
         },
         {
           "id": 24,
@@ -24110,48 +24322,6 @@ window.MLBB_DATA = {
           "deltaWr": null,
           "badge": "Official Counter",
           "reason": "Lunox counters heroes that lack burst damage and healing, such as Yve and Lylia, because Lunox can use her self-healing to get the upper hand in a trade."
-        },
-        {
-          "id": 88,
-          "score": 18,
-          "deltaWr": null,
-          "badge": "ละลายแทงค์ (%HP/True DMG)",
-          "reason": "สกิลโหมดมืด (Chaos Assault) ยิงดาเมจเวทตาม % เลือดศัตรู ละลายแนวหน้าสายถึกได้ในพริบตา"
-        },
-        {
-          "id": 127,
-          "score": 18,
-          "deltaWr": null,
-          "badge": "ละลายแทงค์ (%HP/True DMG)",
-          "reason": "สกิลโหมดมืด (Chaos Assault) ยิงดาเมจเวทตาม % เลือดศัตรู ละลายแนวหน้าสายถึกได้ในพริบตา"
-        },
-        {
-          "id": 92,
-          "score": 18,
-          "deltaWr": null,
-          "badge": "ละลายแทงค์ (%HP/True DMG)",
-          "reason": "สกิลโหมดมืด (Chaos Assault) ยิงดาเมจเวทตาม % เลือดศัตรู ละลายแนวหน้าสายถึกได้ในพริบตา"
-        },
-        {
-          "id": 70,
-          "score": 18,
-          "deltaWr": null,
-          "badge": "ละลายแทงค์ (%HP/True DMG)",
-          "reason": "สกิลโหมดมืด (Chaos Assault) ยิงดาเมจเวทตาม % เลือดศัตรู ละลายแนวหน้าสายถึกได้ในพริบตา"
-        },
-        {
-          "id": 19,
-          "score": 18,
-          "deltaWr": null,
-          "badge": "ละลายแทงค์ (%HP/True DMG)",
-          "reason": "สกิลโหมดมืด (Chaos Assault) ยิงดาเมจเวทตาม % เลือดศัตรู ละลายแนวหน้าสายถึกได้ในพริบตา"
-        },
-        {
-          "id": 99,
-          "score": 18,
-          "deltaWr": null,
-          "badge": "ละลายแทงค์ (%HP/True DMG)",
-          "reason": "สกิลโหมดมืด (Chaos Assault) ยิงดาเมจเวทตาม % เลือดศัตรู ละลายแนวหน้าสายถึกได้ในพริบตา"
         }
       ],
       "synergies": [
@@ -24162,8 +24332,8 @@ window.MLBB_DATA = {
         },
         {
           "id": 124,
-          "score": 22.4,
-          "deltaWr": 3.7
+          "score": 34.5,
+          "deltaWr": 6.8
         },
         {
           "id": 42,
@@ -24209,6 +24379,26 @@ window.MLBB_DATA = {
           "id": 112,
           "score": 12,
           "deltaWr": null
+        },
+        {
+          "id": 92,
+          "score": 29.5,
+          "deltaWr": 6.1
+        },
+        {
+          "id": 93,
+          "score": 28.4,
+          "deltaWr": 5.8
+        },
+        {
+          "id": 132,
+          "score": 28,
+          "deltaWr": 5.7
+        },
+        {
+          "id": 128,
+          "score": 26.5,
+          "deltaWr": 5.4
         }
       ],
       "guides": {
@@ -24636,6 +24826,12 @@ window.MLBB_DATA = {
           "deltaWr": null,
           "badge": "Meta Counter Pick",
           "reason": "Pharsa เป็นตัวเลือกยอดนิยมในการแก้ทาง Melissa ในดราฟต์แรงก์ระดับสูง"
+        },
+        {
+          "id": 124,
+          "score": 50.8,
+          "badge": "Portal Lockdown",
+          "reason": "เปิดประตูวาร์ป Shortcut ทับวงตุ๊กตาของ Melissa ให้ไฟต์เตอร์และเมจทีมเราวาร์ปพร้อมเกราะ +500 ลงมาขยี้ถึงตัว"
         }
       ]
     },
@@ -24959,6 +25155,12 @@ window.MLBB_DATA = {
           "deltaWr": null,
           "badge": "Official Counter",
           "reason": "Barats is countered by agile Marksmen who can deal high damage to Tanks, such as Karrie and Moskov, because Barats lacks mobility and his skills can be avoided, making these heroes very difficult to kill."
+        },
+        {
+          "id": 68,
+          "score": 52.8,
+          "badge": "Giant Slayer",
+          "reason": "ยิ่ง Barats ตัวใหญ่เลือดเยอะ สกิล 2 Chaos Assault ของ Lunox ยิ่งทำดาเมจ %Max HP แรงขึ้นมหาศาล และกดอัลติแสงหลบจังหวะกลืนได้"
         }
       ]
     },
@@ -26544,6 +26746,12 @@ window.MLBB_DATA = {
           "deltaWr": null,
           "badge": "Official Counter",
           "reason": "Uranus lacks Mobility and CC abilities which makes him an easy target for ranged heroes, such as Layla and Lesley."
+        },
+        {
+          "id": 68,
+          "score": 56.4,
+          "badge": "Tank Shredder",
+          "reason": "สาดสกิล 2 รัวขณะเปิดอัลติมืด Darkening ละลายเลือด Uranus เต็มหลอดใน 3 วินาทีแบบฮีลไม่ทัน"
         }
       ]
     },
@@ -27990,6 +28198,12 @@ window.MLBB_DATA = {
           "deltaWr": null,
           "badge": "ล้วงแนวหลังตัวบาง",
           "reason": "ดำน้ำผ่าน CC เข้าไปยกและระเบิดคลื่นสังหารตัวบางได้ในชุดเดียว"
+        },
+        {
+          "id": 124,
+          "score": 43.5,
+          "badge": "Gold Lane Dive",
+          "reason": "เปิดประตูวาร์ป 5 คนบุกป้อมเลนทองเพื่อตัดจังหวะกดเลนของ Brody และชิงรถถังทอง +60%"
         }
       ]
     },
@@ -28546,8 +28760,8 @@ window.MLBB_DATA = {
           "id": 68,
           "score": 68.5,
           "deltaWr": 3.12,
-          "badge": "ละลายแทงค์ (%HP/True DMG)",
-          "reason": "สกิลโหมดมืด (Chaos Assault) ยิงดาเมจเวทตาม % เลือดศัตรู ละลายแนวหน้าสายถึกได้ในพริบตา"
+          "badge": "Hard Counter #1",
+          "reason": "สกิล 2 Chaos Assault ยิงเป็น %Max HP (3.5%-5%) พร้อมพาสซีฟเจาะเวท +10% ละลายเลือดและเกราะขาว Esmeralda จนยืนไม่อยู่"
         },
         {
           "id": 85,
@@ -30035,8 +30249,8 @@ window.MLBB_DATA = {
         },
         {
           "id": 124,
-          "score": 16.68,
-          "deltaWr": 0.84
+          "score": 29,
+          "deltaWr": 5.9
         },
         {
           "id": 116,
@@ -30121,10 +30335,10 @@ window.MLBB_DATA = {
         },
         {
           "id": 124,
-          "score": 32.7,
+          "score": 46.5,
           "deltaWr": 1.88,
-          "badge": "กดอัตราชนะศัตรู -1.88%",
-          "reason": "สถิติ Mythical Glory ยืนยันว่าเมื่อเจอ Chip อัตราชนะของ Paquito จะลดลงถึง -1.88%"
+          "badge": "Anti-Skirmish",
+          "reason": "ดักจังหวะที่ Paquito พุ่งเข้าไฟต์ด้วยสตั๊นสกิล 2 + อัลติ Shortcut ขังและเรียกเพื่อนมารุมเบิร์สต์ก่อนถอยออก"
         },
         {
           "id": 19,
@@ -31979,10 +32193,10 @@ window.MLBB_DATA = {
         },
         {
           "id": 124,
-          "score": 42.5,
+          "score": 44.2,
           "deltaWr": 2.31,
-          "badge": "กดอัตราชนะศัตรู -2.31%",
-          "reason": "สถิติ Mythical Glory ยืนยันว่าเมื่อเจอ Chip อัตราชนะของ Selena จะลดลงถึง -2.31%"
+          "badge": "Beacon Mobility",
+          "reason": "ยืนรับลูกธนูแทนเพื่อนและใช้เสาวาร์ป Beacon เติมไฟต์ทั่วแมพเร็วกว่าการเดินแก๊งของ Selena"
         },
         {
           "id": 89,

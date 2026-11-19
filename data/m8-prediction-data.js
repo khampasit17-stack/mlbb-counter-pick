@@ -1,5 +1,5 @@
 /**
- * M8 World Championship — Pick/Ban Prediction + Latest 11-League Playoffs (384 Games) + Patch 2.2.23 (2026-11-19)
+ * M8 World Championship — Pick/Ban Prediction + M8 Scrim Meta (Chip & Lunox) + Patch 2.2.23 (2026-11-19)
  */
 window.M8_PREDICTION = {
   "meta": {
@@ -89,13 +89,13 @@ window.M8_PREDICTION = {
       },
       "lunox": {
         "type": "BUFF",
-        "tierShift": "B → A",
-        "badge": "⬆️ บัฟต้นเกม +10% เจาะเวท/ดูดเลือด (ขึ้น Tier A)",
-        "m8TargetPres": 32.4,
-        "perfDelta": 20,
+        "tierShift": "A → S (🔥 ฮิตในห้องซ้อม M8)",
+        "badge": "🔥 เมต้าซ้อม M8 + ⬆️ บัฟเจาะเวท 10% (Tier S)",
+        "m8TargetPres": 48.6,
+        "perfDelta": 26,
         "minTier": "A",
         "maxTier": "S",
-        "summary": "พาสซีฟได้ดูดเลือดเวท 10% หรือเจาะเกราะเวท 10% ทันทีตั้งแต่เลเวล 1, สกิล 2 ต้นเกมแรงขึ้น (3.5%-5% HP), อัลติมืดพุ่งไวขึ้น 50%"
+        "summary": "[ตัวฮิตห้องซ้อมแข่ง M8 + บัฟ Patch 2.2.23] พาสซีฟได้ดูดเลือดเวท 10% หรือเจาะเกราะเวท 10% ทันทีตั้งแต่เลเวล 1, สกิล 2 ต้นเกมแรงขึ้น (3.5%-5% Max HP), อัลติมืดพุ่งไวขึ้น 50% ยืน Flex ได้ทั้ง Mid / Gold / Jungle ละลายเมต้าแทงค์ขาดกระจุย"
       },
       "melissa": {
         "type": "BUFF",
@@ -216,6 +216,16 @@ window.M8_PREDICTION = {
         "minTier": "B",
         "maxTier": "A",
         "summary": "ปรับปรุงเส้นแสดงระยะห่างสูงสุดของร่ม Seimei ให้ควบคุมจังหวะคอมโบแม่นยำขึ้น"
+      },
+      "chip": {
+        "type": "BUFF",
+        "tierShift": "B → S (🔥 ฮิตในห้องซ้อม M8)",
+        "badge": "🔥 เมต้าซ้อม M8: วาร์ป 5 คนถล่มเลนทอง (Tier S)",
+        "m8TargetPres": 44.2,
+        "perfDelta": 26,
+        "minTier": "A",
+        "maxTier": "S",
+        "summary": "[โรมมิ่งตัวตึงห้องซ้อมแข่ง M8] หลัง Atlas/Gloo/Masha โดนเนิร์ฟและรถถังเลนทองบัฟเงิน +60% ทีมโปรในห้องซ้อมหันมาใช้ Chip เปิดประตูมิติ Shortcut เรียกเพื่อน 4 คน (โดยเฉพาะคู่หู Lunox / Paquito / Masha) วาร์ปพร้อมเกราะ +500 ลงมารุม 5v1 ชิงป้อมทองและคุม Macro ทั่วแผนที่"
       }
     },
     "battlefieldNotes": [
@@ -1894,6 +1904,123 @@ window.M8_PREDICTION = {
       "playoffSurge": "🔥 พุ่งแรงในเพลย์ออฟล่าสุด (72.7% Presence • พิก 103 แบน 176)"
     },
     {
+      "name": "Lunox",
+      "key": "lunox",
+      "tier": "S",
+      "action": "FLEX",
+      "confidence": "สูง",
+      "presence": 48.6,
+      "ban": 21.4,
+      "pick": 27.2,
+      "winRate": 46.15,
+      "winRateAdj": 48.1,
+      "currentPicks": 7,
+      "regionsContested": 0,
+      "regionsTotal": 5,
+      "sources": [
+        {
+          "src": "playoffs-11",
+          "label": "Playoffs ล่าสุด (11 ลีก)",
+          "flag": "🔥",
+          "presence": 2.9,
+          "ban": 1.3,
+          "pick": 1.6,
+          "picks": 6,
+          "wins": 3,
+          "bans": 5,
+          "games": 384
+        },
+        {
+          "src": "mpl-ph",
+          "label": "MPL-PH S18",
+          "flag": "🇵🇭",
+          "presence": 0.6,
+          "ban": 0,
+          "pick": 0.6,
+          "picks": 1,
+          "wins": 1,
+          "bans": 0,
+          "games": 172
+        },
+        {
+          "src": "mpl-id",
+          "label": "MPL-ID S18",
+          "flag": "🇮🇩",
+          "presence": 3.3,
+          "ban": 0.9,
+          "pick": 2.3,
+          "picks": 5,
+          "wins": 1,
+          "bans": 2,
+          "games": 215
+        },
+        {
+          "src": "mpl-my",
+          "label": "MPL-MY S18",
+          "flag": "🇲🇾",
+          "presence": 0.6,
+          "ban": 0.6,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 1,
+          "games": 170
+        },
+        {
+          "src": "msl-th",
+          "label": "MSL-TH S2",
+          "flag": "🇹🇭",
+          "presence": 0.7,
+          "ban": 0,
+          "pick": 0.7,
+          "picks": 1,
+          "wins": 1,
+          "bans": 0,
+          "games": 135
+        },
+        {
+          "src": "msc-2026",
+          "label": "MSC 2026",
+          "flag": "🌍",
+          "presence": 0.9,
+          "ban": 0.9,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 1,
+          "games": 113
+        },
+        {
+          "src": "m7",
+          "label": "M7 World",
+          "flag": "🏆",
+          "presence": 38,
+          "ban": 20.4,
+          "pick": 17.5,
+          "picks": 24,
+          "wins": 18,
+          "bans": 28,
+          "games": 137
+        }
+      ],
+      "rank": 16,
+      "patchChange": {
+        "type": "BUFF",
+        "tierShift": "A → S (🔥 ฮิตในห้องซ้อม M8)",
+        "badge": "🔥 เมต้าซ้อม M8 + ⬆️ บัฟเจาะเวท 10% (Tier S)",
+        "m8TargetPres": 48.6,
+        "perfDelta": 26,
+        "minTier": "A",
+        "maxTier": "S",
+        "summary": "[ตัวฮิตห้องซ้อมแข่ง M8 + บัฟ Patch 2.2.23] พาสซีฟได้ดูดเลือดเวท 10% หรือเจาะเกราะเวท 10% ทันทีตั้งแต่เลเวล 1, สกิล 2 ต้นเกมแรงขึ้น (3.5%-5% Max HP), อัลติมืดพุ่งไวขึ้น 50% ยืน Flex ได้ทั้ง Mid / Gold / Jungle ละลายเมต้าแทงค์ขาดกระจุย"
+      },
+      "playoffPresence": 2.9,
+      "playoffPicks": 6,
+      "playoffBans": 5,
+      "playoffWr": 50,
+      "playoffSurge": null
+    },
+    {
       "name": "Uranus",
       "key": "uranus",
       "tier": "S",
@@ -1993,7 +2120,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 16,
+      "rank": 17,
       "patchChange": {
         "type": "NERF",
         "tierShift": "SS → S",
@@ -2110,7 +2237,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 17,
+      "rank": 18,
       "patchChange": null,
       "playoffPresence": 36.2,
       "playoffPicks": 72,
@@ -2218,13 +2345,130 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 18,
+      "rank": 19,
       "patchChange": null,
       "playoffPresence": 52.6,
       "playoffPicks": 118,
       "playoffBans": 84,
       "playoffWr": 43.2,
       "playoffSurge": "🔥 พุ่งแรงในเพลย์ออฟล่าสุด (52.6% Presence • พิก 118 แบน 84)"
+    },
+    {
+      "name": "Chip",
+      "key": "chip",
+      "tier": "S",
+      "action": "BAN",
+      "confidence": "สูง",
+      "presence": 44.2,
+      "ban": 26.5,
+      "pick": 17.7,
+      "winRate": 25,
+      "winRateAdj": 38.5,
+      "currentPicks": 9,
+      "regionsContested": 0,
+      "regionsTotal": 5,
+      "sources": [
+        {
+          "src": "playoffs-11",
+          "label": "Playoffs ล่าสุด (11 ลีก)",
+          "flag": "🔥",
+          "presence": 0.8,
+          "ban": 0,
+          "pick": 0.8,
+          "picks": 3,
+          "wins": 1,
+          "bans": 0,
+          "games": 384
+        },
+        {
+          "src": "mpl-ph",
+          "label": "MPL-PH S18",
+          "flag": "🇵🇭",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 172
+        },
+        {
+          "src": "mpl-id",
+          "label": "MPL-ID S18",
+          "flag": "🇮🇩",
+          "presence": 13.5,
+          "ban": 10.2,
+          "pick": 3.3,
+          "picks": 7,
+          "wins": 1,
+          "bans": 22,
+          "games": 215
+        },
+        {
+          "src": "mpl-my",
+          "label": "MPL-MY S18",
+          "flag": "🇲🇾",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 170
+        },
+        {
+          "src": "msl-th",
+          "label": "MSL-TH S2",
+          "flag": "🇹🇭",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 135
+        },
+        {
+          "src": "msc-2026",
+          "label": "MSC 2026",
+          "flag": "🌍",
+          "presence": 1.8,
+          "ban": 0,
+          "pick": 1.8,
+          "picks": 2,
+          "wins": 1,
+          "bans": 0,
+          "games": 113
+        },
+        {
+          "src": "m7",
+          "label": "M7 World",
+          "flag": "🏆",
+          "presence": 8,
+          "ban": 3.6,
+          "pick": 4.4,
+          "picks": 6,
+          "wins": 4,
+          "bans": 5,
+          "games": 137
+        }
+      ],
+      "rank": 20,
+      "patchChange": {
+        "type": "BUFF",
+        "tierShift": "B → S (🔥 ฮิตในห้องซ้อม M8)",
+        "badge": "🔥 เมต้าซ้อม M8: วาร์ป 5 คนถล่มเลนทอง (Tier S)",
+        "m8TargetPres": 44.2,
+        "perfDelta": 26,
+        "minTier": "A",
+        "maxTier": "S",
+        "summary": "[โรมมิ่งตัวตึงห้องซ้อมแข่ง M8] หลัง Atlas/Gloo/Masha โดนเนิร์ฟและรถถังเลนทองบัฟเงิน +60% ทีมโปรในห้องซ้อมหันมาใช้ Chip เปิดประตูมิติ Shortcut เรียกเพื่อน 4 คน (โดยเฉพาะคู่หู Lunox / Paquito / Masha) วาร์ปพร้อมเกราะ +500 ลงมารุม 5v1 ชิงป้อมทองและคุม Macro ทั่วแผนที่"
+      },
+      "playoffPresence": 0.8,
+      "playoffPicks": 3,
+      "playoffBans": 0,
+      "playoffWr": 33.3,
+      "playoffSurge": null
     },
     {
       "name": "Valentina",
@@ -2326,7 +2570,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 19,
+      "rank": 21,
       "patchChange": null,
       "playoffPresence": 40.9,
       "playoffPicks": 70,
@@ -2434,7 +2678,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 20,
+      "rank": 22,
       "patchChange": null,
       "playoffPresence": 26.3,
       "playoffPicks": 10,
@@ -2542,7 +2786,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 21,
+      "rank": 23,
       "patchChange": null,
       "playoffPresence": 53.1,
       "playoffPicks": 126,
@@ -2650,7 +2894,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 22,
+      "rank": 24,
       "patchChange": null,
       "playoffPresence": 51.3,
       "playoffPicks": 126,
@@ -2758,7 +3002,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 23,
+      "rank": 25,
       "patchChange": null,
       "playoffPresence": 28.9,
       "playoffPicks": 51,
@@ -2866,7 +3110,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 24,
+      "rank": 26,
       "patchChange": null,
       "playoffPresence": 26.8,
       "playoffPicks": 53,
@@ -2974,7 +3218,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 25,
+      "rank": 27,
       "patchChange": {
         "type": "BUFF",
         "tierShift": "A → S",
@@ -3091,7 +3335,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 26,
+      "rank": 28,
       "patchChange": null,
       "playoffPresence": 39.8,
       "playoffPicks": 80,
@@ -3199,7 +3443,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 27,
+      "rank": 29,
       "patchChange": null,
       "playoffPresence": 32,
       "playoffPicks": 70,
@@ -3307,7 +3551,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 28,
+      "rank": 30,
       "patchChange": null,
       "playoffPresence": 25.8,
       "playoffPicks": 81,
@@ -3415,7 +3659,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 29,
+      "rank": 31,
       "patchChange": {
         "type": "REVAMP",
         "tierShift": "C → A",
@@ -3532,7 +3776,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 30,
+      "rank": 32,
       "patchChange": {
         "type": "BUFF",
         "tierShift": "C → A",
@@ -3649,129 +3893,12 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 31,
+      "rank": 33,
       "patchChange": null,
       "playoffPresence": 24.7,
       "playoffPicks": 43,
       "playoffBans": 52,
       "playoffWr": 53.5,
-      "playoffSurge": null
-    },
-    {
-      "name": "Lunox",
-      "key": "lunox",
-      "tier": "A",
-      "action": "FLEX",
-      "confidence": "ปานกลาง",
-      "presence": 28.5,
-      "ban": 14,
-      "pick": 14.5,
-      "winRate": 46.15,
-      "winRateAdj": 48.1,
-      "currentPicks": 7,
-      "regionsContested": 0,
-      "regionsTotal": 5,
-      "sources": [
-        {
-          "src": "playoffs-11",
-          "label": "Playoffs ล่าสุด (11 ลีก)",
-          "flag": "🔥",
-          "presence": 2.9,
-          "ban": 1.3,
-          "pick": 1.6,
-          "picks": 6,
-          "wins": 3,
-          "bans": 5,
-          "games": 384
-        },
-        {
-          "src": "mpl-ph",
-          "label": "MPL-PH S18",
-          "flag": "🇵🇭",
-          "presence": 0.6,
-          "ban": 0,
-          "pick": 0.6,
-          "picks": 1,
-          "wins": 1,
-          "bans": 0,
-          "games": 172
-        },
-        {
-          "src": "mpl-id",
-          "label": "MPL-ID S18",
-          "flag": "🇮🇩",
-          "presence": 3.3,
-          "ban": 0.9,
-          "pick": 2.3,
-          "picks": 5,
-          "wins": 1,
-          "bans": 2,
-          "games": 215
-        },
-        {
-          "src": "mpl-my",
-          "label": "MPL-MY S18",
-          "flag": "🇲🇾",
-          "presence": 0.6,
-          "ban": 0.6,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 1,
-          "games": 170
-        },
-        {
-          "src": "msl-th",
-          "label": "MSL-TH S2",
-          "flag": "🇹🇭",
-          "presence": 0.7,
-          "ban": 0,
-          "pick": 0.7,
-          "picks": 1,
-          "wins": 1,
-          "bans": 0,
-          "games": 135
-        },
-        {
-          "src": "msc-2026",
-          "label": "MSC 2026",
-          "flag": "🌍",
-          "presence": 0.9,
-          "ban": 0.9,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 1,
-          "games": 113
-        },
-        {
-          "src": "m7",
-          "label": "M7 World",
-          "flag": "🏆",
-          "presence": 38,
-          "ban": 20.4,
-          "pick": 17.5,
-          "picks": 24,
-          "wins": 18,
-          "bans": 28,
-          "games": 137
-        }
-      ],
-      "rank": 32,
-      "patchChange": {
-        "type": "BUFF",
-        "tierShift": "B → A",
-        "badge": "⬆️ บัฟต้นเกม +10% เจาะเวท/ดูดเลือด (ขึ้น Tier A)",
-        "m8TargetPres": 32.4,
-        "perfDelta": 20,
-        "minTier": "A",
-        "maxTier": "S",
-        "summary": "พาสซีฟได้ดูดเลือดเวท 10% หรือเจาะเกราะเวท 10% ทันทีตั้งแต่เลเวล 1, สกิล 2 ต้นเกมแรงขึ้น (3.5%-5% HP), อัลติมืดพุ่งไวขึ้น 50%"
-      },
-      "playoffPresence": 2.9,
-      "playoffPicks": 6,
-      "playoffBans": 5,
-      "playoffWr": 50,
       "playoffSurge": null
     },
     {
@@ -3874,7 +4001,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 33,
+      "rank": 34,
       "patchChange": null,
       "playoffPresence": 32.3,
       "playoffPicks": 106,
@@ -3982,7 +4109,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 34,
+      "rank": 35,
       "patchChange": {
         "type": "BUFF",
         "tierShift": "B → A",
@@ -4099,7 +4226,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 35,
+      "rank": 36,
       "patchChange": null,
       "playoffPresence": 14.6,
       "playoffPicks": 25,
@@ -4207,7 +4334,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 36,
+      "rank": 37,
       "patchChange": {
         "type": "BUFF",
         "tierShift": "B → A",
@@ -4324,7 +4451,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 37,
+      "rank": 38,
       "patchChange": null,
       "playoffPresence": 24.2,
       "playoffPicks": 65,
@@ -4432,7 +4559,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 38,
+      "rank": 39,
       "patchChange": null,
       "playoffPresence": 21.6,
       "playoffPicks": 46,
@@ -4540,7 +4667,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 39,
+      "rank": 40,
       "patchChange": null,
       "playoffPresence": 19.3,
       "playoffPicks": 34,
@@ -4648,7 +4775,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 40,
+      "rank": 41,
       "patchChange": null,
       "playoffPresence": 16.1,
       "playoffPicks": 43,
@@ -4756,7 +4883,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 41,
+      "rank": 42,
       "patchChange": null,
       "playoffPresence": 18.5,
       "playoffPicks": 56,
@@ -4864,7 +4991,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 42,
+      "rank": 43,
       "patchChange": {
         "type": "NERF",
         "tierShift": "SS/S → A",
@@ -4981,7 +5108,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 43,
+      "rank": 44,
       "patchChange": null,
       "playoffPresence": 14.3,
       "playoffPicks": 38,
@@ -5089,7 +5216,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 44,
+      "rank": 45,
       "patchChange": null,
       "playoffPresence": 12,
       "playoffPicks": 35,
@@ -5197,7 +5324,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 45,
+      "rank": 46,
       "patchChange": null,
       "playoffPresence": 22.1,
       "playoffPicks": 55,
@@ -5305,7 +5432,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 46,
+      "rank": 47,
       "patchChange": null,
       "playoffPresence": 12,
       "playoffPicks": 18,
@@ -5413,7 +5540,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 47,
+      "rank": 48,
       "patchChange": null,
       "playoffPresence": 7.3,
       "playoffPicks": 15,
@@ -5521,7 +5648,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 48,
+      "rank": 49,
       "patchChange": null,
       "playoffPresence": 13.3,
       "playoffPicks": 20,
@@ -5629,7 +5756,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 49,
+      "rank": 50,
       "patchChange": null,
       "playoffPresence": 17.7,
       "playoffPicks": 41,
@@ -5737,7 +5864,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 50,
+      "rank": 51,
       "patchChange": null,
       "playoffPresence": 17.2,
       "playoffPicks": 44,
@@ -5845,7 +5972,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 51,
+      "rank": 52,
       "patchChange": null,
       "playoffPresence": 12.5,
       "playoffPicks": 28,
@@ -5953,7 +6080,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 52,
+      "rank": 53,
       "patchChange": null,
       "playoffPresence": 14.1,
       "playoffPicks": 39,
@@ -6061,7 +6188,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 53,
+      "rank": 54,
       "patchChange": null,
       "playoffPresence": 13.3,
       "playoffPicks": 39,
@@ -6169,7 +6296,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 54,
+      "rank": 55,
       "patchChange": {
         "type": "BUFF",
         "tierShift": "C → B",
@@ -6286,7 +6413,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 55,
+      "rank": 56,
       "patchChange": null,
       "playoffPresence": 5.7,
       "playoffPicks": 16,
@@ -6394,7 +6521,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 56,
+      "rank": 57,
       "patchChange": null,
       "playoffPresence": 6,
       "playoffPicks": 20,
@@ -6502,7 +6629,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 57,
+      "rank": 58,
       "patchChange": null,
       "playoffPresence": 3.6,
       "playoffPicks": 8,
@@ -6610,7 +6737,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 58,
+      "rank": 59,
       "patchChange": null,
       "playoffPresence": 9.4,
       "playoffPicks": 14,
@@ -6718,7 +6845,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 59,
+      "rank": 60,
       "patchChange": null,
       "playoffPresence": 6.3,
       "playoffPicks": 18,
@@ -6826,7 +6953,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 60,
+      "rank": 61,
       "patchChange": null,
       "playoffPresence": 7.6,
       "playoffPicks": 22,
@@ -6934,7 +7061,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 61,
+      "rank": 62,
       "patchChange": null,
       "playoffPresence": 5.5,
       "playoffPicks": 12,
@@ -7042,7 +7169,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 62,
+      "rank": 63,
       "patchChange": null,
       "playoffPresence": 9.9,
       "playoffPicks": 11,
@@ -7150,7 +7277,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 63,
+      "rank": 64,
       "patchChange": null,
       "playoffPresence": 1.3,
       "playoffPicks": 3,
@@ -7258,7 +7385,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 64,
+      "rank": 65,
       "patchChange": null,
       "playoffPresence": 4.4,
       "playoffPicks": 7,
@@ -7366,7 +7493,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 65,
+      "rank": 66,
       "patchChange": null,
       "playoffPresence": 6.3,
       "playoffPicks": 14,
@@ -7474,7 +7601,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 66,
+      "rank": 67,
       "patchChange": null,
       "playoffPresence": 6.5,
       "playoffPicks": 10,
@@ -7582,7 +7709,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 67,
+      "rank": 68,
       "patchChange": null,
       "playoffPresence": 2.6,
       "playoffPicks": 4,
@@ -7690,7 +7817,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 68,
+      "rank": 69,
       "patchChange": null,
       "playoffPresence": 2.1,
       "playoffPicks": 4,
@@ -7798,7 +7925,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 69,
+      "rank": 70,
       "patchChange": {
         "type": "ADJUST",
         "tierShift": "C → B",
@@ -7915,7 +8042,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 70,
+      "rank": 71,
       "patchChange": null,
       "playoffPresence": 0.8,
       "playoffPicks": 3,
@@ -8023,7 +8150,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 71,
+      "rank": 72,
       "patchChange": null,
       "playoffPresence": 2.6,
       "playoffPicks": 8,
@@ -8131,7 +8258,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 72,
+      "rank": 73,
       "patchChange": null,
       "playoffPresence": 2.1,
       "playoffPicks": 6,
@@ -8239,7 +8366,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 73,
+      "rank": 74,
       "patchChange": null,
       "playoffPresence": 0,
       "playoffPicks": 0,
@@ -8347,7 +8474,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 74,
+      "rank": 75,
       "patchChange": null,
       "playoffPresence": 4.2,
       "playoffPicks": 8,
@@ -8455,7 +8582,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 75,
+      "rank": 76,
       "patchChange": null,
       "playoffPresence": 0.8,
       "playoffPicks": 2,
@@ -8563,7 +8690,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 76,
+      "rank": 77,
       "patchChange": null,
       "playoffPresence": 2.6,
       "playoffPicks": 8,
@@ -8671,7 +8798,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 77,
+      "rank": 78,
       "patchChange": null,
       "playoffPresence": 0.5,
       "playoffPicks": 1,
@@ -8779,7 +8906,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 78,
+      "rank": 79,
       "patchChange": null,
       "playoffPresence": 1,
       "playoffPicks": 2,
@@ -8887,7 +9014,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 79,
+      "rank": 80,
       "patchChange": null,
       "playoffPresence": 2.1,
       "playoffPicks": 6,
@@ -8995,7 +9122,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 80,
+      "rank": 81,
       "patchChange": null,
       "playoffPresence": 3.6,
       "playoffPicks": 6,
@@ -9103,7 +9230,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 81,
+      "rank": 82,
       "patchChange": null,
       "playoffPresence": 0.3,
       "playoffPicks": 1,
@@ -9211,120 +9338,12 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 82,
+      "rank": 83,
       "patchChange": null,
       "playoffPresence": 2.1,
       "playoffPicks": 5,
       "playoffBans": 3,
       "playoffWr": 20,
-      "playoffSurge": null
-    },
-    {
-      "name": "Chip",
-      "key": "chip",
-      "tier": "C",
-      "action": "FLEX",
-      "confidence": "ปานกลาง",
-      "presence": 1.8,
-      "ban": 0.9,
-      "pick": 0.9,
-      "winRate": 25,
-      "winRateAdj": 38.5,
-      "currentPicks": 9,
-      "regionsContested": 0,
-      "regionsTotal": 5,
-      "sources": [
-        {
-          "src": "playoffs-11",
-          "label": "Playoffs ล่าสุด (11 ลีก)",
-          "flag": "🔥",
-          "presence": 0.8,
-          "ban": 0,
-          "pick": 0.8,
-          "picks": 3,
-          "wins": 1,
-          "bans": 0,
-          "games": 384
-        },
-        {
-          "src": "mpl-ph",
-          "label": "MPL-PH S18",
-          "flag": "🇵🇭",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 172
-        },
-        {
-          "src": "mpl-id",
-          "label": "MPL-ID S18",
-          "flag": "🇮🇩",
-          "presence": 13.5,
-          "ban": 10.2,
-          "pick": 3.3,
-          "picks": 7,
-          "wins": 1,
-          "bans": 22,
-          "games": 215
-        },
-        {
-          "src": "mpl-my",
-          "label": "MPL-MY S18",
-          "flag": "🇲🇾",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 170
-        },
-        {
-          "src": "msl-th",
-          "label": "MSL-TH S2",
-          "flag": "🇹🇭",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 135
-        },
-        {
-          "src": "msc-2026",
-          "label": "MSC 2026",
-          "flag": "🌍",
-          "presence": 1.8,
-          "ban": 0,
-          "pick": 1.8,
-          "picks": 2,
-          "wins": 1,
-          "bans": 0,
-          "games": 113
-        },
-        {
-          "src": "m7",
-          "label": "M7 World",
-          "flag": "🏆",
-          "presence": 8,
-          "ban": 3.6,
-          "pick": 4.4,
-          "picks": 6,
-          "wins": 4,
-          "bans": 5,
-          "games": 137
-        }
-      ],
-      "rank": 83,
-      "patchChange": null,
-      "playoffPresence": 0.8,
-      "playoffPicks": 3,
-      "playoffBans": 0,
-      "playoffWr": 33.3,
       "playoffSurge": null
     },
     {
