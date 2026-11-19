@@ -3746,7 +3746,9 @@ function renderM8PredictionTab() {
             const pCls = pChange ? (pChange.type === 'NERF' ? 'm8-act-ban' : (pChange.type === 'BUFF' || pChange.type === 'REVAMP' ? 'm8-act-pick' : 'm8-act-flex')) : '';
             const patchBadgeHtml = pChange
               ? `<span class="m8-action-pill ${pCls}" title="${pChange.summary}">${pChange.badge}</span>`
-              : '';
+              : (item.playoffSurge
+                  ? `<span class="m8-action-pill m8-act-pick" title="สถิติรอบ Playoffs & Finals ล่าสุด 11 ลีก (384 นัด)">${item.playoffSurge}</span>`
+                  : '');
 
             return `
               <div class="m8-hero-card ${item.tier === 'SS' ? 'is-m8-ss' : ''}" onclick="openHeroModal(${h.id})">
