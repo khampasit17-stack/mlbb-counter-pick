@@ -3614,6 +3614,11 @@ function applyM8PredictedDraftToBoard() {
   switchTab('draft');
 }
 
+function applyM8ScrimDraftToBoard() {
+  setTournamentMeta('m8-scrim', false);
+  switchTab('draft');
+}
+
 function renderM8PredictionTab() {
   const pred = window.M8_PREDICTION;
   const subEl = document.getElementById('m8SubText');
@@ -3660,9 +3665,14 @@ function renderM8PredictionTab() {
             <div class="m8-summary-title" style="color:#fda4af;">🚫 Top 10 ตัวเต็งที่นักแข่งจะ "แบน" สูงสุดใน M8 (Expected Must-Bans)</div>
             <div class="m8-summary-sub">ฮีโร่ที่มีอัตราโดนแบนเฉลี่ยสูงสุดและชนะทางดราฟต์ในทุกภูมิภาค ทีมแข่งมักตัดทิ้งในเฟสแบนแรกทันที</div>
           </div>
-          <button class="btn btn-ban-auto" onclick="applyM8PredictedDraftToBoard()" title="จำลองดราฟต์คาดการณ์ M8 บนกระดานดราฟต์หลัก">
-            🔮 จำลองดราฟต์ M8 บนกระดาน →
-          </button>
+          <div style="display:flex; gap:0.4rem; flex-wrap:wrap;">
+            <button class="btn btn-demo" onclick="applyM8ScrimDraftToBoard()" title="โหลดเมต้าและดราฟต์ห้องซ้อมทีมแข่ง M8 วันนี้ (Chip + Lunox, Popol Revamp, Lukas, Xavier, Melissa)">
+              🔥 จำลองดราฟต์ห้องซ้อมวันนี้ →
+            </button>
+            <button class="btn btn-ban-auto" onclick="applyM8PredictedDraftToBoard()" title="จำลองดราฟต์คาดการณ์ M8 บนกระดานดราฟต์หลัก">
+              🔮 จำลองดราฟต์ M8 บนกระดาน →
+            </button>
+          </div>
         </div>
         <div class="m8-top-chips-grid">
           ${topExpectedBans.map((it, i) => renderMiniChip(it, i, true)).join('')}
@@ -3725,7 +3735,11 @@ function renderM8PredictionTab() {
   tierEl.innerHTML = m8Tiers.map(t => {
     const rows = pred.heroes.filter(item => {
       if (item.tier !== t.key) return false;
-      if (state.m8ActionFilter !== 'ALL' && item.action !== state.m8ActionFilter) return false;
+      if (state.m8ActionFilter === 'SCRIM') {
+        if (!item.scrimHot) return false;
+      } else if (state.m8ActionFilter !== 'ALL' && item.action !== state.m8ActionFilter) {
+        return false;
+      }
       const hObj = HERO_BY_NAME.get(item.key);
       if (!hObj) return false;
       if (state.m8LaneFilter !== 'ALL' && !hObj.lanes.includes(state.m8LaneFilter)) return false;

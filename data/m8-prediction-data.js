@@ -1,5 +1,5 @@
 /**
- * M8 World Championship — Pick/Ban Prediction + M8 Scrim Meta (Chip & Lunox) + Patch 2.2.23 (2026-11-19)
+ * M8 World Championship — Pick/Ban Prediction + Today's Pro Scrim Meta (Chip & Lunox SS) (2026-11-19)
  */
 window.M8_PREDICTION = {
   "meta": {
@@ -353,7 +353,250 @@ window.M8_PREDICTION = {
       "playoffPicks": 102,
       "playoffBans": 251,
       "playoffWr": 48,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": true,
+      "scrimPresence": 96,
+      "scrimNote": "ตัวแบนอันดับ 1 ในห้องซ้อม พาสซีฟลูกแก้วดูดเลือดในเลนได้ตลอดเวลา + อัลติวิ่งเร็ว +30 MS"
+    },
+    {
+      "name": "Chip",
+      "key": "chip",
+      "tier": "SS",
+      "action": "BAN",
+      "confidence": "สูง",
+      "presence": 91.5,
+      "ban": 56.5,
+      "pick": 35,
+      "winRate": 25,
+      "winRateAdj": 38.5,
+      "currentPicks": 9,
+      "regionsContested": 0,
+      "regionsTotal": 5,
+      "sources": [
+        {
+          "src": "playoffs-11",
+          "label": "Playoffs ล่าสุด (11 ลีก)",
+          "flag": "🔥",
+          "presence": 0.8,
+          "ban": 0,
+          "pick": 0.8,
+          "picks": 3,
+          "wins": 1,
+          "bans": 0,
+          "games": 384
+        },
+        {
+          "src": "mpl-ph",
+          "label": "MPL-PH S18",
+          "flag": "🇵🇭",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 172
+        },
+        {
+          "src": "mpl-id",
+          "label": "MPL-ID S18",
+          "flag": "🇮🇩",
+          "presence": 13.5,
+          "ban": 10.2,
+          "pick": 3.3,
+          "picks": 7,
+          "wins": 1,
+          "bans": 22,
+          "games": 215
+        },
+        {
+          "src": "mpl-my",
+          "label": "MPL-MY S18",
+          "flag": "🇲🇾",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 170
+        },
+        {
+          "src": "msl-th",
+          "label": "MSL-TH S2",
+          "flag": "🇹🇭",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 135
+        },
+        {
+          "src": "msc-2026",
+          "label": "MSC 2026",
+          "flag": "🌍",
+          "presence": 1.8,
+          "ban": 0,
+          "pick": 1.8,
+          "picks": 2,
+          "wins": 1,
+          "bans": 0,
+          "games": 113
+        },
+        {
+          "src": "m7",
+          "label": "M7 World",
+          "flag": "🏆",
+          "presence": 8,
+          "ban": 3.6,
+          "pick": 4.4,
+          "picks": 6,
+          "wins": 4,
+          "bans": 5,
+          "games": 137
+        }
+      ],
+      "rank": 2,
+      "patchChange": {
+        "type": "BUFF",
+        "tierShift": "B → SS (🔥 ตัวตึงห้องซ้อมวันนี้)",
+        "badge": "🔥 อันดับ 1 ห้องซ้อมวันนี้: วาร์ป 5 คนถล่มเลนทอง (Tier SS)",
+        "m8TargetPres": 44.2,
+        "perfDelta": 26,
+        "minTier": "A",
+        "maxTier": "S",
+        "summary": "🔥 ตัวตึงอันดับ 1 ห้องซ้อมวันนี้! วาร์ปผ่านเสา Beacon ไปเปิดประตูมิติ Shortcut เรียกเพื่อน 4 คน (โดยเฉพาะ Lunox/Paquito/Lukas) ลงมารุม 5v1 ถล่มเลนทอง +60% Gold"
+      },
+      "playoffPresence": 0.8,
+      "playoffPicks": 3,
+      "playoffBans": 0,
+      "playoffWr": 33.3,
+      "playoffSurge": null,
+      "scrimHot": true,
+      "scrimPresence": 91.5,
+      "scrimNote": "🔥 ตัวตึงอันดับ 1 ห้องซ้อมวันนี้! วาร์ปผ่านเสา Beacon ไปเปิดประตูมิติ Shortcut เรียกเพื่อน 4 คน (โดยเฉพาะ Lunox/Paquito/Lukas) ลงมารุม 5v1 ถล่มเลนทอง +60% Gold"
+    },
+    {
+      "name": "Lunox",
+      "key": "lunox",
+      "tier": "SS",
+      "action": "FLEX",
+      "confidence": "สูง",
+      "presence": 89.4,
+      "ban": 44,
+      "pick": 45.4,
+      "winRate": 46.15,
+      "winRateAdj": 48.1,
+      "currentPicks": 7,
+      "regionsContested": 0,
+      "regionsTotal": 5,
+      "sources": [
+        {
+          "src": "playoffs-11",
+          "label": "Playoffs ล่าสุด (11 ลีก)",
+          "flag": "🔥",
+          "presence": 2.9,
+          "ban": 1.3,
+          "pick": 1.6,
+          "picks": 6,
+          "wins": 3,
+          "bans": 5,
+          "games": 384
+        },
+        {
+          "src": "mpl-ph",
+          "label": "MPL-PH S18",
+          "flag": "🇵🇭",
+          "presence": 0.6,
+          "ban": 0,
+          "pick": 0.6,
+          "picks": 1,
+          "wins": 1,
+          "bans": 0,
+          "games": 172
+        },
+        {
+          "src": "mpl-id",
+          "label": "MPL-ID S18",
+          "flag": "🇮🇩",
+          "presence": 3.3,
+          "ban": 0.9,
+          "pick": 2.3,
+          "picks": 5,
+          "wins": 1,
+          "bans": 2,
+          "games": 215
+        },
+        {
+          "src": "mpl-my",
+          "label": "MPL-MY S18",
+          "flag": "🇲🇾",
+          "presence": 0.6,
+          "ban": 0.6,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 1,
+          "games": 170
+        },
+        {
+          "src": "msl-th",
+          "label": "MSL-TH S2",
+          "flag": "🇹🇭",
+          "presence": 0.7,
+          "ban": 0,
+          "pick": 0.7,
+          "picks": 1,
+          "wins": 1,
+          "bans": 0,
+          "games": 135
+        },
+        {
+          "src": "msc-2026",
+          "label": "MSC 2026",
+          "flag": "🌍",
+          "presence": 0.9,
+          "ban": 0.9,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 1,
+          "games": 113
+        },
+        {
+          "src": "m7",
+          "label": "M7 World",
+          "flag": "🏆",
+          "presence": 38,
+          "ban": 20.4,
+          "pick": 17.5,
+          "picks": 24,
+          "wins": 18,
+          "bans": 28,
+          "games": 137
+        }
+      ],
+      "rank": 3,
+      "patchChange": {
+        "type": "BUFF",
+        "tierShift": "A → SS (🔥 ตัวตึงห้องซ้อมวันนี้)",
+        "badge": "🔥 ตัวตึงห้องซ้อมวันนี้ + ⬆️ บัฟเจาะเวท 10% (Tier SS)",
+        "m8TargetPres": 48.6,
+        "perfDelta": 26,
+        "minTier": "A",
+        "maxTier": "S",
+        "summary": "🔥 เมจ/แครี่/ป่า Flex 3 เลนที่ฮิตที่สุดในห้องซ้อมวันนี้! บัฟใหม่ได้เจาะเวท +10% หรือดูดเลือด +10% ตั้งแต่เลเวล 1 + สกิล 2 แรงขึ้น (3.5%-5% HP) + อัลติมืดพุ่งไวขึ้น 50% ละลายแทงค์ใน 2 วิ"
+      },
+      "playoffPresence": 2.9,
+      "playoffPicks": 6,
+      "playoffBans": 5,
+      "playoffWr": 50,
+      "playoffSurge": null,
+      "scrimHot": true,
+      "scrimPresence": 89.4,
+      "scrimNote": "🔥 เมจ/แครี่/ป่า Flex 3 เลนที่ฮิตที่สุดในห้องซ้อมวันนี้! บัฟใหม่ได้เจาะเวท +10% หรือดูดเลือด +10% ตั้งแต่เลเวล 1 + สกิล 2 แรงขึ้น (3.5%-5% HP) + อัลติมืดพุ่งไวขึ้น 50% ละลายแทงค์ใน 2 วิ"
     },
     {
       "name": "Marcel",
@@ -455,13 +698,127 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 2,
+      "rank": 4,
       "patchChange": null,
       "playoffPresence": 87,
       "playoffPicks": 110,
       "playoffBans": 224,
       "playoffWr": 56.4,
-      "playoffSurge": "🏆 ตัวเก่งเพลย์ออฟล่าสุด (WR 56.4% จาก 110 เกม)"
+      "playoffSurge": "🏆 ตัวเก่งเพลย์ออฟล่าสุด (WR 56.4% จาก 110 เกม)",
+      "scrimHot": true,
+      "scrimPresence": 88,
+      "scrimNote": "โรมมิ่งล็อกโซนพื้นที่หน้าหลุมบอสที่ทีมแข่งยังแบนทิ้งในเฟสแรกเกือบทุกเกม"
+    },
+    {
+      "name": "Kalea",
+      "key": "kalea",
+      "tier": "SS",
+      "action": "BAN",
+      "confidence": "สูง",
+      "presence": 84.2,
+      "ban": 49.2,
+      "pick": 35,
+      "winRate": 53.3,
+      "winRateAdj": 53.1,
+      "currentPicks": 79,
+      "regionsContested": 1,
+      "regionsTotal": 5,
+      "sources": [
+        {
+          "src": "playoffs-11",
+          "label": "Playoffs ล่าสุด (11 ลีก)",
+          "flag": "🔥",
+          "presence": 72.7,
+          "ban": 45.8,
+          "pick": 26.8,
+          "picks": 103,
+          "wins": 56,
+          "bans": 176,
+          "games": 384
+        },
+        {
+          "src": "mpl-ph",
+          "label": "MPL-PH S18",
+          "flag": "🇵🇭",
+          "presence": 29.1,
+          "ban": 12.2,
+          "pick": 16.9,
+          "picks": 29,
+          "wins": 11,
+          "bans": 21,
+          "games": 172
+        },
+        {
+          "src": "mpl-id",
+          "label": "MPL-ID S18",
+          "flag": "🇮🇩",
+          "presence": 28.4,
+          "ban": 18.1,
+          "pick": 10.2,
+          "picks": 22,
+          "wins": 13,
+          "bans": 39,
+          "games": 215
+        },
+        {
+          "src": "mpl-my",
+          "label": "MPL-MY S18",
+          "flag": "🇲🇾",
+          "presence": 32.9,
+          "ban": 17.6,
+          "pick": 15.3,
+          "picks": 26,
+          "wins": 16,
+          "bans": 30,
+          "games": 170
+        },
+        {
+          "src": "msl-th",
+          "label": "MSL-TH S2",
+          "flag": "🇹🇭",
+          "presence": 1.5,
+          "ban": 0.7,
+          "pick": 0.7,
+          "picks": 1,
+          "wins": 1,
+          "bans": 1,
+          "games": 135
+        },
+        {
+          "src": "msc-2026",
+          "label": "MSC 2026",
+          "flag": "🌍",
+          "presence": 2.7,
+          "ban": 1.8,
+          "pick": 0.9,
+          "picks": 1,
+          "wins": 0,
+          "bans": 2,
+          "games": 113
+        },
+        {
+          "src": "m7",
+          "label": "M7 World",
+          "flag": "🏆",
+          "presence": 86.1,
+          "ban": 63.5,
+          "pick": 22.6,
+          "picks": 31,
+          "wins": 18,
+          "bans": 87,
+          "games": 137
+        }
+      ],
+      "rank": 5,
+      "patchChange": null,
+      "playoffPresence": 72.7,
+      "playoffPicks": 103,
+      "playoffBans": 176,
+      "playoffWr": 54.4,
+      "playoffSurge": "🔥 ฮิตในห้องซ้อมวันนี้ (84.2% Scrim Presence • WR 57.6%)",
+      "scrimHot": true,
+      "scrimPresence": 84.2,
+      "scrimNote": "พุ่งแรงต่อเนื่องจาก Playoffs สู่ห้องซ้อม M8 หลังได้บัฟพาสซีฟวิ่งเร็ว 60% และอัลติแรงขึ้นเป็น 14% Max HP"
     },
     {
       "name": "Hirara",
@@ -563,13 +920,16 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 3,
+      "rank": 6,
       "patchChange": null,
       "playoffPresence": 70.3,
       "playoffPicks": 150,
       "playoffBans": 120,
       "playoffWr": 57.3,
-      "playoffSurge": "🏆 ตัวเก่งเพลย์ออฟล่าสุด (WR 57.3% จาก 150 เกม)"
+      "playoffSurge": "🏆 ตัวเก่งเพลย์ออฟล่าสุด (WR 57.3% จาก 150 เกม)",
+      "scrimHot": true,
+      "scrimPresence": 92.5,
+      "scrimNote": "แอสซาซินความเร็วสูงที่ทีมแข่งชิง First Pick เมื่อหลุดแบน ล้วงแนวหลังและหนีด้วยอมตะ"
     },
     {
       "name": "Atlas",
@@ -671,7 +1031,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 4,
+      "rank": 7,
       "patchChange": {
         "type": "NERF",
         "tierShift": "SS → S/SS (ลดความถี่แช่แข็ง)",
@@ -686,7 +1046,250 @@ window.M8_PREDICTION = {
       "playoffPicks": 110,
       "playoffBans": 191,
       "playoffWr": 41.8,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": true,
+      "scrimPresence": 58.5,
+      "scrimNote": "โรมมิ่งรวบไฟต์ใหญ่หน้าหลุม Lord (ลดความถี่พาสซีฟแช่แข็งลงในแพตช์ล่าสุดแต่ยังเก่งระดับ S)"
+    },
+    {
+      "name": "Lukas",
+      "key": "lukas",
+      "tier": "SS",
+      "action": "FLEX",
+      "confidence": "สูง",
+      "presence": 74.5,
+      "ban": 34.5,
+      "pick": 40,
+      "winRate": 56.25,
+      "winRateAdj": 55.3,
+      "currentPicks": 51,
+      "regionsContested": 0,
+      "regionsTotal": 5,
+      "sources": [
+        {
+          "src": "playoffs-11",
+          "label": "Playoffs ล่าสุด (11 ลีก)",
+          "flag": "🔥",
+          "presence": 14.3,
+          "ban": 6.8,
+          "pick": 7.6,
+          "picks": 29,
+          "wins": 16,
+          "bans": 26,
+          "games": 384
+        },
+        {
+          "src": "mpl-ph",
+          "label": "MPL-PH S18",
+          "flag": "🇵🇭",
+          "presence": 12.2,
+          "ban": 5.8,
+          "pick": 6.4,
+          "picks": 11,
+          "wins": 5,
+          "bans": 10,
+          "games": 172
+        },
+        {
+          "src": "mpl-id",
+          "label": "MPL-ID S18",
+          "flag": "🇮🇩",
+          "presence": 21.9,
+          "ban": 13,
+          "pick": 8.8,
+          "picks": 19,
+          "wins": 11,
+          "bans": 28,
+          "games": 215
+        },
+        {
+          "src": "mpl-my",
+          "label": "MPL-MY S18",
+          "flag": "🇲🇾",
+          "presence": 5.9,
+          "ban": 3.5,
+          "pick": 2.4,
+          "picks": 4,
+          "wins": 2,
+          "bans": 6,
+          "games": 170
+        },
+        {
+          "src": "msl-th",
+          "label": "MSL-TH S2",
+          "flag": "🇹🇭",
+          "presence": 15.6,
+          "ban": 3.7,
+          "pick": 11.9,
+          "picks": 16,
+          "wins": 11,
+          "bans": 5,
+          "games": 135
+        },
+        {
+          "src": "msc-2026",
+          "label": "MSC 2026",
+          "flag": "🌍",
+          "presence": 1.8,
+          "ban": 0.9,
+          "pick": 0.9,
+          "picks": 1,
+          "wins": 0,
+          "bans": 1,
+          "games": 113
+        },
+        {
+          "src": "m7",
+          "label": "M7 World",
+          "flag": "🏆",
+          "presence": 0.7,
+          "ban": 0,
+          "pick": 0.7,
+          "picks": 1,
+          "wins": 0,
+          "bans": 0,
+          "games": 137
+        }
+      ],
+      "rank": 8,
+      "patchChange": {
+        "type": "BUFF",
+        "tierShift": "A → S",
+        "badge": "⬆️ บัฟไฟต์เตอร์ถึกขึ้น ฮีล 8% HP (ขึ้น Tier S)",
+        "m8TargetPres": 41.2,
+        "perfDelta": 18,
+        "minTier": "A",
+        "maxTier": "S",
+        "summary": "🔥 ไฟต์เตอร์สัตว์เทพยอดฮิตในห้องซ้อมวันนี้! บัฟใหม่สกิล 1 ดาเมจต้น 400-800 + ฮีล 8% Max HP ยืน EXP/Jungle ถึกและแรงมาก"
+      },
+      "playoffPresence": 14.3,
+      "playoffPicks": 29,
+      "playoffBans": 26,
+      "playoffWr": 55.2,
+      "playoffSurge": null,
+      "scrimHot": true,
+      "scrimPresence": 74.5,
+      "scrimNote": "🔥 ไฟต์เตอร์สัตว์เทพยอดฮิตในห้องซ้อมวันนี้! บัฟใหม่สกิล 1 ดาเมจต้น 400-800 + ฮีล 8% Max HP ยืน EXP/Jungle ถึกและแรงมาก"
+    },
+    {
+      "name": "Popol and Kupa",
+      "key": "popol and kupa",
+      "tier": "SS",
+      "action": "FLEX",
+      "confidence": "ปานกลาง",
+      "presence": 71.2,
+      "ban": 39.2,
+      "pick": 32,
+      "winRate": 0,
+      "winRateAdj": 50,
+      "currentPicks": 0,
+      "regionsContested": 0,
+      "regionsTotal": 5,
+      "sources": [
+        {
+          "src": "playoffs-11",
+          "label": "Playoffs ล่าสุด (11 ลีก)",
+          "flag": "🔥",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 384
+        },
+        {
+          "src": "mpl-ph",
+          "label": "MPL-PH S18",
+          "flag": "🇵🇭",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 172
+        },
+        {
+          "src": "mpl-id",
+          "label": "MPL-ID S18",
+          "flag": "🇮🇩",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 215
+        },
+        {
+          "src": "mpl-my",
+          "label": "MPL-MY S18",
+          "flag": "🇲🇾",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 170
+        },
+        {
+          "src": "msl-th",
+          "label": "MSL-TH S2",
+          "flag": "🇹🇭",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 135
+        },
+        {
+          "src": "msc-2026",
+          "label": "MSC 2026",
+          "flag": "🌍",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 113
+        },
+        {
+          "src": "m7",
+          "label": "M7 World",
+          "flag": "🏆",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 137
+        }
+      ],
+      "rank": 9,
+      "patchChange": {
+        "type": "REVAMP",
+        "tierShift": "C → A",
+        "badge": "♻️ รีแวมป์ใหญ่ (ขี่หมา Kupa • ขึ้น Tier A)",
+        "m8TargetPres": 36.5,
+        "perfDelta": 24,
+        "minTier": "A",
+        "maxTier": "S",
+        "summary": "♻️ รีแวมป์ใหม่ที่นักแข่งซ้อมหนักมากวันนี้! สกิล 2 ขี่หลังหมา Kupa วิ่งแก๊งทั่วแมพ + อัลติทุบงัดลอยหมู่ เล่นได้ทั้ง Gold / Jungle / Roam"
+      },
+      "playoffPresence": 0,
+      "playoffPicks": 0,
+      "playoffBans": 0,
+      "playoffWr": 0,
+      "playoffSurge": null,
+      "scrimHot": true,
+      "scrimPresence": 71.2,
+      "scrimNote": "♻️ รีแวมป์ใหม่ที่นักแข่งซ้อมหนักมากวันนี้! สกิล 2 ขี่หลังหมา Kupa วิ่งแก๊งทั่วแมพ + อัลติทุบงัดลอยหมู่ เล่นได้ทั้ง Gold / Jungle / Roam"
     },
     {
       "name": "Paquito",
@@ -788,13 +1391,16 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 5,
+      "rank": 10,
       "patchChange": null,
       "playoffPresence": 65.4,
       "playoffPicks": 148,
       "playoffBans": 103,
       "playoffWr": 45.9,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": true,
+      "scrimPresence": 80.5,
+      "scrimNote": "ไฟต์เตอร์สลับเลน EXP/Jungle ที่เข้ากับแผนประตูวาร์ปของ Chip ได้ดีที่สุดตัวหนึ่ง"
     },
     {
       "name": "Zhuxin",
@@ -896,13 +1502,16 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 6,
+      "rank": 11,
       "patchChange": null,
       "playoffPresence": 76.3,
       "playoffPicks": 181,
       "playoffBans": 112,
       "playoffWr": 45.9,
-      "playoffSurge": "🔥 พุ่งแรงในเพลย์ออฟล่าสุด (76.3% Presence • พิก 181 แบน 112)"
+      "playoffSurge": "🔥 พุ่งแรงในเพลย์ออฟล่าสุด (76.3% Presence • พิก 181 แบน 112)",
+      "scrimHot": true,
+      "scrimPresence": 86.5,
+      "scrimNote": "เมจยืนเลนกลางอันดับ 1 ในการซ้อมทีมแข่ง คุม Chokepoint หน้าหลุม Lord และจับทุ่มต่อเนื่อง"
     },
     {
       "name": "Nolan",
@@ -1004,13 +1613,16 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 7,
+      "rank": 12,
       "patchChange": null,
       "playoffPresence": 79.4,
       "playoffPicks": 164,
       "playoffBans": 141,
       "playoffWr": 44.5,
-      "playoffSurge": "🔥 พุ่งแรงในเพลย์ออฟล่าสุด (79.4% Presence • พิก 164 แบน 141)"
+      "playoffSurge": "🔥 พุ่งแรงในเพลย์ออฟล่าสุด (79.4% Presence • พิก 164 แบน 141)",
+      "scrimHot": true,
+      "scrimPresence": 82,
+      "scrimNote": "ป่าสปีดฟาร์มและคุมจังหวะ Objective อันดับ 1 ในห้องซ้อม"
     },
     {
       "name": "Masha",
@@ -1112,7 +1724,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 8,
+      "rank": 13,
       "patchChange": {
         "type": "NERF",
         "tierShift": "SS/S → A",
@@ -1127,7 +1739,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 56,
       "playoffBans": 327,
       "playoffWr": 66.1,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 54.7,
+      "scrimNote": null
     },
     {
       "name": "Esmeralda",
@@ -1229,13 +1844,247 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 9,
+      "rank": 14,
       "patchChange": null,
       "playoffPresence": 68.5,
       "playoffPicks": 83,
       "playoffBans": 180,
       "playoffWr": 45.8,
-      "playoffSurge": "🔥 พุ่งแรงในเพลย์ออฟล่าสุด (68.5% Presence • พิก 83 แบน 180)"
+      "playoffSurge": "🔥 พุ่งแรงในเพลย์ออฟล่าสุด (68.5% Presence • พิก 83 แบน 180)",
+      "scrimHot": true,
+      "scrimPresence": 55.8,
+      "scrimNote": "ตัวดูดเกราะขาวแก้ทางทีมที่มีเกราะหนา (แพ้ทาง Lunox โดยตรง)"
+    },
+    {
+      "name": "Xavier",
+      "key": "xavier",
+      "tier": "S",
+      "action": "PICK",
+      "confidence": "ปานกลาง",
+      "presence": 64.5,
+      "ban": 26.5,
+      "pick": 38,
+      "winRate": 16.67,
+      "winRateAdj": 40,
+      "currentPicks": 1,
+      "regionsContested": 0,
+      "regionsTotal": 5,
+      "sources": [
+        {
+          "src": "playoffs-11",
+          "label": "Playoffs ล่าสุด (11 ลีก)",
+          "flag": "🔥",
+          "presence": 1.3,
+          "ban": 0,
+          "pick": 1.3,
+          "picks": 5,
+          "wins": 1,
+          "bans": 0,
+          "games": 384
+        },
+        {
+          "src": "mpl-ph",
+          "label": "MPL-PH S18",
+          "flag": "🇵🇭",
+          "presence": 0.6,
+          "ban": 0,
+          "pick": 0.6,
+          "picks": 1,
+          "wins": 0,
+          "bans": 0,
+          "games": 172
+        },
+        {
+          "src": "mpl-id",
+          "label": "MPL-ID S18",
+          "flag": "🇮🇩",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 215
+        },
+        {
+          "src": "mpl-my",
+          "label": "MPL-MY S18",
+          "flag": "🇲🇾",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 170
+        },
+        {
+          "src": "msl-th",
+          "label": "MSL-TH S2",
+          "flag": "🇹🇭",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 135
+        },
+        {
+          "src": "msc-2026",
+          "label": "MSC 2026",
+          "flag": "🌍",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 113
+        },
+        {
+          "src": "m7",
+          "label": "M7 World",
+          "flag": "🏆",
+          "presence": 0,
+          "ban": 0,
+          "pick": 0,
+          "picks": 0,
+          "wins": 0,
+          "bans": 0,
+          "games": 137
+        }
+      ],
+      "rank": 15,
+      "patchChange": {
+        "type": "BUFF",
+        "tierShift": "C → A",
+        "badge": "⬆️ บัฟใหญ่ S2 แรง 2 เท่า (ขึ้น Tier A)",
+        "m8TargetPres": 34.8,
+        "perfDelta": 22,
+        "minTier": "A",
+        "maxTier": "S",
+        "summary": "🔥 เมจบัฟใหม่ที่โปรหยิบซ้อมบ่อยมาก! สกิล 2 ระเบิดสนามพลังแรงขึ้น 2 เท่า + ลดหน่วงร่าย 50% + สเปล Sprint คูลดาวน์ 75s"
+      },
+      "playoffPresence": 1.3,
+      "playoffPicks": 5,
+      "playoffBans": 0,
+      "playoffWr": 20,
+      "playoffSurge": null,
+      "scrimHot": true,
+      "scrimPresence": 64.5,
+      "scrimNote": "🔥 เมจบัฟใหม่ที่โปรหยิบซ้อมบ่อยมาก! สกิล 2 ระเบิดสนามพลังแรงขึ้น 2 เท่า + ลดหน่วงร่าย 50% + สเปล Sprint คูลดาวน์ 75s"
+    },
+    {
+      "name": "Suyou",
+      "key": "suyou",
+      "tier": "S",
+      "action": "PICK",
+      "confidence": "สูง",
+      "presence": 61.8,
+      "ban": 16.8,
+      "pick": 45,
+      "winRate": 50,
+      "winRateAdj": 50,
+      "currentPicks": 122,
+      "regionsContested": 0,
+      "regionsTotal": 5,
+      "sources": [
+        {
+          "src": "playoffs-11",
+          "label": "Playoffs ล่าสุด (11 ลีก)",
+          "flag": "🔥",
+          "presence": 32.3,
+          "ban": 4.7,
+          "pick": 27.6,
+          "picks": 106,
+          "wins": 60,
+          "bans": 18,
+          "games": 384
+        },
+        {
+          "src": "mpl-ph",
+          "label": "MPL-PH S18",
+          "flag": "🇵🇭",
+          "presence": 20.3,
+          "ban": 2.9,
+          "pick": 17.4,
+          "picks": 30,
+          "wins": 17,
+          "bans": 5,
+          "games": 172
+        },
+        {
+          "src": "mpl-id",
+          "label": "MPL-ID S18",
+          "flag": "🇮🇩",
+          "presence": 13.5,
+          "ban": 1.9,
+          "pick": 11.6,
+          "picks": 25,
+          "wins": 9,
+          "bans": 4,
+          "games": 215
+        },
+        {
+          "src": "mpl-my",
+          "label": "MPL-MY S18",
+          "flag": "🇲🇾",
+          "presence": 27.6,
+          "ban": 2.4,
+          "pick": 25.3,
+          "picks": 43,
+          "wins": 21,
+          "bans": 4,
+          "games": 170
+        },
+        {
+          "src": "msl-th",
+          "label": "MSL-TH S2",
+          "flag": "🇹🇭",
+          "presence": 14.1,
+          "ban": 4.4,
+          "pick": 9.6,
+          "picks": 13,
+          "wins": 5,
+          "bans": 6,
+          "games": 135
+        },
+        {
+          "src": "msc-2026",
+          "label": "MSC 2026",
+          "flag": "🌍",
+          "presence": 9.7,
+          "ban": 0,
+          "pick": 9.7,
+          "picks": 11,
+          "wins": 2,
+          "bans": 0,
+          "games": 113
+        },
+        {
+          "src": "m7",
+          "label": "M7 World",
+          "flag": "🏆",
+          "presence": 3.6,
+          "ban": 0,
+          "pick": 3.6,
+          "picks": 5,
+          "wins": 2,
+          "bans": 0,
+          "games": 137
+        }
+      ],
+      "rank": 16,
+      "patchChange": null,
+      "playoffPresence": 32.3,
+      "playoffPicks": 106,
+      "playoffBans": 18,
+      "playoffWr": 56.6,
+      "playoffSurge": "🔥 ฮิตในห้องซ้อมวันนี้ (61.8% Scrim Presence • WR 56.6%)",
+      "scrimHot": true,
+      "scrimPresence": 61.8,
+      "scrimNote": "ป่า/EXP Flex ที่นักแข่งนิยมหยิบ First/Second Pick ในห้องซ้อมเพราะสลับโหมดล้วงและโหมดลดดาเมจได้รอบด้าน"
     },
     {
       "name": "Carmilla",
@@ -1337,13 +2186,16 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 10,
+      "rank": 17,
       "patchChange": null,
       "playoffPresence": 63.5,
       "playoffPicks": 112,
       "playoffBans": 132,
       "playoffWr": 53.6,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": true,
+      "scrimPresence": 63,
+      "scrimNote": "ตัวเปิดไฟต์เชื่อมเลือด Curse of Blood คู่บุญเมจดาเมจหมู่ (Lunox / Xavier / Zhuxin)"
     },
     {
       "name": "Aulus",
@@ -1445,13 +2297,16 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 11,
+      "rank": 18,
       "patchChange": null,
       "playoffPresence": 70.8,
       "playoffPicks": 129,
       "playoffBans": 143,
       "playoffWr": 51.9,
-      "playoffSurge": "🔥 พุ่งแรงในเพลย์ออฟล่าสุด (70.8% Presence • พิก 129 แบน 143)"
+      "playoffSurge": "🔥 พุ่งแรงในเพลย์ออฟล่าสุด (70.8% Presence • พิก 129 แบน 143)",
+      "scrimHot": true,
+      "scrimPresence": 60.4,
+      "scrimNote": "ป่าไฮเปอร์แครี่เลทเกมที่ใช้ทะลวงแนวหน้าคู่กับโรมมิ่งสายซัพพอร์ต"
     },
     {
       "name": "Melissa",
@@ -1553,7 +2408,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 12,
+      "rank": 19,
       "patchChange": {
         "type": "BUFF",
         "tierShift": "S → SS",
@@ -1568,7 +2423,130 @@ window.M8_PREDICTION = {
       "playoffPicks": 7,
       "playoffBans": 1,
       "playoffWr": 71.4,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": true,
+      "scrimPresence": 76.8,
+      "scrimNote": "แครี่เลนทองตัวท็อปในห้องซ้อมหลังบัฟตุ๊กตาสกิล 2 (60%) + บัฟเงินรถถังเลนทอง +60%"
+    },
+    {
+      "name": "Karrie",
+      "key": "karrie",
+      "tier": "S",
+      "action": "PICK",
+      "confidence": "ปานกลาง",
+      "presence": 54,
+      "ban": 21,
+      "pick": 33,
+      "winRate": 30,
+      "winRateAdj": 35.2,
+      "currentPicks": 31,
+      "regionsContested": 0,
+      "regionsTotal": 5,
+      "sources": [
+        {
+          "src": "playoffs-11",
+          "label": "Playoffs ล่าสุด (11 ลีก)",
+          "flag": "🔥",
+          "presence": 3.6,
+          "ban": 1.3,
+          "pick": 2.3,
+          "picks": 9,
+          "wins": 1,
+          "bans": 5,
+          "games": 384
+        },
+        {
+          "src": "mpl-ph",
+          "label": "MPL-PH S18",
+          "flag": "🇵🇭",
+          "presence": 3.5,
+          "ban": 0,
+          "pick": 3.5,
+          "picks": 6,
+          "wins": 3,
+          "bans": 0,
+          "games": 172
+        },
+        {
+          "src": "mpl-id",
+          "label": "MPL-ID S18",
+          "flag": "🇮🇩",
+          "presence": 0.9,
+          "ban": 0,
+          "pick": 0.9,
+          "picks": 2,
+          "wins": 0,
+          "bans": 0,
+          "games": 215
+        },
+        {
+          "src": "mpl-my",
+          "label": "MPL-MY S18",
+          "flag": "🇲🇾",
+          "presence": 2.4,
+          "ban": 0,
+          "pick": 2.4,
+          "picks": 4,
+          "wins": 1,
+          "bans": 0,
+          "games": 170
+        },
+        {
+          "src": "msl-th",
+          "label": "MSL-TH S2",
+          "flag": "🇹🇭",
+          "presence": 3.7,
+          "ban": 0.7,
+          "pick": 3,
+          "picks": 4,
+          "wins": 2,
+          "bans": 1,
+          "games": 135
+        },
+        {
+          "src": "msc-2026",
+          "label": "MSC 2026",
+          "flag": "🌍",
+          "presence": 23.9,
+          "ban": 10.6,
+          "pick": 13.3,
+          "picks": 15,
+          "wins": 5,
+          "bans": 12,
+          "games": 113
+        },
+        {
+          "src": "m7",
+          "label": "M7 World",
+          "flag": "🏆",
+          "presence": 41.6,
+          "ban": 15.3,
+          "pick": 26.3,
+          "picks": 36,
+          "wins": 13,
+          "bans": 21,
+          "games": 137
+        }
+      ],
+      "rank": 20,
+      "patchChange": {
+        "type": "BUFF",
+        "tierShift": "B → A",
+        "badge": "⬆️ บัฟอัลติวิ่งเร็ว 30% + แรงขึ้น (ขึ้น Tier A)",
+        "m8TargetPres": 29.5,
+        "perfDelta": 17,
+        "minTier": "A",
+        "maxTier": "S",
+        "summary": "🔥 แครี่ละลายแทงค์ที่กลับมาฮิตในห้องซ้อมหลังบัฟอัลติวิ่งเร็ว +30% และเพิ่มดาเมจวงล้อ"
+      },
+      "playoffPresence": 3.6,
+      "playoffPicks": 9,
+      "playoffBans": 5,
+      "playoffWr": 11.1,
+      "playoffSurge": null,
+      "scrimHot": true,
+      "scrimPresence": 54,
+      "scrimNote": "🔥 แครี่ละลายแทงค์ที่กลับมาฮิตในห้องซ้อมหลังบัฟอัลติวิ่งเร็ว +30% และเพิ่มดาเมจวงล้อ"
     },
     {
       "name": "Obsidia",
@@ -1670,7 +2648,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 13,
+      "rank": 21,
       "patchChange": {
         "type": "BUFF",
         "tierShift": "A → S",
@@ -1685,7 +2663,130 @@ window.M8_PREDICTION = {
       "playoffPicks": 114,
       "playoffBans": 84,
       "playoffWr": 41.2,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": true,
+      "scrimPresence": 59.2,
+      "scrimNote": "แครี่สาดกระดูกที่ได้อานิสงส์เต็มจากบัฟเงินรถถังเลนทอง +60%"
+    },
+    {
+      "name": "Kaja",
+      "key": "kaja",
+      "tier": "S",
+      "action": "FLEX",
+      "confidence": "ปานกลาง",
+      "presence": 52.5,
+      "ban": 24.5,
+      "pick": 28,
+      "winRate": 47.37,
+      "winRateAdj": 48.5,
+      "currentPicks": 17,
+      "regionsContested": 0,
+      "regionsTotal": 5,
+      "sources": [
+        {
+          "src": "playoffs-11",
+          "label": "Playoffs ล่าสุด (11 ลีก)",
+          "flag": "🔥",
+          "presence": 0.8,
+          "ban": 0.3,
+          "pick": 0.5,
+          "picks": 2,
+          "wins": 2,
+          "bans": 1,
+          "games": 384
+        },
+        {
+          "src": "mpl-ph",
+          "label": "MPL-PH S18",
+          "flag": "🇵🇭",
+          "presence": 9.9,
+          "ban": 6.4,
+          "pick": 3.5,
+          "picks": 6,
+          "wins": 4,
+          "bans": 11,
+          "games": 172
+        },
+        {
+          "src": "mpl-id",
+          "label": "MPL-ID S18",
+          "flag": "🇮🇩",
+          "presence": 6,
+          "ban": 4.7,
+          "pick": 1.4,
+          "picks": 3,
+          "wins": 1,
+          "bans": 10,
+          "games": 215
+        },
+        {
+          "src": "mpl-my",
+          "label": "MPL-MY S18",
+          "flag": "🇲🇾",
+          "presence": 3.5,
+          "ban": 1.2,
+          "pick": 2.4,
+          "picks": 4,
+          "wins": 0,
+          "bans": 2,
+          "games": 170
+        },
+        {
+          "src": "msl-th",
+          "label": "MSL-TH S2",
+          "flag": "🇹🇭",
+          "presence": 3,
+          "ban": 1.5,
+          "pick": 1.5,
+          "picks": 2,
+          "wins": 1,
+          "bans": 2,
+          "games": 135
+        },
+        {
+          "src": "msc-2026",
+          "label": "MSC 2026",
+          "flag": "🌍",
+          "presence": 3.5,
+          "ban": 1.8,
+          "pick": 1.8,
+          "picks": 2,
+          "wins": 1,
+          "bans": 2,
+          "games": 113
+        },
+        {
+          "src": "m7",
+          "label": "M7 World",
+          "flag": "🏆",
+          "presence": 1.5,
+          "ban": 0.7,
+          "pick": 0.7,
+          "picks": 1,
+          "wins": 0,
+          "bans": 1,
+          "games": 137
+        }
+      ],
+      "rank": 22,
+      "patchChange": {
+        "type": "BUFF",
+        "tierShift": "B → A",
+        "badge": "⬆️ บัฟอัลติขังทะลุอมตะ CC (ขึ้น Tier A)",
+        "m8TargetPres": 27.8,
+        "perfDelta": 17,
+        "minTier": "A",
+        "maxTier": "S",
+        "summary": "🔥 ตัวล็อกเป้าเมต้าห้องซ้อม! อัลติใหม่ขังศัตรูที่มีอมตะ CC ไม่ให้หนีออกจากวงได้ ใช้จับตายตัวพริ้ว"
+      },
+      "playoffPresence": 0.8,
+      "playoffPicks": 2,
+      "playoffBans": 1,
+      "playoffWr": 100,
+      "playoffSurge": null,
+      "scrimHot": true,
+      "scrimPresence": 52.5,
+      "scrimNote": "🔥 ตัวล็อกเป้าเมต้าห้องซ้อม! อัลติใหม่ขังศัตรูที่มีอมตะ CC ไม่ให้หนีออกจากวงได้ ใช้จับตายตัวพริ้ว"
     },
     {
       "name": "Belerick",
@@ -1787,238 +2888,16 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 14,
+      "rank": 23,
       "patchChange": null,
       "playoffPresence": 40.4,
       "playoffPicks": 91,
       "playoffBans": 64,
       "playoffWr": 56,
-      "playoffSurge": "🏆 ตัวเก่งเพลย์ออฟล่าสุด (WR 56% จาก 91 เกม)"
-    },
-    {
-      "name": "Kalea",
-      "key": "kalea",
-      "tier": "S",
-      "action": "BAN",
-      "confidence": "สูง",
-      "presence": 49,
-      "ban": 30.1,
-      "pick": 18.9,
-      "winRate": 53.3,
-      "winRateAdj": 53.1,
-      "currentPicks": 79,
-      "regionsContested": 1,
-      "regionsTotal": 5,
-      "sources": [
-        {
-          "src": "playoffs-11",
-          "label": "Playoffs ล่าสุด (11 ลีก)",
-          "flag": "🔥",
-          "presence": 72.7,
-          "ban": 45.8,
-          "pick": 26.8,
-          "picks": 103,
-          "wins": 56,
-          "bans": 176,
-          "games": 384
-        },
-        {
-          "src": "mpl-ph",
-          "label": "MPL-PH S18",
-          "flag": "🇵🇭",
-          "presence": 29.1,
-          "ban": 12.2,
-          "pick": 16.9,
-          "picks": 29,
-          "wins": 11,
-          "bans": 21,
-          "games": 172
-        },
-        {
-          "src": "mpl-id",
-          "label": "MPL-ID S18",
-          "flag": "🇮🇩",
-          "presence": 28.4,
-          "ban": 18.1,
-          "pick": 10.2,
-          "picks": 22,
-          "wins": 13,
-          "bans": 39,
-          "games": 215
-        },
-        {
-          "src": "mpl-my",
-          "label": "MPL-MY S18",
-          "flag": "🇲🇾",
-          "presence": 32.9,
-          "ban": 17.6,
-          "pick": 15.3,
-          "picks": 26,
-          "wins": 16,
-          "bans": 30,
-          "games": 170
-        },
-        {
-          "src": "msl-th",
-          "label": "MSL-TH S2",
-          "flag": "🇹🇭",
-          "presence": 1.5,
-          "ban": 0.7,
-          "pick": 0.7,
-          "picks": 1,
-          "wins": 1,
-          "bans": 1,
-          "games": 135
-        },
-        {
-          "src": "msc-2026",
-          "label": "MSC 2026",
-          "flag": "🌍",
-          "presence": 2.7,
-          "ban": 1.8,
-          "pick": 0.9,
-          "picks": 1,
-          "wins": 0,
-          "bans": 2,
-          "games": 113
-        },
-        {
-          "src": "m7",
-          "label": "M7 World",
-          "flag": "🏆",
-          "presence": 86.1,
-          "ban": 63.5,
-          "pick": 22.6,
-          "picks": 31,
-          "wins": 18,
-          "bans": 87,
-          "games": 137
-        }
-      ],
-      "rank": 15,
-      "patchChange": null,
-      "playoffPresence": 72.7,
-      "playoffPicks": 103,
-      "playoffBans": 176,
-      "playoffWr": 54.4,
-      "playoffSurge": "🔥 พุ่งแรงในเพลย์ออฟล่าสุด (72.7% Presence • พิก 103 แบน 176)"
-    },
-    {
-      "name": "Lunox",
-      "key": "lunox",
-      "tier": "S",
-      "action": "FLEX",
-      "confidence": "สูง",
-      "presence": 48.6,
-      "ban": 21.4,
-      "pick": 27.2,
-      "winRate": 46.15,
-      "winRateAdj": 48.1,
-      "currentPicks": 7,
-      "regionsContested": 0,
-      "regionsTotal": 5,
-      "sources": [
-        {
-          "src": "playoffs-11",
-          "label": "Playoffs ล่าสุด (11 ลีก)",
-          "flag": "🔥",
-          "presence": 2.9,
-          "ban": 1.3,
-          "pick": 1.6,
-          "picks": 6,
-          "wins": 3,
-          "bans": 5,
-          "games": 384
-        },
-        {
-          "src": "mpl-ph",
-          "label": "MPL-PH S18",
-          "flag": "🇵🇭",
-          "presence": 0.6,
-          "ban": 0,
-          "pick": 0.6,
-          "picks": 1,
-          "wins": 1,
-          "bans": 0,
-          "games": 172
-        },
-        {
-          "src": "mpl-id",
-          "label": "MPL-ID S18",
-          "flag": "🇮🇩",
-          "presence": 3.3,
-          "ban": 0.9,
-          "pick": 2.3,
-          "picks": 5,
-          "wins": 1,
-          "bans": 2,
-          "games": 215
-        },
-        {
-          "src": "mpl-my",
-          "label": "MPL-MY S18",
-          "flag": "🇲🇾",
-          "presence": 0.6,
-          "ban": 0.6,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 1,
-          "games": 170
-        },
-        {
-          "src": "msl-th",
-          "label": "MSL-TH S2",
-          "flag": "🇹🇭",
-          "presence": 0.7,
-          "ban": 0,
-          "pick": 0.7,
-          "picks": 1,
-          "wins": 1,
-          "bans": 0,
-          "games": 135
-        },
-        {
-          "src": "msc-2026",
-          "label": "MSC 2026",
-          "flag": "🌍",
-          "presence": 0.9,
-          "ban": 0.9,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 1,
-          "games": 113
-        },
-        {
-          "src": "m7",
-          "label": "M7 World",
-          "flag": "🏆",
-          "presence": 38,
-          "ban": 20.4,
-          "pick": 17.5,
-          "picks": 24,
-          "wins": 18,
-          "bans": 28,
-          "games": 137
-        }
-      ],
-      "rank": 16,
-      "patchChange": {
-        "type": "BUFF",
-        "tierShift": "A → S (🔥 ฮิตในห้องซ้อม M8)",
-        "badge": "🔥 เมต้าซ้อม M8 + ⬆️ บัฟเจาะเวท 10% (Tier S)",
-        "m8TargetPres": 48.6,
-        "perfDelta": 26,
-        "minTier": "A",
-        "maxTier": "S",
-        "summary": "[ตัวฮิตห้องซ้อมแข่ง M8 + บัฟ Patch 2.2.23] พาสซีฟได้ดูดเลือดเวท 10% หรือเจาะเกราะเวท 10% ทันทีตั้งแต่เลเวล 1, สกิล 2 ต้นเกมแรงขึ้น (3.5%-5% Max HP), อัลติมืดพุ่งไวขึ้น 50% ยืน Flex ได้ทั้ง Mid / Gold / Jungle ละลายเมต้าแทงค์ขาดกระจุย"
-      },
-      "playoffPresence": 2.9,
-      "playoffPicks": 6,
-      "playoffBans": 5,
-      "playoffWr": 50,
-      "playoffSurge": null
+      "playoffSurge": "🏆 ตัวเก่งเพลย์ออฟล่าสุด (WR 56% จาก 91 เกม)",
+      "scrimHot": true,
+      "scrimPresence": 57,
+      "scrimNote": "แทงค์หนามสะท้อนแก้ทางเมต้าแครี่เลนทอง (Melissa / Obsidia / Claude / Karrie)"
     },
     {
       "name": "Uranus",
@@ -2120,7 +2999,7 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 17,
+      "rank": 24,
       "patchChange": {
         "type": "NERF",
         "tierShift": "SS → S",
@@ -2135,7 +3014,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 110,
       "playoffBans": 99,
       "playoffWr": 52.7,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 40.2,
+      "scrimNote": null
     },
     {
       "name": "Barats",
@@ -2237,13 +3119,16 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 18,
+      "rank": 25,
       "patchChange": null,
       "playoffPresence": 36.2,
       "playoffPicks": 72,
       "playoffBans": 67,
       "playoffWr": 62.5,
-      "playoffSurge": "🏆 ตัวเก่งเพลย์ออฟล่าสุด (WR 62.5% จาก 72 เกม)"
+      "playoffSurge": "🏆 ตัวเก่งเพลย์ออฟล่าสุด (WR 62.5% จาก 72 เกม)",
+      "scrimHot": true,
+      "scrimPresence": 45.6,
+      "scrimNote": "แทงค์ไดโนเสาร์ยืนโซน Objective และกลืนตัวล้วง"
     },
     {
       "name": "Alice",
@@ -2345,130 +3230,16 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 19,
+      "rank": 26,
       "patchChange": null,
       "playoffPresence": 52.6,
       "playoffPicks": 118,
       "playoffBans": 84,
       "playoffWr": 43.2,
-      "playoffSurge": "🔥 พุ่งแรงในเพลย์ออฟล่าสุด (52.6% Presence • พิก 118 แบน 84)"
-    },
-    {
-      "name": "Chip",
-      "key": "chip",
-      "tier": "S",
-      "action": "BAN",
-      "confidence": "สูง",
-      "presence": 44.2,
-      "ban": 26.5,
-      "pick": 17.7,
-      "winRate": 25,
-      "winRateAdj": 38.5,
-      "currentPicks": 9,
-      "regionsContested": 0,
-      "regionsTotal": 5,
-      "sources": [
-        {
-          "src": "playoffs-11",
-          "label": "Playoffs ล่าสุด (11 ลีก)",
-          "flag": "🔥",
-          "presence": 0.8,
-          "ban": 0,
-          "pick": 0.8,
-          "picks": 3,
-          "wins": 1,
-          "bans": 0,
-          "games": 384
-        },
-        {
-          "src": "mpl-ph",
-          "label": "MPL-PH S18",
-          "flag": "🇵🇭",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 172
-        },
-        {
-          "src": "mpl-id",
-          "label": "MPL-ID S18",
-          "flag": "🇮🇩",
-          "presence": 13.5,
-          "ban": 10.2,
-          "pick": 3.3,
-          "picks": 7,
-          "wins": 1,
-          "bans": 22,
-          "games": 215
-        },
-        {
-          "src": "mpl-my",
-          "label": "MPL-MY S18",
-          "flag": "🇲🇾",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 170
-        },
-        {
-          "src": "msl-th",
-          "label": "MSL-TH S2",
-          "flag": "🇹🇭",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 135
-        },
-        {
-          "src": "msc-2026",
-          "label": "MSC 2026",
-          "flag": "🌍",
-          "presence": 1.8,
-          "ban": 0,
-          "pick": 1.8,
-          "picks": 2,
-          "wins": 1,
-          "bans": 0,
-          "games": 113
-        },
-        {
-          "src": "m7",
-          "label": "M7 World",
-          "flag": "🏆",
-          "presence": 8,
-          "ban": 3.6,
-          "pick": 4.4,
-          "picks": 6,
-          "wins": 4,
-          "bans": 5,
-          "games": 137
-        }
-      ],
-      "rank": 20,
-      "patchChange": {
-        "type": "BUFF",
-        "tierShift": "B → S (🔥 ฮิตในห้องซ้อม M8)",
-        "badge": "🔥 เมต้าซ้อม M8: วาร์ป 5 คนถล่มเลนทอง (Tier S)",
-        "m8TargetPres": 44.2,
-        "perfDelta": 26,
-        "minTier": "A",
-        "maxTier": "S",
-        "summary": "[โรมมิ่งตัวตึงห้องซ้อมแข่ง M8] หลัง Atlas/Gloo/Masha โดนเนิร์ฟและรถถังเลนทองบัฟเงิน +60% ทีมโปรในห้องซ้อมหันมาใช้ Chip เปิดประตูมิติ Shortcut เรียกเพื่อน 4 คน (โดยเฉพาะคู่หู Lunox / Paquito / Masha) วาร์ปพร้อมเกราะ +500 ลงมารุม 5v1 ชิงป้อมทองและคุม Macro ทั่วแผนที่"
-      },
-      "playoffPresence": 0.8,
-      "playoffPicks": 3,
-      "playoffBans": 0,
-      "playoffWr": 33.3,
-      "playoffSurge": null
+      "playoffSurge": "🔥 พุ่งแรงในเพลย์ออฟล่าสุด (52.6% Presence • พิก 118 แบน 84)",
+      "scrimHot": true,
+      "scrimPresence": 49.8,
+      "scrimNote": "ตัวดูดเลือดยืนค้ำไฟต์ 5v5 ยืดเยื้อ (ต้องระวังฝั่งตรงข้ามหยิบ Lunox มาแก้ทาง)"
     },
     {
       "name": "Valentina",
@@ -2570,13 +3341,16 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 21,
+      "rank": 27,
       "patchChange": null,
       "playoffPresence": 40.9,
       "playoffPicks": 70,
       "playoffBans": 87,
       "playoffWr": 44.3,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 36.6,
+      "scrimNote": null
     },
     {
       "name": "Fanny",
@@ -2678,13 +3452,16 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 22,
+      "rank": 28,
       "patchChange": null,
       "playoffPresence": 26.3,
       "playoffPicks": 10,
       "playoffBans": 91,
       "playoffWr": 50,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 35.1,
+      "scrimNote": null
     },
     {
       "name": "Kimmy",
@@ -2786,13 +3563,16 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 23,
+      "rank": 29,
       "patchChange": null,
       "playoffPresence": 53.1,
       "playoffPicks": 126,
       "playoffBans": 78,
       "playoffWr": 53.2,
-      "playoffSurge": "🔥 พุ่งแรงในเพลย์ออฟล่าสุด (53.1% Presence • พิก 126 แบน 78)"
+      "playoffSurge": "🔥 พุ่งแรงในเพลย์ออฟล่าสุด (53.1% Presence • พิก 126 แบน 78)",
+      "scrimHot": true,
+      "scrimPresence": 51.2,
+      "scrimNote": "ตัวทำดาเมจเวทต่อเนื่อง ยืน Flex ได้ทั้ง Gold Lane และ Mid Lane"
     },
     {
       "name": "Cici",
@@ -2894,13 +3674,16 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 24,
+      "rank": 30,
       "patchChange": null,
       "playoffPresence": 51.3,
       "playoffPicks": 126,
       "playoffBans": 71,
       "playoffWr": 47.6,
-      "playoffSurge": "🔥 พุ่งแรงในเพลย์ออฟล่าสุด (51.3% Presence • พิก 126 แบน 71)"
+      "playoffSurge": "🔥 พุ่งแรงในเพลย์ออฟล่าสุด (51.3% Presence • พิก 126 แบน 71)",
+      "scrimHot": true,
+      "scrimPresence": 48.5,
+      "scrimNote": "ไฟต์เตอร์โยโย่ตีเป็น %HP กดดันเลน EXP และไล่ล่าตัวหน้า"
     },
     {
       "name": "Selena",
@@ -3002,13 +3785,16 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 25,
+      "rank": 31,
       "patchChange": null,
       "playoffPresence": 28.9,
       "playoffPicks": 51,
       "playoffBans": 60,
       "playoffWr": 49,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 33,
+      "scrimNote": null
     },
     {
       "name": "Eudora",
@@ -3110,130 +3896,16 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 26,
+      "rank": 32,
       "patchChange": null,
       "playoffPresence": 26.8,
       "playoffPicks": 53,
       "playoffBans": 50,
       "playoffWr": 54.7,
-      "playoffSurge": null
-    },
-    {
-      "name": "Lukas",
-      "key": "lukas",
-      "tier": "A",
-      "action": "FLEX",
-      "confidence": "สูง",
-      "presence": 36.3,
-      "ban": 18.9,
-      "pick": 17.4,
-      "winRate": 56.25,
-      "winRateAdj": 55.3,
-      "currentPicks": 51,
-      "regionsContested": 0,
-      "regionsTotal": 5,
-      "sources": [
-        {
-          "src": "playoffs-11",
-          "label": "Playoffs ล่าสุด (11 ลีก)",
-          "flag": "🔥",
-          "presence": 14.3,
-          "ban": 6.8,
-          "pick": 7.6,
-          "picks": 29,
-          "wins": 16,
-          "bans": 26,
-          "games": 384
-        },
-        {
-          "src": "mpl-ph",
-          "label": "MPL-PH S18",
-          "flag": "🇵🇭",
-          "presence": 12.2,
-          "ban": 5.8,
-          "pick": 6.4,
-          "picks": 11,
-          "wins": 5,
-          "bans": 10,
-          "games": 172
-        },
-        {
-          "src": "mpl-id",
-          "label": "MPL-ID S18",
-          "flag": "🇮🇩",
-          "presence": 21.9,
-          "ban": 13,
-          "pick": 8.8,
-          "picks": 19,
-          "wins": 11,
-          "bans": 28,
-          "games": 215
-        },
-        {
-          "src": "mpl-my",
-          "label": "MPL-MY S18",
-          "flag": "🇲🇾",
-          "presence": 5.9,
-          "ban": 3.5,
-          "pick": 2.4,
-          "picks": 4,
-          "wins": 2,
-          "bans": 6,
-          "games": 170
-        },
-        {
-          "src": "msl-th",
-          "label": "MSL-TH S2",
-          "flag": "🇹🇭",
-          "presence": 15.6,
-          "ban": 3.7,
-          "pick": 11.9,
-          "picks": 16,
-          "wins": 11,
-          "bans": 5,
-          "games": 135
-        },
-        {
-          "src": "msc-2026",
-          "label": "MSC 2026",
-          "flag": "🌍",
-          "presence": 1.8,
-          "ban": 0.9,
-          "pick": 0.9,
-          "picks": 1,
-          "wins": 0,
-          "bans": 1,
-          "games": 113
-        },
-        {
-          "src": "m7",
-          "label": "M7 World",
-          "flag": "🏆",
-          "presence": 0.7,
-          "ban": 0,
-          "pick": 0.7,
-          "picks": 1,
-          "wins": 0,
-          "bans": 0,
-          "games": 137
-        }
-      ],
-      "rank": 27,
-      "patchChange": {
-        "type": "BUFF",
-        "tierShift": "A → S",
-        "badge": "⬆️ บัฟไฟต์เตอร์ถึกขึ้น ฮีล 8% HP (ขึ้น Tier S)",
-        "m8TargetPres": 41.2,
-        "perfDelta": 18,
-        "minTier": "A",
-        "maxTier": "S",
-        "summary": "เพิ่มเลือดและเกราะพื้นฐาน, สกิล 1 ดาเมจพื้นฐานพุ่งเป็น 400-800 และฮีลเพิ่มเป็น 8% Max HP + แทงค์ยืน EXP โดนเนิร์ฟรูนเคลียร์ครีป -50%"
-      },
-      "playoffPresence": 14.3,
-      "playoffPicks": 29,
-      "playoffBans": 26,
-      "playoffWr": 55.2,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 32.4,
+      "scrimNote": null
     },
     {
       "name": "Lylia",
@@ -3335,13 +4007,16 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 28,
+      "rank": 33,
       "patchChange": null,
       "playoffPresence": 39.8,
       "playoffPicks": 80,
       "playoffBans": 73,
       "playoffWr": 47.5,
-      "playoffSurge": "🔥 พุ่งแรงในเพลย์ออฟล่าสุด (39.8% Presence • พิก 80 แบน 73)"
+      "playoffSurge": "🔥 พุ่งแรงในเพลย์ออฟล่าสุด (39.8% Presence • พิก 80 แบน 73)",
+      "scrimHot": false,
+      "scrimPresence": 29.2,
+      "scrimNote": null
     },
     {
       "name": "Minotaur",
@@ -3443,13 +4118,16 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 29,
+      "rank": 34,
       "patchChange": null,
       "playoffPresence": 32,
       "playoffPicks": 70,
       "playoffBans": 53,
       "playoffWr": 50,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 29,
+      "scrimNote": null
     },
     {
       "name": "Claude",
@@ -3551,247 +4229,16 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 30,
+      "rank": 35,
       "patchChange": null,
       "playoffPresence": 25.8,
       "playoffPicks": 81,
       "playoffBans": 18,
       "playoffWr": 55.6,
-      "playoffSurge": "🏆 ตัวเก่งเพลย์ออฟล่าสุด (WR 55.6% จาก 81 เกม)"
-    },
-    {
-      "name": "Popol and Kupa",
-      "key": "popol and kupa",
-      "tier": "A",
-      "action": "PICK",
-      "confidence": "ปานกลาง",
-      "presence": 32.1,
-      "ban": 11.2,
-      "pick": 20.9,
-      "winRate": 0,
-      "winRateAdj": 50,
-      "currentPicks": 0,
-      "regionsContested": 0,
-      "regionsTotal": 5,
-      "sources": [
-        {
-          "src": "playoffs-11",
-          "label": "Playoffs ล่าสุด (11 ลีก)",
-          "flag": "🔥",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 384
-        },
-        {
-          "src": "mpl-ph",
-          "label": "MPL-PH S18",
-          "flag": "🇵🇭",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 172
-        },
-        {
-          "src": "mpl-id",
-          "label": "MPL-ID S18",
-          "flag": "🇮🇩",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 215
-        },
-        {
-          "src": "mpl-my",
-          "label": "MPL-MY S18",
-          "flag": "🇲🇾",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 170
-        },
-        {
-          "src": "msl-th",
-          "label": "MSL-TH S2",
-          "flag": "🇹🇭",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 135
-        },
-        {
-          "src": "msc-2026",
-          "label": "MSC 2026",
-          "flag": "🌍",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 113
-        },
-        {
-          "src": "m7",
-          "label": "M7 World",
-          "flag": "🏆",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 137
-        }
-      ],
-      "rank": 31,
-      "patchChange": {
-        "type": "REVAMP",
-        "tierShift": "C → A",
-        "badge": "♻️ รีแวมป์ใหญ่ (ขี่หมา Kupa • ขึ้น Tier A)",
-        "m8TargetPres": 36.5,
-        "perfDelta": 24,
-        "minTier": "A",
-        "maxTier": "S",
-        "summary": "รีแวมป์ใหม่ยกชุด! สกิล 2 กดขี่หลัง Kupa วิ่งเร็ว+รีเลือด, พาสซีฟชุบ Kupa ได้และตีป่า True DMG, อัลติทุบงัดลอยหมู่ (+ บัฟทองเลน Gold +60%)"
-      },
-      "playoffPresence": 0,
-      "playoffPicks": 0,
-      "playoffBans": 0,
-      "playoffWr": 0,
-      "playoffSurge": null
-    },
-    {
-      "name": "Xavier",
-      "key": "xavier",
-      "tier": "A",
-      "action": "PICK",
-      "confidence": "ปานกลาง",
-      "presence": 30.6,
-      "ban": 2.8,
-      "pick": 27.8,
-      "winRate": 16.67,
-      "winRateAdj": 40,
-      "currentPicks": 1,
-      "regionsContested": 0,
-      "regionsTotal": 5,
-      "sources": [
-        {
-          "src": "playoffs-11",
-          "label": "Playoffs ล่าสุด (11 ลีก)",
-          "flag": "🔥",
-          "presence": 1.3,
-          "ban": 0,
-          "pick": 1.3,
-          "picks": 5,
-          "wins": 1,
-          "bans": 0,
-          "games": 384
-        },
-        {
-          "src": "mpl-ph",
-          "label": "MPL-PH S18",
-          "flag": "🇵🇭",
-          "presence": 0.6,
-          "ban": 0,
-          "pick": 0.6,
-          "picks": 1,
-          "wins": 0,
-          "bans": 0,
-          "games": 172
-        },
-        {
-          "src": "mpl-id",
-          "label": "MPL-ID S18",
-          "flag": "🇮🇩",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 215
-        },
-        {
-          "src": "mpl-my",
-          "label": "MPL-MY S18",
-          "flag": "🇲🇾",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 170
-        },
-        {
-          "src": "msl-th",
-          "label": "MSL-TH S2",
-          "flag": "🇹🇭",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 135
-        },
-        {
-          "src": "msc-2026",
-          "label": "MSC 2026",
-          "flag": "🌍",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 113
-        },
-        {
-          "src": "m7",
-          "label": "M7 World",
-          "flag": "🏆",
-          "presence": 0,
-          "ban": 0,
-          "pick": 0,
-          "picks": 0,
-          "wins": 0,
-          "bans": 0,
-          "games": 137
-        }
-      ],
-      "rank": 32,
-      "patchChange": {
-        "type": "BUFF",
-        "tierShift": "C → A",
-        "badge": "⬆️ บัฟใหญ่ S2 แรง 2 เท่า (ขึ้น Tier A)",
-        "m8TargetPres": 34.8,
-        "perfDelta": 22,
-        "minTier": "A",
-        "maxTier": "S",
-        "summary": "ลดหน่วงร่ายสกิล 1-2 ลง 50%, ดาเมจระเบิดสกิล 2 เพิ่ม 2 เท่า (440-690 +130% MP), พาสซีฟวิ่งเร็ว 60% (+ สเปล Sprint บัฟคูลดาวน์เหลือ 75s)"
-      },
-      "playoffPresence": 1.3,
-      "playoffPicks": 5,
-      "playoffBans": 0,
-      "playoffWr": 20,
-      "playoffSurge": null
+      "playoffSurge": "🏆 ตัวเก่งเพลย์ออฟล่าสุด (WR 55.6% จาก 81 เกม)",
+      "scrimHot": true,
+      "scrimPresence": 47.2,
+      "scrimNote": "แครี่พริ้วไหวที่วาร์ปตามประตูมิติของ Chip เข้าไปปั่น Blazing Duet กลางวงได้ทันที"
     },
     {
       "name": "Rafaela",
@@ -3893,238 +4340,16 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 33,
+      "rank": 36,
       "patchChange": null,
       "playoffPresence": 24.7,
       "playoffPicks": 43,
       "playoffBans": 52,
       "playoffWr": 53.5,
-      "playoffSurge": null
-    },
-    {
-      "name": "Suyou",
-      "key": "suyou",
-      "tier": "A",
-      "action": "PICK",
-      "confidence": "สูง",
-      "presence": 27.7,
-      "ban": 4,
-      "pick": 23.7,
-      "winRate": 50,
-      "winRateAdj": 50,
-      "currentPicks": 122,
-      "regionsContested": 0,
-      "regionsTotal": 5,
-      "sources": [
-        {
-          "src": "playoffs-11",
-          "label": "Playoffs ล่าสุด (11 ลีก)",
-          "flag": "🔥",
-          "presence": 32.3,
-          "ban": 4.7,
-          "pick": 27.6,
-          "picks": 106,
-          "wins": 60,
-          "bans": 18,
-          "games": 384
-        },
-        {
-          "src": "mpl-ph",
-          "label": "MPL-PH S18",
-          "flag": "🇵🇭",
-          "presence": 20.3,
-          "ban": 2.9,
-          "pick": 17.4,
-          "picks": 30,
-          "wins": 17,
-          "bans": 5,
-          "games": 172
-        },
-        {
-          "src": "mpl-id",
-          "label": "MPL-ID S18",
-          "flag": "🇮🇩",
-          "presence": 13.5,
-          "ban": 1.9,
-          "pick": 11.6,
-          "picks": 25,
-          "wins": 9,
-          "bans": 4,
-          "games": 215
-        },
-        {
-          "src": "mpl-my",
-          "label": "MPL-MY S18",
-          "flag": "🇲🇾",
-          "presence": 27.6,
-          "ban": 2.4,
-          "pick": 25.3,
-          "picks": 43,
-          "wins": 21,
-          "bans": 4,
-          "games": 170
-        },
-        {
-          "src": "msl-th",
-          "label": "MSL-TH S2",
-          "flag": "🇹🇭",
-          "presence": 14.1,
-          "ban": 4.4,
-          "pick": 9.6,
-          "picks": 13,
-          "wins": 5,
-          "bans": 6,
-          "games": 135
-        },
-        {
-          "src": "msc-2026",
-          "label": "MSC 2026",
-          "flag": "🌍",
-          "presence": 9.7,
-          "ban": 0,
-          "pick": 9.7,
-          "picks": 11,
-          "wins": 2,
-          "bans": 0,
-          "games": 113
-        },
-        {
-          "src": "m7",
-          "label": "M7 World",
-          "flag": "🏆",
-          "presence": 3.6,
-          "ban": 0,
-          "pick": 3.6,
-          "picks": 5,
-          "wins": 2,
-          "bans": 0,
-          "games": 137
-        }
-      ],
-      "rank": 34,
-      "patchChange": null,
-      "playoffPresence": 32.3,
-      "playoffPicks": 106,
-      "playoffBans": 18,
-      "playoffWr": 56.6,
-      "playoffSurge": "🔥 พุ่งแรงในเพลย์ออฟล่าสุด (32.3% Presence • พิก 106 แบน 18)"
-    },
-    {
-      "name": "Karrie",
-      "key": "karrie",
-      "tier": "A",
-      "action": "PICK",
-      "confidence": "ปานกลาง",
-      "presence": 26,
-      "ban": 10.2,
-      "pick": 15.8,
-      "winRate": 30,
-      "winRateAdj": 35.2,
-      "currentPicks": 31,
-      "regionsContested": 0,
-      "regionsTotal": 5,
-      "sources": [
-        {
-          "src": "playoffs-11",
-          "label": "Playoffs ล่าสุด (11 ลีก)",
-          "flag": "🔥",
-          "presence": 3.6,
-          "ban": 1.3,
-          "pick": 2.3,
-          "picks": 9,
-          "wins": 1,
-          "bans": 5,
-          "games": 384
-        },
-        {
-          "src": "mpl-ph",
-          "label": "MPL-PH S18",
-          "flag": "🇵🇭",
-          "presence": 3.5,
-          "ban": 0,
-          "pick": 3.5,
-          "picks": 6,
-          "wins": 3,
-          "bans": 0,
-          "games": 172
-        },
-        {
-          "src": "mpl-id",
-          "label": "MPL-ID S18",
-          "flag": "🇮🇩",
-          "presence": 0.9,
-          "ban": 0,
-          "pick": 0.9,
-          "picks": 2,
-          "wins": 0,
-          "bans": 0,
-          "games": 215
-        },
-        {
-          "src": "mpl-my",
-          "label": "MPL-MY S18",
-          "flag": "🇲🇾",
-          "presence": 2.4,
-          "ban": 0,
-          "pick": 2.4,
-          "picks": 4,
-          "wins": 1,
-          "bans": 0,
-          "games": 170
-        },
-        {
-          "src": "msl-th",
-          "label": "MSL-TH S2",
-          "flag": "🇹🇭",
-          "presence": 3.7,
-          "ban": 0.7,
-          "pick": 3,
-          "picks": 4,
-          "wins": 2,
-          "bans": 1,
-          "games": 135
-        },
-        {
-          "src": "msc-2026",
-          "label": "MSC 2026",
-          "flag": "🌍",
-          "presence": 23.9,
-          "ban": 10.6,
-          "pick": 13.3,
-          "picks": 15,
-          "wins": 5,
-          "bans": 12,
-          "games": 113
-        },
-        {
-          "src": "m7",
-          "label": "M7 World",
-          "flag": "🏆",
-          "presence": 41.6,
-          "ban": 15.3,
-          "pick": 26.3,
-          "picks": 36,
-          "wins": 13,
-          "bans": 21,
-          "games": 137
-        }
-      ],
-      "rank": 35,
-      "patchChange": {
-        "type": "BUFF",
-        "tierShift": "B → A",
-        "badge": "⬆️ บัฟอัลติวิ่งเร็ว 30% + แรงขึ้น (ขึ้น Tier A)",
-        "m8TargetPres": 29.5,
-        "perfDelta": 17,
-        "minTier": "A",
-        "maxTier": "S",
-        "summary": "อัลติเพิ่มดาเมจพื้นฐานวงล้อ (40 -> 50) และเพิ่มความเร็วเคลื่อนที่ขณะเปิดอัลติ (20% -> 30%) + รถถังเลนทองรวยไวขึ้น +60%"
-      },
-      "playoffPresence": 3.6,
-      "playoffPicks": 9,
-      "playoffBans": 5,
-      "playoffWr": 11.1,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 24.6,
+      "scrimNote": null
     },
     {
       "name": "Brody",
@@ -4226,130 +4451,16 @@ window.M8_PREDICTION = {
           "games": 137
         }
       ],
-      "rank": 36,
+      "rank": 37,
       "patchChange": null,
       "playoffPresence": 14.6,
       "playoffPicks": 25,
       "playoffBans": 31,
       "playoffWr": 64,
-      "playoffSurge": "🏆 ตัวเก่งเพลย์ออฟล่าสุด (WR 64% จาก 25 เกม)"
-    },
-    {
-      "name": "Kaja",
-      "key": "kaja",
-      "tier": "A",
-      "action": "BAN",
-      "confidence": "ปานกลาง",
-      "presence": 24.5,
-      "ban": 14.8,
-      "pick": 9.7,
-      "winRate": 47.37,
-      "winRateAdj": 48.5,
-      "currentPicks": 17,
-      "regionsContested": 0,
-      "regionsTotal": 5,
-      "sources": [
-        {
-          "src": "playoffs-11",
-          "label": "Playoffs ล่าสุด (11 ลีก)",
-          "flag": "🔥",
-          "presence": 0.8,
-          "ban": 0.3,
-          "pick": 0.5,
-          "picks": 2,
-          "wins": 2,
-          "bans": 1,
-          "games": 384
-        },
-        {
-          "src": "mpl-ph",
-          "label": "MPL-PH S18",
-          "flag": "🇵🇭",
-          "presence": 9.9,
-          "ban": 6.4,
-          "pick": 3.5,
-          "picks": 6,
-          "wins": 4,
-          "bans": 11,
-          "games": 172
-        },
-        {
-          "src": "mpl-id",
-          "label": "MPL-ID S18",
-          "flag": "🇮🇩",
-          "presence": 6,
-          "ban": 4.7,
-          "pick": 1.4,
-          "picks": 3,
-          "wins": 1,
-          "bans": 10,
-          "games": 215
-        },
-        {
-          "src": "mpl-my",
-          "label": "MPL-MY S18",
-          "flag": "🇲🇾",
-          "presence": 3.5,
-          "ban": 1.2,
-          "pick": 2.4,
-          "picks": 4,
-          "wins": 0,
-          "bans": 2,
-          "games": 170
-        },
-        {
-          "src": "msl-th",
-          "label": "MSL-TH S2",
-          "flag": "🇹🇭",
-          "presence": 3,
-          "ban": 1.5,
-          "pick": 1.5,
-          "picks": 2,
-          "wins": 1,
-          "bans": 2,
-          "games": 135
-        },
-        {
-          "src": "msc-2026",
-          "label": "MSC 2026",
-          "flag": "🌍",
-          "presence": 3.5,
-          "ban": 1.8,
-          "pick": 1.8,
-          "picks": 2,
-          "wins": 1,
-          "bans": 2,
-          "games": 113
-        },
-        {
-          "src": "m7",
-          "label": "M7 World",
-          "flag": "🏆",
-          "presence": 1.5,
-          "ban": 0.7,
-          "pick": 0.7,
-          "picks": 1,
-          "wins": 0,
-          "bans": 1,
-          "games": 137
-        }
-      ],
-      "rank": 37,
-      "patchChange": {
-        "type": "BUFF",
-        "tierShift": "B → A",
-        "badge": "⬆️ บัฟอัลติขังทะลุอมตะ CC (ขึ้น Tier A)",
-        "m8TargetPres": 27.8,
-        "perfDelta": 17,
-        "minTier": "A",
-        "maxTier": "S",
-        "summary": "อัลติ Divine Binding ปรับใหม่: ศัตรูที่มีสถานะอมตะ CC (Control Immunity) ไม่สามารถหนีออกจากวงอัลติได้ + บิน Soaring นานและเลี้ยวไวขึ้น"
-      },
-      "playoffPresence": 0.8,
-      "playoffPicks": 2,
-      "playoffBans": 1,
-      "playoffWr": 100,
-      "playoffSurge": null
+      "playoffSurge": "🏆 ตัวเก่งเพลย์ออฟล่าสุด (WR 64% จาก 25 เกม)",
+      "scrimHot": false,
+      "scrimPresence": 21.8,
+      "scrimNote": null
     },
     {
       "name": "Gatotkaca",
@@ -4457,7 +4568,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 65,
       "playoffBans": 28,
       "playoffWr": 29.2,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 20.6,
+      "scrimNote": null
     },
     {
       "name": "Harley",
@@ -4565,7 +4679,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 46,
       "playoffBans": 37,
       "playoffWr": 43.5,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 19.3,
+      "scrimNote": null
     },
     {
       "name": "Chou",
@@ -4673,7 +4790,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 34,
       "playoffBans": 40,
       "playoffWr": 55.9,
-      "playoffSurge": "🏆 ตัวเก่งเพลย์ออฟล่าสุด (WR 55.9% จาก 34 เกม)"
+      "playoffSurge": "🏆 ตัวเก่งเพลย์ออฟล่าสุด (WR 55.9% จาก 34 เกม)",
+      "scrimHot": false,
+      "scrimPresence": 17.8,
+      "scrimNote": null
     },
     {
       "name": "Harith",
@@ -4781,7 +4901,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 43,
       "playoffBans": 19,
       "playoffWr": 62.8,
-      "playoffSurge": "🏆 ตัวเก่งเพลย์ออฟล่าสุด (WR 62.8% จาก 43 เกม)"
+      "playoffSurge": "🏆 ตัวเก่งเพลย์ออฟล่าสุด (WR 62.8% จาก 43 เกม)",
+      "scrimHot": false,
+      "scrimPresence": 17.1,
+      "scrimNote": null
     },
     {
       "name": "Bruno",
@@ -4889,7 +5012,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 56,
       "playoffBans": 15,
       "playoffWr": 62.5,
-      "playoffSurge": "🏆 ตัวเก่งเพลย์ออฟล่าสุด (WR 62.5% จาก 56 เกม)"
+      "playoffSurge": "🏆 ตัวเก่งเพลย์ออฟล่าสุด (WR 62.5% จาก 56 เกม)",
+      "scrimHot": false,
+      "scrimPresence": 16.7,
+      "scrimNote": null
     },
     {
       "name": "Gloo",
@@ -5006,7 +5132,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 66,
       "playoffBans": 56,
       "playoffWr": 45.5,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 16.6,
+      "scrimNote": null
     },
     {
       "name": "Yve",
@@ -5114,7 +5243,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 38,
       "playoffBans": 17,
       "playoffWr": 68.4,
-      "playoffSurge": "🏆 ตัวเก่งเพลย์ออฟล่าสุด (WR 68.4% จาก 38 เกม)"
+      "playoffSurge": "🏆 ตัวเก่งเพลย์ออฟล่าสุด (WR 68.4% จาก 38 เกม)",
+      "scrimHot": false,
+      "scrimPresence": 16.4,
+      "scrimNote": null
     },
     {
       "name": "Moskov",
@@ -5222,7 +5354,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 35,
       "playoffBans": 11,
       "playoffWr": 34.3,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 16.2,
+      "scrimNote": null
     },
     {
       "name": "Zetian",
@@ -5330,7 +5465,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 55,
       "playoffBans": 30,
       "playoffWr": 43.6,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 15.4,
+      "scrimNote": null
     },
     {
       "name": "Arlott",
@@ -5438,7 +5576,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 18,
       "playoffBans": 28,
       "playoffWr": 61.1,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 15.1,
+      "scrimNote": null
     },
     {
       "name": "Mathilda",
@@ -5546,7 +5687,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 15,
       "playoffBans": 13,
       "playoffWr": 26.7,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 14.6,
+      "scrimNote": null
     },
     {
       "name": "Phoveus",
@@ -5654,7 +5798,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 20,
       "playoffBans": 31,
       "playoffWr": 40,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 13.9,
+      "scrimNote": null
     },
     {
       "name": "Valir",
@@ -5762,7 +5909,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 41,
       "playoffBans": 27,
       "playoffWr": 58.5,
-      "playoffSurge": "🏆 ตัวเก่งเพลย์ออฟล่าสุด (WR 58.5% จาก 41 เกม)"
+      "playoffSurge": "🏆 ตัวเก่งเพลย์ออฟล่าสุด (WR 58.5% จาก 41 เกม)",
+      "scrimHot": false,
+      "scrimPresence": 13.7,
+      "scrimNote": null
     },
     {
       "name": "Sora",
@@ -5870,7 +6020,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 44,
       "playoffBans": 22,
       "playoffWr": 36.4,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 13.2,
+      "scrimNote": null
     },
     {
       "name": "Yu Zhong",
@@ -5978,7 +6131,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 28,
       "playoffBans": 20,
       "playoffWr": 60.7,
-      "playoffSurge": "🏆 ตัวเก่งเพลย์ออฟล่าสุด (WR 60.7% จาก 28 เกม)"
+      "playoffSurge": "🏆 ตัวเก่งเพลย์ออฟล่าสุด (WR 60.7% จาก 28 เกม)",
+      "scrimHot": false,
+      "scrimPresence": 12.9,
+      "scrimNote": null
     },
     {
       "name": "Clint",
@@ -6086,7 +6242,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 39,
       "playoffBans": 15,
       "playoffWr": 53.8,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 11.7,
+      "scrimNote": null
     },
     {
       "name": "Hylos",
@@ -6194,7 +6353,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 39,
       "playoffBans": 12,
       "playoffWr": 46.2,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 11.7,
+      "scrimNote": null
     },
     {
       "name": "Aldous",
@@ -6311,7 +6473,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 10.1,
+      "scrimNote": null
     },
     {
       "name": "Pharsa",
@@ -6419,7 +6584,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 16,
       "playoffBans": 6,
       "playoffWr": 75,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 9.8,
+      "scrimNote": null
     },
     {
       "name": "Miya",
@@ -6527,7 +6695,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 20,
       "playoffBans": 3,
       "playoffWr": 40,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 9.4,
+      "scrimNote": null
     },
     {
       "name": "Novaria",
@@ -6635,7 +6806,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 8,
       "playoffBans": 6,
       "playoffWr": 50,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 8.4,
+      "scrimNote": null
     },
     {
       "name": "Dyrroth",
@@ -6743,7 +6917,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 14,
       "playoffBans": 22,
       "playoffWr": 28.6,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 8.4,
+      "scrimNote": null
     },
     {
       "name": "Yi Sun-shin",
@@ -6851,7 +7028,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 18,
       "playoffBans": 6,
       "playoffWr": 16.7,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 8.1,
+      "scrimNote": null
     },
     {
       "name": "Cecilion",
@@ -6959,7 +7139,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 22,
       "playoffBans": 7,
       "playoffWr": 40.9,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 7,
+      "scrimNote": null
     },
     {
       "name": "Badang",
@@ -7067,7 +7250,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 12,
       "playoffBans": 9,
       "playoffWr": 41.7,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 6.5,
+      "scrimNote": null
     },
     {
       "name": "Estes",
@@ -7175,7 +7361,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 11,
       "playoffBans": 27,
       "playoffWr": 90.9,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 5.8,
+      "scrimNote": null
     },
     {
       "name": "Ruby",
@@ -7283,7 +7472,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 3,
       "playoffBans": 2,
       "playoffWr": 33.3,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 5.6,
+      "scrimNote": null
     },
     {
       "name": "Ling",
@@ -7391,7 +7583,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 7,
       "playoffBans": 10,
       "playoffWr": 85.7,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 5.5,
+      "scrimNote": null
     },
     {
       "name": "Hayabusa",
@@ -7499,7 +7694,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 14,
       "playoffBans": 10,
       "playoffWr": 50,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 4.1,
+      "scrimNote": null
     },
     {
       "name": "Saber",
@@ -7607,7 +7805,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 10,
       "playoffBans": 15,
       "playoffWr": 50,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 3.9,
+      "scrimNote": null
     },
     {
       "name": "Angela",
@@ -7715,7 +7916,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 4,
       "playoffBans": 6,
       "playoffWr": 25,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 3.9,
+      "scrimNote": null
     },
     {
       "name": "Guinevere",
@@ -7823,7 +8027,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 4,
       "playoffBans": 4,
       "playoffWr": 75,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 3.8,
+      "scrimNote": null
     },
     {
       "name": "Kagura",
@@ -7940,7 +8147,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 2,
       "playoffBans": 0,
       "playoffWr": 50,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 3.7,
+      "scrimNote": null
     },
     {
       "name": "Baxia",
@@ -8048,7 +8258,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 3,
       "playoffBans": 0,
       "playoffWr": 33.3,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 3.1,
+      "scrimNote": null
     },
     {
       "name": "Hilda",
@@ -8156,7 +8369,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 8,
       "playoffBans": 2,
       "playoffWr": 62.5,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 3.1,
+      "scrimNote": null
     },
     {
       "name": "Lapu-Lapu",
@@ -8264,7 +8480,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 6,
       "playoffBans": 2,
       "playoffWr": 66.7,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 2.9,
+      "scrimNote": null
     },
     {
       "name": "Akai",
@@ -8372,7 +8591,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 2.6,
+      "scrimNote": null
     },
     {
       "name": "Khufra",
@@ -8480,7 +8702,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 8,
       "playoffBans": 8,
       "playoffWr": 50,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 2.6,
+      "scrimNote": null
     },
     {
       "name": "Hanabi",
@@ -8588,7 +8813,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 2,
       "playoffBans": 1,
       "playoffWr": 100,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 2.5,
+      "scrimNote": null
     },
     {
       "name": "Leomord",
@@ -8696,7 +8924,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 8,
       "playoffBans": 2,
       "playoffWr": 62.5,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 2.4,
+      "scrimNote": null
     },
     {
       "name": "Fredrinn",
@@ -8804,7 +9035,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 1,
       "playoffBans": 1,
       "playoffWr": 100,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 2.4,
+      "scrimNote": null
     },
     {
       "name": "Vexana",
@@ -8912,7 +9146,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 2,
       "playoffBans": 2,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 2.3,
+      "scrimNote": null
     },
     {
       "name": "Khaleed",
@@ -9020,7 +9257,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 6,
       "playoffBans": 2,
       "playoffWr": 33.3,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 2.2,
+      "scrimNote": null
     },
     {
       "name": "Lesley",
@@ -9128,7 +9368,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 6,
       "playoffBans": 8,
       "playoffWr": 66.7,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 2.1,
+      "scrimNote": null
     },
     {
       "name": "Gord",
@@ -9236,7 +9479,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 1,
       "playoffBans": 0,
       "playoffWr": 100,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 2,
+      "scrimNote": null
     },
     {
       "name": "Benedetta",
@@ -9344,7 +9590,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 5,
       "playoffBans": 3,
       "playoffWr": 20,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 1.6,
+      "scrimNote": null
     },
     {
       "name": "Faramis",
@@ -9452,7 +9701,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 7,
       "playoffBans": 2,
       "playoffWr": 42.9,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 1.4,
+      "scrimNote": null
     },
     {
       "name": "Alpha",
@@ -9560,7 +9812,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 3,
       "playoffBans": 1,
       "playoffWr": 33.3,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 1.3,
+      "scrimNote": null
     },
     {
       "name": "Granger",
@@ -9668,7 +9923,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 4,
       "playoffBans": 0,
       "playoffWr": 75,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 1.2,
+      "scrimNote": null
     },
     {
       "name": "Thamuz",
@@ -9776,7 +10034,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 6,
       "playoffBans": 2,
       "playoffWr": 50,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 1.2,
+      "scrimNote": null
     },
     {
       "name": "Sun",
@@ -9884,7 +10145,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 4,
       "playoffBans": 4,
       "playoffWr": 50,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 1,
+      "scrimNote": null
     },
     {
       "name": "Grock",
@@ -9992,7 +10256,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 5,
       "playoffBans": 0,
       "playoffWr": 60,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0.9,
+      "scrimNote": null
     },
     {
       "name": "Beatrix",
@@ -10100,7 +10367,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 4,
       "playoffBans": 0,
       "playoffWr": 75,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0.9,
+      "scrimNote": null
     },
     {
       "name": "Hanzo",
@@ -10208,7 +10478,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0.9,
+      "scrimNote": null
     },
     {
       "name": "Terizla",
@@ -10316,7 +10589,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 1,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0.8,
+      "scrimNote": null
     },
     {
       "name": "Luo Yi",
@@ -10424,7 +10700,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 1,
       "playoffBans": 0,
       "playoffWr": 100,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0.7,
+      "scrimNote": null
     },
     {
       "name": "Aurora",
@@ -10532,7 +10811,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 1,
       "playoffBans": 0,
       "playoffWr": 100,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0.6,
+      "scrimNote": null
     },
     {
       "name": "X.Borg",
@@ -10640,7 +10922,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 2,
       "playoffBans": 1,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0.6,
+      "scrimNote": null
     },
     {
       "name": "Ixia",
@@ -10748,7 +11033,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0.4,
+      "scrimNote": null
     },
     {
       "name": "Natalia",
@@ -10856,7 +11144,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 1,
       "playoffBans": 2,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0.3,
+      "scrimNote": null
     },
     {
       "name": "Wanwan",
@@ -10964,7 +11255,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 1,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0.3,
+      "scrimNote": null
     },
     {
       "name": "Lancelot",
@@ -11072,7 +11366,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 1,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0.3,
+      "scrimNote": null
     },
     {
       "name": "Kadita",
@@ -11180,7 +11477,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 2,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0.3,
+      "scrimNote": null
     },
     {
       "name": "Joy",
@@ -11288,7 +11588,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0.3,
+      "scrimNote": null
     },
     {
       "name": "Cyclops",
@@ -11396,7 +11699,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 2,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0.3,
+      "scrimNote": null
     },
     {
       "name": "Balmond",
@@ -11504,7 +11810,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0.2,
+      "scrimNote": null
     },
     {
       "name": "Roger",
@@ -11612,7 +11921,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0.1,
+      "scrimNote": null
     },
     {
       "name": "Edith",
@@ -11720,7 +12032,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0.1,
+      "scrimNote": null
     },
     {
       "name": "Irithel",
@@ -11828,7 +12143,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0.1,
+      "scrimNote": null
     },
     {
       "name": "Lolita",
@@ -11936,7 +12254,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0.1,
+      "scrimNote": null
     },
     {
       "name": "Helcurt",
@@ -12044,7 +12365,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0.1,
+      "scrimNote": null
     },
     {
       "name": "Jawhead",
@@ -12152,7 +12476,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0.1,
+      "scrimNote": null
     },
     {
       "name": "Natan",
@@ -12260,7 +12587,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 1,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0.1,
+      "scrimNote": null
     },
     {
       "name": "Odette",
@@ -12368,7 +12698,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0.1,
+      "scrimNote": null
     },
     {
       "name": "Argus",
@@ -12476,7 +12809,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0.1,
+      "scrimNote": null
     },
     {
       "name": "Diggie",
@@ -12584,7 +12920,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0,
+      "scrimNote": null
     },
     {
       "name": "Floryn",
@@ -12692,7 +13031,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0,
+      "scrimNote": null
     },
     {
       "name": "Julian",
@@ -12800,7 +13142,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0,
+      "scrimNote": null
     },
     {
       "name": "Layla",
@@ -12908,7 +13253,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0,
+      "scrimNote": null
     },
     {
       "name": "Nana",
@@ -13016,7 +13364,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0,
+      "scrimNote": null
     },
     {
       "name": "Franco",
@@ -13124,7 +13475,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0,
+      "scrimNote": null
     },
     {
       "name": "Aamon",
@@ -13232,7 +13586,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0,
+      "scrimNote": null
     },
     {
       "name": "Gusion",
@@ -13340,7 +13697,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0,
+      "scrimNote": null
     },
     {
       "name": "Bane",
@@ -13448,7 +13808,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0,
+      "scrimNote": null
     },
     {
       "name": "Zhask",
@@ -13556,7 +13919,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0,
+      "scrimNote": null
     },
     {
       "name": "Karina",
@@ -13664,7 +14030,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0,
+      "scrimNote": null
     },
     {
       "name": "Silvanna",
@@ -13772,7 +14141,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0,
+      "scrimNote": null
     },
     {
       "name": "Yin",
@@ -13880,7 +14252,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0,
+      "scrimNote": null
     },
     {
       "name": "Alucard",
@@ -13988,7 +14363,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0,
+      "scrimNote": null
     },
     {
       "name": "Vale",
@@ -14096,7 +14474,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0,
+      "scrimNote": null
     },
     {
       "name": "Martis",
@@ -14204,7 +14585,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0,
+      "scrimNote": null
     },
     {
       "name": "Johnson",
@@ -14312,7 +14696,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0,
+      "scrimNote": null
     },
     {
       "name": "Chang'e",
@@ -14420,7 +14807,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0,
+      "scrimNote": null
     },
     {
       "name": "Zilong",
@@ -14528,7 +14918,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0,
+      "scrimNote": null
     },
     {
       "name": "Tigreal",
@@ -14636,7 +15029,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0,
+      "scrimNote": null
     },
     {
       "name": "Minsitthar",
@@ -14744,7 +15140,10 @@ window.M8_PREDICTION = {
       "playoffPicks": 0,
       "playoffBans": 0,
       "playoffWr": 0,
-      "playoffSurge": null
+      "playoffSurge": null,
+      "scrimHot": false,
+      "scrimPresence": 0,
+      "scrimNote": null
     }
   ]
 };
