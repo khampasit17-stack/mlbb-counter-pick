@@ -31,17 +31,126 @@ const MOBADRAFT_TOURNAMENT_SEQUENCE = [
   { step: 20, type: 'enemy', index: 4, side: 'right', phase: 'Pick', label: 'ฝั่งแดง เลือกตัวที่ 5 (Red S5 Last Pick)' }
 ];
 
+function loadSavedMobaTimer(key, fallback) {
+  try {
+    if (typeof localStorage !== 'undefined') {
+      const raw = localStorage.getItem(key);
+      if (raw !== null && !isNaN(Number(raw))) {
+        const val = Math.max(0, Math.min(300, Math.round(Number(raw))));
+        return val;
+      }
+    }
+  } catch (e) {}
+  return fallback;
+}
+
 const mdState = {
   tabMode: 'role',       // 'role' (All/Tank/Marksman/...) | 'lane' (ทุกเลน/EXP/JG/Mid/Gold/Roam)
   roleFilter: 'ALL',
   laneFilter: 'ALL',
   sortByAi: false,       // false = A-Z (exact MobaDraft default), true = sort by AI Counter / Ban score (#1, #2, #3...)
   turnIdx: 0,            // 0..19 in MOBADRAFT_TOURNAMENT_SEQUENCE
-  timerSeconds: 42,
+  banDuration: loadSavedMobaTimer('md_ban_duration', 42),   // 0 = unlimited (∞)
+  pickDuration: loadSavedMobaTimer('md_pick_duration', 45), // 0 = unlimited (∞)
+  timerSeconds: loadSavedMobaTimer('md_ban_duration', 42),
+  timerPopoverOpen: false,
   timerInterval: null,
   isRunning: false,
   showAiDrawer: true
 };
+
+function getMobaPhaseDuration(slotType) {
+  return slotType === 'ban' ? mdState.banDuration : mdState.pickDuration;
+}
+
+function formatMobaSecondsShort(sec) {
+  return sec <= 0 ? '∞' : `${sec}s`;
+}
+
+function formatMobaTimerDisplay(sec, phaseType) {
+  const configured = getMobaPhaseDuration(phaseType);
+  if (configured <= 0) return '∞';
+  return String(Math.max(0, sec));
+}
+
+function syncMobaTimerUi() {
+  const btn = document.getElementById('mdTimerSettingsBtn');
+  if (btn) {
+    btn.innerHTML = `⏱️ แบน ${formatMobaSecondsShort(mdState.banDuration)} • เลือก ${formatMobaSecondsShort(mdState.pickDuration)}`;
+    btn.classList.toggle('active', mdState.timerPopoverOpen);
+  }
+  const banIn = document.getElementById('mdBanTimeInput');
+  const pickIn = document.getElementById('mdPickTimeInput');
+  if (banIn && document.activeElement !== banIn) banIn.value = String(mdState.banDuration);
+  if (pickIn && document.activeElement !== pickIn) pickIn.value = String(mdState.pickDuration);
+
+  document.querySelectorAll('#mdBanPresetPills button').forEach(b => {
+    b.classList.toggle('active', Number(b.getAttribute('data-val')) === mdState.banDuration);
+  });
+  document.querySelectorAll('#mdPickPresetPills button').forEach(b => {
+    b.classList.toggle('active', Number(b.getAttribute('data-val')) === mdState.pickDuration);
+  });
+
+  const activeType = state.activeSlot?.type || 'ban';
+  const timerEl = document.getElementById('mdTimerValue');
+  if (timerEl) {
+    timerEl.textContent = formatMobaTimerDisplay(mdState.timerSeconds, activeType);
+  }
+}
+
+function toggleMobaTimerPopover(forceState) {
+  mdState.timerPopoverOpen = typeof forceState === 'boolean' ? forceState : !mdState.timerPopoverOpen;
+  const pop = document.getElementById('mdTimerPopover');
+  if (pop) {
+    pop.classList.toggle('open', mdState.timerPopoverOpen);
+  }
+  syncMobaTimerUi();
+}
+
+function setMobaTimerSetting(phase, rawVal) {
+  const parsed = Number(rawVal);
+  if (isNaN(parsed)) return;
+  const val = Math.max(0, Math.min(300, Math.round(parsed)));
+  if (phase === 'ban') {
+    mdState.banDuration = val;
+    try { localStorage.setItem('md_ban_duration', String(val)); } catch (e) {}
+  } else {
+    mdState.pickDuration = val;
+    try { localStorage.setItem('md_pick_duration', String(val)); } catch (e) {}
+  }
+
+  const activeType = state.activeSlot?.type || 'ban';
+  if ((phase === 'ban' && activeType === 'ban') || (phase === 'pick' && activeType !== 'ban')) {
+    mdState.timerSeconds = val;
+  }
+  syncMobaTimerUi();
+}
+
+function stepMobaTimerSetting(phase, delta) {
+  const current = phase === 'ban' ? mdState.banDuration : mdState.pickDuration;
+  const next = Math.max(0, Math.min(300, current + delta));
+  setMobaTimerSetting(phase, next);
+}
+
+function applyMobaTimerPreset(banSec, pickSec) {
+  setMobaTimerSetting('ban', banSec);
+  setMobaTimerSetting('pick', pickSec);
+}
+
+// Close timer popover when clicking outside or pressing Escape
+document.addEventListener('click', (e) => {
+  if (!mdState.timerPopoverOpen) return;
+  const pop = document.getElementById('mdTimerPopover');
+  const btn = document.getElementById('mdTimerSettingsBtn');
+  if (pop && !pop.contains(e.target) && btn && !btn.contains(e.target)) {
+    toggleMobaTimerPopover(false);
+  }
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && mdState.timerPopoverOpen) {
+    toggleMobaTimerPopover(false);
+  }
+});
 
 // Find which turn in MOBADRAFT_TOURNAMENT_SEQUENCE matches a slot, or first empty turn
 function findNextEmptyMobaTurn() {
@@ -70,7 +179,7 @@ function focusMobaSlot(type, index) {
   if (seqIdx !== -1) {
     mdState.turnIdx = seqIdx;
   }
-  mdState.timerSeconds = 42;
+  mdState.timerSeconds = getMobaPhaseDuration(type);
   refreshAllViews();
 }
 
@@ -115,17 +224,19 @@ function selectHeroFromMobaPool(heroId) {
 
   // Advance to next empty turn in tournament draft sequence
   mdState.turnIdx = findNextEmptyMobaTurn();
-  mdState.timerSeconds = 42;
   if (mdState.turnIdx < MOBADRAFT_TOURNAMENT_SEQUENCE.length) {
     syncActiveSlotWithMobaTurn();
+    mdState.timerSeconds = getMobaPhaseDuration(state.activeSlot.type);
+  } else {
+    mdState.timerSeconds = 0;
   }
   refreshAllViews();
 }
 
 function advanceMobaDraftTurn() {
   mdState.turnIdx = (mdState.turnIdx + 1) % MOBADRAFT_TOURNAMENT_SEQUENCE.length;
-  mdState.timerSeconds = 42;
   syncActiveSlotWithMobaTurn();
+  mdState.timerSeconds = getMobaPhaseDuration(state.activeSlot.type);
   refreshAllViews();
 }
 
@@ -255,7 +366,7 @@ function startMobaDraftSequence() {
   }
 
   mdState.isRunning = true;
-  mdState.timerSeconds = 42;
+  mdState.timerSeconds = getMobaPhaseDuration(state.activeSlot?.type || 'ban');
   if (startBtn) {
     startBtn.classList.add('running');
     startBtn.innerHTML = '⏸ Pause';
@@ -274,9 +385,15 @@ function startMobaDraftSequence() {
       }
       return;
     }
+    const activeType = state.activeSlot?.type || 'ban';
+    // If current phase is set to unlimited (0), keep displaying ∞ and do not count down
+    if (getMobaPhaseDuration(activeType) <= 0) {
+      const timerEl = document.getElementById('mdTimerValue');
+      if (timerEl) timerEl.textContent = '∞';
+      return;
+    }
     mdState.timerSeconds--;
     if (mdState.timerSeconds <= 0) {
-      mdState.timerSeconds = 42;
       advanceMobaDraftTurn();
     } else {
       const timerEl = document.getElementById('mdTimerValue');
@@ -293,7 +410,6 @@ function resetMobaDraft(keepRunning = false) {
   state.laneOverrides = {};
   state.expandedHeroCards.clear();
   mdState.turnIdx = 0;
-  mdState.timerSeconds = 42;
   if (!keepRunning) {
     mdState.isRunning = false;
     if (mdState.timerInterval) clearInterval(mdState.timerInterval);
@@ -305,6 +421,8 @@ function resetMobaDraft(keepRunning = false) {
     }
   }
   syncActiveSlotWithMobaTurn();
+  mdState.timerSeconds = getMobaPhaseDuration(state.activeSlot?.type || 'ban');
+  syncMobaTimerUi();
   refreshAllViews();
 }
 
@@ -350,7 +468,8 @@ window.renderBanBoard = function renderMobaBanBoard() {
   }
   if (arrowLeftEl) arrowLeftEl.classList.toggle('active', isLeftSide);
   if (arrowRightEl) arrowRightEl.classList.toggle('active', !isLeftSide);
-  if (timerEl) timerEl.textContent = String(mdState.timerSeconds);
+  if (timerEl) timerEl.textContent = formatMobaTimerDisplay(mdState.timerSeconds, activeType);
+  syncMobaTimerUi();
   if (subEl) {
     if (turn && turn.type === activeType && turn.index === activeIdx) {
       subEl.textContent = `เทิร์นที่ ${turn.step}/20 • ${turn.label}`;
@@ -682,6 +801,7 @@ window.loadDemoDraft = function () {
   }
   mdState.turnIdx = findNextEmptyMobaTurn();
   syncActiveSlotWithMobaTurn();
+  mdState.timerSeconds = getMobaPhaseDuration(state.activeSlot?.type || 'ban');
   refreshAllViews();
 };
 

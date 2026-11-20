@@ -159,7 +159,60 @@
           <!-- Scrollable Circular Hero Grid with Artwork Backdrop -->
           <div id="mdHeroPoolGrid" class="md-hero-pool-scroll"></div>
 
-          <!-- Floating Bottom Dock: Start | Tournament | Online (AI Counter) | Reset -->
+          <!-- Floating Timer Settings Popover (Anchored above Floating Dock) -->
+          <div id="mdTimerPopover" class="md-timer-popover" onclick="event.stopPropagation()">
+            <div class="md-timer-pop-head">
+              <span>⏱️ ตั้งเวลาแบน &amp; เลือกตัวละคร (วินาที)</span>
+              <button type="button" class="md-timer-pop-close" onclick="toggleMobaTimerPopover(false)">✕</button>
+            </div>
+
+            <div class="md-timer-pop-row">
+              <div class="md-timer-row-label">
+                <span>🚫 เวลาแบน (Ban)</span>
+                <div class="md-timer-input-wrap">
+                  <button type="button" class="md-step-btn" onclick="stepMobaTimerSetting('ban', -5)">−5</button>
+                  <input type="number" id="mdBanTimeInput" min="0" max="300" value="42" oninput="setMobaTimerSetting('ban', this.value)" />
+                  <button type="button" class="md-step-btn" onclick="stepMobaTimerSetting('ban', 5)">+5</button>
+                  <span class="md-unit-lbl">วิ</span>
+                </div>
+              </div>
+              <div class="md-timer-preset-pills" id="mdBanPresetPills">
+                <button type="button" data-val="20" onclick="setMobaTimerSetting('ban', 20)">20s</button>
+                <button type="button" data-val="30" onclick="setMobaTimerSetting('ban', 30)">30s</button>
+                <button type="button" data-val="42" class="active" onclick="setMobaTimerSetting('ban', 42)">42s</button>
+                <button type="button" data-val="60" onclick="setMobaTimerSetting('ban', 60)">60s</button>
+                <button type="button" data-val="0" onclick="setMobaTimerSetting('ban', 0)">∞ ไม่จำกัด</button>
+              </div>
+            </div>
+
+            <div class="md-timer-pop-row">
+              <div class="md-timer-row-label">
+                <span>⚔️ เวลาเลือกตัว (Pick)</span>
+                <div class="md-timer-input-wrap">
+                  <button type="button" class="md-step-btn" onclick="stepMobaTimerSetting('pick', -5)">−5</button>
+                  <input type="number" id="mdPickTimeInput" min="0" max="300" value="45" oninput="setMobaTimerSetting('pick', this.value)" />
+                  <button type="button" class="md-step-btn" onclick="stepMobaTimerSetting('pick', 5)">+5</button>
+                  <span class="md-unit-lbl">วิ</span>
+                </div>
+              </div>
+              <div class="md-timer-preset-pills" id="mdPickPresetPills">
+                <button type="button" data-val="30" onclick="setMobaTimerSetting('pick', 30)">30s</button>
+                <button type="button" data-val="42" onclick="setMobaTimerSetting('pick', 42)">42s</button>
+                <button type="button" data-val="45" class="active" onclick="setMobaTimerSetting('pick', 45)">45s</button>
+                <button type="button" data-val="60" onclick="setMobaTimerSetting('pick', 60)">60s</button>
+                <button type="button" data-val="0" onclick="setMobaTimerSetting('pick', 0)">∞ ไม่จำกัด</button>
+              </div>
+            </div>
+
+            <div class="md-timer-quick-modes">
+              <button type="button" onclick="applyMobaTimerPreset(30, 45)">🏆 แข่ง MPL (30/45s)</button>
+              <button type="button" onclick="applyMobaTimerPreset(42, 42)">🎮 MobaDraft (42/42s)</button>
+              <button type="button" onclick="applyMobaTimerPreset(20, 30)">⚡ โหมดไว (20/30s)</button>
+              <button type="button" onclick="applyMobaTimerPreset(0, 0)">∞ ไม่จับเวลา</button>
+            </div>
+          </div>
+
+          <!-- Floating Bottom Dock: Start | Tournament | Timer Settings (Ban/Pick) | Reset -->
           <div class="md-floating-dock">
             <div class="md-dock-left">
               <button id="mdStartBtn" class="md-dock-btn md-btn-start" onclick="startMobaDraftSequence()" title="เริ่มจำลองดราฟต์จับเวลาตามลำดับการแข่ง Tournament 20 เทิร์น">
@@ -168,8 +221,8 @@
               <button id="mdTournModeBtn" class="md-dock-btn active" onclick="cycleMobaTournamentMode()" title="สลับโหมดทัวร์นาเมนต์ (MPL-ID / PH / TH / M8 / Scrim)">
                 ⊞ Tournament
               </button>
-              <button id="mdAiDrawerBtn" class="md-dock-btn" onclick="toggleMobaAiPanel()" title="แสดง/ซ่อน แผงวิเคราะห์ตัวแก้ทาง & คอมโบทีมด้านล่าง">
-                👥 AI Counter
+              <button id="mdTimerSettingsBtn" class="md-dock-btn md-btn-timer" onclick="toggleMobaTimerPopover()" title="ตั้งเวลาแบน (Ban) และเวลาเลือกตัวละคร (Pick)">
+                ⏱️ แบน 42s • เลือก 45s
               </button>
             </div>
             <div class="md-dock-right">
