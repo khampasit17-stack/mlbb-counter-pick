@@ -3521,11 +3521,11 @@ function setMetaTabLane(lane) {
 function renderMetaTierList() {
   const tournData = getActiveTournamentData();
   const tiers = [
-    { key: 'SS', desc: `👑 God Meta (${tournData.shortLabel}) / แบนหรือหยิบทันที (70%+ Presence)`, bg: 'linear-gradient(135deg, #ef4444, #f59e0b)' },
-    { key: 'S', desc: `⭐ Top Meta (${tournData.shortLabel}) / ตัวแกนหลักทัวร์ (45-70% Presence)`, bg: 'linear-gradient(135deg, #f59e0b, #eab308)' },
-    { key: 'A', desc: `🛡️ Strong Picks (${tournData.shortLabel}) / ตัวแก้ทางยอดนิยม (15-45% Presence)`, bg: 'linear-gradient(135deg, #8b5cf6, #6366f1)' },
-    { key: 'B', desc: `⚔️ Pocket Picks (${tournData.shortLabel}) / ตัวเลือกเฉพาะทาง (2-15% Presence)`, bg: 'linear-gradient(135deg, #0ea5e9, #2563eb)' },
-    { key: 'C', desc: `🚫 Uncontested (${tournData.shortLabel}) / ไม่ถูกพิกหรือแบนในการแข่ง`, bg: 'linear-gradient(135deg, #64748b, #475569)' }
+    { key: 'SS', desc: `God Meta (70%+)`, bg: 'linear-gradient(135deg, #ef4444, #f59e0b)' },
+    { key: 'S', desc: `Top Meta (45-70%)`, bg: 'linear-gradient(135deg, #f59e0b, #eab308)' },
+    { key: 'A', desc: `Strong (15-45%)`, bg: 'linear-gradient(135deg, #8b5cf6, #6366f1)' },
+    { key: 'B', desc: `Situational (2-15%)`, bg: 'linear-gradient(135deg, #0ea5e9, #2563eb)' },
+    { key: 'C', desc: `Uncontested`, bg: 'linear-gradient(135deg, #64748b, #475569)' }
   ];
 
   const container = document.getElementById('tierListContainer');
@@ -3537,29 +3537,29 @@ function renderMetaTierList() {
     }).sort((a, b) => b.stats.metaScore - a.stats.metaScore);
 
     return `
-      <div class="tier-row">
-        <div class="tier-label-box" style="background:${t.bg};">
+      <div class="tier-row compact-tier-row">
+        <div class="tier-label-box" style="background:${t.bg};" title="${t.key} Tier — ${t.desc} (${heroesInTier.length} ฮีโร่)">
           <div>${t.key}</div>
           <span>${t.desc}</span>
         </div>
-        <div class="tier-heroes-wrap">
-          ${heroesInTier.map(h => `
-            <div class="meta-hero-tile" onclick="openHeroModal(${h.id})" title="${h.name}: Presence ${h.stats.presenceRate || 0}% (${h.stats.picks || 0} Picks / ${h.stats.bans || 0} Bans), WR ${h.stats.winRate}%${h.stats.patchBadge ? ' • ' + h.stats.patchBadge : ''}">
-              <img src="${h.head}" alt="${h.name}" loading="lazy" />
-              <div style="min-width:0; flex:1;">
-                <div style="font-weight:700; font-size:0.88rem; display:flex; justify-content:space-between; align-items:center; gap:4px;">
-                  <span>${h.name}</span>
-                  <span style="font-size:0.7rem; color:#fcd34d; display:inline-flex; align-items:center; gap:2px;"><img src="${LANE_IMAGE[h.lanes[0]] || 'assets/lanes/mid.png'}" class="lane-pill-img" alt="${h.lanes[0]}" /> ${LANE_SHORT_LABEL[h.lanes[0]] || h.lanes[0]}</span>
+        <div class="tier-heroes-wrap compact-tier-grid">
+          ${heroesInTier.map(h => {
+            const presVal = h.stats.presenceRate ? Math.round(h.stats.presenceRate) : 0;
+            const wrVal = h.stats.winRate ? Math.round(h.stats.winRate) : 50;
+            const patchIcon = h.stats.patchBadge ? (h.stats.patchBadge.includes('เนิร์ฟ') ? '⬇️' : '🔥') : '';
+            return `
+              <div class="meta-hero-tile compact-tile" onclick="openHeroModal(${h.id})" title="${h.name} (${LANE_SHORT_LABEL[h.lanes[0]] || h.lanes[0]}) • ${tournData.shortLabel}: Presence ${h.stats.presenceRate || 0}% | WR ${h.stats.winRate}% | BR ${h.stats.banRate}%${h.stats.patchBadge ? '\n' + h.stats.patchBadge : ''}">
+                <div class="compact-tile-avatar">
+                  <img src="${h.head}" alt="${h.name}" loading="lazy" />
+                  <img src="${LANE_IMAGE[h.lanes[0]] || 'assets/lanes/mid.png'}" class="compact-lane-corner" alt="${h.lanes[0]}" />
+                  ${patchIcon ? `<span class="compact-patch-dot">${patchIcon}</span>` : ''}
+                  <span class="compact-pres-tag">${presVal}%</span>
                 </div>
-                ${h.stats.patchBadge ? `<div style="font-size:0.64rem; color:#fde047; background:rgba(245,158,11,0.14); border:1px solid rgba(245,158,11,0.38); border-radius:5px; padding:1px 5px; margin:2px 0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${h.stats.patchBadge}</div>` : ''}
-                <div style="font-size:0.72rem; color:var(--text-muted); display:flex; gap:0.45rem;">
-                  <span style="color:#38bdf8; font-weight:600;">#${tournData.shortLabel} ${h.stats.presenceRate ? h.stats.presenceRate + '%' : '0%'}</span>
-                  <span style="color:#6ee7b7;">WR ${h.stats.winRate}%</span>
-                  <span style="color:#fca5a5;">BR ${h.stats.banRate}%</span>
-                </div>
+                <div class="compact-tile-name">${h.name}</div>
+                <div class="compact-tile-sub">WR ${wrVal}%</div>
               </div>
-            </div>
-          `).join('')}
+            `;
+          }).join('')}
         </div>
       </div>
     `;

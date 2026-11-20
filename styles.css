@@ -3990,8 +3990,124 @@ body {
   border: 1px solid rgba(148, 163, 184, 0.16);
 }
 
-.meta-hero-tile {
-  border-radius: 10px;
-  border: 1px solid rgba(148, 163, 184, 0.16);
+/* Compact Mini Tier List Layout */
+.tier-list-section {
+  gap: 0.55rem;
 }
+
+.tier-row.compact-tier-row {
+  grid-template-columns: 78px 1fr;
+  border-radius: 11px;
+}
+
+.tier-row.compact-tier-row .tier-label-box {
+  padding: 0.5rem 0.35rem;
+  font-size: 1.3rem;
+}
+
+.tier-row.compact-tier-row .tier-label-box span {
+  font-size: 0.6rem;
+  line-height: 1.15;
+  margin-top: 2px;
+}
+
+.tier-heroes-wrap.compact-tier-grid {
+  padding: 0.5rem 0.6rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(68px, 1fr));
+  gap: 0.4rem;
+}
+
+.meta-hero-tile.compact-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2px;
+  padding: 0.32rem 0.25rem;
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.78);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  text-align: center;
+}
+
+.meta-hero-tile.compact-tile:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-2px);
+  background: rgba(30, 41, 59, 0.92);
+}
+
+.compact-tile-avatar {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+}
+
+.compact-tile-avatar > img:first-child {
+  width: 46px;
+  height: 46px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.compact-lane-corner {
+  position: absolute !important;
+  top: -2px;
+  right: -2px;
+  width: 15px !important;
+  height: 15px !important;
+  border-radius: 4px !important;
+  background: rgba(7, 11, 20, 0.92);
+  padding: 1.5px;
+  border: 1px solid rgba(251, 191, 36, 0.55);
+}
+
+.compact-patch-dot {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  font-size: 0.6rem;
+  line-height: 1;
+  background: rgba(7, 11, 20, 0.88);
+  border-radius: 50%;
+  padding: 1px;
+}
+
+.compact-pres-tag {
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(7, 11, 20, 0.92);
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  color: #7dd3fc;
+  font-size: 0.56rem;
+  font-weight: 700;
+  padding: 0 4px;
+  border-radius: 4px;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+.compact-tile-name {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 2px;
+  line-height: 1.15;
+}
+
+.compact-tile-sub {
+  font-size: 0.58rem;
+  color: #6ee7b7;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
 
