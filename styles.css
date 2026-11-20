@@ -3675,3 +3675,323 @@ body {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* ==========================================
+   CLEAN MODERN UI REFINEMENTS (v3.5)
+   ========================================== */
+:root {
+  --border-subtle: rgba(148, 163, 184, 0.14);
+}
+
+/* Header & Navigation Bar Clean Polish */
+.app-header {
+  padding: 0.55rem 1.25rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+  background: rgba(8, 12, 24, 0.95);
+}
+
+.header-inner {
+  gap: 0.65rem;
+}
+
+.nav-tabs {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  padding: 0.22rem;
+  border-radius: 10px;
+}
+
+.nav-tab {
+  font-size: 0.8rem;
+  padding: 0.38rem 0.78rem;
+  border-radius: 7px;
+}
+
+.header-tourn-selector {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  padding: 0.18rem 0.35rem;
+  border-radius: 9px;
+  gap: 0.22rem;
+}
+
+.tourn-nav-btn {
+  padding: 0.28rem 0.55rem;
+  font-size: 0.74rem;
+  border-radius: 6px;
+}
+
+.btn-top-action {
+  padding: 0.35rem 0.7rem;
+  font-size: 0.75rem;
+  border-radius: 7px;
+}
+
+/* Ban Board Clean Polish */
+.ban-board {
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(244, 63, 94, 0.24);
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(10, 15, 29, 0.92));
+  margin-bottom: 0.85rem;
+}
+
+.ban-header {
+  margin-bottom: 0.5rem;
+}
+
+.ban-chip {
+  padding: 0.16rem 0.48rem 0.16rem 0.22rem;
+  border-radius: 999px;
+  border: 1px solid rgba(244, 63, 94, 0.28);
+  background: rgba(15, 23, 42, 0.78);
+  font-size: 0.72rem;
+}
+
+.ban-slot {
+  width: 48px;
+  height: 48px;
+  border-radius: 9px;
+}
+
+/* Unified Center Top Toolbar */
+.center-top-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 0.55rem;
+  padding: 0.35rem;
+  background: rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 11px;
+}
+
+.center-top-toolbar .strategy-mode-bar {
+  margin-bottom: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  flex: 1 1 auto;
+}
+
+.center-top-toolbar .strategy-btn {
+  padding: 0.38rem 0.65rem;
+  font-size: 0.75rem;
+  border-radius: 7px;
+}
+
+.center-quick-btns {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.btn-swap-sides,
+.btn-top-counter-gear {
+  padding: 0.36rem 0.7rem !important;
+  font-size: 0.75rem !important;
+  border-radius: 7px !important;
+  box-shadow: none !important;
+}
+
+/* Team Columns & Pick Slots (S1-S5) Clean Layout */
+.team-column,
+.center-recommend-panel {
+  border-radius: 13px;
+  padding: 0.85rem;
+  border-width: 1px;
+}
+
+.team-col-header {
+  margin-bottom: 0.45rem;
+  padding-bottom: 0.4rem;
+}
+
+.lane-checklist {
+  gap: 0.25rem;
+  margin-bottom: 0.55rem;
+}
+
+.lane-status-pill {
+  font-size: 0.65rem;
+  padding: 0.15rem 0.42rem;
+  border-radius: 6px;
+}
+
+.pick-slots-list {
+  gap: 0.45rem;
+}
+
+.pick-slot {
+  padding: 0.48rem 0.58rem;
+  border-radius: 10px;
+  gap: 0.55rem;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  background: rgba(10, 15, 28, 0.65);
+}
+
+.pick-slot-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 9px;
+}
+
+.pick-slot-name {
+  font-size: 0.84rem;
+}
+
+.slot-meta-build-box {
+  margin-top: 0.24rem;
+  padding: 0.22rem 0.38rem;
+  border-radius: 7px;
+  background: rgba(7, 11, 20, 0.55);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  gap: 0.18rem;
+}
+
+/* Recommendation Cards Clean Hierarchy */
+.rec-header {
+  margin-bottom: 0.65rem;
+  padding-bottom: 0.55rem;
+}
+
+.rec-header-title {
+  font-size: 0.98rem;
+}
+
+.rec-cards-grid {
+  gap: 0.6rem;
+}
+
+.rec-card {
+  padding: 0.72rem 0.85rem;
+  border-radius: 11px;
+  gap: 0.48rem;
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  background: rgba(15, 23, 42, 0.78);
+}
+
+.rec-card.tier-ss-card {
+  border: 1px solid rgba(250, 204, 21, 0.42);
+  background: linear-gradient(145deg, rgba(20, 29, 49, 0.92), rgba(45, 32, 12, 0.25));
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.rec-card.rank-1 {
+  border-color: rgba(245, 158, 11, 0.65);
+}
+
+.rec-avatar-wrap {
+  width: 48px;
+  height: 48px;
+}
+
+.rec-hero-name {
+  font-size: 0.94rem;
+}
+
+.rec-lane-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.72rem;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1px 7px;
+  border-radius: 6px;
+}
+
+.rec-clean-tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 5px;
+}
+
+.rec-clean-tag.tag-combo {
+  background: rgba(168, 85, 247, 0.2);
+  color: #e9d5ff;
+  border: 1px solid rgba(168, 85, 247, 0.35);
+}
+
+.rec-clean-tag.tag-lane {
+  background: rgba(14, 165, 233, 0.16);
+  color: #7dd3fc;
+  border: 1px solid rgba(14, 165, 233, 0.3);
+}
+
+.rec-sub-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.38rem;
+  margin-top: 0.18rem;
+  font-size: 0.73rem;
+}
+
+.score-pill {
+  min-width: 54px;
+  padding: 0.22rem 0.5rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.rec-targets-row {
+  gap: 0.32rem;
+}
+
+.target-vs-chip,
+.synergy-with-chip,
+.risk-vs-chip {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.48rem 0.15rem 0.22rem;
+  border-radius: 999px;
+}
+
+.rec-reason-box.rec-reason-compact {
+  padding: 0.35rem 0.6rem;
+  border-radius: 7px;
+  background: rgba(7, 11, 20, 0.55);
+  border-left: 2px solid var(--accent-gold);
+}
+
+.rec-summary-text {
+  font-size: 0.75rem;
+  color: #e2e8f0;
+}
+
+.btn-toggle-reason-expand {
+  padding: 0.15rem 0.5rem;
+  font-size: 0.68rem;
+  border-radius: 5px;
+}
+
+.rec-actions {
+  margin-top: 0.05rem;
+  gap: 0.35rem;
+}
+
+.btn-pick-ally,
+.btn-inspect-sm,
+.btn-gear-sm {
+  padding: 0.32rem 0.65rem;
+  font-size: 0.75rem;
+  border-radius: 7px;
+}
+
+/* Uniform M8 Prediction Cards & Tier List Tiles */
+.m8-hero-card {
+  padding: 0.65rem 0.75rem;
+  border-radius: 10px;
+  gap: 0.42rem;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+}
+
+.meta-hero-tile {
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+}
+

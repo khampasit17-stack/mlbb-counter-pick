@@ -1668,7 +1668,7 @@ function setTournamentMeta(tournId, suppressRefresh = false) {
   // 2. Demo draft button
   const demoBtn = document.getElementById('demoDraftBtn');
   if (demoBtn) {
-    demoBtn.innerHTML = `${tournData.flag} ดราฟต์แข่ง ${tournData.shortLabel}`;
+    demoBtn.innerHTML = `${tournData.flag} ดราฟต์ตัวอย่าง`;
     demoBtn.title = `โหลดสถานการณ์ดราฟต์จำลองเสมือนจริงของ ${tournData.name} (${tournData.source})`;
   }
 
@@ -1681,7 +1681,8 @@ function setTournamentMeta(tournId, suppressRefresh = false) {
   // 4. Strategy Mode Button
   const stratBtnCounter = document.getElementById('stratBtnCounter');
   if (stratBtnCounter) {
-    stratBtnCounter.innerHTML = `🏆 เมต้าแข่ง ${tournData.name} + แก้ทาง (${tournData.source})`;
+    const shortTag = (tournData.shortLabel || '').split(' ')[0] || 'แข่ง';
+    stratBtnCounter.innerHTML = `🏆 เมต้า ${shortTag} + แก้ทาง`;
   }
 
   // 5. Meta Tab Title and Sub
@@ -2506,7 +2507,7 @@ function setStrategyMode(strat) {
 // Render Banned Heroes Section
 function renderBanBoard() {
   const bannedCount = state.bans.filter(Boolean).length;
-  document.getElementById('banCountBadge').textContent = `แบนไปแล้ว ${bannedCount} / 10 ตัว`;
+  document.getElementById('banCountBadge').textContent = `${bannedCount} / 10`;
 
   const enemyLaneAnalysis = analyzeTeamLanes(state.enemyPicks, 'enemy');
   const enemyFilledLanes = enemyLaneAnalysis.filledLanes;
@@ -2532,24 +2533,21 @@ function renderBanBoard() {
     })
     .slice(0, 7);
 
-  let labelHtml = `<span class="ban-suggest-label">🔥 ตัวน่าแบนที่สุดตอนนี้ (คลิกเพื่อแบน):</span>`;
+  let labelHtml = `<span class="ban-suggest-label">🔥 แนะนำแบน:</span>`;
   if (hasEnemyFilter) {
     const filledText = [...enemyFilledLanes].map(l => LANE_SHORT_LABEL[l] || l).join(', ');
     const missingText = enemyLaneAnalysis.missingLanes.map(l => LANE_SHORT_LABEL[l] || l).join(', ');
-    labelHtml = `<span class="ban-suggest-label" title="ศัตรูเลือกตำแหน่ง ${filledText} แล้ว จึงแนะนำเฉพาะตำแหน่งที่ศัตรูยังขาด">🎯 แนะนำแบนตำแหน่งที่ศัตรูยังขาด (${missingText}) • ข้าม ${filledText} ที่ศัตรูเลือกแล้ว:</span>`;
+    labelHtml = `<span class="ban-suggest-label" title="ศัตรูเลือกตำแหน่ง ${filledText} แล้ว จึงแนะนำเฉพาะตำแหน่งที่ศัตรูยังขาด">🎯 แบนเลนที่ศัตรูขาด (${missingText}):</span>`;
   } else if (enemyFilledLanes.size >= 5) {
-    labelHtml = `<span class="ban-suggest-label">✓ ศัตรูเลือกครบ 5 ตำแหน่งแล้ว:</span>`;
+    labelHtml = `<span class="ban-suggest-label">✓ ศัตรูครบ 5 เลน:</span>`;
   }
 
   const suggestHtml = [
     labelHtml,
     ...topBanCandidates.map(h => `
-      <span class="ban-chip" onclick="quickAssignHero(${h.id}, 'ban')" title="คลิกเพื่อแบน ${h.name} (อัตราแบน ${h.stats.banRate}%)">
+      <span class="ban-chip" onclick="quickAssignHero(${h.id}, 'ban')" title="คลิกเพื่อแบน ${h.name} (${LANE_SHORT_LABEL[h.lanes[0]] || h.lanes[0]} • อัตราแบน ${h.stats.banRate}%)">
         <img src="${h.head}" alt="${h.name}" loading="lazy" />
         <span>${h.name}</span>
-        <span style="font-size:0.65rem; color:#7dd3fc; margin-left:2px; font-weight:600; display:inline-flex; align-items:center; gap:2px;">
-          <img src="${LANE_IMAGE[h.lanes[0]] || 'assets/lanes/mid.png'}" class="lane-pill-img" alt="${h.lanes[0]}" />[${LANE_SHORT_LABEL[h.lanes[0]] || h.lanes[0]}]
-        </span>
         <span class="br-val">${h.stats.banRate}%</span>
       </span>
     `)
@@ -2585,7 +2583,7 @@ function renderBanBoard() {
 // Render Team Columns (Ally & Enemy) — Clean S1..S5 slots + Real Battle Spell Icon & Counter Item Buttons!
 function renderTeamColumns() {
   const allyPickedCount = state.allyPicks.filter(Boolean).length;
-  document.getElementById('allyCountText').textContent = `${allyPickedCount} / 5 ตัว`;
+  document.getElementById('allyCountText').textContent = `${allyPickedCount} / 5`;
 
   const allyLanes = analyzeTeamLanes(state.allyPicks);
   document.getElementById('allyLaneChecklist').innerHTML = ALL_LANES.map(lane => {
@@ -2602,7 +2600,7 @@ function renderTeamColumns() {
         <div class="pick-slot ${isTarget ? 'active-target' : ''}" onclick="openSlotPickerModal('ally', ${idx})">
           <div class="pick-slot-avatar">S${idx + 1}</div>
           <div class="pick-slot-info">
-            <div style="font-size:0.8rem; color:var(--text-muted);">คลิกเลือกฮีโร่ทีมเรา (S${idx + 1})</div>
+            <div style="font-size:0.78rem; color:var(--text-muted);">คลิกเลือกฮีโร่ (S${idx + 1})</div>
           </div>
         </div>
       `;
@@ -2627,17 +2625,6 @@ function renderTeamColumns() {
           </div>
           <div class="pick-slot-meta">
             <span class="slot-active-lane-text" onclick="event.stopPropagation(); openLanePickerModal('ally', ${idx}, ${hero.id})" title="คลิกเพื่อเปลี่ยนตำแหน่ง/เลนที่เล่น (ปัจจุบัน: ${assignedLane})"><img src="${laneImgSrc}" class="lane-real-icon" alt="${assignedLane}" /> ${laneShort} ⇄</span> • <span style="color:#38bdf8;">WR ${hero.stats.winRate}%</span>
-          </div>
-          <div class="slot-action-pills-row" onclick="event.stopPropagation()">
-            <button class="slot-mini-action-btn" onclick="openCounterGearModal('ALL', 'ALL', ${hero.id})" title="ดูไอเทมแก้ทางที่ ${hero.name} ควรออกสู้ศัตรูชุดนี้">
-              🗡️
-            </button>
-            <button class="slot-mini-action-btn spell-btn" onclick="openSpellPickerModal('ally', ${idx}, ${hero.id})" title="คลิกเพื่อเลือกสเปลแก้ทางให้ ${hero.name}">
-              ✨
-            </button>
-            <button class="slot-mini-action-btn lane-btn" onclick="openLanePickerModal('ally', ${idx}, ${hero.id})" title="คลิกเพื่อเปลี่ยนตำแหน่ง/เลนของ ${hero.name} (ปัจจุบัน: ${assignedLane})">
-              <img src="${laneImgSrc}" class="lane-real-icon" alt="${assignedLane}" />
-            </button>
           </div>
           <!-- Meta Emblem & 6 Items Recommendation Container -->
           <div class="slot-meta-build-box" onclick="event.stopPropagation()">
@@ -2674,7 +2661,7 @@ function renderTeamColumns() {
 
   // Enemy Team
   const enemyPickedCount = state.enemyPicks.filter(Boolean).length;
-  document.getElementById('enemyCountText').textContent = `${enemyPickedCount} / 5 ตัว`;
+  document.getElementById('enemyCountText').textContent = `${enemyPickedCount} / 5`;
 
   const enemyLanes = analyzeTeamLanes(state.enemyPicks);
   document.getElementById('enemyLaneChecklist').innerHTML = ALL_LANES.map(lane => {
@@ -2691,7 +2678,7 @@ function renderTeamColumns() {
         <div class="pick-slot ${isTarget ? 'active-target' : ''}" onclick="openSlotPickerModal('enemy', ${idx})">
           <div class="pick-slot-avatar" style="color:#fb7185;">S${idx + 1}</div>
           <div class="pick-slot-info">
-            <div style="font-size:0.8rem; color:var(--text-muted);">คลิกเลือกฮีโร่ศัตรู (S${idx + 1})</div>
+            <div style="font-size:0.78rem; color:var(--text-muted);">คลิกเลือกฮีโร่ (S${idx + 1})</div>
           </div>
         </div>
       `;
@@ -2723,17 +2710,6 @@ function renderTeamColumns() {
           </div>
           <div class="pick-slot-counters-mini">
             <span class="slot-active-lane-text" onclick="event.stopPropagation(); openLanePickerModal('enemy', ${idx}, ${hero.id})" title="คลิกเพื่อเปลี่ยนเลนของ ${hero.name} (ปัจจุบัน: ${assignedLane})"><img src="${laneImgSrc}" class="lane-real-icon" alt="${assignedLane}" /> ${laneShort} ⇄</span> • แพ้: <strong>${topCountersForThisEnemy.join(', ') || '-'}</strong>
-          </div>
-          <div class="slot-action-pills-row" onclick="event.stopPropagation()">
-            <button class="slot-mini-action-btn" onclick="openCounterGearModal(${hero.id})" title="กดดูว่าต้องออก Item อะไรแก้ทาง ${hero.name}">
-              🗡️
-            </button>
-            <button class="slot-mini-action-btn spell-btn" onclick="openSpellPickerModal('enemy', ${idx}, ${hero.id})" title="กดเลือกสเปลเอาไว้แก้ทาง ${hero.name}">
-              ✨
-            </button>
-            <button class="slot-mini-action-btn lane-btn" onclick="openLanePickerModal('enemy', ${idx}, ${hero.id})" title="คลิกเพื่อเปลี่ยนตำแหน่ง/เลนของ ${hero.name} (ปัจจุบัน: ${assignedLane})">
-              <img src="${laneImgSrc}" class="lane-real-icon" alt="${assignedLane}" />
-            </button>
           </div>
           <!-- Meta Emblem & 6 Items Recommendation Container -->
           <div class="slot-meta-build-box" onclick="event.stopPropagation()">
@@ -2801,11 +2777,11 @@ function renderRecommendations() {
     const isCompact = state.descMode === 'compact';
     descBtn.className = `lane-pill desc-mode-btn ${isCompact ? '' : 'is-full'}`;
     descBtn.innerHTML = isCompact
-      ? `⚡ ข้อมูลเพิ่มเติม (กดดู) • คำอธิบายน้อยลง`
-      : `📖 แสดงคำอธิบายเต็มทั้งหมด (คลิกเพื่อย่อ)`;
+      ? `⚡ ย่อคำอธิบาย`
+      : `📖 คำอธิบายเต็ม`;
     descBtn.title = isCompact
       ? `คลิกเพื่อเปลี่ยนเป็นโหมดแสดงคำอธิบายเต็มทั้งหมด`
-      : `คลิกเพื่อเปลี่ยนเป็นโหมดคำอธิบายน้อยลง (กดเพื่อดูข้อมูลเพิ่มเติม)`;
+      : `คลิกเพื่อเปลี่ยนเป็นโหมดย่อคำอธิบาย`;
   }
 
   // Removed golden SS God Tier alert banner as requested
@@ -2823,21 +2799,21 @@ function renderRecommendations() {
       const isTop1 = idx === 0;
 
       const targetChipsHtml = item.counteredTargets.map(t => `
-        <span class="target-vs-chip" title="${t.reason}">
+        <span class="target-vs-chip" title="${t.badge}: ${t.reason}">
           <img src="${t.enemyHead}" alt="${t.enemyName}" />
-          <span>ชนะ <strong>${t.enemyName}</strong> (${t.badge})</span>
+          <span>ชนะ <strong>${t.enemyName}</strong></span>
         </span>
       `).join('');
 
       const synergyChipsHtml = item.synergyAllies.map(s => `
-        <span class="synergy-with-chip">
+        <span class="synergy-with-chip" title="${s.comboTitle || 'เข้าขากันในไฟต์'}">
           <img src="${s.allyHead}" alt="${s.allyName}" />
-          <span>${s.comboTitle ? `⚡ คอมโบคู่ <strong>${s.allyName}</strong> (${s.winRateBonus || 'Meta Combo'})` : `เข้าขากับ <strong>${s.allyName}</strong>`}</span>
+          <span>⚡ คู่ <strong>${s.allyName}</strong></span>
         </span>
       `).join('');
 
       const riskChipsHtml = item.riskThreats.map(r => `
-        <span class="risk-vs-chip">⚠️ ระวังแพ้ทาง ${r.enemyName}</span>
+        <span class="risk-vs-chip">⚠️ ระวัง ${r.enemyName}</span>
       `).join('');
 
       const reasonLines = [];
@@ -2930,7 +2906,7 @@ function renderRecommendations() {
           ${state.descMode === 'compact' ? `
             <div class="rec-reason-collapse-bar">
               <button class="btn-toggle-reason-collapse" onclick="toggleCardDetail(${h.id}, event)" title="ย่อคำอธิบายลงเพื่อประหยัดพื้นที่">
-                ▲ ย่อคำอธิบาย
+                ▲ ย่อ
               </button>
             </div>
           ` : ''}
@@ -2938,11 +2914,10 @@ function renderRecommendations() {
       ` : `
         <div class="rec-reason-box rec-reason-compact" onclick="toggleCardDetail(${h.id}, event)" title="คลิกเพื่อดูคำอธิบายและเหตุผลวิเคราะห์เพิ่มเติม">
           <div class="rec-reason-summary-line">
-            <span class="rec-summary-label">💡 วิเคราะห์:</span>
             <span class="rec-summary-text">${shortSummary}</span>
           </div>
           <button class="btn-toggle-reason-expand" onclick="toggleCardDetail(${h.id}, event)" title="กดดูคำอธิบายและเหตุผลวิเคราะห์เพิ่มเติม">
-            ℹ️ ข้อมูลเพิ่มเติม (กดดู) ▼
+            รายละเอียด ▼
           </button>
         </div>
       `;
@@ -2958,20 +2933,18 @@ function renderRecommendations() {
               <div class="rec-name-row">
                 <span class="rec-hero-name">${h.name}</span>
                 <span class="tier-badge tier-${h.tier}">${h.tier}</span>
-                ${h.tier === 'SS' ? `<span class="ss-god-badge" title="SS God Tier: ฮีโร่ที่เก่งที่สุดในแพตช์ปัจจุบัน (ชิงเลือกทันที)">👑 SS GOD TIER</span>` : (h.tier === 'S' ? `<span class="s-meta-badge" title="S Tier: ติด Top Meta">⭐ S TOP META</span>` : '')}
-                ${item.isProMeta ? `<span class="pro-meta-badge" title="ฮีโร่เมต้าการแข่งขัน ${tournData.name} (${tournData.source})">${tournData.flag} ${tournData.shortLabel}</span>` : ''}
+                <span class="rec-lane-inline">
+                  ${h.lanes.map(l => `<img src="${LANE_IMAGE[l] || 'assets/lanes/mid.png'}" class="lane-pill-img" alt="${l}" /> ${LANE_SHORT_LABEL[l] || l}`).join(' / ')}
+                </span>
+                ${item.matchingCombos?.length > 0 ? `<span class="rec-clean-tag tag-combo">⚡ คอมโบ</span>` : ''}
+                ${item.fillsNeededLane ? `<span class="rec-clean-tag tag-lane">เติมเลนที่ขาด</span>` : ''}
+              </div>
+              <div class="rec-sub-meta">
                 <span class="rec-spell-inline ${recSpell.isCounterSpell ? 'is-counter-spell' : ''}" onclick="openSpellPickerModal('rec', ${idx}, ${h.id})" title="${recSpell.en} (${recSpell.th}) — ${recSpell.reason} (คลิกเพื่อเปลี่ยนสเปล)">
-                  <img src="${recSpell.img}" style="width:20px;height:20px;border-radius:50%;vertical-align:middle;" alt="${recSpell.en}" />
+                  <img src="${recSpell.img}" style="width:18px;height:18px;border-radius:50%;vertical-align:middle;" alt="${recSpell.en}" />
                 </span>
                 <span style="display:inline-flex;align-items:center;gap:2px;cursor:pointer;" onclick="openCounterGearModal('ALL', 'ALL', ${h.id})" title="${coreBuild.title} (คลิกดูเซ็ตไอเทมเมต้าและของแก้ทาง)">
                   ${miniCoreItemsHtml}
-                </span>
-                ${item.matchingCombos?.length > 0 ? `<span style="font-size:0.65rem; background:rgba(168,85,247,0.28); color:#e9d5ff; padding:1px 6px; border-radius:4px;">⚡ คู่หู Meta Combo</span>` : ''}
-                ${item.fillsNeededLane ? `<span style="font-size:0.65rem; background:rgba(14,165,233,0.2); color:#7dd3fc; padding:1px 6px; border-radius:4px;">เติมเลนที่ขาด</span>` : ''}
-              </div>
-              <div class="rec-sub-meta">
-                <span style="display:inline-flex;align-items:center;gap:4px;">
-                  ${h.lanes.map(l => `<img src="${LANE_IMAGE[l] || 'assets/lanes/mid.png'}" class="lane-pill-img" alt="${l}" /> ${LANE_SHORT_LABEL[l] || l}`).join(' / ')}
                 </span>
                 <span>•</span>
                 <span style="color:#6ee7b7;">WR ${h.stats.winRate}%</span>
@@ -2980,7 +2953,7 @@ function renderRecommendations() {
               </div>
             </div>
             <div class="score-pill" title="คะแนนรวม: ${item.totalScore} (แก้ทาง ${item.counterScore} + คอมโบ ${item.synergyScore} + โบนัสเมต้า SS ${item.tierBonus + (item.ssExtraBonus || 0)} + โบนัสตัวแข่ง ${item.isProMeta ? 28 : (state.strategyMode === 'all' ? 0 : -65)})">
-              <div style="font-size:0.62rem; opacity:0.85;">คะแนนรวม</div>
+              <div style="font-size:0.58rem; opacity:0.8;">คะแนน</div>
               <div>${item.totalScore}</div>
             </div>
           </div>
@@ -3006,7 +2979,7 @@ function renderRecommendations() {
               ✨
             </button>
             <button class="btn-inspect-sm" onclick="openHeroModal(${h.id})" title="เปิดดูข้อมูลและสกิลของ ${h.name}">
-              📋 สกิล/ข้อมูล
+              📋 ข้อมูล
             </button>
           </div>
         </div>
@@ -3078,7 +3051,7 @@ function renderGearAdvisor(pickedEnemies) {
 
   if (!pickedEnemies || pickedEnemies.length === 0) {
     if (topCtaBtn) {
-      topCtaBtn.innerHTML = `🛡️ กดดูคลังไอเทม &amp; สเปลแก้ทางทั้งหมด (${COUNTER_ITEMS_DB.length} ชิ้น)`;
+      topCtaBtn.innerHTML = `🛡️ ไอเทมแก้ทาง`;
     }
     contentEl.innerHTML = `
       <span style="font-size:0.78rem; color:var(--text-muted);">
@@ -3090,7 +3063,7 @@ function renderGearAdvisor(pickedEnemies) {
 
   const { items, spells } = aggregateEnemyCounterGear(pickedEnemies);
   if (topCtaBtn) {
-    topCtaBtn.innerHTML = `🛡️ กดดูไอเทมแก้ทาง (${items.length} ชิ้น) &amp; สเปลแก้ทาง (${spells.length} สเปล) สำหรับศัตรูชุดนี้`;
+    topCtaBtn.innerHTML = `🛡️ ไอเทมแก้ทาง (${items.length})`;
   }
 
   const spellChips = spells.slice(0, 4).map(sp => `
@@ -3764,6 +3737,7 @@ function renderM8PredictionTab() {
             const act = actionMeta[item.action] || actionMeta.FLEX;
             const srcBadges = item.sources
               .filter(s => s.presence > 0)
+              .slice(0, 4)
               .map(s => `<span class="m8-src-mini" title="${s.label}: Presence ${s.presence}% (Pick ${s.picks} / Ban ${s.bans})">${s.flag} ${s.presence}%</span>`)
               .join('');
 
@@ -3776,7 +3750,7 @@ function renderM8PredictionTab() {
                   : '');
 
             return `
-              <div class="m8-hero-card ${item.tier === 'SS' ? 'is-m8-ss' : ''}" onclick="openHeroModal(${h.id})">
+              <div class="m8-hero-card ${item.tier === 'SS' ? 'is-m8-ss' : ''}" onclick="openHeroModal(${h.id})" title="${pChange ? pChange.summary : 'คลิกเพื่อดูรายละเอียดและตัวแก้ทาง'}">
                 <div class="m8-card-top">
                   <div class="m8-avatar-box">
                     <img src="${h.head}" alt="${h.name}" loading="lazy" />
@@ -3790,7 +3764,7 @@ function renderM8PredictionTab() {
                     <div class="m8-action-row">
                       <span class="m8-action-pill ${act.cls}">${act.label}</span>
                       ${patchBadgeHtml}
-                      <span class="m8-conf-pill" title="ความสอดคล้องของข้อมูลข้ามลีก">ความแม่นยำ: ${item.confidence}</span>
+                      <span class="m8-conf-pill" title="ความสอดคล้องของข้อมูลข้ามลีก">${item.confidence}</span>
                     </div>
                   </div>
                   <div class="m8-pres-circle" title="โอกาสปรากฏตัวในดราฟต์ M8 (Pick + Ban Probability)">
@@ -3802,8 +3776,8 @@ function renderM8PredictionTab() {
                 <!-- Probability Progress Split Bar (Ban % vs Pick %) -->
                 <div class="m8-prob-bars">
                   <div class="m8-prob-labels">
-                    <span style="color:#fda4af;">🚫 คาดโดนแบน: <strong>${item.ban}%</strong></span>
-                    <span style="color:#6ee7b7;">✅ คาดถูกหยิบ: <strong>${item.pick}%</strong></span>
+                    <span style="color:#fda4af;">🚫 แบน: <strong>${item.ban}%</strong></span>
+                    <span style="color:#6ee7b7;">✅ เลือก: <strong>${item.pick}%</strong></span>
                     <span style="color:#fde047;">WR: <strong>${item.winRate || item.winRateAdj}%</strong></span>
                   </div>
                   <div class="m8-bar-track">
@@ -3812,10 +3786,8 @@ function renderM8PredictionTab() {
                   </div>
                 </div>
 
-                ${pChange ? `<div style="font-size:0.68rem; color:#fde68a; background:rgba(245,158,11,0.1); padding:3px 6px; border-radius:6px; border-left:2px solid #f59e0b;">${pChange.summary}</div>` : ''}
-
                 <!-- Cross-Tournament Comparison Pills -->
-                ${srcBadges ? `<div class="m8-src-row">${srcBadges}</div>` : `<div class="m8-src-row"><span class="m8-src-mini" style="opacity:0.55;">ยังไม่ถูกหยิบ/แบนในทัวร์หลัก</span></div>`}
+                ${srcBadges ? `<div class="m8-src-row">${srcBadges}</div>` : `<div class="m8-src-row"><span class="m8-src-mini" style="opacity:0.55;">เมต้าคาดการณ์แพตช์ล่าสุด</span></div>`}
               </div>
             `;
           }).join('')}

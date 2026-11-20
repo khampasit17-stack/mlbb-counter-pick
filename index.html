@@ -26,19 +26,19 @@
     <!-- Navigation Tabs -->
     <nav class="nav-tabs" role="tablist">
       <button class="nav-tab active" data-tab="draft" onclick="switchTab('draft')">
-        ⚔️ ดราฟต์แก้ทาง + คอมโบสด
+        ⚔️ ดราฟต์แก้ทาง
       </button>
       <button class="nav-tab" data-tab="combos" onclick="switchTab('combos')">
-        ⚡ คลัง Meta Combo (Duo / Trio / 5-Man)
+        ⚡ คลังคอมโบ
       </button>
       <button class="nav-tab" data-tab="meta" onclick="switchTab('meta')">
-        🔥 ตาราง Meta ปัจจุบัน
+        🔥 Tier List
       </button>
       <button class="nav-tab nav-tab-m8" data-tab="m8" onclick="switchTab('m8')">
         🔮 คาดการณ์ M8
       </button>
       <button class="nav-tab" data-tab="lookup" onclick="switchTab('lookup')">
-        🔍 เช็คตัวแก้ทางรายตัว
+        🔍 ข้อมูลฮีโร่
       </button>
     </nav>
 
@@ -47,29 +47,29 @@
       <div class="header-tourn-selector" title="เลือกฐานข้อมูลสถิติเมต้าการแข่งขันจาก Liquipedia">
         <span class="header-tourn-label">🏆 เมต้า:</span>
         <button class="tourn-nav-btn active" data-htourn="mpl-id" onclick="setTournamentMeta('mpl-id')" title="สลับเป็นเมต้าแข่ง MPL Indonesia Season 18 (215 นัด)">
-          🇮🇩 MPL-ID S18
+          🇮🇩 ID
         </button>
         <button class="tourn-nav-btn" data-htourn="mpl-ph" onclick="setTournamentMeta('mpl-ph')" title="สลับเป็นเมต้าแข่ง MPL Philippines Season 18 (172 นัด)">
-          🇵🇭 MPL-PH S18
+          🇵🇭 PH
         </button>
         <button class="tourn-nav-btn" data-htourn="msl-th" onclick="setTournamentMeta('msl-th')" title="สลับเป็นเมต้าแข่ง MLBB Super League Thailand Season 2 (135 นัด)">
-          🇹🇭 MSL-TH S2
+          🇹🇭 TH
         </button>
         <button class="tourn-nav-btn" data-htourn="combined" onclick="setTournamentMeta('combined')" title="สลับเป็นเมต้ารวมโปรทัวร์นาเมนต์ MPL-ID + PH + TH (522 นัด)">
-          🌐 รวม 3 ลีก
+          🌐 รวม
         </button>
         <button class="tourn-nav-btn" data-htourn="m8-pred" onclick="setTournamentMeta('m8-pred')" title="สลับเป็นเมต้าคาดการณ์ M8 World Championship (วิเคราะห์จาก 6 ทัวร์นาเมนต์ + Playoffs ล่าสุด)">
-          🔮 คาดการณ์ M8
+          🔮 M8
         </button>
         <button class="tourn-nav-btn" data-htourn="m8-scrim" onclick="setTournamentMeta('m8-scrim')" title="สลับเป็นเมต้าห้องซ้อมทีมแข่ง M8 วันนี้ (19/11/2026 • Chip + Lunox, Popol Revamp, Lukas, Xavier, Melissa)">
-          🔥 ซ้อมแข่งวันนี้
+          🔥 ซ้อม
         </button>
       </div>
       <button id="autoBanBtn" class="btn btn-ban-auto" onclick="autoBanTopMeta()" title="แบนฮีโร่ตามสถิติตัวต้องห้ามอันดับ 1-10 ของทัวร์นาเมนต์ที่เลือกจาก Liquipedia อัตโนมัติ">
-        🚫 ออโต้แบนเมต้า (10 ตัว)
+        🚫 ออโต้แบน
       </button>
       <button id="demoDraftBtn" class="btn btn-demo" onclick="loadDemoDraft()" title="โหลดสถานการณ์ดราฟต์จำลองเสมือนจริงของทัวร์นาเมนต์ที่เลือก (Liquipedia)">
-        🇮🇩 ดราฟต์แข่ง MPL-ID S18
+        🇮🇩 ดราฟต์ตัวอย่าง
       </button>
       <button class="btn btn-reset" onclick="resetDraft()" title="ล้างข้อมูลแบนและฮีโร่ที่เลือกทั้งหมด">
         🔄 รีเซ็ต
@@ -84,9 +84,8 @@
       <div class="ban-board">
         <div class="ban-header">
           <div class="ban-title-group">
-            <span style="font-weight:700; font-size:0.95rem; color:#e9d5ff;">🚫 ฮีโร่ที่ถูกแบน (Banned Heroes)</span>
-            <span id="banCountBadge" class="ban-count-badge">แบนไปแล้ว 0 / 10 ตัว</span>
-            <span style="font-size:0.76rem; color:var(--text-muted);">*คลิกที่ช่องแบนเพื่อเปิด Popup เลือกฮีโร่ที่จะแบน</span>
+            <span style="font-weight:700; font-size:0.92rem; color:#e9d5ff;">🚫 ฮีโร่ที่ถูกแบน</span>
+            <span id="banCountBadge" class="ban-count-badge">0 / 10</span>
           </div>
           <div id="banSuggestionsBar" class="ban-suggestions"></div>
         </div>
@@ -111,37 +110,36 @@
         <!-- Left Column: Ally Team (Blue Side) -->
         <div id="allyTeamCol" class="team-column ally-col">
           <div class="team-col-header">
-            <div class="team-col-title">🔵 ฝั่งฟ้า — ทีมของเรา</div>
-            <span id="allyCountText" style="font-size:0.78rem; color:var(--text-muted);">0 / 5</span>
+            <div class="team-col-title">🔵 ทีมของเรา (ฝั่งฟ้า)</div>
+            <span id="allyCountText" style="font-size:0.76rem; color:var(--text-muted);">0 / 5</span>
           </div>
-          <div style="font-size:0.72rem; color:var(--text-muted); margin-bottom:0.3rem;">ตำแหน่งเลนของทีมเรา (สีเหลือง = ยังขาด):</div>
           <div id="allyLaneChecklist" class="lane-checklist"></div>
           <div id="allyPickSlots" class="pick-slots-list"></div>
         </div>
 
         <!-- Center Column: Real-Time Counter + Meta Combo Engine -->
         <div id="centerRecCol" class="counter-center-panel">
-          <!-- Center Quick Actions: Swap Teams + View Counter Items & Spells Modal -->
-          <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:0.6rem; margin-bottom:0.75rem;">
-            <button class="btn btn-swap-teams" style="padding:0.48rem 1.2rem; font-size:0.86rem; border-radius:24px;" onclick="swapAllTeams()" title="สลับตัวละครที่เลือกทั้งหมดระหว่างฝั่งฟ้าและฝั่งแดง">
-              🔵 ⇄ สลับตัวละครฝั่งฟ้า ↔ ฝั่งแดง 🔴
-            </button>
-            <button id="topViewCounterGearBtn" class="btn btn-counter-gear-cta" onclick="openCounterGearModal('ALL')" title="กดดูรายการไอเทมแก้ทางและสเปลแก้ทางสำหรับรับมือทีมศัตรูชุดนี้แบบละเอียด">
-              🛡️ กดดูไอเทม &amp; สเปลแก้ทางฝั่งตรงข้าม
-            </button>
-          </div>
-
-          <!-- Strategy Priority Switcher -->
-          <div class="strategy-mode-bar">
-            <button id="stratBtnCounter" class="strat-btn active" data-strat="counter" onclick="setStrategyMode('counter')">
-              🏆 เมต้าแข่ง MPL Indonesia Season 18 + แก้ทาง (Liquipedia Official)
-            </button>
-            <button class="strat-btn strat-combo" data-strat="combo" onclick="setStrategyMode('combo')">
-              ⚡ โหมดเน้นคอมโบทีมเรา + ตัวแข่ง (Pro Meta Combo)
-            </button>
-            <button class="strat-btn" data-strat="all" onclick="setStrategyMode('all')">
-              🌐 แสดงฮีโร่ทั้งหมด (All 133 Heroes)
-            </button>
+          <!-- Unified Clean Action & Strategy Bar -->
+          <div class="center-top-toolbar">
+            <div class="strategy-mode-bar" style="margin-bottom:0; flex:1;">
+              <button id="stratBtnCounter" class="strat-btn active" data-strat="counter" onclick="setStrategyMode('counter')">
+                🏆 เมต้าแข่ง + แก้ทาง
+              </button>
+              <button class="strat-btn strat-combo" data-strat="combo" onclick="setStrategyMode('combo')">
+                ⚡ เน้นคอมโบทีม
+              </button>
+              <button class="strat-btn" data-strat="all" onclick="setStrategyMode('all')">
+                🌐 ฮีโร่ทั้งหมด (133)
+              </button>
+            </div>
+            <div class="center-quick-btns">
+              <button class="btn btn-swap-teams" onclick="swapAllTeams()" title="สลับตัวละครที่เลือกทั้งหมดระหว่างฝั่งฟ้าและฝั่งแดง">
+                ⇄ สลับฝั่ง
+              </button>
+              <button id="topViewCounterGearBtn" class="btn btn-counter-gear-cta" onclick="openCounterGearModal('ALL')" title="กดดูรายการไอเทมแก้ทางและสเปลแก้ทางสำหรับรับมือทีมศัตรูชุดนี้แบบละเอียด">
+                🛡️ ไอเทมแก้ทาง
+              </button>
+            </div>
           </div>
 
           <!-- Counter Items & Battle Spells Advisor removed as requested -->
@@ -194,15 +192,14 @@
         <!-- Right Column: Enemy Team (Red Side) -->
         <div id="enemyTeamCol" class="team-column enemy-col">
           <div class="team-col-header">
-            <div class="team-col-title">🔴 ฝั่งแดง — ทีมศัตรู</div>
+            <div class="team-col-title">🔴 ทีมศัตรู (ฝั่งแดง)</div>
             <div style="display:flex; align-items:center; gap:0.4rem;">
               <button class="btn-enemy-gear-top" onclick="openCounterGearModal('ALL')" title="กดดูไอเทมและสเปลแก้ทางทีมศัตรูทั้งหมด">
-                🗡️ ดูไอเทมแก้ทาง
+                🗡️ ของแก้ทาง
               </button>
-              <span id="enemyCountText" style="font-size:0.78rem; color:var(--text-muted);">0 / 5</span>
+              <span id="enemyCountText" style="font-size:0.76rem; color:var(--text-muted);">0 / 5</span>
             </div>
           </div>
-          <div style="font-size:0.72rem; color:var(--text-muted); margin-bottom:0.3rem;">ตำแหน่งเลนศัตรู (กดที่สเปลหรือปุ่มไอเทมในช่องเพื่อดูของแก้ทาง):</div>
           <div id="enemyLaneChecklist" class="lane-checklist"></div>
           <div id="enemyPickSlots" class="pick-slots-list"></div>
         </div>
