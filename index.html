@@ -3,307 +3,270 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MLBB Counter Pick & Meta Combo Pro [V2 Edition]</title>
+  <title>MOBADRAFT — MLBB Draft Simulator & Counter Pick Pro [V4]</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="mobadraft.css" />
 </head>
-<body>
-  <!-- Top Header -->
-  <header class="top-header">
-    <div class="brand-wrap">
-      <div class="brand-emblem" style="background:linear-gradient(135deg,#06b6d4,#f59e0b);">V2</div>
+<body class="mobadraft-theme">
+  <!-- MOBADRAFT Top Header -->
+  <header class="md-header">
+    <div class="md-brand" onclick="switchTab('draft')" style="cursor:pointer;">
+      <div class="md-logo-badge">M</div>
       <div>
-        <div style="display:flex; align-items:center; gap:0.5rem;">
-          <span class="brand-title">MLBB COUNTER &amp; META COMBO PRO</span>
-          <span class="v2-badge-pill">V2 COMBO EDITION</span>
-        </div>
-        <div class="brand-sub">
-          <span class="live-dot"></span>
-          <span id="brandSubText">133 ฮีโร่ • สถิติเมต้าแข่ง MPL Indonesia Season 18 (Liquipedia Official) 215 นัด</span>
-        </div>
+        <div class="md-brand-name">MOBADRAFT <span class="md-v4-pill">PRO COUNTER V4</span></div>
+        <div class="md-brand-sub" id="brandSubText">133 Heroes • MPL-ID / PH / TH / M8 Scrim Meta</div>
       </div>
     </div>
 
-    <!-- Navigation Tabs -->
-    <nav class="nav-tabs" role="tablist">
-      <button class="nav-tab active" data-tab="draft" onclick="switchTab('draft')">
-        ⚔️ ดราฟต์แก้ทาง
-      </button>
-      <button class="nav-tab" data-tab="combos" onclick="switchTab('combos')">
-        ⚡ คลังคอมโบ
-      </button>
-      <button class="nav-tab" data-tab="meta" onclick="switchTab('meta')">
-        🔥 Tier List
-      </button>
-      <button class="nav-tab nav-tab-m8" data-tab="m8" onclick="switchTab('m8')">
-        🔮 คาดการณ์ M8
-      </button>
-      <button class="nav-tab" data-tab="lookup" onclick="switchTab('lookup')">
-        🔍 ข้อมูลฮีโร่
-      </button>
+    <!-- MOBADRAFT Top Menu Links (Matching Reference Screenshot) -->
+    <nav class="md-nav" role="tablist">
+      <button class="nav-tab" data-tab="meta" onclick="switchTab('meta')">TIER LIST</button>
+      <button class="nav-tab nav-tab-m8" data-tab="m8" onclick="switchTab('m8')">HERO STATISTICS (M8)</button>
+      <button class="nav-tab active" data-tab="draft" onclick="switchTab('draft')">DRAFT SIMULATOR</button>
+      <button class="nav-tab" data-tab="combos" onclick="switchTab('combos')">PLANNER (COMBOS)</button>
+      <button class="nav-tab" data-tab="lookup" onclick="switchTab('lookup')">COUNTER LOOKUP</button>
     </nav>
 
-    <!-- Quick Actions & Tournament Selector -->
-    <div class="header-actions">
-      <div class="header-tourn-selector" title="เลือกฐานข้อมูลสถิติเมต้าการแข่งขันจาก Liquipedia">
-        <span class="header-tourn-label">🏆 เมต้า:</span>
-        <button class="tourn-nav-btn active" data-htourn="mpl-id" onclick="setTournamentMeta('mpl-id')" title="สลับเป็นเมต้าแข่ง MPL Indonesia Season 18 (215 นัด)">
-          🇮🇩 ID
-        </button>
-        <button class="tourn-nav-btn" data-htourn="mpl-ph" onclick="setTournamentMeta('mpl-ph')" title="สลับเป็นเมต้าแข่ง MPL Philippines Season 18 (172 นัด)">
-          🇵🇭 PH
-        </button>
-        <button class="tourn-nav-btn" data-htourn="msl-th" onclick="setTournamentMeta('msl-th')" title="สลับเป็นเมต้าแข่ง MLBB Super League Thailand Season 2 (135 นัด)">
-          🇹🇭 TH
-        </button>
-        <button class="tourn-nav-btn" data-htourn="combined" onclick="setTournamentMeta('combined')" title="สลับเป็นเมต้ารวมโปรทัวร์นาเมนต์ MPL-ID + PH + TH (522 นัด)">
-          🌐 รวม
-        </button>
-        <button class="tourn-nav-btn" data-htourn="m8-pred" onclick="setTournamentMeta('m8-pred')" title="สลับเป็นเมต้าคาดการณ์ M8 World Championship (วิเคราะห์จาก 6 ทัวร์นาเมนต์ + Playoffs ล่าสุด)">
-          🔮 M8
-        </button>
-        <button class="tourn-nav-btn" data-htourn="m8-scrim" onclick="setTournamentMeta('m8-scrim')" title="สลับเป็นเมต้าห้องซ้อมทีมแข่ง M8 วันนี้ (19/11/2026 • Chip + Lunox, Popol Revamp, Lukas, Xavier, Melissa)">
-          🔥 ซ้อม
-        </button>
-      </div>
-      <button id="autoBanBtn" class="btn btn-ban-auto" onclick="autoBanTopMeta()" title="แบนฮีโร่ตามสถิติตัวต้องห้ามอันดับ 1-10 ของทัวร์นาเมนต์ที่เลือกจาก Liquipedia อัตโนมัติ">
-        🚫 ออโต้แบน
-      </button>
-      <button id="demoDraftBtn" class="btn btn-demo" onclick="loadDemoDraft()" title="โหลดสถานการณ์ดราฟต์จำลองเสมือนจริงของทัวร์นาเมนต์ที่เลือก (Liquipedia)">
-        🇮🇩 ดราฟต์ตัวอย่าง
-      </button>
-      <button class="btn btn-reset" onclick="resetDraft()" title="ล้างข้อมูลแบนและฮีโร่ที่เลือกทั้งหมด">
-        🔄 รีเซ็ต
-      </button>
+    <!-- Tournament Data Selector -->
+    <div class="md-tourn-strip" title="สลับฐานข้อมูลเมต้าการแข่งขัน">
+      <button class="tourn-nav-btn active" data-htourn="mpl-id" onclick="setTournamentMeta('mpl-id')" title="MPL Indonesia S18">🇮🇩 ID</button>
+      <button class="tourn-nav-btn" data-htourn="mpl-ph" onclick="setTournamentMeta('mpl-ph')" title="MPL Philippines S18">🇵🇭 PH</button>
+      <button class="tourn-nav-btn" data-htourn="msl-th" onclick="setTournamentMeta('msl-th')" title="MSL Thailand S2">🇹🇭 TH</button>
+      <button class="tourn-nav-btn" data-htourn="combined" onclick="setTournamentMeta('combined')" title="รวม 3 ลีก 522 นัด">🌐 ALL</button>
+      <button class="tourn-nav-btn" data-htourn="m8-pred" onclick="setTournamentMeta('m8-pred')" title="คาดการณ์ M8 World Championship">🔮 M8</button>
+      <button class="tourn-nav-btn" data-htourn="m8-scrim" onclick="setTournamentMeta('m8-scrim')" title="เมต้าห้องซ้อมแข่ง M8 วันนี้">🔥 SCRIM</button>
     </div>
   </header>
 
-  <main class="main-container">
-    <!-- ==================== TAB 1: LIVE COUNTER & COMBO DRAFT ==================== -->
+  <main class="md-main">
+    <!-- ==================== TAB 1: MOBADRAFT SIMULATOR ==================== -->
     <section id="tab-draft" class="tab-panel active">
-      <!-- Banned Heroes Bar -->
-      <div class="ban-board">
-        <div class="ban-header">
-          <div class="ban-title-group">
-            <span style="font-weight:700; font-size:0.92rem; color:#e9d5ff;">🚫 ฮีโร่ที่ถูกแบน</span>
-            <span id="banCountBadge" class="ban-count-badge">0 / 10</span>
-          </div>
-          <div id="banSuggestionsBar" class="ban-suggestions"></div>
+      <!-- Top Ban Row: Left 5 Circles | <<< Ban 42 >>> | Right 5 Circles -->
+      <div class="md-top-ban-row">
+        <div class="md-ban-box md-ban-left">
+          <div id="allyBanSlots" class="md-ban-circles"></div>
         </div>
 
-        <div class="ban-slots-row">
-          <div id="allyBanSlots" class="ban-team-slots"></div>
-          <div class="ban-divider">10 BAN PHASE<br/><span style="font-size:0.65rem; color:var(--text-muted);">MYTHIC DRAFT</span></div>
-          <div id="enemyBanSlots" class="ban-team-slots enemy-bans"></div>
+        <div class="md-phase-indicator" onclick="advanceMobaDraftTurn()" title="คลิกเพื่อข้ามเทิร์น หรือคลิกที่ช่อง Ban / Pick ใดก็ได้เพื่อเลือกใส่ช่องนั้นทันที">
+          <div class="md-phase-title-row">
+            <span id="mdArrowLeft" class="md-turn-arrow active">&lt;&lt;&lt;</span>
+            <span id="mdPhaseText" class="md-phase-title">Ban</span>
+            <span id="mdArrowRight" class="md-turn-arrow">&gt;&gt;&gt;</span>
+          </div>
+          <div id="mdTimerValue" class="md-phase-timer">42</div>
+          <div id="mdTurnSubText" class="md-phase-sub">เทิร์นที่ 1/20 • ฝั่งฟ้าแบนตัวที่ 1</div>
+        </div>
+
+        <div class="md-ban-box md-ban-right">
+          <div id="enemyBanSlots" class="md-ban-circles"></div>
         </div>
       </div>
 
-      <!-- Mobile Quick-Jump Bar (Visible on phones <= 680px) -->
-      <div class="mobile-draft-quick-nav">
-        <button type="button" class="m-jump-btn m-jump-ban" onclick="document.querySelector('.ban-board')?.scrollIntoView({behavior:'smooth', block:'start'})">🚫 แบน (10)</button>
-        <button type="button" class="m-jump-btn m-jump-ally" onclick="document.getElementById('allyTeamCol')?.scrollIntoView({behavior:'smooth', block:'start'})">🔵 ทีมเรา</button>
-        <button type="button" class="m-jump-btn m-jump-enemy" onclick="document.getElementById('enemyTeamCol')?.scrollIntoView({behavior:'smooth', block:'start'})">🔴 ทีมศัตรู</button>
-        <button type="button" class="m-jump-btn m-jump-rec" onclick="document.getElementById('centerRecCol')?.scrollIntoView({behavior:'smooth', block:'start'})">🎯 ตัวแก้ทาง</button>
+      <!-- Smart AI Counter / Ban Quick Bar (Compact 1-Line Helper above Center Board) -->
+      <div class="md-smart-helper-bar">
+        <div id="banSuggestionsBar" class="md-smart-chips-wrap"></div>
+        <div class="md-smart-actions">
+          <button class="md-mini-btn" onclick="autoBanTopMeta()" title="ออโต้แบน 10 ตัวท็อปตามทัวร์นาเมนต์">🚫 Auto Ban 10</button>
+          <button id="demoDraftBtn" class="md-mini-btn" onclick="loadDemoDraft()" title="โหลดดราฟต์ตัวอย่าง">⚡ Demo Draft</button>
+          <button class="md-mini-btn" onclick="swapAllTeams()" title="สลับฝั่งฟ้า/แดง">⇄ Swap</button>
+          <button id="topViewCounterGearBtn" class="md-mini-btn md-gear-btn" onclick="openCounterGearModal('ALL')" title="ดูไอเทมและสเปลแก้ทางทีมศัตรู">🛡️ ไอเทมแก้ทาง</button>
+        </div>
       </div>
 
-      <!-- 3-Column Draft Arena -->
-      <div class="draft-arena">
-        <!-- Left Column: Ally Team (Blue Side) -->
-        <div id="allyTeamCol" class="team-column ally-col">
-          <div class="team-col-header">
-            <div class="team-col-title">🔵 ทีมของเรา (ฝั่งฟ้า)</div>
-            <span id="allyCountText" style="font-size:0.76rem; color:var(--text-muted);">0 / 5</span>
+      <!-- Main 3-Column MOBADRAFT Stage: Left 5 Slots | Center Hero Pool Grid | Right 5 Slots -->
+      <div class="md-arena-stage">
+        <!-- Left 5 Pick Slots (Blue Side / Ally) -->
+        <div id="allyTeamCol" class="md-side-column md-side-left">
+          <div class="md-side-header">
+            <span class="md-side-dot blue"></span>
+            <span>BLUE SIDE</span>
+            <span id="allyCountText" class="md-side-count">0/5</span>
           </div>
-          <div id="allyLaneChecklist" class="lane-checklist"></div>
-          <div id="allyPickSlots" class="pick-slots-list"></div>
+          <div id="allyPickSlots" class="md-pick-boxes"></div>
+          <div id="allyLaneChecklist" class="md-lane-mini-status"></div>
         </div>
 
-        <!-- Center Column: Real-Time Counter + Meta Combo Engine -->
-        <div id="centerRecCol" class="counter-center-panel">
-          <!-- Unified Clean Action & Strategy Bar -->
-          <div class="center-top-toolbar">
-            <div class="strategy-mode-bar" style="margin-bottom:0; flex:1;">
-              <button id="stratBtnCounter" class="strat-btn active" data-strat="counter" onclick="setStrategyMode('counter')">
-                🏆 เมต้าแข่ง + แก้ทาง
+        <!-- Center Hero Pool Board (Exact MOBADRAFT Role Tabs + Circular Hero Portraits + Floating Dock) -->
+        <div class="md-center-board">
+          <!-- Combined Role / Lane Tabs Header (Switchable between 2 modes) + Recommend Checkbox & Search -->
+          <div class="md-role-tabs-bar">
+            <div class="md-tabs-left-group">
+              <!-- Mode Switcher Button: Toggle between Role Tabs (สายอาชีพ) & Lane Tabs (เลน) -->
+              <button
+                id="mdTabModeSwitchBtn"
+                class="md-tab-mode-switch"
+                onclick="toggleMobaFilterTabMode()"
+                title="คลิกเพื่อสลับแถบตัวกรองระหว่าง: แยกตามสายอาชีพ (Tank/Marksman/...) ⇄ แยกตามเลน (EXP/JG/Mid/Gold/Roam)"
+              >
+                <span id="mdTabModeIcon">🎭</span>
+                <span id="mdTabModeLabel">สาย</span>
+                <span class="md-swap-mini">⇄</span>
               </button>
-              <button class="strat-btn strat-combo" data-strat="combo" onclick="setStrategyMode('combo')">
-                ⚡ เน้นคอมโบทีม
-              </button>
-              <button class="strat-btn" data-strat="all" onclick="setStrategyMode('all')">
-                🌐 ฮีโร่ทั้งหมด (133)
-              </button>
-            </div>
-            <div class="center-quick-btns">
-              <button class="btn btn-swap-teams" onclick="swapAllTeams()" title="สลับตัวละครที่เลือกทั้งหมดระหว่างฝั่งฟ้าและฝั่งแดง">
-                ⇄ สลับฝั่ง
-              </button>
-              <button id="topViewCounterGearBtn" class="btn btn-counter-gear-cta" onclick="openCounterGearModal('ALL')" title="กดดูรายการไอเทมแก้ทางและสเปลแก้ทางสำหรับรับมือทีมศัตรูชุดนี้แบบละเอียด">
-                🛡️ ไอเทมแก้ทาง
-              </button>
-            </div>
-          </div>
 
-          <!-- Counter Items & Battle Spells Advisor removed as requested -->
-
-          <!-- Active Playable Meta Combos Strip (Dynamic based on current draft!) -->
-          <div id="liveComboStrip" class="live-combo-strip"></div>
-
-          <div class="counter-panel-header">
-            <div>
-              <div id="recHeaderTitle" class="counter-panel-title">
-                🎯 ฮีโร่ที่ควรเลือกแก้ทางตอนนี้ (Recommended Picks)
+              <!-- Mode 1: Role Tabs (All | Tank | Marksman | Fighter | Assassin | Mage | Support) -->
+              <div class="md-role-tabs" id="mdRoleTabs">
+                <button class="md-role-tab active" data-mdrole="ALL" onclick="setMobaRoleFilter('ALL')">All</button>
+                <button class="md-role-tab" data-mdrole="Tank" onclick="setMobaRoleFilter('Tank')">Tank</button>
+                <button class="md-role-tab" data-mdrole="Marksman" onclick="setMobaRoleFilter('Marksman')">Marksman</button>
+                <button class="md-role-tab" data-mdrole="Fighter" onclick="setMobaRoleFilter('Fighter')">Fighter</button>
+                <button class="md-role-tab" data-mdrole="Assassin" onclick="setMobaRoleFilter('Assassin')">Assassin</button>
+                <button class="md-role-tab" data-mdrole="Mage" onclick="setMobaRoleFilter('Mage')">Mage</button>
+                <button class="md-role-tab" data-mdrole="Support" onclick="setMobaRoleFilter('Support')">Support</button>
               </div>
-              <div id="recHeaderSub" style="font-size:0.78rem; color:var(--text-muted);">
-                วิเคราะห์จากฮีโร่ฝั่งศัตรูที่เลือก + คอมโบทีมเรา + หักตัวที่โดนแบนไปแล้ว
+
+              <!-- Mode 2: Lane Tabs (ทุกเลน | EXP | JG | Mid | Gold | Roam) in the exact same tab bar -->
+              <div class="md-role-tabs" id="mdLaneTabs" style="display:none;">
+                <button class="md-role-tab active" data-mdlane="ALL" onclick="setMobaLaneFilter('ALL')">ทุกเลน</button>
+                <button class="md-role-tab" data-mdlane="EXP Lane" onclick="setMobaLaneFilter('EXP Lane')"><img src="assets/lanes/exp.png" class="md-tab-lane-icon" alt="EXP" /> EXP</button>
+                <button class="md-role-tab" data-mdlane="Jungle" onclick="setMobaLaneFilter('Jungle')"><img src="assets/lanes/jungle.png" class="md-tab-lane-icon" alt="JG" /> JG</button>
+                <button class="md-role-tab" data-mdlane="Mid Lane" onclick="setMobaLaneFilter('Mid Lane')"><img src="assets/lanes/mid.png" class="md-tab-lane-icon" alt="Mid" /> Mid</button>
+                <button class="md-role-tab" data-mdlane="Gold Lane" onclick="setMobaLaneFilter('Gold Lane')"><img src="assets/lanes/gold.png" class="md-tab-lane-icon" alt="Gold" /> Gold</button>
+                <button class="md-role-tab" data-mdlane="Roam" onclick="setMobaLaneFilter('Roam')"><img src="assets/lanes/roam.png" class="md-tab-lane-icon" alt="Roam" /> Roam</button>
               </div>
             </div>
-            <div id="recLanePills" class="lane-filter-pills">
-              <button id="descModeToggleBtn" class="lane-pill desc-mode-btn" onclick="toggleDescMode()" title="สลับโหมด: คำอธิบายน้อยลง (กดดูข้อมูลเพิ่มเติม) / แสดงคำอธิบายเต็ม">
-                ⚡ ข้อมูลเพิ่มเติม (กดดู) • คำอธิบายน้อยลง
-              </button>
-              <button class="lane-pill active" data-lane="ALL" onclick="setRecLaneFilter('ALL')">ทุกเลน</button>
-              <button class="lane-pill ss-filter-pill" data-lane="SS_ONLY" onclick="setRecLaneFilter('SS_ONLY')" title="แสดงเฉพาะฮีโร่ระดับ SS (God Tier Meta) ที่หลุดแบน">
-                👑 ตัว SS God Meta
-              </button>
-              <button class="lane-pill" data-lane="MISSING" onclick="setRecLaneFilter('MISSING')">✨ เฉพาะเลนที่ขาด</button>
-              <button class="lane-pill" data-lane="EXP Lane" onclick="setRecLaneFilter('EXP Lane')">
-                <img src="assets/lanes/exp.png" class="lane-btn-img" alt="EXP" /> EXP
-              </button>
-              <button class="lane-pill" data-lane="Jungle" onclick="setRecLaneFilter('Jungle')">
-                <img src="assets/lanes/jungle.png" class="lane-btn-img" alt="Jungle" /> Jungle
-              </button>
-              <button class="lane-pill" data-lane="Mid Lane" onclick="setRecLaneFilter('Mid Lane')">
-                <img src="assets/lanes/mid.png" class="lane-btn-img" alt="Mid" /> Mid
-              </button>
-              <button class="lane-pill" data-lane="Gold Lane" onclick="setRecLaneFilter('Gold Lane')">
-                <img src="assets/lanes/gold.png" class="lane-btn-img" alt="Gold" /> Gold
-              </button>
-              <button class="lane-pill" data-lane="Roam" onclick="setRecLaneFilter('Roam')">
-                <img src="assets/lanes/roam.png" class="lane-btn-img" alt="Roam" /> Roam
+
+            <div class="md-board-right-tools">
+              <!-- Checkbox: Sort by Recommendation Order (#1, #2, #3...) -->
+              <label class="md-rec-check-label" title="ติ๊กถูกเพื่อเรียงตัวละครตามลำดับที่แนะนำ (#1, #2, #3... ขึ้นไปเรื่อยๆ) และปรับตามสายอาชีพ/เลนที่เลือก">
+                <input
+                  type="checkbox"
+                  id="mdRecOrderCheck"
+                  onchange="toggleMobaRecOrder(this.checked)"
+                />
+                <span class="md-rec-check-box">✓</span>
+                <span>เรียงตามลำดับแนะนำ</span>
+              </label>
+
+              <div class="md-search-box">
+                <input
+                  type="text"
+                  id="mdHeroSearchInput"
+                  placeholder="ค้นหาฮีโร่..."
+                  oninput="renderMobaHeroPool()"
+                />
+              </div>
+              <button
+                id="mdSortToggleBtn"
+                class="md-sword-btn"
+                onclick="toggleMobaPoolSort()"
+                title="สลับการเรียงฮีโร่: เรียงตาม A-Z (แบบ MobaDraft) หรือ เรียงตามลำดับที่แนะนำ (#1, #2, #3...)"
+              >
+                🗡️
               </button>
             </div>
           </div>
 
-          <!-- SS God Tier Alert Banner removed as requested -->
+          <!-- Scrollable Circular Hero Grid with Artwork Backdrop -->
+          <div id="mdHeroPoolGrid" class="md-hero-pool-scroll"></div>
 
-          <!-- Recommended Heroes Cards -->
-          <div id="recCardsContainer" class="rec-cards-grid"></div>
-        </div>
-
-        <!-- Right Column: Enemy Team (Red Side) -->
-        <div id="enemyTeamCol" class="team-column enemy-col">
-          <div class="team-col-header">
-            <div class="team-col-title">🔴 ทีมศัตรู (ฝั่งแดง)</div>
-            <div style="display:flex; align-items:center; gap:0.4rem;">
-              <button class="btn-enemy-gear-top" onclick="openCounterGearModal('ALL')" title="กดดูไอเทมและสเปลแก้ทางทีมศัตรูทั้งหมด">
-                🗡️ ของแก้ทาง
+          <!-- Floating Bottom Dock: Start | Tournament | Online (AI Counter) | Reset -->
+          <div class="md-floating-dock">
+            <div class="md-dock-left">
+              <button id="mdStartBtn" class="md-dock-btn md-btn-start" onclick="startMobaDraftSequence()" title="เริ่มจำลองดราฟต์จับเวลาตามลำดับการแข่ง Tournament 20 เทิร์น">
+                ▶ Start
               </button>
-              <span id="enemyCountText" style="font-size:0.76rem; color:var(--text-muted);">0 / 5</span>
+              <button id="mdTournModeBtn" class="md-dock-btn active" onclick="cycleMobaTournamentMode()" title="สลับโหมดทัวร์นาเมนต์ (MPL-ID / PH / TH / M8 / Scrim)">
+                ⊞ Tournament
+              </button>
+              <button id="mdAiDrawerBtn" class="md-dock-btn" onclick="toggleMobaAiPanel()" title="แสดง/ซ่อน แผงวิเคราะห์ตัวแก้ทาง & คอมโบทีมด้านล่าง">
+                👥 AI Counter
+              </button>
+            </div>
+            <div class="md-dock-right">
+              <button class="md-dock-btn md-btn-reset" onclick="resetMobaDraft()" title="รีเซ็ตกระดานดราฟต์ทั้งหมด">
+                ↻ Reset
+              </button>
             </div>
           </div>
-          <div id="enemyLaneChecklist" class="lane-checklist"></div>
-          <div id="enemyPickSlots" class="pick-slots-list"></div>
+        </div>
+
+        <!-- Right 5 Pick Slots (Red Side / Enemy) -->
+        <div id="enemyTeamCol" class="md-side-column md-side-right">
+          <div class="md-side-header">
+            <span class="md-side-dot red"></span>
+            <span>RED SIDE</span>
+            <span id="enemyCountText" class="md-side-count">0/5</span>
+          </div>
+          <div id="enemyPickSlots" class="md-pick-boxes"></div>
+          <div id="enemyLaneChecklist" class="md-lane-mini-status"></div>
         </div>
       </div>
 
-      <!-- Toggle Button for All Heroes Picker Section -->
-      <div style="text-align:center; margin: 0.4rem 0 0.8rem;">
-        <button id="togglePickerBtn" class="btn" style="font-size:0.75rem; padding:0.25rem 0.85rem; border-color:var(--border-subtle); color:var(--text-muted); border-radius:20px;" onclick="togglePickerSection()">
-          📋 แสดง/ซ่อน คลังฮีโร่ทั้งหมด 133 ตัวด้านล่าง ▼
-        </button>
-      </div>
+      <!-- Collapsible AI Counter & Combo Recommendation Drawer below the Simulator -->
+      <div id="centerRecCol" class="counter-center-panel md-ai-drawer">
+        <div class="center-top-toolbar">
+          <div class="strategy-mode-bar" style="margin-bottom:0; flex:1;">
+            <button id="stratBtnCounter" class="strat-btn active" data-strat="counter" onclick="setStrategyMode('counter')">
+              🏆 เมต้าแข่ง + แก้ทาง
+            </button>
+            <button class="strat-btn strat-combo" data-strat="combo" onclick="setStrategyMode('combo')">
+              ⚡ เน้นคอมโบทีม
+            </button>
+            <button class="strat-btn" data-strat="all" onclick="setStrategyMode('all')">
+              🌐 ฮีโร่ทั้งหมด (133)
+            </button>
+          </div>
+          <div class="center-quick-btns">
+            <button id="descModeToggleBtn" class="lane-pill desc-mode-btn" onclick="toggleDescMode()">
+              ⚡ ย่อคำอธิบาย
+            </button>
+          </div>
+        </div>
 
-      <!-- All Heroes Picker Section -->
-      <div id="draftPickerSection" class="picker-section" style="display:none;">
-        <div class="mode-selector-bar">
+        <div id="liveComboStrip" class="live-combo-strip"></div>
+
+        <div class="counter-panel-header">
           <div>
-            <div style="font-weight:700; font-size:0.95rem;">คลังฮีโร่ MLBB ทั้งหมด (<span id="gridCountLabel">133</span> ตัว)</div>
-            <div style="font-size:0.76rem; color:var(--text-muted);">คลิกที่ช่อง S1–S5 หรือช่องแบนด้านบนเพื่อเปิด Popup เลือกตัวละคร หรือกดเลือกจากตารางนี้ได้เลย</div>
+            <div id="recHeaderTitle" class="counter-panel-title">
+              🎯 ฮีโร่ที่ควรเลือกแก้ทางตอนนี้ (AI Counter &amp; Synergy Picks)
+            </div>
+            <div id="recHeaderSub" style="font-size:0.76rem; color:var(--text-muted);">
+              คลิกที่ฮีโร่ในตารางกลมด้านบน หรือกดเลือกจากการ์ดแนะนำด้านล่างนี้ได้ทันที
+            </div>
           </div>
-          <div class="mode-buttons">
-            <button class="mode-btn mode-enemy active" data-mode="enemy" onclick="setPickMode('enemy')">
-              ⚔️ โหมดเลือกฮีโร่ศัตรู (Enemy Pick)
-            </button>
-            <button class="mode-btn mode-ban" data-mode="ban" onclick="setPickMode('ban')">
-              🚫 โหมดแบนฮีโร่ (Ban Hero)
-            </button>
-            <button class="mode-btn mode-ally" data-mode="ally" onclick="setPickMode('ally')">
-              🛡️ โหมดเลือกเข้าทีมเรา (Ally Pick)
-            </button>
-            <button class="mode-btn mode-inspect" data-mode="inspect" onclick="setPickMode('inspect')">
-              🔍 โหมดดูข้อมูลแก้ทาง (Inspect)
-            </button>
+          <div id="recLanePills" class="lane-filter-pills">
+            <button class="lane-pill active" data-lane="ALL" onclick="setRecLaneFilter('ALL')">ทุกเลน</button>
+            <button class="lane-pill ss-filter-pill" data-lane="SS_ONLY" onclick="setRecLaneFilter('SS_ONLY')">👑 SS Meta</button>
+            <button class="lane-pill" data-lane="MISSING" onclick="setRecLaneFilter('MISSING')">✨ เลนที่ขาด</button>
+            <button class="lane-pill" data-lane="EXP Lane" onclick="setRecLaneFilter('EXP Lane')"><img src="assets/lanes/exp.png" class="lane-btn-img" alt="EXP" /> EXP</button>
+            <button class="lane-pill" data-lane="Jungle" onclick="setRecLaneFilter('Jungle')"><img src="assets/lanes/jungle.png" class="lane-btn-img" alt="Jungle" /> Jungle</button>
+            <button class="lane-pill" data-lane="Mid Lane" onclick="setRecLaneFilter('Mid Lane')"><img src="assets/lanes/mid.png" class="lane-btn-img" alt="Mid" /> Mid</button>
+            <button class="lane-pill" data-lane="Gold Lane" onclick="setRecLaneFilter('Gold Lane')"><img src="assets/lanes/gold.png" class="lane-btn-img" alt="Gold" /> Gold</button>
+            <button class="lane-pill" data-lane="Roam" onclick="setRecLaneFilter('Roam')"><img src="assets/lanes/roam.png" class="lane-btn-img" alt="Roam" /> Roam</button>
           </div>
         </div>
 
-        <!-- Filter & Search Controls -->
-        <div class="filter-controls-row">
-          <input
-            type="text"
-            id="heroSearchInput"
-            class="search-input"
-            placeholder="🔎 ค้นหาชื่อฮีโร่ เช่น Masha, Hirara, Carmilla, Cecilion, Lukas, Fanny..."
-            oninput="renderHeroGrid()"
-          />
-          <select id="laneFilterSelect" class="select-ctrl" onchange="renderHeroGrid()">
-            <option value="ALL">🗺️ ทุกเลน (All Lanes)</option>
-            <option value="EXP Lane">⚔️ EXP Lane</option>
-            <option value="Jungle">🌲 Jungle (ป่า)</option>
-            <option value="Mid Lane">🔮 Mid Lane (กลาง)</option>
-            <option value="Gold Lane">🪙 Gold Lane (แครี่)</option>
-            <option value="Roam">🛡️ Roam (โรมมิ่ง)</option>
-          </select>
-          <select id="roleFilterSelect" class="select-ctrl" onchange="renderHeroGrid()">
-            <option value="ALL">🎭 ทุกสายอาชีพ (All Roles)</option>
-            <option value="Tank">Tank (แทงค์)</option>
-            <option value="Fighter">Fighter (ไฟต์เตอร์)</option>
-            <option value="Assassin">Assassin (แอสซาซิน)</option>
-            <option value="Mage">Mage (เมจ)</option>
-            <option value="Marksman">Marksman (แครี่)</option>
-            <option value="Support">Support (ซัพพอร์ต)</option>
-          </select>
-          <select id="tierFilterSelect" class="select-ctrl" onchange="renderHeroGrid()">
-            <option value="ALL">🏆 ทุกระดับ Meta (All Tiers)</option>
-            <option value="SS">Tier SS (God Meta)</option>
-            <option value="S">Tier S (Strong Meta)</option>
-            <option value="A">Tier A (Balanced / Counter)</option>
-            <option value="B">Tier B (Situational)</option>
-            <option value="C">Tier C (Pocket Pick)</option>
-          </select>
-          <select id="sortSelect" class="select-ctrl" onchange="renderHeroGrid()">
-            <option value="counter">⚡ เรียงตามคะแนนแนะนำปัจจุบัน</option>
-            <option value="meta">🔥 เรียงตามความแรง Meta</option>
-            <option value="ban">🚫 เรียงตามอัตราโดนแบน (Ban Rate)</option>
-            <option value="win">📈 เรียงตามอัตราชนะ (Win Rate)</option>
-            <option value="name">🔤 เรียงตามชื่อ (A - Z)</option>
-          </select>
-        </div>
+        <div id="recCardsContainer" class="rec-cards-grid"></div>
+      </div>
 
-        <!-- Hero Cards Grid -->
-        <div id="heroesGrid" class="heroes-grid"></div>
+      <!-- Hidden Legacy Elements kept so existing functions never throw null errors -->
+      <div id="draftPickerSection" style="display:none;">
+        <span id="gridCountLabel">133</span>
+        <input type="text" id="heroSearchInput" />
+        <select id="laneFilterSelect"><option value="ALL">ALL</option></select>
+        <select id="roleFilterSelect"><option value="ALL">ALL</option></select>
+        <select id="tierFilterSelect"><option value="ALL">ALL</option></select>
+        <select id="sortSelect"><option value="counter">counter</option></select>
+        <div id="heroesGrid"></div>
       </div>
     </section>
 
-    <!-- ==================== TAB 2: META COMBOS HUB (NEW IN V2!) ==================== -->
+    <!-- ==================== TAB 2: META COMBOS HUB (PLANNER) ==================== -->
     <section id="tab-combos" class="tab-panel">
       <div class="ban-board" style="margin-bottom:1rem;">
         <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:0.75rem;">
           <div>
-            <h2 style="font-size:1.18rem; color:#7dd3fc;">
-              ⚡ คลังคอมโบ Meta &amp; แผนจัดทีม 5 คน (Duo / Trio / 5-Man Synergy Lineups)
-            </h2>
-            <p style="font-size:0.8rem; color:var(--text-muted);">
-              รวมคอมโบยอดฮิตระดับ Mythical Glory และ MPL ที่ใช้ไต่แรงก์และแก้ทางศัตรู • กดปุ่ม <strong>"⚡ นำคอมโบนี้ลงดราฟต์ทีมเรา"</strong> เพื่อนำไปใช้ในกระดานดราฟต์ได้ทันที!
-            </p>
+            <h2 style="font-size:1.15rem; color:#7dd3fc;">⚡ PLANNER — คลังคอมโบ Meta &amp; แผนจัดทีม 5 คน</h2>
+            <p style="font-size:0.78rem; color:var(--text-muted);">รวมคอมโบยอดฮิตระดับ MPL และห้องซ้อม M8 • กดปุ่มนำคอมโบลงกระดานดราฟต์ได้ทันที</p>
           </div>
           <div class="lane-filter-pills" id="comboFilterPills">
-            <button class="lane-pill active" data-ctype="ALL" onclick="setComboHubFilter('ALL')">🔥 ทั้งหมด (23 คอมโบ)</button>
-            <button class="lane-pill" data-ctype="duo" onclick="setComboHubFilter('duo')">👥 คู่หูดูโอ้ 2 คน (Duo Combos)</button>
-            <button class="lane-pill" data-ctype="trio" onclick="setComboHubFilter('trio')">🔱 3 ประสานคุมเกม (Trio Cores)</button>
-            <button class="lane-pill" data-ctype="squad" onclick="setComboHubFilter('squad')">🏆 แผนจัดทีม 5 คน (5-Man Squads)</button>
+            <button class="lane-pill active" data-ctype="ALL" onclick="setComboHubFilter('ALL')">🔥 ทั้งหมด</button>
+            <button class="lane-pill" data-ctype="duo" onclick="setComboHubFilter('duo')">👥 ดูโอ้ 2 คน</button>
+            <button class="lane-pill" data-ctype="trio" onclick="setComboHubFilter('trio')">🔱 3 ประสาน</button>
+            <button class="lane-pill" data-ctype="squad" onclick="setComboHubFilter('squad')">🏆 ทีม 5 คน</button>
           </div>
         </div>
       </div>
-
       <div id="combosHubContainer" class="combos-hub-grid"></div>
     </section>
 
@@ -312,55 +275,41 @@
       <div class="ban-board" style="margin-bottom:1rem;">
         <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:0.75rem;">
           <div>
-            <h2 id="metaTabTitle" style="font-size:1.15rem; color:var(--accent-gold-light);">🔥 ตารางจัดอันดับ Meta: MPL Indonesia Season 18 (Liquipedia Official)</h2>
-            <p id="metaTabSub" style="font-size:0.8rem; color:var(--text-muted);">
-              คำนวณจากสถิติ Pick, Ban, Win Rate และ Presence จริงของทัวร์นาเมนต์ MPL Indonesia Season 18 (215 นัด) • คลิกที่ฮีโร่เพื่อดูตัวแก้ทางและบิลด์ไอเทม
-            </p>
+            <h2 id="metaTabTitle" style="font-size:1.12rem; color:var(--accent-gold-light);">🔥 TIER LIST — ตารางจัดอันดับ Meta</h2>
+            <p id="metaTabSub" style="font-size:0.78rem; color:var(--text-muted);"></p>
           </div>
-          <!-- Tournament Switcher inside Meta Tab -->
-          <div class="meta-tourn-pills" title="สลับทัวร์นาเมนต์สำหรับแสดงตาราง Tier List">
+          <div class="meta-tourn-pills">
             <button class="tourn-tab-pill active" data-mtourn="mpl-id" onclick="setTournamentMeta('mpl-id')">🇮🇩 MPL-ID S18</button>
             <button class="tourn-tab-pill" data-mtourn="mpl-ph" onclick="setTournamentMeta('mpl-ph')">🇵🇭 MPL-PH S18</button>
             <button class="tourn-tab-pill" data-mtourn="msl-th" onclick="setTournamentMeta('msl-th')">🇹🇭 MSL-TH S2</button>
-            <button class="tourn-tab-pill" data-mtourn="combined" onclick="setTournamentMeta('combined')">🌐 รวม 3 ลีก (522 นัด)</button>
+            <button class="tourn-tab-pill" data-mtourn="combined" onclick="setTournamentMeta('combined')">🌐 รวม 3 ลีก</button>
             <button class="tourn-tab-pill" data-mtourn="m8-pred" onclick="setTournamentMeta('m8-pred')">🔮 คาดการณ์ M8</button>
-            <button class="tourn-tab-pill" data-mtourn="m8-scrim" onclick="setTournamentMeta('m8-scrim')">🔥 ห้องซ้อมแข่งวันนี้ (Scrim)</button>
+            <button class="tourn-tab-pill" data-mtourn="m8-scrim" onclick="setTournamentMeta('m8-scrim')">🔥 ห้องซ้อมวันนี้</button>
           </div>
           <div class="lane-filter-pills" id="metaTabLanePills">
-            <button class="lane-pill active" data-mlane="ALL" onclick="setMetaTabLane('ALL')">ทุกเลน (All Lanes)</button>
-            <button class="lane-pill" data-mlane="EXP Lane" onclick="setMetaTabLane('EXP Lane')">
-              <img src="assets/lanes/exp.png" class="lane-btn-img" alt="EXP" /> EXP
-            </button>
-            <button class="lane-pill" data-mlane="Jungle" onclick="setMetaTabLane('Jungle')">
-              <img src="assets/lanes/jungle.png" class="lane-btn-img" alt="Jungle" /> Jungle
-            </button>
-            <button class="lane-pill" data-mlane="Mid Lane" onclick="setMetaTabLane('Mid Lane')">
-              <img src="assets/lanes/mid.png" class="lane-btn-img" alt="Mid" /> Mid
-            </button>
-            <button class="lane-pill" data-mlane="Gold Lane" onclick="setMetaTabLane('Gold Lane')">
-              <img src="assets/lanes/gold.png" class="lane-btn-img" alt="Gold" /> Gold
-            </button>
-            <button class="lane-pill" data-mlane="Roam" onclick="setMetaTabLane('Roam')">
-              <img src="assets/lanes/roam.png" class="lane-btn-img" alt="Roam" /> Roam
-            </button>
+            <button class="lane-pill active" data-mlane="ALL" onclick="setMetaTabLane('ALL')">ทุกเลน</button>
+            <button class="lane-pill" data-mlane="EXP Lane" onclick="setMetaTabLane('EXP Lane')"><img src="assets/lanes/exp.png" class="lane-btn-img" alt="EXP" /> EXP</button>
+            <button class="lane-pill" data-mlane="Jungle" onclick="setMetaTabLane('Jungle')"><img src="assets/lanes/jungle.png" class="lane-btn-img" alt="Jungle" /> Jungle</button>
+            <button class="lane-pill" data-mlane="Mid Lane" onclick="setMetaTabLane('Mid Lane')"><img src="assets/lanes/mid.png" class="lane-btn-img" alt="Mid" /> Mid</button>
+            <button class="lane-pill" data-mlane="Gold Lane" onclick="setMetaTabLane('Gold Lane')"><img src="assets/lanes/gold.png" class="lane-btn-img" alt="Gold" /> Gold</button>
+            <button class="lane-pill" data-mlane="Roam" onclick="setMetaTabLane('Roam')"><img src="assets/lanes/roam.png" class="lane-btn-img" alt="Roam" /> Roam</button>
           </div>
         </div>
       </div>
-
       <div id="tierListContainer" class="tier-list-section"></div>
     </section>
 
-    <!-- ==================== TAB: M8 WORLD CHAMPIONSHIP PICK/BAN PREDICTION ==================== -->
+    <!-- ==================== TAB 4: M8 PREDICTION & HERO STATISTICS ==================== -->
     <section id="tab-m8" class="tab-panel">
       <div class="ban-board m8-hero-board" style="margin-bottom:1rem;">
         <div style="display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:space-between; gap:0.75rem;">
           <div style="flex:1; min-width:260px;">
-            <h2 style="font-size:1.18rem; color:#c4b5fd;">🔮 คาดการณ์ Pick / Ban — M8 World Championship</h2>
-            <p id="m8SubText" style="font-size:0.8rem; color:var(--text-muted);"></p>
+            <h2 style="font-size:1.15rem; color:#c4b5fd;">🔮 HERO STATISTICS — คาดการณ์ Pick / Ban M8 World Championship</h2>
+            <p id="m8SubText" style="font-size:0.78rem; color:var(--text-muted);"></p>
           </div>
           <div class="lane-filter-pills" id="m8ActionPills">
             <button class="lane-pill active" data-m8act="ALL" onclick="setM8Filter('action','ALL')">ทั้งหมด</button>
-            <button class="lane-pill ss-filter-pill" data-m8act="SCRIM" onclick="setM8Filter('action','SCRIM')">🔥 ฮิตในห้องซ้อมวันนี้ (27 ตัว)</button>
+            <button class="lane-pill ss-filter-pill" data-m8act="SCRIM" onclick="setM8Filter('action','SCRIM')">🔥 ห้องซ้อมวันนี้ (27)</button>
             <button class="lane-pill" data-m8act="BAN" onclick="setM8Filter('action','BAN')">🚫 คาดโดนแบน</button>
             <button class="lane-pill" data-m8act="PICK" onclick="setM8Filter('action','PICK')">✅ คาดถูกเลือก</button>
             <button class="lane-pill" data-m8act="FLEX" onclick="setM8Filter('action','FLEX')">⚖️ ก้ำกึ่ง</button>
@@ -375,39 +324,35 @@
           <button class="lane-pill" data-m8lane="Roam" onclick="setM8Filter('lane','Roam')"><img src="assets/lanes/roam.png" class="lane-btn-img" alt="Roam" /> Roam</button>
         </div>
       </div>
-
       <div id="m8SummaryContainer" class="m8-summary-grid"></div>
       <div id="m8TierListContainer" class="tier-list-section"></div>
       <div id="m8MethodContainer" class="m8-method-box"></div>
     </section>
 
-    <!-- ==================== TAB 4: 1v1 COUNTER & SYNERGY ENCYCLOPEDIA ==================== -->
+    <!-- ==================== TAB 5: COUNTER LOOKUP ==================== -->
     <section id="tab-lookup" class="tab-panel">
       <div class="ban-board">
         <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:0.75rem; margin-bottom:0.85rem;">
           <div>
             <h2 style="font-size:1.15rem; color:var(--accent-gold-light);">🔍 ค้นหาตัวแก้ทาง &amp; คู่หูคอมโบรายตัว (1v1 Counter &amp; Synergy)</h2>
-            <p style="font-size:0.8rem; color:var(--text-muted);">
-              เลือกฮีโร่เพื่อดูว่าแพ้ทางใคร ชนะทางใคร อยู่ใรชุด Meta Combo ไหนบ้าง และต้องออกไอเทมอะไรสู้
-            </p>
+            <p style="font-size:0.78rem; color:var(--text-muted);">เลือกฮีโร่เพื่อดูว่าแพ้ทางใคร ชนะทางใคร อยู่ในชุด Meta Combo ไหน และออกไอเทมอะไรสู้</p>
           </div>
           <input
             type="text"
             id="lookupSearchInput"
             class="search-input"
             style="max-width:340px;"
-            placeholder="🔎 พิมพ์ชื่อฮีโร่เพื่อดูข้อมูล..."
+            placeholder="🔎 พิมพ์ชื่อฮีโร่..."
             oninput="renderLookupQuickBar()"
           />
         </div>
         <div id="lookupQuickBar" style="display:flex; gap:0.45rem; overflow-x:auto; padding-bottom:0.5rem;"></div>
       </div>
-
       <div id="lookupDetailContainer"></div>
     </section>
   </main>
 
-  <!-- Slot Hero Picker Popup Modal (for Ban / Ally Pick / Enemy Pick slots) -->
+  <!-- Modals (Slot Picker, Hero Dossier, Counter Gear, Spell Picker, Lane Picker) -->
   <div id="slotPickerModal" class="modal-backdrop" onclick="if(event.target===this) closeSlotPickerModal()">
     <div class="modal-card slot-picker-modal-card">
       <div class="slot-picker-header">
@@ -419,89 +364,54 @@
           </div>
         </div>
         <div style="display:flex; align-items:center; gap:0.5rem;">
-          <button id="slotPickerClearBtn" class="btn btn-reset" style="display:none;" onclick="clearCurrentPickerSlot()">
-            🗑️ ล้างช่องนี้
-          </button>
-          <button id="slotPickerInfoBtn" class="btn" style="display:none;" onclick="inspectCurrentPickerSlotHero()">
-            ℹ️ ดูข้อมูลตัวนี้
-          </button>
-          <button class="modal-close" onclick="closeSlotPickerModal()" title="ปิดหน้าต่าง (Esc)">✕</button>
+          <button id="slotPickerClearBtn" class="btn btn-reset" style="display:none;" onclick="clearCurrentPickerSlot()">🗑️ ล้างช่องนี้</button>
+          <button id="slotPickerInfoBtn" class="btn" style="display:none;" onclick="inspectCurrentPickerSlotHero()">ℹ️ ดูข้อมูลตัวนี้</button>
+          <button class="modal-close" onclick="closeSlotPickerModal()">✕</button>
         </div>
       </div>
-
-      <!-- Quick Top Suggestions inside Popup (Top Bans, Top Counters, & Meta Combo Partners!) -->
       <div id="slotPickerQuickRecommend" class="slot-picker-quick-rec"></div>
-
-      <!-- Search & Lane/Role Filter Bar inside Popup -->
       <div class="slot-picker-controls">
-        <input
-          type="text"
-          id="slotPickerSearch"
-          class="search-input"
-          placeholder="🔎 พิมพ์ค้นหาชื่อฮีโร่ เช่น Masha, Hirara, Carmilla, Cecilion, Fanny..."
-          oninput="renderSlotPickerGrid()"
-        />
+        <input type="text" id="slotPickerSearch" class="search-input" placeholder="🔎 พิมพ์ค้นหาชื่อฮีโร่..." oninput="renderSlotPickerGrid()" />
         <select id="slotPickerRole" class="select-ctrl" onchange="renderSlotPickerGrid()">
           <option value="ALL">🎭 ทุกสายอาชีพ</option>
-          <option value="Tank">Tank (แทงค์)</option>
-          <option value="Fighter">Fighter (ไฟต์เตอร์)</option>
-          <option value="Assassin">Assassin (แอสซาซิน)</option>
-          <option value="Mage">Mage (เมจ)</option>
-          <option value="Marksman">Marksman (แครี่)</option>
-          <option value="Support">Support (ซัพพอร์ต)</option>
+          <option value="Tank">Tank</option>
+          <option value="Fighter">Fighter</option>
+          <option value="Assassin">Assassin</option>
+          <option value="Mage">Mage</option>
+          <option value="Marksman">Marksman</option>
+          <option value="Support">Support</option>
         </select>
         <select id="slotPickerSort" class="select-ctrl" onchange="renderSlotPickerGrid()">
-          <option value="smart">✨ แนะนำตามตำแหน่งนี้ (Counter + Combo)</option>
+          <option value="smart">✨ แนะนำตามตำแหน่งนี้</option>
           <option value="counter">⚡ คะแนนแก้ทางศัตรู</option>
-          <option value="combo">🔗 คะแนนเข้าขาคอมโบทีมเรา</option>
-          <option value="ban">🚫 อัตราโดนแบนสูงสุด (Ban Rate)</option>
-          <option value="meta">🔥 ความแรง Meta (Mythical Glory)</option>
-          <option value="win">📈 อัตราชนะสูงสุด (Win Rate)</option>
+          <option value="combo">🔗 คะแนนเข้าขาคอมโบ</option>
+          <option value="ban">🚫 อัตราโดนแบนสูงสุด</option>
+          <option value="meta">🔥 ความแรง Meta</option>
+          <option value="win">📈 อัตราชนะสูงสุด</option>
           <option value="name">🔤 ชื่อฮีโร่ (A - Z)</option>
         </select>
       </div>
-
-      <!-- Lane Filter Pills inside Popup -->
       <div id="slotPickerLanePills" class="lane-filter-pills" style="margin-bottom:0.75rem;">
-        <button class="lane-pill active" data-slane="ALL" onclick="setSlotPickerLane('ALL')">ทุกเลน (All)</button>
-        <button class="lane-pill" data-slane="EXP Lane" onclick="setSlotPickerLane('EXP Lane')">
-          <img src="assets/lanes/exp.png" class="lane-btn-img" alt="EXP" /> EXP
-        </button>
-        <button class="lane-pill" data-slane="Jungle" onclick="setSlotPickerLane('Jungle')">
-          <img src="assets/lanes/jungle.png" class="lane-btn-img" alt="Jungle" /> Jungle
-        </button>
-        <button class="lane-pill" data-slane="Mid Lane" onclick="setSlotPickerLane('Mid Lane')">
-          <img src="assets/lanes/mid.png" class="lane-btn-img" alt="Mid" /> Mid
-        </button>
-        <button class="lane-pill" data-slane="Gold Lane" onclick="setSlotPickerLane('Gold Lane')">
-          <img src="assets/lanes/gold.png" class="lane-btn-img" alt="Gold" /> Gold
-        </button>
-        <button class="lane-pill" data-slane="Roam" onclick="setSlotPickerLane('Roam')">
-          <img src="assets/lanes/roam.png" class="lane-btn-img" alt="Roam" /> Roam
-        </button>
+        <button class="lane-pill active" data-slane="ALL" onclick="setSlotPickerLane('ALL')">ทุกเลน</button>
+        <button class="lane-pill" data-slane="EXP Lane" onclick="setSlotPickerLane('EXP Lane')"><img src="assets/lanes/exp.png" class="lane-btn-img" alt="EXP" /> EXP</button>
+        <button class="lane-pill" data-slane="Jungle" onclick="setSlotPickerLane('Jungle')"><img src="assets/lanes/jungle.png" class="lane-btn-img" alt="Jungle" /> Jungle</button>
+        <button class="lane-pill" data-slane="Mid Lane" onclick="setSlotPickerLane('Mid Lane')"><img src="assets/lanes/mid.png" class="lane-btn-img" alt="Mid" /> Mid</button>
+        <button class="lane-pill" data-slane="Gold Lane" onclick="setSlotPickerLane('Gold Lane')"><img src="assets/lanes/gold.png" class="lane-btn-img" alt="Gold" /> Gold</button>
+        <button class="lane-pill" data-slane="Roam" onclick="setSlotPickerLane('Roam')"><img src="assets/lanes/roam.png" class="lane-btn-img" alt="Roam" /> Roam</button>
       </div>
-
-      <!-- Popup Hero Grid -->
       <div id="slotPickerGrid" class="slot-picker-grid"></div>
     </div>
   </div>
 
-  <!-- Hero Dossier Modal -->
   <div id="heroModal" class="modal-backdrop" onclick="if(event.target===this) closeHeroModal()">
     <div id="heroModalContent" class="modal-card"></div>
   </div>
-
-  <!-- Counter Items & Battle Spells Advisor Modal -->
   <div id="counterGearModal" class="modal-backdrop" onclick="if(event.target===this) closeCounterGearModal()">
     <div id="counterGearModalContent" class="modal-card counter-gear-modal-card"></div>
   </div>
-
-  <!-- Battle Spell Selector / Counter Spell Picker Modal -->
   <div id="spellPickerModal" class="modal-backdrop" onclick="if(event.target===this) closeSpellPickerModal()">
     <div id="spellPickerModalContent" class="modal-card spell-picker-modal-card"></div>
   </div>
-
-  <!-- Hero Lane / Role Switcher Modal -->
   <div id="lanePickerModal" class="modal-backdrop" onclick="if(event.target===this) closeLanePickerModal()">
     <div id="lanePickerModalContent" class="modal-card spell-picker-modal-card"></div>
   </div>
@@ -511,5 +421,6 @@
   <script src="data/tournaments-data.js"></script>
   <script src="data/m8-prediction-data.js"></script>
   <script src="app.js"></script>
+  <script src="mobadraft.js"></script>
 </body>
 </html>
