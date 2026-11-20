@@ -2406,56 +2406,48 @@ function renderLiveComboStrip() {
 
   stripEl.style.display = 'block';
   stripEl.innerHTML = `
-    <div class="live-combo-strip-header">
-      <div style="font-size:0.84rem; font-weight:700; color:#7dd3fc; display:flex; align-items:center; gap:0.45rem;">
-        <span>⚡ ทางเลือก Meta Combo ที่พร้อมเล่นในดราฟต์นี้ (ไม่ติดแบน):</span>
+    <div class="live-combo-inline-bar">
+      <span class="live-combo-inline-label">⚡ คอมโบพร้อมเล่น:</span>
+      <div class="live-combo-pills-wrap">
+        ${topCombos.map(item => {
+          const c = item.combo;
+          const isPartialMatch = item.alreadyInTeam.length > 0 && item.missingFromTeam.length > 0;
+          const isComplete = item.missingFromTeam.length === 0;
+
+          let cleanTitle = (c.title || '').replace(/\s*\(.*?\)/g, '').trim();
+          if (cleanTitle.startsWith('แผน 5 คน')) {
+            cleanTitle = cleanTitle.replace(/^แผน 5 คน\s*:\s*"?/, 'แผน 5 คน: ').replace(/"$/, '').trim();
+          } else if (cleanTitle.includes(':')) {
+            cleanTitle = cleanTitle.split(':')[0].trim();
+          }
+
+          const actionLabel = isComplete
+            ? '✓ ครบชุด'
+            : (isPartialMatch ? `+${item.missingFromTeam.map(x => x.name).join('/')}` : 'เลือก');
+
+          return `
+            <div class="compact-combo-pill ${isComplete ? 'is-complete' : ''}" onclick="${isComplete ? `switchTab('combos')` : `applyComboToDraft('${c.id}', false)`}" title="${c.title} (${c.winRateBonus}) — ${c.summary}">
+              <div class="compact-combo-avatars">
+                ${c.heroObjs.map(h => {
+                  const inAlly = pickedAllyIds.includes(h.id);
+                  return `
+                    <div class="mini-combo-avatar-wrap ${inAlly ? 'in-team' : ''}">
+                      <img src="${h.head}" alt="${h.name}" loading="lazy" />
+                      ${inAlly ? '<span class="combo-check-badge">✓</span>' : ''}
+                    </div>
+                  `;
+                }).join('')}
+              </div>
+              <span class="compact-combo-name">${cleanTitle}</span>
+              <span class="compact-combo-wr">${c.winRateBonus.replace(/\s*Win Rate/i, '').replace(/\s*WR/i, '')}</span>
+              <span class="compact-combo-action">${actionLabel}</span>
+            </div>
+          `;
+        }).join('')}
       </div>
-      <button class="btn" style="font-size:0.72rem; padding:0.2rem 0.6rem; border-color:#38bdf8; color:#bae6fd;" onclick="switchTab('combos')">
-        ดูคลังคอมโบทั้งหมด ${COMBOS.length} แผน →
+      <button class="compact-combo-all-btn" onclick="switchTab('combos')" title="เปิดดูคลังคอมโบทั้งหมด">
+        ทั้งหมด (${COMBOS.length}) →
       </button>
-    </div>
-    <div class="live-combo-cards-row">
-      ${topCombos.map(item => {
-        const c = item.combo;
-        const isPartialMatch = item.alreadyInTeam.length > 0 && item.missingFromTeam.length > 0;
-        const isComplete = item.missingFromTeam.length === 0;
-
-        let cleanTitle = (c.title || '').replace(/\s*\(.*?\)/g, '').trim();
-        if (cleanTitle.startsWith('แผน 5 คน')) {
-          cleanTitle = cleanTitle.replace(/^แผน 5 คน\s*:\s*"?/, 'แผน 5 คน: ').replace(/"$/, '').trim();
-        } else if (cleanTitle.includes(':')) {
-          cleanTitle = cleanTitle.split(':')[0].trim();
-        }
-
-        return `
-          <div class="mini-combo-card">
-            <div style="display:flex; justify-content:space-between; align-items:center; gap:0.4rem;">
-              <strong style="font-size:0.78rem; color:#f1f5f9; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" title="${c.title}">${cleanTitle}</strong>
-              <span style="font-size:0.68rem; color:#34d399; font-weight:700; white-space:nowrap; background:rgba(16,185,129,0.15); padding:1px 6px; border-radius:10px; border:1px solid rgba(52,211,153,0.3);">${c.winRateBonus}</span>
-            </div>
-            <div class="mini-combo-avatars">
-              ${c.heroObjs.map(h => {
-                const inAlly = pickedAllyIds.includes(h.id);
-                return `
-                  <div class="mini-combo-avatar-wrap ${inAlly ? 'in-team' : ''}" title="${h.name} (${h.lanes.join('/')})${inAlly ? ' • อยู่ในทีมแล้ว' : ''}">
-                    <img src="${h.head}" alt="${h.name}" />
-                    ${inAlly ? '<span class="combo-check-badge">✓</span>' : ''}
-                  </div>
-                `;
-              }).join('<span class="mini-combo-plus">+</span>')}
-            </div>
-            <div style="display:flex; gap:0.35rem; margin-top:auto;">
-              ${isComplete ? `
-                <span style="font-size:0.74rem; color:#6ee7b7; font-weight:700; padding:0.25rem 0;">✓ อยู่ในทีมครบชุดแล้ว</span>
-              ` : `
-                <button class="btn-pick-ally mini-combo-btn" onclick="applyComboToDraft('${c.id}', false)">
-                  ⚡ ${isPartialMatch ? `เติม ${item.missingFromTeam.map(x=>x.name).join(' + ')}` : 'เลือกคอมโบนี้'}
-                </button>
-              `}
-            </div>
-          </div>
-        `;
-      }).join('')}
     </div>
   `;
 }

@@ -4110,4 +4110,139 @@ body {
   line-height: 1.1;
 }
 
+/* Compact 1-Line Live Meta Combo Strip */
+.live-combo-strip {
+  padding: 0.35rem 0.6rem !important;
+  margin-bottom: 0.55rem !important;
+  border-radius: 9px !important;
+  background: rgba(15, 23, 42, 0.72) !important;
+  border: 1px solid rgba(56, 189, 248, 0.25) !important;
+}
+
+.live-combo-inline-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.live-combo-inline-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #7dd3fc;
+  white-space: nowrap;
+}
+
+.live-combo-pills-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.compact-combo-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(7, 11, 20, 0.85);
+  border: 1px solid rgba(56, 189, 248, 0.28);
+  padding: 0.2rem 0.48rem 0.2rem 0.25rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.compact-combo-pill:hover {
+  border-color: #38bdf8;
+  background: rgba(14, 165, 233, 0.16);
+  transform: translateY(-1px);
+}
+
+.compact-combo-pill.is-complete {
+  border-color: rgba(16, 185, 129, 0.5);
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.compact-combo-avatars {
+  display: inline-flex;
+  align-items: center;
+}
+
+.compact-combo-avatars .mini-combo-avatar-wrap {
+  margin-left: -4px;
+}
+.compact-combo-avatars .mini-combo-avatar-wrap:first-child {
+  margin-left: 0;
+}
+
+.compact-combo-avatars .mini-combo-avatar-wrap img {
+  width: 24px !important;
+  height: 24px !important;
+  border-width: 1.5px !important;
+}
+
+.compact-combo-avatars .combo-check-badge {
+  width: 11px !important;
+  height: 11px !important;
+  font-size: 7px !important;
+  bottom: -1px !important;
+  right: -1px !important;
+}
+
+.compact-combo-name {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  max-width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.compact-combo-wr {
+  font-size: 0.63rem;
+  font-weight: 700;
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.15);
+  padding: 0 5px;
+  border-radius: 999px;
+}
+
+.compact-combo-action {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #0284c7, #7c3aed);
+  padding: 1px 7px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.compact-combo-pill.is-complete .compact-combo-action {
+  background: rgba(16, 185, 129, 0.25);
+  color: #6ee7b7;
+}
+
+.compact-combo-all-btn {
+  margin-left: auto;
+  background: transparent;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #bae6fd;
+  font-family: inherit;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.14s;
+}
+
+.compact-combo-all-btn:hover {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: #38bdf8;
+}
+
+
 
