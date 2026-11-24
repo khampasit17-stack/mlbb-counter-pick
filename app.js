@@ -3594,7 +3594,7 @@ function renderM8PredictionTab() {
 
   if (subEl) {
     const srcText = pred.meta.sources.map(s => `${s.flag} ${s.label} (${s.games} นัด)`).join(' • ');
-    subEl.innerHTML = `วิเคราะห์ความน่าจะเป็นที่นักแข่งจะ <strong>แบน (Ban)</strong> และ <strong>เลือก (Pick)</strong> ในเวที <strong>M8 World Championship</strong> โดยเปรียบเทียบสถิติจริงรวม <strong>${pred.meta.totalGames} นัด</strong> จาก 6 ทัวร์นาเมนต์: ${srcText}`;
+    subEl.innerHTML = `<span style="color:#6ee7b7; font-weight:700;">[อัปเดตเมต้าล่าสุด ${pred.meta.generatedAt || '2026-11-24'}]</span> วิเคราะห์ความน่าจะเป็นที่นักแข่งจะ <strong>แบน (Ban)</strong> และ <strong>เลือก (Pick)</strong> ในศึก <strong>M8 World Championship (Wildcard 17 ธ.ค. 2026)</strong> จากสถิติแข่งจริงรวม <strong>${pred.meta.totalGames} นัด</strong> + เซิร์ฟหลัก Mythical Glory+: ${srcText}`;
   }
 
   const topExpectedBans = pred.heroes
@@ -3814,24 +3814,26 @@ function renderM8PredictionTab() {
 
     methodEl.innerHTML = `
       <div style="font-weight:700; font-size:0.95rem; color:#fde047; margin-bottom:0.55rem;">
-        ⚖️ สรุปตัวละคร 14 ตัว &amp; ระบบเกมที่โดนปรับสมดุลล่าสุด (${pred.meta.patchVersion || 'Patch 2.2.23 • 17/11/2026'})
+        ⚖️ เจาะลึกฮีโร่เมต้าใหม่ ${patchedHeroes.length} ตัว &amp; การเปลี่ยนแปลงหลังแข่งจริง (${pred.meta.patchVersion || 'Patch 2.2.23 • อัปเดต 24/11/2026'})
       </div>
       <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:0.55rem; margin-bottom:0.85rem;">
         ${patchCardsHtml}
       </div>
       <div style="font-size:0.76rem; color:#e2e8f0; background:rgba(7,11,20,0.65); padding:0.6rem 0.75rem; border-radius:8px; border-left:3px solid #38bdf8; margin-bottom:0.85rem;">
-        <div style="font-weight:700; color:#7dd3fc; margin-bottom:4px;">🗺️ การปรับสมดุลสนามรบ ไอเทม และสเปล (Battlefield &amp; Equipment Adjustments):</div>
+        <div style="font-weight:700; color:#7dd3fc; margin-bottom:4px;">🗺️ สรุปทิศทางสนามรบ ไอเทม และเทรนด์ดราฟต์ล่าสุดก่อนศึก M8 (อัปเดต 24/11/2026):</div>
         ${bfNotesHtml}
       </div>
-      <div style="font-weight:700; color:#c4b5fd; margin-bottom:0.35rem;">📊 ระเบียบวิธีคำนวณโมเดลคาดการณ์ M8 (Multi-Tournament Statistical Forecast — ${pred.meta.totalGames} Games)</div>
+      <div style="font-weight:700; color:#c4b5fd; margin-bottom:0.35rem;">📊 ระเบียบวิธีคำนวณโมเดลคาดการณ์ M8 (Multi-Tournament + Live Patch 2.2.23 &amp; Glory+ Forecast — ${pred.meta.totalGames} Games)</div>
       <div style="font-size:0.78rem; color:#cbd5e1; line-height:1.55;">
-        • <strong>ฐานข้อมูลเปรียบเทียบ 6 ทัวร์นาเมนต์ทางการ (Liquipedia):</strong> ถ่วงน้ำหนักตามความใกล้เคียงของแพตช์ปัจจุบันและความแข็งแกร่งของลีก ได้แก่
-        <strong>🇵🇭 MPL-PH S18</strong> (172 นัด, น้ำหนัก 1.30×),
-        <strong>🇮🇩 MPL-ID S18</strong> (215 นัด, น้ำหนัก 1.25×),
-        <strong>🇲🇾 MPL-MY S18</strong> (170 นัด, น้ำหนัก 1.00×),
-        <strong>🇹🇭 MSL-TH S2</strong> (135 นัด, น้ำหนัก 0.90×),
-        <strong>🌍 MSC 2026</strong> (113 นัด, น้ำหนัก 0.70×) และ <strong>🏆 M7 World Championship</strong> (137 นัด)<br/>
-        • <strong>ผสานผลกระทบแพตช์ 2.2.23 (17/11/2026):</strong> ปรับเพิ่ม/ลดโอกาสปรากฏตัวตามการ Buff / Nerf / Revamp ล่าสุดของฮีโร่ทั้ง 14 ตัวและเมต้าเลนทอง (+60% Gold)
+        • <strong>ฐานข้อมูลเปรียบเทียบ ${pred.meta.sources.length} ชุดข้อมูลการแข่งขันจริง (Liquipedia):</strong> ถ่วงน้ำหนักสูงสุดให้กับแมตช์ที่แข่งบนแพตช์ปัจจุบัน ได้แก่
+        <strong>⚡ ทัวร์แข่งจริงบน Patch 2.2.23 ล่าสุด</strong> (${pred.meta.livePatch2223Games || 84} นัด, น้ำหนัก 1.65×),
+        <strong>🔥 Playoffs &amp; Finals 11 ลีกคัด M8</strong> (384 นัด, น้ำหนัก 1.45×),
+        <strong>🇵🇭 MPL-PH S18</strong> (172 นัด, 1.30×),
+        <strong>🇮🇩 MPL-ID S18</strong> (215 นัด, 1.25×),
+        <strong>🇲🇾 MPL-MY S18</strong> (170 นัด, 1.00×),
+        <strong>🇹🇭 MSL-TH S2</strong> (135 นัด, 0.90×),
+        <strong>🌍 MSC 2026</strong> (113 นัด, 0.65×) และ <strong>🏆 M7 World Championship</strong> (137 นัด)<br/>
+        • <strong>ผสานสถิติสด Mythical Glory+ เซิร์ฟหลัก &amp; ห้องซ้อมทีมแข่ง M8 (24/11/2026):</strong> ปรับความน่าจะเป็นแบน/เลือกตามผลลัพธ์จริงหลังแพตช์ 2.2.23 เดินเครื่องเต็มสัปดาห์ (เช่น การพุ่งทะยานของ Aulus, Kalea, Kimmy, Obsidia, Belerick และการคัมแบ็กแบนของ Masha)
       </div>
     `;
   }
